@@ -1,0 +1,14 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./out-tsc/app",
+    "types": []
+  },
+  "files": [
+    "src/main.ts",
+    "src/polyfills.ts",
+    "./src/app/demos/samples/calculator/RatesParam.ts",
+    "./src/app/demos/samples/calculator/RatesResponse.ts"
+  ],
+  "include": ["src/**/*.d.ts"]
+}
