@@ -1,50 +1,24 @@
 # Angular Single Page Application (SPA) Development
 
-> Author: [Alexander Pajer](https://www.integrations.at)
+Companion Material for Class Delivery by [Alexander Pajer](https://www.integrations.at/kontakt.aspx) containing:
 
-> Dauer:
-> 5 Tage
+- [Requirements / Tooling](./Tooling)
+  - [Register Azure Pass](./Tooling/05-AzurePass)
+  - [Git & GitHub Basics](./Tooling/01-Github)
+  - [Visual Studio Code Intro](./Tooling/02-VSCode)
+  - [Document Repos using Markdown](./Tooling/03-Markdown)
+  - [Using Azure CLI](./Tooling/04-CLI)
+- [Instructor Demos](./Demos)
+- [Guided Scripts to setup an Azure hosted Development & Lab VM](./Setup)
+  - [Base Dev Environment Setup inkluding Visual Studio Code Extensions](./Setup/#basics)
+  - [Setup Windows Subsystem for Linux 2 - WSL2](./Setup/#wsl)
+  - [Setup Docker & Kubernetes](./Setup/#docker-wsl)
+  - [Use Teams in VM](./Setup/#teams)
+- [Labs](./Labs)
 
-## Themen
+## Topics
 
-Im Seminar "Angular Single Page Application Development" lernen Sie Angular gemeinsam mit Node.js / .NET Core einzusetzen und damit "Single Page Applications" (SPA's) zu erstellen. Beginnend mit Projektkonfiguration & Angular Basics vertiefen wir unsere Kenntnisse, um schließlich alle Teile des Angular Eco-Systems, inklusive Responsive UI Design, Security, Testing & Hosting zu behandeln.
-
-Nach Abschluss dieses Seminars haben die Teilnehmer Kenntnisse zu folgenden Themen:
-
-- Environment & Tools Setup and Introduction
-- TypeScript Fundamentals
-- Angular Projektkonfiguration & CLI
-- Understanding Fundamentals & Completing Basic Tasks
-- Nesting Components
-- Routing & Modularity
-- Implementing a Responsive User Interface
-- Form Design & Validation
-- Implementing & Consuming Data Models and REST APIs
-- Introduction to Observables & Reactive Programming
-- Managing State & Broadcasting Events
-- Angular Unit Testing
-- Securing & Publishing the Application
-
-# Zielgruppe
-
-Dieses Seminar richtet sich an Web Entwickler welche Angular Anwendungen entwickeln möchten.
-
-# Vortragsart
-
-Neue Themengebiete werden anhand von Folien und Demos erarbeitet. Am Ende der Module werden die erlernten Inhalte in eine durchgängige Anwendung integriert, welches am Ende in die Cloud publiziert werden kann. Wir empfehlen Visual Studio Code als Cross Platform Editor.
-
-# Voraussetzungen
-
-- JavaScript und HTML Basics (Kurs: Programming HTML5, JavaScript and CSS3)
-- Erfahrung mit Web Development
-- Kenntnis von Objektorientierten Sparchen
-- Kenntnis von modernen Web Technologien (Node, Webpack, TypeScript, Flexbox, CSS Grid, ...) hilfreich. Diese werden im Kurs Advanced Web Technologies (webADV) vermittelt.
-
----
-
-# Module
-
-## Angular Introduction & Setup
+### Angular Introduction & Setup
 
 - What / Why Single Page Applications
 - Angular Overview and Version Comparison
@@ -54,7 +28,7 @@ Neue Themengebiete werden anhand von Folien und Demos erarbeitet. Am Ende der Mo
 - Angular Debugging Options
 - Updating Angular Projects
 
-## TypeScript Fundamentals
+### TypeScript Fundamentals
 
 - ECMA Script Standards
 - TypeScript Overview, Configuration, Debugging
@@ -64,7 +38,7 @@ Neue Themengebiete werden anhand von Folien und Demos erarbeitet. Am Ende der Mo
 - 3rd Party Libraries & Type Definitions
 - Async Operations, Promises & Observables
 
-## Fundamentals & Completing Basic Tasks
+### Fundamentals & Completing Basic Tasks
 
 - Components, Modules & Dependency Injection
 - Expressions, Templates & Directives
@@ -73,7 +47,7 @@ Neue Themengebiete werden anhand von Folien und Demos erarbeitet. Am Ende der Mo
 - Pipes & Localization
 - Custom Directives & Pipes
 
-## Nesting Components
+### Nesting Components
 
 - Splitting the UI to Nested Components
 - Databinding & Events with Nested Components
@@ -82,7 +56,7 @@ Neue Themengebiete werden anhand von Folien und Demos erarbeitet. Am Ende der Mo
 - Reusable Components using Local References & Content Projection
 - View Child, View Children
 
-## Routing & Modularity
+### Routing & Modularity
 
 - Routing Basics
 - Working with Parameterized Routes
@@ -91,7 +65,7 @@ Neue Themengebiete werden anhand von Folien und Demos erarbeitet. Am Ende der Mo
 - Organizing Angular Applications using Modules
 - Module Lazy Loading
 
-## Designing the User Interface
+### Designing the User Interface
 
 - Implementing a CSS Reset
 - Global & Component Styles
@@ -103,7 +77,7 @@ Neue Themengebiete werden anhand von Folien und Demos erarbeitet. Am Ende der Mo
 - Using Material Tables, Dialogs & Form Controls
 - Using Angular CDK & 3rd Party Components (Charting, File Upload, Drag & Drop)
 
-## Forms Design & Validation
+### Forms Design & Validation
 
 - Forms Introduction
 - Template Driven Forms vs Reactive (Model Based) Forms
@@ -111,14 +85,14 @@ Neue Themengebiete werden anhand von Folien und Demos erarbeitet. Am Ende der Mo
 - Validating Forms
 - Custom- & Code-Based Validators
 
-## Consuming RESTful Services
+### Consuming RESTful Services
 
 - Introduction Into .NET Core
 - Implementing Consuming .NET Core RESTful APIs
 - Using JSON Server for Prototyping
 - Implementing the Client-Side Data Models
 
-## Observables & Reactive Programming
+### Observables & Reactive Programming
 
 - What is Reactive Programming / Benefits
 - Observable, Observer & Subject
@@ -127,7 +101,7 @@ Neue Themengebiete werden anhand von Folien und Demos erarbeitet. Am Ende der Mo
 - Subscribing to Routes & Params, Flex Layout API
 - Using Common RxJS Operators
 
-## Managing State & Sharing Events
+### Managing State & Sharing Events
 
 - What is State Management
 - State Management Options
@@ -136,7 +110,7 @@ Neue Themengebiete werden anhand von Folien und Demos erarbeitet. Am Ende der Mo
 - Service Bus & Sharing Events between deeply Nested Components
 - Overview of the Redux Pattern with NgRx HelloWorld
 
-## Testing Basics
+### Testing Basics
 
 - Unit Tests vs Integration Tests
 - Karma & Jasmine Basics
@@ -144,7 +118,7 @@ Neue Themengebiete werden anhand von Folien und Demos erarbeitet. Am Ende der Mo
 - Testing Angular Components, Services and Forms
 - In Short: End to End Testing
 
-## Securing & Publishing Angular
+### Securing & Publishing Angular
 
 - Authentication / Authorization Basics in SPAs
 - Token based Auth: Understanding Jwt, OAuth 2.0 & OpenID Connect
