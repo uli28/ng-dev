@@ -119,7 +119,17 @@ git merge [branch_to_merge]
 
 ## Dealing with special Commits
 
-Get a spcific Commit: `git checkout <sha1>`
+Get a spcific Commit:
+
+```
+git checkout <sha1>
+```
+
+sha1:
+
+![commits](_images/commits.png)
+
+![sha1](_images/sha1.png)
 
 > Note: This will result in a detached Head.
 
@@ -201,11 +211,11 @@ Pull / Push from / to repository:
 git pull / git push
 ```
 
-## Refresh from Upstream
+## Forking Workflow - Getting Updates for Class Demos
 
-> Note: You can use this guide to refresh changes I made during the week to your forked repo
+![forking-wf](_images/forking-workflow.jpg)
 
-Original Repo could be: `https://github.com/ARambazamba/AdvancedAngularDevelopment` where `ARambazamba` is the `original-owner-github-username` and `AdvancedAngularDevelopment` is the `reponame`
+Original Repo could be: `https://github.com/ARambazamba/AZ-204` where `ARambazamba` is the `original-owner-github-username` and `AZ-204` is the `reponame`
 
 ### Listing the current Remotes
 
@@ -244,6 +254,25 @@ Fetch from Upstream:
  git merge upstream/master
  git push origin master
 ```
+
+> Note: The branch you are pulling cloud also be `main` instead of `master`
+
+## Working with Submodules
+
+Add a Submodule:
+
+```
+git submodule add https://github.com/ARambazamba/FoodApp FoodApp
+git commit -m foodapp-submodule
+```
+
+Updating a Submodule to it's latest commit:
+
+```
+git submodule update --remote --merge
+```
+
+> Note: I use submodules to include samples in classes that are used in different classes or to shorten / avoid path problems in devops
 
 ## Git-flow
 
@@ -286,3 +315,7 @@ Finish a release:
 ```
 git flow release finish  RELEASE
 ```
+
+## Additional Labs & Walkthroughs
+
+[Introduction to version control with Git](https://docs.microsoft.com/en-us/learn/paths/intro-to-vc-git/)
