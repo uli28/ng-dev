@@ -1,3 +1,3 @@
 # Labs
 
-- [Food App](food/)
+- [Food App](Food/)
