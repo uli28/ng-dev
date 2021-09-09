@@ -9,9 +9,9 @@ Script `create-lab-vm.azcli`:
 ```bash
 rnd=$RANDOM
 loc=westeurope
-grp=az-lab
+grp=ng-dev
 vmname=labvm-$rnd
-user=azlabadmin
+user=ng-devlabadmin
 pwd=Lab@dmin1233
 
 az group create -n $grp -l $loc
