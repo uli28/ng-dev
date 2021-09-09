@@ -1,16 +1,14 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import {
   forkJoin,
+  from,
   interval,
   Observable,
   of,
   Subscription,
   throwError,
-  from,
 } from 'rxjs';
 import { catchError, delay, finalize, map, take, tap } from 'rxjs/operators';
-import { isArray } from 'util';
 import { Voucher } from '../model';
 import { VouchersService } from '../voucher.service';
 import { DoublerService } from './doubler.service';

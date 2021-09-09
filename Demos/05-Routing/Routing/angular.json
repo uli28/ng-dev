@@ -20,7 +20,6 @@
           "skipTests": true
         },
         "@schematics/angular:module": {
-          "skipTests": true
         },
         "@schematics/angular:pipe": {
           "skipTests": true
@@ -56,7 +55,13 @@
               "node_modules/prismjs/components/prism-typescript.min.js",
               "node_modules/prismjs/components/prism-css.min.js",
               "node_modules/prismjs/plugins/line-highlight/prism-line-highlight.js"
-            ]
+            ],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -82,7 +87,8 @@
                 }
               ]
             }
-          }
+          },
+          "defaultConfiguration": ""
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",

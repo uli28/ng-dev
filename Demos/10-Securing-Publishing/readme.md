@@ -1,28 +1,5 @@
 # Security
 
-## Configure SSL in Angular
-
-- Execute `bash generate.sh` `create-certs\` in Git Bash to create certs.
-- Copy `server.crt`and `server.key` to newly created `ssl` folder of Angular project.`
-- Register in `angular.json`
-
-```typescript
-"serve": {
-    "builder": "@angular-devkit/build-angular:dev-server",
-    "options": {
-        "browserTarget": "ngDemoApp:build",
-        "ssl": true,
-        "sslKey": "/ssl/server.key",
-        "sslCert": "/ssl/server.crt"
-    },
-```
-
-Get Chrome to trust self signed localhost:
-
-```
-chrome://flags/#allow-insecure-localhost
-```
-
 ## Auth Bascis
 
 [JSON Web Tokens - Jwt](https://jwt.io/)
