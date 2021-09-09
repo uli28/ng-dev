@@ -2,7 +2,7 @@ import { Voucher } from './voucher.mode';
 
 export class VoucherValidator {
   static validate(voucher: Voucher) {
-    let detailSumOk: boolean;
+    let detailSumOk: boolean = false;
     if (voucher.Details != null) {
       let sumD = 0;
       for (const vd of voucher.Details) {

@@ -27,7 +27,8 @@ describe('FoodComponent:', () => {
 
   it('removes the item from the list', () => {
     comp.food = foodData;
-    mockFS.deleteItem.and.returnValue(of(serviceResult));
+    //TODO: Find deleteItem.and.returnValue
+    // mockFS.deleteItem.and.returnValue(of(serviceResult));
     comp.deleteFood(foodData[2]);
 
     expect(comp.food.length).toBe(3);
@@ -35,7 +36,7 @@ describe('FoodComponent:', () => {
 
   it('should call deleteItem', () => {
     comp.food = foodData;
-    mockFS.deleteItem.and.returnValue(of(serviceResult));
+    // mockFS.deleteItem.and.returnValue(of(serviceResult));
 
     comp.deleteFood(foodData[3]);
     expect(mockFS.deleteItem).toHaveBeenCalledWith(foodData[3]);

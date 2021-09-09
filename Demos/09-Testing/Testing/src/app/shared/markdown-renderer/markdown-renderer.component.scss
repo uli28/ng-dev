@@ -1,3 +1,4 @@
+@use '~@angular/material' as mat;
 @import 'theme.scss';
 
 mat-expansion-panel {
@@ -5,9 +6,9 @@ mat-expansion-panel {
 }
 
 mat-expansion-panel-header {
-  background-color: mat-color($app-accent);
+  background-color: mat.get-color-from-palette($app-accent);
 }
 
 mat-panel-title {
-  border-bottom: 1px solid mat-color($app-accent);
+  border-bottom: 1px solid mat.get-color-from-palette($app-accent);
 }

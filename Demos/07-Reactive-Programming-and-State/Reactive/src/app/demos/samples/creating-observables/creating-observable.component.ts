@@ -28,9 +28,12 @@ export class CreatingObservableComponent implements OnInit {
     // next handler or observer obj
 
     const observer = {
-      next: () => (
-        data: number // onNext
-      ) => console.log('current number: ', data),
+      next:
+        () =>
+        (
+          data: number // onNext
+        ) =>
+          console.log('current number: ', data),
       error: this.onErr,
       complete: this.onComplete,
     };
@@ -40,9 +43,12 @@ export class CreatingObservableComponent implements OnInit {
     // same writte as inline style
 
     of([2, 5, 9, 12, 22]).subscribe({
-      next: () => (
-        data: number // onNext
-      ) => console.log('current number: ', data),
+      next:
+        () =>
+        (
+          data: number // onNext
+        ) =>
+          console.log('current number: ', data),
       error: this.onErr,
       complete: this.onComplete,
     });
@@ -65,14 +71,14 @@ export class CreatingObservableComponent implements OnInit {
   }
 
   // Wraps an Object that uses Callbacks
-  getGeolocation$(): Observable<Position> {
+  getGeolocation$(): Observable<any> {
     return new Observable((observer) => {
       navigator.geolocation.getCurrentPosition(
-        (pos: Position) => {
+        (pos: any) => {
           observer.next(pos);
           observer.complete();
         },
-        (err: PositionError) => {
+        (err: any) => {
           observer.error(err);
         }
       );
