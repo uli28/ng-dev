@@ -31,7 +31,7 @@ curl https://raw.githubusercontent.com/ARambazamba/az-400-v2/master/Labs/Setup/c
 
 ## Connect to VM
 
-Go to Ressource Group `az204-lab` and connect to VM using RDP and the credentials that you have used in the script:
+Go to Ressource Group `ng-dev` and connect to VM using RDP and the credentials that you have used in the script:
 
 Download RDP File:
 
@@ -48,8 +48,8 @@ Sign In & Remember:
 Credentials:
 
 ```
-user=azlabadmin
-pwd=Lab@dmin1234
+user=ng-devlabadmin
+pwd=Lab@dmin1233
 ```
 
 ![sign-in.jpg](_images/sign-in.jpg)
@@ -60,7 +60,7 @@ Accept Settings:
 
 ## Install Software
 
-To install Software run the script `setup-az-400.ps1` from an elevated PowerShell prompt:
+To install Software run the script `setup-angular-dev.ps1` from an elevated PowerShell prompt:
 
 ![run-as](_images/run-as.jpg)
 
@@ -95,10 +95,10 @@ The forking-workflow allows you to commit your changes to your fork of the repo 
 Clone Class Repo:
 
 ```bash
-git clone https://github.com/Student01/AZ-400-v2
+git clone https://github.com/Student01/ng-dev
 ```
 
-> Note: If you have forked the class repo clone your own fork, otherwise use https://github.com/ARambazamba/AZ-400-v2
+> Note: If you have forked the class repo clone your own fork, otherwise use https://github.com/ARambazamba/ng-dev
 
 ---
 
@@ -124,7 +124,7 @@ Execute script `setup-wsl2.ps1` multible times to setup WSL2
 
 ```powershell
 Set-ExecutionPolicy Bypass -Scope Process -Force;
-Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/ARambazamba/AZ-400-v2/master/Setup/setup-wsl2.ps1'))
+Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/ARambazamba/ng-dev/master/Setup/setup-wsl2.ps1'))
 ```
 
 First Run:
