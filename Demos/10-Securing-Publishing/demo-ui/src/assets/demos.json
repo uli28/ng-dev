@@ -6,8 +6,8 @@
   },
 
   {
-    "url": "adal",
-    "title": "Azure AD Auth - ADAL",
+    "url": "msal",
+    "title": "Microsoft Identity - MSAL",
     "component": "AdalComponent"
   }
 ]

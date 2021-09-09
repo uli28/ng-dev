@@ -8,9 +8,9 @@ import { MaterialModule } from '../material.module';
 import { SharedModule } from '../shared/shared.module';
 import { DemoContainerComponent } from './demo-container/demo-container.component';
 import { DemoService } from './demo.service';
-import { AdalComponent } from './samples/adal/adal.component';
 import { FirebaseComponent } from './samples/firebase/firebase.component';
 import { FirebaseAuthInterceptor } from '../fbauth/firebase/firebase-auth.interceptor';
+import { MsalComponent } from './samples/msal/msal.component';
 
 const demoRoutes: Routes = [
   {
@@ -19,13 +19,13 @@ const demoRoutes: Routes = [
 
     children: [
       { path: 'firebase', component: FirebaseComponent },
-      { path: 'adal', component: AdalComponent },
+      { path: 'msal', component: MsalComponent },
     ],
   },
 ];
 
 @NgModule({
-  declarations: [DemoContainerComponent, FirebaseComponent, AdalComponent],
+  declarations: [DemoContainerComponent, FirebaseComponent, MsalComponent],
   imports: [
     CommonModule,
     FormsModule,

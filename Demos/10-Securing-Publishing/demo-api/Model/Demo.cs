@@ -1,4 +1,4 @@
-namespace ngDemoAppApi.Controllers
+namespace ngDemoApp
 {
 
     public class Demo

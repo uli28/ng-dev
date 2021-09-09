@@ -3,7 +3,7 @@ export const environment = {
   authEnabled: false,
   title: 'ngSecurity',
   markdownPath: '/assets/markdown/',
-  api: 'http://localhost:3000/',
+  api: 'https://localhost:5001/',
   firebaseConfig: {
     apiKey: 'AIzaSyDK-xtrfT4YBzq4Hzmf5kEwHgHbYw4UQTc',
     authDomain: 'ngrx-firebase-fb51b.firebaseapp.com',

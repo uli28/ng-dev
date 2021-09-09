@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace ngDemoAppApi.Controllers
+namespace ngDemoApp
 {
     [Route("api/[controller]")]
     [Authorize]
