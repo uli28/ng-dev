@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
@@ -10,6 +10,7 @@ import { DemoContainerComponent } from './demo-container/demo-container.componen
 import { DemoService } from './demo.service';
 import { AdalComponent } from './samples/adal/adal.component';
 import { FirebaseComponent } from './samples/firebase/firebase.component';
+import { FirebaseAuthInterceptor } from '../fbauth/firebase/firebase-auth.interceptor';
 
 const demoRoutes: Routes = [
   {
@@ -35,6 +36,13 @@ const demoRoutes: Routes = [
     SharedModule,
     FBAuthModule,
   ],
-  providers: [DemoService],
+  providers: [
+    DemoService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: FirebaseAuthInterceptor,
+      multi: true,
+    },
+  ],
 })
 export class DemosModule {}

@@ -3,14 +3,23 @@ Notice that this sample has been used to its own module fbauth.module.ts to allo
 To be able to use Firebase Auth you must:
 
 - Create an account at [Firebase](https://firebase.google.com/)
-- Update your Firebase Config in environment.ts
+- Update your Firebase Config in `environment.ts`
 
-```
-firebaseConfig: {
-   ...
-},
-```
+   ```
+   firebaseConfig: {
+      ...
+   },
+   ```
 
-> Note: Don't check in this config into source control - mine will be deleted after this presentation!
+- Register FirebaseAuthInterceptor in `demos.module.ts`:
 
-When using together with .NET Core Api register FirebaseInterceptor
+   ```json
+   providers: [
+      ...,
+      {
+      provide: HTTP_INTERCEPTORS,
+      useClass: FirebaseAuthInterceptor,
+      multi: true,
+      },
+   ],
+   ```

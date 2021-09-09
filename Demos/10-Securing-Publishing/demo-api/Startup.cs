@@ -33,7 +33,7 @@ namespace ngDemoAppApi
             //Configuration
             services.AddSingleton < IConfiguration > (Configuration);  
 
-            var use firebaseAuth = Configuration["UseFirebaseAuth"];
+            var firebaseAuth = Configuration["UseFirebaseAuth"];
 
             //Firebase Auth
             var fbProjectId = Configuration["FirebaseProjectId"];

@@ -24,13 +24,7 @@ import { FirebaseAuthInterceptor } from './fbauth/firebase/firebase-auth.interce
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AuthModule,
   ],
-  providers: [
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: FirebaseAuthInterceptor,
-      multi: true,
-    },
-  ],
+  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
