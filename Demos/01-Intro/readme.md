@@ -4,7 +4,7 @@
 
 [Frequently used Angular Modules](https://angular.io/guide/frequent-ngmodules)
 
-[Angular Augury](https://augury.rangle.io/)
+[Angular Dev Tools](https://chrome.google.com/webstore/detail/angular-devtools/ienfalfjdbdpebioblfackkekamfmbnh)
 
 ## Extensions
 
