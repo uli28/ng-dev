@@ -1,0 +1,3 @@
+- Show [ES Lint Documentations - Rules](https://eslint.org/docs/rules)
+- Show [Angular ES Lint Repo](https://github.com/angular-eslint/angular-eslint)
+- Explain `.eslintrc.json`

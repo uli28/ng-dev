@@ -13,7 +13,7 @@
 ### TypeScript Fundamentals
 
 - ECMA Script Standards
-- TypeScript Overview, Configuration, Debugging
+- TypeScript Overview, Configuration, Debugging, ES Lint
 - Types, Arrays & Functions
 - ECMA Script 6+ Essentials
 - Objects, Classes, Interfaces

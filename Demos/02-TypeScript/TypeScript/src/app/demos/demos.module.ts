@@ -1,8 +1,9 @@
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MaterialModule } from '../material.module';
+import { MarkdownModule } from 'ngx-markdown';
 import { DemoContainerComponent } from './demo-container/demo-container.component';
 import { DemoService } from './demo.service';
 import { ClassesComponent } from './samples/classes/classes.component';
@@ -13,6 +14,8 @@ import { ModulesComponent } from './samples/modules/modules.component';
 import { ObjectLiteralsComponent } from './samples/object-literals/object-literals.component';
 import { ServicesComponent } from './samples/services/services.component';
 import { TypesComponent } from './samples/types/types.component';
+import { EslintComponent } from './samples/eslint/eslint.component';
+import { SharedModule } from '../shared/shared.module';
 
 const demoRoutes: Routes = [
   {
@@ -28,6 +31,7 @@ const demoRoutes: Routes = [
       { path: 'gernerics', component: GenericsComponent },
       { path: 'modules', component: ModulesComponent },
       { path: 'services', component: ServicesComponent },
+      { path: 'eslint', component: EslintComponent },
     ],
   },
 ];
@@ -43,12 +47,17 @@ const demoRoutes: Routes = [
     ModulesComponent,
     ObjectLiteralsComponent,
     ServicesComponent,
+    EslintComponent,
   ],
   imports: [
     CommonModule,
     RouterModule.forChild(demoRoutes),
     MaterialModule,
     HttpClientModule,
+    SharedModule,
+    MarkdownModule.forRoot({
+      loader: HttpClient,
+    }),
   ],
   providers: [DemoService],
 })
