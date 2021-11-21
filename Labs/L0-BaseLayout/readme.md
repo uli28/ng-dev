@@ -1,4 +1,4 @@
-# Food List Layout
+# Food App - Base Layout
 
 Create a food-app base layout:
 
