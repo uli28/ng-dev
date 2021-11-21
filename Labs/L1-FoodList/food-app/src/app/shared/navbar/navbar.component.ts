@@ -4,7 +4,7 @@ import { NavItem } from "../navItem";
 @Component({
   selector: "app-navbar",
   templateUrl: "./navbar.component.html",
-  styleUrls: ["./navbar.component.scss"]
+  styleUrls: ["./navbar.component.scss"],
 })
 export class NavbarComponent implements OnInit {
   constructor() {}
@@ -14,8 +14,8 @@ export class NavbarComponent implements OnInit {
   ngOnInit() {
     this.items = [
       { title: "Home", url: "/" },
-      { title: "Products", url: "/products" },
-      { title: "About", url: "/about" }
+      { title: "Food", url: "/food" },
+      { title: "About", url: "/about" },
     ];
   }
 }
