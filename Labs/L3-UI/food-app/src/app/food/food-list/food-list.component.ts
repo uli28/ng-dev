@@ -7,8 +7,8 @@ import {
   SimpleChanges,
   OnChanges,
 } from "@angular/core";
-import { FoodItem } from "src/app/shared/foodItem";
 import { MatTableDataSource } from "@angular/material/table";
+import { FoodItem } from "../foodItem";
 
 @Component({
   selector: "app-food-list",
@@ -29,7 +29,6 @@ export class FoodListComponent implements OnInit, OnChanges {
   ngOnInit() {}
 
   ngOnChanges(changes: SimpleChanges) {
-    console.log(changes.food.currentValue);
     this.dataSource = new MatTableDataSource(changes.food.currentValue);
   }
 

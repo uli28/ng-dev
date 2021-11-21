@@ -6,12 +6,15 @@ import { AboutComponent } from "./about/about.component";
 
 const routes: Routes = [
   { path: "", component: HomeComponent },
-  { path: "food", component: FoodContainerComponent },
-  { path: "about", component: AboutComponent }
+  {
+    path: "food",
+    loadChildren: () => import("./food/food.module").then((m) => m.FoodModule),
+  },
+  { path: "about", component: AboutComponent },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy' })],
-  exports: [RouterModule]
+  imports: [RouterModule.forRoot(routes, { relativeLinkResolution: "legacy" })],
+  exports: [RouterModule],
 })
 export class AppRoutingModule {}

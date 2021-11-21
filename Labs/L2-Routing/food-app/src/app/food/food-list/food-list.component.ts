@@ -1,10 +1,10 @@
 import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
-import { FoodItem } from "src/app/shared/foodItem";
+import { FoodItem } from "../foodItem";
 
 @Component({
   selector: "app-food-list",
   templateUrl: "./food-list.component.html",
-  styleUrls: ["./food-list.component.scss"]
+  styleUrls: ["./food-list.component.scss"],
 })
 export class FoodListComponent implements OnInit {
   constructor() {}
