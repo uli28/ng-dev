@@ -1,27 +1,22 @@
 <div
-  gdAreas="navbar navbar | sidemenu maincontent"
-  gdAreas.lt-md="navbar  | maincontent"
+  gdAreas="navbar | mainrow"
+  gdAreas.lt-md="navbar  | mainrow"
   gdGap="0.5rem"
   gdRows="80px auto"
-  gdColumns="150px auto"
-  gdColumns.lt-md="100%"
+  gdColumns="auto"
   class="grid"
 >
   <div gdArea="navbar"><app-navbar></app-navbar></div>
-  <!-- <div gdArea="sidemenu" fxHide.lt-md class="menu">
-    <app-sidebar></app-sidebar>
-  </div>
-  <div gdArea="maincontent" class="main">
-    <router-outlet></router-outlet>
-  </div> -->
-
-  <mat-sidenav-container>
-    <mat-sidenav>
-      <app-sidebar></app-sidebar>
-    </mat-sidenav>
-    <mat-sidenav-content>
-      <router-outlet></router-outlet>
-    </mat-sidenav-content>
-  </mat-sidenav-container>
-
+  <div gdArea="mainrow" class="main">
+    <mat-sidenav-container>
+      <mat-sidenav  #sidenav
+      [opened]="ms.sideNavVisible | async"
+      [mode]="ms.sideNavPosition | async">
+        <app-sidebar></app-sidebar>
+      </mat-sidenav>
+      <mat-sidenav-content  [ngStyle]="getWorbenchStyle()">
+        <router-outlet></router-outlet>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+  </div> 
 </div>

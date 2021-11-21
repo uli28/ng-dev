@@ -8,6 +8,16 @@
   background: lightgrey;
 }
 
+mat-sidenav-container{
+  background-color: white;
+  min-width: 900px;
+}
+
+mat-sidenav-content{
+  
+}
+
 .main{
   margin: 0 0.5rem;  
+  min-height: 50vh;
 }
