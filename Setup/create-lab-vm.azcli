@@ -3,7 +3,7 @@ loc=westeurope
 grp=ng-dev
 vmname=labvm-$rnd
 user=ng-devlabadmin
-pwd=Lab@dmin1233
+pwd=Lab@dmin1234
 
 az group create -n $grp -l $loc
 
