@@ -20,6 +20,12 @@ Create the following components:
 ng g c shared/navbar
 ```
 
+Start the app:
+
+```
+ng s -o
+```
+
 Load the menu items in the navbar using a menu.service that thakes its values from `assets/menuItems.json`:
 
 ```
