@@ -9,9 +9,6 @@ Companion Material for Angular Developer Basics by [Alexander Pajer](https://www
 - [Instructor Demos](./Demos)
 - [Guided Scripts to setup an Azure hosted Development & Lab VM](./Setup)
   - [Base Dev Environment Setup inkluding Visual Studio Code Extensions](./Setup/#basics)
-  - [Setup Windows Subsystem for Linux 2 - WSL2](./Setup/#wsl)
-  - [Setup Docker & Kubernetes](./Setup/#docker-wsl)
-  - [Use Teams in VM](./Setup/#teams)
 - [Labs](./Labs)
 
 ## Required Cloud Ressources
