@@ -33,7 +33,7 @@ registerLocaleData(localeDe);
     MaterialModule,
     SharedModule,
   ],
-  providers: [{ provide: LOCALE_ID, useValue: 'de' }],
+  providers: [{ provide: LOCALE_ID, useValue: 'en' }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
