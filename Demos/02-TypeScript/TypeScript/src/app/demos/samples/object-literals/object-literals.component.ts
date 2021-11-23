@@ -60,22 +60,9 @@ export class ObjectLiteralsComponent implements OnInit {
   destructuring() {
     debugger;
 
-    // object pattern matching
-    const { lName, fName } = { fName: 'John', lName: 'Doe' };
-    // let { Name, FirstName } = { fName: "John", lName: "Doe" };
-
-    // output: Doe, John
-    console.log(lName + ', ' + fName);
-
-    const rect = { x: 0, y: 10, width: 15, height: 20 };
-
-    // Destructuring assignment
-    // const { x, y, width, height } = rect;
-    // console.log(x, y, width, height); // 0,10,15,20
-
-    // // Destructuring using REST Param
-    // const { w, x, ...remaining } = { w: 1, x: 2, y: 3, z: 4 };
-    // console.log(w, x, remaining); // 1, 2, {y:3,z:4}
+    let fullPerson = { firstName: 'John', name: 'Doe', age: 17 };
+    let { firstName, name } = fullPerson;
+    console.log(firstName + ', ' + name);
   }
 
   objAssign() {

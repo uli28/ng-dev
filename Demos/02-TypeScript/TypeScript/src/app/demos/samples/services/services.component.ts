@@ -46,7 +46,7 @@ export class ServicesComponent implements OnInit {
         console.log('Response received from fetch', resp);
         return resp.json(); // Notice Response Object
       })
-      .then((data: Voucher[]) => {
+      .then((data: any[]) => {
         console.log('Data received from fetch', data);
       });
   }

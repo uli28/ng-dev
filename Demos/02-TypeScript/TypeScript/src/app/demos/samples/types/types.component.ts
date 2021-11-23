@@ -205,14 +205,14 @@ export class TypesComponent implements OnInit {
     console.log('Person with index 1 is' + customers[1]);
 
     // for ... of
-    const list: number[] = [4, 5, 6];
+    const list: string[] = ['a', 'b', 'c'];
 
     for (const i in list) {
       console.log(i); // "0", "1", "2", -> for ... in loop returns index
     }
 
     for (const i of list) {
-      console.log(i); // "4", "5", "6"  -> for ... of loop returns element
+      console.log(i); // "a", "b", "c"  -> for ... of loop returns element
     }
 
     // array destructuring
@@ -236,6 +236,19 @@ export class TypesComponent implements OnInit {
       { name: 'bananas', quantity: 0, price: 5, region: 'caribean' },
       { name: 'cherries', quantity: 5, price: 8, region: 'europe' },
     ]; // -> Json Objects from REST call
+
+    const fruitsother: {
+      name: string;
+      quantity: number;
+      price: number;
+      region: string;
+    }[] = [
+      { name: 'apples', quantity: 2, price: 3, region: 'europe' },
+      { name: 'bananas', quantity: 0, price: 5, region: 'caribean' },
+      { name: 'cherries', quantity: 5, price: 8, region: 'europe' },
+    ]; // -> Json Objects from REST call
+
+    var mystate: 'born' | 'died';
 
     // forEach
     fruits.forEach(function (fruit) {
