@@ -4,7 +4,12 @@
 
 - Change to base layout in app.component to use [CSS Grid](https://css-tricks.com/snippets/css/complete-guide-grid/) and the [@angular/flex-layout css grid implementation](https://github.com/angular/flex-layout/blob/master/guides/Grid.md). Use the [Demo App](https://github.com/arambazamba/ng-dev/blob/main/Demos/06-UI/UserInterface/src/app/app.component.html) Layout as a reference.
 
-- Use a Material Design for Food App by adding [Angular Material](https://material.angular.io/guide/getting-started)
+- Implement a Material Design for Food App by adding [Angular Material](https://material.angular.io/guide/getting-started):
+    - Use [mat-toolbar](https://material.angular.io/components/toolbar/overview) in the `navbar.component`
+    - Use [mat-table](https://material.angular.io/components/table/overview) for the `food-list.component`
+    - Use [mat-input](https://material.angular.io/components/form-field/overview) for `food-edit.component`
+
+
 
 ![material](_images/material.png)
 
