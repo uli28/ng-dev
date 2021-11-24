@@ -6,9 +6,9 @@
 npm install --save @angular/flex-layout@latest @angular/cdk@latest
 ```
 
-- Hide the sidebar on devices with a horizontal width less than medium. We will add a toggle button in another lab.
-
 - Change to base layout in app.component to use [CSS Grid](https://css-tricks.com/snippets/css/complete-guide-grid/) and the [@angular/flex-layout css grid implementation](https://github.com/angular/flex-layout/blob/master/guides/Grid.md). Use the [Demo App](https://github.com/arambazamba/ng-dev/blob/main/Demos/06-UI/UserInterface/src/app/app.component.html) Layout as a reference.
+    
+    - Hide the sidebar on devices with a horizontal width less than medium. We will add a toggle button in another lab.
 
 - Implement a Material Design for Food App by adding [Angular Material](https://material.angular.io/guide/getting-started):
     - Use [mat-toolbar](https://material.angular.io/components/toolbar/overview) in the `navbar.component`
