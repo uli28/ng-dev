@@ -16,10 +16,11 @@ export class AppComponent {
     this.ms.sideNavVisible.subscribe((visible) => {
       result = visible
         ? {
-            'margin-left': '10px',
+            'padding-left': '10px',
           }
         : {};
     });
+    console.log('style:', result);
     return result;
   }
 }
