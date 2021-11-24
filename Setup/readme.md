@@ -71,7 +71,7 @@ git config --global user.name "Your Name"
 git config --global user.email "your.email@yourdomain.com"
 ```
 
-Go to `https://github.com/ARambazamba/az-204` and fork the repo
+Go to `https://github.com/arambazamba/ng-dev` and fork the repo
 
 ![forking-wf](_images/fork.jpg)
 
