@@ -1,0 +1,18 @@
+.form{
+    width: 100%;
+}
+
+div.form > div {
+    min-width: 600px;
+    width: 100%;
+}
+
+
+label{
+    margin-right: 2rem;
+    min-width: 200px !important;
+}
+
+input{
+    min-width: 400px;
+}
