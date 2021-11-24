@@ -1,4 +1,4 @@
-# Lab VM Setup Guide
+# Lab Setup Guide
 
 ## Create VM - If you want to work on you own machine you can skip this step
 
