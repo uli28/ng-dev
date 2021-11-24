@@ -2,10 +2,9 @@
   "skills": [
     {
       "id": 1,
-      "name": "Custom Theme",
+      "name": "Custom Angular Theme",
       "hours": 4,
-      "completed": true,
-      "dueDate": "2020-08-06T15:18:22.9829481"
+      "completed": true
     },
     {
       "id": 2,

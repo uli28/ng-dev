@@ -1,0 +1,16 @@
+### Simple Get
+
+GET  http://localhost:3000/skills HTTP/1.1
+content-type: application/json
+
+
+### Simple Post
+POST http://localhost:3000/skills HTTP/1.1
+content-type: application/json
+
+{
+      "name": 'Cooking Pad Krapao',
+      "hours": 1,
+      "completed": false,
+      "dueDate": new Date()
+}
