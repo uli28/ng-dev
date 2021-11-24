@@ -10,7 +10,7 @@
 
 [A Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
 
-[Flexbox Playground](https://demos.scotch.io/visual-guide-to-css3-flexbox-flexbox-playground/demos/)
+[Flexbox Playground](https://flexboxfroggy.com/)
 
 ## CSS Grid
 
