@@ -17,13 +17,33 @@ export class FoodContainerComponent implements OnInit {
     this.fs.getFood().subscribe((data) => (this.food = data));
   }
 
+  addFood() {
+    this.selected = { name: "", price: 0, calories: 0 } as FoodItem;
+  }
+
   selectFood(f: FoodItem) {
     this.selected = { ...f };
   }
 
+  deleteFood(f: FoodItem) {
+    this.fs.deleteSkill(f.id).subscribe(() => {
+      let deleted = this.food.filter((item) => item.id != f.id);
+      this.food = [...deleted];
+    });
+  }
+
   foodSaved(f: FoodItem) {
-    let arr = this.food.filter((item) => item.id != f.id);
-    arr.push(f);
-    this.food = [...arr];
+    if (f.id) {
+      this.fs.updateSkill(f).subscribe((result) => {
+        let existing = this.food.find((f) => f.id == f.id);
+        Object.assign(existing, f);
+        this.food = [...this.food];
+      });
+    } else {
+      this.fs.addSkill(f).subscribe((result) => {
+        this.food.push(f);
+        this.food = [...this.food];
+      });
+    }
   }
 }
