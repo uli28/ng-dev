@@ -10,7 +10,7 @@ npm install --save @angular/flex-layout@latest @angular/cdk@latest
     
     - Hide the sidebar on devices with a horizontal width less than medium. We will add a toggle button in another lab.
 
-- Implement a Material Design for Food App by adding [Angular Material](https://material.angular.io/guide/getting-started):
+- Implement a Material Design for Food App by [adding Angular Material](https://material.angular.io/guide/getting-started):
     - Use [mat-toolbar](https://material.angular.io/components/toolbar/overview) in the `navbar.component`
     - Use [mat-table](https://material.angular.io/components/table/overview) for the `food-list.component`
     - Use [mat-input](https://material.angular.io/components/form-field/overview) for `food-edit.component`
