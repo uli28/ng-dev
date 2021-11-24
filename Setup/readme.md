@@ -1,6 +1,9 @@
 # Lab Setup Guide
 
-## Create VM - If you want to work on you own machine you can skip this step
+- Create VM (optional)
+- Install software
+
+## Create VM
 
 Execute `create-lab-vm.sh` or run the following remote script in Cloud Shell
 
