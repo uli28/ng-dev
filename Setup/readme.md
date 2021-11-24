@@ -1,25 +1,8 @@
 # Lab VM Setup Guide
 
-## Create VM
+## Create VM - If you want to work on you own machine you can skip this step
 
-We are using this image and vm size because it supports nested virtualization used for Hyper-V and WSL2 Support
-
-Script `create-lab-vm.azcli`:
-
-```bash
-rnd=$RANDOM
-loc=westeurope
-grp=ng-dev
-vmname=labvm-$rnd
-user=ng-devlabadmin
-pwd=Lab@dmin1234
-
-az group create -n $grp -l $loc
-
-az vm create -g $grp -n $vmname --admin-username $user --admin-password $pwd --image MicrosoftWindowsDesktop:Windows-10:20h2-pro:19042.746.2101092352 --size Stan
-```
-
-> Note: You could also execute `create-lab-vm.sh` or run the following remote script in Cloud Shell
+Execute `create-lab-vm.sh` or run the following remote script in Cloud Shell
 
 ```bash
 curl https://raw.githubusercontent.com/arambazamba/ng-dev/main/Setup/create-lab-vm.sh | bash
@@ -29,7 +12,7 @@ curl https://raw.githubusercontent.com/arambazamba/ng-dev/main/Setup/create-lab-
 
 > Note: In order for Docker to work on a Windows 10 host you need to install Hyper-V or use Windows Subsystem for Linux 2 (WSL2). A detailed Setup Guide can be found [here](https://github.com/ARambazamba/ClassSetup)
 
-## Connect to VM
+### Connect to VM
 
 Go to Ressource Group `ng-dev` and connect to VM using RDP and the credentials that you have used in the script:
 
