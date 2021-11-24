@@ -8,7 +8,9 @@ Companion Material for Angular Developer Basics by [Alexander Pajer](https://www
   - [Document Repos using Markdown](./Tooling/03-Markdown)
 - [Instructor Demos](./Demos)
 - [Lab Setup including an optional Azure hosted Lab VM](./Setup)
-  - [Base Dev Environment Setup inkluding Visual Studio Code Extensions](./Setup/#basics)
+  - Create VM (optional)
+  - Install software
+  - Fork & Clone Class Repo and set Github requirements
 - [Labs](./Labs)
 
 ## Required Cloud Ressources
