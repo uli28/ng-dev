@@ -9,4 +9,4 @@
 ![material](_images/material.png)
 
 - Implement a material.module and copy its default content from the [Angular Material Docs](https://material.angular.io/components/categories) or any Sample in [Stackblitz](https://stackblitz.com/run?file=src/app/badge-overview-example.ts)
-- Optional: - Implement a custom material theme with a [custom color palette](https://material.io/resources/color/#!/?view.left=0&view.right=0). Use the [Demo App](https://github.com/arambazamba/ng-dev/tree/main/Demos/06-UI/UserInterface/src/theme) Theme as a reference.
+- Optional: Implement a custom material theme with a [custom color palette](https://material.io/resources/color/#!/?view.left=0&view.right=0). Use the [Demo App](https://github.com/arambazamba/ng-dev/tree/main/Demos/06-UI/UserInterface/src/theme) Theme as a reference.
