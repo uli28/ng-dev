@@ -1,6 +1,10 @@
 # Food App - UI
 
-- Add the [@angular/flex-layout](https://github.com/angular/flex-layout/wiki) library to the project and implement a responsive behaviour. Hide the sidebar on devices with a horizontal width less than medium. We will add a toggle button in another lab.
+- Add the [@angular/flex-layout](https://github.com/angular/flex-layout/wiki) library to the project. Add it to `app.module.ts` and implement a responsive behaviour. Hide the sidebar on devices with a horizontal width less than medium. We will add a toggle button in another lab.
+
+```
+npm install --save @angular/flex-layout@latest @angular/cdk@latest
+```
 
 - Change to base layout in app.component to use [CSS Grid](https://css-tricks.com/snippets/css/complete-guide-grid/) and the [@angular/flex-layout css grid implementation](https://github.com/angular/flex-layout/blob/master/guides/Grid.md). Use the [Demo App](https://github.com/arambazamba/ng-dev/blob/main/Demos/06-UI/UserInterface/src/app/app.component.html) Layout as a reference.
 
