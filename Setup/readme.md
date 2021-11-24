@@ -2,6 +2,7 @@
 
 - Create VM (optional)
 - Install software
+- Fork & Clone Class Repo and set Github requirements
 
 ## Create VM
 
