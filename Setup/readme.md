@@ -54,7 +54,7 @@ Base Software Requirements:
 - [Angular Language Service](https://marketplace.visualstudio.com/items?itemName=Angular.ng-template)
 - [Git](https://git-scm.com/downloads)
 
-To install Software run the script `setup-angular-dev.ps1` from an elevated PowerShell prompt:
+To install an optimal software configuration run the script `setup-angular-dev.ps1` from an elevated PowerShell prompt:
 
 ![run-as](_images/run-as.jpg)
 
