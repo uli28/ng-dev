@@ -1,17 +1,22 @@
 <mat-card>
   <mat-card-header>
-    <mat-card-title>Simple Person Card - One way binding</mat-card-title>
+    <mat-card-title>Ode to my dogs</mat-card-title>
   </mat-card-header>
 
-  <mat-card-content>
+  <mat-card-content fxLayout="column" fxLayoutGap="16px">
     <div>
       <img
         *ngIf="selectedPerson.imgUrl"
         [src]="selectedPerson.imgUrl"
         width="120px"
       />
+      <div>Person: {{ selectedPerson.name }}, {{ selectedPerson.age }}</div>
     </div>
-    <div>Person: {{ selectedPerson.name }}, {{ selectedPerson.age }}</div>
+   <div>
+    <select [(ngModel)]="selectedPerson">
+      <option *ngFor="let p of persons" [ngValue]="p">{{ p.name }}</option>
+    </select>
+   </div>
   </mat-card-content>
 </mat-card>
 
@@ -107,19 +112,6 @@
   />
   Female <br />
   {{ selectedPerson.name }} is {{ selectedPerson.gender }}
-</mat-card>
-
-<mat-card>
-  <mat-card-header>
-    <mat-card-title>
-      Bindings Select
-    </mat-card-title>
-  </mat-card-header>
-  <select [(ngModel)]="selectedPerson">
-    <option *ngFor="let p of persons" [ngValue]="p">{{ p.name }}</option>
-  </select>
-  <br />
-  You selected: {{ selectedPerson.name }}
 </mat-card>
 
 <mat-card>

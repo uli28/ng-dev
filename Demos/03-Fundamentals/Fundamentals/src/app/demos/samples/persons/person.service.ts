@@ -10,14 +10,28 @@ export class PersonService {
   data: Person[] = [
     {
       id: 1,
-      name: 'Alexander',
-      age: 49,
-      gender: 'male',
+      name: 'Cleo',
+      age: 15,
+      gender: 'famale',
       married: true,
-      imgUrl: '/assets/images/alex.jpg',
+      imgUrl: '/assets/images/cleo.png',
     },
-    { id: 2, name: 'Brunhilde', age: 27, gender: 'female', married: false },
-    { id: 3, name: 'Susi', age: 37, gender: 'female', married: false },
+    {
+      id: 2,
+      name: 'Soi',
+      age: 9,
+      gender: 'female',
+      married: false,
+      imgUrl: '/assets/images/soi.png',
+    },
+    {
+      id: 3,
+      name: 'Giro',
+      age: 11,
+      gender: 'male',
+      married: false,
+      imgUrl: '/assets/images/giro.png',
+    },
   ];
 
   getPersons(): Observable<Person[]> {
