@@ -25,9 +25,9 @@ export class PersonService {
     }).pipe(delay(1500));
   }
 
-  save(result: NgForm) {
-    console.log('ngForm:', result);
-    console.log('value:', result.value);
+  save(form: NgForm) {
+    console.log('ngForm:', form);
+    console.log('value:', form.value);
   }
 
   checkMailExists(email: string): Observable<boolean> {

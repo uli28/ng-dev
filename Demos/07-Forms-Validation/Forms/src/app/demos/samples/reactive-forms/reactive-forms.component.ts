@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { emptyPerson } from '../empty-person';
 import { Person } from '../person.model';
 import { PersonService } from '../person.service';
@@ -25,7 +25,7 @@ export class ReactiveFormsComponent implements OnInit {
     });
 
     this.personForm = new FormGroup({
-      name: new FormControl(this.person.name),
+      name: new FormControl(this.person.name, Validators.required),
       age: new FormControl(this.person.age),
       email: new FormControl(this.person.email),
       gender: new FormControl(this.person.gender),

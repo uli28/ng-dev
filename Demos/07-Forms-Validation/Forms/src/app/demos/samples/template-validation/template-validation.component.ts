@@ -1,8 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Person, WorkLifeBalance } from '../person.model';
-import { PersonService } from '../person.service';
 import { emptyPerson } from '../empty-person';
+import { Person } from '../person.model';
+import { PersonService } from '../person.service';
 
 @Component({
   selector: 'app-template-validation',
