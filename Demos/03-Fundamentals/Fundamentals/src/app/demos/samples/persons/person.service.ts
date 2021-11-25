@@ -32,6 +32,14 @@ export class PersonService {
       married: false,
       imgUrl: '/assets/images/giro.png',
     },
+    {
+      id: 4,
+      name: 'Flora',
+      age: 14,
+      gender: 'female',
+      married: false,
+      imgUrl: '/assets/images/flora.png',
+    },
   ];
 
   getPersons(): Observable<Person[]> {
