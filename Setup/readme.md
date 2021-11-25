@@ -47,6 +47,13 @@ Accept Settings:
 
 ## Install Software
 
+Base Software Requirements:
+
+- [Node 14.x](https://nodejs.org/download/release/v14.18.0/)
+- [Visual Studio Code](https://code.visualstudio.com/)
+- [Angular Language Service](https://marketplace.visualstudio.com/items?itemName=Angular.ng-template)
+- [Git](https://git-scm.com/downloads)
+
 To install Software run the script `setup-angular-dev.ps1` from an elevated PowerShell prompt:
 
 ![run-as](_images/run-as.jpg)
@@ -56,9 +63,7 @@ Set-ExecutionPolicy Bypass -Scope Process -Force;
 Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/arambazamba/ng-dev/main/Setup/setup-angular-dev.ps1'))
 ```
 
-> Note: This script will run for approx 20 min. No need to wait! In the meantime you can continue to fork and clone my repo as described in the next section.
-
-Congratulations you have completed the base setup of a labs vm!
+> Note: This script will run for approx 15 min. No need to wait! In the meantime you can continue to fork and clone my repo as described in the next section.
 
 ---
 
