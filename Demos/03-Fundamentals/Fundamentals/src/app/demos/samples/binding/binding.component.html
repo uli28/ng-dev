@@ -5,15 +5,15 @@
 
   <mat-card-content fxLayout="column" fxLayoutGap="16px">
     <div>
+      <h2>{{ selectedPerson.name }}, {{ selectedPerson.age }}</h2>
       <img
         *ngIf="selectedPerson.imgUrl"
         [src]="selectedPerson.imgUrl"
-        width="120px"
+        width="150px"
       />
-      <div>Person: {{ selectedPerson.name }}, {{ selectedPerson.age }}</div>
     </div>
    <div>
-    <select [(ngModel)]="selectedPerson">
+    <select [(ngModel)]="selectedPerson" style="width: 150px;">
       <option *ngFor="let p of persons" [ngValue]="p">{{ p.name }}</option>
     </select>
    </div>
