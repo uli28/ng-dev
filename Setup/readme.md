@@ -65,8 +65,6 @@ Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://raw
 
 > Note: This script will run for approx 15 min. No need to wait! In the meantime you can continue to fork and clone my repo as described in the next section.
 
----
-
 ## Fork & Clone Class Repo and set Github requirements
 
 Set User and E-Mail in order to be able to commit to git:
