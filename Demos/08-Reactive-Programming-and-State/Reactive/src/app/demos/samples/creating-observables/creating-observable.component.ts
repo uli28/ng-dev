@@ -17,7 +17,8 @@ export class CreatingObservableComponent implements OnInit {
   ngOnInit() {}
 
   subscribingObservables() {
-    of([2, 5, 9, 12, 22]).subscribe(
+    let arr = [2, 5, 9, 12, 22];
+    of(arr).subscribe(
       (data: number[]) => console.log('subscribe: ', data),
       this.onErr,
       this.onComplete
@@ -55,7 +56,8 @@ export class CreatingObservableComponent implements OnInit {
   }
 
   useObsFrom() {
-    from([2, 5, 9, 12, 22]).subscribe(
+    let arr = [2, 5, 9, 12, 22];
+    from(arr).subscribe(
       (data: number) => console.log('from(): ', data),
       this.onErr,
       this.onComplete
@@ -94,9 +96,9 @@ export class CreatingObservableComponent implements OnInit {
 
   // Use the mock Promise
   usePromiseToObs() {
-    const url = 'http://localhost:3000/todos';
+    const url = 'http://localhost:3000/skills';
     from(axios(url)).subscribe(
-      (data) => console.log('data from jquery', data),
+      (data) => console.log('data from axios', data),
       (err) => console.log('err:', err),
       () => console.log('complete')
     );

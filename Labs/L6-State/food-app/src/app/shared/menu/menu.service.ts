@@ -3,6 +3,7 @@ import { MediaObserver, MediaChange } from '@angular/flex-layout';
 import { BehaviorSubject, Observable, of } from 'rxjs';
 import { MenuItem } from './menu-item.model';
 import { filter, map } from 'rxjs/operators';
+import { MatDrawerMode } from '@angular/material/sidenav';
 
 @Injectable({
   providedIn: 'root',
@@ -12,8 +13,9 @@ export class MenuService {
     this.handleChange();
   }
 
-  sideNavVisible: BehaviorSubject<boolean> = new BehaviorSubject(true);
-  sideNavPosition: BehaviorSubject<string> = new BehaviorSubject('side');
+  sideNavVisible: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(true);
+  sideNavPosition: BehaviorSubject<MatDrawerMode> =
+    new BehaviorSubject<MatDrawerMode>('side');
 
   private handleChange() {
     this.mediaObserver

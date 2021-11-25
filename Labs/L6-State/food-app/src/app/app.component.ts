@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MatDrawerMode } from '@angular/material/sidenav';
 import { MenuService } from './shared/menu/menu.service';
 
 @Component({
@@ -8,8 +9,11 @@ import { MenuService } from './shared/menu/menu.service';
 })
 export class AppComponent {
   title = 'Food App';
+  mode: MatDrawerMode = 'side';
 
-  constructor(public ms: MenuService) {}
+  constructor(public ms: MenuService) {
+    ms.sideNavPosition.subscribe((m) => (this.mode = m));
+  }
 
   getWorbenchStyle() {
     let result = {};

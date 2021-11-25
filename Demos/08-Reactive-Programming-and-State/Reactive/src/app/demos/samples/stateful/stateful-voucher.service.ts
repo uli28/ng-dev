@@ -15,24 +15,21 @@ export class StatefulVoucherService {
     this.addLateVoucher();
   }
 
-  private vouchersArray: Voucher[] = [];
-  private vouchers: BehaviorSubject<Voucher[]> = new BehaviorSubject(
-    this.vouchersArray
-  );
+  private vouchers: BehaviorSubject<Voucher[]> = new BehaviorSubject([]);
 
   url = environment.apiUrl;
 
   private initData() {
     this.httpClient.get<Voucher[]>(this.url).subscribe((data) => {
-      this.vouchersArray = data;
-      this.vouchers.next(this.vouchersArray);
+      this.vouchers.next(data);
     });
   }
 
   addLateVoucher() {
     setTimeout(() => {
-      this.vouchersArray.push(lateVoucher as Voucher);
-      this.vouchers.next(this.vouchersArray);
+      var arr = this.vouchers.getValue();
+      arr.push(lateVoucher as Voucher);
+      this.vouchers.next(arr);
     }, 4000);
   }
 
@@ -47,15 +44,17 @@ export class StatefulVoucherService {
   insertVoucher(v: Voucher): any {
     // send to db
     this.httpClient.post(this.url, v).subscribe((result: any) => {
-      this.vouchersArray.push(result);
-      this.vouchers.next(this.vouchersArray);
+      var arr = this.vouchers.getValue();
+      arr.push(result as Voucher);
+      this.vouchers.next(arr);
     });
   }
 
   updateVoucher(v: Voucher): any {}
 
   deleteVoucher(id: number) {
-    this.vouchersArray = this.vouchersArray.filter((v) => v.ID != id);
-    this.vouchers.next(this.vouchersArray);
+    var arr = this.vouchers.getValue();
+    var updated = arr.filter((v) => v.ID != id);
+    this.vouchers.next(updated);
   }
 }

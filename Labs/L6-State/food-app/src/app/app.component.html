@@ -11,7 +11,7 @@
     <mat-sidenav-container>
       <mat-sidenav  #sidenav
       [opened]="ms.sideNavVisible | async"
-      [mode]="ms.sideNavPosition | async">
+      [mode]="mode">
         <app-sidebar></app-sidebar>
       </mat-sidenav>
       <mat-sidenav-content [ngStyle]="getWorbenchStyle()">
