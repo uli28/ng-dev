@@ -4,7 +4,7 @@
 - Install software
 - Fork & Clone Class Repo and set Github requirements
 
-## Create VM
+## Create VM - optional
 
 Execute `create-lab-vm.sh` or run the following remote script in Cloud Shell
 
