@@ -3,6 +3,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { RatingPipe } from '../../pipe/rating.pipe';
 import { By } from '@angular/platform-browser';
+import { inputItem } from './food-row.test';
 
 describe('Food Row Integration Test', () => {
   let fixture: ComponentFixture<FoodRowComponent>;
@@ -14,6 +15,8 @@ describe('Food Row Integration Test', () => {
     });
     fixture = TestBed.createComponent(FoodRowComponent);
     fixture.componentInstance.food = { name: 'Pad Thai', rating: 5 };
+    // import test data from external file
+    // fixture.componentInstance.food = inputItem;
     fixture.detectChanges();
   });
 
