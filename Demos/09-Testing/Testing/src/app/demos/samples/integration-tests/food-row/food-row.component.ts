@@ -14,7 +14,7 @@ export class FoodRowComponent implements OnInit {
 
   ngOnInit() {}
 
-  deleteFood(item) {
+  deleteFood(item: FoodItem) {
     this.delete.emit(item);
   }
 }

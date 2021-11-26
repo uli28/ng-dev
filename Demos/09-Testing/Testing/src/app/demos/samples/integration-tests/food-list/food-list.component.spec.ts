@@ -8,7 +8,7 @@ import { FoodRowComponent } from '../food-row/food-row.component';
 import { RatingPipe } from '../../pipe/rating.pipe';
 
 describe('Integration Test:', () => {
-  let mockFS;
+  let mockFS: any;
   const foodData = [
     { name: 'Pad Thai', rating: 5 },
     { name: 'Butter Chicken', rating: 5 },

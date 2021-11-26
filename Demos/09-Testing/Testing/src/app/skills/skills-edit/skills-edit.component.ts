@@ -26,9 +26,11 @@ export class SkillsEditComponent implements OnInit {
     // this.readParamUsingResolverObs();
   }
 
-  getSkill(id) {
+  getSkill(id: number) {
     this.service.getSkill(id).subscribe((data) => {
-      this.skill = data;
+      if (data) {
+        this.skill = data;
+      }
       console.log('setting skill: ', data);
     });
   }
@@ -54,24 +56,6 @@ export class SkillsEditComponent implements OnInit {
     if (state != null) {
       console.log('state: ', state);
     }
-  }
-
-  readParamUsingParamMap() {
-    // id param
-    this.route.paramMap.subscribe((params) => {
-      console.log('paramMap:', params);
-      const id = +params.get('id');
-    });
-    // query params
-    this.route.queryParamMap.subscribe((qpm) => {
-      console.log('paramMap:', qpm);
-      const readonly = qpm.get('readonly') === 'true';
-    });
-    // fragments
-    this.route.fragment.subscribe((fr) => {
-      console.log('paramMap:', fr);
-      const fragment = fr;
-    });
   }
 
   readParamUsingResolver() {

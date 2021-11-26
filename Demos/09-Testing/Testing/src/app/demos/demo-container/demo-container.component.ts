@@ -4,6 +4,7 @@ import { filter, map } from 'rxjs/operators';
 import { MenuService } from 'src/app/shared/menu/menu.service';
 import { environment } from 'src/environments/environment';
 import { DemoService } from '../demo.service';
+import { MatDrawerMode } from '@angular/material/sidenav';
 
 @Component({
   selector: 'app-demo-container',
@@ -16,11 +17,14 @@ export class DemoContainerComponent implements OnInit {
     private route: ActivatedRoute,
     private demoService: DemoService,
     public ms: MenuService
-  ) {}
+  ) {
+    ms.position$.subscribe((m) => (this.mode = m));
+  }
 
   title: string = environment.title;
   header$ = this.setMetadata();
   demos$ = this.demoService.getItems();
+  mode: MatDrawerMode = 'side';
 
   ngOnInit() {
     this.getWorbenchStyle();

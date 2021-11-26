@@ -19,8 +19,9 @@ export class SkillsListComponent implements OnInit {
   }
 
   getNextId(): number {
-    return (
-      this.skills.reduce((acc, f) => (acc = acc > f.id ? acc : f.id), 0) + 1
-    );
+    return 0;
+    // return (
+    //   this.skills.reduce((acc, f) => (acc = acc > f.id ? acc : f.id), 0) + 1
+    // );
   }
 }

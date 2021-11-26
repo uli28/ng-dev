@@ -10,7 +10,7 @@ import { FoodItem } from '../model/food-item.model';
 export class FoodComponent implements OnInit {
   constructor(private fs: FoodService) {}
 
-  food: FoodItem[] | null;
+  food: FoodItem[];
 
   ngOnInit() {
     this.fs.getItems().subscribe((data) => {

@@ -1,6 +1,6 @@
 import { RatingPipe } from './rating.pipe';
 
-let p;
+let p: any;
 
 beforeEach(() => {
   p = new RatingPipe();

@@ -2,8 +2,7 @@
   <mat-sidenav
     #sidenav
     [opened]="ms.visible$ | async"
-    [mode]="ms.position$ | async"
-  >
+    [mode]="mode">
     <mat-toolbar color="accent">
       <mat-toolbar-row>
         {{ title }}
