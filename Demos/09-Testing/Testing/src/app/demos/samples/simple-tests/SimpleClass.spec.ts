@@ -1,6 +1,6 @@
 import { SimpleClass } from './SimpleClass';
 
-describe('Hello world', () => {
+describe('SimpleClass.ts', () => {
   it('contains 12 charactes', () => {
     expect(SimpleClass.sayHelloWorld().length).toEqual(12);
   });

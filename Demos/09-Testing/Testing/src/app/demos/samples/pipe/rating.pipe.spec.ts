@@ -1,6 +1,6 @@
 import { RatingPipe } from './rating.pipe';
 
-let p: any;
+let p: RatingPipe;
 
 beforeEach(() => {
   p = new RatingPipe();
@@ -11,13 +11,12 @@ describe('RatingPipe', () => {
     expect(p).toBeTruthy();
   });
 
-  // tslint:disable-next-line: quotemark
   it("returns 'ausgezeichnet' when 2 is passed", () => {
     expect(p.transform(2)).toEqual('ausgezeichnet');
   });
 
   it('throws an err when a negative value is passed', () => {
-    const p = new RatingPipe();
+    let p = new RatingPipe();
     expect(() => {
       p.transform(-1);
     }).toThrowError('Invalid param');

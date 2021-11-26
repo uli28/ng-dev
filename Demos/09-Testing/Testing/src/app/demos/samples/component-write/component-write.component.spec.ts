@@ -1,8 +1,7 @@
-import { ComponentFixture, TestBed, async, waitForAsync, } from '@angular/core/testing';
-
-import { ComponentWriteComponent } from './component-write.component';
+import { TestBed, waitForAsync } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
 import { By } from '@angular/platform-browser';
+import { ComponentWriteComponent } from './component-write.component';
 
 describe('ComponentWriteComponent', () => {
   beforeEach(() => {
@@ -17,8 +16,10 @@ describe('ComponentWriteComponent', () => {
     waitForAsync(() => {
       const whippet = 'Soi the Whippet';
       const giro = 'Giro the Hunter from Spain';
+
       const fixture = TestBed.createComponent(ComponentWriteComponent);
       fixture.detectChanges();
+
       fixture.whenStable().then(() => {
         const input = fixture.debugElement.query(By.css('input'));
         const el = input.nativeElement;

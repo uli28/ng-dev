@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./component-write.component.scss'],
 })
 export class ComponentWriteComponent implements OnInit {
-  user = { username: 'Giro the Hunter from Spain' };
+  user = { username: 'Giro the Hunter from Spain', breed: 'Galgo Espanol' };
 
   constructor() {}
 
