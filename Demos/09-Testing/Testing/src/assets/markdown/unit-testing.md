@@ -1,6 +1,6 @@
 # SimpleClass
 
-Navigate to folder `\demos\unit-testing`
+Navigate to folder `\demos\samples\unit-tests`
 
 Investigate `SimpleClass.ts` and `SimpleClass.spec.ts`
 

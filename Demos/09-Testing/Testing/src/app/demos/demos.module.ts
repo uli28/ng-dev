@@ -9,7 +9,6 @@ import { DemoContainerComponent } from './demo-container/demo-container.componen
 import { DemoService } from './demo.service';
 import { FoodRowComponent } from './samples/integration-tests/food-row/food-row.component';
 import { IntegrationTestComponent } from './samples/integration-tests/integration-test.component';
-import { IntroE2eComponent } from './samples/intro-e2e/intro-e2e.component';
 import { RatingPipe } from './samples/pipe/rating.pipe';
 import { TestPipeComponent } from './samples/pipe/test-pipe.component';
 import { FoodComponent } from './samples/simple-comp/food.component';
@@ -30,7 +29,6 @@ const demoRoutes: Routes = [
       { path: 'simpleservice', component: SimpleServiceComponent },
       { path: 'simplecomp', component: FoodComponent },
       { path: 'integrationtests', component: IntegrationTestComponent },
-      { path: 'introe2e', component: IntroE2eComponent },
       { path: 'mock', component: UseMockComponent },
     ],
   },
@@ -43,7 +41,6 @@ const demoRoutes: Routes = [
     TestPipeComponent,
     FoodComponent,
     IntegrationTestComponent,
-    IntroE2eComponent,
     SimpleServiceComponent,
     TestPipeComponent,
     RatingPipe,

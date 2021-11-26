@@ -12,6 +12,6 @@
 
 ## Wallaby.js Test Runner
 
-[Wallabyjs](https://wallabyjs.com/)
+[Wallaby js](https://wallabyjs.com/)
 
 [Wallaby VS Code Extension](https://marketplace.visualstudio.com/items?itemName=WallabyJs.wallaby-vscode)

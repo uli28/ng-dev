@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription, fromEvent } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-unsubscribing',
@@ -25,6 +25,7 @@ export class UnsubscribingComponent implements OnInit, OnDestroy {
   subscribeScreen() {
     const pad = document.querySelector('.signPad');
     const mouse = fromEvent(pad, 'mousemove').pipe(
+      tap((data) => console.log('original data', data)),
       map((evt: MouseEvent) => {
         return { X: evt.clientX, Y: evt.clientY };
       })

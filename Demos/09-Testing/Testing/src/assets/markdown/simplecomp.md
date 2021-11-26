@@ -1,4 +1,4 @@
-Navigate to folder `\demos\simple-comp`
+Navigate to folder `\demos\samples\simple-comp`
 
 Investigate `food.component.ts`, `food.service.ts` and `food.component.spec.ts`
 
