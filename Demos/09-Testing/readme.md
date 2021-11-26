@@ -10,6 +10,8 @@
 
 [Jasmine Matchers](https://jasmine.github.io/api/edge/matchers.html)
 
+[Jest](https://jestjs.io/)
+
 ## Wallaby.js Test Runner
 
 [Wallaby js](https://wallabyjs.com/)
