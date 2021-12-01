@@ -13,7 +13,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "build:stats": "ng build --configuration production --statsJson",
-    "analyze": "webpack-bundle-analyzer ./dist/MaintenanceUi/stats-es2015.json -p 5010",
+    "analyze": "webpack-bundle-analyzer ./dist/demo-ui/stats-es2015.json -p 5010",
     "deploy": "ng build --configuration production && firebase deploy"
   },
   "private": true,
@@ -24,7 +24,7 @@
     "@angular/compiler": "~13.0.0",
     "@angular/core": "~13.0.0",
     "@angular/fire": "^7.0.4",
-    "@angular/flex-layout": "^12.0.0-beta.35",
+    "@angular/flex-layout": "^13.0.0-beta.36",
     "@angular/forms": "~13.0.0",
     "@angular/material": "^13.0.0",
     "@angular/platform-browser": "~13.0.0",
@@ -34,10 +34,10 @@
     "firebase": "^9.0.0",
     "ngx-markdown": "^12.0.1",
     "prismjs": "^1.21.0",
+    "rxfire": "^6.0.0",
     "rxjs": "~6.6.7",
     "tslib": "^2.0.0",
-    "zone.js": "~0.11.4",
-    "rxfire": "^6.0.0"
+    "zone.js": "~0.11.4"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^12.2.5",
