@@ -10,7 +10,7 @@ Create an Angular App with the following layout containing thw following compone
 
 Load the menu items in the navbar using a menu.service that thakes its values from `assets/menuItems.json`:
 
-```
+```json
 ["Home", "Food", "Admin"]
 ```
 
@@ -20,6 +20,7 @@ Create Angular Project:
 
 ```
 ng new food-app-l0
+cd food-app-l0
 ```
 
 Add the components:
@@ -46,7 +47,7 @@ Add the following content to `app.component.html`:
 </div>
 ```
 
-Add the following styles to app.component.scss
+Add the following styles to `app.component.scss`:
 
 ```css
 .navbar {
@@ -99,6 +100,43 @@ Inject Angular HttpClient in the constructor of `menu.service.ts` and load `asse
 constructor(private httpClient: HttpClient) {}
 
 getMenuItems(): Observable<string[]> {
-    return this.httpClient.get<string[]>(environment.apiUrl);
+    return this.httpClient.get<string[]>("environment.apiUrl");
+}
+```
+
+Inject menu.service in `navbar.component.ts` and get the menu items:
+
+```typescript
+constructor(private ms: MenuService) {}
+
+navItems: string[];
+
+ngOnInit() {
+  this.ms.getMenuItems().subscribe(data => {
+    this.navItems = data;
+  });
+}
+```
+
+Render the menu items in `navbar.component.html`:
+
+```html
+<div class="menu">
+  <div class="menuItem" *ngFor="let item of navItems">{{ item }}</div>
+</div>
+```
+
+Style `navbar.component.scss`:
+
+```css
+.menu{
+    display: flex; 
+    width: 100%;
+    flex-direction: row;
+    padding: 1rem;
+}
+
+.menuItem{
+    margin-right: 0.5rem;
 }
 ```
