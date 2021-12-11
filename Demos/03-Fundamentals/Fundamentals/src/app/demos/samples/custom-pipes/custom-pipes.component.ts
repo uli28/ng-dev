@@ -5,7 +5,7 @@ import { VouchersService } from '../vouchers/voucher.service';
 @Component({
   selector: 'app-custom-pipes',
   templateUrl: './custom-pipes.component.html',
-  styleUrls: ['./custom-pipes.component.css'],
+  styleUrls: ['./custom-pipes.component.scss'],
 })
 export class CustomPipesComponent implements OnInit {
   isChecked = false;

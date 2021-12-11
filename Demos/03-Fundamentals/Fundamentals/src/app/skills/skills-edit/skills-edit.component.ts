@@ -10,7 +10,7 @@ import { SnackbarService } from '../../shared/snackbar/snackbar.service';
   styleUrls: ['./skills-edit.component.scss'],
 })
 export class SkillsEditComponent implements OnInit {
-  skill: Skill = { id: 0, name: '', hours: 1, completed: false };
+  skill: Skill | undefined = { id: 0, name: '', hours: 1, completed: false };
 
   constructor(
     private service: SkillsService,

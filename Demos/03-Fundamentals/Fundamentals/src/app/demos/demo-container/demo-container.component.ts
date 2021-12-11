@@ -22,16 +22,11 @@ export class DemoContainerComponent implements OnInit {
 
   title: string = environment.title;
   header = 'Please select a demo';
-  demos$: Observable<DemoItem[]> = null;
+  demos$ = this.demoService.getItems();
 
   ngOnInit() {
-    this.setMenu();
     this.setMetadata();
     this.getWorbenchStyle();
-  }
-
-  private setMenu() {
-    this.demos$ = this.demoService.getItems();
   }
 
   getWorbenchStyle() {

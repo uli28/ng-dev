@@ -16,6 +16,6 @@ export class uxButtonComponent implements OnInit {
   ngOnInit() {}
 
   buttonClicked() {
-    this.click.emit(null);
+    this.click.emit();
   }
 }

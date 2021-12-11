@@ -26,8 +26,8 @@ export class PersonEditComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (changes.person) {
-      console.log('receiving updated person:', changes.person.currentValue);
+    if (changes['person']) {
+      console.log('receiving updated person:', changes['person'].currentValue);
     }
   }
 

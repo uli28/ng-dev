@@ -13,7 +13,7 @@ export class CustomDirectivesComponent implements OnInit {
 
   ngOnInit() {}
 
-  changed(value) {
-    this.changes.emit(value);
-  }
+  // changed(value) {
+  //   this.changes.emit(value);
+  // }
 }

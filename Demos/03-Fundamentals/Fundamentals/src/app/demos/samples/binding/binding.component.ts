@@ -26,15 +26,11 @@ export class BindingComponent implements OnInit {
       }
     });
 
-    of({ name: 'Heidi', age: 13, gender: 'female' })
+    of({ name: 'Heidi', age: 13, gender: 'female' } as Person)
       .pipe(delay(4000))
-      .subscribe((data: Person) => {
+      .subscribe((data) => {
         this.latePerson = data;
       });
-
-    // setTimeout(() => {
-    // 	this.latePerson = { name: 'Heidi', age: 13, gender: 'female' };
-    // }, 4000);
   }
 
   toggleDisplay() {
@@ -43,9 +39,5 @@ export class BindingComponent implements OnInit {
 
   handleChange(p: Person) {
     console.log('value received from eventbinding', p);
-  }
-
-  logChange(val) {
-    console.log(val);
   }
 }

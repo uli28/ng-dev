@@ -11,12 +11,12 @@ export class EuroDirective {
   }
 
   @HostListener('focus', ['$event.target.value'])
-  onFocus(value) {
+  onFocus(value: string) {
     this.el.value = value.replace('€ ', '');
   }
 
   @HostListener('blur', ['$event.target.value'])
-  onBlur(value) {
+  onBlur(value: string) {
     this.el.value = `€ ${value}`;
   }
 }

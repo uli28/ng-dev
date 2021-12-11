@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, NavigationEnd, Route, Router } from '@angular/router';
+import { NavigationEnd, Route, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { filter } from 'rxjs/operators';
 import { MenuItem } from '../menu/menu-item.model';
@@ -26,9 +26,10 @@ export class NavbarComponent implements OnInit {
   ngOnInit() {
     this.editorDisplayed = false;
     this.menuItems = this.ms.getTopItems();
+
     this.router.events
       .pipe(filter((event) => event instanceof NavigationEnd))
-      .subscribe((event: NavigationEnd) => {
+      .subscribe((event: any) => {
         this.hamburgerVisible = event.url.includes('demos');
       });
   }
