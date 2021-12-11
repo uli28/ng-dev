@@ -8,16 +8,8 @@
     "title": "Unsubscribing"
   },
   {
-    "url": "subsink",
-    "title": "SubSink"
-  },
-  {
     "url": "operators",
     "title": "Observable Operators"
-  },
-  {
-    "url": "mousedomobs",
-    "title": "Mouse & DOM Events"
   },
   {
     "url": "flexlayoutapi",

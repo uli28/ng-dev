@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { fromEvent } from 'rxjs';
 import { debounceTime, map } from 'rxjs/operators';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-debounced-search',
@@ -10,25 +11,11 @@ import { debounceTime, map } from 'rxjs/operators';
 export class DebouncedSearchComponent implements OnInit {
   constructor() {}
 
-  @ViewChild('searchBox') searchBox: ElementRef;
-  searchterm = '';
+  searchterm: FormControl = new FormControl('');
 
-  ngOnInit() {}
-
-  ngAfterViewInit() {
-    this.attachDebouncedSearch();
-  }
-
-  private attachDebouncedSearch() {
-    fromEvent(this.searchBox.nativeElement, 'keyup')
-      .pipe(
-        debounceTime(750),
-        map((kEvt: KeyboardEvent) => {
-          return (kEvt.srcElement as HTMLInputElement).value;
-        })
-      )
-      .subscribe((val) => {
-        console.log('Currently your searching debounced for:', val);
-      });
+  ngOnInit() {
+    this.searchterm.valueChanges.pipe(debounceTime(750)).subscribe((val) => {
+      console.log('Currently your searching debounced for:', val);
+    });
   }
 }

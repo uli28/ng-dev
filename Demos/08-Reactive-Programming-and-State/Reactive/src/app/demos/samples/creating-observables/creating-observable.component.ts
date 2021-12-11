@@ -11,7 +11,7 @@ import { filter, map } from 'rxjs/operators';
 export class CreatingObservableComponent implements OnInit {
   constructor() {}
 
-  onErr = (err) => console.log(err);
+  onErr = (err: any) => console.log(err);
   onComplete = () => console.log('complete');
 
   ngOnInit() {}

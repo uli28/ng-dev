@@ -21,16 +21,14 @@ import { DoublerService } from './doubler.service';
 export class OperatorsComponent implements OnInit {
   constructor(private vs: VouchersService, private ds: DoublerService) {}
 
-  sub: Subscription = null;
+  sub: Subscription;
   response: any;
-
-  vouchers: Voucher[] = null;
+  vouchers: Voucher[];
 
   ngOnInit() {}
 
-  // assignToArr = items => (this.movies = items);
   unsbscribe = () => (this.sub != null ? this.sub.unsubscribe() : null);
-  setLabel = (v) => ({ ...v, Label: `${v.Text} costs € ${v.Amount}` });
+  setLabel = (v: Voucher) => ({ ...v, Label: `${v.Text} costs € ${v.Amount}` });
 
   log = (msg: string, data: any) => {
     console.log(

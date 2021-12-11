@@ -1,8 +1,8 @@
 <mat-sidenav-container>
   <mat-sidenav
     #sidenav
-    [opened]="ms.visible$ | async"
-    [mode]="ms.position$ | async"
+    [opened]="ms.visible | async"
+    [mode]="mode"
   >
     <mat-toolbar color="accent">
       <mat-toolbar-row>

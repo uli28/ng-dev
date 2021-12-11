@@ -5,7 +5,7 @@ export const lateVoucher = {
   Amount: 1000,
   Paid: false,
   Expense: false,
-  Remark: true,
+  Readonly: false,
   Details: [
     {
       ID: 4,

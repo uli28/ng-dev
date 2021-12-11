@@ -24,17 +24,19 @@ export class UnsubscribingComponent implements OnInit, OnDestroy {
 
   subscribeScreen() {
     const pad = document.querySelector('.signPad');
-    const mouse = fromEvent(pad, 'mousemove').pipe(
-      tap((data) => console.log('original data', data)),
-      map((evt: MouseEvent) => {
-        return { X: evt.clientX, Y: evt.clientY };
-      })
-    );
+    if (pad) {
+      const mouse = fromEvent(pad, 'mousemove').pipe(
+        tap((data: any) => console.log('original data', data)),
+        map((evt: MouseEvent) => {
+          return { X: evt.clientX, Y: evt.clientY };
+        })
+      );
 
-    this.mouseSubs = mouse.subscribe((point) => {
-      this.result = point;
-      console.log('Mouse Moved @: ', point);
-    });
+      this.mouseSubs = mouse.subscribe((point) => {
+        this.result = point;
+        console.log('Mouse Moved @: ', point);
+      });
+    }
   }
 
   unsubscribeMouseEvt() {

@@ -3,6 +3,7 @@ import { MediaObserver, MediaChange } from '@angular/flex-layout';
 import { BehaviorSubject, Observable, of } from 'rxjs';
 import { MenuItem } from './menu-item.model';
 import { filter, map } from 'rxjs/operators';
+import { MatDrawerMode } from '@angular/material/sidenav';
 
 @Injectable({
   providedIn: 'root',
@@ -12,10 +13,9 @@ export class MenuService {
     this.handleChange();
   }
 
-  private visible = true;
-  visible$: BehaviorSubject<boolean> = new BehaviorSubject(this.visible);
-  private position = 'side';
-  position$: BehaviorSubject<string> = new BehaviorSubject(this.position);
+  visible: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(true);
+  postition: BehaviorSubject<MatDrawerMode> =
+    new BehaviorSubject<MatDrawerMode>('side');
 
   private handleChange() {
     this.mediaObserver
@@ -25,8 +25,8 @@ export class MenuService {
         map((changes: MediaChange[]) => changes[0])
       )
       .subscribe((change) => {
-        this.visible$.next(change.mqAlias == 'xs' ? false : true);
-        this.position$.next(change.mqAlias == 'xs' ? 'over' : 'side');
+        this.visible.next(change.mqAlias === 'xs' ? false : true);
+        this.postition.next(change.mqAlias === 'xs' ? 'over' : 'side');
       });
   }
 
@@ -39,7 +39,6 @@ export class MenuService {
   }
 
   toggleMenu() {
-    this.visible = !this.visible;
-    this.visible$.next(this.visible);
+    this.visible.next(!this.visible.getValue());
   }
 }

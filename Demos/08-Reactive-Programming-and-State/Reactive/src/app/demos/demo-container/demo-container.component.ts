@@ -6,6 +6,7 @@ import { environment } from 'src/environments/environment';
 import { DemoService } from '../demo.service';
 import { EventBusService } from '../samples/evt-bus/event-bus.service';
 import { SidebarActions } from '../samples/evt-bus/sidebar-actions';
+import { MatDrawerMode } from '@angular/material/sidenav';
 
 @Component({
   selector: 'app-demo-container',
@@ -19,14 +20,19 @@ export class DemoContainerComponent implements OnInit {
     private demoService: DemoService,
     public ms: MenuService,
     private eb: EventBusService
-  ) {}
+  ) {
+    ms.postition.subscribe((m) => (this.mode = m));
+  }
 
   title: string = environment.title;
   header = 'Please select a demo';
+  mode: MatDrawerMode = 'side';
   demos$ = this.demoService.getItems();
-  showEditor = this.eb.Commands.pipe(
-    map((action) => (action == SidebarActions.HIDE_MARKDOWN ? false : true))
-  );
+  showEditor = this.eb
+    .getCommands()
+    .pipe(
+      map((action) => (action == SidebarActions.HIDE_MARKDOWN ? false : true))
+    );
 
   ngOnInit() {
     this.setMetadata();
@@ -35,7 +41,7 @@ export class DemoContainerComponent implements OnInit {
 
   getWorbenchStyle() {
     let result = {};
-    this.ms.visible$.subscribe((visible) => {
+    this.ms.visible.subscribe((visible) => {
       result = visible
         ? {
             'margin-left': '10px',

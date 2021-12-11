@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 import { lateVoucher } from '../late-voucher';
@@ -15,7 +15,9 @@ export class StatefulVoucherService {
     this.addLateVoucher();
   }
 
-  private vouchers: BehaviorSubject<Voucher[]> = new BehaviorSubject([]);
+  private vouchers: BehaviorSubject<Voucher[]> = new BehaviorSubject<Voucher[]>(
+    []
+  );
 
   url = environment.apiUrl;
 
@@ -28,20 +30,20 @@ export class StatefulVoucherService {
   addLateVoucher() {
     setTimeout(() => {
       var arr = this.vouchers.getValue();
-      arr.push(lateVoucher as Voucher);
+      arr.push(lateVoucher as unknown as Voucher);
       this.vouchers.next(arr);
     }, 4000);
   }
 
-  getAllVouchers(): Observable<Voucher[]> {
+  getAllVouchers() {
     return this.vouchers;
   }
 
-  getVoucherById(id: number): Observable<Voucher> {
+  getVoucherById(id: number) {
     return this.vouchers.pipe(map((arr) => arr.find((v) => v.ID == id)));
   }
 
-  insertVoucher(v: Voucher): any {
+  insertVoucher(v: Voucher) {
     // send to db
     this.httpClient.post(this.url, v).subscribe((result: any) => {
       var arr = this.vouchers.getValue();
@@ -50,7 +52,7 @@ export class StatefulVoucherService {
     });
   }
 
-  updateVoucher(v: Voucher): any {}
+  updateVoucher(v: Voucher) {}
 
   deleteVoucher(id: number) {
     var arr = this.vouchers.getValue();
