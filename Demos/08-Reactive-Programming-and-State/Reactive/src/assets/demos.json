@@ -27,9 +27,5 @@
     "url": "stateful",
     "title": "Stateful Service"
   },
-  { "url": "evtbus", "title": "Event Bus" },
-  {
-    "url": "ngrx",
-    "title": "Simple NgRx"
-  }
+  { "url": "evtbus", "title": "Event Bus" }
 ]

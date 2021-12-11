@@ -5,11 +5,11 @@
   fxLayoutGap="1rem"
 >
   <button mat-mini-fab>
-    <mat-icon fxFlexAlign="center" class="cmdIcon" (click)="showUpload()"
+    <mat-icon fxFlexAlign="center" class="cmdIcon" (click)="showUpload()" matTooltip="Upload"
       >cloud_upload</mat-icon
     >
   </button>
-  <button mat-mini-fab (click)="toggleEditor()">
+  <button mat-mini-fab (click)="toggleEditor()"  matTooltip="Edit">
     <mat-icon fxFlexAlign="center" class="cmdIcon">create</mat-icon>
   </button>
 </div>
