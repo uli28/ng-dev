@@ -31,6 +31,20 @@ ng g c shared/sidemenu
 ng g c shared/navbar
 ```
 
+Notice the automatic declarations in `app.module.ts` because you have used Angular CLI: 
+
+```typescript
+@NgModule({
+  declarations: [
+    ...
+    NavbarComponent,
+    SidemenuComponent,
+    HomeComponent
+  ],
+```
+
+Import the css-reset from [http://meyerweb.com](https://meyerweb.com/eric/tools/css/reset/) to `styles.scss`
+
 Add the following content to `app.component.html`:
 
 ```html
@@ -52,7 +66,13 @@ Add the following styles to `app.component.scss`:
 ```css
 .navbar {
   background-color: lightblue;
-  height: 10vh;
+  height: 100px;
+}
+
+.mainrow {
+  display: flex;
+  flex-direction: row;
+  height: calc(100vh - 100px);
 }
 
 .sidemenu {
@@ -63,12 +83,6 @@ Add the following styles to `app.component.scss`:
 .home {
   background-color: yellow;
   width: 80vw;
-}
-
-.mainrow {
-  display: flex;
-  flex-direction: row;
-  height: 90vh;
 }
 ```
 
@@ -100,7 +114,7 @@ Inject Angular HttpClient in the constructor of `menu.service.ts` and load `asse
 constructor(private httpClient: HttpClient) {}
 
 getMenuItems(): Observable<string[]> {
-    return this.httpClient.get<string[]>("environment.apiUrl");
+    return this.httpClient.get<string[]>("assets/menuItems.json");
 }
 ```
 

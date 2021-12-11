@@ -1,6 +1,12 @@
 .navbar {
   background-color: lightblue;
-  height: 10vh;
+  height: 100px;
+}
+
+.mainrow {
+  display: flex;
+  flex-direction: row;
+  height: calc(100vh - 120px);
 }
 
 .sidemenu {
@@ -11,10 +17,4 @@
 .home {
   background-color: yellow;
   width: 80vw;
-}
-
-.mainrow {
-  display: flex;
-  flex-direction: row;
-  height: 90vh;
 }
