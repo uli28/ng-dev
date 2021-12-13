@@ -6,6 +6,8 @@ Make sure you have [Visual Studio Code](https://code.visualstudio.com/download),
 npm i -g @angular/cli
 ```
 
+>Note: If you have problems execution scripts in PowerShell run: Set-ExecutionPolicy bypass
+
 Also install the [Angular Language Service - Visual Studio Code extension](https://marketplace.visualstudio.com/items?itemName=Angular.ng-template).
 
 Create an Angular App with the following layout containing thw following components:
