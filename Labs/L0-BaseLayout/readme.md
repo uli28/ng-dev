@@ -48,15 +48,17 @@ Import the css-reset from [http://meyerweb.com](https://meyerweb.com/eric/tools/
 Add the following content to `app.component.html`:
 
 ```html
-<div class="navbar">
-  <app-navbar></app-navbar>
-</div>
-<div class="mainrow">
-  <div class="sidemenu">
-    <app-sidemenu></app-sidemenu>
+<div>
+  <div class="navbar">
+    <app-navbar></app-navbar>
   </div>
-  <div class="home">
-    <app-home></app-home>
+  <div class="mainrow">
+    <div class="sidebar">
+      <app-sidebar></app-sidebar>
+    </div>
+    <div class="main">
+      <app-home></app-home>
+    </div>
   </div>
 </div>
 ```
@@ -64,25 +66,25 @@ Add the following content to `app.component.html`:
 Add the following styles to `app.component.scss`:
 
 ```css
-.navbar {
-  background-color: lightblue;
-  height: 100px;
+.navbar{
+    background-color: lavender;
+    height: 150px
 }
 
-.mainrow {
-  display: flex;
-  flex-direction: row;
-  height: calc(100vh - 100px);
+.sidebar{
+    background-color: yellow;
+    min-width: 200px;
 }
 
-.sidemenu {
-  background-color: lightgray;
-  width: 20vw;
+.main{
+    background-color: lightgray;
+    width: calc(100vw - 200px);
 }
 
-.home {
-  background-color: yellow;
-  width: 80vw;
+.mainrow{
+    display: flex;
+    flex-direction: row;
+    height: calc(100vh - 150px);
 }
 ```
 
@@ -98,7 +100,7 @@ Add `assets/menuItems.json`:
 ["Home", "Food", "Admin"]
 ```
 
-Add `HttpClientModule` to `app.module.ts`:
+Add `HttpClientModule` and `CommonModule` from [Frequently used Angular Modules](https://angular.io/guide/frequent-ngmodules) to `app.module.ts`:
 
 ```typescript
 import { HttpClientModule } from "@angular/common/http";
