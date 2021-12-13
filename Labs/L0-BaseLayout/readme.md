@@ -1,10 +1,12 @@
 # Create a base Angular App with Layout
 
-Make sure you have [Node 14.x](https://nodejs.org/download/release/v14.18.2/) and the lasted Angular CLI installed:
+Make sure you have [Visual Studio Code](https://code.visualstudio.com/download), [Node 14.x](https://nodejs.org/download/release/v14.18.2/) and the lasted Angular CLI installed:
 
 ```
 npm i -g @angular/cli
 ```
+
+Also install the [Angular Language Service - Visual Studio Code extension](https://marketplace.visualstudio.com/items?itemName=Angular.ng-template).
 
 Create an Angular App with the following layout containing thw following components:
 
