@@ -6,7 +6,7 @@ Make sure you have [Visual Studio Code](https://code.visualstudio.com/download),
 npm i -g @angular/cli
 ```
 
->Note: If you have problems execution scripts in PowerShell run: Set-ExecutionPolicy bypass
+>Note: If you have problems execution scripts in PowerShell run: `Set-ExecutionPolicy bypass`. To check existing installations use: `node --version` and `npm list -g --depth 0`
 
 Also install the [Angular Language Service - Visual Studio Code extension](https://marketplace.visualstudio.com/items?itemName=Angular.ng-template).
 
