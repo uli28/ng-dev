@@ -1,5 +1,11 @@
 # Create a base Angular App with Layout
 
+Make sure you have [Node 14.x](https://nodejs.org/download/release/v14.18.2/) and the lasted Angular CLI installed:
+
+```
+npm i -g @angular/cli
+```
+
 Create an Angular App with the following layout containing thw following components:
 
 - home.ts
