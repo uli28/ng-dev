@@ -20,7 +20,7 @@ export class TypesComponent implements OnInit {
     // Numbers
     const age = 50;
     const weight = 83.12;
-    const dogWeight = 25.4;
+    let dogWeight = 25.4;
     // dogWeight = "heavy";
     const rand = Math.random();
 

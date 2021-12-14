@@ -50,11 +50,10 @@
 
     <ng-container *ngIf="showDivOne"><h5>Div 1</h5></ng-container>
     <ng-container *ngIf="!showDivOne"><h5>Not Div 1</h5></ng-container>
-
-    <!--
-          <div *ngIf="showDivOne; else: notDivOneTemplate"><h5>Div 1</h5></div>
-          <ng-template #notDivOneTemplate> <h5>Not Div 1</h5> </ng-template>
-        -->
+    
+    <!-- <div *ngIf="showDivOne"><h5>Div 1</h5></div>
+    <div *ngIf="!showDivOne"> <h5>Not Div 1</h5> </div> -->
+       
   </mat-card-content>
 </mat-card>
 
