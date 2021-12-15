@@ -26,9 +26,9 @@
     "@angular/platform-browser": "~13.0.0",
     "@angular/platform-browser-dynamic": "~13.0.0",
     "@angular/router": "~13.0.0",
-    "ngx-markdown": "^12.0.1",
+    "ngx-markdown": "^13.0.0",
     "prismjs": "^1.21.0",
-    "rxjs": "~6.6.2",
+    "rxjs": "~7.4.0",
     "subsink": "^1.0.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.4"
