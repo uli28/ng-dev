@@ -19,6 +19,8 @@
 
 - Start json-server:
 
-json-server db.json
+    ```
+    json-server db.json
+    ```
 
 - Implement CRUD for food.service.ts
