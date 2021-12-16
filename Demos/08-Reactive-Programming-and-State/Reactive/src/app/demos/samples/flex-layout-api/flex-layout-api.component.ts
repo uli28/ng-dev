@@ -28,6 +28,7 @@ export class FlexLayoutApiComponent implements OnInit {
         map((changes: MediaChange[]) => changes[0])
       )
       .subscribe((change: MediaChange) => {
+        console.log('change from media observer:', change);
         this.mq = change.mqAlias;
         switch (change.mqAlias) {
           case 'xs':
