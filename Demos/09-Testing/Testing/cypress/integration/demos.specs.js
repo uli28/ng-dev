@@ -12,7 +12,7 @@ context('Demos', () => {
 
     it('Has 14 options in Testing menu', () => {
       cy.get('.clickable').first().click();
-      cy.get('button.mat-raised-button').should('have.length', 14);
+      cy.get('button.mat-raised-button').should('have.length', 10);
     });
 
     it('Shows the correct content when clicking test pipe', () => {
