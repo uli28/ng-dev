@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { map } from 'rxjs/operators';
-import { StatefulVoucherService } from '../markdown-renderer/stateful-voucher.service';
+import { StatefulVoucherService } from '../vouchers/stateful-voucher.service';
 
 @Component({
   selector: 'app-sum',
