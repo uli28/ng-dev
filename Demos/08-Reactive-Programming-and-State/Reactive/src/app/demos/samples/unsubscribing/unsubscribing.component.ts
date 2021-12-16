@@ -29,7 +29,8 @@ export class UnsubscribingComponent implements OnInit, OnDestroy {
         tap((data: any) => console.log('original data', data)),
         map((evt: MouseEvent) => {
           return { X: evt.clientX, Y: evt.clientY };
-        })
+        }),
+        tap((data: any) => console.log('modfied data', data))
       );
 
       this.mouseSubs = mouse.subscribe((point) => {

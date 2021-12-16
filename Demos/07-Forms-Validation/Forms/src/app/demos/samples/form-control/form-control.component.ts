@@ -35,4 +35,8 @@ export class FormControlComponent implements OnInit {
   updateName() {
     this.name.setValue('Soi - Gladdenfields Beeing Verry Pretty');
   }
+
+  resetName() {
+    this.name.reset('Cleo');
+  }
 }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
-import { StatefulVoucherService } from './stateful-voucher.service';
+import { StatefulVoucherService } from '../../../shared/markdown-renderer/stateful-voucher.service';
 import { Voucher } from '../model';
 import { FormControl } from '@angular/forms';
 

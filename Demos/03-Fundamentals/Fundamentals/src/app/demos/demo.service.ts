@@ -7,7 +7,7 @@ import { DemoItem } from './demo-item';
 export class DemoService {
   constructor(private httpClient: HttpClient) {}
 
-  getItems(): Observable<DemoItem[]> {
+  getItems() {
     return this.httpClient.get<DemoItem[]>('/assets/demos.json');
   }
 }

@@ -15,7 +15,6 @@ import { FlexLayoutApiComponent } from './samples/flex-layout-api/flex-layout-ap
 import { DebouncedSearchComponent } from './samples/operators/debounced-search/debounced-search.component';
 import { OperatorsComponent } from './samples/operators/operators.component';
 import { StatefulComponent } from './samples/stateful/stateful.component';
-import { SumComponent } from './samples/stateful/sum/sum.component';
 import { SubjectsComponent } from './samples/subjects/subjects.component';
 import { UnsubscribingComponent } from './samples/unsubscribing/unsubscribing.component';
 import { VouchersService } from './samples/voucher.service';
@@ -51,7 +50,6 @@ const demoRoutes: Routes = [
     EvtBusComponent,
     MarkdownEditorComponent,
     AsyncComponent,
-    SumComponent,
   ],
   imports: [
     CommonModule,

@@ -3,8 +3,8 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
-import { lateVoucher } from '../late-voucher';
-import { Voucher } from '../model';
+import { lateVoucher } from '../../demos/samples/late-voucher';
+import { Voucher } from '../../demos/samples/model';
 
 @Injectable({
   providedIn: 'root',

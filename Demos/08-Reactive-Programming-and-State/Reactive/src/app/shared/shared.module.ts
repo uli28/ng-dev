@@ -9,12 +9,14 @@ import { FooterComponent } from './footer/footer.component';
 import { MarkdownRendererComponent } from './markdown-renderer/markdown-renderer.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SidePanelComponent } from './side-panel/side-panel.component';
+import { SumComponent } from './sum/sum.component';
 
 const mods = [
   NavbarComponent,
   SidePanelComponent,
   FooterComponent,
   MarkdownRendererComponent,
+  SumComponent,
 ];
 
 @NgModule({
