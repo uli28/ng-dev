@@ -13,8 +13,8 @@ export class SubjectsComponent implements OnInit {
   bs$: BehaviorSubject<number> = new BehaviorSubject<number>(-1);
 
   ngOnInit() {
-    this.runSubjectInit();
-    // this.runBSubjectInit();
+    // this.runSubjectInit();
+    this.runBSubjectInit();
   }
 
   private runSubjectInit() {
