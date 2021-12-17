@@ -21,6 +21,8 @@ import { ComponentEventsComponent } from './samples/component-events/component-e
 import { ComponentWriteComponent } from './samples/component-write/component-write.component';
 import { MaterialComponent } from './samples/material/material.component';
 import { Introe2eComponent } from './samples/introe2e/introe2e.component';
+import { HttpTestsComponent } from './samples/http-tests/http-tests.component';
+import { FoodHttpComponent } from './samples/http-tests/food-http/food-http.component';
 
 const demoRoutes: Routes = [
   {
@@ -31,6 +33,7 @@ const demoRoutes: Routes = [
       { path: 'unittesting', component: UnitTestingComponent },
       { path: 'testpipe', component: TestPipeComponent },
       { path: 'simpleservice', component: SimpleServiceComponent },
+      { path: 'httptest', component: HttpTestsComponent },
       { path: 'simplecomp', component: FoodComponent },
       { path: 'integrationtests', component: IntegrationTestComponent },
       { path: 'mock', component: UseMockComponent },
@@ -60,6 +63,8 @@ const demoRoutes: Routes = [
     ComponentWriteComponent,
     MaterialComponent,
     Introe2eComponent,
+    HttpTestsComponent,
+    FoodHttpComponent,
   ],
   imports: [
     CommonModule,

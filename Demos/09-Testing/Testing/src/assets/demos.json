@@ -22,6 +22,11 @@
     "markdown": "mock"
   },
   {
+    "url": "httptest",
+    "title": "Http Test",
+    "markdown": "mock"
+  },
+  {
     "url": "simplecomp",
     "title": "Simple Component",
     "markdown": "simplecomp"
