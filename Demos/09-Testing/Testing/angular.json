@@ -88,10 +88,12 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "Testing:build:production"
+              "browserTarget": "Testing:build:production",
+              "ssl":true
             },
             "development": {
-              "browserTarget": "Testing:build:development"
+              "browserTarget": "Testing:build:development",
+              "ssl":true
             }
           },
           "defaultConfiguration": "development"

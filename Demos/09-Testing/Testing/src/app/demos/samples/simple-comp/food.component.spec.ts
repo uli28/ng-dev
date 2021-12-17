@@ -30,7 +30,6 @@ describe('FoodComponent:', () => {
     //TODO: Find deleteItem.and.returnValue
     // mockFS.deleteItem.and.returnValue(of(serviceResult));
     comp.deleteFood(foodData[2]);
-
     expect(comp.food.length).toBe(3);
   });
 

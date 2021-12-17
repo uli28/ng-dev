@@ -6,17 +6,17 @@ context('Demos', () => {
   });
 
   describe('Left Menu', () => {
-    it('Shows the menu when clicked', () => {
-      cy.get('.clickable').first().click();
-    });
+    // it('Shows the menu when clicked', () => {
+    //   cy.get('.clickable').first().click();
+    // });
 
-    it('Has 14 options in Testing menu', () => {
-      cy.get('.clickable').first().click();
-      cy.get('button.mat-raised-button').should('have.length', 10);
+    it('Has 11 options in Testing menu', () => {
+      // cy.get('.clickable').first().click();
+      cy.get('button.mat-raised-button').should('have.length', 11);
     });
 
     it('Shows the correct content when clicking test pipe', () => {
-      cy.get('.clickable').first().click();
+      // cy.get('.clickable').first().click();
       cy.contains('Test Pipe').click({ force: true });
       cy.contains('TestPipeComponent');
     });

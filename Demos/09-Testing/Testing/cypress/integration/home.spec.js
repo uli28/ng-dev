@@ -15,7 +15,7 @@ context('Home', () => {
     it('Has the correct Title', () => {
       cy.get('.navTitle').should(
         'contain.text',
-        'Advanced Angular Development'
+        'Angular Single Page Application Development'
       );
     });
   });
