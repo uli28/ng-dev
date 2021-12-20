@@ -15,9 +15,3 @@ it("contains 12 charactes", function() {
 ```
 
 Run the Test using `ng test`
-
-# VoucherValidator
-
-Also investigate `voucher-validator.ts`:
-
-There is an error in the implementation and one failing test. Find the error

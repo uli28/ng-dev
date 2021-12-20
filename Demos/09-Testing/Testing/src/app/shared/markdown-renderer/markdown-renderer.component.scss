@@ -3,10 +3,13 @@
 
 mat-expansion-panel {
   margin-bottom: 0.5rem;
+  margin-top: 0rem;
+  border-radius: 0px;
 }
 
 mat-expansion-panel-header {
   background-color: mat.get-color-from-palette($app-accent);
+  margin-bottom: 1.2rem;
 }
 
 mat-panel-title {
