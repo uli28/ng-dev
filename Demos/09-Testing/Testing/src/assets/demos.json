@@ -22,8 +22,13 @@
     "markdown": "mock"
   },
   {
+    "url": "spy",
+    "title": "Use Spy",
+    "markdown": "spy"
+  },
+  {
     "url": "httptest",
-    "title": "Http Test",
+    "title": "Service Http Test",
     "markdown": "mock"
   },
   {

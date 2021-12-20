@@ -1,7 +1,10 @@
-import { Voucher } from './voucher.mode';
+import { Voucher } from './voucher.model';
+export class Util {
+  greet(): string {
+    return 'Hello World!';
+  }
 
-export class VoucherValidator {
-  static validate(voucher: Voucher) {
+  validate(voucher: Voucher) {
     let detailSumOk: boolean = false;
     if (voucher.Details != null) {
       let sumD = 0;
@@ -11,5 +14,9 @@ export class VoucherValidator {
       detailSumOk = sumD == voucher.Amount;
     }
     return detailSumOk;
+  }
+
+  log(msg: string) {
+    console.log(`logging: ${msg}`);
   }
 }

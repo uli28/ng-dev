@@ -1,8 +1,5 @@
-import { DebugElement } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FoodRowComponent } from '../integration-tests/food-row/food-row.component';
 import { AuthService } from './auth.service';
 import { MockAuthService } from './auth.service.mock';
 import { UseMockComponent } from './use-mock.component';

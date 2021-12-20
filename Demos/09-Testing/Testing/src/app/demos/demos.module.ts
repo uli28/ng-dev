@@ -23,6 +23,7 @@ import { MaterialComponent } from './samples/material/material.component';
 import { Introe2eComponent } from './samples/introe2e/introe2e.component';
 import { HttpTestsComponent } from './samples/http-tests/http-tests.component';
 import { FoodHttpComponent } from './samples/http-tests/food-http/food-http.component';
+import { SpyComponent } from './samples/spy/spy.component';
 
 const demoRoutes: Routes = [
   {
@@ -41,6 +42,7 @@ const demoRoutes: Routes = [
       { path: 'component-write', component: ComponentWriteComponent },
       { path: 'harness', component: MaterialComponent },
       { path: 'e2e', component: Introe2eComponent },
+      { path: 'spy', component: SpyComponent },
     ],
   },
 ];
@@ -65,6 +67,7 @@ const demoRoutes: Routes = [
     Introe2eComponent,
     HttpTestsComponent,
     FoodHttpComponent,
+    SpyComponent,
   ],
   imports: [
     CommonModule,

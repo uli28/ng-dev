@@ -1,8 +1,8 @@
-# SimpleClass
+### Test class `util.ts`:
 
-Navigate to folder `\demos\samples\unit-tests`
+Navigate to folder `\demos\samples\simple-tests`
 
-Investigate `SimpleClass.ts` and `SimpleClass.spec.ts`
+Investigate `util.ts` and `util.spec.ts`
 
 Find a list of matches at [Jasmine Docs](https://jasmine.github.io/api/edge/matchers.html)
 
