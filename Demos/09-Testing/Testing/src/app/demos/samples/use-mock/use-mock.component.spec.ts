@@ -1,20 +1,5 @@
+import { MockAuthService } from './auth.service.mock';
 import { UseMockComponent } from './use-mock.component';
-
-class MockAuthService {
-  isAuth = true;
-
-  isAuthenticated(): boolean {
-    return this.isAuth;
-  }
-
-  logIn() {
-    this.isAuth = true;
-  }
-
-  logOff() {
-    this.isAuth = false;
-  }
-}
 
 describe('UseMockComponent', () => {
   let component: UseMockComponent;
