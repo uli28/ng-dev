@@ -7,12 +7,7 @@ describe('Testing a simple Service: SimpleMessageService', () => {
   let util: any;
 
   beforeEach(() => {
-    util = jasmine.createSpyObj('Util', [
-      'log',
-      'validate',
-      'greet',
-      'processMessages',
-    ]);
+    util = jasmine.createSpyObj('Util', ['log', 'processMessages']);
     service = new BetterMessageService(util);
   });
 

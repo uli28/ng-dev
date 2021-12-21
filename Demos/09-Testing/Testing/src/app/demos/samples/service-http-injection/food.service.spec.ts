@@ -13,16 +13,18 @@ describe('Service - HttpTest -FoodService', () => {
   let data: any = [];
 
   beforeEach(() => {
-    (data = [
+    data = [
       { name: 'Rehgulasch', rating: 2 },
       { name: 'Leberkäse', rating: 2 },
-    ]),
-      TestBed.configureTestingModule({
-        imports: [HttpClientTestingModule],
-        providers: [FoodService],
-      });
+    ];
+
+    TestBed.configureTestingModule({
+      imports: [HttpClientTestingModule],
+      providers: [FoodService],
+    });
 
     service = TestBed.inject(FoodService);
+
     controller = TestBed.inject(HttpTestingController);
 
     // setup the service mock
