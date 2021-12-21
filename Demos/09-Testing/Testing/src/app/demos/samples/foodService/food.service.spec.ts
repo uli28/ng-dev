@@ -12,7 +12,7 @@ describe('FoodService', () => {
       providers: [FoodService],
     });
 
-    service = TestBed.get(FoodService);
+    service = TestBed.inject(FoodService);
   });
 
   it('should create food in an array', (done) => {

@@ -1,15 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-spy',
   templateUrl: './spy.component.html',
-  styleUrls: ['./spy.component.scss']
+  styleUrls: ['./spy.component.scss'],
 })
-export class SpyComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+export class SpyComponent {
+  constructor() {}
 }

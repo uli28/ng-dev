@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Util } from '../global/util';
+import { Message } from './message.model';
 
 @Injectable({
   providedIn: 'root',
@@ -7,18 +8,24 @@ import { Util } from '../global/util';
 export class BetterMessageService {
   constructor(private util: Util) {}
 
-  messages: string[] = [];
+  messages: Message[] = [];
 
-  add(message: string) {
+  add(message: Message) {
     this.messages.push(message);
     this.util.log(`adding: ${message}`);
   }
 
-  delete(msg: string) {
-    this.messages = this.messages.filter((item) => item != msg);
+  delete(message: string) {
+    this.messages = this.messages.filter((item) => item.message != message);
   }
 
   clear() {
     this.messages = [];
+  }
+
+  process() {
+    this.util
+      .processMessages(this.messages.map((m) => m.message))
+      .subscribe((mgs) => (this.messages = mgs));
   }
 }

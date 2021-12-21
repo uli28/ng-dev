@@ -1,0 +1,17 @@
+mat-card{
+    width: 60vw;    
+}
+
+mat-card-actions{
+    display: flex;
+    flex-direction: row;
+    justify-content: center; 
+}
+
+:host-context{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+}

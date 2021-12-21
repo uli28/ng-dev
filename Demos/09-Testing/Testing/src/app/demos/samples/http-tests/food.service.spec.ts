@@ -94,6 +94,13 @@ describe('Service - HttpTest -FoodService', () => {
         { name: 'Gulasch', rating: 2 }
       )
     ).toBe(false);
+
+    expect(
+      service.isEquivalent(
+        { name: 'Gulasch', rating: 2, price: 1 },
+        { name: 'Gulasch', rating: 2 }
+      )
+    ).toBe(false);
   });
 
   it('should have the correct number of items after delete', (done) => {
