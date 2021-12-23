@@ -1,7 +1,10 @@
 import { DebugElement } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
-import { foodDeleteItem } from '../../foodService/food.service.mocks';
+import {
+  foodDeleteItem,
+  foodAddItem,
+} from '../../foodService/food.service.mocks';
 import { TestingModuleComponent } from './testing-module.component';
 
 describe('TestingModuleComponent', () => {
@@ -46,5 +49,12 @@ describe('TestingModuleComponent', () => {
     fixture.detectChanges();
     const divs = el.queryAll(By.css('.hoverclick'));
     expect(divs.length).toBe(3);
+  });
+
+  it('should render 5 rows after add', () => {
+    component.addFood(foodAddItem);
+    fixture.detectChanges();
+    const divs = el.queryAll(By.css('.hoverclick'));
+    expect(divs.length).toBe(5);
   });
 });

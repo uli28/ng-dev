@@ -9,10 +9,20 @@ import { FoodItem } from '../../service-http-injection/food.model';
 })
 export class TestingModuleComponent {
   food: FoodItem[] = foodLoadData;
+  foodToAdd: FoodItem | null;
 
   constructor() {}
 
   deleteFood(food: FoodItem) {
     this.food = this.food.filter((i: FoodItem) => i.name != food.name);
+  }
+
+  addFood(food: FoodItem | null) {
+    if (food) {
+      let arr = [...this.food];
+      arr.push({ name: food, rating: 0 } as unknown as FoodItem);
+      this.food = arr;
+      this.foodToAdd = null;
+    }
   }
 }
