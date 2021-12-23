@@ -3,11 +3,11 @@ import { FoodService } from '../foodService/food.service';
 import { FoodItem } from '../model/food-item.model';
 
 @Component({
-  selector: 'app-food',
-  templateUrl: './food.component.html',
-  styleUrls: ['./food.component.scss'],
+  selector: 'app-component-injection',
+  templateUrl: './component-injection.component.html',
+  styleUrls: ['./component-injection.component.scss'],
 })
-export class FoodComponent implements OnInit {
+export class ComponentInjectionComponent implements OnInit {
   constructor(private fs: FoodService) {}
 
   food: FoodItem[];

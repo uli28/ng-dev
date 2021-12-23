@@ -12,6 +12,10 @@ mat-expansion-panel-header {
   margin-bottom: 1.2rem;
 }
 
+.mat-expansion-panel-header.mat-expanded{
+  height: 50px
+}
+
 mat-panel-title {
   border-bottom: 1px solid mat.get-color-from-palette($app-accent);
 }

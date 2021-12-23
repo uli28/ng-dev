@@ -32,8 +32,13 @@
     "markdown": "mock"
   },
   {
-    "url": "simplecomp",
-    "title": "Simple Component",
+    "url": "comp-class",
+    "title": "Component Class",
+    "markdown": "comp-class"
+  },
+  {
+    "url": "comp-inject",
+    "title": "Component Injection",
     "markdown": "simplecomp"
   },
   {

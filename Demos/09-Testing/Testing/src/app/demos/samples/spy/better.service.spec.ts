@@ -4,6 +4,7 @@ import { original, processed } from '../global/util.mock';
 
 describe('Testing a simple Service: SimpleMessageService', () => {
   let service: BetterMessageService;
+  // let spy objects be of type: any
   let util: any;
 
   beforeEach(() => {

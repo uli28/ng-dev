@@ -11,7 +11,6 @@ import { FoodRowComponent } from './samples/integration-tests/food-row/food-row.
 import { IntegrationTestComponent } from './samples/integration-tests/integration-test.component';
 import { RatingPipe } from './samples/pipe/rating.pipe';
 import { TestPipeComponent } from './samples/pipe/test-pipe.component';
-import { FoodComponent } from './samples/simple-comp/food.component';
 import { SimpleServiceComponent } from './samples/simple-service/simple-service.component';
 import { UnitTestingComponent } from './samples/simple-tests/unit-testing.component';
 import { FoodListComponent } from './samples/integration-tests/food-list/food-list.component';
@@ -24,6 +23,8 @@ import { Introe2eComponent } from './samples/introe2e/introe2e.component';
 import { FoodHttpComponent } from './samples/service-http-injection/food-http/food-http.component';
 import { SpyComponent } from './samples/spy/spy.component';
 import { ServiceHttpInjectionComponent } from './samples/service-http-injection/service-http-injection.component';
+import { ComponentClassComponent } from './samples/component-class/component-class.component';
+import { ComponentInjectionComponent } from './samples/component-injection/component-injection.component';
 
 const demoRoutes: Routes = [
   {
@@ -35,7 +36,7 @@ const demoRoutes: Routes = [
       { path: 'testpipe', component: TestPipeComponent },
       { path: 'simpleservice', component: SimpleServiceComponent },
       { path: 'httptest', component: ServiceHttpInjectionComponent },
-      { path: 'simplecomp', component: FoodComponent },
+      { path: 'comp-inject', component: ComponentInjectionComponent },
       { path: 'integrationtests', component: IntegrationTestComponent },
       { path: 'mock', component: UseMockComponent },
       { path: 'component-events', component: ComponentEventsComponent },
@@ -43,6 +44,7 @@ const demoRoutes: Routes = [
       { path: 'harness', component: MaterialComponent },
       { path: 'e2e', component: Introe2eComponent },
       { path: 'spy', component: SpyComponent },
+      { path: 'comp-class', component: ComponentClassComponent },
     ],
   },
 ];
@@ -52,12 +54,10 @@ const demoRoutes: Routes = [
     DemoContainerComponent,
     UnitTestingComponent,
     TestPipeComponent,
-    FoodComponent,
     IntegrationTestComponent,
     SimpleServiceComponent,
     TestPipeComponent,
     RatingPipe,
-    FoodComponent,
     FoodRowComponent,
     FoodListComponent,
     UseMockComponent,
@@ -68,6 +68,8 @@ const demoRoutes: Routes = [
     FoodHttpComponent,
     SpyComponent,
     ServiceHttpInjectionComponent,
+    ComponentClassComponent,
+    ComponentInjectionComponent,
   ],
   imports: [
     CommonModule,
