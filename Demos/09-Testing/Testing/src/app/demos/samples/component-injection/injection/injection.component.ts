@@ -13,7 +13,7 @@ export class InjectionComponent implements OnInit {
   food: FoodItem[];
 
   ngOnInit() {
-    this.fs.getItems().subscribe((data) => {
+    this.fs.getItems().subscribe((data: FoodItem[]) => {
       this.food = data;
     });
   }

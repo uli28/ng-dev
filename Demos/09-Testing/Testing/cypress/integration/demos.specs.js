@@ -6,13 +6,9 @@ context('Demos', () => {
   });
 
   describe('Left Menu', () => {
-    // it('Shows the menu when clicked', () => {
-    //   cy.get('.clickable').first().click();
-    // });
-
     it('Has 11 options in Testing menu', () => {
       // cy.get('.clickable').first().click();
-      cy.get('button.mat-raised-button').should('have.length', 11);
+      cy.get('button.mat-raised-button').should('have.length', 14);
     });
 
     it('Shows the correct content when clicking test pipe', () => {

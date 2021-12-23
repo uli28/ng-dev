@@ -43,4 +43,9 @@ describe('Simple Class: util.ts', () => {
     util.log('abc');
     expect(window.console.log).toHaveBeenCalled();
   });
+
+  it('should process messages correctley', () => {
+    //notice pending() for test yet to implement
+    pending();
+  });
 });

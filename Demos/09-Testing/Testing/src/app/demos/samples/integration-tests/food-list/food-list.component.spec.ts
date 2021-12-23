@@ -7,7 +7,6 @@ import { RatingPipe } from '../../pipe/rating.pipe';
 import { FoodRowComponent } from '../food-row/food-row.component';
 import { FoodListComponent } from './food-list.component';
 import { deleteServiceResult, foodData } from './food-list.mock.data';
-import { FoodItem } from '../../model/food-item.model';
 
 describe('Integration Test:', () => {
   let mockFS: any;
@@ -42,6 +41,6 @@ describe('Integration Test:', () => {
     comp.deleteFood({ name: 'Cordon Bleu', rating: 2 });
     fixture.detectChanges();
     const rows = fixture.debugElement.queryAll(By.directive(FoodRowComponent));
-    expect(rows.length).toEqual(4);
+    expect(rows.length).toEqual(3);
   });
 });

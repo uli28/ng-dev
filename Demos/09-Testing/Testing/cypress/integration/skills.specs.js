@@ -3,8 +3,8 @@
 context('Skills', () => {
   beforeEach(() => {
     cy.fixture('skills.json');
-    cy.server();
-    cy.route({
+    // cy.server();
+    cy.intercept({
       method: 'GET',
       url: 'http://localhost:3000/skills',
       response: 'fixture:skills.json',
