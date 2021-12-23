@@ -1,57 +1,62 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+// import { ComponentFixture, TestBed } from '@angular/core/testing';
+// import { ComponentInjectionComponent } from './component-injection.component';
+// import { FoodItem } from '../service-http-injection/food.model';
+// import { of } from 'rxjs';
+// import { FoodService } from '../service-http-injection/food.service';
+// import { HttpClientTestingModule } from '@angular/common/http/testing';
 
-import { ComponentInjectionComponent } from './component-injection.component';
-import { FoodItem } from '../service-http-injection/food.model';
-import { of } from 'rxjs';
+// describe('ComponentInjectionComponent', () => {
+//   let component: ComponentInjectionComponent;
+//   let fixture: ComponentFixture<ComponentInjectionComponent>;
 
-describe('ComponentInjectionComponent', () => {
-  let component: ComponentInjectionComponent;
-  let fixture: ComponentFixture<ComponentInjectionComponent>;
+//   let mockFS: any;
 
-  let mockFS: any;
+//   const foodData: FoodItem[] = [
+//     { name: 'Pad Thai', rating: 5 },
+//     { name: 'Butter Chicken', rating: 5 },
+//     { name: 'Cannelloni', rating: 4 },
+//     { name: 'Cordon Bleu', rating: 2 },
+//   ];
 
-  const foodData: FoodItem[] = [
-    { name: 'Pad Thai', rating: 5 },
-    { name: 'Butter Chicken', rating: 5 },
-    { name: 'Cannelloni', rating: 4 },
-    { name: 'Cordon Bleu', rating: 2 },
-  ];
+//   const serviceResult = [
+//     { name: 'Pad Thai', rating: 5 },
+//     { name: 'Butter Chicken', rating: 5 },
+//     { name: 'Cannelloni', rating: 4 },
+//   ];
 
-  const serviceResult = [
-    { name: 'Pad Thai', rating: 5 },
-    { name: 'Butter Chicken', rating: 5 },
-    { name: 'Cannelloni', rating: 4 },
-  ];
+//   const deleteItem = { name: 'Cordon Bleu', rating: 2 };
 
-  // beforeEach(async () => {
-  //   await TestBed.configureTestingModule({
-  //     declarations: [ ComponentInjectionComponent ]
-  //   })
-  //   .compileComponents();
-  // });
+//   beforeEach(() => {
+//     mockFS = jasmine.createSpyObj(['getItems', 'deleteItem']);
+//     mockFS.getItems.and.returnValue(of(foodData));
+//     mockFS.deleteItem.and.returnValue(of(serviceResult));
 
-  // beforeEach(() => {
-  //   fixture = TestBed.createComponent(ComponentInjectionComponent);
-  //   component = fixture.componentInstance;
-  //   fixture.detectChanges();
-  // });
+//     TestBed.configureTestingModule({
+//       declarations: [ComponentInjectionComponent],
+//       imports: [HttpClientTestingModule],
+//       providers: [{ provide: FoodService, useValue: mockFS }],
+//     });
+//     fixture = TestBed.createComponent(ComponentInjectionComponent);
+//     component = fixture.componentInstance;
+//   });
 
-  // it('should create', () => {
-  //   expect(component).toBeTruthy();
-  // });
+//   it('should create the component', () => {
+//     expect(component).toBeTruthy();
+//   });
 
-  beforeEach(() => {
-    mockFS = jasmine.createSpyObj(['getItems', 'deleteItem']);
-    mockFS.getItems.and.returnValue(of(foodData));
-    mockFS.deleteItem.and.returnValue(of(serviceResult));
-    component = new ComponentInjectionComponent(mockFS);
-  });
+//   it('should render 4 rows by default', () => {
+//     fixture.detectChanges();
+//     let divs: HTMLElement[] = fixture.nativeElement.querySelector('div');
+//     expect(divs.length).toBe(4);
+//   });
 
-  it('removes the item from the list', () => {
-    component.food = foodData;
-
-    component.deleteFood(foodData[2]);
-    expect(component.food.length).toBe(3);
-    expect(mockFS.deleteItem).toHaveBeenCalledWith(foodData[2]);
-  });
-});
+//   it('removes the item from the list', () => {
+//     // component.food = foodData;
+//     // component.deleteFood(deleteItem);
+//     // expect(component.food.length).toBe(3);
+//     // expect(mockFS.deleteItem).toHaveBeenCalledWith({
+//     //   name: 'Cordon Bleu',
+//     //   rating: 2,
+//     // });
+//   });
+// });

@@ -25,6 +25,9 @@ import { SpyComponent } from './samples/spy/spy.component';
 import { ServiceHttpInjectionComponent } from './samples/service-http-injection/service-http-injection.component';
 import { ComponentClassComponent } from './samples/component-class/component-class.component';
 import { ComponentInjectionComponent } from './samples/component-injection/component-injection.component';
+import { ComponentTestingmoduleComponent } from './samples/component-testingmodule/component-testingmodule.component';
+import { TestingModuleComponent } from './samples/component-testingmodule/testing-module/testing-module.component';
+import { TestingModuleInlineComponent } from './samples/component-testingmodule/testing-module-inline/testing-module-inline.component';
 
 const demoRoutes: Routes = [
   {
@@ -45,6 +48,10 @@ const demoRoutes: Routes = [
       { path: 'e2e', component: Introe2eComponent },
       { path: 'spy', component: SpyComponent },
       { path: 'comp-class', component: ComponentClassComponent },
+      {
+        path: 'comp-testingmodule',
+        component: ComponentTestingmoduleComponent,
+      },
     ],
   },
 ];
@@ -70,6 +77,9 @@ const demoRoutes: Routes = [
     ServiceHttpInjectionComponent,
     ComponentClassComponent,
     ComponentInjectionComponent,
+    ComponentTestingmoduleComponent,
+    TestingModuleComponent,
+    TestingModuleInlineComponent,
   ],
   imports: [
     CommonModule,

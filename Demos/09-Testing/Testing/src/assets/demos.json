@@ -37,6 +37,11 @@
     "markdown": "comp-class"
   },
   {
+    "url": "comp-testingmodule",
+    "title": "Component Testingmodule",
+    "markdown": "testingmodule"
+  },
+  {
     "url": "comp-inject",
     "title": "Component Injection",
     "markdown": "simplecomp"
