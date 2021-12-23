@@ -2,6 +2,7 @@ import { FoodService } from './food.service';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import { FoodItem } from '../model/food-item.model';
+import { foodAddItem } from './food.service.mocks';
 
 describe('FoodService', () => {
   let service: FoodService;
@@ -16,7 +17,7 @@ describe('FoodService', () => {
   });
 
   it('should create food in an array', (done) => {
-    const item: FoodItem = { name: 'Gulasch', rating: 2 };
+    const item: FoodItem = foodAddItem;
     service.addItem(item);
     service.getItems().subscribe((data) => {
       expect(data.length).toEqual(1);
@@ -25,7 +26,7 @@ describe('FoodService', () => {
   });
 
   it('should return the correct amount of items', (done) => {
-    const g: FoodItem = { name: 'Gulasch', rating: 2 };
+    const g: FoodItem = foodAddItem;
     service.addItem(g);
     const f: FoodItem = { name: 'Panierter Kabeljau', rating: 3 };
     service.addItem(f);

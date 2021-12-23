@@ -1,11 +1,21 @@
+@import "stylevars";
+
 mat-card{
-    width: 60vw;    
+    min-width: 500px;    
 }
 
 mat-card-actions{
     display: flex;
     flex-direction: row;
     justify-content: center; 
+}
+
+mat-card-header {
+    background-color: #8D6E63;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
 :host-context{

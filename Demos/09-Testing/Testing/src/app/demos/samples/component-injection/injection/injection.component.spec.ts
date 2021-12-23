@@ -1,38 +1,25 @@
 import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { DebugElement } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { of } from 'rxjs';
+import {
+  foodDeleteResult,
+  foodLoadData,
+} from '../../foodService/food.service.mocks';
 import { FoodItem } from '../../service-http-injection/food.model';
 import { FoodService } from '../../service-http-injection/food.service';
 import { InjectionComponent } from './injection.component';
-import { DebugElement } from '@angular/core';
-import { By } from '@angular/platform-browser';
 
 describe('InjectionComponent', () => {
   let component: InjectionComponent;
   let fixture: ComponentFixture<InjectionComponent>;
   let el: DebugElement;
-
   let mockFS: any;
-
-  const foodData: FoodItem[] = [
-    { name: 'Pad Thai', rating: 5 },
-    { name: 'Butter Chicken', rating: 5 },
-    { name: 'Cannelloni', rating: 4 },
-    { name: 'Cordon Bleu', rating: 2 },
-  ];
-
-  const serviceResult = [
-    { name: 'Pad Thai', rating: 5 },
-    { name: 'Butter Chicken', rating: 5 },
-    { name: 'Cannelloni', rating: 4 },
-  ];
-
-  const deleteItem = { name: 'Cordon Bleu', rating: 2 };
 
   beforeEach(async () => {
     mockFS = jasmine.createSpyObj(['getItems', 'deleteItem']);
-    mockFS.getItems.and.returnValue(of(foodData));
-    mockFS.deleteItem.and.returnValue(of(serviceResult));
+    mockFS.getItems.and.returnValue(of(foodLoadData));
+    mockFS.deleteItem.and.returnValue(of(foodDeleteResult));
 
     await TestBed.configureTestingModule({
       declarations: [InjectionComponent],
@@ -48,7 +35,7 @@ describe('InjectionComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
-    // expect(component.food).toBe(foodData);
+    expect(component.food).toBe(foodLoadData);
   });
 
   // it('should render 4 rows by default', () => {

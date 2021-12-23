@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { foodLoadData } from '../../foodService/food.service.mocks';
 import { FoodItem } from '../../service-http-injection/food.model';
 
 @Component({
@@ -13,12 +14,7 @@ import { FoodItem } from '../../service-http-injection/food.model';
   styles: ['.hoverclick {cursor: pointer;}'],
 })
 export class TestingModuleInlineComponent {
-  food: FoodItem[] = [
-    { name: 'Pad Thai', rating: 5 },
-    { name: 'Butter Chicken', rating: 5 },
-    { name: 'Cannelloni', rating: 4 },
-    { name: 'Cordon Bleu', rating: 2 },
-  ];
+  food: FoodItem[] = foodLoadData;
 
   constructor() {}
 

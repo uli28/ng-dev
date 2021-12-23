@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Util } from '../global/util';
+import { Util } from '../util/util';
 import { Message } from './message.model';
 
 @Injectable({

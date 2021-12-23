@@ -1,6 +1,6 @@
 import { of } from 'rxjs';
 import { BetterMessageService } from './better.service';
-import { original, processed } from '../global/util.mock';
+import { original, processed } from '../util/util.mock';
 
 describe('Testing a simple Service: SimpleMessageService', () => {
   let service: BetterMessageService;
