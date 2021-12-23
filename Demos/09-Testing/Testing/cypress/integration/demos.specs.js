@@ -6,7 +6,7 @@ context('Demos', () => {
   });
 
   describe('Left Menu', () => {
-    it('Has 11 options in Testing menu', () => {
+    it('Has 14 options in Testing menu', () => {
       // cy.get('.clickable').first().click();
       cy.get('button.mat-raised-button').should('have.length', 14);
     });
