@@ -1,6 +1,6 @@
-Navigate to folder `\demos\samples\simple-comp`
+Navigate to folder `\demos\samples\component-injection`
 
-Investigate `food.component.ts`, `food.service.ts` and `food.component.spec.ts`
+Investigate `injection.component.ts`, `food.service.ts` and `injection.component.spec.ts`
 
 Notice that whe are using `jasmine.createSpyObj()` to mock an Object and fake it's result using `.and.returnValue`:
 

@@ -28,6 +28,7 @@ import { ComponentInjectionComponent } from './samples/component-injection/compo
 import { ComponentTestingmoduleComponent } from './samples/component-testingmodule/component-testingmodule.component';
 import { TestingModuleComponent } from './samples/component-testingmodule/testing-module/testing-module.component';
 import { TestingModuleInlineComponent } from './samples/component-testingmodule/testing-module-inline/testing-module-inline.component';
+import { InjectionComponent } from './samples/component-injection/injection/injection.component';
 
 const demoRoutes: Routes = [
   {
@@ -80,6 +81,7 @@ const demoRoutes: Routes = [
     ComponentTestingmoduleComponent,
     TestingModuleComponent,
     TestingModuleInlineComponent,
+    InjectionComponent,
   ],
   imports: [
     CommonModule,
