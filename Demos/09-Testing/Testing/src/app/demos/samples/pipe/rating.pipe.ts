@@ -26,7 +26,6 @@ export class RatingPipe implements PipeTransform {
         break;
       default:
         throw new Error('Argument out of range');
-        break;
     }
     return result;
   }

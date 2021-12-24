@@ -4,7 +4,7 @@ import { By } from '@angular/platform-browser';
 import {
   foodDeleteItem,
   foodAddItem,
-} from '../../foodService/food.service.mocks';
+} from '../../foodService/food-assets.service.mocks';
 import { TestingModuleComponent } from './testing-module.component';
 
 describe('TestingModuleComponent', () => {

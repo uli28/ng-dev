@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { foodLoadData } from '../../foodService/food.service.mocks';
+import { foodLoadData } from '../../foodService/food-assets.service.mocks';
 import { FoodItem } from '../../service-http-injection/food.model';
 
 @Component({
