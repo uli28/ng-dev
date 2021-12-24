@@ -6,15 +6,11 @@ import { FoodItem } from '../../foodService/food.model';
   templateUrl: './food-row.component.html',
   styleUrls: ['./food-row.component.scss'],
 })
-export class FoodRowComponent implements OnInit {
+export class FoodRowComponent {
   @Input() food: FoodItem;
-  @Output() delete = new EventEmitter();
-
-  constructor() {}
-
-  ngOnInit() {}
+  @Output() onDelete: EventEmitter<FoodItem> = new EventEmitter();
 
   deleteFood(item: FoodItem) {
-    this.delete.emit(item);
+    this.onDelete.emit(item);
   }
 }
