@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { foodLoadData } from '../../foodService/food-assets.service.mocks';
-import { FoodItem } from '../../service-http-injection/food.model';
+import { foodLoadData } from '../../foodService/food.mocks';
+import { FoodItem } from '../../foodService/food.model';
 
 @Component({
   selector: 'app-testing-module-inline',

@@ -1,9 +1,8 @@
 import { DebugElement } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
-
+import { foodDeleteItem } from '../../foodService/food.mocks';
 import { TestingModuleInlineComponent } from './testing-module-inline.component';
-import { FoodItem } from '../../service-http-injection/food.model';
 
 describe('TestingModuleInlineComponent', () => {
   let component: TestingModuleInlineComponent;
@@ -30,8 +29,7 @@ describe('TestingModuleInlineComponent', () => {
   });
 
   it('should render 3 rows after delete', () => {
-    let del: FoodItem = { name: 'Cordon Bleu', rating: 2 };
-    component.deleteFood(del);
+    component.deleteFood(foodDeleteItem);
     fixture.detectChanges();
     const divs = el.queryAll(By.css('.hoverclick'));
     expect(divs.length).toBe(3);

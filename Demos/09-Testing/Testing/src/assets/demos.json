@@ -28,8 +28,13 @@
   },
   {
     "url": "httptest",
-    "title": "Service Http Injection",
+    "title": "Service Http Tests",
     "markdown": "mock"
+  },
+  {
+    "url": "stateful",
+    "title": "Stateful Service",
+    "markdown": "stateful"
   },
   {
     "url": "comp-class",
@@ -48,19 +53,11 @@
   },
   {
     "url": "component-write",
-    "title": "Component Write",
-    "id": 63,
-    "topicid": 1,
-    "visible": true,
-    "sortOrder": 0
+    "title": "Component Write"
   },
   {
     "url": "component-events",
-    "title": "Component Events",
-    "id": 89,
-    "topicid": 1,
-    "visible": true,
-    "sortOrder": 0
+    "title": "Component Events"
   },
   {
     "url": "harness",

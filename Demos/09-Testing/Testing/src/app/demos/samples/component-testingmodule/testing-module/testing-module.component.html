@@ -3,5 +3,5 @@
 </div>
 <div class="divInput">
   <input type="text" placeholder="Enter food"  [(ngModel)]="foodToAdd">
-  <button (click)="addFood(foodToAdd)" class="buttonAdd">Add Food</button>
+  <button (click)="addFood(foodToAdd)" class="buttonAdd" [disabled]="foodToAdd!=null"  >Add Food</button>
 </div>

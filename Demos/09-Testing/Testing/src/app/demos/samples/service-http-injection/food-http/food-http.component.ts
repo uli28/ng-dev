@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FoodService } from '../food.service';
+import { foodAddItem } from '../../foodService/food.mocks';
+import { FoodItem } from '../../foodService/food.model';
 
 @Component({
   selector: 'app-food-http',
@@ -12,14 +14,10 @@ export class FoodHttpComponent implements OnInit {
   ngOnInit(): void {}
 
   addFood() {
-    const food = {
-      name: 'Pad Kra Pao',
-      rating: 1,
-    };
-    this.fs.addItem(food);
+    this.fs.addFood(foodAddItem as FoodItem);
   }
 
   getFood() {
-    this.fs.getItems().subscribe((food) => console.log(food));
+    this.fs.getAllFood().subscribe((food) => console.log(food));
   }
 }

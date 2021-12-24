@@ -29,6 +29,7 @@ import { ComponentTestingmoduleComponent } from './samples/component-testingmodu
 import { TestingModuleComponent } from './samples/component-testingmodule/testing-module/testing-module.component';
 import { TestingModuleInlineComponent } from './samples/component-testingmodule/testing-module-inline/testing-module-inline.component';
 import { InjectionComponent } from './samples/component-injection/injection/injection.component';
+import { StatefulComponent } from './samples/foodService/stateful/stateful.component';
 
 const demoRoutes: Routes = [
   {
@@ -52,6 +53,10 @@ const demoRoutes: Routes = [
       {
         path: 'comp-testingmodule',
         component: ComponentTestingmoduleComponent,
+      },
+      {
+        path: 'stateful',
+        component: StatefulComponent,
       },
     ],
   },
@@ -82,6 +87,7 @@ const demoRoutes: Routes = [
     TestingModuleComponent,
     TestingModuleInlineComponent,
     InjectionComponent,
+    StatefulComponent,
   ],
   imports: [
     CommonModule,

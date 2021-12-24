@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { FoodItem } from '../service-http-injection/food.model';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-component-testingmodule',

@@ -1,9 +1,9 @@
-import { FoodRowComponent } from './food-row.component';
-import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
-import { RatingPipe } from '../../pipe/rating.pipe';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
-import { inputItem } from './food-row.test';
+import { FoodItem } from '../../foodService/food.model';
+import { RatingPipe } from '../../pipe/rating.pipe';
+import { FoodRowComponent } from './food-row.component';
 
 describe('Food Row Integration Test', () => {
   let fixture: ComponentFixture<FoodRowComponent>;
@@ -14,7 +14,10 @@ describe('Food Row Integration Test', () => {
       schemas: [NO_ERRORS_SCHEMA],
     });
     fixture = TestBed.createComponent(FoodRowComponent);
-    fixture.componentInstance.food = { name: 'Pad Thai', rating: 5 };
+    fixture.componentInstance.food = {
+      name: 'Pad Thai',
+      rating: 5,
+    } as FoodItem;
     // import test data from external file
     // fixture.componentInstance.food = inputItem;
     fixture.detectChanges();

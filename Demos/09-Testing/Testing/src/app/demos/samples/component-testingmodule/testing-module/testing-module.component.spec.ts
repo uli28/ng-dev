@@ -1,10 +1,8 @@
 import { DebugElement } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
-import {
-  foodDeleteItem,
-  foodAddItem,
-} from '../../foodService/food-assets.service.mocks';
+import { foodAddItem, foodDeleteItem } from '../../foodService/food.mocks';
+import { FoodItem } from '../../foodService/food.model';
 import { TestingModuleComponent } from './testing-module.component';
 
 describe('TestingModuleComponent', () => {
@@ -52,7 +50,8 @@ describe('TestingModuleComponent', () => {
   });
 
   it('should render 5 rows after add', () => {
-    component.addFood(foodAddItem);
+    let add = foodAddItem as FoodItem;
+    component.addFood(add);
     fixture.detectChanges();
     const divs = el.queryAll(By.css('.hoverclick'));
     expect(divs.length).toBe(5);

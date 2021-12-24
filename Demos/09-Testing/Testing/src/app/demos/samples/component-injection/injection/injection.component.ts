@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FoodService } from '../../foodService/food.service';
-import { FoodItem } from '../../model/food-item.model';
+import { FoodServiceStateful } from '../../foodService/food-stateful.service';
+import { FoodItem } from '../../foodService/food.model';
 
 @Component({
   selector: 'app-injection',
@@ -8,7 +8,7 @@ import { FoodItem } from '../../model/food-item.model';
   styleUrls: ['./injection.component.scss'],
 })
 export class InjectionComponent implements OnInit {
-  constructor(private fs: FoodService) {}
+  constructor(private fs: FoodServiceStateful) {}
 
   food: FoodItem[];
 

@@ -1,23 +1,23 @@
-import { FoodService } from './food.service';
+import { FoodServiceStateful } from './food-stateful.service';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
-import { FoodItem } from '../model/food-item.model';
-import { foodAddItem } from './food.service.mocks';
+import { foodAddItem } from './food.mocks';
+import { FoodItem } from './food.model';
 
 describe('FoodService', () => {
-  let service: FoodService;
+  let service: FoodServiceStateful;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule],
-      providers: [FoodService],
+      providers: [FoodServiceStateful],
     });
 
-    service = TestBed.inject(FoodService);
+    service = TestBed.inject(FoodServiceStateful);
   });
 
   it('should create food in an array', (done) => {
-    const item: FoodItem = foodAddItem;
+    const item = foodAddItem as FoodItem;
     service.addItem(item);
     service.getItems().subscribe((data) => {
       expect(data.length).toEqual(1);
@@ -26,9 +26,9 @@ describe('FoodService', () => {
   });
 
   it('should return the correct amount of items', (done) => {
-    const g: FoodItem = foodAddItem;
+    const g = foodAddItem as FoodItem;
     service.addItem(g);
-    const f: FoodItem = { name: 'Panierter Kabeljau', rating: 3 };
+    const f = { name: 'Panierter Kabeljau', rating: 3 } as FoodItem;
     service.addItem(f);
     service.getItems().subscribe((data) => {
       expect(data.length).toEqual(2);
@@ -37,9 +37,9 @@ describe('FoodService', () => {
   });
 
   it('should have the correct nbr of items after delete', (done) => {
-    const g: FoodItem = { name: 'Gulasch', rating: 2 };
+    const g = foodAddItem as FoodItem;
     service.addItem(g);
-    const f: FoodItem = { name: 'Panierter Kabeljau', rating: 3 };
+    const f = { name: 'Panierter Kabeljau', rating: 3 } as FoodItem;
     service.addItem(f);
     service.deleteItem(g);
 
@@ -49,7 +49,9 @@ describe('FoodService', () => {
     });
 
     service.getItems().subscribe((data) => {
-      expect(data).toEqual([{ name: 'Panierter Kabeljau', rating: 3 }]);
+      expect(data).toEqual([
+        { name: 'Panierter Kabeljau', rating: 3 } as FoodItem,
+      ]);
       done();
     });
   });

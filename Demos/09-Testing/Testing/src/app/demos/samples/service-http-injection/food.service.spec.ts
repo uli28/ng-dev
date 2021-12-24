@@ -4,115 +4,81 @@ import {
 } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import { environment } from 'src/environments/environment';
-import { FoodItem } from './food.model';
+import {
+  foodAddedItem,
+  foodAddItem,
+  foodDeleteItem,
+  foodLoadData,
+  foodQueryItem,
+} from '../foodService/food.mocks';
+import { FoodItem } from '../foodService/food.model';
 import { FoodService } from './food.service';
 
-describe('Service - HttpTest -FoodService', () => {
-  let service: FoodService;
+describe('Service - HttpTestingController', () => {
+  let fs: FoodService;
   let controller: HttpTestingController;
-  let data: any = [];
 
   beforeEach(() => {
-    data = [
-      { name: 'Rehgulasch', rating: 2 },
-      { name: 'Leberkäse', rating: 2 },
-    ];
-
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule],
       providers: [FoodService],
     });
 
-    service = TestBed.inject(FoodService);
-
+    fs = TestBed.inject(FoodService);
     controller = TestBed.inject(HttpTestingController);
-
-    // setup the service mock
-    const url = `${environment.api}food`;
-    const req = controller.expectOne(url);
-    expect(req.request.method).toEqual('GET');
-
-    // flushing down mock data
-    req.flush(data);
-
-    // make sure all requests are completed
-    controller.verify();
-
-    // set the state
-    const fs: any = service;
-    fs.setState(data);
   });
 
   // Verify that there are no pending HTTP requests
-  afterEach(() => {
+  // afterEach(() => {
+  //   controller.verify();
+  // });
+
+  it('should return the initial load data', () => {
+    fs.getAllFood().subscribe((data) => {
+      // several data tests
+      expect(data).toBeTruthy();
+      expect(data.length).toBe(4);
+      const firstFood = data.find((f) => f.id == 2);
+      expect(firstFood).toEqual(foodQueryItem);
+    });
+
+    // test if a specific url has been called using GET
+    const url = `${environment.api}food`;
+    const req = controller.expectOne(url);
+    expect(req.request.method).toEqual('GET');
+    // flushing down mock data
+    req.flush(foodLoadData);
+    // make sure all requests are completed -> can be moved to afterEach
     controller.verify();
   });
 
-  it('should be created and correctly setup', () => {
-    expect(service).toBeTruthy();
-    service.getItems().subscribe((items) => {
-      expect(items).toBe(data);
+  it('should create a new food item', () => {
+    fs.addFood(foodAddItem as FoodItem).subscribe((f) => {
+      expect(f).toBeTruthy();
     });
+
+    // test if a specific url has been called using POST
+    const url = `${environment.api}food`;
+    const req = controller.expectOne(url);
+    expect(req.request.method).toEqual('POST');
+    // flushing down mock data
+    req.flush(foodAddedItem);
+    // make sure all requests are completed -> can be moved to afterEach
+    controller.verify();
   });
 
-  it('should return initialized the data', (done) => {
-    service.getItems().subscribe((items) => {
-      expect(items.length).toEqual(2);
-      done();
+  it('should have the correct number of items after delete', () => {
+    fs.deleteFood(foodDeleteItem as FoodItem).subscribe((f) => {
+      expect(f).toEqual({});
     });
-  });
 
-  it('should create a post in an array', (done) => {
-    service.addItem({ name: 'Gulasch', rating: 2 });
-
-    service.getItems().subscribe((items) => {
-      expect(items.length).toEqual(3);
-      done();
-    });
-  });
-
-  it('should return the correct amount of items', (done) => {
-    service.addItem({ name: 'Gulasch', rating: 2 });
-    service.addItem({ name: 'Panierter Kabeljau', rating: 3 });
-
-    service.getItems().subscribe((items) => {
-      expect(items.length).toEqual(4);
-      expect(items[1].name).toEqual('Leberkäse');
-      done();
-    });
-  });
-
-  it('isEquivalent works as expected', () => {
-    expect(
-      service.isEquivalent(
-        { name: 'Gulasch', rating: 2 },
-        { name: 'Gulasch', rating: 2 }
-      )
-    ).toBe(true);
-
-    expect(
-      service.isEquivalent(
-        { name: 'Gulasch', rating: 3 },
-        { name: 'Gulasch', rating: 2 }
-      )
-    ).toBe(false);
-
-    expect(
-      service.isEquivalent(
-        { name: 'Gulasch', rating: 2, price: 1 },
-        { name: 'Gulasch', rating: 2 }
-      )
-    ).toBe(false);
-  });
-
-  it('should have the correct number of items after delete', (done) => {
-    const reh: FoodItem = { name: 'Rehgulasch', rating: 2 };
-    service.deleteItem(reh);
-
-    service.getItems().subscribe((items) => {
-      expect(items.length).toEqual(1);
-      expect(items).toEqual([{ name: 'Leberkäse', rating: 2 }]);
-      done();
-    });
+    // test if a specific url has been called using POST
+    const url = `${environment.api}food/${foodDeleteItem.id}`;
+    const req = controller.expectOne(url);
+    expect(req.request.method).toEqual('DELETE');
+    // flushing down mock data
+    req.flush({});
+    // make sure all requests are completed -> can be moved to afterEach
+    controller.verify();
   });
 });
