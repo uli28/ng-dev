@@ -1,16 +1,16 @@
 import { CommonModule } from '@angular/common';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { DebugElement, NO_ERRORS_SCHEMA, OnInit } from '@angular/core';
+import { DebugElement } from '@angular/core';
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
 import { of } from 'rxjs';
 import {
   foodDeleteItem,
   foodDeleteResult,
   foodLoadData,
 } from '../../foodService/food.mocks';
-import { InjectionComponent } from './injection.component';
-import { By } from '@angular/platform-browser';
 import { FoodService } from '../../foodService/food.service';
+import { InjectionComponent } from './injection.component';
 
 describe('InjectionComponent', () => {
   let component: InjectionComponent;

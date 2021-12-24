@@ -13,6 +13,7 @@ import {
 } from './food.mocks';
 import { FoodItem } from './food.model';
 import { FoodService } from './food.service';
+import { foodUpdateItem, foodUpdatedItem } from './food.mocks';
 
 describe('Service - HttpTestingController', () => {
   let fs: FoodService;
@@ -66,7 +67,22 @@ describe('Service - HttpTestingController', () => {
     // controller.verify();
   });
 
-  it('should have the correct number of items after delete', () => {
+  it('should update a food item', () => {
+    fs.updateFood(foodUpdateItem as FoodItem).subscribe((f) => {
+      expect(f).toBeTruthy();
+    });
+
+    // test if a specific url has been called using POST
+    const url = `${environment.api}food`;
+    const req = controller.expectOne(url);
+    expect(req.request.method).toEqual('PUT');
+    // flushing down mock data
+    req.flush(foodUpdatedItem);
+    // make sure all requests are completed -> can be moved to afterEach
+    // controller.verify();
+  });
+
+  it('should delete a food item', () => {
     fs.deleteFood(foodDeleteItem as FoodItem).subscribe((f) => {
       expect(f).toEqual({});
     });

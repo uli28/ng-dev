@@ -1,19 +1,18 @@
-import { FoodServiceStateful } from './food-stateful.service';
 import {
   HttpClientTestingModule,
   HttpTestingController,
 } from '@angular/common/http/testing';
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { TestBed } from '@angular/core/testing';
+import { skip } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import {
   foodAddedItem,
   foodAddItem,
   foodDeleteItem,
   foodLoadData,
-  foodQueryItem,
 } from '../foodService/food.mocks';
 import { FoodItem } from '../foodService/food.model';
-import { environment } from 'src/environments/environment';
-import { skip } from 'rxjs';
+import { FoodServiceStateful } from './food-stateful.service';
 import { StatefulComponent } from './stateful.component';
 
 describe('Stateful Service', () => {
