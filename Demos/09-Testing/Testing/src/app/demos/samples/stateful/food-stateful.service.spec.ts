@@ -1,9 +1,9 @@
+import { FoodServiceStateful } from './food-stateful.service';
 import {
   HttpClientTestingModule,
   HttpTestingController,
 } from '@angular/common/http/testing';
-import { TestBed } from '@angular/core/testing';
-import { environment } from 'src/environments/environment';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import {
   foodAddedItem,
   foodAddItem,
@@ -12,19 +12,21 @@ import {
   foodQueryItem,
 } from '../foodService/food.mocks';
 import { FoodItem } from '../foodService/food.model';
-import { FoodService } from './food.service';
+import { environment } from 'src/environments/environment';
+import { skip } from 'rxjs';
+import { StatefulComponent } from './stateful.component';
 
-describe('Service - HttpTestingController', () => {
-  let fs: FoodService;
+describe('Stateful Service', () => {
+  let fs: FoodServiceStateful;
   let controller: HttpTestingController;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
+      declarations: [StatefulComponent],
       imports: [HttpClientTestingModule],
-      providers: [FoodService],
+      providers: [FoodServiceStateful],
     });
-
-    fs = TestBed.inject(FoodService);
+    fs = TestBed.inject(FoodServiceStateful);
     controller = TestBed.inject(HttpTestingController);
   });
 
@@ -33,13 +35,14 @@ describe('Service - HttpTestingController', () => {
   });
 
   it('should return the initial load data', () => {
-    fs.getAllFood().subscribe((data) => {
-      // several data tests
-      expect(data).toBeTruthy();
-      expect(data.length).toBe(4);
-      const firstFood = data.find((f) => f.id == 2);
-      expect(firstFood).toEqual(foodQueryItem);
-    });
+    // notice: skip(1) is used because the first marble is the initialization value -> []
+    fs.getAllFood()
+      .pipe(skip(1))
+      .subscribe((data) => {
+        // several data tests
+        expect(data).toBeTruthy();
+        expect(data.length).toBe(4);
+      });
 
     // test if a specific url has been called using GET
     const url = `${environment.api}food`;
@@ -47,14 +50,10 @@ describe('Service - HttpTestingController', () => {
     expect(req.request.method).toEqual('GET');
     // flushing down mock data
     req.flush(foodLoadData);
-    // make sure all requests are completed -> can be moved to afterEach
-    controller.verify();
   });
 
-  it('should create a new food item', () => {
-    fs.addFood(foodAddItem as FoodItem).subscribe((f) => {
-      expect(f).toBeTruthy();
-    });
+  it('should create food in an array', () => {
+    fs.addFood(foodAddItem as FoodItem);
 
     // test if a specific url has been called using POST
     const url = `${environment.api}food`;
@@ -62,22 +61,16 @@ describe('Service - HttpTestingController', () => {
     expect(req.request.method).toEqual('POST');
     // flushing down mock data
     req.flush(foodAddedItem);
-    // make sure all requests are completed -> can be moved to afterEach
-    // controller.verify();
   });
 
-  it('should have the correct number of items after delete', () => {
-    fs.deleteFood(foodDeleteItem as FoodItem).subscribe((f) => {
-      expect(f).toEqual({});
-    });
+  it('should delete food in an array', () => {
+    fs.deleteFood(foodDeleteItem as FoodItem);
 
     // test if a specific url has been called using POST
     const url = `${environment.api}food/${foodDeleteItem.id}`;
     const req = controller.expectOne(url);
     expect(req.request.method).toEqual('DELETE');
     // flushing down mock data
-    req.flush({});
-    // make sure all requests are completed -> can be moved to afterEach
-    // controller.verify();
+    req.flush(foodAddedItem);
   });
 });

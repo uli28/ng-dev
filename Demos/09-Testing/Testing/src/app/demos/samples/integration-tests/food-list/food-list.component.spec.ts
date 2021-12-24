@@ -2,11 +2,11 @@ import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { of } from 'rxjs';
-import { FoodServiceStateful } from '../../foodService/food-stateful.service';
 import { RatingPipe } from '../../pipe/rating.pipe';
 import { FoodRowComponent } from '../food-row/food-row.component';
 import { FoodListComponent } from './food-list.component';
 import { foodLoadData, foodDeleteResult } from '../../foodService/food.mocks';
+import { FoodService } from '../../foodService/food.service';
 
 describe('Integration Test:', () => {
   let mockFS: any;
@@ -20,7 +20,7 @@ describe('Integration Test:', () => {
 
     await TestBed.configureTestingModule({
       declarations: [FoodListComponent, FoodRowComponent, RatingPipe],
-      providers: [{ provide: FoodServiceStateful, useValue: mockFS }],
+      providers: [{ provide: FoodService, useValue: mockFS }],
       schemas: [NO_ERRORS_SCHEMA],
     });
     fixture = TestBed.createComponent(FoodListComponent);

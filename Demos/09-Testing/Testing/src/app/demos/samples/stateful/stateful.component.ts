@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FoodServiceStateful } from '../food-stateful.service';
-import { FoodItem } from '../food.model';
+import { FoodItem } from '../foodService/food.model';
+import { FoodServiceStateful } from './food-stateful.service';
 
 @Component({
   selector: 'app-stateful',

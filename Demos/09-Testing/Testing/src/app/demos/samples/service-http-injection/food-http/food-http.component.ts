@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FoodService } from '../food.service';
 import { foodAddItem } from '../../foodService/food.mocks';
 import { FoodItem } from '../../foodService/food.model';
+import { FoodService } from '../../foodService/food.service';
 
 @Component({
   selector: 'app-food-http',

@@ -29,7 +29,7 @@ import { ComponentTestingmoduleComponent } from './samples/component-testingmodu
 import { TestingModuleComponent } from './samples/component-testingmodule/testing-module/testing-module.component';
 import { TestingModuleInlineComponent } from './samples/component-testingmodule/testing-module-inline/testing-module-inline.component';
 import { InjectionComponent } from './samples/component-injection/injection/injection.component';
-import { StatefulComponent } from './samples/foodService/stateful/stateful.component';
+import { StatefulComponent } from './samples/stateful/stateful.component';
 
 const demoRoutes: Routes = [
   {

@@ -1,13 +1,16 @@
 import { CommonModule } from '@angular/common';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { DebugElement, NO_ERRORS_SCHEMA } from '@angular/core';
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { DebugElement, NO_ERRORS_SCHEMA, OnInit } from '@angular/core';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { of } from 'rxjs';
-import { foodDeleteResult, foodLoadData } from '../../foodService/food.mocks';
-import { FoodService } from '../../service-http-injection/food.service';
+import {
+  foodDeleteItem,
+  foodDeleteResult,
+  foodLoadData,
+} from '../../foodService/food.mocks';
 import { InjectionComponent } from './injection.component';
 import { By } from '@angular/platform-browser';
-import { foodDeleteItem } from '../../foodService/food.mocks';
+import { FoodService } from '../../foodService/food.service';
 
 describe('InjectionComponent', () => {
   let component: InjectionComponent;
@@ -16,15 +19,14 @@ describe('InjectionComponent', () => {
   let mockFS: any;
 
   beforeEach(async () => {
-    mockFS = jasmine.createSpyObj(['getItems', 'deleteItem']);
-    mockFS.getItems.and.returnValue(of(foodLoadData));
-    mockFS.deleteItem.and.returnValue(of(foodDeleteResult));
+    mockFS = jasmine.createSpyObj(['getAllFood', 'deleteFood']);
+    mockFS.getAllFood.and.returnValue(of(foodLoadData));
+    mockFS.deleteFood.and.returnValue(of(foodDeleteResult));
 
     await TestBed.configureTestingModule({
       declarations: [InjectionComponent],
       imports: [CommonModule, HttpClientTestingModule],
       providers: [{ provide: FoodService, useValue: mockFS }],
-      schemas: [NO_ERRORS_SCHEMA],
     }).compileComponents();
     fixture = TestBed.createComponent(InjectionComponent);
     fixture.detectChanges();
@@ -33,20 +35,34 @@ describe('InjectionComponent', () => {
   });
 
   it('should create', () => {
+    mockFS.getAllFood.and.returnValue(of(foodLoadData));
     let comp = el.nativeElement.outerHTML;
     console.log(comp);
     expect(component).toBeTruthy();
   });
 
-  it('should render 4 rows by default', () => {
-    const divs = el.queryAll(By.css('.hoverclick'));
-    expect(divs.length).toBe(4);
-  });
+  it(
+    'should render 4 rows by default',
+    waitForAsync(() => {
+      mockFS.getAllFood.and.returnValue(of(foodLoadData));
+      component.ngOnInit();
+      fixture.detectChanges();
+      fixture.whenStable().then(() => {
+        const divs = el.queryAll(By.css('.hoverclick'));
+        expect(divs.length).toBe(4);
+      });
+    })
+  );
 
-  it('should render 3 rows after delete', () => {
-    component.deleteFood(foodDeleteItem);
-    fixture.detectChanges();
-    const divs = el.queryAll(By.css('.hoverclick'));
-    expect(divs.length).toBe(3);
-  });
+  it(
+    'should render 3 rows after delete',
+    waitForAsync(() => {
+      component.deleteFood(foodDeleteItem);
+      fixture.detectChanges();
+      fixture.whenStable().then(() => {
+        const divs = el.queryAll(By.css('.hoverclick'));
+        expect(divs.length).toBe(3);
+      });
+    })
+  );
 });

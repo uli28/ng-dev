@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FoodServiceStateful } from '../../foodService/food-stateful.service';
 import { FoodItem } from '../../foodService/food.model';
+import { FoodService } from '../../foodService/food.service';
 
 @Component({
   selector: 'app-injection',
@@ -8,18 +8,18 @@ import { FoodItem } from '../../foodService/food.model';
   styleUrls: ['./injection.component.scss'],
 })
 export class InjectionComponent implements OnInit {
-  constructor(private fs: FoodServiceStateful) {}
+  constructor(private fs: FoodService) {}
 
   food: FoodItem[];
 
   ngOnInit() {
-    this.fs.getItems().subscribe((data: FoodItem[]) => {
+    this.fs.getAllFood().subscribe((data: FoodItem[]) => {
       this.food = data;
     });
   }
 
   deleteFood(food: FoodItem) {
     this.food = this.food.filter((i) => i != food);
-    this.fs.deleteItem(food);
+    this.fs.deleteFood(food);
   }
 }

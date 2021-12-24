@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FoodServiceStateful } from '../../foodService/food-stateful.service';
 import { FoodItem } from '../../foodService/food.model';
+import { FoodService } from '../../foodService/food.service';
 
 @Component({
   selector: 'app-food-list',
@@ -10,16 +10,16 @@ import { FoodItem } from '../../foodService/food.model';
 export class FoodListComponent implements OnInit {
   food: FoodItem[];
 
-  constructor(private fs: FoodServiceStateful) {}
+  constructor(private fs: FoodService) {}
 
   ngOnInit() {
-    this.fs.getItems().subscribe((data) => {
+    this.fs.getAllFood().subscribe((data) => {
       this.food = data;
     });
   }
 
   deleteFood(food: FoodItem) {
     this.food = this.food.filter((i) => i != food);
-    this.fs.deleteItem(food);
+    this.fs.deleteFood(food);
   }
 }
