@@ -8,44 +8,39 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root',
 })
 export class FoodServiceStateful {
-  constructor(private httpClient: HttpClient) {
-    this.loadData();
-  }
+  constructor(private httpClient: HttpClient) {}
 
-  private Items: BehaviorSubject<FoodItem[]> = new BehaviorSubject<FoodItem[]>(
+  private food: BehaviorSubject<FoodItem[]> = new BehaviorSubject<FoodItem[]>(
     []
   );
 
-  private loadData() {
+  getAllFood() {
+    if (this.food.value.length == 0) {
+      this.httpClient
+        .get<FoodItem[]>(`${environment.api}food`)
+        .subscribe((data) => {
+          this.food.next(data);
+        });
+    }
+    return this.food.asObservable();
+  }
+
+  deleteFood(item: FoodItem) {
     this.httpClient
-      .get<FoodItem[]>(`${environment.api}food`)
-      .subscribe((data) => {
-        this.Items.next(data);
-      });
-  }
-
-  getItems(): Observable<FoodItem[]> {
-    return this.Items;
-  }
-
-  async deleteItem(item: FoodItem) {
-    await this.httpClient
       .delete<void>(`${environment.api}food/${item.id}`)
       .subscribe((resp) => {
-        let arr = this.Items.value.filter((f) => f != item);
-        this.Items.next(arr);
+        let arr = this.food.value.filter((f) => f != item);
+        this.food.next(arr);
       });
-    return of(true);
   }
 
-  async addItem(item: FoodItem) {
-    await this.httpClient
+  addFood(item: FoodItem) {
+    this.httpClient
       .post<FoodItem>(`${environment.api}food`, item)
       .subscribe((data) => {
-        let arr = this.Items.value;
+        let arr = this.food.value;
         arr.push(data);
-        this.Items.next(arr);
+        this.food.next(arr);
       });
-    return of(true);
   }
 }

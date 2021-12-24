@@ -28,10 +28,9 @@ describe('Service - HttpTestingController', () => {
     controller = TestBed.inject(HttpTestingController);
   });
 
-  // Verify that there are no pending HTTP requests
-  // afterEach(() => {
-  //   controller.verify();
-  // });
+  afterEach(() => {
+    controller.verify();
+  });
 
   it('should return the initial load data', () => {
     fs.getAllFood().subscribe((data) => {
@@ -64,7 +63,7 @@ describe('Service - HttpTestingController', () => {
     // flushing down mock data
     req.flush(foodAddedItem);
     // make sure all requests are completed -> can be moved to afterEach
-    controller.verify();
+    // controller.verify();
   });
 
   it('should have the correct number of items after delete', () => {
@@ -79,6 +78,6 @@ describe('Service - HttpTestingController', () => {
     // flushing down mock data
     req.flush({});
     // make sure all requests are completed -> can be moved to afterEach
-    controller.verify();
+    // controller.verify();
   });
 });
