@@ -53,8 +53,14 @@ describe('Food Row Integration Test', () => {
   });
 
   it('should trigger delete when clicked', () => {
-    const deleteSpy = spyOn(comp.onDelete, 'emit');
+    const spy = spyOn(comp.onDelete, 'emit');
     fixture.nativeElement.querySelector('#divDelete').click();
-    expect(deleteSpy).toHaveBeenCalled();
+    expect(spy).toHaveBeenCalled();
+  });
+
+  it('should trigger select when clicked', () => {
+    const spy = spyOn(comp.onSelect, 'emit');
+    fixture.nativeElement.querySelector('#divSelect').click();
+    expect(spy).toHaveBeenCalled();
   });
 });

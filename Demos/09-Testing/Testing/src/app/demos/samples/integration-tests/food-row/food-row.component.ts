@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FoodItem } from '../../foodService/food.model';
 
 @Component({
@@ -9,8 +9,13 @@ import { FoodItem } from '../../foodService/food.model';
 export class FoodRowComponent {
   @Input() food: FoodItem;
   @Output() onDelete: EventEmitter<FoodItem> = new EventEmitter();
+  @Output() onSelect: EventEmitter<FoodItem> = new EventEmitter();
 
   deleteFood(item: FoodItem) {
     this.onDelete.emit(item);
+  }
+
+  editFood(item: FoodItem) {
+    this.onSelect.emit(item);
   }
 }
