@@ -1,25 +1,17 @@
-import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
-
 import { NavbarComponent } from './navbar.component';
 
 describe('NavbarComponent', () => {
-  let component: NavbarComponent;
-  let fixture: ComponentFixture<NavbarComponent>;
-
-  beforeEach(waitForAsync(() => {
-    TestBed.configureTestingModule({
-      declarations: [ NavbarComponent ]
-    })
-    .compileComponents();
-  }));
-
-  beforeEach(() => {
-    fixture = TestBed.createComponent(NavbarComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+  //add your setup here
 
   it('should create', () => {
-    expect(component).toBeTruthy();
+    pending();
+  });
+
+  it('should render 3 nav items', () => {
+    pending();
+  });
+
+  it('should toggle the side menu when clicked', () => {
+    pending();
   });
 });
