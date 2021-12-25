@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FoodItem } from '../../model/food-item.model';
+import { FoodItem } from '../../foodService/food.model';
 import { FoodService } from '../../foodService/food.service';
 
 @Component({
@@ -8,18 +8,19 @@ import { FoodService } from '../../foodService/food.service';
   styleUrls: ['./food-list.component.scss'],
 })
 export class FoodListComponent implements OnInit {
-  food: FoodItem[];
+  food: FoodItem[] = [];
 
   constructor(private fs: FoodService) {}
 
   ngOnInit() {
-    this.fs.getItems().subscribe((data) => {
+    this.fs.getAllFood().subscribe((data) => {
       this.food = data;
     });
   }
 
   deleteFood(food: FoodItem) {
-    this.food = this.food.filter((i) => i != food);
-    this.fs.deleteItem(food);
+    this.fs.deleteFood(food).subscribe(() => {
+      this.food = this.food.filter((f) => f.id != food.id);
+    });
   }
 }

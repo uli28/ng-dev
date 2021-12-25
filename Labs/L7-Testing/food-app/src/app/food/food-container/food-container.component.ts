@@ -1,11 +1,11 @@
-import { Component, OnInit } from "@angular/core";
-import { FoodItem } from "../foodItem";
-import { FoodService } from "../food.service";
+import { Component, OnInit } from '@angular/core';
+import { FoodItem } from '../food.model';
+import { FoodService } from '../food.service';
 
 @Component({
-  selector: "app-food-container",
-  templateUrl: "./food-container.component.html",
-  styleUrls: ["./food-container.component.scss"],
+  selector: 'app-food-container',
+  templateUrl: './food-container.component.html',
+  styleUrls: ['./food-container.component.scss'],
 })
 export class FoodContainerComponent implements OnInit {
   food: FoodItem[];
@@ -18,7 +18,7 @@ export class FoodContainerComponent implements OnInit {
   }
 
   addFood() {
-    this.selected = { name: "", price: 0, calories: 0 } as FoodItem;
+    this.selected = { id: 0, name: '', price: 0, calories: 0 } as FoodItem;
   }
 
   selectFood(f: FoodItem) {
@@ -32,8 +32,8 @@ export class FoodContainerComponent implements OnInit {
     });
   }
 
-  foodSaved(f: FoodItem) {
-    if (f.id) {
+  saveFood(f: FoodItem) {
+    if (f.id != 0) {
       this.fs.updateFood(f).subscribe((result) => {
         let existing = this.food.find((f) => f.id == f.id);
         Object.assign(existing, f);

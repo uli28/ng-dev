@@ -22,30 +22,42 @@
     "markdown": "mock"
   },
   {
+    "url": "spy",
+    "title": "Use Spy",
+    "markdown": "spy"
+  },
+  {
     "url": "httptest",
-    "title": "Http Test",
+    "title": "Service Http Tests",
     "markdown": "mock"
   },
   {
-    "url": "simplecomp",
-    "title": "Simple Component",
+    "url": "stateful",
+    "title": "Stateful Service",
+    "markdown": "stateful"
+  },
+  {
+    "url": "comp-class",
+    "title": "Component Class",
+    "markdown": "comp-class"
+  },
+  {
+    "url": "comp-testingmodule",
+    "title": "Component Testingmodule",
+    "markdown": "testingmodule"
+  },
+  {
+    "url": "comp-inject",
+    "title": "Component Injection",
     "markdown": "simplecomp"
   },
   {
     "url": "component-write",
-    "title": "Component Write",
-    "id": 63,
-    "topicid": 1,
-    "visible": true,
-    "sortOrder": 0
+    "title": "Component Write"
   },
   {
     "url": "component-events",
-    "title": "Component Events",
-    "id": 89,
-    "topicid": 1,
-    "visible": true,
-    "sortOrder": 0
+    "title": "Component Events"
   },
   {
     "url": "harness",
@@ -53,7 +65,7 @@
   },
   {
     "url": "integrationtests",
-    "title": "Integration Test"
+    "title": "Integration Tests"
   },
   {
     "url": "e2e",

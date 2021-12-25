@@ -1,27 +1,45 @@
-import { FoodRowComponent } from './food-row.component';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { NO_ERRORS_SCHEMA } from '@angular/core';
-import { RatingPipe } from '../../pipe/rating.pipe';
 import { By } from '@angular/platform-browser';
-import { inputItem } from './food-row.test';
+import { MaterialModule } from '../../../../material.module';
+import { FoodItem } from '../../foodService/food.model';
+import { RatingPipe } from '../../pipe/rating.pipe';
+import { FoodRowComponent } from './food-row.component';
 
 describe('Food Row Integration Test', () => {
   let fixture: ComponentFixture<FoodRowComponent>;
+  let comp: FoodRowComponent;
+  let food = {
+    name: 'Pad Thai',
+    rating: 5,
+  } as FoodItem;
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
       declarations: [FoodRowComponent, RatingPipe],
-      schemas: [NO_ERRORS_SCHEMA],
-    });
+      imports: [MaterialModule],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(FoodRowComponent);
-    fixture.componentInstance.food = { name: 'Pad Thai', rating: 5 };
-    // import test data from external file
-    // fixture.componentInstance.food = inputItem;
+    comp = fixture.componentInstance;
+    comp.food = food;
     fixture.detectChanges();
+  });
+
+  it('should create to component', () => {
+    expect(comp).toBeTruthy();
   });
 
   it('should have the correct food item', () => {
     expect(fixture.componentInstance.food.name).toEqual('Pad Thai');
+  });
+
+  it('should render the correct text when input is changed', () => {
+    comp.food = {
+      name: 'Pad Krapao',
+      rating: 1,
+    } as FoodItem;
+    fixture.detectChanges();
+    expect(fixture.componentInstance.food.name).toEqual('Pad Krapao');
   });
 
   it('should render the food name', () => {
@@ -32,5 +50,17 @@ describe('Food Row Integration Test', () => {
     expect(
       fixture.debugElement.query(By.css('#itemName')).nativeElement.textContent
     ).toContain('Pad Thai');
+  });
+
+  it('should trigger delete when clicked', () => {
+    const spy = spyOn(comp.onDelete, 'emit');
+    fixture.nativeElement.querySelector('#divDelete').click();
+    expect(spy).toHaveBeenCalled();
+  });
+
+  it('should trigger select when clicked', () => {
+    const spy = spyOn(comp.onSelect, 'emit');
+    fixture.nativeElement.querySelector('#divSelect').click();
+    expect(spy).toHaveBeenCalled();
   });
 });

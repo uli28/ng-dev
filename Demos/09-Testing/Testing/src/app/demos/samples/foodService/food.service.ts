@@ -1,39 +1,27 @@
-import { HttpClient } from "@angular/common/http";
-import { Injectable } from "@angular/core";
-import { Observable, of, BehaviorSubject } from "rxjs";
-import { FoodItem } from "./../model/food-item.model";
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { environment } from 'src/environments/environment';
+import { FoodItem } from '../foodService/food.model';
 
 @Injectable({
-  providedIn: "root"
+  providedIn: 'root',
 })
 export class FoodService {
-  constructor(private httpClient: HttpClient) {
-    this.loadData();
+  constructor(private httpClient: HttpClient) {}
+
+  getAllFood() {
+    return this.httpClient.get<FoodItem[]>(`${environment.api}food`);
   }
 
-  private items: FoodItem[] = [];
-  private Items: BehaviorSubject<FoodItem[]> = new BehaviorSubject(this.items);
-
-  private loadData() {
-    this.httpClient.get<FoodItem[]>("/assets/food.json").subscribe(data => {
-      this.items = data;
-      this.Items.next(this.items);
-    });
+  deleteFood(item: FoodItem) {
+    return this.httpClient.delete(`${environment.api}food/${item.id}`);
   }
 
-  getItems(): Observable<FoodItem[]> {
-    return this.Items;
+  addFood(item: FoodItem) {
+    return this.httpClient.post<FoodItem>(`${environment.api}food`, item);
   }
 
-  deleteItem(item: FoodItem): Observable<boolean> {
-    this.items = this.items.filter(f => f != item);
-    this.Items.next(this.items);
-    return of(true);
-  }
-
-  addItem(item: FoodItem): Observable<boolean> {
-    this.items.push(item);
-    this.Items.next(this.items);
-    return of(true);
+  updateFood(item: FoodItem) {
+    return this.httpClient.put<FoodItem>(`${environment.api}food`, item);
   }
 }

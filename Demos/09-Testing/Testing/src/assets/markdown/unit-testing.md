@@ -1,8 +1,8 @@
-# SimpleClass
+### Test class `util.ts`:
 
-Navigate to folder `\demos\samples\unit-tests`
+Navigate to folder `\demos\samples\global`
 
-Investigate `SimpleClass.ts` and `SimpleClass.spec.ts`
+Investigate `util.ts` and `util.spec.ts`
 
 Find a list of matches at [Jasmine Docs](https://jasmine.github.io/api/edge/matchers.html)
 
@@ -15,9 +15,3 @@ it("contains 12 charactes", function() {
 ```
 
 Run the Test using `ng test`
-
-# VoucherValidator
-
-Also investigate `voucher-validator.ts`:
-
-There is an error in the implementation and one failing test. Find the error

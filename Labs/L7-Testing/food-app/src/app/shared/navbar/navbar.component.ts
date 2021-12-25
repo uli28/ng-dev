@@ -8,7 +8,7 @@ import { NavItem } from './navItem';
   styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent implements OnInit {
-  constructor(private ms: MenuService) {}
+  constructor(public ms: MenuService) {}
 
   items: NavItem[];
 
