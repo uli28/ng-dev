@@ -13,4 +13,6 @@
     - food-edit.component.spec.ts
     - food-container.component.spec.ts
 
+    > Note: Mock data is provided in `food.mocks.ts`
+
 - Try to reach a [code coverage](https://angular.io/guide/testing-code-coverage) of more than 80%
