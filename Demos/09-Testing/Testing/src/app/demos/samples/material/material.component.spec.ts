@@ -6,9 +6,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TestbedHarnessEnvironment } from '@angular/cdk/testing/testbed';
 // Notice manual import of ...Harness
 import { HarnessLoader } from '@angular/cdk/testing';
-import { MatSliderHarness } from '@angular/material/slider/testing';
-import { MatButtonHarness } from '@angular/material/button/testing';
 import { MatButtonModule } from '@angular/material/button';
+import { MatButtonHarness } from '@angular/material/button/testing';
+import { MatSliderHarness } from '@angular/material/slider/testing';
 
 describe('MaterialComponent', () => {
   let component: MaterialComponent;
