@@ -43,11 +43,10 @@ describe('FoodListComponent', () => {
       food: new SimpleChange(null, foodLoadData, false),
     });
     fixture.detectChanges();
-    const spy = spyOn(comp.foodDeleted, 'emit');
-
-    //output dom for checking
+    //output html for checking
     console.log(fixture.debugElement.nativeElement.outerHTML);
 
+    const spy = spyOn(comp.foodDeleted, 'emit');
     let btn = fixture.nativeElement.querySelector('.btnDelete');
     btn.click();
     expect(spy).toHaveBeenCalled();

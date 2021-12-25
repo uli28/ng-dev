@@ -18,7 +18,7 @@ export class FoodContainerComponent implements OnInit {
   }
 
   addFood() {
-    this.selected = { name: '', price: 0, calories: 0 } as FoodItem;
+    this.selected = { id: 0, name: '', price: 0, calories: 0 } as FoodItem;
   }
 
   selectFood(f: FoodItem) {
@@ -33,7 +33,7 @@ export class FoodContainerComponent implements OnInit {
   }
 
   foodSaved(f: FoodItem) {
-    if (f.id) {
+    if (f.id != 0) {
       this.fs.updateFood(f).subscribe((result) => {
         let existing = this.food.find((f) => f.id == f.id);
         Object.assign(existing, f);

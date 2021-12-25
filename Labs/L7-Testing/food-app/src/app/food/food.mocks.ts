@@ -15,6 +15,7 @@ export const foodSingleItem = {
 } as FoodItem;
 
 export const foodEmptyItem: FoodItem = {
+  id: 0,
   name: '',
   price: 0,
   calories: 0,
@@ -28,13 +29,18 @@ export const foodQueryItem = {
 } as FoodItem;
 
 // Add
-export const foodAddItem = { name: 'Gulasch', price: 2, calories: 500 };
+export const foodAddItem = {
+  name: 'Gulasch',
+  price: 2,
+  calories: 500,
+} as FoodItem;
+
 export const foodAddedItem = {
   id: 5,
   name: 'Gulasch',
   price: 2,
   calories: 500,
-};
+} as FoodItem;
 
 // Update
 export const foodUpdateItem = {
@@ -42,13 +48,14 @@ export const foodUpdateItem = {
   name: 'Gulyas',
   price: 2,
   calories: 500,
-};
+} as FoodItem;
+
 export const foodUpdatedItem = {
   id: 5,
   name: 'Gulyas',
   price: 2,
   calories: 500,
-};
+} as FoodItem;
 
 // Delete
 export const foodDeleteItem = {
@@ -56,9 +63,9 @@ export const foodDeleteItem = {
   name: 'Cordon Bleu',
   price: 2,
   calories: 500,
-};
+} as FoodItem;
 
-export const foodDeleteResult = [
+export const foodDeleteResult: FoodItem[] = [
   { id: 1, name: 'Pad Thai', price: 5, calories: 500 },
   { id: 2, name: 'Butter Chicken', price: 5, calories: 500 },
   { id: 3, name: 'Cannelloni', price: 4, calories: 500 },
