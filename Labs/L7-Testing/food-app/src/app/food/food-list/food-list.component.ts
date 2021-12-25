@@ -19,7 +19,7 @@ export class FoodListComponent implements OnInit, OnChanges {
   constructor() {}
 
   @Input()
-  food: FoodItem[];
+  food: FoodItem[] = [];
   @Output()
   foodSelected: EventEmitter<FoodItem> = new EventEmitter();
   @Output()
@@ -39,10 +39,6 @@ export class FoodListComponent implements OnInit, OnChanges {
 
   ngOnChanges(changes: SimpleChanges) {
     this.dataSource = new MatTableDataSource(changes['food'].currentValue);
-  }
-
-  applyFilter(filterValue: string) {
-    this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
   selectFood(f: FoodItem) {
