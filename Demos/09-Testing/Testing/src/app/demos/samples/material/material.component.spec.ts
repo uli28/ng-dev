@@ -13,24 +13,24 @@ import { MatButtonModule } from '@angular/material/button';
 describe('MaterialComponent', () => {
   let component: MaterialComponent;
   let fixture: ComponentFixture<MaterialComponent>;
+  let loader: HarnessLoader;
   let slider: MatSliderHarness;
   let btnReset: MatButtonHarness;
-  let loader: HarnessLoader;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [MatSliderModule, MatButtonModule, BrowserAnimationsModule],
       declarations: [MaterialComponent],
     }).compileComponents();
-  });
 
-  beforeEach(async () => {
     fixture = TestBed.createComponent(MaterialComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
 
     loader = TestbedHarnessEnvironment.loader(fixture);
-    slider = await loader.getHarness(MatSliderHarness);
+    slider = await loader.getHarness(
+      MatSliderHarness.with({ selector: '#theSlider' })
+    );
     btnReset = await loader.getHarness(
       MatButtonHarness.with({ text: 'Reset' })
     );

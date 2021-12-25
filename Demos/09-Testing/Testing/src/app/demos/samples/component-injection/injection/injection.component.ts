@@ -19,7 +19,8 @@ export class InjectionComponent implements OnInit {
   }
 
   deleteFood(food: FoodItem) {
-    this.food = this.food.filter((i) => i != food);
-    this.fs.deleteFood(food);
+    this.fs.deleteFood(food).subscribe(() => {
+      this.food = this.food.filter((f) => f.id != food.id);
+    });
   }
 }

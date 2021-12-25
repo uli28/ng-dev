@@ -13,7 +13,6 @@ import {
 })
 export class MaterialComponent {
   value = 50;
-  // slidervalue;
   validated = false;
   sliderForm: FormGroup;
 
@@ -22,9 +21,9 @@ export class MaterialComponent {
       slider: new FormControl(this.value, Validators.min(1)),
     });
 
-    this.sliderForm.valueChanges.subscribe(
-      (data: any) => (this.value = data.slider)
-    );
+    this.sliderForm.valueChanges.subscribe((data: any) => {
+      this.value = data.slider;
+    });
   }
 
   resetSlider() {
