@@ -5,6 +5,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from '../../material.module';
 import { foodEmptyItem, foodSingleItem } from '../food.mocks';
 import { FoodEditComponent } from './food-edit.component';
+import { CommonModule } from '@angular/common';
 
 describe('FoodEditComponent', () => {
   let fixture: ComponentFixture<FoodEditComponent>;
@@ -13,7 +14,12 @@ describe('FoodEditComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [FoodEditComponent],
-      imports: [MaterialModule, ReactiveFormsModule, BrowserAnimationsModule],
+      imports: [
+        MaterialModule,
+        ReactiveFormsModule,
+        BrowserAnimationsModule,
+        CommonModule,
+      ],
     }).compileComponents();
 
     fixture = TestBed.createComponent(FoodEditComponent);

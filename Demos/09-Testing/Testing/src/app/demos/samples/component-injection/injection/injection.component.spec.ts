@@ -24,9 +24,9 @@ describe('InjectionComponent', () => {
       providers: [{ provide: FoodService, useValue: fs }],
     }).compileComponents();
     fixture = TestBed.createComponent(InjectionComponent);
-    fixture.detectChanges();
     de = fixture.debugElement;
     comp = fixture.componentInstance;
+    fixture.detectChanges();
   });
 
   it('should create', () => {
