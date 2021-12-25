@@ -8,7 +8,7 @@ import { FoodService } from '../../foodService/food.service';
   styleUrls: ['./food-list.component.scss'],
 })
 export class FoodListComponent implements OnInit {
-  food: FoodItem[];
+  food: FoodItem[] = [];
 
   constructor(private fs: FoodService) {}
 
@@ -19,7 +19,8 @@ export class FoodListComponent implements OnInit {
   }
 
   deleteFood(food: FoodItem) {
-    this.food = this.food.filter((i) => i != food);
-    this.fs.deleteFood(food);
+    this.fs.deleteFood(food).subscribe(() => {
+      this.food = this.food.filter((f) => f.id != food.id);
+    });
   }
 }
