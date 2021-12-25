@@ -7,7 +7,7 @@ import {
   SimpleChanges,
 } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { FoodItem } from '../foodItem';
+import { FoodItem } from '../food.model';
 
 @Component({
   selector: 'app-food-edit',

@@ -6,14 +6,14 @@ import {
   EventEmitter,
   SimpleChanges,
   OnChanges,
-} from "@angular/core";
-import { MatTableDataSource } from "@angular/material/table";
-import { FoodItem } from "../foodItem";
+} from '@angular/core';
+import { MatTableDataSource } from '@angular/material/table';
+import { FoodItem } from '../food.model';
 
 @Component({
-  selector: "app-food-list",
-  templateUrl: "./food-list.component.html",
-  styleUrls: ["./food-list.component.scss"],
+  selector: 'app-food-list',
+  templateUrl: './food-list.component.html',
+  styleUrls: ['./food-list.component.scss'],
 })
 export class FoodListComponent implements OnInit, OnChanges {
   constructor() {}
@@ -26,19 +26,19 @@ export class FoodListComponent implements OnInit, OnChanges {
   foodDeleted: EventEmitter<FoodItem> = new EventEmitter();
 
   displayedColumns: string[] = [
-    "id",
-    "name",
-    "price",
-    "calories",
-    "editItem",
-    "deleteItem",
+    'id',
+    'name',
+    'price',
+    'calories',
+    'editItem',
+    'deleteItem',
   ];
   dataSource = new MatTableDataSource([]);
 
   ngOnInit() {}
 
   ngOnChanges(changes: SimpleChanges) {
-    this.dataSource = new MatTableDataSource(changes["food"].currentValue);
+    this.dataSource = new MatTableDataSource(changes['food'].currentValue);
   }
 
   applyFilter(filterValue: string) {
