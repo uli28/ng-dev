@@ -1,6 +1,5 @@
 import { FoodItem } from './food.model';
 
-// load data
 export const foodLoadData: FoodItem[] = [
   { id: 1, name: 'Pad Thai', price: 5, calories: 500 },
   { id: 2, name: 'Butter Chicken', price: 5, calories: 500 },
@@ -8,12 +7,25 @@ export const foodLoadData: FoodItem[] = [
   { id: 4, name: 'Cordon Bleu', price: 2, calories: 500 },
 ];
 
+export const foodSingleItem = {
+  id: 1,
+  name: 'Pad Thai',
+  price: 5,
+  calories: 500,
+} as FoodItem;
+
+export const foodEmptyItem: FoodItem = {
+  name: '',
+  price: 0,
+  calories: 0,
+} as FoodItem;
+
 export const foodQueryItem = {
   id: 2,
   name: 'Butter Chicken',
   price: 5,
   calories: 500,
-};
+} as FoodItem;
 
 // Add
 export const foodAddItem = { name: 'Gulasch', price: 2, calories: 500 };
