@@ -25,7 +25,6 @@
 - Components, Modules & Dependency Injection
 - Expressions, Templates & Directives
 - String Interpolation, Property- & Event-Binding, Two-Way Binding
-- Classic vs Standalone (Moduleless) Components
 - Pipes & Localization
 - Custom Directives & Pipes
 
