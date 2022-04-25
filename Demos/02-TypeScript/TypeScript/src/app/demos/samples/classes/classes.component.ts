@@ -12,8 +12,6 @@ export class ClassesComponent implements OnInit {
   ngOnInit() {}
 
   basicClasses() {
-    debugger;
-
     class Voucher {
       ID: number;
       Text: string;
@@ -23,6 +21,7 @@ export class ClassesComponent implements OnInit {
     }
 
     const v: Voucher = new Voucher(); // v: {}
+    console.log(v.ID); // -> undefined
     v.ID = 0;
     v.Text = 'Demo Voucher';
 
@@ -51,14 +50,16 @@ export class ClassesComponent implements OnInit {
   }
 
   classesConstructor() {
-    debugger;
-
     class Person {
       name: string; // public by default
       private alive: boolean;
 
       get status(): string {
         return this.name + ' is alive:' + this.alive;
+      }
+
+      get liveness(): boolean {
+        return this.alive;
       }
 
       constructor(name: string, alive: boolean) {
@@ -141,10 +142,8 @@ export class ClassesComponent implements OnInit {
   }
 
   inheritance() {
-    debugger;
-
     class Dog {
-      constructor(public name: string) {}
+      constructor(public name: string) {} // public or private creates implicit prop
       public speed = 'with 40 km/h';
 
       move(meters: number) {
@@ -199,8 +198,6 @@ export class ClassesComponent implements OnInit {
   }
 
   staticProperties() {
-    debugger;
-
     interface ICoordinate {
       x: number;
       y: number;

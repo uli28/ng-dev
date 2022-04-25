@@ -12,8 +12,6 @@ export class GenericsComponent implements OnInit {
   ngOnInit() {}
 
   genericFunctions() {
-    debugger;
-
     function concat<T>(arg: Array<T>): string {
       let result = '';
       for (let m of arg) {

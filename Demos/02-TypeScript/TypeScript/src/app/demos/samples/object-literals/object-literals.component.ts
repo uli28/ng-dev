@@ -12,8 +12,6 @@ export class ObjectLiteralsComponent implements OnInit {
   ngOnInit() {}
 
   objectsBasics() {
-    debugger;
-
     // Plain old JavaScript
     const myPerson = new Object();
     // myPerson.smile = function() {
@@ -30,8 +28,6 @@ export class ObjectLiteralsComponent implements OnInit {
   }
 
   enhancedObjectLiterals() {
-    debugger;
-
     function getCarES5(make, model, value) {
       return {
         make: make,
@@ -49,35 +45,26 @@ export class ObjectLiteralsComponent implements OnInit {
       };
     }
 
-    function getPersonClone(person: any) {
-      return { ...person };
-    }
-
     const person: any = { Id: 1, Name: 'Alexander' };
-    const cloned = getPersonClone(person);
+    const cloned = { ...person };
+    cloned.Name = 'Sabine';
   }
 
   destructuring() {
-    debugger;
-
     let fullPerson = { firstName: 'John', name: 'Doe', age: 17 };
     let { firstName, name } = fullPerson;
     console.log(firstName + ', ' + name);
   }
 
   objAssign() {
-    debugger;
-
     const obj = { name: 'Soi' };
-    const copy = Object.assign({}, obj, {
+    const clone = Object.assign({}, obj, {
       birth: format(new Date(), 'MMM d yy'),
     });
-    console.log(copy);
+    console.log(clone);
   }
 
   valref() {
-    debugger;
-
     const person: any = { Id: 1, Name: 'Alexander' };
     let myNumber = 100;
 
@@ -103,8 +90,6 @@ export class ObjectLiteralsComponent implements OnInit {
   }
 
   copyspread() {
-    debugger;
-
     // Spred operator on arrays
     const [x, y, ...remaining] = [1, 2, 3, 4];
     console.log(x, y); // 1, 2,

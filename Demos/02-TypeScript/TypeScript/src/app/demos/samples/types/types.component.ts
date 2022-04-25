@@ -13,12 +13,10 @@ export class TypesComponent implements OnInit {
   ngOnInit() {}
 
   basicVariables() {
-    debugger;
-
     const myname = 'alex';
 
     // Numbers
-    const age = 50;
+    const age: number = 50;
     const weight = 83.12;
     let dogWeight = 25.4;
     // dogWeight = "heavy";
@@ -57,8 +55,6 @@ export class TypesComponent implements OnInit {
   }
 
   useLetConst() {
-    debugger;
-
     const index = 0;
     const array = ['a', 'b', 'c'];
     for (let index = 0; index < array.length; index++) {
@@ -81,8 +77,6 @@ export class TypesComponent implements OnInit {
   }
 
   stringFunctions() {
-    debugger;
-
     const productID = 100;
     const category = 'music';
 
@@ -92,7 +86,6 @@ export class TypesComponent implements OnInit {
 
     // Template Literals using Backticks
     const tl = `http://server/${category}/${productID}`;
-
     console.log(tl);
 
     // startswith
@@ -117,8 +110,6 @@ export class TypesComponent implements OnInit {
   }
 
   useVoidAny() {
-    debugger;
-
     function handleClick(): void {
       const g = "I don't return anything.";
       console.log(g);
@@ -131,8 +122,6 @@ export class TypesComponent implements OnInit {
   }
 
   useEnums() {
-    debugger;
-
     enum Happyness {
       happy = 2,
       unhappy = 4,
@@ -193,8 +182,6 @@ export class TypesComponent implements OnInit {
   }
 
   introArrays() {
-    debugger;
-
     // declaration using type followed by []
     const customers: string[] = ['Alex', 'Giro', 'Sonja', 'Soi', 'David'];
     // declaration using generic array type
@@ -222,8 +209,6 @@ export class TypesComponent implements OnInit {
   }
 
   arrayHelpers() {
-    debugger;
-
     class Fruit {
       name: string;
       quantity: number;
@@ -266,6 +251,8 @@ export class TypesComponent implements OnInit {
       return fruit.name === 'cherries';
     });
 
+    const cherrySingleton = fruits.find((fruit) => fruit.name === 'cherries');
+
     console.log(cherry);
 
     // filter -> returns array
@@ -276,7 +263,7 @@ export class TypesComponent implements OnInit {
 
     // map -> shape arr
     const names = fruits.map(function (item) {
-      return item.name;
+      return { name: item.name };
     });
 
     const lables = fruits.map(function (item) {
@@ -423,8 +410,6 @@ export class TypesComponent implements OnInit {
   }
 
   restParams() {
-    debugger;
-
     function playLotto(name: string, ...bets: number[]) {
       console.log(`${name} is playing the following lottery numbers: `);
       bets.forEach((nbr: number) => console.log(nbr));
@@ -463,8 +448,6 @@ export class TypesComponent implements OnInit {
 
   // -> C# Dictionary
   maps() {
-    debugger;
-
     const myString = 'a string';
     const myMap = new Map<string, any>();
     const voucher = { Id: 33, Text: 'Diesel', Amount: 56 };
@@ -494,8 +477,6 @@ export class TypesComponent implements OnInit {
 
   // -> Indexed Array
   sets() {
-    // debugger;
-
     const mySet = new Set<any>();
     mySet.add(1);
     mySet.add('some text');

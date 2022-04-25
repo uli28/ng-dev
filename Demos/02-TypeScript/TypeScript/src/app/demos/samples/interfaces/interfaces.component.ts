@@ -13,8 +13,6 @@ export class InterfacesComponent implements OnInit {
   // Interfaces
 
   interfacesBasics() {
-    debugger;
-
     interface IHumanBeeing {
       name: string;
       birthDate: Date;
@@ -31,8 +29,6 @@ export class InterfacesComponent implements OnInit {
   }
 
   interfacesNullability() {
-    debugger;
-
     interface IWorker {
       name: string;
       salary: number;
@@ -54,8 +50,6 @@ export class InterfacesComponent implements OnInit {
   }
 
   interfacesObjectLiterals() {
-    debugger;
-
     interface ILongLat {
       Long: number;
       Lat: number;
@@ -67,8 +61,6 @@ export class InterfacesComponent implements OnInit {
   }
 
   interfacesFunctions() {
-    debugger;
-
     interface LabelledValue {
       label: string;
     }

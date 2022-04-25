@@ -11,8 +11,6 @@ export class FunctionsComponent implements OnInit {
   ngOnInit() {}
 
   typedFunctions() {
-    debugger;
-
     // C# delegate ... variable that contains a function
     const addFunction = function (x: number, y: number): number {
       return x + y;
@@ -23,8 +21,6 @@ export class FunctionsComponent implements OnInit {
   }
 
   functionParameters() {
-    debugger;
-
     // optional param
     function buildName(firstName: string, lastName?: string) {
       if (lastName) {
@@ -64,8 +60,6 @@ export class FunctionsComponent implements OnInit {
   }
 
   arrowFunctions() {
-    debugger;
-
     const rectangleFunction = function (width: number, height: number) {
       return width * height;
     };
@@ -79,8 +73,6 @@ export class FunctionsComponent implements OnInit {
   }
 
   functionOverloads() {
-    debugger;
-
     const suits = ['hearts', 'spades', 'clubs', 'diamonds'];
 
     function pickCard(x: { suit: string; card: number }[]): number;
@@ -110,8 +102,6 @@ export class FunctionsComponent implements OnInit {
   }
 
   generatorFunction() {
-    debugger;
-
     function* getColors() {
       // Code to be executed in between
       yield 'green';
@@ -123,7 +113,6 @@ export class FunctionsComponent implements OnInit {
 
     const colorGenerator = getColors();
 
-    debugger;
     console.log(colorGenerator.next());
     console.log(colorGenerator.next());
     console.log(colorGenerator.next());

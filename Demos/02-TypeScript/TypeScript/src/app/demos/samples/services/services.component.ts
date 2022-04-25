@@ -63,8 +63,6 @@ export class ServicesComponent implements OnInit {
   }
 
   postFetch() {
-    debugger;
-
     // Make sure you have installed json-server: npm i -g json-server
     // Run it: json-server db.json -> provides skills api
 
@@ -96,8 +94,10 @@ export class ServicesComponent implements OnInit {
       .catch((err) => console.log(err));
   }
 
-  usingAxios() {
+  async usingAxios() {
     const api = 'http://localhost:3000/skills';
+
+    await axios.get(api).then((result) => console.log(result.data));
 
     const param: Skill = {
       name: 'Azure',
