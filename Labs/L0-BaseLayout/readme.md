@@ -64,7 +64,7 @@ Add the following content to `app.component.html`:
   </div>
   <div class="mainrow">
     <div class="sidebar">
-      <app-sidebar></app-sidebar>
+      <app-sidemenu></app-sidemenu>
     </div>
     <div class="main">
       <app-home></app-home>
