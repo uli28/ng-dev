@@ -5,12 +5,13 @@ import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.co
 import { EditorComponent } from './shared/editor/editor.component';
 import { UploaderComponent } from './shared/uploader/uploader.component';
 import { AdminComponent } from './admin/admin.component';
-import { IsAuthRouteGuard } from './route.guard.service';
+import { IsAuthRouteGuard } from './IsAuthRouteGuard';
 import { AdminAComponent } from './admin-a/admin-a.component';
 import { AdminBComponent } from './admin-b/admin-b.component';
 import { SkillsListComponent } from './skills/skills-list/skills-list.component';
 import { SkillsEditComponent } from './skills/skills-edit/skills-edit.component';
 import { SkillResolverService } from './skills/skill-resolver.service';
+import { IsAdminGuard } from './IsAdminGuard';
 
 const routes: Routes = [
   {
@@ -44,7 +45,7 @@ const routes: Routes = [
         component: AdminBComponent,
       },
     ],
-    canActivate: [IsAuthRouteGuard],
+    canActivate: [IsAuthRouteGuard, IsAdminGuard],
   },
   { path: 'showeditor', component: EditorComponent, outlet: 'sidebarOutlet' },
   {

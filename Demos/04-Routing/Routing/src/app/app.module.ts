@@ -10,7 +10,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { MaterialModule } from './material.module';
-import { IsAuthRouteGuard } from './route.guard.service';
+import { IsAuthRouteGuard } from './IsAuthRouteGuard';
 import { EditorComponent } from './shared/editor/editor.component';
 import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.component';
 import { SharedModule } from './shared/shared.module';
