@@ -43,3 +43,8 @@ Implement a `getFood()` method in food-service and load the data from `assets/fo
 ]
 ```
 
+Implement a Container-Presenter Pattern in `food/food-container`, `food/food-list` and `food/food-edit`. Use the following reference: 
+
+[Container](/Demos/03-Fundamentals/Fundamentals/src/app/demos/samples/container)
+
+[Presenter](/Demos/03-Fundamentals/Fundamentals/src/app/demos/samples/persons)
