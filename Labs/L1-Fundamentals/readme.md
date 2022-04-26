@@ -54,12 +54,12 @@ Implement a `getFood()` method in food-service and load the data from `assets/fo
 ```
 Use the following reference: 
 
-[Load Data in Service](/Demos/03-Fundamentals/Fundamentals/src/app/demos/samples/persons/person.service.ts)
+- [Load Data in Service](/Demos/03-Fundamentals/Fundamentals/src/app/demos/samples/persons/person.service.ts)
 
 Implement a Container-Presenter Pattern in `food/food-container`, `food/food-list` and `food/food-edit`. Use the following reference: 
 
-[Container](/Demos/03-Fundamentals/Fundamentals/src/app/demos/samples/container)
+- [Container](/Demos/03-Fundamentals/Fundamentals/src/app/demos/samples/container)
 
-[Presenter](/Demos/03-Fundamentals/Fundamentals/src/app/demos/samples/persons)
+- [Presenter](/Demos/03-Fundamentals/Fundamentals/src/app/demos/samples/persons)
 
->Note: At the moment do not use Angular Material. Just put the `inputs` into div-tags. You might also have to import [FormsModule](https://angular.io/guide/frequent-ngmodules) into `app.module.ts`
+At the moment do not use Angular Material. Just put the `input`-tags into `div`-tags. You might also have to import [FormsModule](https://angular.io/guide/frequent-ngmodules) into `app.module.ts` in order to use the `ngModel` directive in `food-edit.html`
