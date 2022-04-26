@@ -20,6 +20,8 @@
         ng g module [NAME] --route [ROUTE] --module [PARENT-MODULE]
         ```
 
+        >Note: To avoid a route conflict with the existing `food`-route in `app-routing.module.ts` you could use `food-v2` as input for the `--route` param. You can delete the old route later on.
+
     - Add the [FormsModule](https://angular.io/api/forms/FormsModule) to `food.module.ts` to support `ngModel`-binding
 
     - Move the three food components to the declarations of the new feature module, remove them from `app.module.ts`
