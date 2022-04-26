@@ -13,23 +13,23 @@
     - Add [RouterLink](https://angular.io/api/router/RouterLink) directives to `navbar.component.html` to enable navigation
 
 - Refactor `app/food` to be a lazy loaded module in `app-routing.module.ts`
-    - Add a [feature module](https://angular.io/guide/feature-modules) using the [Angular CLI](https://angular.io/cli/generate#module-command)
+    - Add a [feature module](https://angular.io/guide/feature-modules) using the [Angular CLI](https://angular.io/cli/generate#module-command) and 
+    use the Code Splitting Pattern 
 
-    Use the Code Splitting Pattern:
+        ```
+        ng g module [NAME] --route [ROUTE] --module [PARENT-MODULE]
+        ```
 
-    ```
-    ng g module [NAME] --route [ROUTE] --module [PARENT-MODULE]
-    ```
+    - Add the FormsModule to `food.module.ts`
 
-- Move the food components to the declarations of the new feature module, remove them from `app.module.ts`
+    - Move the three food components to the declarations of the new feature module, remove them from `app.module.ts`
 
-    ```javascript
-    @NgModule({
-        declarations: [FoodContainerComponent, FoodListComponent, FoodEditComponent],
-    ```
-- Lazy load `food.module.ts` in `app.module.ts`
-- Update `food-routing.module.ts`:
+        ```javascript
+        @NgModule({
+            declarations: [FoodContainerComponent, FoodListComponent, FoodEditComponent],
+        ```    
+    - Update `food-routing.module.ts`:
 
-    ```
-    { path: '', component: FoodContainerComponent }
-    ```
+        ```
+        { path: '', component: FoodContainerComponent }
+        ```
