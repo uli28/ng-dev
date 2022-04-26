@@ -21,7 +21,12 @@
     ng g module [NAME] --route [ROUTE] --module [PARENT-MODULE]
     ```
 
-- Move the food components to the new feature module, remove them from `app.module.ts`
+- Move the food components to the declarations of the new feature module, remove them from `app.module.ts`
+
+    ```javascript
+    @NgModule({
+        declarations: [FoodContainerComponent, FoodListComponent, FoodEditComponent],
+    ```
 - Lazy load `food.module.ts` in `app.module.ts`
 - Update `food-routing.module.ts`:
 
