@@ -6,7 +6,7 @@ import {
   EventEmitter,
   SimpleChanges,
 } from "@angular/core";
-import { FoodItem } from "src/app/shared/foodItem";
+import { FoodItem } from "../foodItem";
 
 @Component({
   selector: "app-food-edit",
