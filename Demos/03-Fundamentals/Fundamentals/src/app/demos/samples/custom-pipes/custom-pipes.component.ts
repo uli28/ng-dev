@@ -17,7 +17,9 @@ export class CustomPipesComponent implements OnInit {
   constructor(private vs: VouchersService) {}
 
   ngOnInit() {
-    this.vs.getVouchers().subscribe((data) => (this.vouchers = data));
+    this.vs
+      .getVouchers()
+      .subscribe((data: Voucher[]) => (this.vouchers = data));
   }
 
   showVoucher(id: number) {
