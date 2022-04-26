@@ -33,6 +33,8 @@ Implement a food/food-service using the following food-item model:
 ng g service food/food
 ```
 
+Inject the Angular HttpClient client into `food/food-service.ts` be adding `HttpClientModule` to `app.module.ts`
+
 Implement a `getFood()` method in food-service and load the data from `assets/food.json`:
 
 ```json
