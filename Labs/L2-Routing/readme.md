@@ -14,10 +14,17 @@
 
 - Refactor `app/food` to be a lazy loaded module in `app-routing.module.ts`
     - Add a [feature module](https://angular.io/guide/feature-modules) using the [Angular CLI](https://angular.io/cli/generate#module-command)
-    - Move the food components to the new feature module, remove them from `app.module.ts`
-    - Lazy load `food.module.ts` in `app.module.ts`
-    - Update `food-routing.module.ts`:
 
-        ```
-        { path: '', component: FoodContainerComponent }
-        ```
+    Use the Code Splitting Pattern:
+
+    ```
+    ng g module [NAME] --route [ROUTE] --module [PARENT-MODULE]
+    ```
+
+- Move the food components to the new feature module, remove them from `app.module.ts`
+- Lazy load `food.module.ts` in `app.module.ts`
+- Update `food-routing.module.ts`:
+
+    ```
+    { path: '', component: FoodContainerComponent }
+    ```
