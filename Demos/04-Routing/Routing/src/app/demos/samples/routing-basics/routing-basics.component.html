@@ -6,7 +6,7 @@
     <a mat-raised-button [routerLink]="['/skills']"
       >Simple Route (Show Skills)</a
     >
-    <a mat-raised-button [routerLink]="['/schkills']"
+    <a mat-raised-button [routerLink]="['/skills-old']"
       >Redirect From 'Schkills'</a
     >
   </mat-card-content>
@@ -20,7 +20,7 @@
     <a
       mat-raised-button
       [routerLink]="['/skills', 1]"
-      [queryParams]="{ readonly: true, thisthat: false }"
+      [queryParams]="{ readonly: true, clientid: 50 }"
       fragment="section5"
       >Query & Fragment Params</a
     >
