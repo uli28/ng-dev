@@ -44,6 +44,9 @@ Implement a `getFood()` method in food-service and load the data from `assets/fo
   { "id": 3, "name": "Blini with Salmon", "price": 8.3, "calories": 600 }
 ]
 ```
+Use the following reference: 
+
+[Load Data in Service](/Demos/03-Fundamentals/Fundamentals/src/app/demos/samples/persons/person.service.ts)
 
 Implement a Container-Presenter Pattern in `food/food-container`, `food/food-list` and `food/food-edit`. Use the following reference: 
 
