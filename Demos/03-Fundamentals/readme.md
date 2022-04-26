@@ -1,6 +1,6 @@
 # Angular Fundamentals
 
-[Angular Template Syntax](https://stackblitz.com/edit/ng10-template-syntax?file=src/app/app.component.html)
+[Angular Template Syntax](https://angular.io/guide/template-syntax)
 
 ## Configure Creation of Unit Test Files - \*.spec.ts
 
