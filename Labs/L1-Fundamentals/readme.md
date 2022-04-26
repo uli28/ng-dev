@@ -53,3 +53,5 @@ Implement a Container-Presenter Pattern in `food/food-container`, `food/food-lis
 [Container](/Demos/03-Fundamentals/Fundamentals/src/app/demos/samples/container)
 
 [Presenter](/Demos/03-Fundamentals/Fundamentals/src/app/demos/samples/persons)
+
+>Note: At the moment do not use Angular Material. Just put the `inputs` into div-tags. You might also have to import [FormsModule](https://angular.io/guide/frequent-ngmodules) into `app.module.ts`
