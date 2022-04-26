@@ -12,7 +12,7 @@
         ```
     - Add [RouterLink](https://angular.io/api/router/RouterLink) directives to `navbar.component.html` to enable navigation
 
-- Refactore food to be a lazy loaded module
+- Refactor `app/food` to be a lazy loaded module
     - Add a [feature module](https://angular.io/guide/feature-modules) using the [Angular CLI](https://angular.io/cli/generate#module-command)
     - Move the food components to the new feature module, remove them from `app.module.ts`
     - Lazy load `food.module.ts` in `app.module.ts`
