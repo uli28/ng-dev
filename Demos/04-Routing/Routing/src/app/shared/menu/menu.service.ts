@@ -35,6 +35,7 @@ export class MenuService {
       { label: 'Home', url: '' },
       { label: 'Demos', url: 'demos' },
       { label: 'Skills', url: 'skills' },
+      { label: 'Admin', url: 'admin' },
     ]);
   }
 

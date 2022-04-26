@@ -36,14 +36,20 @@ export class SkillsEditComponent implements OnInit {
   /* #region params */
 
   readParamUsingSnapshot() {
-    // id param
+    // get id param -> load data with id
     const id = this.route.snapshot.params['id'];
     this.getSkill(id);
+
     // query params
     const readonly = this.route.snapshot.queryParams['readonly'];
     if (readonly != null) {
       console.log(`Page is readonly: ${readonly}`);
     }
+    const clientid = this.route.snapshot.queryParams['clientid'];
+    if (clientid) {
+      console.log(`clientid: ${clientid}`);
+    }
+
     // fragments
     const fragments = this.route.snapshot.fragment;
     if (fragments != undefined) {
