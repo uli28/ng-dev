@@ -2,6 +2,10 @@
 
 [Angular Template Syntax](https://angular.io/guide/template-syntax)
 
+[Pipes](https://angular.io/guide/pipes)
+
+[Attribute Directives](https://angular.io/guide/attribute-directives)
+
 ## Configure Creation of Unit Test Files - \*.spec.ts
 
 Method 1:
