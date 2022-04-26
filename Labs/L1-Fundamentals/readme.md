@@ -16,7 +16,7 @@ Example:
 ng g component food/food-container
 
 ```
-Add `food-container` to `app.component.html`. Routing will be implemented later on. 
+Add the `food-container` directive to `app.component.html`. Routing will be implemented later on. 
 
 ```
 <div class="main">
@@ -35,7 +35,7 @@ export class FoodItem {
 }
 ```
 
-Implement a food/food-service using the following food-item model:
+Implement a `food/food-service.ts` using the following `food-item.ts` model:
 
 ```
 ng g service food/food
