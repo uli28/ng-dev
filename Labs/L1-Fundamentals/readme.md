@@ -1,4 +1,4 @@
-# Food App -Food List
+# Food App - Food List
 
 Implement a food list with a simple edit from. Do not invest too much time in formatting. We will use Angular Material later on. 
 
