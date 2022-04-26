@@ -10,10 +10,18 @@ Use the following nested components:
 - food/food-list -> nested in container
 - food/food-edit -> nested in container
 
-Add `food-container` to `app.component`. Routing will be implemented later on. Example:
+Example:
 
 ```
 ng g component food/food-container
+
+```
+Add `food-container` to `app.component.html`. Routing will be implemented later on. 
+
+```
+<div class="main">
+    <app-food-container></app-food-container>
+</div>
 ```
 
 Add a `food-item.ts` file to folder `app/food`:
