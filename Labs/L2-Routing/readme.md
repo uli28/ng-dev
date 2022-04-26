@@ -20,7 +20,7 @@
         ng g module [NAME] --route [ROUTE] --module [PARENT-MODULE]
         ```
 
-    - Add the FormsModule to `food.module.ts`
+    - Add the [FormsModule](https://angular.io/api/forms/FormsModule) to `food.module.ts` to support `ngModel`-binding
 
     - Move the three food components to the declarations of the new feature module, remove them from `app.module.ts`
 
