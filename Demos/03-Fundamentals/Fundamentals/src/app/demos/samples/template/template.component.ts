@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TemplateComponent implements OnInit {
   title = 'About Templated Components';
+  theValue = 'Hello World';
 
   constructor() {}
 

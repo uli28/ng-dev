@@ -9,7 +9,13 @@ export class ExpressionsComponent implements OnInit {
   constructor() {}
 
   title = 'Expressions & Interpolation';
-  nbr = 10;
+  nbr = 7;
+  isFalse = false;
+  myObj = { a: 10, b: 20 };
 
   ngOnInit() {}
+
+  addNumbers(a: number, b: number) {
+    return a + b;
+  }
 }

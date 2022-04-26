@@ -22,10 +22,10 @@ export class StructDirectivesComponent implements OnInit {
 
   ngOnInit() {
     this.vs.getVouchers().subscribe(
-      (data) => {
+      (data: Voucher[]) => {
         this.vouchers = data;
       },
-      (err) => console.log('err: ', err)
+      (err: Error) => console.log('err: ', err)
     );
   }
 

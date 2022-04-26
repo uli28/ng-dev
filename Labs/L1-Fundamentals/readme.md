@@ -10,9 +10,13 @@ Use the following nested components:
 - food/food-list -> nested in container
 - food/food-edit -> nested in container
 
-Add `food-container` to `app.component`. Routing will be implemented later on.
+Add `food-container` to `app.component`. Routing will be implemented later on. Example:
 
-Implement a food/food-service using the following food-item model:
+```
+ng g component food/food-container
+```
+
+Add a `food-item.ts` file to folder `app/food`:
 
 ```typescript
 export class FoodItem {
@@ -23,7 +27,13 @@ export class FoodItem {
 }
 ```
 
-Load the data from `assets/food.json`:
+Implement a food/food-service using the following food-item model:
+
+```
+ng g service food/food
+```
+
+Implement a `getFood()` method in food-service and load the data from `assets/food.json`:
 
 ```json
 [
@@ -33,3 +43,8 @@ Load the data from `assets/food.json`:
 ]
 ```
 
+Implement a Container-Presenter Pattern in `food/food-container`, `food/food-list` and `food/food-edit`. Use the following reference: 
+
+[Container](/Demos/03-Fundamentals/Fundamentals/src/app/demos/samples/container)
+
+[Presenter](/Demos/03-Fundamentals/Fundamentals/src/app/demos/samples/persons)

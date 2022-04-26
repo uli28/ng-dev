@@ -12,7 +12,7 @@ export class PersonService {
       id: 1,
       name: 'Cleo',
       age: 15,
-      gender: 'famale',
+      gender: 'female',
       married: true,
       imgUrl: '/assets/images/cleo.png',
     },
