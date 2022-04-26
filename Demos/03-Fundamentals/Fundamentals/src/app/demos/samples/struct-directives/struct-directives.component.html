@@ -46,13 +46,15 @@
   <mat-card-content>
     <input type="checkbox" [(ngModel)]="showDivOne" />
     <label>Please check to change value for "showDivOne":</label> <br />
-    Current value for "showDivOne": {{ showDivOne }}
+    Current value for "showDivOne": {{ showDivOne }}  
+    
+    <!-- also renders the div -->
+    <div *ngIf="showDivOne"><h5>Div 1</h5></div>
+    <div *ngIf="!showDivOne"> <h5>Not Div 1</h5> </div>
 
+    <!-- ng-container will no be reandered -->
     <ng-container *ngIf="showDivOne"><h5>Div 1</h5></ng-container>
     <ng-container *ngIf="!showDivOne"><h5>Not Div 1</h5></ng-container>
-    
-    <!-- <div *ngIf="showDivOne"><h5>Div 1</h5></div>
-    <div *ngIf="!showDivOne"> <h5>Not Div 1</h5> </div> -->
        
   </mat-card-content>
 </mat-card>
