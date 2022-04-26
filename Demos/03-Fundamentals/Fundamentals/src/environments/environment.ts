@@ -3,4 +3,5 @@ export const environment = {
   title: 'ngFundamentals',
   vouchers: '/assets/vouchers.json',
   skills: '/assets/skills.json',
+  persons: '/assets/persons.json',
 };

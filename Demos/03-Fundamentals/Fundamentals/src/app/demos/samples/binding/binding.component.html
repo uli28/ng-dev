@@ -3,11 +3,10 @@
     <mat-card-title>Ode to my sighthounds</mat-card-title>
   </mat-card-header>
 
-  <mat-card-content fxLayout="column" fxLayoutGap="16px">
-    <div>
+  <mat-card-content fxLayout="column" fxLayoutGap="16px" *ngIf="selectedPerson.imgUrl">
+    <div >
       <h2>{{ selectedPerson.name }}, {{ selectedPerson.age }}</h2>
-      <img
-        *ngIf="selectedPerson.imgUrl"
+      <img        
         [src]="selectedPerson.imgUrl"
         width="150px"
       />
