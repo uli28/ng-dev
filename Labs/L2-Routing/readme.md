@@ -5,11 +5,12 @@
     - Add an `about.component.ts`
     - Implement `app-routing.module.ts` and add the following routes: 
 
-        ```json
+        ```
         { path: "", component: HomeComponent },
         { path: "food", component: FoodContainerComponent },
         { path: "about", component: AboutComponent },
         ```
+    - Add [RouterLinks](https://angular.io/api/router/RouterLink) to `navbar.component.html` to enable navigation
 
 - Refactore food to be a lazy loaded module
     - Add a feature module using the [Angular CLI](https://angular.io/cli/generate#module-command)

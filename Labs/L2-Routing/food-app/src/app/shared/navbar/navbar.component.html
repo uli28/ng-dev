@@ -1,5 +1,3 @@
 <div class="nav">
-  <div class="navItem" [routerLink]="['/']">Home</div>
-  <div class="navItem" [routerLink]="['/food']">Food</div>
-  <div class="navItem" [routerLink]="['/about']">About</div>
+  <div class="navItem" *ngFor="let item of items" [routerLink]="[item.url]">{{ item.title }}</div>
 </div>
