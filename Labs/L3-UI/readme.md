@@ -20,7 +20,7 @@ Implement the Base Layout using CSS Grid:
     
     - Hide the sidebar on devices with a horizontal width less than medium. We will add a toggle button in another lab.
 
-Implement a Material Design for Food App by [adding Angular Material](https://material.angular.io/guide/getting-started):
+Implement a Material Design for Food App:
 
 - Use [mat-card](https://material.angular.io/components/card/overview) elemtens in `food-list.component.html` and `food-edit.component.html` to surround the content
 
