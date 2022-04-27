@@ -38,8 +38,3 @@ export class CSSBindingComponent implements OnInit {
     this.addStyle = !this.addStyle;
   }
 }
-
-class Person {
-  name: string;
-  gender: string;
-}

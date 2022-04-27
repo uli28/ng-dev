@@ -10,14 +10,24 @@
   border: 1px solid $medium-col;
 }
 
+.flex-container-start {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: left;
+  margin: 10px 0;
+  padding: 20px;
+  border: 1px solid $medium-col;
+}
+
 .flex-item {
   flex-grow: 1;
   min-width: 200px;
   height: 100px;
-  margin: 5px;
+  margin: 5px;  
   background: $medium-col;
   color: white;
   font-weight: bold;
-  font-size: 3em;
+  font-size:1rem;
   text-align: center;
 }

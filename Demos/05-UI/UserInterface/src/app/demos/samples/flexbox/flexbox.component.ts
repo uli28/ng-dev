@@ -5,16 +5,23 @@ import { Movie } from '../movie';
 @Component({
   selector: 'app-flexbox',
   templateUrl: './flexbox.component.html',
-  styleUrls: ['./flexbox.component.scss']
+  styleUrls: ['./flexbox.component.scss'],
 })
 export class FlexboxComponent implements OnInit {
+  movies: Movie[];
+  currclass = 'flex-container';
 
-  movies: Movie[]
-
-  constructor(private ms: MovieService) { }
+  constructor(private ms: MovieService) {}
 
   ngOnInit() {
     this.movies = this.ms.getMovies();
   }
 
+  toggleLayout() {
+    this.currclass =
+      this.currclass == 'flex-container'
+        ? 'flex-container-start'
+        : 'flex-container';
+    console.log(this.currclass);
+  }
 }
