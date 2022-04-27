@@ -59,10 +59,12 @@ export class ObservableCrudComponent implements OnInit {
       .get(`${environment.netcoreapi}skills/3`)
       .subscribe((data: Skill) => {
         const sktu: Skill = data;
+
+        // Make update
         sktu.name = 'Updated by Angular';
         console.log('skill to update: ', sktu);
 
-        // Update
+        // Send Update
         this.httpClient
           .put(`${environment.netcoreapi}skills/`, sktu)
           .subscribe(() => {

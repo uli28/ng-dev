@@ -22,7 +22,7 @@ export class JsonServerComponent implements OnInit {
     this.loading = true;
     this.service
       .getSkills()
-      // .pipe(delay(2000))
+      .pipe(delay(4000))
       .subscribe((data) => {
         this.result = data;
         this.loading = false;
@@ -40,7 +40,7 @@ export class JsonServerComponent implements OnInit {
 
     this.service
       .addSkill(skill)
-      .pipe(delay(2000))
+      .pipe(delay(4000))
       .subscribe((response: Skill) => {
         this.loading = false;
         this.sns.displayAlert('json-server', `Saved with id: ${response.id}`);

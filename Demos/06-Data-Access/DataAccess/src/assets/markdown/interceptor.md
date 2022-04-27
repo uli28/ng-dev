@@ -1,4 +1,4 @@
-Investigate `app.interceptor.ts` and its registration in `demo.module.ts`. Also look at the network request.
+Investigate `auth-interceptor.ts` and its registration in `demo.module.ts`. Also look at the network request.
 
 ```
 providers: [

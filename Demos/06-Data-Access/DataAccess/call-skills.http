@@ -7,7 +7,7 @@ POST http://localhost:3000/skills HTTP/1.1
 content-type: application/json
 
 {
-      "name": "Cooking Pad Krapao",
+      "name": "Cooking Butter Chicken",
       "hours": 1,
       "completed": false
 }

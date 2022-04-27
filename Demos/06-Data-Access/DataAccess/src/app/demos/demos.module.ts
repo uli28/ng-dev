@@ -7,7 +7,7 @@ import { MaterialModule } from '../material.module';
 import { SharedModule } from '../shared/shared.module';
 import { DemoContainerComponent } from './demo-container/demo-container.component';
 import { DemoService } from './demo.service';
-import { AppInterceptor } from '../app.interceptor';
+import { AuthInterceptor } from '../auth-interceptor';
 import { ObservableCrudComponent } from './samples/observable-crud/observable-crud.component';
 import { JsonServerComponent } from './samples/json-server/json-server.component';
 import { AdvHttpClientComponent } from './samples/adv-http-client/adv-http-client.component';
@@ -45,7 +45,7 @@ const demoRoutes: Routes = [
     DemoService,
     {
       provide: HTTP_INTERCEPTORS,
-      useClass: AppInterceptor,
+      useClass: AuthInterceptor,
       multi: true,
     },
   ],

@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { MaterialModule } from './material.module';
 import { SharedModule } from './shared/shared.module';
-import { AppInterceptor } from './app.interceptor';
+import { AuthInterceptor } from './auth-interceptor';
 import { SkillsListComponent } from './skills/skills-list/skills-list.component';
 import { SkillsEditComponent } from './skills/skills-edit/skills-edit.component';
 import { SkillRowComponent } from './skills/skill-row/skill-row.component';
