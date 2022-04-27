@@ -5,10 +5,17 @@
     </mat-card-title>
   </mat-card-header>
   <mat-card-content>
-    <div class="flex-container">
-      <mat-card class="flex-item" *ngFor="let m of movies">
-        {{ m.title }}
+    <div [class]="currclass">
+      <mat-card class="flex-item"  *ngFor="let m of movies">
+        <mat-card-title>{{ m.title }}</mat-card-title>
+        <img mat-card-image src="{{ card }}" />
+        <mat-card-content>
+          Lorem ipsum dolor sit amet consectetur.
+        </mat-card-content>
       </mat-card>
     </div>
   </mat-card-content>
+  <mat-card-actions align="center">
+    <button mat-button (click)="toggleLayout()">Toggle</button>
+  </mat-card-actions>
 </mat-card>

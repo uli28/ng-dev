@@ -14,6 +14,10 @@ export class CSSBindingComponent implements OnInit {
 
   ngOnInit() {}
 
+  toggleBinding() {
+    this.addClass = !this.addClass;
+  }
+
   setClasses() {
     const classes = {
       extraClass: this.addClass,
@@ -29,9 +33,8 @@ export class CSSBindingComponent implements OnInit {
     };
     return styles;
   }
-}
 
-class Person {
-  name: string;
-  gender: string;
+  toggleStyle() {
+    this.addStyle = !this.addStyle;
+  }
 }
