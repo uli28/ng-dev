@@ -6,6 +6,9 @@
     <button mat-raised-button [class.extraClass]="addClass">
       Bind class using boolean & prop binding
     </button>
+
+    <button mat-raised-button (click)="toggleBinding()">Toggle</button>
+
   </mat-card-content>
 </mat-card>
 
@@ -31,6 +34,8 @@
     >
       Set styles using JSON
     </button>
+
+    <button mat-raised-button (click)="toggleStyle()">Toggle</button>
   </mat-card-content>
 </mat-card>
 

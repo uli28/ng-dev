@@ -11,7 +11,7 @@
 button {
   width: 100%;
   margin: $small-gap 0;
-  @include link($medium-font, $light-col);
+  @include link($light-col, $small-font);
 }
 
 mat-toolbar {

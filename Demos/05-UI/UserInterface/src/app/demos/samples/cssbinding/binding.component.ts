@@ -14,6 +14,10 @@ export class CSSBindingComponent implements OnInit {
 
   ngOnInit() {}
 
+  toggleBinding() {
+    this.addClass = !this.addClass;
+  }
+
   setClasses() {
     const classes = {
       extraClass: this.addClass,
@@ -28,6 +32,10 @@ export class CSSBindingComponent implements OnInit {
       'font-weight': this.anotherProperty ? 'bold' : 'normal',
     };
     return styles;
+  }
+
+  toggleStyle() {
+    this.addStyle = !this.addStyle;
   }
 }
 
