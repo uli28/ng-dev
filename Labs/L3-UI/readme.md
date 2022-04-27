@@ -1,16 +1,20 @@
 # Food App - UI
 
+Add [Angular Material](https://material.angular.io) & [Angular Flex Layout](https://github.com/angular/flex-layout/wiki) to your project
+
 - Install Angular Material using the [Material Getting Started](https://material.angular.io/guide/getting-started) and choose a theme of your choice.
 
-- Implement a material.module and copy its default content from the [Angular Material Docs](https://material.angular.io/components/categories) or any Sample in [Stackblitz](https://stackblitz.com/run?file=src/app/badge-overview-example.ts)
-
-- Replace the `div` in the `navbar.component.html` with a [Material Toolbar](https://material.angular.io/components/toolbar/overview)
+- Implement a `material.module.ts` and copy its default content from the [Angular Material Docs](https://material.angular.io/components/categories) or any Sample in [Stackblitz](https://stackblitz.com/run?file=src/app/badge-overview-example.ts)
 
 - Add the [@angular/flex-layout](https://github.com/angular/flex-layout/wiki) library to the project. Add it to `app.module.ts` and implement a responsive behaviour. 
 
     ```
     npm install --save @angular/flex-layout@latest @angular/cdk@latest
     ```
+
+- Test the installation of Angular Material by replacing the `div` in the `navbar.component.html` with a [Material Toolbar](https://material.angular.io/components/toolbar/overview)
+
+Implement the Base Layout using CSS Grid
 
 - Change to base layout in app.component to use [CSS Grid](https://css-tricks.com/snippets/css/complete-guide-grid/) and the [@angular/flex-layout css grid implementation](https://github.com/angular/flex-layout/blob/master/guides/Grid.md). Use the [Demo App](https://github.com/arambazamba/ng-dev/blob/main/Demos/05-UI/UserInterface/src/app/app.component.html) Layout as a reference.
     
