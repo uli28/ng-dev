@@ -11,10 +11,7 @@
     <button mat-raised-button (click)="deleteSkill()">Delete a Skill</button>
   </mat-card-content>
 </mat-card>
-
-<div fxLayout="row" fxLayoutAlign="center center">
-  <mat-spinner *ngIf="loading"></mat-spinner>
-</div>
+<mat-progress-bar *ngIf="loading" mode="query"></mat-progress-bar>
 
 <mat-card *ngIf="!loading">
   <mat-card-header>
