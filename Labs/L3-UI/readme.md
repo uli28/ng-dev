@@ -4,6 +4,8 @@
 
 - Implement a material.module and copy its default content from the [Angular Material Docs](https://material.angular.io/components/categories) or any Sample in [Stackblitz](https://stackblitz.com/run?file=src/app/badge-overview-example.ts)
 
+- Replace the `div` in the `navbar.component.html` with a [Material Toolbar](https://material.angular.io/components/toolbar/overview)
+
 - Add the [@angular/flex-layout](https://github.com/angular/flex-layout/wiki) library to the project. Add it to `app.module.ts` and implement a responsive behaviour. 
 
     ```
