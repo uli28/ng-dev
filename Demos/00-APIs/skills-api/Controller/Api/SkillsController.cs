@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 namespace SkillsApi
 {
     // [Authorize]
-    [Route("api/skills")]
+    [Route("skills")]
     public class SkillsController : Microsoft.AspNetCore.Mvc.Controller
     {
         private SkillDBContext ctx;
@@ -19,14 +19,14 @@ namespace SkillsApi
             ctx = dbctx;
         }
 
-        // http://localhost:5000/api/skills
+        // http://localhost:5000/skills
         [HttpGet]
         public ActionResult<Skill[]> GetSkills()
         {
             return this.ctx.Skills.ToArray();
         }
 
-        // http://localhost:5000/api/skills/1
+        // http://localhost:5000/skills/1
         [HttpGet("{id}")]
         public ActionResult<Skill> GetSkill(int id)
         {

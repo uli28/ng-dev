@@ -21,7 +21,7 @@ export class ObservableCrudComponent implements OnInit {
     this.fname = 'getSkills()';
 
     this.httpClient
-      .get<Skill[]>(`${environment.netcoreapi}api/skills`)
+      .get<Skill[]>(`${environment.netcoreapi}skills`)
       .subscribe((data) => {
         this.result = data;
       });
@@ -31,7 +31,7 @@ export class ObservableCrudComponent implements OnInit {
     this.fname = 'getskill()';
 
     this.httpClient
-      .get<Skill>(`${environment.netcoreapi}api/skills/2`)
+      .get<Skill>(`${environment.netcoreapi}skills/2`)
       .subscribe((data) => {
         this.result = data;
       });
@@ -43,7 +43,7 @@ export class ObservableCrudComponent implements OnInit {
     const skill: Skill = { name: 'NgRx Data', hours: 8, completed: false };
     console.log('skill to insert: ', skill);
     this.httpClient
-      .post(`${environment.netcoreapi}api/skills`, skill)
+      .post(`${environment.netcoreapi}skills`, skill)
       .subscribe((data) => {
         if (data == null) {
           this.result = 'skill inserted';
@@ -56,7 +56,7 @@ export class ObservableCrudComponent implements OnInit {
 
     // let's get a skill to update
     this.httpClient
-      .get(`${environment.netcoreapi}api/skills/3`)
+      .get(`${environment.netcoreapi}skills/3`)
       .subscribe((data: Skill) => {
         const sktu: Skill = data;
         sktu.name = 'Updated by Angular';
@@ -64,7 +64,7 @@ export class ObservableCrudComponent implements OnInit {
 
         // Update
         this.httpClient
-          .put(`${environment.netcoreapi}api/skills/`, sktu)
+          .put(`${environment.netcoreapi}skills/`, sktu)
           .subscribe(() => {
             this.result = 'skill updated';
           });
@@ -76,7 +76,7 @@ export class ObservableCrudComponent implements OnInit {
 
     const id = 3;
     this.httpClient
-      .delete(`${environment.netcoreapi}api/skills/${id}`)
+      .delete(`${environment.netcoreapi}skills/${id}`)
       .subscribe(() => {
         this.result = `skill with id ${id} deleted`;
         console.log(this.result);
