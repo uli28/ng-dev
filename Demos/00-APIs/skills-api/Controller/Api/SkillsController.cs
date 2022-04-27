@@ -16,7 +16,6 @@ namespace SkillsApi
 
         public SkillsController(SkillDBContext dbctx)
         {
-            // skillHub = hub;
             ctx = dbctx;
         }
 

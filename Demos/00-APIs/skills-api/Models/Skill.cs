@@ -9,6 +9,7 @@ namespace SkillsApi
 
         [RequiredAttribute]
         public string name { get; set; }
+        
         public int hours { get; set; }
         public bool completed { get; set; }
         public DateTime dueDate { get; set; }        
