@@ -32,6 +32,6 @@ Implement a Material Design for Food App by [adding Angular Material](https://ma
 ![material](_images/material.png)
 
 
-Optional: Implement a custom material theme with a [custom color palette](https://material.io/resources/color/#!/?view.left=0&view.right=0):
+Optional: Implement a custom material theme with a [custom color palette](https://material.io/resources/color/#!/?view.left=0&view.right=0) and replace the theme that you have choosen at the beginning of this lab:
 
 - Use the [Demo App](https://github.com/arambazamba/ng-dev/tree/main/Demos/05-UI/UserInterface/src/theme) Theme as a reference.
