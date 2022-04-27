@@ -31,11 +31,9 @@ export class AdvHttpClientComponent implements OnInit {
   usingHeadersHttpClient() {
     const header = new HttpHeaders({
       'Content-Type': 'application/json',
-      UserEmail: 'alessandro.galgo@sighthounds.at',
+      UserEmail: 'giro.galgo@sighthounds.at',
       SomeHeader: 'SomeVal',
     });
-
-    console.log('adding header:', header);
 
     this.httpClient
       .get(`${environment.api}skills`, { headers: header })
