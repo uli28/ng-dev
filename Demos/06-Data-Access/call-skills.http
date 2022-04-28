@@ -1,6 +1,12 @@
-### Simple Get
+### Get all skills
+# @name arrSkills
 GET  http://localhost:3000/skills HTTP/1.1
 Accept: application/json
+
+### Get skill with index 0 of prev command
+GET  http://localhost:3000/skills/1/ HTTP/1.1
+Accept: application/json
+Content-Type: application/json
 
 ### Simple Post
 POST http://localhost:3000/skills HTTP/1.1

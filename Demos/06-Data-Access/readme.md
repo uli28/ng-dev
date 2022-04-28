@@ -2,9 +2,6 @@
 
 [.NET Core CLI Reference](https://docs.microsoft.com/en-us/dotnet/core/tools/)
 
-## Start SkillService
+[Visual Studio Code REST Client](https://github.com/Huachao/vscode-restclient/blob/master/README.md)
 
-Go to "\00-Apis\SkillsApi" and run:
-
-`dotnet run`
-
+[Json-Server](https://github.com/typicode/json-server)
