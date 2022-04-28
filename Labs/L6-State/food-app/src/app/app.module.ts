@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,6 +13,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { LoadingComponent } from './shared/loading/loading.component';
+import { LoadingInterceptor } from './loading-interceptor';
+import { LoadingService } from './shared/loading/loading.service';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,10 @@ import { LoadingComponent } from './shared/loading/loading.component';
     MaterialModule,
     FlexLayoutModule,
   ],
-  providers: [],
+  providers: [
+    LoadingService,
+    { provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
