@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { MatDrawerMode } from '@angular/material/sidenav';
 import { MenuService } from './shared/menu/menu.service';
+import { LoadingService } from './shared/loading/loading.service';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +12,7 @@ export class AppComponent {
   title = 'Food App';
   mode: MatDrawerMode = 'side';
 
-  constructor(public ms: MenuService) {
+  constructor(public ms: MenuService, public ls: LoadingService) {
     ms.sideNavPosition.subscribe((m) => (this.mode = m));
   }
 

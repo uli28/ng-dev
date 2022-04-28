@@ -12,6 +12,7 @@ import { AboutComponent } from './about/about.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { LoadingComponent } from './shared/loading/loading.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MainComponent,
     HomeComponent,
     AboutComponent,
+    LoadingComponent,
   ],
   imports: [
     BrowserModule,
