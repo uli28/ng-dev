@@ -63,7 +63,7 @@
       <button
         mat-raised-button
         type="submit"
-        [disabled]="personForm.valid == false"
+        [disabled]="!personForm.valid"
       >
         Submit
       </button>

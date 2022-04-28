@@ -10,6 +10,7 @@ import { emptyPerson, wealthOpts } from '../empty-person';
 import { Person } from '../person.model';
 import { PersonService } from '../person.service';
 import { asyncMailExistsValidator } from './asyncMailExistsValidator';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-reactive-validation',
@@ -89,8 +90,9 @@ export class ReactiveValidationComponent implements OnInit {
     return result;
   }
 
-  validateForm(form) {
+  validateForm(form: FormGroup) {
     form.updateValueAndValidity();
     form.controls['name'].updateValueAndValidity();
+    console.log('form is valid:', form.valid);
   }
 }

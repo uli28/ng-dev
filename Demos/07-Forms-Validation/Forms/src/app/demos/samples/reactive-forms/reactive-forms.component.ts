@@ -18,18 +18,18 @@ export class ReactiveFormsComponent implements OnInit {
   personForm: FormGroup;
 
   ngOnInit() {
-    this.ps.getPerson().subscribe((p) => {
-      // Could be setValue if model is implemented with all props in form
-      // Oherwise use patchValue
-      this.personForm.patchValue(p);
-    });
-
     this.personForm = new FormGroup({
       name: new FormControl(this.person.name, Validators.required),
       age: new FormControl(this.person.age),
       email: new FormControl(this.person.email),
       gender: new FormControl(this.person.gender),
       wealth: new FormControl(this.person.wealth),
+    });
+
+    this.ps.getPerson().subscribe((p) => {
+      // Could be setValue if model is implemented with all props in form
+      // Oherwise use patchValue
+      this.personForm.patchValue(p);
     });
   }
 
