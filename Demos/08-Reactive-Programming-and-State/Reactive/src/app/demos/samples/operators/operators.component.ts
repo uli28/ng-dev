@@ -9,8 +9,8 @@ import {
   throwError,
 } from 'rxjs';
 import { catchError, delay, finalize, map, take, tap } from 'rxjs/operators';
-import { Voucher } from '../model';
-import { VouchersService } from '../voucher.service';
+import { Voucher } from '../vouchers/voucher.model';
+import { VouchersService } from '../vouchers/voucher.service';
 import { DoublerService } from './doubler.service';
 
 @Component({
@@ -57,11 +57,9 @@ export class OperatorsComponent implements OnInit {
   useMapAndTap() {
     from([2, 10, 20])
       .pipe(
-        tap((i) => {
-          console.log('tap before', i);
-          i = i * 2;
-          console.log('tap after', i);
-        })
+        tap((i) => console.log('tap before', i)),
+        map((a) => a * 2),
+        tap((f) => f * 10)
       )
       .subscribe((item) => console.log('result', item));
   }

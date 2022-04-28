@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import axios from 'axios';
 import { from, Observable, of } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
+import { Skill } from '../../../skills/skill.model';
 
 @Component({
   selector: 'app-simple-observable',
@@ -18,7 +19,8 @@ export class CreatingObservableComponent implements OnInit {
 
   subscribingObservables() {
     let arr = [2, 5, 9, 12, 22];
-    of(arr).subscribe(
+    let obsArr: Observable<number[]> = of(arr);
+    obsArr.subscribe(
       (data: number[]) => console.log('subscribe: ', data),
       this.onErr,
       this.onComplete
@@ -38,11 +40,9 @@ export class CreatingObservableComponent implements OnInit {
       error: this.onErr,
       complete: this.onComplete,
     };
-
     of([2, 5, 9, 12, 22]).subscribe(observer);
 
     // same writte as inline style
-
     of([2, 5, 9, 12, 22]).subscribe({
       next:
         () =>
@@ -53,6 +53,17 @@ export class CreatingObservableComponent implements OnInit {
       error: this.onErr,
       complete: this.onComplete,
     });
+
+    let skill: Skill = {
+      id: 1,
+      name: 'Custom Theme',
+      hours: 4,
+      completed: true,
+    };
+
+    let obsSkill = of(skill);
+
+    obsSkill.subscribe((s) => console.log(s));
   }
 
   useObsFrom() {
@@ -73,10 +84,13 @@ export class CreatingObservableComponent implements OnInit {
   }
 
   // Wraps an Object that uses Callbacks
+  // navigator.geolocation.getCurrentPosition(success[, error[, [options]])
   getGeolocation$(): Observable<any> {
     return new Observable((observer) => {
+      //original function
       navigator.geolocation.getCurrentPosition(
         (pos: any) => {
+          //emite an element in the callback of the callback based function
           observer.next(pos);
           observer.complete();
         },
@@ -87,7 +101,7 @@ export class CreatingObservableComponent implements OnInit {
     });
   }
 
-  // Use the wrapped Callback
+  // Use the wrapped Callback as observable stream
   wrappingCallbacks() {
     this.getGeolocation$().subscribe((loc) => {
       console.log('current Geolocation:', loc);
@@ -97,6 +111,11 @@ export class CreatingObservableComponent implements OnInit {
   // Use the mock Promise
   usePromiseToObs() {
     const url = 'http://localhost:3000/skills';
+
+    //classic promise pattern
+    axios.get(url).then((data) => console.log('received data', data));
+
+    // from casts a promise to an observable so that it can be subscribe
     from(axios(url)).subscribe(
       (data) => console.log('data from axios', data),
       (err) => console.log('err:', err),
@@ -105,7 +124,7 @@ export class CreatingObservableComponent implements OnInit {
   }
 
   useOperator() {
-    from([2, 5, 9, 12, 22])
+    from([2, 5, 9, 12, 22]) // 5 marbles
       .pipe(
         filter((n) => n > 6),
         map((n) => n * 2)

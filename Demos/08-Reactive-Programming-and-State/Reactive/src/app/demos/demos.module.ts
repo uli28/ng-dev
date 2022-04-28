@@ -17,7 +17,8 @@ import { OperatorsComponent } from './samples/operators/operators.component';
 import { StatefulComponent } from './samples/stateful/stateful.component';
 import { SubjectsComponent } from './samples/subjects/subjects.component';
 import { UnsubscribingComponent } from './samples/unsubscribing/unsubscribing.component';
-import { VouchersService } from './samples/voucher.service';
+import { VouchersService } from './samples/vouchers/voucher.service';
+import { StatefulVouchersComponent } from './samples/vouchers/stateful-vouchers/stateful-vouchers.component';
 
 const demoRoutes: Routes = [
   {
@@ -50,6 +51,7 @@ const demoRoutes: Routes = [
     EvtBusComponent,
     MarkdownEditorComponent,
     AsyncComponent,
+    StatefulVouchersComponent,
   ],
   imports: [
     CommonModule,

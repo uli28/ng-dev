@@ -28,6 +28,7 @@ export class DemoContainerComponent implements OnInit {
   header = 'Please select a demo';
   mode: MatDrawerMode = 'side';
   demos$ = this.demoService.getItems();
+  //declarative binding to event bus
   showEditor = this.eb
     .getCommands()
     .pipe(

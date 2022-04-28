@@ -9,7 +9,7 @@
 
 <mat-card>
   <mat-card-header>
-    <mat-card-title> Using Stream </mat-card-title>
+    <mat-card-title> Using Declarative Pattern and async </mat-card-title>
   </mat-card-header>
   <mat-card-content>
     <div *ngFor="let v of vouchers$ | async">{{ v.ID }} - {{ v.Date }}</div>

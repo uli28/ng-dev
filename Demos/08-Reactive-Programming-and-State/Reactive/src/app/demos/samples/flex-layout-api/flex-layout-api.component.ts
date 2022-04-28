@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MediaChange, MediaObserver } from '@angular/flex-layout';
 import { Subscription } from 'rxjs';
-import { filter, map } from 'rxjs/operators';
+import { filter, map, tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-flex-layout-api',
@@ -24,6 +24,7 @@ export class FlexLayoutApiComponent implements OnInit {
     this.watcher = this.obsMedia
       .asObservable()
       .pipe(
+        tap((changes: MediaChange[]) => console.log('changes: ', changes)),
         filter((changes: MediaChange[]) => changes.length > 0),
         map((changes: MediaChange[]) => changes[0])
       )
