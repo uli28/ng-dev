@@ -9,7 +9,7 @@ import { FoodService } from '../food.service';
 })
 export class FoodContainerComponent implements OnInit {
   food: FoodItem[];
-  selected: FoodItem;
+  selected: FoodItem | null;
 
   constructor(private fs: FoodService) {}
 
@@ -29,6 +29,7 @@ export class FoodContainerComponent implements OnInit {
     this.fs.deleteFood(f.id).subscribe(() => {
       let deleted = this.food.filter((item) => item.id != f.id);
       this.food = [...deleted];
+      this.selected = null;
     });
   }
 

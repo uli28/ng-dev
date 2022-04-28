@@ -24,9 +24,6 @@ export class ReactiveFormsComponent implements OnInit {
       email: new FormControl(this.person.email),
       gender: new FormControl(this.person.gender),
       wealth: new FormControl(this.person.wealth),
-      address: new FormGroup({
-        street: new FormControl(this.person.address.street),
-      }),
     });
 
     this.ps.getPerson().subscribe((p) => {
