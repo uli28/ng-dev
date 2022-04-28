@@ -18,7 +18,7 @@ export class FoodContainerComponent implements OnInit {
   }
 
   addFood() {
-    this.selected = { name: "", price: 0, calories: 0 } as FoodItem;
+    this.selected = { id: 0, name: "", price: 0, calories: 0 } as FoodItem;
   }
 
   selectFood(f: FoodItem) {
@@ -35,13 +35,13 @@ export class FoodContainerComponent implements OnInit {
   foodSaved(f: FoodItem) {
     if (f.id) {
       this.fs.updateFood(f).subscribe((result) => {
-        let existing = this.food.find((f) => f.id == f.id);
-        Object.assign(existing, f);
+        let existing = this.food.find((f) => f.id == result.id);
+        Object.assign(existing, result);
         this.food = [...this.food];
       });
     } else {
       this.fs.addFood(f).subscribe((result) => {
-        this.food.push(f);
+        this.food.push(result);
         this.food = [...this.food];
       });
     }
