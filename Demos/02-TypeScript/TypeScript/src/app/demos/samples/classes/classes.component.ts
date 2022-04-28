@@ -21,7 +21,9 @@ export class ClassesComponent implements OnInit {
     }
 
     const v: Voucher = new Voucher(); // v: {}
-    console.log(v.ID); // -> undefined
+    if (v.ID != null) {
+      console.log(v.ID); // -> undefined err
+    }
     v.ID = 0;
     v.Text = 'Demo Voucher';
 

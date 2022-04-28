@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { emptyPerson, wealthOpts } from '../empty-person';
 import { Person } from '../person.model';
 import { PersonService } from '../person.service';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-template-driven',
@@ -20,7 +21,7 @@ export class TemplateDrivenComponent implements OnInit {
     });
   }
 
-  savePerson(personForm): void {
+  savePerson(personForm: NgForm): void {
     this.ps.save(personForm);
   }
 }
