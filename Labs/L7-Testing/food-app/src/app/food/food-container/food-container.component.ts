@@ -9,7 +9,7 @@ import { FoodService } from '../food.service';
 })
 export class FoodContainerComponent implements OnInit {
   food: FoodItem[];
-  selected: FoodItem;
+  selected: FoodItem | null;
 
   constructor(private fs: FoodService) {}
 
@@ -29,19 +29,20 @@ export class FoodContainerComponent implements OnInit {
     this.fs.deleteFood(f.id).subscribe(() => {
       let deleted = this.food.filter((item) => item.id != f.id);
       this.food = [...deleted];
+      this.selected = null;
     });
   }
 
   saveFood(f: FoodItem) {
-    if (f.id != 0) {
+    if (f.id) {
       this.fs.updateFood(f).subscribe((result) => {
-        let existing = this.food.find((f) => f.id == f.id);
-        Object.assign(existing, f);
+        let existing = this.food.find((f) => f.id == result.id);
+        Object.assign(existing, result);
         this.food = [...this.food];
       });
     } else {
       this.fs.addFood(f).subscribe((result) => {
-        this.food.push(f);
+        this.food.push(result);
         this.food = [...this.food];
       });
     }
