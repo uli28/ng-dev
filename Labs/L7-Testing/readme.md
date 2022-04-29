@@ -6,6 +6,8 @@ Tools Setup:
 
 ```bash
 code --install-extension hbenl/vscode-test-explorer
+code --install-extension raagh.angular-karma-test-explorer
+code --install-extension connorshea/vscode-test-explorer-status-bar
 ```
 
 - Install [Wallaby.js](https://marketplace.visualstudio.com/items?itemName=WallabyJs.wallaby-vscode) and get your [trial licence](https://wallabyjs.com/download/) - (optional) 

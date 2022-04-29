@@ -34,7 +34,8 @@ code --install-extension mdickin.markdown-shortcuts
 code --install-extension mhutchie.git-graph 
 code --install-extension hbenl.vscode-test-explorer
 code --install-extension raagh.angular-karma-test-explorer
-
+code --install-extension connorshea/vscode-test-explorer-status-bar
+code --install-extension wallabyjs.wallaby-vscode
 
 # Refresh Path Env
 Write-Host "Refresh Path Env - 4/6" -ForegroundColor yellow
