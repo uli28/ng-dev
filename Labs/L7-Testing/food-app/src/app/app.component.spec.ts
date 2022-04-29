@@ -8,7 +8,7 @@ import { MaterialModule } from './material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SidebarComponent } from './shared/sidebar/sidebar.component';
 
-describe('AppComponent', () => {
+describe('app.component.ts', () => {
   let ms: any;
   let comp: AppComponent;
   let fixture: ComponentFixture<AppComponent>;
