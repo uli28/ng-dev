@@ -1,6 +1,6 @@
 ### Test class `util.ts`:
 
-Navigate to folder `\demos\samples\global`
+Navigate to folder `\demos\samples\util`
 
 Investigate `util.ts` and `util.spec.ts`
 

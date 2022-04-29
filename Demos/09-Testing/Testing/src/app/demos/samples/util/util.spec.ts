@@ -1,5 +1,3 @@
-import { HttpClientModule } from '@angular/common/http';
-import { TestBed } from '@angular/core/testing';
 import { Util } from './util';
 import { badvoucher, goodvoucher, nullVoucher } from './voucher.mock';
 import { Voucher } from './voucher.model';
@@ -8,12 +6,7 @@ describe('Simple Class: util.ts', () => {
   let util: Util;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({
-      imports: [HttpClientModule],
-      providers: [Util],
-    });
-    util = TestBed.inject(Util);
-    spyOn(window.console, 'log');
+    util = new Util();
   });
 
   it('greeting contains 12 charactes', () => {
@@ -42,10 +35,5 @@ describe('Simple Class: util.ts', () => {
   it('should log to console', () => {
     util.log('abc');
     expect(window.console.log).toHaveBeenCalled();
-  });
-
-  it('should process messages correctley', () => {
-    //notice pending() for test yet to implement
-    pending();
   });
 });
