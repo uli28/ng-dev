@@ -20,6 +20,8 @@ code --install-extension wallabyjs.wallaby-vscode
 
 Testing:
 
+> Note: Mock data is provided in `food.mocks.ts`
+
 - Complete the pending tests in the following files:
 
     - food.service.spec.ts
@@ -27,7 +29,5 @@ Testing:
     - food-list.component.spec.ts
     - food-edit.component.spec.ts
     - food-container.component.spec.ts
-
-    > Note: Mock data is provided in `food.mocks.ts`
 
 - Try to reach a [code coverage](https://angular.io/guide/testing-code-coverage) of more than 80%
