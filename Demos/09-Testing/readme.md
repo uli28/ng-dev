@@ -18,12 +18,6 @@
 
 [Wallaby VS Code Extension](https://marketplace.visualstudio.com/items?itemName=WallabyJs.wallaby-vscode)
 
-## End to End Testing
-
-[Cypress](https://www.cypress.io/)
-
-[Playwright](https://playwright.dev/)
-
 ## Debug Unit Tests
 
 - Set a breakpoint in **app.component.spec.ts** on a line in one of the unit tests.
@@ -41,3 +35,26 @@
 - When a browser opens with the test list, click the link for the test in which you placed the breakpoint. You should then hit the breakpoint:
 
 ![angular-test-breakpoint](https://user-images.githubusercontent.com/2836367/27004448-e5134ff8-4dce-11e7-8145-69de0956dd07.png)
+
+
+## End to End Testing
+
+[Cypress](https://www.cypress.io/)
+
+[Playwright](https://playwright.dev/)
+
+### Cypress
+
+Run in two seperate terminals
+
+Serve the app:
+
+```
+ng s
+```
+
+Start Cypress:
+
+```
+npm run cypress
+```
