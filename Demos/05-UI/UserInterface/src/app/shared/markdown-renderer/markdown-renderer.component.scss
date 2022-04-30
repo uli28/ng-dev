@@ -6,9 +6,10 @@ mat-expansion-panel {
 }
 
 mat-expansion-panel-header {
-  background-color: mat.get-color-from-palette($app-accent);
+  background-color: var(--color-accent);
+  
 }
 
 mat-panel-title {
-  border-bottom: 1px solid mat.get-color-from-palette($app-accent);
+  border-bottom: 1px solid var(--color-accent);
 }
