@@ -20,22 +20,21 @@ export class ServicesComponent implements OnInit {
     console.log(`logPipe() - ${msg}:`, data);
   };
 
-  usingPromises() {
-    // Mocking a promise function
-    function getMockPromise(): Promise<string> {
-      return new Promise<string>((resolve, reject) => {
-        setTimeout(() => {
-          console.log('Async Task Complete');
-          if (true) {
-            resolve(JSON.stringify({ Id: 1, Person: 'Hugo Wolf' }));
-          } else {
-            reject('Big Error: Promise rejected');
-          }
-        }, 1000);
-      });
-    }
+  getMockPromise(): Promise<string> {
+    return new Promise<string>((resolve, reject) => {
+      setTimeout(() => {
+        console.log('Async Task Complete');
+        if (true) {
+          resolve(JSON.stringify({ Id: 1, Person: 'Hugo Wolf' }));
+        } else {
+          reject('Big Error: Promise rejected');
+        }
+      }, 1000);
+    });
+  }
 
-    getMockPromise()
+  usingPromises() {
+    this.getMockPromise()
       .then((data) => this.logPipe('Date received from getMockPromise', data))
       .catch((err) => console.log('Err:', err));
   }
