@@ -47,3 +47,14 @@ button.mat-raised-button{
   position: relative;
   top: -1rem;
 }
+
+// Mat-Dialog-Container
+mat-dialog-container { 
+  .form-container {
+    padding: 0 10px;
+
+    .mat-form-field-flex:first-child {
+      padding-top: 10px;
+    }
+  }
+}

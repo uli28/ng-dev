@@ -1,26 +1,19 @@
-import { Injectable } from "@angular/core";
-import { Observable, of } from "rxjs";
-import { delay } from "rxjs/operators";
-import { Person } from "./person";
+import { Injectable } from '@angular/core';
+import { Observable, of } from 'rxjs';
+import { delay } from 'rxjs/operators';
+import { Person } from './person';
+import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
-  providedIn: "root"
+  providedIn: 'root',
 })
 export class PersonService {
-  constructor() {}
+  constructor(private httpClient: HttpClient) {}
 
   getPersons(): Observable<Person[]> {
-    let data = [
-      {
-        name: "Alexander",
-        age: 49,
-        gender: "male",
-        married: true,
-        imgUrl: "/assets/images/alex.jpg"
-      },
-      { name: "Brunhilde", age: 27, gender: "female", married: false },
-      { name: "Susi", age: 37, gender: "female", married: false }
-    ];
-    return of(data).pipe(delay(2000));
+    return this.httpClient
+      .get<Person[]>(environment.personUrl)
+      .pipe(delay(2000));
   }
 }

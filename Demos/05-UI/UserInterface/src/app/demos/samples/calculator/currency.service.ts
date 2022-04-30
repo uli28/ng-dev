@@ -8,10 +8,11 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root',
 })
 export class CurrencyService {
-  // Using https://fixer.io - Register your own key
+  // For current currency data use https://fixer.io
+  // Register your own key and use:
+  // url = `http://data.fixer.io/api/latest?access_key=${environment.fixerAPIKey}`;
 
-  url = `http://data.fixer.io/api/latest?access_key=${environment.fixerAPIKey}`;
-
+  url = environment.fixerUrl;
   rates: Map<string, number>;
 
   constructor(private httpClient: HttpClient) {}

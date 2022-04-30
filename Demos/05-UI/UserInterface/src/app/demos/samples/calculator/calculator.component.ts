@@ -1,6 +1,5 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CurrencyService } from './currency.service';
-import { RatesParam } from './RatesParam';
 
 @Component({
   selector: 'app-calculator',
@@ -46,6 +45,7 @@ export class CalculatorComponent {
   }
 
   convert(): void {
+    console.log('converting');
     this.onConvert.emit(this.converted);
   }
 }

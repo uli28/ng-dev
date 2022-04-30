@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
   title = 'Single Page Application Development';
   subtitle = 'Typescript';
+  pic = 'user-interface.jpg';
 
   constructor() {}
 
