@@ -31,18 +31,17 @@
   <ng-container matColumnDef="Amount">
     <mat-header-cell *matHeaderCellDef> Amount </mat-header-cell>
     <mat-cell *matCellDef="let element">
-      {{ element.Amount | currency: 'EUR':true }}
+      {{ element.Amount | currency: 'EUR'}}
     </mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="action">
-    <th mat-header-cell *matHeaderCellDef></th>
+    <th mat-header-cell *matHeaderCellDef>Action</th>
     <td mat-cell *matCellDef="let element">
-      <button mat-raised-button (click)="editItem(element)">Edit</button>
+      <a (click)="editItem(element)">Edit</a>
     </td>
   </ng-container>
 
   <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
   <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
 </mat-table>
-<!-- </div> -->
