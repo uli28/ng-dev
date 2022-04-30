@@ -6,13 +6,18 @@
 }
 
 .mat-card-header {
-  background-color: var(--color-fg);
-  min-height: var(--toolbar-medium);
-  padding-top: var(--gap-small);
+  background-color: var(--color-primary);
+  color: var(--color-fg);
+  height: var(--toolbar-medium);
+  padding-top: 0px;
 }
 
 .mat-card-title{
   margin-top: var(--gap-small);
+}
+
+.mat-card-subtitle{
+  color: var(--color-fg);
 }
 
 .mat-card-content {

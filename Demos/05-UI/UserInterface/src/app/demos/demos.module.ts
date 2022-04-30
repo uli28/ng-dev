@@ -1,7 +1,11 @@
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { CommonModule } from '@angular/common';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import {
+  HttpClient,
+  HttpClientModule,
+  HTTP_INTERCEPTORS,
+} from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
@@ -31,6 +35,8 @@ import { ChartComponent } from './samples/chart/chart.component';
 import { MarkdownThirdPartyComponent } from './samples/markdown-third-party/markdown-third-party.component';
 import { SharedModule } from '../shared/shared.module';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { LoadingInterceptor } from '../shared/loading/loading-interceptor';
+import { LoadingService } from '../shared/loading/loading.service';
 
 const demoRoutes: Routes = [
   {
@@ -61,41 +67,41 @@ const demoRoutes: Routes = [
 ];
 
 @NgModule({
-    declarations: [
-        DemoContainerComponent,
-        CSSBindingComponent,
-        CssgridComponent,
-        CssgridFlexlayoutComponent,
-        UsingMaterialComponent,
-        MaterialTableComponent,
-        MaterialDialogComponent,
-        GoogleFontsComponent,
-        FlexboxComponent,
-        FlexMediaQueryComponent,
-        FlexLayoutComponent,
-        DragDropComponent,
-        VirtualScrollComponent,
-        StepperComponent,
-        CalculatorComponent,
-        ClassicDialogComponent,
-        DialogComponent,
-        InlineCssComponent,
-        BoostrapComponent,
-        ChartComponent,
-        MarkdownThirdPartyComponent,
-    ],
-    imports: [
-        CommonModule,
-        FormsModule,
-        ReactiveFormsModule,
-        RouterModule.forChild(demoRoutes),
-        MaterialModule,
-        DragDropModule,
-        ScrollingModule,
-        NgxChartsModule,
-        SharedModule,
-        HttpClientModule,
-    ],
-    providers: [DemoService]
+  declarations: [
+    DemoContainerComponent,
+    CSSBindingComponent,
+    CssgridComponent,
+    CssgridFlexlayoutComponent,
+    UsingMaterialComponent,
+    MaterialTableComponent,
+    MaterialDialogComponent,
+    GoogleFontsComponent,
+    FlexboxComponent,
+    FlexMediaQueryComponent,
+    FlexLayoutComponent,
+    DragDropComponent,
+    VirtualScrollComponent,
+    StepperComponent,
+    CalculatorComponent,
+    ClassicDialogComponent,
+    DialogComponent,
+    InlineCssComponent,
+    BoostrapComponent,
+    ChartComponent,
+    MarkdownThirdPartyComponent,
+  ],
+  imports: [
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    RouterModule.forChild(demoRoutes),
+    MaterialModule,
+    DragDropModule,
+    ScrollingModule,
+    NgxChartsModule,
+    SharedModule,
+    HttpClientModule,
+  ],
+  providers: [DemoService],
 })
 export class DemosModule {}

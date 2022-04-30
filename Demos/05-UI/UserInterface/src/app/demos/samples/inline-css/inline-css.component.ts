@@ -5,8 +5,8 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './inline-css.component.html',
   styles: [
     `
-      mat-card: {
-        margin-bottom: 10px;
+      button: {
+        background-color: green;
       }
     `,
   ],
