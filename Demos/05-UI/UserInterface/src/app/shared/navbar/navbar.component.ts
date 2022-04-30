@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Route, Router } from '@angular/router';
+import { NavigationEnd, Route, Router } from '@angular/router';
 import { Observable } from 'rxjs';
+import { filter } from 'rxjs/operators';
 import { MenuItem } from '../menu/menu-item.model';
 import { MenuService } from '../menu/menu.service';
 import { SnackbarService } from '../snackbar/snackbar.service';
@@ -18,12 +19,18 @@ export class NavbarComponent implements OnInit {
   ) {}
 
   editorDisplayed: boolean;
+  hamburgerVisible = true;
   rootRoutes: Route[];
   menuItems: Observable<MenuItem[]>;
 
   ngOnInit() {
     this.editorDisplayed = false;
     this.menuItems = this.ms.getTopItems();
+    this.router.events
+      .pipe(filter((event) => event instanceof NavigationEnd))
+      .subscribe((event: NavigationEnd) => {
+        this.hamburgerVisible = event.url.includes('demos');
+      });
   }
 
   toggleMenu() {
@@ -31,10 +38,6 @@ export class NavbarComponent implements OnInit {
   }
 
   toggleApps() {
-    this.sns.displayAlert('Apps', 'Not implemented! - just for demo');
-  }
-
-  showUpload() {
-    this.router.navigate(['', { outlets: { sidebarOutlet: 'upload' } }]);
+    this.sns.displayAlert('Apps', 'Not implemented! - just a mock');
   }
 }

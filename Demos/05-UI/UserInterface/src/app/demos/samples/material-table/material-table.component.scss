@@ -1,5 +1,5 @@
 @use '@angular/material' as mat;
-@import 'theme.scss';
+@import 'mat-theme.scss';
 
 .mat-row:hover {
   background-color: mat.get-color-from-palette($app-accent);

@@ -28,7 +28,8 @@
 }
 
 //buttons
-.mat-raised-button{
+button.mat-raised-button{
+  margin: var(--gap-small) 0;
   :hover{
     text-decoration: underline;
   }

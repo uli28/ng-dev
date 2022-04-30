@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { MaterialModule } from '../material.module';
-import { FooterComponent } from './footer/footer.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SidePanelComponent } from './side-panel/side-panel.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
@@ -14,7 +13,6 @@ import { MarkdownRendererComponent } from './markdown-renderer/markdown-renderer
 const mods = [
   NavbarComponent,
   SidePanelComponent,
-  FooterComponent,
   PageNotFoundComponent,
   MarkdownRendererComponent,
 ];
