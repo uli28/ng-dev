@@ -1,4 +1,4 @@
-@import "stylevars.scss";
+@import "vars.scss";
 
 .menu {
   margin: 0 $smallGap;
@@ -6,13 +6,12 @@
 
 .workbench {
   min-width: 400px;
-  // background-color: $mediumBackground;
 }
 
 button {
   width: 100%;
   margin: $smallGap 0;
-  @include link($medium-font, $light-col);
+  @include link(var(--color-fg), $medium-font);
 }
 
 mat-toolbar {
@@ -26,5 +25,10 @@ mat-toolbar {
 
 .mat-sidenav {
   width: 220px;
-  background-color: $mediumBackground;
+  background-color: var(--color-fg);
+}
+
+.mat-drawer-container {
+  background-color: var(--color-clear);
+  color: var(--color-darkfont);
 }

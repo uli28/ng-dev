@@ -1,10 +1,4 @@
-$mediumBackground: #eeeeee;
-$light-col: whitesmoke;
-
-$ngRed: red;
-$matGreen: #a5d6a7;
-
-// $Gap: 10px;
+//Gaps
 $smallGap: 0.5rem;
 $mediumGap: 0.8rem;
 $bigGap: 1rem;
@@ -17,8 +11,7 @@ $medium-font: 1.1rem;
 $big-toolbar: 70px;
 $medium-toolbar: 45px;
 
-//Links
-
+//Mixin
 @mixin link($col, $font) {
   font-size: $font;
   color: $col;

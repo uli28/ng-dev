@@ -1,5 +1,34 @@
 @import "stylevars";
 
+//Card
 .mat-card {
-  background-color: #eeeeee;
+  background-color: var(--color-fg);
+  margin-bottom: $big-gap;
+  padding: 0 !important;
+}
+
+.mat-card-header {
+  background-color: var(--color-fg);
+  min-height: $medium-toolbar;
+  padding-top: $small-gap;
+}
+
+.mat-card-title{
+  margin-top: $small-gap;
+}
+
+.mat-card-content {
+  padding: $medium-gap;
+  margin-bottom: 0 !important;
+}
+
+.mat-card-actions {
+  padding: $medium-gap;
+  margin-left: $medium-gap !important;
+  margin-right: $medium-gap !important;
+  padding-bottom: $medium-gap !important;
+  button {
+    background-color: mat.get-color-from-palette($app-bg, 700);
+    color: mat.get-color-from-palette($app-fg);
+  }
 }

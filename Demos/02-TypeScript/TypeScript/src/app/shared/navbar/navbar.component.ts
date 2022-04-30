@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { NavigationEnd, Route, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { filter } from 'rxjs/operators';
+import { MenuItem } from '../menu/menu-item.model';
 import { MenuService } from '../menu/menu.service';
 import { SnackbarService } from '../snackbar/snackbar.service';
-import { MenuItem } from '../menu/menu-item.model';
 
 @Component({
   selector: 'app-navbar',
@@ -38,6 +38,6 @@ export class NavbarComponent implements OnInit {
   }
 
   toggleApps() {
-    this.sns.displayAlert('Apps', 'Not implemented! - just for demo');
+    this.sns.displayAlert('Apps', 'Not implemented! - just a mock');
   }
 }

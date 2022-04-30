@@ -1,12 +1,7 @@
-@import "stylevars.scss";
-
-.navTitle {
-  color: $ngRed;
-  font-size: $big-font;
-}
+@import "vars.scss";
 
 .navLink {
-  @include link($medium-font, $light-col);
+  @include link(var(--color-fg), $medium-font);
 }
 
 mat-toolbar-row {
