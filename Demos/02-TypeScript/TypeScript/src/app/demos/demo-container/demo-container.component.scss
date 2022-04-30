@@ -1,7 +1,7 @@
-@import "vars.scss";
+@import "mixins.scss";
 
 .menu {
-  margin: 0 $smallGap;
+  margin: 0 var(--gap-small);
 }
 
 .workbench {
@@ -10,13 +10,13 @@
 
 button {
   width: 100%;
-  margin: $smallGap 0;
-  @include link(var(--color-fg), $medium-font);
+  margin: var(--gap-small) 0;
+  @include link(var(--color-fg), var(--font-small));
 }
 
 mat-toolbar {
-  height: $medium-toolbar;
-  margin-bottom: $bigGap;
+  height: var(--toolbar-medium);
+  margin-bottom: var(--gap-big);
 }
 
 .mat-sidenav-container {

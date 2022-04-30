@@ -1,9 +1,9 @@
-@import "vars.scss";
+@import "mixins.scss";
 
 .navLink {
-  @include link(var(--color-fg), $medium-font);
+  @include link(var(--color-fg), var(--font-big));
 }
 
 mat-toolbar-row {
-  min-height: $big-toolbar;
+  min-height: var(--toolbar-big);
 }

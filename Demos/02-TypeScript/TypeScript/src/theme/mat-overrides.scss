@@ -1,34 +1,35 @@
-@import "stylevars";
-
 //Card
 .mat-card {
   background-color: var(--color-fg);
-  margin-bottom: $big-gap;
+  margin-bottom: var(--gap-big);
   padding: 0 !important;
 }
 
 .mat-card-header {
   background-color: var(--color-fg);
-  min-height: $medium-toolbar;
-  padding-top: $small-gap;
+  min-height: var(--toolbar-medium);
+  padding-top: var(--gap-small);
 }
 
 .mat-card-title{
-  margin-top: $small-gap;
+  margin-top: var(--gap-small);
 }
 
 .mat-card-content {
-  padding: $medium-gap;
+  padding: var(--gap-medium);
   margin-bottom: 0 !important;
 }
 
 .mat-card-actions {
-  padding: $medium-gap;
-  margin-left: $medium-gap !important;
-  margin-right: $medium-gap !important;
-  padding-bottom: $medium-gap !important;
-  button {
-    background-color: mat.get-color-from-palette($app-bg, 700);
-    color: mat.get-color-from-palette($app-fg);
+  padding: var(--gap-medium);
+  margin-left: var(--gap-medium) !important;
+  margin-right: var(--gap-medium) !important;
+  margin-bottom: var(--gap-medium) !important;
+}
+
+//buttons
+.mat-raised-button{
+  :hover{
+    text-decoration: underline;
   }
 }
