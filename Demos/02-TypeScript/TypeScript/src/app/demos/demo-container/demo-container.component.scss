@@ -1,13 +1,5 @@
 @import "mixins.scss";
 
-.menu {
-  margin: 0 var(--gap-small);
-}
-
-.workbench {
-  min-width: 400px;
-}
-
 button {
   width: 100%;
   margin: var(--gap-small) 0;
@@ -17,6 +9,16 @@ button {
 mat-toolbar {
   height: var(--toolbar-medium);
   margin-bottom: var(--gap-big);
+}
+
+.menu {
+  margin: 0 var(--gap-small);
+}
+
+.nav-content {
+  min-width: 400px;
+  height:100%;
+  overflow: hidden;
 }
 
 .mat-sidenav-container {
