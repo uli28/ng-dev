@@ -11,12 +11,13 @@ mat-card{
 }
 
 mat-card-header {
-    padding-top: 0.5rem;
-    background-color: var(--color-primary);
-    color: var(--color-fg);;
     display: flex;
     flex-direction: row;
     justify-content: center;
+    height: var(--toolbar-big);
+    padding-top: 0.5rem;
+    background-color: var(--color-primary);
+    color: var(--color-fg);;
 }
 
 .mat-card-subtitle {

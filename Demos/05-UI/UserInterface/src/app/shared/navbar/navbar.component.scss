@@ -2,7 +2,7 @@
 
 .navLink {
   @include link(var(--color-fg), var(--font-big)); 
-  margin-top: -0.4rem;
+  margin-top: -0.5rem;
 }
 
 .navLinkActive{
