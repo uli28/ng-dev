@@ -18,7 +18,7 @@ For nicer formatting prismjs is also registered in angular.json and could be fur
     "includePaths": ["src/theme"]
 },
 "scripts": [
-    "node_modules/marked/lib/marked.js",
+    "node_modules/marked/marked.min.js",
     "node_modules/prismjs/prism.js",
     "node_modules/prismjs/components/prism-typescript.min.js",
     "node_modules/prismjs/components/prism-css.min.js"
