@@ -22,10 +22,4 @@ export class BetterMessageService {
   clear() {
     this.messages = [];
   }
-
-  process() {
-    this.util
-      .processMessages(this.messages.map((m) => m.message))
-      .subscribe((mgs) => (this.messages = mgs));
-  }
 }

@@ -15,7 +15,7 @@ export const foodAddItem = { name: 'Gulasch', rating: 2 };
 export const foodAddedItem = { id: 5, name: 'Gulasch', rating: 2 };
 
 // Update
-export const foodUpdateItem = { id: 5, name: 'Gulyas', rating: 2 };
+export const foodUpdateItem = { id: 5, name: 'Gulasch', rating: 2 };
 export const foodUpdatedItem = { id: 5, name: 'Gulyas', rating: 2 };
 
 // Delete

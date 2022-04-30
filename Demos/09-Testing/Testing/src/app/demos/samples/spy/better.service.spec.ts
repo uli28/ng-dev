@@ -8,7 +8,7 @@ describe('Testing a simple Service: SimpleMessageService', () => {
   let util: any;
 
   beforeEach(() => {
-    util = jasmine.createSpyObj('Util', ['log', 'processMessages']);
+    util = jasmine.createSpyObj('Util', ['log', 'greet']);
     service = new BetterMessageService(util);
   });
 
@@ -18,7 +18,7 @@ describe('Testing a simple Service: SimpleMessageService', () => {
 
   it('should add a message when add is called', () => {
     service.add({ message: 'Hallo Jürgen' });
-    service.add({ message: 'Hi Mike' });
+    service.add({ message: 'Hi Mike', processed: true });
     expect(service.messages.length).toBe(2);
     expect(service.messages[1].message == 'Hi Mike');
     // Spy allows to get metadata about methods
@@ -41,13 +41,5 @@ describe('Testing a simple Service: SimpleMessageService', () => {
 
     expect(service.messages.length).toBe(1);
     expect(service.messages).toContain({ message: 'Hola Alessandra' });
-  });
-
-  it('should be able to process messages', () => {
-    service.messages = original;
-    util.processMessages.and.returnValue(of(processed));
-    service.process();
-    expect(util.processMessages).toHaveBeenCalledTimes(1);
-    expect(service.messages).toBe(processed);
   });
 });
