@@ -24,10 +24,10 @@
   <mat-sidenav-content>
     <div
       class="nav-content"
-      gdAreas="toolbar | workbench | footer"
+      gdAreas="toolbar toolbar | workbench sidebar"
       gdGap="10px"
-      gdRows="70px auto 60px"
-      gdColumns="auto"
+      gdRows="70px auto"
+      gdColumns="auto 80px"
       gdColumns.lt-md="100%"
       [ngStyle]="getWorbenchStyle()"
     >
@@ -39,8 +39,8 @@
         </mat-toolbar>
       </div>
       <div gdArea="workbench"><router-outlet></router-outlet></div>
-      <div gdArea="footer">
-        <app-footer></app-footer>
+      <div gdArea="sidebar">
+        <app-side-panel></app-side-panel>
       </div>
     </div>
   </mat-sidenav-content>
