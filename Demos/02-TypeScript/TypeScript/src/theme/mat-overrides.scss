@@ -33,3 +33,11 @@
     text-decoration: underline;
   }
 }
+
+//snackbar
+.app-snackbar{
+  background-color: var(--color-primary);
+  color: var(--color-fg);
+  position: relative;
+  top: -4rem;
+}
