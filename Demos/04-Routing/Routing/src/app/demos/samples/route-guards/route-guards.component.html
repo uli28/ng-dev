@@ -6,8 +6,11 @@
     Inspect: app-routing.module.ts<br />
     Notice resolve instruction on 'admin' route<br />
     Go to 'environment.ts' - Try link below with authEnabled: false | true<br />
-    <button mat-raised-button [routerLink]="['/admin']">
+
+  </mat-card-content>
+  <mat-card-actions align="end">
+    <button mat-raised-button [routerLink]="['/admin']" color="accent">
       Go to Admin Page
     </button>
-  </mat-card-content>
+  </mat-card-actions>
 </mat-card>

@@ -3,12 +3,10 @@
     <mat-card-title>Using Router Link & Basic Routing</mat-card-title>
   </mat-card-header>
   <mat-card-content fxLayout="column" fxLayoutGap="10px">
-    <a mat-raised-button [routerLink]="['/skills']"
-      >Simple Route (Show Skills)</a
-    >
-    <a mat-raised-button [routerLink]="['/skills-old']"
-      >Redirect From 'Schkills'</a
-    >
+    <button mat-raised-button [routerLink]="['/skills']" color="accent"
+      >Simple Route (Show Skills)</button>
+    <button mat-raised-button [routerLink]="['/skills-old']" color="accent"
+      >Redirect From 'Schkills'</button>
   </mat-card-content>
 </mat-card>
 
@@ -17,13 +15,12 @@
     <mat-card-title>Using Query Params & Fragments</mat-card-title>
   </mat-card-header>
   <mat-card-content fxLayout="column" fxLayoutGap="10px">
-    <a
+    <button
       mat-raised-button
       [routerLink]="['/skills', 1]"
       [queryParams]="{ readonly: true, clientid: 50 }"
-      fragment="section5"
-      >Query & Fragment Params</a
-    >
+      fragment="section5" color="accent"
+      >Query & Fragment Params</button>
   </mat-card-content>
 </mat-card>
 
@@ -32,11 +29,9 @@
     <mat-card-title>Route using Code</mat-card-title>
   </mat-card-header>
   <mat-card-content fxLayout="column" fxLayoutGap="10px">
-    <a mat-raised-button (click)="showSkills()"
-      >Simple Route using Code (Show Skills)</a
-    >
-    <a mat-raised-button (click)="showSkillParam(2)"
-      >Code Param (Show Skill ById)</a
-    >
+    <button mat-raised-button (click)="showSkills()" color="accent"
+      >Simple Route using Code (Show Skills)</button>
+    <button mat-raised-button (click)="showSkillParam(2)" color="accent"
+      >Code Param (Show Skill ById)</button>
   </mat-card-content>
 </mat-card>

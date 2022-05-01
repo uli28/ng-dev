@@ -22,21 +22,26 @@
     </div>
   </mat-sidenav>
   <mat-sidenav-content>
-    <div fxFlex="8 8 auto" class="workbench" [ngStyle]="getWorbenchStyle()">
-      <mat-toolbar color="accent">
-        <mat-toolbar-row>
-          <h4>{{ header }}</h4>
-        </mat-toolbar-row>
-      </mat-toolbar>
-      <div class="workbench">
-        <router-outlet></router-outlet>
+    <div
+      class="nav-content"
+      gdAreas="toolbar toolbar | workbench sidebar"
+      gdGap="10px"
+      gdRows="70px auto"
+      gdColumns="auto 80px"
+      gdColumns.lt-md="100%"
+      [ngStyle]="getWorbenchStyle()"
+    >
+      <div gdArea="toolbar">
+        <mat-toolbar color="accent">
+          <mat-toolbar-row>
+            <h4>{{ header }}</h4>
+          </mat-toolbar-row>
+        </mat-toolbar>
       </div>
-      <!-- <div
-        class="workbench"
-        [@routeAnimation]="o.isActivated ? o.activatedRoute : ''"
-      >
-        <router-outlet #o="outlet"></router-outlet>
-      </div> -->
+      <div gdArea="workbench"><router-outlet></router-outlet></div>
+      <div gdArea="sidebar">
+        <app-side-panel></app-side-panel>
+      </div>
     </div>
   </mat-sidenav-content>
 </mat-sidenav-container>

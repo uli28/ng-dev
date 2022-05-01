@@ -6,15 +6,16 @@
         Menu
       </mat-card-title>
     </mat-card-header>
-    <mat-card-content fxLayout="column">
-      <a
+    <mat-card-content fxLayout="column" fxLayoutGap="10px">
+      <button
         mat-raised-button
         *ngFor="let lnk of links"
         [routerLink]="['./' + lnk.id]"
-        [queryParams]="{ readonly: lnk.readonly }"
+        [queryParams]="{ readonly: lnk.readonly }" 
+        color="accent"
       >
         {{ lnk.label }}
-      </a>
+      </button>
     </mat-card-content>
   </mat-card>
   <mat-card fxFlex="3 1 auto">
