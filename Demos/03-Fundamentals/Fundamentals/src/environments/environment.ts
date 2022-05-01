@@ -1,7 +1,9 @@
 export const environment = {
   production: false,
   title: 'ngFundamentals',
-  vouchers: '/assets/vouchers.json',
-  skills: '/assets/skills.json',
-  persons: '/assets/persons.json',
+  markdownPath: '/assets/markdown/',
+  jsonApi: 'http://localhost:3000/',
+  personApi: '/assets/persons.json',
+  vouchersApi: '/assets/vouchers.json',
+  skillsApi: '/assets/skills.json',
 };

@@ -1,12 +1,4 @@
-@import 'stylevars.scss';
-
 .grid {
   height: 100vh;
-  min-width: 375;
-  margin: 0 $mediumGap;
-}
-
-.footer,
-.sidemenu {
-  background: $mediumBackground;
+  margin: 0 var(--gap-medium);
 }

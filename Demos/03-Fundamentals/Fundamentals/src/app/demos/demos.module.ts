@@ -4,8 +4,9 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { MaterialModule } from '../material.module';
+import { SharedModule } from '../shared/shared.module';
+import { DemoService } from './demo-base/demo.service';
 import { DemoContainerComponent } from './demo-container/demo-container.component';
-import { DemoService } from './demo.service';
 import { BindingComponent } from './samples/binding/binding.component';
 import { ContainerComponent } from './samples/container/container.component';
 import { ContentProjectionComponent } from './samples/content-projection/content-projection.component';
@@ -20,12 +21,10 @@ import { ToEuroPipe } from './samples/custom-pipes/to-euro.pipe';
 import { DirectivesComponent } from './samples/directives/directives.component';
 import { ExpressionsComponent } from './samples/expressions/expressions.component';
 import { InlineComponent } from './samples/inline/inline.component';
-import { LifecycleChildComponent } from './samples/lifecycle-child/lifecycle-child.component';
 import { LifecycleComponent } from './samples/lifecycle/lifecycle.component';
 import { LocalizationComponent } from './samples/localization/localization.component';
 import { NgTemplateComponent } from './samples/ng-template/ng-template.component';
 import { PersonEditComponent } from './samples/persons/person-edit/person-edit.component';
-import { PersonService } from './samples/persons/person.service';
 import { PersonsListComponent } from './samples/persons/persons-list/persons-list.component';
 import { PipesComponent } from './samples/pipes/pipes.component';
 import { RepeaterComponent } from './samples/repeater/repeater.component';
@@ -33,7 +32,6 @@ import { StructDirectivesComponent } from './samples/struct-directives/struct-di
 import { TemplateComponent } from './samples/template/template.component';
 import { AlertComponent } from './samples/view-child/alert/alert.component';
 import { ViewChildComponent } from './samples/view-child/view-child.component';
-import { VouchersService } from './samples/vouchers/voucher.service';
 
 const demoRoutes: Routes = [
   {
@@ -88,7 +86,6 @@ const demoRoutes: Routes = [
     uxSplitComponent,
     SplitPopupComponent,
     LifecycleComponent,
-    LifecycleChildComponent,
     NgTemplateComponent,
   ],
   imports: [
@@ -97,7 +94,8 @@ const demoRoutes: Routes = [
     RouterModule.forChild(demoRoutes),
     MaterialModule,
     HttpClientModule,
+    SharedModule,
   ],
-  providers: [DemoService, VouchersService, PersonService],
+  providers: [DemoService],
 })
 export class DemosModule {}

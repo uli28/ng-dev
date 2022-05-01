@@ -19,19 +19,12 @@ export class NavbarComponent implements OnInit {
   ) {}
 
   editorDisplayed: boolean;
-  hamburgerVisible = true;
   rootRoutes: Route[];
   menuItems: Observable<MenuItem[]>;
 
   ngOnInit() {
     this.editorDisplayed = false;
     this.menuItems = this.ms.getTopItems();
-
-    this.router.events
-      .pipe(filter((event) => event instanceof NavigationEnd))
-      .subscribe((event: any) => {
-        this.hamburgerVisible = event.url.includes('demos');
-      });
   }
 
   toggleMenu() {
@@ -39,6 +32,6 @@ export class NavbarComponent implements OnInit {
   }
 
   toggleApps() {
-    this.sns.displayAlert('Apps', 'Not implemented! - just for demo');
+    this.sns.displayAlert('Apps', 'Not implemented! - just a mock');
   }
 }

@@ -9,7 +9,7 @@
     </div>
     <div>
       <span>Is selected: </span
-      ><span [innerHTML]="isChecked | toChecked"></span>
+      ><span class="checked" [innerHTML]="isChecked | toChecked"></span>
     </div>
   </mat-card-content>
 </mat-card>
@@ -18,9 +18,11 @@
   <mat-card-header>
     <mat-card-title> Cust Currency Pipe </mat-card-title>
   </mat-card-header>
-  <div>Price: {{ price | toEuro }} </div>
-  <div>Price: {{ 100 | toEuro }} </div>
-  <div>Price: {{ 50 | toEuro }} </div>
-  <div>Price: {{ 12 | toEuro }} </div>
-  <div>Price: {{ 0.12 | toEuro }} </div>
+  <mat-card-content>
+    <div>Price: {{ price | toEuro }}</div>
+    <div>Price: {{ 100 | toEuro }}</div>
+    <div>Price: {{ 50 | toEuro }}</div>
+    <div>Price: {{ 12 | toEuro }}</div>
+    <div>Price: {{ 0.12 | toEuro }}</div></mat-card-content
+  >
 </mat-card>
