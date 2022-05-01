@@ -16,7 +16,7 @@
             placeholder="How much do you want to Exchange"
           />
         </mat-form-field>
-        <div align="end"><button mat-button matStepperNext>Next</button></div>
+        <div align="end"><button mat-raised-button matStepperNext color="primary">Next</button></div>
       </mat-step>
       <mat-step>
         <ng-template matStepLabel>Convert</ng-template>
@@ -30,8 +30,8 @@
         <ng-template matStepLabel>Done</ng-template>
         <div *ngIf="calculated">{{ msg }}</div>
         <div align="end">
-          <button mat-button matStepperPrevious>Back</button>
-          <button mat-button (click)="stepper.reset()">Reset</button>
+          <button mat-raised-button matStepperPrevious color="primary">Back</button>
+          <button mat-raised-button (click)="stepper.reset()" color="primary">Reset</button>
         </div>
       </mat-step>
     </mat-horizontal-stepper>
