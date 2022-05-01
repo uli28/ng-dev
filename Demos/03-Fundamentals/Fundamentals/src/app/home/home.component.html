@@ -1,15 +1,6 @@
-<mat-card>
-  <mat-card-header >
-    <mat-card-title>{{ title }}</mat-card-title>
-    <mat-card-subtitle>{{ subtitle }}</mat-card-subtitle>
-  </mat-card-header>
-  <mat-card-content fxLayout="column" fxLayoutAlign="center center">
-    <img src="assets/images/{{pic}}" alt="">
-    <div class="instructions">
-      Start Json-Server: json-server db.json
-    </div>
-  </mat-card-content>
-  <mat-card-actions>
-    <button mat-raised-button routerLink="/demos" color="primary" >Proceed</button>
-  </mat-card-actions>
-</mat-card>
+<app-intro
+  title="Single Page Application Development"
+  subtitle="Fundamentals"
+  img="fundamentals.jpg"
+><div class="instructions">Start json-server using: json-server db.json</div>
+</app-intro>

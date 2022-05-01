@@ -8,8 +8,14 @@ import { SidePanelComponent } from './side-panel/side-panel.component';
 import { MarkdownRendererComponent } from './markdown-renderer/markdown-renderer.component';
 import { MarkdownModule } from 'ngx-markdown';
 import { HttpClient } from '@angular/common/http';
+import { IntroComponent } from './intro/intro.component';
 
-const mods = [NavbarComponent, SidePanelComponent, MarkdownRendererComponent];
+const mods = [
+  NavbarComponent,
+  SidePanelComponent,
+  MarkdownRendererComponent,
+  IntroComponent,
+];
 
 @NgModule({
   imports: [

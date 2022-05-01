@@ -10,6 +10,7 @@ import { MarkdownRendererComponent } from './markdown-renderer/markdown-renderer
 import { NavbarComponent } from './navbar/navbar.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { SidePanelComponent } from './side-panel/side-panel.component';
+import { IntroComponent } from './intro/intro.component';
 
 const mods = [
   NavbarComponent,
@@ -17,6 +18,7 @@ const mods = [
   PageNotFoundComponent,
   MarkdownRendererComponent,
   LoadingComponent,
+  IntroComponent,
 ];
 
 @NgModule({
