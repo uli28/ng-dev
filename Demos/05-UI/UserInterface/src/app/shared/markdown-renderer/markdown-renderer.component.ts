@@ -8,7 +8,7 @@ import { environment } from 'src/environments/environment';
 })
 export class MarkdownRendererComponent implements OnInit {
   @Input() md: string;
-  panelOpenState = false;
+  panelOpenState = true;
 
   constructor() {}
 
