@@ -1,4 +1,4 @@
-//Card
+//mat-card
 .mat-card {
   background-color: var(--color-fg);
   margin-bottom: var(--gap-big);
@@ -40,7 +40,7 @@ button.mat-raised-button{
   }
 }
 
-//snackbar
+//mat-snackbar
 .app-snackbar{
   background-color: var(--color-primary);
   color: var(--color-fg);
@@ -48,7 +48,7 @@ button.mat-raised-button{
   top: -1rem;
 }
 
-// Mat-Dialog-Container
+//mat-dialog
 mat-dialog-container { 
   .form-container {
     padding: 0 10px;
@@ -57,4 +57,33 @@ mat-dialog-container {
       padding-top: 10px;
     }
   }
+}
+
+//mat-expansion-panel
+mat-expansion-panel {
+  margin-bottom: 0.5rem;
+  border-radius: 0px !important; 
+}
+
+mat-expansion-panel-header:hover{
+  background-color: var(--color-primary);  
+}
+
+mat-expansion-panel-header {
+  height: var(--toolbar-medium);
+  background-color: var(--color-primary) !important;  
+}
+
+.mat-expansion-panel-header.mat-expanded {
+  height: var(--toolbar-medium);
+  margin-bottom: 0.5rem;
+}
+
+.mat-expansion-panel-header-title{
+  color: var(--color-fg);
+  font-size: 20px;
+}
+
+.mat-expansion-panel-header-description, .mat-expansion-indicator::after {
+  color: var(--color-fg);
 }
