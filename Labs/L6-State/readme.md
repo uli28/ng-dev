@@ -38,4 +38,4 @@ Implement a global loading inicator (Advanced Optional):
 
 - Implement a stateful loading service
 
-- Implement an [HttpInterceptor](https://angular.io/guide/http#intercepting-requests-and-responses) to toggle the loading service. Keep in mind that there could be multiple request at the same time.
+- Implement an [HttpInterceptor](https://angular.io/guide/http#intercepting-requests-and-responses) to toggle a loading service that is used to show a loading indicator. Keep in mind that there could be multiple request at the same time.
