@@ -1,1 +1,1 @@
-Investigate demos-route
+Investigate `demos`-route in `app.routing.module.ts`

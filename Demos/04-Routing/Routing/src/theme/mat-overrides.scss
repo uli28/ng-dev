@@ -26,10 +26,9 @@
 }
 
 .mat-card-actions {
-  padding: var(--gap-medium);
+  padding: var(--gap-medium) !important;
   margin-left: var(--gap-medium) !important;
   margin-right: var(--gap-medium) !important;
-  margin-bottom: var(--gap-medium) !important;
 }
 
 //buttons
