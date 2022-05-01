@@ -10,18 +10,18 @@ import { DialogComponent } from './dialog/dialog.component';
 export class ClassicDialogComponent implements OnInit {
   constructor(public dialog: MatDialog) {}
 
-  param = 'Giro';
+  paramName = 'Giro';
 
   ngOnInit() {}
 
   openDialog() {
     const dialogRef = this.dialog.open(DialogComponent, {
       width: '40vw',
-      data: { name: this.param },
+      data: { name: this.paramName },
     });
 
     dialogRef.afterClosed().subscribe((result) => {
-      console.log(result);
+      console.log('Result from mat-dialog:', result);
     });
   }
 }

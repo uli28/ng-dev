@@ -6,7 +6,9 @@
   <mat-card-content>
     <div fxLayout="column" fxLayoutGap="10px">
       <label>Enter a number:</label>
-      <input type="text" [(ngModel)]="price" toEuro />
+      <div class="inputContainer">
+        <input type="text" [(ngModel)]="price" toEuro />
+      </div>
     </div>
   </mat-card-content>
 </mat-card>

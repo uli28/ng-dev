@@ -1,8 +1,7 @@
 .form-group {
-  margin-bottom: 0.8rem;
+  margin-bottom: var(--gap-medium);
 }
 
-/* _forms.scss:284 */
 .form-group {
   display: flex;
   flex: 0 0 auto;

@@ -1,13 +1,11 @@
-Install ngx-markdown and prismjs
+- Install ngx-markdown and prismjs
 
 ```
 npm i -S ngx-markdown prismjs
 ```
 
-Investigate this componentent and markdown-renderer.component.ts in the SharedModule
-Investigate its registration and usage in DemoModule
-
-For nicer formatting prismjs is also registered in angular.json and could be further formatted
+- Investigate this componentent and markdown-renderer.component.ts in the SharedModule
+- Investigate its registration and usage in DemoModule
 
 ```
 "styles": [
@@ -18,9 +16,21 @@ For nicer formatting prismjs is also registered in angular.json and could be fur
     "includePaths": ["src/theme"]
 },
 "scripts": [
-    "node_modules/marked/lib/marked.js",
+    "node_modules/marked/marked.min.js",
     "node_modules/prismjs/prism.js",
     "node_modules/prismjs/components/prism-typescript.min.js",
     "node_modules/prismjs/components/prism-css.min.js"
 ]
+```
+
+Markdown also allows class highlighting using annotations like `typescript`
+
+```typescript
+export interface Skill {
+  id?: number;
+  name: string;
+  hours: number;
+  completed: boolean;
+}
+
 ```

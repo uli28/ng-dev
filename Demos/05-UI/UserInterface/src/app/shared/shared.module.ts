@@ -1,22 +1,22 @@
 import { CommonModule } from '@angular/common';
+import { HttpClient } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import { MaterialModule } from '../material.module';
-import { FooterComponent } from './footer/footer.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { SidePanelComponent } from './side-panel/side-panel.component';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { MarkdownModule } from 'ngx-markdown';
-import { HttpClient } from '@angular/common/http';
+import { MaterialModule } from '../material.module';
+import { LoadingComponent } from './loading/loading.component';
 import { MarkdownRendererComponent } from './markdown-renderer/markdown-renderer.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { SidePanelComponent } from './side-panel/side-panel.component';
 
 const mods = [
   NavbarComponent,
   SidePanelComponent,
-  FooterComponent,
   PageNotFoundComponent,
   MarkdownRendererComponent,
+  LoadingComponent,
 ];
 
 @NgModule({

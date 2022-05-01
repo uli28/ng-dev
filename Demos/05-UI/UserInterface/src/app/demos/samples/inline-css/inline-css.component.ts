@@ -3,13 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-inline-css',
   templateUrl: './inline-css.component.html',
-  styles: [
-    `
-      mat-card: {
-        margin-bottom: 10px;
-      }
-    `,
-  ],
+  styles: ['h1 { color:red }'],
 })
 export class InlineCssComponent implements OnInit {
   constructor() {}

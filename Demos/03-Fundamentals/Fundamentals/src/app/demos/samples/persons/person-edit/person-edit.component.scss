@@ -1,5 +1,3 @@
-@import "stylevars.scss";
-
 mat-card {
-  margin-top: $smallGap;
+  margin-top: var(--gap-small);
 }

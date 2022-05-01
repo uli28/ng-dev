@@ -1,22 +1,23 @@
-@import "stylevars.scss";
-
-.menu {
-  margin: 0 $smallGap;
-}
-
-.workbench {
-  min-width: $workbench;
-}
+@import "mixins.scss";
 
 button {
   width: 100%;
-  margin: $smallGap 0;
-  @include link($medium-font, $light-col);
+  @include link(var(--color-fg), var(--font-small));
 }
 
 mat-toolbar {
-  height: $medium-toolbar;
-  margin-bottom: $bigGap;
+  height: var(--toolbar-medium);
+  margin-bottom: var(--gap-big);
+}
+
+.menu {
+  margin: 0 var(--gap-small);
+}
+
+.nav-content {
+  min-width: 400px;
+  height:100%;
+  overflow: hidden;
 }
 
 .mat-sidenav-container {
@@ -24,6 +25,11 @@ mat-toolbar {
 }
 
 .mat-sidenav {
-  width: $side-nav;
-  background-color: $mediumBackground;
+  width: 220px;
+  background-color: var(--color-fg);
+}
+
+.mat-drawer-container {
+  background-color: var(--color-clear);
+  color: var(--color-darkfont);
 }

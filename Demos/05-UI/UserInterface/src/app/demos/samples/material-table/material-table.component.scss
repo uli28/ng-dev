@@ -1,5 +1,13 @@
 @use '@angular/material' as mat;
-@import 'theme.scss';
+@import 'mat-theme.scss';
+
+// mat-header-cell{
+//   background-color: var(--color-bg);
+// }
+
+// mat-cell{
+//   background-color: var(--color-fg);
+// }
 
 .mat-row:hover {
   background-color: mat.get-color-from-palette($app-accent);

@@ -34,10 +34,13 @@
   <a mat-raised-button (click)="toggleInput()">Click to {{isDisabled ? 'enable' : 'disable'}} the input</a
   ><br />
   <a mat-raised-button (click)="hideInput()">Click to {{isHidden ? 'show' : 'hide'}}  the input</a>
-  <input
+  <div class="inputContainer">
+    <input
     type="text"
     placeholder="Enter name"
     [disabled]="isDisabled"
     [hidden]="isHidden"
   />
+  </div>
+ 
 </mat-card>

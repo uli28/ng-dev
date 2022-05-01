@@ -1,5 +1,5 @@
-import { SnackbarService } from '../snackbar/snackbar.service';
 import { Component, OnInit } from '@angular/core';
+import { SnackbarService } from '../snackbar/snackbar.service';
 
 @Component({
   selector: 'app-side-panel',

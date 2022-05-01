@@ -30,19 +30,19 @@ export class LifecycleComponent implements OnInit, OnChanges, OnDestroy {
     console.log('ngOnDestroy');
   }
 
-  // ngAfterContentInit() {
-  //   console.log('ngAfterContentInit');
-  // }
+  ngAfterContentInit() {
+    console.log('ngAfterContentInit');
+  }
 
-  // ngAfterContentChecked(): void {
-  //   console.log('ngAfterContentChecked');
-  // }
+  ngAfterContentChecked(): void {
+    console.log('ngAfterContentChecked');
+  }
 
-  // ngAfterViewInit() {
-  //   console.log('ngAfterViewInit');
-  // }
+  ngAfterViewInit() {
+    console.log('ngAfterViewInit');
+  }
 
-  // ngAfterViewChecked() {
-  //   console.log('ngAfterViewChecked');
-  // }
+  ngAfterViewChecked() {
+    console.log('ngAfterViewChecked');
+  }
 }
