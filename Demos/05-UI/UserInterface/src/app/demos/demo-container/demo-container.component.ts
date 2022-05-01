@@ -4,8 +4,8 @@ import { Observable } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
 import { MenuService } from 'src/app/shared/menu/menu.service';
 import { environment } from 'src/environments/environment';
-import { DemoItem } from './demo-item.model';
-import { DemoService } from '../demo.service';
+import { DemoItem } from '../demo-base/demo-item.model';
+import { DemoService } from '../demo-base/demo.service';
 
 @Component({
   selector: 'app-demo-container',

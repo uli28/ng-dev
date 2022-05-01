@@ -11,7 +11,7 @@ import { Skill } from './skill.model';
 export class SkillsService {
   constructor(private httpClient: HttpClient) {}
 
-  private url = `${environment.api}skills`;
+  private url = `${environment.jsonApi}skills`;
 
   getSkills(): Observable<Skill[]> {
     return this.httpClient.get<Skill[]>(this.url);

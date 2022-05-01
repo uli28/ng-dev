@@ -12,7 +12,7 @@ export class CurrencyService {
   // Register your own key and use:
   // url = `http://data.fixer.io/api/latest?access_key=${environment.fixerAPIKey}`;
 
-  url = environment.fixerUrl;
+  url = environment.fixerApi;
   rates: Map<string, number>;
 
   constructor(private httpClient: HttpClient) {}

@@ -1,18 +1,20 @@
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { CommonModule } from '@angular/common';
-import {
-  HttpClient,
-  HttpClientModule,
-  HTTP_INTERCEPTORS,
-} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
-import { MarkdownModule, MarkdownComponent } from 'ngx-markdown';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { MaterialModule } from '../material.module';
+import { SharedModule } from '../shared/shared.module';
+import { DemoService } from './demo-base/demo.service';
 import { DemoContainerComponent } from './demo-container/demo-container.component';
-import { DemoService } from './demo.service';
+import { BoostrapComponent } from './samples/boostrap/boostrap.component';
+import { CalculatorComponent } from './samples/calculator/calculator.component';
+import { ChartComponent } from './samples/chart/chart.component';
+import { ClassicDialogComponent } from './samples/classic-dialog/classic-dialog.component';
+import { DialogComponent } from './samples/classic-dialog/dialog/dialog.component';
 import { CSSBindingComponent } from './samples/cssbinding/binding.component';
 import { CssgridFlexlayoutComponent } from './samples/cssgrid-flexlayout/cssgrid-flexlayout.component';
 import { CssgridComponent } from './samples/cssgrid/cssgrid.component';
@@ -21,22 +23,13 @@ import { FlexLayoutComponent } from './samples/flex-layout/flex-layout.component
 import { FlexMediaQueryComponent } from './samples/flex-media-query/flex-media-query.component';
 import { FlexboxComponent } from './samples/flexbox/flexbox.component';
 import { GoogleFontsComponent } from './samples/google-fonts/google-fonts.component';
-import { MaterialDialogComponent } from './samples/material-dialog/material-dialog.component';
-import { MaterialTableComponent } from './samples/material-table/material-table.component';
-import { UsingMaterialComponent } from './samples/material-showcase/using-material.component';
-import { VirtualScrollComponent } from './samples/virtual-scroll/virtual-scroll.component';
-import { StepperComponent } from './samples/material-stepper/stepper.component';
-import { CalculatorComponent } from './samples/calculator/calculator.component';
-import { ClassicDialogComponent } from './samples/classic-dialog/classic-dialog.component';
-import { DialogComponent } from './samples/classic-dialog/dialog/dialog.component';
 import { InlineCssComponent } from './samples/inline-css/inline-css.component';
-import { BoostrapComponent } from './samples/boostrap/boostrap.component';
-import { ChartComponent } from './samples/chart/chart.component';
 import { MarkdownThirdPartyComponent } from './samples/markdown-third-party/markdown-third-party.component';
-import { SharedModule } from '../shared/shared.module';
-import { NgxChartsModule } from '@swimlane/ngx-charts';
-import { LoadingInterceptor } from '../shared/loading/loading-interceptor';
-import { LoadingService } from '../shared/loading/loading.service';
+import { MaterialDialogComponent } from './samples/material-dialog/material-dialog.component';
+import { UsingMaterialComponent } from './samples/material-showcase/using-material.component';
+import { StepperComponent } from './samples/material-stepper/stepper.component';
+import { MaterialTableComponent } from './samples/material-table/material-table.component';
+import { VirtualScrollComponent } from './samples/virtual-scroll/virtual-scroll.component';
 
 const demoRoutes: Routes = [
   {

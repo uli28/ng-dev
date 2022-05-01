@@ -13,7 +13,7 @@ export class PersonService {
 
   getPersons(): Observable<Person[]> {
     return this.httpClient
-      .get<Person[]>(environment.personUrl)
+      .get<Person[]>(environment.personApi)
       .pipe(delay(2000));
   }
 }
