@@ -1,21 +1,20 @@
 import { CommonModule } from '@angular/common';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
-import { MarkdownModule } from 'ngx-markdown';
 import { MaterialModule } from '../material.module';
-import { DemoContainerComponent } from './demo-container/demo-container.component';
-import { DemoService } from './demo.service';
-import { TemplateDrivenComponent } from './samples/template-driven/template-driven.component';
-import { ReactiveFormsComponent } from './samples/reactive-forms/reactive-forms.component';
-import { FormsBuilderComponent } from './samples/forms-builder/forms-builder.component';
-import { TemplateValidationComponent } from './samples/template-validation/template-validation.component';
-import { ReactiveValidationComponent } from './samples/reactive-validation/reactive-validation.component';
-import { FormControlComponent } from './samples/form-control/form-control.component';
-import { FormArrayComponent } from './samples/form-array/form-array.component';
-import { NgModelGrpComponent } from './samples/ng-model-grp/ng-model-grp.component';
 import { SharedModule } from '../shared/shared.module';
+import { DemoService } from './demo-base/demo.service';
+import { DemoContainerComponent } from './demo-container/demo-container.component';
+import { FormArrayComponent } from './samples/form-array/form-array.component';
+import { FormControlComponent } from './samples/form-control/form-control.component';
+import { FormsBuilderComponent } from './samples/forms-builder/forms-builder.component';
+import { NgModelGrpComponent } from './samples/ng-model-grp/ng-model-grp.component';
+import { ReactiveFormsComponent } from './samples/reactive-forms/reactive-forms.component';
+import { ReactiveValidationComponent } from './samples/reactive-validation/reactive-validation.component';
+import { TemplateDrivenComponent } from './samples/template-driven/template-driven.component';
+import { TemplateValidationComponent } from './samples/template-validation/template-validation.component';
 
 const demoRoutes: Routes = [
   {
