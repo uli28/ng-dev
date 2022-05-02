@@ -36,9 +36,6 @@
     <a mat-raised-button color="accent" (click)="useDelay()"
       >delay() to wait for a periode</a
     >
-    <!-- <a mat-raised-button color="accent" (click)="useFlatMap()"
-      >flatMap() to chain Subscriptions</a
-    > -->
     <a mat-raised-button color="accent" (click)="useForkJoin()"
       >forkJoin() to join Observables</a
     >
@@ -57,7 +54,7 @@
       Result
     </mat-card-title>
   </mat-card-header>
-  <mat-card-content>
+  <mat-card-content class="result">
     <div *ngFor="let v of vouchers">
       {{ v.Label != null ? v.Label : v.Text }}
     </div>

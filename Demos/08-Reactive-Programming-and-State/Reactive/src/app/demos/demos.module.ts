@@ -7,7 +7,6 @@ import { MaterialModule } from '../material.module';
 import { SharedModule } from '../shared/shared.module';
 import { MarkdownEditorComponent } from './comments/markdown-editor/markdown-editor.component';
 import { DemoContainerComponent } from './demo-container/demo-container.component';
-import { DemoService } from './demo.service';
 import { AsyncComponent } from './samples/async/async.component';
 import { CreatingObservableComponent } from './samples/creating-observables/creating-observable.component';
 import { EvtBusComponent } from './samples/evt-bus/evt-bus.component';
@@ -19,6 +18,7 @@ import { SubjectsComponent } from './samples/subjects/subjects.component';
 import { UnsubscribingComponent } from './samples/unsubscribing/unsubscribing.component';
 import { VouchersService } from './samples/vouchers/voucher.service';
 import { StatefulVouchersComponent } from './samples/vouchers/stateful-vouchers/stateful-vouchers.component';
+import { DemoService } from './demo-base/demo.service';
 
 const demoRoutes: Routes = [
   {
@@ -62,6 +62,6 @@ const demoRoutes: Routes = [
     HttpClientModule,
     SharedModule,
   ],
-  providers: [DemoService, VouchersService],
+  providers: [DemoService],
 })
 export class DemosModule {}

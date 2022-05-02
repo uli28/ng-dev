@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
-import { filter, map, startWith } from 'rxjs/operators';
+import { Observable } from 'rxjs';
+import { filter, map } from 'rxjs/operators';
 import { MenuService } from 'src/app/shared/menu/menu.service';
 import { environment } from 'src/environments/environment';
-import { DemoService } from '../demo.service';
-import { EventBusService } from '../samples/evt-bus/event-bus.service';
-import { SidebarActions } from '../samples/evt-bus/sidebar-actions';
+import { DemoItem } from '../demo-base/demo-item.model';
+import { DemoService } from '../demo-base/demo.service';
 import { MatDrawerMode } from '@angular/material/sidenav';
 
 @Component({
@@ -14,35 +14,39 @@ import { MatDrawerMode } from '@angular/material/sidenav';
   styleUrls: ['./demo-container.component.scss'],
 })
 export class DemoContainerComponent implements OnInit {
-  constructor(
-    private router: Router,
-    private route: ActivatedRoute,
-    private demoService: DemoService,
-    public ms: MenuService,
-    private eb: EventBusService
-  ) {
-    ms.postition.subscribe((m) => (this.mode = m));
-  }
-
   title: string = environment.title;
   header = 'Please select a demo';
-  mode: MatDrawerMode = 'side';
-  demos$ = this.demoService.getItems();
-  //declarative binding to event bus
-  showEditor = this.eb
-    .getCommands()
-    .pipe(
-      map((action) => (action == SidebarActions.HIDE_MARKDOWN ? false : true))
-    );
+  demos$: Observable<DemoItem[]>;
+  sidenavMode: MatDrawerMode = 'side';
+
+  constructor(
+    private router: Router,
+    private demoService: DemoService,
+    private route: ActivatedRoute,
+    public ms: MenuService
+  ) {
+    this.title = 'Typescript';
+  }
 
   ngOnInit() {
+    this.setMenu();
     this.setMetadata();
     this.getWorbenchStyle();
   }
 
+  setMenuPosition() {
+    this.ms.position$.subscribe(
+      (mode: any) => (this.sidenavMode = mode as MatDrawerMode)
+    );
+  }
+
+  setMenu() {
+    this.demos$ = this.demoService.getItems();
+  }
+
   getWorbenchStyle() {
     let result = {};
-    this.ms.visible.subscribe((visible) => {
+    this.ms.visible$.subscribe((visible: any) => {
       result = visible
         ? {
             'margin-left': '10px',
@@ -50,6 +54,13 @@ export class DemoContainerComponent implements OnInit {
         : {};
     });
     return result;
+  }
+
+  rootRoute(route: ActivatedRoute): ActivatedRoute {
+    while (route.firstChild) {
+      route = route.firstChild;
+    }
+    return route;
   }
 
   setMetadata() {
@@ -67,12 +78,5 @@ export class DemoContainerComponent implements OnInit {
                 .substring(6, route.component.toString().indexOf('{') - 1)}`
             : '';
       });
-  }
-
-  rootRoute(route: ActivatedRoute): ActivatedRoute {
-    while (route.firstChild) {
-      route = route.firstChild;
-    }
-    return route;
   }
 }

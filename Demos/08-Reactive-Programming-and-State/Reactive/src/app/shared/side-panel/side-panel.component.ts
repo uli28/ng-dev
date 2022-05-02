@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { EventBusService } from 'src/app/demos/samples/evt-bus/event-bus.service';
-import { SidebarActions } from 'src/app/demos/samples/evt-bus/sidebar-actions';
 import { SnackbarService } from '../snackbar/snackbar.service';
 
 @Component({
@@ -9,7 +7,7 @@ import { SnackbarService } from '../snackbar/snackbar.service';
   styleUrls: ['./side-panel.component.scss'],
 })
 export class SidePanelComponent implements OnInit {
-  constructor(private eb: EventBusService, private sns: SnackbarService) {}
+  constructor(private sns: SnackbarService) {}
 
   editorDisplayed: boolean;
 
@@ -18,16 +16,7 @@ export class SidePanelComponent implements OnInit {
   }
 
   toggleEditor() {
-    console.log(
-      'Switching Markdown Editor to Display: ',
-      !this.editorDisplayed
-    );
-    if (this.editorDisplayed) {
-      this.eb.triggerCmd(SidebarActions.HIDE_MARKDOWN);
-    } else {
-      this.eb.triggerCmd(SidebarActions.SHOW_MARKDOWN);
-    }
-    this.editorDisplayed = !this.editorDisplayed;
+    this.sns.displayAlert('Info', 'Not implemented - just a Demo');
   }
 
   showUpload() {
