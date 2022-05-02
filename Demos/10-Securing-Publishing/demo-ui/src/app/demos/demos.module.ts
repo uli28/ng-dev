@@ -7,10 +7,10 @@ import { FBAuthModule } from '../fbauth/fbauth.module';
 import { MaterialModule } from '../material.module';
 import { SharedModule } from '../shared/shared.module';
 import { DemoContainerComponent } from './demo-container/demo-container.component';
-import { DemoService } from './demo.service';
 import { FirebaseComponent } from './samples/firebase/firebase.component';
 import { FirebaseAuthInterceptor } from '../fbauth/firebase/firebase-auth.interceptor';
 import { MsalComponent } from './samples/msal/msal.component';
+import { DemoService } from './demo-base/demo.service';
 
 const demoRoutes: Routes = [
   {
