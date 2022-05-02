@@ -6,11 +6,11 @@ import { RouterModule, Routes } from '@angular/router';
 import { MaterialModule } from '../material.module';
 import { SharedModule } from '../shared/shared.module';
 import { DemoContainerComponent } from './demo-container/demo-container.component';
-import { DemoService } from './demo.service';
 import { AuthInterceptor } from '../auth-interceptor';
 import { ObservableCrudComponent } from './samples/observable-crud/observable-crud.component';
 import { JsonServerComponent } from './samples/json-server/json-server.component';
 import { AdvHttpClientComponent } from './samples/adv-http-client/adv-http-client.component';
+import { DemoService } from './demo-base/demo.service';
 
 const demoRoutes: Routes = [
   {
@@ -18,7 +18,7 @@ const demoRoutes: Routes = [
     component: DemoContainerComponent,
 
     children: [
-      { path: 'observablescurd', component: ObservableCrudComponent },
+      { path: 'observables-crud', component: ObservableCrudComponent },
       { path: 'adv-httpclient', component: AdvHttpClientComponent },
       { path: 'json-server', component: JsonServerComponent },
     ],

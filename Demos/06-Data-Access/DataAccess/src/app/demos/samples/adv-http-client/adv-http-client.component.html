@@ -6,10 +6,10 @@
     >
   </mat-card-header>
   <mat-card-content fxLayout="column">
-    <button mat-raised-button (click)="observeResponse()">
+    <button mat-raised-button (click)="observeResponse()" color="accent">
       Observe Response HttpClient
     </button>
-    <a mat-raised-button (click)="usingHeadersHttpClient()"
+    <a mat-raised-button (click)="usingHeadersHttpClient()" color="accent"
       >Using Headers in HttpClient</a
     >
     <app-markdown-renderer [md]="'interceptor'"></app-markdown-renderer>
@@ -23,7 +23,7 @@
   <mat-card-header>
     <mat-card-title>Result</mat-card-title>
   </mat-card-header>
-  <mat-card-content>
+  <mat-card-content class="result">
     <pre>{{ result | json }}</pre>
   </mat-card-content>
 </mat-card>

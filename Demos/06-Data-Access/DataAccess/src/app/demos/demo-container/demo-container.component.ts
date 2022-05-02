@@ -4,8 +4,8 @@ import { Observable } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
 import { MenuService } from 'src/app/shared/menu/menu.service';
 import { environment } from 'src/environments/environment';
-import { DemoItem } from '../demo-item.model';
-import { DemoService } from '../demo.service';
+import { DemoItem } from '../demo-base/demo-item.model';
+import { DemoService } from '../demo-base/demo.service';
 
 @Component({
   selector: 'app-demo-container',
@@ -15,14 +15,16 @@ import { DemoService } from '../demo.service';
 export class DemoContainerComponent implements OnInit {
   title: string = environment.title;
   header = 'Please select a demo';
-  demos$: Observable<DemoItem[]> = null;
+  demos$: Observable<DemoItem[]>;
 
   constructor(
     private router: Router,
-    private route: ActivatedRoute,
     private demoService: DemoService,
+    private route: ActivatedRoute,
     public ms: MenuService
-  ) {}
+  ) {
+    this.title = 'Typescript';
+  }
 
   ngOnInit() {
     this.setMenu();
@@ -46,6 +48,13 @@ export class DemoContainerComponent implements OnInit {
     return result;
   }
 
+  rootRoute(route: ActivatedRoute): ActivatedRoute {
+    while (route.firstChild) {
+      route = route.firstChild;
+    }
+    return route;
+  }
+
   setMetadata() {
     this.router.events
       .pipe(
@@ -61,12 +70,5 @@ export class DemoContainerComponent implements OnInit {
                 .substring(6, route.component.toString().indexOf('{') - 1)}`
             : '';
       });
-  }
-
-  rootRoute(route: ActivatedRoute): ActivatedRoute {
-    while (route.firstChild) {
-      route = route.firstChild;
-    }
-    return route;
   }
 }
