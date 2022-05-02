@@ -1,13 +1,13 @@
-import { Component, OnInit } from "@angular/core";
-import { Router } from "@angular/router";
+import { Component, OnInit } from '@angular/core';
+import { SnackbarService } from '../snackbar/snackbar.service';
 
 @Component({
-  selector: "app-side-panel",
-  templateUrl: "./side-panel.component.html",
-  styleUrls: ["./side-panel.component.scss"]
+  selector: 'app-side-panel',
+  templateUrl: './side-panel.component.html',
+  styleUrls: ['./side-panel.component.scss'],
 })
 export class SidePanelComponent implements OnInit {
-  constructor(private router: Router) {}
+  constructor(private sns: SnackbarService) {}
 
   editorDisplayed: boolean;
 
@@ -16,15 +16,10 @@ export class SidePanelComponent implements OnInit {
   }
 
   toggleEditor() {
-    this.editorDisplayed = !this.editorDisplayed;
-    if (this.editorDisplayed) {
-      this.router.navigate(["", { outlets: { sidebarOutlet: "showeditor" } }]);
-    } else {
-      this.router.navigate(["", { outlets: { sidebarOutlet: null } }]);
-    }
+    this.sns.displayAlert('Info', 'Not implemented - just a Demo');
   }
 
   showUpload() {
-    this.router.navigate(["", { outlets: { sidebarOutlet: "upload" } }]);
+    this.sns.displayAlert('Info', 'Not implemented - just a Demo');
   }
 }
