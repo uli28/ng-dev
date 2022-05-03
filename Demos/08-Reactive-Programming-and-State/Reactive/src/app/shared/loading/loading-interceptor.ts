@@ -21,7 +21,7 @@ export class LoadingInterceptor implements HttpInterceptor {
       console.log('removing request from queue: ', req.url);
       this.requests.splice(i, 1);
     }
-    this.loaderService.isLoading.next(this.requests.length > 0);
+    this.loaderService.setLoading(this.requests.length > 0);
   }
 
   intercept(
@@ -34,7 +34,7 @@ export class LoadingInterceptor implements HttpInterceptor {
     );
     this.requests.push(req);
 
-    this.loaderService.isLoading.next(true);
+    this.loaderService.setLoading(true);
     return Observable.create((observer: any) => {
       const subscription = next.handle(req).subscribe(
         (event) => {

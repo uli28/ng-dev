@@ -50,7 +50,7 @@ export class DemoContainerComponent implements OnInit {
   }
 
   subscribeLoading() {
-    this.ls.isLoading.subscribe((value) => {
+    this.ls.getLoading().subscribe((value) => {
       Promise.resolve(null).then(() => (this.isLoading = value));
     });
   }
