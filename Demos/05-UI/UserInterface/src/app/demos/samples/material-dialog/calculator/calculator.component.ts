@@ -1,5 +1,8 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, Inject } from '@angular/core';
+import { FormControl } from '@angular/forms';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { CurrencyService } from './currency.service';
+import { CalcParam } from './calculatorParam.model';
 
 @Component({
   selector: 'app-calculator',
@@ -7,21 +10,26 @@ import { CurrencyService } from './currency.service';
   styleUrls: ['./calculator.component.scss'],
 })
 export class CalculatorComponent {
-  @Input() amount = 100;
-  @Output() onConvert: EventEmitter<number> = new EventEmitter();
+  // @Inject(MAT_DIALOG_DATA) public data: { amount: number } = {
+  //   amount: 0,
+  // };
 
   rates: Map<string, number> = new Map<string, number>();
   currencies: string[] = [];
   selectedCurrency = 'THB';
   rate: number;
   converted: number;
+  fcAmount = new FormControl(this.data.amount);
 
-  constructor(private cs: CurrencyService) {}
+  constructor(
+    @Inject(MAT_DIALOG_DATA) public data: CalcParam,
+    private cs: CurrencyService
+  ) {}
 
   onNoClick(): void {}
 
   ngOnInit() {
-    const rates = this.cs.getRates().subscribe((data) => {
+    this.cs.getRates().subscribe((data) => {
       this.getCurrencies(data.rates);
       this.calculate();
     });
@@ -36,16 +44,11 @@ export class CalculatorComponent {
 
   calculate() {
     this.rate = this.rates.get(this.selectedCurrency);
-    this.converted = this.amount / this.rate;
+    this.converted = this.data.amount / this.rate;
   }
 
   getRate(curr: string): number {
     const rate = this.rates.get(curr);
     return rate;
-  }
-
-  convert(): void {
-    console.log('converting');
-    this.onConvert.emit(this.converted);
   }
 }
