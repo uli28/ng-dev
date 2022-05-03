@@ -11,7 +11,7 @@ import { SharedModule } from '../shared/shared.module';
 import { DemoService } from './demo-base/demo.service';
 import { DemoContainerComponent } from './demo-container/demo-container.component';
 import { BoostrapComponent } from './samples/boostrap/boostrap.component';
-import { CalculatorComponent } from './samples/calculator/calculator.component';
+import { CalculatorComponent } from './samples/material-dialog/calculator/calculator.component';
 import { ChartComponent } from './samples/chart/chart.component';
 import { ClassicDialogComponent } from './samples/classic-dialog/classic-dialog.component';
 import { DialogComponent } from './samples/classic-dialog/dialog/dialog.component';

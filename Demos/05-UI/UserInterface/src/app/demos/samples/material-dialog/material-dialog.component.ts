@@ -1,12 +1,12 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
-import { MatDialog } from "@angular/material/dialog";
-import { MatStepper } from "@angular/material/stepper";
-import { CalculatorComponent } from "../calculator/calculator.component";
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { MatStepper } from '@angular/material/stepper';
+import { CalculatorComponent } from './calculator/calculator.component';
 
 @Component({
-  selector: "app-material-dialog",
-  templateUrl: "./material-dialog.component.html",
-  styleUrls: ["./material-dialog.component.scss"]
+  selector: 'app-material-dialog',
+  templateUrl: './material-dialog.component.html',
+  styleUrls: ['./material-dialog.component.scss'],
 })
 export class MaterialDialogComponent implements OnInit {
   ngOnInit(): void {}
@@ -20,15 +20,15 @@ export class MaterialDialogComponent implements OnInit {
 
   openCalculator(): void {
     let dialogRef = this.dialog.open(CalculatorComponent, {
-      width: "40vw"
+      width: '40vw',
+      data: { amount: this.amount },
     });
 
-    let instance = dialogRef.componentInstance;
-    instance.amount = this.amount;
+    // let instance = dialogRef.componentInstance;
+    // instance.data.amount = this.amount;
 
-    dialogRef.afterClosed().subscribe(result => {
+    dialogRef.afterClosed().subscribe((result) => {
       this.msg = `Thank you for exchanging ${result} €`;
-      this.calculated = true;
     });
   }
 }

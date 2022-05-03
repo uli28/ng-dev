@@ -13,8 +13,14 @@
         placeholder="How much do you want to Exchange"
       />
     </mat-form-field>
-    <button mat-raised-button (click)="openCalculator()" color="primary">
+    <button mat-raised-button (click)="openCalculator()" color="accent">
       Open Currency Calculator
     </button>
   </mat-card-content>
+</mat-card>
+
+<mat-card>   
+    <mat-card-content>
+        {{msg}}
+    </mat-card-content>
 </mat-card>
