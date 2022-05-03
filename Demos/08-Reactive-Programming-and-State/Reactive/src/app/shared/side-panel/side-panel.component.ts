@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SnackbarService } from '../snackbar/snackbar.service';
-import { EventBusService } from '../../demos/samples/event-bus/event-bus.service';
-import { SidebarActions } from 'src/app/demos/samples/event-bus/sidebar-actions';
+import { SidePanelService } from './sidepanel.service';
+import { SidebarActions } from './sidebar.actions';
 
 @Component({
   selector: 'app-side-panel',
@@ -9,7 +9,7 @@ import { SidebarActions } from 'src/app/demos/samples/event-bus/sidebar-actions'
   styleUrls: ['./side-panel.component.scss'],
 })
 export class SidePanelComponent implements OnInit {
-  constructor(private sns: SnackbarService, private eb: EventBusService) {}
+  constructor(private sns: SnackbarService, private eb: SidePanelService) {}
 
   editorDisplayed: boolean;
 
