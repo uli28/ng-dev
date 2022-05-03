@@ -1,2 +1,0 @@
-- Explain Mock Editor
-- Explain MenuService.ts and its responsive behavior when changing screen with

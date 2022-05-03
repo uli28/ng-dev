@@ -15,5 +15,5 @@ export class LoadingService {
 }
 ```
 - Examine loading-interceptor.ts and discuss its implementation
-- Reload page and select "Stateful Service" in the Detail Menu. Watch the loading indicator.
-- You might have to throttle the loading to see the indicator
+- Quit `json-server` using `CTRL+C`
+- Select "Stateful Service" in the left Demo Menu. Watch the loading indicator.

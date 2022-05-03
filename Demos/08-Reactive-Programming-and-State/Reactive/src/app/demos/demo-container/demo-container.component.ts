@@ -7,9 +7,9 @@ import { environment } from 'src/environments/environment';
 import { DemoItem } from '../demo-base/demo-item.model';
 import { DemoService } from '../demo-base/demo.service';
 import { MatDrawerMode } from '@angular/material/sidenav';
-import { EventBusService } from '../samples/evt-bus/event-bus.service';
-import { SidebarActions } from '../samples/evt-bus/sidebar-actions';
+import { SidePanelService as SideBarService } from '../../shared/side-panel/sidepanel.service';
 import { LoadingService } from '../../shared/loading/loading.service';
+import { SidebarActions } from '../../shared/side-panel/sidebar.actions';
 
 @Component({
   selector: 'app-demo-container',
@@ -29,7 +29,7 @@ export class DemoContainerComponent implements OnInit {
     private demoService: DemoService,
     private route: ActivatedRoute,
     public ms: MenuService,
-    public eb: EventBusService,
+    public eb: SideBarService,
     public ls: LoadingService
   ) {
     this.title = 'Typescript';

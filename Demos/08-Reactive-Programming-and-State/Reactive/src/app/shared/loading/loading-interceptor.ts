@@ -8,12 +8,16 @@ import {
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { LoadingService } from './loading.service';
+import { SnackbarService } from '../snackbar/snackbar.service';
 
 @Injectable()
 export class LoadingInterceptor implements HttpInterceptor {
   private requests: HttpRequest<any>[] = [];
 
-  constructor(private loaderService: LoadingService) {}
+  constructor(
+    private loaderService: LoadingService,
+    private sbs: SnackbarService
+  ) {}
 
   removeRequest(req: HttpRequest<any>) {
     const i = this.requests.indexOf(req);
@@ -44,7 +48,8 @@ export class LoadingInterceptor implements HttpInterceptor {
           }
         },
         (err) => {
-          alert('error' + err);
+          console.log('Interceptor error', err);
+          this.sbs.displayAlert('erro', 'open console for details');
           this.removeRequest(req);
           observer.error(err);
         },

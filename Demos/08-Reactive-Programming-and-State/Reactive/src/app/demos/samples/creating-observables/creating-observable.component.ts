@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import axios from 'axios';
 import { from, Observable, of } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
-import { Skill } from '../../../skills/skill.model';
 
 @Component({
   selector: 'app-simple-observable',
@@ -16,55 +15,6 @@ export class CreatingObservableComponent implements OnInit {
   onComplete = () => console.log('complete');
 
   ngOnInit() {}
-
-  subscribingObservables() {
-    let arr = [2, 5, 9, 12, 22];
-    let obsArr: Observable<number[]> = of(arr);
-    obsArr.subscribe(
-      (data: number[]) => console.log('subscribe: ', data),
-      this.onErr,
-      this.onComplete
-    );
-
-    // new subscribe pattern - above pattern deprecated
-    // in future release will take only one argument:
-    // next handler or observer obj
-
-    const observer = {
-      next:
-        () =>
-        (
-          data: number // onNext
-        ) =>
-          console.log('current number: ', data),
-      error: this.onErr,
-      complete: this.onComplete,
-    };
-    of([2, 5, 9, 12, 22]).subscribe(observer);
-
-    // same writte as inline style
-    of([2, 5, 9, 12, 22]).subscribe({
-      next:
-        () =>
-        (
-          data: number // onNext
-        ) =>
-          console.log('current number: ', data),
-      error: this.onErr,
-      complete: this.onComplete,
-    });
-
-    let skill: Skill = {
-      id: 1,
-      name: 'Custom Theme',
-      hours: 4,
-      completed: true,
-    };
-
-    let obsSkill = of(skill);
-
-    obsSkill.subscribe((s) => console.log(s));
-  }
 
   useObsFrom() {
     let arr = [2, 5, 9, 12, 22];
