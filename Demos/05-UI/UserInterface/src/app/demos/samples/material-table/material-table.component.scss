@@ -1,19 +1,26 @@
 @use '@angular/material' as mat;
 @import 'mat-theme.scss';
 
-// mat-header-cell{
-//   background-color: var(--color-bg);
-// }
+//filter
 
-// mat-cell{
-//   background-color: var(--color-fg);
-// }
-
-.mat-row:hover {
-  background-color: mat.get-color-from-palette($app-accent);
-  cursor: pointer;
+mat-card-content{
+  background-color: var(--color-bg);
 }
 
 mat-form-field {
   width: 100%;
+}
+
+//table
+mat-header-cell{
+  background-color: var(--color-bg);
+}
+
+mat-cell{
+  background-color: var(--color-fg);
+}
+
+mat-row:hover {
+  background-color: var(--color-primary);
+  cursor: pointer;
 }
