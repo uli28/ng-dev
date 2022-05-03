@@ -26,6 +26,8 @@ export class MsalComponent implements OnInit {
     },
   };
 
+  recentFiles = false;
+
   logIn() {}
 
   logOff() {}

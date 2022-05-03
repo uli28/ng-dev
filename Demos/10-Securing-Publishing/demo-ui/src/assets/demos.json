@@ -1,13 +1,13 @@
 [
   {
     "url": "firebase",
-    "title": "Firebase Auth ",
+    "title": "Firebase Authentication ",
     "component": "FirebaseComponent"
   },
 
   {
     "url": "msal",
-    "title": "Microsoft Identity - MSAL",
+    "title": "Microsoft Identity",
     "component": "AdalComponent"
   }
 ]
