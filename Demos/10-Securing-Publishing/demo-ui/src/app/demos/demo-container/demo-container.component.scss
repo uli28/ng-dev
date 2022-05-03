@@ -10,8 +10,21 @@ mat-toolbar {
   margin-bottom: var(--gap-big);
 }
 
+.mat-toolbar-single-row{
+  margin-top: -10px;
+}
+
 .menu {
-  margin: 0 var(--gap-small);
+  font-size: 1rem;
+}
+
+.mat-nav-list .mat-list-item:hover, .mat-nav-list .mat-list-item:focus {
+  background: var(--color-bg)
+}
+
+mat-list-item{
+  border-bottom: 1px solid var(--color-bg);
+  border-top: 1px solid var(--color-bg);
 }
 
 .nav-content {

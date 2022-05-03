@@ -11,6 +11,8 @@ import { FirebaseComponent } from './samples/firebase/firebase.component';
 import { FirebaseAuthInterceptor } from '../fbauth/firebase/firebase-auth.interceptor';
 import { MsalComponent } from './samples/msal/msal.component';
 import { DemoService } from './demo-base/demo.service';
+import { LoadingService } from '../shared/loading/loading.service';
+import { LoadingInterceptor } from '../shared/loading/loading-interceptor';
 
 const demoRoutes: Routes = [
   {
@@ -38,6 +40,8 @@ const demoRoutes: Routes = [
   ],
   providers: [
     DemoService,
+    LoadingService,
+    { provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true },
     {
       provide: HTTP_INTERCEPTORS,
       useClass: FirebaseAuthInterceptor,
