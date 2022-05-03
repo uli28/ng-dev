@@ -11,6 +11,7 @@ import { MarkdownRendererComponent } from './markdown-renderer/markdown-renderer
 import { NavbarComponent } from './navbar/navbar.component';
 import { SidePanelComponent } from './side-panel/side-panel.component';
 import { SumComponent } from './sum/sum.component';
+import { LoadingComponent } from './loading/loading.component';
 
 const mods = [
   NavbarComponent,
@@ -19,6 +20,7 @@ const mods = [
   MarkdownRendererComponent,
   IntroComponent,
   SumComponent,
+  LoadingComponent,
 ];
 
 @NgModule({

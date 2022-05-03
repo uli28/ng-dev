@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
@@ -19,6 +19,8 @@ import { UnsubscribingComponent } from './samples/unsubscribing/unsubscribing.co
 import { VouchersService } from './samples/vouchers/voucher.service';
 import { StatefulVouchersComponent } from './samples/vouchers/stateful-vouchers/stateful-vouchers.component';
 import { DemoService } from './demo-base/demo.service';
+import { LoadingInterceptor } from '../shared/loading/loading-interceptor';
+import { LoadingService } from '../shared/loading/loading.service';
 
 const demoRoutes: Routes = [
   {
@@ -62,6 +64,10 @@ const demoRoutes: Routes = [
     HttpClientModule,
     SharedModule,
   ],
-  providers: [DemoService],
+  providers: [
+    DemoService,
+    LoadingService,
+    { provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true },
+  ],
 })
 export class DemosModule {}
