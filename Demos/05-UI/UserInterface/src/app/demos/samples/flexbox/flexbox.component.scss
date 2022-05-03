@@ -29,3 +29,7 @@
   font-size:1rem;
   text-align: center;
 }
+
+.mat-card>.mat-card-actions:last-child {
+  padding-bottom: var(--gap-medium); 
+}
