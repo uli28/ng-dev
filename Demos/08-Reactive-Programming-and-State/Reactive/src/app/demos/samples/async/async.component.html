@@ -3,7 +3,7 @@
     <mat-card-title> Classic View Model </mat-card-title>
   </mat-card-header>
   <mat-card-content>
-    <div *ngFor="let v of vouchers">{{ v.ID }} - {{ v.Date }}</div>
+    <div *ngFor="let v of vouchers">ID: {{ v.ID }} - Date: {{ v.Date | date}}</div>
   </mat-card-content>
 </mat-card>
 
@@ -12,6 +12,6 @@
     <mat-card-title> Using Declarative Pattern and async </mat-card-title>
   </mat-card-header>
   <mat-card-content>
-    <div *ngFor="let v of vouchers$ | async">{{ v.ID }} - {{ v.Date }}</div>
+    <div *ngFor="let v of vouchers$ | async">ID: {{ v.ID }} - Date: {{ v.Date | date}}</div>
   </mat-card-content>
 </mat-card>

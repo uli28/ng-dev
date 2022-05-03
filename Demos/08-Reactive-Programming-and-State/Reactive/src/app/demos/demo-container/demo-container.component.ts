@@ -1,12 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
 import { MenuService } from 'src/app/shared/menu/menu.service';
 import { environment } from 'src/environments/environment';
 import { DemoItem } from '../demo-base/demo-item.model';
 import { DemoService } from '../demo-base/demo.service';
 import { MatDrawerMode } from '@angular/material/sidenav';
+import { EventBusService } from '../samples/evt-bus/event-bus.service';
+import { SidebarActions } from '../samples/evt-bus/sidebar-actions';
 
 @Component({
   selector: 'app-demo-container',
@@ -18,12 +20,14 @@ export class DemoContainerComponent implements OnInit {
   header = 'Please select a demo';
   demos$: Observable<DemoItem[]>;
   sidenavMode: MatDrawerMode = 'side';
+  showEditor = false;
 
   constructor(
     private router: Router,
     private demoService: DemoService,
     private route: ActivatedRoute,
-    public ms: MenuService
+    public ms: MenuService,
+    public eb: EventBusService
   ) {
     this.title = 'Typescript';
   }
@@ -32,6 +36,13 @@ export class DemoContainerComponent implements OnInit {
     this.setMenu();
     this.setMetadata();
     this.getWorbenchStyle();
+    this.subscribeCommands();
+  }
+
+  subscribeCommands() {
+    this.eb.getCommands().subscribe((action) => {
+      this.showEditor = action == SidebarActions.SHOW_MARKDOWN ? true : false;
+    });
   }
 
   setMenuPosition() {

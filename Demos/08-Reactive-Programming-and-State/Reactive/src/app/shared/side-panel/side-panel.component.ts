@@ -18,7 +18,12 @@ export class SidePanelComponent implements OnInit {
   }
 
   toggleEditor() {
-    this.eb.triggerCmd(SidebarActions.SHOW_MARKDOWN);
+    this.editorDisplayed = !this.editorDisplayed;
+    this.eb.triggerCmd(
+      this.editorDisplayed
+        ? SidebarActions.SHOW_MARKDOWN
+        : SidebarActions.HIDE_MARKDOWN
+    );
   }
 
   showUpload() {
