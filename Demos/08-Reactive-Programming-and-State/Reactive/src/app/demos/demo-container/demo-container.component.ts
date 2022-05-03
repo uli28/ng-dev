@@ -7,8 +7,8 @@ import { environment } from 'src/environments/environment';
 import { DemoItem } from '../demo-base/demo-item.model';
 import { DemoService } from '../demo-base/demo.service';
 import { MatDrawerMode } from '@angular/material/sidenav';
-import { EventBusService } from '../samples/evt-bus/event-bus.service';
-import { SidebarActions } from '../samples/evt-bus/sidebar-actions';
+import { EventBusService } from '../samples/event-bus/event-bus.service';
+import { SidebarActions } from '../samples/event-bus/sidebar-actions';
 import { LoadingService } from '../../shared/loading/loading.service';
 
 @Component({

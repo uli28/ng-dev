@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SnackbarService } from '../snackbar/snackbar.service';
-import { EventBusService } from '../../demos/samples/evt-bus/event-bus.service';
-import { SidebarActions } from 'src/app/demos/samples/evt-bus/sidebar-actions';
+import { EventBusService } from '../../demos/samples/event-bus/event-bus.service';
+import { SidebarActions } from 'src/app/demos/samples/event-bus/sidebar-actions';
 
 @Component({
   selector: 'app-side-panel',
