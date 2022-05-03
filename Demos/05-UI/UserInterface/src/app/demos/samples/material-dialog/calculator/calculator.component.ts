@@ -1,6 +1,8 @@
-import { Component, EventEmitter, Inject, Input, Output } from '@angular/core';
+import { Component, Inject } from '@angular/core';
+import { FormControl } from '@angular/forms';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { CurrencyService } from './currency.service';
+import { CalcParam } from './calculatorParam.model';
 
 @Component({
   selector: 'app-calculator',
@@ -8,16 +10,21 @@ import { CurrencyService } from './currency.service';
   styleUrls: ['./calculator.component.scss'],
 })
 export class CalculatorComponent {
-  @Inject(MAT_DIALOG_DATA) public data: { amount: number; converted: number } =
-    { amount: 0, converted: 0 };
+  // @Inject(MAT_DIALOG_DATA) public data: { amount: number } = {
+  //   amount: 0,
+  // };
 
   rates: Map<string, number> = new Map<string, number>();
   currencies: string[] = [];
   selectedCurrency = 'THB';
   rate: number;
   converted: number;
+  fcAmount = new FormControl(this.data.amount);
 
-  constructor(private cs: CurrencyService) {}
+  constructor(
+    @Inject(MAT_DIALOG_DATA) public data: CalcParam,
+    private cs: CurrencyService
+  ) {}
 
   onNoClick(): void {}
 

@@ -7,7 +7,7 @@
   <mat-card-content>
     <mat-form-field>
       <input type="number" matInput [(ngModel)]="data.amount" />
-      
+      <!-- <input type="number" matInput [formControl]="fcAmount" /> -->
     </mat-form-field>
     <mat-form-field>
       <mat-select
@@ -27,7 +27,7 @@
   </mat-card-content>
   <mat-card-actions>
     <mat-card-actions align="end">
-      <button mat-raised-button [mat-dialog-close]="data.converted" color="accent">Convert</button>
+      <button mat-raised-button [mat-dialog-close]="converted" color="accent">Convert</button>
     </mat-card-actions>
   </mat-card-actions>
 </mat-card>
