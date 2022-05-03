@@ -38,8 +38,10 @@
           </mat-toolbar-row>
         </mat-toolbar>
       </div>
-      <div gdArea="workbench">
-        <router-outlet></router-outlet>
+      <div gdArea="workbench" fxLayout="column" fxLayoutAlign="space-between">
+        <div fxGrow="1">
+          <router-outlet></router-outlet>
+        </div>
         <div class="editor" *ngIf="showEditor">
           <app-markdown-editor [component]="header"></app-markdown-editor>
         </div>

@@ -29,15 +29,15 @@
         fxFlexFill
       >
         <div fxFlex="5 1 auto">{{ c.title }}</div>
-        <a mat-raised-button (click)="editComment(c)">Edit</a>
+        <button mat-raised-button (click)="editComment(c)" color="accent">Edit</button>
       </div>
     </ng-container>
   </mat-card-content>
 
   <mat-card-actions align="end">
     <ng-container *ngIf="editorEdit">
-      <button mat-raised-button (click)="saveComment()">Save</button>
-      <button mat-raised-button (click)="editorEdit = !editorEdit">
+      <button mat-raised-button (click)="saveComment()" color="accent">Save</button>
+      <button mat-raised-button (click)="editorEdit = !editorEdit" color="accent">
         Cancel
       </button>
     </ng-container>
