@@ -27,5 +27,6 @@
     "url": "stateful",
     "title": "Stateful Service"
   },
-  { "url": "evtbus", "title": "Event Bus" }
+  { "url": "evtbus", "title": "Event Bus" },
+  { "url": "loading", "title": "Loading Indicator" }
 ]

@@ -9,7 +9,7 @@ import { MarkdownEditorComponent } from './comments/markdown-editor/markdown-edi
 import { DemoContainerComponent } from './demo-container/demo-container.component';
 import { AsyncComponent } from './samples/async/async.component';
 import { CreatingObservableComponent } from './samples/creating-observables/creating-observable.component';
-import { EvtBusComponent } from './samples/evt-bus/evt-bus.component';
+import { EventBusComponent } from './samples/evt-bus/evt-bus.component';
 import { FlexLayoutApiComponent } from './samples/flex-layout-api/flex-layout-api.component';
 import { DebouncedSearchComponent } from './samples/operators/debounced-search/debounced-search.component';
 import { OperatorsComponent } from './samples/operators/operators.component';
@@ -21,6 +21,7 @@ import { StatefulVouchersComponent } from './samples/vouchers/stateful-vouchers/
 import { DemoService } from './demo-base/demo.service';
 import { LoadingInterceptor } from '../shared/loading/loading-interceptor';
 import { LoadingService } from '../shared/loading/loading.service';
+import { LoadingHostComponent } from './samples/loading-host/loading-host.component';
 
 const demoRoutes: Routes = [
   {
@@ -34,8 +35,9 @@ const demoRoutes: Routes = [
       { path: 'unsubscribe', component: UnsubscribingComponent },
       { path: 'streams', component: AsyncComponent },
       { path: 'stateful', component: StatefulComponent },
-      { path: 'evtbus', component: EvtBusComponent },
+      { path: 'evtbus', component: EventBusComponent },
       { path: 'search', component: DebouncedSearchComponent },
+      { path: 'loading', component: LoadingHostComponent },
     ],
   },
 ];
@@ -50,10 +52,11 @@ const demoRoutes: Routes = [
     DebouncedSearchComponent,
     SubjectsComponent,
     StatefulComponent,
-    EvtBusComponent,
+    EventBusComponent,
     MarkdownEditorComponent,
     AsyncComponent,
     StatefulVouchersComponent,
+    LoadingHostComponent,
   ],
   imports: [
     CommonModule,

@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './evt-bus.component.html',
   styleUrls: ['./evt-bus.component.scss'],
 })
-export class EvtBusComponent implements OnInit {
+export class EventBusComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {}

@@ -40,7 +40,7 @@ export class DemoContainerComponent implements OnInit {
     this.setMetadata();
     this.getWorbenchStyle();
     this.subscribeCommands();
-    // this.subscribeLoading();
+    this.subscribeLoading();
   }
 
   subscribeCommands() {
@@ -50,8 +50,8 @@ export class DemoContainerComponent implements OnInit {
   }
 
   subscribeLoading() {
-    this.ls.isLoading.subscribe((loading) => {
-      this.isLoading = loading;
+    this.ls.isLoading.subscribe((value) => {
+      Promise.resolve(null).then(() => (this.isLoading = value));
     });
   }
 
