@@ -9,5 +9,6 @@ export class DemoService {
 
   getItems(): Observable<DemoItem[]> {
     return this.httpClient.get<DemoItem[]>('/assets/demos.json');
+    // return this.httpClient.get<DemoItem[]>('http://localhost:3000/demos');
   }
 }
