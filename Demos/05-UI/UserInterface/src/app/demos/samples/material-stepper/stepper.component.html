@@ -7,31 +7,35 @@
   <mat-card-content>
     <mat-horizontal-stepper #stepper>
       <mat-step>
-        <ng-template matStepLabel>Choose Amount</ng-template>
+        <ng-template matStepLabel>Get name</ng-template>
+        <mat-form-field>
+          <input
+            type="text"
+            matInput
+            [(ngModel)]="name"
+            placeholder="What is your name"
+          />
+        </mat-form-field>
+        <div align="end"><button mat-raised-button matStepperNext color="accent">Next</button></div>
+      </mat-step> 
+      <mat-step>
+        <ng-template matStepLabel>Get salery</ng-template>
         <mat-form-field>
           <input
             type="number"
             matInput
             [(ngModel)]="amount"
-            placeholder="How much do you want to Exchange"
+            placeholder="What is your salery"
           />
         </mat-form-field>
-        <div align="end"><button mat-raised-button matStepperNext color="primary">Next</button></div>
-      </mat-step>
-      <mat-step>
-        <ng-template matStepLabel>Convert</ng-template>
-        <div>You choose to convert {{ amount }} €</div>
-        <!-- <app-calculator
-          [amount]="amount"
-          (onConvert)="completeConvert($event)"
-        ></app-calculator> -->
-      </mat-step>
+        <div align="end"><button mat-raised-button matStepperNext color="accent">Next</button></div>
+      </mat-step>     
       <mat-step>
         <ng-template matStepLabel>Done</ng-template>
-        <div *ngIf="calculated">{{ msg }}</div>
-        <div align="end">
-          <button mat-raised-button matStepperPrevious color="primary">Back</button>
-          <button mat-raised-button (click)="stepper.reset()" color="primary">Reset</button>
+        <div fxLayout="column">
+          <div>Well. Your are {{name}} and you earn {{amount}}</div>
+          <button mat-raised-button matStepperPrevious color="accent">Back</button>
+          <button mat-raised-button (click)="stepper.reset()" color="accent">Reset</button>
         </div>
       </mat-step>
     </mat-horizontal-stepper>
