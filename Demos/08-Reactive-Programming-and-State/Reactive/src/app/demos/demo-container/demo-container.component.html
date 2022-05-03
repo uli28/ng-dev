@@ -24,9 +24,9 @@
   <mat-sidenav-content>
     <div
       class="nav-content"
-      gdAreas="toolbar toolbar | workbench sidebar"
+      gdAreas="toolbar toolbar | loading loading | workbench sidebar"
       gdGap="10px"
-      gdRows="70px auto"
+      gdRows="65px 5px auto"
       gdColumns="auto 80px"
       gdColumns.lt-md="100%"
       [ngStyle]="getWorbenchStyle()"
@@ -38,10 +38,10 @@
           </mat-toolbar-row>
         </mat-toolbar>
       </div>
-      <div gdArea="workbench" fxLayout="column" fxLayoutAlign="space-between">
-        <div>
-          <app-loading></app-loading>
-        </div>
+      <div gdArea="loading">
+        <app-loading  *ngIf="isLoading"></app-loading>
+      </div>
+      <div gdArea="workbench" fxLayout="column" fxLayoutAlign="space-between">          
         <div fxGrow="1">
           <router-outlet></router-outlet>
         </div>

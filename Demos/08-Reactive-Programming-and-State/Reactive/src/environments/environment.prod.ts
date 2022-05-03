@@ -5,4 +5,5 @@ export const environment = {
   markdownPath: '/assets/markdown/',
   apiUrl: 'http://localhost:3000/vouchers',
   api: 'http://localhost:3000/',
+  throttleLoading: true,
 };

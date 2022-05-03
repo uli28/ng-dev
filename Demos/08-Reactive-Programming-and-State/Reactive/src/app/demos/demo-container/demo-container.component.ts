@@ -9,6 +9,7 @@ import { DemoService } from '../demo-base/demo.service';
 import { MatDrawerMode } from '@angular/material/sidenav';
 import { EventBusService } from '../samples/evt-bus/event-bus.service';
 import { SidebarActions } from '../samples/evt-bus/sidebar-actions';
+import { LoadingService } from '../../shared/loading/loading.service';
 
 @Component({
   selector: 'app-demo-container',
@@ -21,13 +22,15 @@ export class DemoContainerComponent implements OnInit {
   demos$: Observable<DemoItem[]>;
   sidenavMode: MatDrawerMode = 'side';
   showEditor = false;
+  isLoading = true;
 
   constructor(
     private router: Router,
     private demoService: DemoService,
     private route: ActivatedRoute,
     public ms: MenuService,
-    public eb: EventBusService
+    public eb: EventBusService,
+    public ls: LoadingService
   ) {
     this.title = 'Typescript';
   }
@@ -37,11 +40,18 @@ export class DemoContainerComponent implements OnInit {
     this.setMetadata();
     this.getWorbenchStyle();
     this.subscribeCommands();
+    // this.subscribeLoading();
   }
 
   subscribeCommands() {
     this.eb.getCommands().subscribe((action) => {
       this.showEditor = action == SidebarActions.SHOW_MARKDOWN ? true : false;
+    });
+  }
+
+  subscribeLoading() {
+    this.ls.isLoading.subscribe((loading) => {
+      this.isLoading = loading;
     });
   }
 
