@@ -1,8 +1,8 @@
 <app-markdown-renderer [md]="'firebase'"></app-markdown-renderer>
 
 <div *ngIf="currentUser == null">
-  <app-login></app-login>
   <app-register></app-register>
+  <app-login></app-login>
 </div>
 
 <mat-card *ngIf="currentUser != null" fxLayout="column" fxLayoutGap="10px">
