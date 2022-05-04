@@ -7,11 +7,7 @@ button {
 
 mat-toolbar {
   height: var(--toolbar-medium);
-  margin-bottom: var(--gap-big);
-}
-
-.mat-toolbar-single-row{
-  margin-top: -10px;
+  margin-bottom: var(--gap-small);
 }
 
 .menu {

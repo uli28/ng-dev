@@ -1,5 +1,9 @@
 import { CommonModule } from '@angular/common';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import {
+  HttpClient,
+  HttpClientModule,
+  HTTP_INTERCEPTORS,
+} from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
@@ -30,6 +34,8 @@ import { UnitTestingComponent } from './samples/simple-tests/unit-testing.compon
 import { SpyComponent } from './samples/spy/spy.component';
 import { StatefulComponent } from './samples/stateful/stateful.component';
 import { UseMockComponent } from './samples/use-mock/use-mock.component';
+import { LoadingService } from '../shared/loading/loading.service';
+import { LoadingInterceptor } from '../shared/loading/loading-interceptor';
 
 const demoRoutes: Routes = [
   {
@@ -102,6 +108,10 @@ const demoRoutes: Routes = [
       loader: HttpClient,
     }),
   ],
-  providers: [DemoService],
+  providers: [
+    DemoService,
+    LoadingService,
+    { provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true },
+  ],
 })
 export class DemosModule {}

@@ -1,15 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
-import { Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
 import { MenuService } from 'src/app/shared/menu/menu.service';
 import { environment } from 'src/environments/environment';
 import { DemoItem } from '../demo-base/demo-item.model';
 import { DemoService } from '../demo-base/demo.service';
 import { MatDrawerMode } from '@angular/material/sidenav';
-import { SidePanelService as SideBarService } from '../../shared/side-panel/sidepanel.service';
 import { LoadingService } from '../../shared/loading/loading.service';
-import { SidebarActions } from '../../shared/side-panel/sidebar.actions';
 
 @Component({
   selector: 'app-demo-container',
@@ -21,7 +19,6 @@ export class DemoContainerComponent implements OnInit {
   header = 'Please select a demo';
   demos$: Observable<DemoItem[]>;
   sidenavMode: MatDrawerMode = 'side';
-  showEditor = false;
   isLoading = true;
 
   constructor(
@@ -29,7 +26,6 @@ export class DemoContainerComponent implements OnInit {
     private demoService: DemoService,
     private route: ActivatedRoute,
     public ms: MenuService,
-    public eb: SideBarService,
     public ls: LoadingService
   ) {
     this.title = 'Typescript';
@@ -39,14 +35,7 @@ export class DemoContainerComponent implements OnInit {
     this.setMenu();
     this.setMetadata();
     this.getWorbenchStyle();
-    this.subscribeCommands();
     this.subscribeLoading();
-  }
-
-  subscribeCommands() {
-    this.eb.getCommands().subscribe((action) => {
-      this.showEditor = action == SidebarActions.SHOW_MARKDOWN ? true : false;
-    });
   }
 
   subscribeLoading() {
@@ -70,7 +59,7 @@ export class DemoContainerComponent implements OnInit {
     this.ms.visible$.subscribe((visible: any) => {
       result = visible
         ? {
-            'margin-left': '10px',
+            'margin-left': '5px',
           }
         : {};
     });

@@ -59,7 +59,7 @@ export class DemoContainerComponent implements OnInit {
     this.ms.visible$.subscribe((visible: any) => {
       result = visible
         ? {
-            'margin-left': '10px',
+            'margin-left': '5px',
           }
         : {};
     });
