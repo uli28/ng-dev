@@ -1,6 +1,4 @@
-### Test class `util.ts`:
-
-Navigate to folder `\demos\samples\util`
+Navigate to folder `\demos\samples\simple-tests\`
 
 Investigate `util.ts` and `util.spec.ts`
 
@@ -9,9 +7,16 @@ Find a list of matches at [Jasmine Docs](https://jasmine.github.io/api/edge/matc
 Notice the First Test:
 
 ```typescript
-it("contains 12 charactes", function() {
-  expect(SimpleClass.sayHelloWorld().length).toEqual(12);
-});
+describe('Simple Class: util.ts', () => {
+  let util: Util;
+
+  beforeEach(() => {
+    util = new Util();
+  });
+
+  it('greeting contains 12 charactes', () => {
+    expect(util.greet().length).toEqual(12);
+  });
 ```
 
 Run the Test using `ng test`

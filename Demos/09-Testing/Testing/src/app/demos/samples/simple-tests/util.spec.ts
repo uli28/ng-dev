@@ -31,9 +31,4 @@ describe('Simple Class: util.ts', () => {
     let v: Voucher = nullVoucher as unknown as Voucher;
     expect(util.validate(v)).toEqual(false);
   });
-
-  it('should log to console', () => {
-    util.log('abc');
-    expect(window.console.log).toHaveBeenCalled();
-  });
 });

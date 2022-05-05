@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Util } from '../util/util';
 import { Message } from './message.model';
+import { Util } from '../simple-tests/util';
 
 @Injectable({
   providedIn: 'root',

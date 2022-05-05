@@ -12,9 +12,9 @@ describe('RatingPipe', () => {
   });
 
   it('returns the correct translations', () => {
-    expect(p.transform(1)).toEqual('umwerfend');
-    expect(p.transform(2)).toEqual('ausgezeichnet');
-    expect(p.transform(3)).toEqual('in ordnung');
+    expect(p.transform(1)).toEqual('outrageous');
+    expect(p.transform(2)).toEqual('excellent');
+    expect(p.transform(3)).toEqual('quite good');
   });
 
   it('throws an err when a negative value is passed', () => {
