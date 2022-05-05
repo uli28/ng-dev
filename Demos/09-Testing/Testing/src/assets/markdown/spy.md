@@ -1,6 +1,4 @@
-### Using Jasmine Spy
-
-Navigate to folder `\demos\samples\spy` and notice the use of 
+- Navigate to folder `\demos\samples\spy` and notice the use of the spy object in `better.service.spec.ts`
 
 ```javascript
 util = jasmine.createSpyObj('Util', ['log']);
@@ -11,4 +9,3 @@ and
 expect(util.log).toHaveBeenCalledTimes(2);
 ```
 
-in  `better.service.spec.ts`
