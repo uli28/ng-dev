@@ -16,7 +16,13 @@ code --install-extension connorshea/vscode-test-explorer-status-bar
 code --install-extension wallabyjs.wallaby-vscode
 ```
 
-> Note: To apply your Licence key press `F1 -> Wallaby.js: Manage Licence Key` and enter your key. Then press `F1 -> Wallaby.js: Start`
+- Get your [Wallaby-Trial-Key](https://wallabyjs.com/download/) and apply your Licence key press `F1 -> Wallaby.js: Manage Licence Key` and enter your key.
+
+- Activate Wallaby using `F1 -> Wallaby.js: Start`
+
+Notice the Wallaby indicator on the right bottom of Visual Studio Code
+
+![wallaby](_images/wallaby.png)
 
 Testing:
 

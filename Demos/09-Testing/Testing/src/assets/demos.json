@@ -28,7 +28,7 @@
   },
   {
     "url": "httptest",
-    "title": "Service Http Tests",
+    "title": "Mock HttpClient",
     "markdown": "mock"
   },
   {
