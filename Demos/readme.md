@@ -16,13 +16,15 @@ The `demo-app` consists of `app.component.html` that defines the base structure 
 ## Topics covered in the class
 ### Angular Introduction & Setup
 
-- What / Why Single Page Applications
-- Angular Overview and Version Comparison
-- Node and its Role in the Angular ECO-System
-- Angular Command Line Interface – Angular CLI
-- Bootstrapping Angular
-- Angular Debugging Options
+- What is a Single Page Application? – SPA
+- Tooling: Node.js, npm and Workspace requirements
+- Angular Introduction
+- Angular Technology Stack
+- Angular Essentials & CLI
+- Debugging Angular
+- Understanding Angulars Bootstrapping process and Configuration
 - Updating Angular Projects
+- Introduction to the Demo App
 
 ### TypeScript Fundamentals
 
