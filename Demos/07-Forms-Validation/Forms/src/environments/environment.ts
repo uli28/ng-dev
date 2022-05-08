@@ -1,7 +1,7 @@
 export const environment = {
   production: false,
   authEnabled: false,
-  title: 'ngForms',
+  title: 'Forms',
   markdownPath: '/assets/markdown/',
   apiUrl: 'http://localhost:5000/',
 };
