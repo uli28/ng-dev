@@ -3,7 +3,7 @@ mat-expansion-panel{
 }
 
 .markdown{
-    font-size: 1rem;
+    font-size: var(--font-small);
     letter-spacing: normal;
-    line-height: 1.5rem !important;
+    line-height: var(--font-big) !important;
 }

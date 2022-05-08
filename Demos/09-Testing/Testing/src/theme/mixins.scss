@@ -1,6 +1,6 @@
 //Mixin
 @mixin link($col, $font) {
-  font-size: $font;
+  font-size: $font !important;
   color: $col;
   cursor: pointer;
 
