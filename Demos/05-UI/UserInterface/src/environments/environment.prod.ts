@@ -1,9 +1,10 @@
 export const environment = {
   production: true,
   authEnabled: false,
-  title: 'ngUI',
+  title: 'User Interface',
   markdownPath: '/assets/markdown/',
-  apiUrl: 'http://localhost:5000/',
-  api: 'http://localhost:3000/',
-  fixerAPIKey: '03325b5fecd5eef31244823328db00f9',
+  jsonApi: 'http://localhost:3000/',
+  personApi: '/assets/persons.json',
+  fixerAPIKey: '',
+  fixerApi: '/assets/fixer.json',
 };

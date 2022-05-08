@@ -1,7 +1,7 @@
 export const environment = {
   production: false,
   authEnabled: false,
-  title: 'ngData',
+  title: 'Data Access',
   markdownPath: '/assets/markdown/',
   netcoreapi: 'http://localhost:5000/',
   api: 'http://localhost:3000/',

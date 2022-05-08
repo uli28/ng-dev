@@ -1,6 +1,6 @@
 export const environment = {
   production: false,
-  title: 'Typescript',
+  title: 'Routing',
   markdownPath: '/assets/markdown/',
   api: 'http://localhost:3000/',
 };

@@ -1,6 +1,6 @@
 export const environment = {
   production: false,
-  title: 'ngRouting',
+  title: 'Routing',
   api: '/assets/skills.json',
   markdownPath: '/assets/markdown/',
   authEnabled: true,

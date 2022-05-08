@@ -4,13 +4,14 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { MaterialModule } from '../material.module';
+import { LoadingInterceptor } from '../shared/loading/loading-interceptor';
+import { LoadingService } from '../shared/loading/loading.service';
 import { SharedModule } from '../shared/shared.module';
-import { DemoContainerComponent } from './demo-container/demo-container.component';
-import { AuthInterceptor } from '../auth-interceptor';
-import { ObservableCrudComponent } from './samples/observable-crud/observable-crud.component';
-import { JsonServerComponent } from './samples/json-server/json-server.component';
-import { AdvHttpClientComponent } from './samples/adv-http-client/adv-http-client.component';
 import { DemoService } from './demo-base/demo.service';
+import { DemoContainerComponent } from './demo-container/demo-container.component';
+import { AdvHttpClientComponent } from './samples/adv-http-client/adv-http-client.component';
+import { JsonServerComponent } from './samples/json-server/json-server.component';
+import { ObservableCrudComponent } from './samples/observable-crud/observable-crud.component';
 
 const demoRoutes: Routes = [
   {
@@ -43,11 +44,8 @@ const demoRoutes: Routes = [
   ],
   providers: [
     DemoService,
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: AuthInterceptor,
-      multi: true,
-    },
+    LoadingService,
+    { provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true },
   ],
 })
 export class DemosModule {}

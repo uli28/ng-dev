@@ -1,6 +1,6 @@
 export const environment = {
   production: false,
-  title: 'ngFundamentals',
+  title: 'Fundamentals',
   markdownPath: '/assets/markdown/',
   jsonApi: 'http://localhost:3000/',
   personApi: '/assets/persons.json',
