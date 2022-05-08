@@ -9,8 +9,6 @@ export class DirectivesComponent implements OnInit {
   msg = 'Change my color';
   bgcolor = 'blue';
   cssclass = 'big';
-  isDisabled = true;
-  isHidden = false;
 
   constructor() {}
 
@@ -26,13 +24,5 @@ export class DirectivesComponent implements OnInit {
 
   getClass() {
     return 'my-' + this.cssclass;
-  }
-
-  toggleInput() {
-    this.isDisabled = !this.isDisabled;
-  }
-
-  hideInput() {
-    this.isHidden = !this.isHidden;
   }
 }

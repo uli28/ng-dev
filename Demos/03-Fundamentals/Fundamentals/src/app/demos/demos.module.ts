@@ -34,6 +34,7 @@ import { StructDirectivesComponent } from './samples/struct-directives/struct-di
 import { TemplateComponent } from './samples/template/template.component';
 import { AlertComponent } from './samples/view-child/alert/alert.component';
 import { ViewChildComponent } from './samples/view-child/view-child.component';
+import { AttrBindingComponent } from './samples/attr-binding/attr-binding.component';
 
 const demoRoutes: Routes = [
   {
@@ -41,6 +42,7 @@ const demoRoutes: Routes = [
     component: DemoContainerComponent,
 
     children: [
+      { path: 'attrbinding', component: AttrBindingComponent },
       { path: 'lifecycle', component: LifecycleComponent },
       { path: 'inline', component: InlineComponent },
       { path: 'template', component: TemplateComponent },
@@ -89,6 +91,7 @@ const demoRoutes: Routes = [
     SplitPopupComponent,
     LifecycleComponent,
     NgTemplateComponent,
+    AttrBindingComponent,
   ],
   imports: [
     CommonModule,

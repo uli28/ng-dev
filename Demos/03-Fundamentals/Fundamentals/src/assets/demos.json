@@ -9,7 +9,11 @@
   },
   {
     "url": "binding",
-    "title": "Binding"
+    "title": "Model Binding"
+  },
+  {
+    "url": "attrbinding",
+    "title": "Attribute Binding"
   },
   {
     "url": "expressions",
