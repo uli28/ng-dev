@@ -1,11 +1,14 @@
 import { CommonModule } from '@angular/common';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
+import {
+  HttpClientModule,
+  HttpClient,
+  HTTP_INTERCEPTORS,
+} from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MaterialModule } from '../material.module';
 import { MarkdownModule } from 'ngx-markdown';
 import { DemoContainerComponent } from './demo-container/demo-container.component';
-import { DemoService } from './demo.service';
 import { ClassesComponent } from './samples/classes/classes.component';
 import { FunctionsComponent } from './samples/functions/functions.component';
 import { GenericsComponent } from './samples/generics/generics.component';
@@ -16,6 +19,9 @@ import { ServicesComponent } from './samples/services/services.component';
 import { TypesComponent } from './samples/types/types.component';
 import { EslintComponent } from './samples/eslint/eslint.component';
 import { SharedModule } from '../shared/shared.module';
+import { DemoService } from './demo-base/demo.service';
+import { LoadingInterceptor } from '../shared/loading/loading-interceptor';
+import { LoadingService } from '../shared/loading/loading.service';
 
 const demoRoutes: Routes = [
   {
@@ -59,6 +65,10 @@ const demoRoutes: Routes = [
       loader: HttpClient,
     }),
   ],
-  providers: [DemoService],
+  providers: [
+    DemoService,
+    LoadingService,
+    { provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true },
+  ],
 })
 export class DemosModule {}

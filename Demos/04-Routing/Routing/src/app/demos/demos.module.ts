@@ -1,9 +1,11 @@
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { MaterialModule } from '../material.module';
+import { LoadingInterceptor } from '../shared/loading/loading-interceptor';
+import { LoadingService } from '../shared/loading/loading.service';
 import { SharedModule } from '../shared/shared.module';
 import { DemoService } from './demo-base/demo.service';
 import { DemoContainerComponent } from './demo-container/demo-container.component';
@@ -45,6 +47,10 @@ import { SecondaryRoutesComponent } from './samples/secondary-routes/secondary-r
     SharedModule,
     HttpClientModule,
   ],
-  providers: [DemoService],
+  providers: [
+    DemoService,
+    LoadingService,
+    { provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true },
+  ],
 })
 export class DemosModule {}

@@ -9,12 +9,14 @@ import { MarkdownRendererComponent } from './markdown-renderer/markdown-renderer
 import { MarkdownModule } from 'ngx-markdown';
 import { HttpClient } from '@angular/common/http';
 import { IntroComponent } from './intro/intro.component';
+import { LoadingComponent } from './loading/loading.component';
 
 const mods = [
   NavbarComponent,
   SidePanelComponent,
   MarkdownRendererComponent,
   IntroComponent,
+  LoadingComponent,
 ];
 
 @NgModule({
