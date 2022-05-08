@@ -91,9 +91,10 @@ describe('Service - HttpTestingController', () => {
     const url = `${environment.api}food/${foodDeleteItem.id}`;
     const req = controller.expectOne(url);
     expect(req.request.method).toEqual('DELETE');
+
     // flushing down mock data
     req.flush({});
     // make sure all requests are completed -> can be moved to afterEach
-    // controller.verify();
+    controller.verify();
   });
 });
