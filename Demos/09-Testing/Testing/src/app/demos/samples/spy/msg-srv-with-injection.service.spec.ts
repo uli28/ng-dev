@@ -1,13 +1,13 @@
-import { BetterMessageService } from './better.service';
+import { MessageServiceWithInjection } from './msg-srv-with-injection.service';
 
 describe('Testing a simple Service: SimpleMessageService', () => {
-  let service: BetterMessageService;
+  let service: MessageServiceWithInjection;
   // let spy objects be of type: any
   let util: any;
 
   beforeEach(() => {
     util = jasmine.createSpyObj('Util', ['log', 'greet']);
-    service = new BetterMessageService(util);
+    service = new MessageServiceWithInjection(util);
   });
 
   it('should have no messages to start', () => {

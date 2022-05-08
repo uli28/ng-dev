@@ -5,7 +5,7 @@ import { Util } from '../simple-tests/util';
 @Injectable({
   providedIn: 'root',
 })
-export class BetterMessageService {
+export class MessageServiceWithInjection {
   constructor(private util: Util) {}
 
   messages: Message[] = [];

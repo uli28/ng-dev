@@ -28,7 +28,7 @@ export class FoodServiceStateful {
   deleteFood(item: FoodItem) {
     this.httpClient
       .delete<void>(`${environment.api}food/${item.id}`)
-      .subscribe((resp) => {
+      .subscribe(() => {
         let arr = this.food.value.filter((f) => f != item);
         this.food.next(arr);
       });
