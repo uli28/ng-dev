@@ -1,19 +1,31 @@
 import { DebugElement } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { By } from '@angular/platform-browser';
 import { foodAddItem, foodDeleteItem } from '../../foodService/food.mocks';
 import { FoodItem } from '../../foodService/food.model';
 import { TestingModuleComponent } from './testing-module.component';
+import { MatButtonModule } from '@angular/material/button';
+import { FormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('TestingModuleComponent', () => {
   let component: TestingModuleComponent;
   let fixture: ComponentFixture<TestingModuleComponent>;
   let el: DebugElement;
 
-  //notice async which is an Angular Testing tool
+  // Notice the use of 'async' which is an Angular Testing tool
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [TestingModuleComponent],
+      imports: [
+        FormsModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatButtonModule,
+        NoopAnimationsModule,
+      ],
     }).compileComponents();
 
     fixture = TestBed.createComponent(TestingModuleComponent);

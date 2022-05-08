@@ -2,6 +2,9 @@
   {{ f.name }}
 </div>
 <div class="divInput">
-  <input type="text" placeholder="Enter food"  [(ngModel)]="foodToAdd">
-  <button (click)="addFood(foodToAdd)" class="buttonAdd" [disabled]="foodToAdd!=null"  >Add Food</button>
+  <mat-form-field appearance="fill">
+    <mat-label>Input</mat-label>
+    <input matInput type="text" placeholder="Enter food"  [(ngModel)]="foodToAdd">
+  </mat-form-field>
+  <button mat-raised-button (click)="addFood(foodToAdd)" color="accent">Add Food</button>
 </div>
