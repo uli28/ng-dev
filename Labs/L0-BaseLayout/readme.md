@@ -24,6 +24,8 @@ Load the menu items in the navbar using a menu.service that thakes its values fr
 ["Home", "Food", "Admin"]
 ```
 
+A solution is provided in the folder `food-app`.
+
 ## Step-by-Step Guide:
 
 Create Angular Project:
@@ -32,6 +34,8 @@ Create Angular Project:
 ng new food-app-l0
 cd food-app-l0
 ```
+
+>Note: Add routing to the project as it will be used later on
 
 Add the components:
 
