@@ -35,7 +35,13 @@ ng new food-app-l0
 cd food-app-l0
 ```
 
->Note: Add routing to the project as it will be used later on
+>Note: Add routing to the project as it will be used later on. Choose scss as your prefered style schematic. You could change this later on in `angular.json`:
+
+```
+"@schematics/angular:component": {
+          "style": "scss"
+}
+```
 
 Add the components:
 
