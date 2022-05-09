@@ -43,6 +43,17 @@ cd food-app-l0
 }
 ```
 
+Change your TypeScript configuration (`tsconfig.json`) to avoid strictPropertyInitialization by setting its value to false:
+
+```
+"compilerOptions": {
+  "baseUrl": "./",
+  "outDir": "./dist/out-tsc",
+  "forceConsistentCasingInFileNames": true,
+  "strict": true,
+  "strictPropertyInitialization": false,
+```
+
 Add the components:
 
 ```
