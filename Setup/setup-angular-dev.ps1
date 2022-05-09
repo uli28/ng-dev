@@ -50,5 +50,8 @@ npx @angular/cli@latest analytics off
 npm i -g @angular/cli
 npm i -g json-server
 
+# Allow script execution (Angular CLI) in VS Code
+Set-ExecutionPolicy unrestricted
+
 # Finished Msg
 Write-Host "Finished Software installation" -ForegroundColor yellow
