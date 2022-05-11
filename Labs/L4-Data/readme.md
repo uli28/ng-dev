@@ -6,7 +6,7 @@
     npm i -g json-server
     ```
 
-- Create a database file for json-server (db.json):
+- Create a database file for json-server (db.json) in the root of the starter project:
 
     ```
     {
