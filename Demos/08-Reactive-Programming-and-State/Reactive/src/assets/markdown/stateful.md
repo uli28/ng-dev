@@ -21,6 +21,4 @@
     constructor(private vs: StatefulVoucherService) {}
     sum = this.vs.getAllVouchers()
         .pipe(map((vs) => vs.reduce((runningSum, v) => runningSum + v.Amount, 0)));
-    ```
-
-- Also explain menu.service.ts and its use    
+    ``` 
