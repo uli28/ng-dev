@@ -29,7 +29,7 @@
     ng g s food/food
     ```
 
-    >Notice: Don't forget to handle data change events
+- Don't forget to handle data change events
 
     ```typescript
     ngOnChanges(changes: SimpleChanges): void {
@@ -37,4 +37,10 @@
         console.log('receiving updated modelclass:', changes['modelclass'].currentValue);
         }
     }
+    ```
+
+- If you want to generate the id manually you could use this code fragment:
+
+    ```typescript
+    const nextId = food.reduce((acc, f) => (acc = acc > f.id ? acc : f.id), 0) + 1;
     ```
