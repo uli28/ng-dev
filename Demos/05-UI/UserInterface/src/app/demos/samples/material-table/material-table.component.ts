@@ -12,14 +12,12 @@ import { Voucher } from '../vouchers/vouchers.model';
 export class MaterialTableComponent implements OnInit {
   dataSource: MatTableDataSource<Voucher>;
   displayedColumns = ['Text', 'Date', 'Amount', 'action'];
-  @ViewChild(MatSort) sort: MatSort;
 
   constructor(private http: HttpClient) {}
 
   ngOnInit() {
     this.http.get<Voucher[]>('./assets/vouchers.json').subscribe((data) => {
       this.dataSource = new MatTableDataSource(data);
-      this.dataSource.sort = this.sort;
     });
   }
 
