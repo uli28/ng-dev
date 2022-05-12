@@ -25,7 +25,7 @@ Implement a responsive Side Menu:
         [mode]="mode">
             <app-sidebar></app-sidebar>
         </mat-sidenav>
-        <mat-sidenav-content [ngStyle]="getWorbenchStyle()">
+        <mat-sidenav-content [ngStyle]="getWorkbenchStyle()">
             <router-outlet></router-outlet>
         </mat-sidenav-content>
         </mat-sidenav-container>
