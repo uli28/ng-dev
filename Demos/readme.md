@@ -58,7 +58,7 @@ The `demo-app` consists of `app.component.html` that defines the base structure 
 
 - Routing Basics
 - Working with Parameterized Routes
-- Using Router States
+- Using Router State
 - Child- & Secondary (Auxiliary) Routes
 - Organizing Angular Applications using Modules
 - Module Lazy Loading
@@ -120,9 +120,14 @@ The `demo-app` consists of `app.component.html` that defines the base structure 
 
 - Unit Tests vs Integration Tests
 - Karma & Jasmine Basics
-- Test Setup & Mocking
-- Testing Angular Components, Services and Forms
-- In Short: End to End Testing
+- Test Setup & Mocking Data
+- Testing Classes, Directives and Pipes
+- Using Spies and Injections
+- Http-Testing and HttpTestingController
+- Intro to Component Testing: Testbed and Testing Module
+- Component DOM Testing
+- Interacting with Components in Tests
+- In Short: End to End Testing using Cypress
 
 ### Securing & Publishing Angular
 
