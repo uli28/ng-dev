@@ -43,9 +43,5 @@
   {
     "url": "router-animation",
     "title": "Router Animations"
-  },
-  {
-    "url": "events",
-    "title": "Router Events"
   }
 ]
