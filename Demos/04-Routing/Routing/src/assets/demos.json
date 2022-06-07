@@ -24,6 +24,10 @@
     "title": "Lazy Loading"
   },
   {
+    "url": "standalone-comp",
+    "title": "Standalone Component"
+  },
+  {
     "url": "component-less",
     "title": "Component Less"
   },

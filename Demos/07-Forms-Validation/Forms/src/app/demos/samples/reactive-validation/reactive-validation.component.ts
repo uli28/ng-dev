@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {
-  FormBuilder,
-  FormControl,
-  FormGroup,
+  UntypedFormBuilder,
+  UntypedFormControl,
+  UntypedFormGroup,
   ValidationErrors,
   Validators,
 } from '@angular/forms';
@@ -22,10 +22,10 @@ export class ReactiveValidationComponent implements OnInit {
   person: Person = emptyPerson;
   wealthOpts = wealthOpts;
 
-  personForm: FormGroup;
+  personForm: UntypedFormGroup;
 
   constructor(
-    private fb: FormBuilder,
+    private fb: UntypedFormBuilder,
     private ps: PersonService,
     private mailExistsValidator: asyncMailExistsValidator
   ) {}
@@ -71,7 +71,7 @@ export class ReactiveValidationComponent implements OnInit {
   }
 
   //Sample for custom sync validator
-  validateName(control: FormControl): { [s: string]: boolean } {
+  validateName(control: UntypedFormControl): { [s: string]: boolean } {
     if (control.value === 'Hugo') {
       return { nameError: true };
     }
@@ -91,7 +91,7 @@ export class ReactiveValidationComponent implements OnInit {
     return result;
   }
 
-  validateForm(form: FormGroup) {
+  validateForm(form: UntypedFormGroup) {
     // validated single control
     form.controls['name'].updateValueAndValidity();
     // validated form

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { Person } from '../person.model';
 import { emptyPerson, wealthOpts } from '../empty-person';
 import { PersonService } from '../person.service';
@@ -13,9 +13,9 @@ export class FormsBuilderComponent implements OnInit {
   person: Person = emptyPerson;
   wealthOpts = wealthOpts;
 
-  personForm: FormGroup;
+  personForm: UntypedFormGroup;
 
-  constructor(private fb: FormBuilder, private ps: PersonService) {}
+  constructor(private fb: UntypedFormBuilder, private ps: PersonService) {}
 
   ngOnInit() {
     this.ps.getPerson().subscribe((p) => {

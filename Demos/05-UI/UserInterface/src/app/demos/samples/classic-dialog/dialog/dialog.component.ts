@@ -1,7 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { ClassicDialogComponent } from '../classic-dialog.component';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { FormControl, Validators } from '@angular/forms';
+import { UntypedFormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-dialog',
@@ -14,5 +14,5 @@ export class DialogComponent {
     @Inject(MAT_DIALOG_DATA) public data: { name: string }
   ) {}
 
-  fcName = new FormControl(this.data.name, [Validators.required]);
+  fcName = new UntypedFormControl(this.data.name, [Validators.required]);
 }

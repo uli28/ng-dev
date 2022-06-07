@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
+import { UntypedFormArray, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-form-array',
@@ -7,9 +7,9 @@ import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
   styleUrls: ['./form-array.component.scss'],
 })
 export class FormArrayComponent {
-  public skillForm: FormGroup;
+  public skillForm: UntypedFormGroup;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: UntypedFormBuilder) {
     this.skillForm = this.fb.group({
       name: 'Giro',
       skillsGrp: this.fb.array([
@@ -19,11 +19,11 @@ export class FormArrayComponent {
   }
 
   getElementsInFormArray() {
-    return (this.skillForm.controls['skillsGrp'] as FormArray).controls;
+    return (this.skillForm.controls['skillsGrp'] as UntypedFormArray).controls;
   }
 
   addSkill() {
-    const skillsGrp = this.skillForm.controls['skillsGrp'] as FormArray;
+    const skillsGrp = this.skillForm.controls['skillsGrp'] as UntypedFormArray;
     skillsGrp.push(
       this.fb.group({
         skillname: '',
