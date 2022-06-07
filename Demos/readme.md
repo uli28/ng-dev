@@ -129,7 +129,6 @@ The `demo-app` consists of `app.component.html` that defines the base structure 
 - Authentication / Authorization Basics in SPAs
 - Token based Auth: Understanding Jwt, OAuth 2.0 & OpenID Connect
 - Securing Angular Routes using Route Guards
-- Using Interceptors to Automate Tokens
-- Preparing & Creating a Production Build
+- Using Interceptors to Automate Authentication Tokens
 - Hosting Option Overview (Docker, Firebase, Azure CDN, …)
 - Mastering Url Rewrite
