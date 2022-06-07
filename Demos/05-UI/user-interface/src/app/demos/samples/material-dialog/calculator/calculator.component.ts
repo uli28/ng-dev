@@ -13,7 +13,7 @@ export class CalculatorComponent {
   rates: Map<string, number> = new Map<string, number>();
   currencies: string[] = [];
   selectedCurrency = 'THB';
-  rate: number;
+  rate: number | undefined;
   converted: number;
   fcAmount = new UntypedFormControl(this.data.amount);
 
@@ -40,11 +40,13 @@ export class CalculatorComponent {
 
   calculate() {
     this.rate = this.rates.get(this.selectedCurrency);
-    this.converted = this.data.amount / this.rate;
+    if (this.rate) {
+      this.converted = this.data.amount / this.rate;
+    }
   }
 
   getRate(curr: string): number {
     const rate = this.rates.get(curr);
-    return rate;
+    return rate != undefined ? rate : 0;
   }
 }

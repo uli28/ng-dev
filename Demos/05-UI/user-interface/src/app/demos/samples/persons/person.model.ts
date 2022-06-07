@@ -1,10 +1,9 @@
-
-export interface Person {
-    age: number
-    name: string;
-    lastname?: string;
-    gender: string;
-    married?: boolean;
-    imgUrl?: string;
-    email?: string;
+export class Person {
+  age: number = 0;
+  name: string = '';
+  lastname?: string;
+  gender: string;
+  married?: boolean;
+  imgUrl?: string;
+  email?: string;
 }

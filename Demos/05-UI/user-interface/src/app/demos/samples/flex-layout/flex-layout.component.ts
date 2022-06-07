@@ -9,14 +9,7 @@ import { Person } from '../persons/person.model';
 })
 export class FlexLayoutComponent implements OnInit {
   persons: Person[];
-  current: Person = <Person>{
-    id: 0,
-    name: '',
-    age: 0,
-    gender: 'female',
-    email: '',
-    imgUrl: null,
-  };
+  current: Person = new Person();
 
   constructor(private ps: PersonService) {}
 

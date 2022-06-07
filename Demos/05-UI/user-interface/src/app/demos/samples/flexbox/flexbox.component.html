@@ -1,7 +1,7 @@
 <app-markdown-renderer [md]="'flexbox'"></app-markdown-renderer>
 
 <mat-card>
-  <mat-card-actions align="center">
+  <mat-card-actions align="end">
     <button mat-raised-button (click)="toggleLayout()" color="primary">Toggle</button>
   </mat-card-actions>
 </mat-card>
@@ -9,7 +9,6 @@
 <div [class]="currclass">
   <mat-card class="flex-item"  *ngFor="let m of movies">
     <mat-card-title>{{ m.title }}</mat-card-title>
-    <img mat-card-image src="{{ card }}" />
     <mat-card-content>
       Lorem ipsum dolor sit amet consectetur.
     </mat-card-content>

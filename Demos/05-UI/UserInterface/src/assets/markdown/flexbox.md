@@ -1,2 +1,0 @@
-- Resize Window & notice changes
-- Press 'Toggle'-button to change from row to col
