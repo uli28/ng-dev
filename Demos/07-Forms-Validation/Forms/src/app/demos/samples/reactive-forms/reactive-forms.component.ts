@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 import { emptyPerson } from '../empty-person';
 import { Person } from '../person.model';
 import { PersonService } from '../person.service';
@@ -15,15 +15,15 @@ export class ReactiveFormsComponent implements OnInit {
   person: Person = emptyPerson;
   wealthOpts = ['poor', 'rich', 'middle_class'];
 
-  personForm: FormGroup;
+  personForm: UntypedFormGroup;
 
   ngOnInit() {
-    this.personForm = new FormGroup({
-      name: new FormControl(this.person.name, Validators.required),
-      age: new FormControl(this.person.age),
-      email: new FormControl(this.person.email),
-      gender: new FormControl(this.person.gender),
-      wealth: new FormControl(this.person.wealth),
+    this.personForm = new UntypedFormGroup({
+      name: new UntypedFormControl(this.person.name, Validators.required),
+      age: new UntypedFormControl(this.person.age),
+      email: new UntypedFormControl(this.person.email),
+      gender: new UntypedFormControl(this.person.gender),
+      wealth: new UntypedFormControl(this.person.wealth),
     });
 
     this.ps.getPerson().subscribe((p) => {

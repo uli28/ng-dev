@@ -1,0 +1,7 @@
+[
+  {
+    "url": "firebase",
+    "title": "Firebase Authentication ",
+    "component": "FirebaseComponent"
+  }
+]

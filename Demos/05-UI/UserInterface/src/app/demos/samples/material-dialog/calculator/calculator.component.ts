@@ -1,5 +1,5 @@
 import { Component, Inject } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { UntypedFormControl } from '@angular/forms';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { CurrencyService } from './currency.service';
 import { CalcParam } from './calculatorParam.model';
@@ -15,7 +15,7 @@ export class CalculatorComponent {
   selectedCurrency = 'THB';
   rate: number;
   converted: number;
-  fcAmount = new FormControl(this.data.amount);
+  fcAmount = new UntypedFormControl(this.data.amount);
 
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: CalcParam,

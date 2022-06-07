@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
+import { UntypedFormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-form-control',
@@ -9,12 +9,12 @@ import { FormControl, Validators } from '@angular/forms';
 export class FormControlComponent implements OnInit {
   constructor() {}
 
-  name = new FormControl('Giro', [
+  name = new UntypedFormControl('Giro', [
     Validators.required,
     Validators.minLength(3),
   ]);
-  postal = new FormControl('3544');
-  city = new FormControl('Idolsberg', [Validators.maxLength(15)]);
+  postal = new UntypedFormControl('3544');
+  city = new UntypedFormControl('Idolsberg', [Validators.maxLength(15)]);
 
   ngOnInit() {
     this.subscribeNameChanges();
