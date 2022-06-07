@@ -1,14 +1,14 @@
 export class Person {
-  age: number = 0;
+  age: number;
   name: string = '';
-  wealth?: string;
+  email: string = '';
+  wealth: string = '';
   // state?: WorkLifeBalance;
   state?: 'HappySheep' | 'Unsatisfied' | 'ReadyForRevolution';
   lastname?: string;
   gender: string;
   married?: boolean;
   imgUrl?: string;
-  email?: string;
   address?: Address;
 }
 
