@@ -17,9 +17,8 @@ import { MaterialModule } from './material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { environment } from 'src/environments/environment';
 import { AngularFireModule } from '@angular/fire/compat';
-import { LoginComponent } from './auth/login/login.component';
-import { RegisterComponent } from './auth/register/register.component';
 import { FBAuthModule } from './auth/fbauth.module';
+import { LoadingComponent } from './shared/loading/loading.component';
 
 @NgModule({
   declarations: [
@@ -27,11 +26,9 @@ import { FBAuthModule } from './auth/fbauth.module';
     NavbarComponent,
     SidebarComponent,
     MainComponent,
-    FoodContainerComponent,
-    FoodListComponent,
-    FoodEditComponent,
     HomeComponent,
     AboutComponent,
+    LoadingComponent,
   ],
   imports: [
     BrowserModule,
