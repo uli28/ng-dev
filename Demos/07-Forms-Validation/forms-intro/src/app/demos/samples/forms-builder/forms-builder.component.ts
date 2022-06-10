@@ -4,7 +4,7 @@ import {
   UntypedFormGroup,
   Validators,
 } from '@angular/forms';
-import { Person, wealthOptValues } from '../person.model';
+import { Person, wealthOptsValues } from '../person.model';
 import { PersonService } from '../person.service';
 
 @Component({
@@ -14,7 +14,7 @@ import { PersonService } from '../person.service';
 })
 export class FormsBuilderComponent implements OnInit {
   person: Person = new Person();
-  wealthOpts = wealthOptValues;
+  wealthOpts = wealthOptsValues;
 
   personForm: UntypedFormGroup;
 

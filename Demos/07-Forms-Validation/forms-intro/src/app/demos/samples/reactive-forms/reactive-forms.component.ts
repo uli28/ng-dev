@@ -4,7 +4,7 @@ import {
   UntypedFormGroup,
   Validators,
 } from '@angular/forms';
-import { Person, wealthOptValues } from '../person.model';
+import { Person, wealthOptsValues } from '../person.model';
 import { PersonService } from '../person.service';
 
 @Component({
@@ -16,7 +16,7 @@ export class ReactiveFormsComponent implements OnInit {
   constructor(private ps: PersonService) {}
 
   person: Person = new Person();
-  wealthOpts = wealthOptValues;
+  wealthOpts = wealthOptsValues;
 
   personForm: UntypedFormGroup;
 

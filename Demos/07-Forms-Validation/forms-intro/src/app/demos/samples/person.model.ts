@@ -3,7 +3,6 @@ export class Person {
   name: string = '';
   email: string = '';
   wealth: string = '';
-  // state?: WorkLifeBalance;
   state?: 'HappySheep' | 'Unsatisfied' | 'ReadyForRevolution';
   lastname?: string;
   gender: string;
@@ -18,4 +17,4 @@ export class Address {
   postalCode: string = '';
 }
 
-export const wealthOptValues = ['poor', 'rich', 'middle_class'];
+export const wealthOptsValues = ['poor', 'rich', 'middle_class'];

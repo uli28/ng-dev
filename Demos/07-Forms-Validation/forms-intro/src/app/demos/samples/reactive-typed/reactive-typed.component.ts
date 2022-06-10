@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Validators, FormGroup, FormControl } from '@angular/forms';
-import { Person, wealthOptValues } from '../person.model';
+import { Person, wealthOptsValues } from '../person.model';
 import { PersonService } from '../person.service';
 
 @Component({
@@ -12,7 +12,7 @@ export class ReactiveTypedComponent implements OnInit {
   constructor(private ps: PersonService) {}
 
   person: Person = new Person();
-  wealthOpts = wealthOptValues;
+  wealthOpts = wealthOptsValues;
 
   personForm: FormGroup<{
     name: FormControl<string | null>;
@@ -23,6 +23,7 @@ export class ReactiveTypedComponent implements OnInit {
   }>;
 
   ngOnInit() {
+    //with strictPropertyInitialization:true in tsconfig.json this must be done in the constructor
     this.personForm = new FormGroup({
       name: new FormControl(this.person.name, Validators.required),
       age: new FormControl(this.person.age),

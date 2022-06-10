@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Person, wealthOptValues } from '../person.model';
+import { Person, wealthOptsValues } from '../person.model';
 import { PersonService } from '../person.service';
 
 @Component({
@@ -10,7 +10,7 @@ import { PersonService } from '../person.service';
 })
 export class TemplateDrivenComponent implements OnInit {
   person: Person = new Person();
-  wealthOpts = wealthOptValues;
+  wealthOpts = wealthOptsValues;
 
   constructor(private ps: PersonService) {}
 
