@@ -5,20 +5,20 @@
     </mat-card-title>
   </mat-card-header>
   <mat-card-content fxLayout="column">
-    <a
+    <button
       mat-raised-button
-      [routerLink]="['', { outlets: { sidebarOutlet: 'showeditor' } }]"
-      >Show Editor</a
+      [routerLink]="['', { outlets: { sidebarOutlet: 'showeditor' } }]" color="accent"
+      >Show Editor</button
     >
 
-    <a mat-raised-button (click)="programaticAuxRoute()">
+    <button mat-raised-button (click)="programaticAuxRoute() " color="accent">
       Show Uploader
-    </a>
-    <a
+    </button>
+    <button
       mat-raised-button
-      [routerLink]="['', { outlets: { sidebarOutlet: null } }]"
+      [routerLink]="['', { outlets: { sidebarOutlet: null } }]" color="accent"
     >
       Clear Auxilary Route
-    </a>
+    </button>
   </mat-card-content>
 </mat-card>

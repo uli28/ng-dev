@@ -20,6 +20,10 @@
     "title": "Expressions & Interpolation"
   },
   {
+    "url": "di",
+    "title": "Dependency Injection"
+  },
+  {
     "url": "directives",
     "title": "Directives"
   },
@@ -27,7 +31,10 @@
     "url": "structdirectives",
     "title": "Structural Directives"
   },
-
+  {
+    "url": "customdirectives",
+    "title": "Custom Directives"
+  },
   { "url": "pipes", "title": "Pipes" },
   {
     "url": "localization",
@@ -36,10 +43,6 @@
   {
     "url": "custompipes",
     "title": "Custom Pipes"
-  },
-  {
-    "url": "customdirectives",
-    "title": "Custom Directives"
   },
   {
     "url": "lifecycle",

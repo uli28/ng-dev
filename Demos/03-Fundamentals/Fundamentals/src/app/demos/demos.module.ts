@@ -35,6 +35,7 @@ import { TemplateComponent } from './samples/template/template.component';
 import { AlertComponent } from './samples/view-child/alert/alert.component';
 import { ViewChildComponent } from './samples/view-child/view-child.component';
 import { AttrBindingComponent } from './samples/attr-binding/attr-binding.component';
+import { DependencyInjectionComponent } from './samples/dependency-injection/dependency-injection.component';
 
 const demoRoutes: Routes = [
   {
@@ -59,6 +60,7 @@ const demoRoutes: Routes = [
       { path: 'expressions', component: ExpressionsComponent },
       { path: 'viewchild', component: ViewChildComponent },
       { path: 'ng-template', component: NgTemplateComponent },
+      { path: 'di', component: DependencyInjectionComponent },
     ],
   },
 ];
@@ -92,6 +94,7 @@ const demoRoutes: Routes = [
     LifecycleComponent,
     NgTemplateComponent,
     AttrBindingComponent,
+    DependencyInjectionComponent,
   ],
   imports: [
     CommonModule,
