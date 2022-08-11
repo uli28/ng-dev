@@ -44,6 +44,7 @@ The `demo-app` consists of `app.component.html` that defines the base structure 
 - String Interpolation, Property- & Event-Binding, Two-Way Binding
 - Pipes & Localization
 - Custom Directives & Pipes
+- Services & Dependency Injection
 
 ### Nesting Components
 
@@ -61,11 +62,11 @@ The `demo-app` consists of `app.component.html` that defines the base structure 
 - Using Router State
 - Child- & Secondary (Auxiliary) Routes
 - Organizing Angular Applications using Modules
+- Modules Types (Root, Feature, Shared, ...)
 - Module Lazy Loading
 - Standalone Components
 - Component Less Routing
 - Route Guards & Data Preloading
-- Router Animations
 
 ### Designing the User Interface
 
@@ -85,7 +86,7 @@ The `demo-app` consists of `app.component.html` that defines the base structure 
 - Implementing the Client-Side Data Models
 - Implementing CRUD Operations on RESTful APIs
 - Using JSON Server as API for Prototyping
-- Observe Response and Custom Http Headers
+- Observe Response and Setting Custom Http Headers
 
 ### Forms Design & Validation
 
@@ -94,7 +95,8 @@ The `demo-app` consists of `app.component.html` that defines the base structure 
 - Typed Forms
 - Forms Builder
 - FormControl, FormGroups & FormArrays
-- Validating Forms
+- Form Validation Basics (Snychronous / Asynchronous)
+- Cross Field / Multi Field Validation
 - Custom- & Code-Based Validators
 
 ### Observables & Reactive Programming
@@ -114,7 +116,7 @@ The `demo-app` consists of `app.component.html` that defines the base structure 
 - Stateless & Stateful Services
 - Sharing Data between deeply Nested Components
 - Service Bus & Sharing Events between deeply Nested Components
-- Implementing a loading Indicator
+- Visual Feedback: Implementing a Loading Indicator
 
 ### Testing Basics
 

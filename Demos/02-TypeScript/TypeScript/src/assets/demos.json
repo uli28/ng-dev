@@ -1,5 +1,5 @@
 [
-  { "url": "types", "title": "Types & Arrays" },
+  { "url": "types", "title": "Types" },
   {
     "url": "functions",
     "title": "Functions"
@@ -9,6 +9,7 @@
     "title": "Objects"
   },
   { "url": "classes", "title": "Classes" },
+  { "url": "utils", "title": "ECMA Script Utils" },
   {
     "url": "interfaces",
     "title": "Interfaces"
