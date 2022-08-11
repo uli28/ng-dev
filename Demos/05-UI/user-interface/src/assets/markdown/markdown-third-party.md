@@ -10,7 +10,8 @@ npm i -S ngx-markdown prismjs
 ```json
 "styles": [
     "src/styles.scss",
-    "node_modules/prismjs/themes/prism-okaidia.css"
+    "node_modules/prismjs/themes/prism-okaidia.min.css",
+    "node_modules/prismjs/plugins/line-highlight/prism-line-highlight.min.css"
 ],
 "stylePreprocessorOptions": {
     "includePaths": ["src/theme"]
@@ -18,8 +19,10 @@ npm i -S ngx-markdown prismjs
 "scripts": [
     "node_modules/marked/marked.min.js",
     "node_modules/prismjs/prism.js",
+    "node_modules/prismjs/components/prism-csharp.min.js",
     "node_modules/prismjs/components/prism-typescript.min.js",
-    "node_modules/prismjs/components/prism-css.min.js"
+    "node_modules/prismjs/components/prism-css.min.js",
+    "node_modules/prismjs/plugins/line-highlight/prism-line-highlight.min.js"
 ]
 ```
 
