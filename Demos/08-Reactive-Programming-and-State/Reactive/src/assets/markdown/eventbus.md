@@ -1,3 +1,5 @@
+- Show the disappearing side menu when changing screen resolution to xs
+
 - Explain `menu.service.ts`
 
 ```typescript

@@ -13,7 +13,7 @@
   },
   {
     "url": "formcontrol",
-    "title": "Form Control"
+    "title": "Standalone Form Control"
   },  
   {
     "url": "reactiveforms",
@@ -25,7 +25,7 @@
   },
   {
     "url": "formarray",
-    "title": "Form Array"
+    "title": "Reactive Form Array"
   },
   {
     "url": "formsbuilder",

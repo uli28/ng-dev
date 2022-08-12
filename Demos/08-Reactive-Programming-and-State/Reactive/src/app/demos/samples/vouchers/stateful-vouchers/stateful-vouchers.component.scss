@@ -6,3 +6,11 @@ mat-form-field {
   background-color: var(--color-fg);
   cursor: pointer;
 }
+
+mat-card{
+  background-color: var(--color-primary);  
+}
+
+.mat-card-content{
+  color: var(--color-fg);
+}

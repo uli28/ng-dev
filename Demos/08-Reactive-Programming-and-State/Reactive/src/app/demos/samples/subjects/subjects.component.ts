@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { Subject, BehaviorSubject } from 'rxjs';
+import { Component } from '@angular/core';
+import { BehaviorSubject, Subject } from 'rxjs';
 
 @Component({
   selector: 'app-subjects',
@@ -13,6 +13,7 @@ export class SubjectsComponent {
   bs$: BehaviorSubject<number> = new BehaviorSubject<number>(-1);
 
   runSubjectInit() {
+    this.sub$.next(0);
     this.sub$.next(5);
     this.sub$.subscribe((val) => console.log('Subscriber A: ', val));
     this.sub$.subscribe((val) => console.log('Subscriber B: ', val));
@@ -28,12 +29,16 @@ export class SubjectsComponent {
   }
 
   emitNext() {
+    console.log('adding another subscriber');
     this.sub$.subscribe((val) => console.log('Late Subscriber', val));
+    console.log('emitting a new value');
     this.sub$.next(20);
   }
 
   emitNextBS() {
+    console.log('adding another subscriber');
     this.bs$.subscribe((val) => console.log('Late Subscriber', val));
+    console.log('emitting a new value');
     this.bs$.next(20);
   }
 }

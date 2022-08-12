@@ -1,11 +1,10 @@
-Navigate to `/cypress/integration/` and show UI- / E2E tests with Cypress:
+- Navigate to `/cypress/integration/` and show UI- / E2E tests with Cypress:
+  
+  - home.spec.js
+  - demo.spec.js
+  - skills.spec.js
 
-- home.spec.js
-- demo.spec.js
-- skills.spec.js
-
-
-Explain the injection of mock data:
+- Explain the injection of mock data:
 
 ```javascript
 context('Skills', () => {

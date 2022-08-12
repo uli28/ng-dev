@@ -34,7 +34,7 @@ const demoRoutes: Routes = [
       { path: 'unsubscribe', component: UnsubscribingComponent },
       { path: 'streams', component: AsyncComponent },
       { path: 'stateful', component: StatefulComponent },
-      { path: 'evtbus', component: EventBusComponent },
+      { path: 'eventbus', component: EventBusComponent },
       { path: 'search', component: DebouncedSearchComponent },
       { path: 'loading', component: LoadingHostComponent },
     ],

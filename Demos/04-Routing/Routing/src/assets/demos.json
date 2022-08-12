@@ -39,9 +39,5 @@
   {
     "url": "preload",
     "title": "Preload Data"
-  },
-  {
-    "url": "router-animation",
-    "title": "Router Animations"
   }
 ]

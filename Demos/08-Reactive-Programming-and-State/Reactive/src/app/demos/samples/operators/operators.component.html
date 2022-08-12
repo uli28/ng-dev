@@ -1,10 +1,4 @@
-<mat-card>
-  <mat-card-header>
-    <mat-card-title>
-      Make sure you stated json-server using: json-server db.json
-    </mat-card-title>
-  </mat-card-header>
-</mat-card>
+<app-markdown-renderer [md]="'operators'"></app-markdown-renderer>
 
 <mat-card>
   <mat-card-header>
@@ -33,9 +27,6 @@
       >forkJoin() to join Observables</button>
     <button mat-raised-button color="accent" (click)="unsbscribe()"
       >Click to clear Subscription</button>
-    <div fxLayout="row" fxLayoutAlign="center center">
-      Result: {{ response | json }}
-    </div>
   </mat-card-content>
 </mat-card>
 
