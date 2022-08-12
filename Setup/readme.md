@@ -1,49 +1,8 @@
 # Lab Setup Guide
 
-- Create VM (optional)
 - Install software
 - Fork & Clone Class Repo and set Github requirements
-
-## Create VM - optional
-
-Execute `create-lab-vm.azcli` or run the following remote script in Cloud Shell
-
-```bash
-curl https://raw.githubusercontent.com/arambazamba/ng-dev/main/Setup/create-lab-vm.azcli | bash
-```
-
-![create-labvm](_images/create-lab-vm.jpg)
-
-> Note: In order for Docker to work on a Windows 10 host you need to install Hyper-V or use Windows Subsystem for Linux 2 (WSL2). A detailed Setup Guide can be found [here](https://github.com/ARambazamba/ClassSetup)
-
-### Connect to VM
-
-Go to Ressource Group `ng-dev` and connect to VM using RDP and the credentials that you have used in the script:
-
-Download RDP File:
-
-![download-rdp](_images/download-rdp.jpg)
-
-Optional - Disable Login:
-
-![disable-login](_images/disable-login.jpg)
-
-Sign In & Remember:
-
-![connect-rdp](_images/trust-vm.jpg)
-
-Credentials:
-
-```
-user=ng-devlabadmin
-pwd=Lab@dmin1233
-```
-
-![sign-in.jpg](_images/sign-in.jpg)
-
-Accept Settings:
-
-![accept-settings](_images/accept-settings.jpg)
+- Create VM (optional)
 
 ## Install Software
 
@@ -89,3 +48,45 @@ git clone https://github.com/Student01/ng-dev
 ```
 
 > Note: If you have forked the class repo clone your own fork, otherwise use https://github.com/ARambazamba/ng-dev
+
+## Create VM - optional
+
+Execute `create-lab-vm.azcli` or run the following remote script in Cloud Shell
+
+```bash
+curl https://raw.githubusercontent.com/arambazamba/ng-dev/main/Setup/create-lab-vm.azcli | bash
+```
+
+![create-labvm](_images/create-lab-vm.jpg)
+
+> Note: In order for Docker to work on a Windows 10 host you need to install Hyper-V or use Windows Subsystem for Linux 2 (WSL2). A detailed Setup Guide can be found [here](https://github.com/ARambazamba/ClassSetup)
+
+### Connect to VM
+
+Go to Ressource Group `ng-dev` and connect to VM using RDP and the credentials that you have used in the script:
+
+Download RDP File:
+
+![download-rdp](_images/download-rdp.jpg)
+
+Optional - Disable Login:
+
+![disable-login](_images/disable-login.jpg)
+
+Sign In & Remember:
+
+![connect-rdp](_images/trust-vm.jpg)
+
+Credentials:
+
+```
+user=ng-devlabadmin
+pwd=Lab@dmin1233
+```
+
+![sign-in.jpg](_images/sign-in.jpg)
+
+Accept Settings:
+
+![accept-settings](_images/accept-settings.jpg)
+
