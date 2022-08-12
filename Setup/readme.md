@@ -9,7 +9,7 @@
 Execute `create-lab-vm.sh` or run the following remote script in Cloud Shell
 
 ```bash
-curl https://raw.githubusercontent.com/arambazamba/ng-dev/main/Setup/create-lab-vm.sh | bash
+curl https://raw.githubusercontent.com/arambazamba/ng-dev/main/Setup/create-lab-vm.azcli | bash
 ```
 
 ![create-labvm](_images/create-lab-vm.jpg)
