@@ -2,7 +2,7 @@
 
 - Install software
 - Fork & Clone Class Repo and set Github requirements
-- Create VM (optional)
+- Create Azure hosted Lab VM (optional)
 
 ## Install Software
 
