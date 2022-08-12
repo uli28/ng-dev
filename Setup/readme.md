@@ -49,7 +49,7 @@ git clone https://github.com/Student01/ng-dev
 
 > Note: If you have forked the class repo clone your own fork, otherwise use https://github.com/ARambazamba/ng-dev
 
-## Create VM - optional
+## Create Azure hosted Lab VM - optional
 
 Execute `create-lab-vm.azcli` or run the following remote script in Cloud Shell
 
