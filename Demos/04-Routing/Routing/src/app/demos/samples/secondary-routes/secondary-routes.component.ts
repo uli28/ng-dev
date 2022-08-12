@@ -12,6 +12,6 @@ export class SecondaryRoutesComponent implements OnInit {
   ngOnInit() {}
 
   programaticAuxRoute() {
-    this.router.navigate(['', { outlets: { sidebarOutlet: 'showuploader' } }]);
+    this.router.navigate(['', { outlets: { actionsOutlet: 'uploader' } }]);
   }
 }

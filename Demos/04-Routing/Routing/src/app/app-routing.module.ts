@@ -62,6 +62,12 @@ const routes: Routes = [
     loadChildren: () =>
       import('./statistics/statistics.module').then((m) => m.StatisticsModule),
   },
+  { path: 'editor', component: EditorComponent, outlet: 'actionsOutlet' },
+  {
+    path: 'uploader',
+    component: UploaderComponent,
+    outlet: 'actionsOutlet',
+  },
   { path: '**', component: PageNotFoundComponent },
 ];
 
