@@ -1,6 +1,4 @@
 # Install chocolatey
-Write-Host "Installing Chocolatey - 1/6" -ForegroundColor yellow
-
 Set-ExecutionPolicy Bypass -Scope Process -Force; 
 [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; 
 Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
@@ -17,9 +15,10 @@ choco install gitextensions -y
 choco install curl -y
 choco install 7zip -y
 
-# Intall VS Code Extensions
-Write-Host "VS Code Extensions - 5/6" -ForegroundColor yellow
+# Refresh Path Env
+$env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
 
+# Intall VS Code Extensions
 code --install-extension ms-dotnettools.csharp
 code --install-extension ms-vscode.azurecli
 code --install-extension ms-vscode.azure-account
@@ -38,14 +37,7 @@ code --install-extension raagh.angular-karma-test-explorer
 code --install-extension connorshea/vscode-test-explorer-status-bar
 code --install-extension wallabyjs.wallaby-vscode
 
-# Refresh Path Env
-Write-Host "Refresh Path Env - 4/6" -ForegroundColor yellow
-
-$env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
-
 # Install Angular
-Write-Host "Installing Angular - 6/6" -ForegroundColor yellow
-
 npx @angular/cli@latest analytics off
 npm i -g @angular/cli json-server http-server
 
