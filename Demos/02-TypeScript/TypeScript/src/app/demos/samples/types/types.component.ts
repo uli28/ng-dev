@@ -18,12 +18,13 @@ export class TypesComponent implements OnInit {
     // Numbers
     const age: number = 50;
     const weight = 83.12;
+    // weight = 11;
     let dogWeight = 25.4;
     // dogWeight = "heavy";
     const rand = Math.random();
 
     const numbers: number[] = [];
-    const myNumArray: Array<number> = new Array();
+    const myNumArray: Array<number> = new Array<number>();
 
     numbers[0] = 1;
     // numbers.push("two"); // compile-time error
@@ -61,6 +62,11 @@ export class TypesComponent implements OnInit {
       console.log('Inside for ...' + index);
       console.log('Inside for ...' + array[index]);
     }
+
+    for (let item of array) {
+      console.log(item);
+    }
+
     console.log(index); // 0
     const pi = 3.14;
     // pi = 2;

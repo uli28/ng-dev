@@ -53,8 +53,15 @@ export class ObjectLiteralsComponent implements OnInit {
   }
 
   destructuring() {
-    let fullPerson = { firstName: 'John', name: 'Doe', age: 17 };
+    let fullPerson = { firstName: 'John', name: 'Doe', age: 17, children: 5 };
+
+    //antipattern
+    let first = fullPerson.firstName;
+    let alter = fullPerson.age;
+
+    //destructuring
     let { firstName, age } = fullPerson;
+
     console.log(firstName + ', ' + age); //implicit cast of age
   }
 

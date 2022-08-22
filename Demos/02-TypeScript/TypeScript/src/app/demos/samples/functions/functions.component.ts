@@ -34,7 +34,7 @@ export class FunctionsComponent implements OnInit {
     console.log(buildName('Giro', 'Galgohead'));
 
     // default param
-    function getAddress(street: string, city: string = 'Vienna') {
+    function getAddress(street: string, city = 'Vienna') {
       return `${street}, ${city}`;
     }
 

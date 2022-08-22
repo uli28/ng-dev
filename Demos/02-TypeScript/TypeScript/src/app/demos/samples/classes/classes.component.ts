@@ -20,12 +20,23 @@ export class ClassesComponent implements OnInit {
       Total?: number;
     }
 
+    class VoucherInit {
+      ID: number = 0;
+      Text: string = '';
+      Amount: number = 0;
+      Date: Date = new Date();
+      Total?: number;
+    }
+
     const v: Voucher = new Voucher(); // v: {}
     if (v.ID != null) {
       console.log(v.ID); // -> undefined err
     }
     v.ID = 0;
     v.Text = 'Demo Voucher';
+
+    //Reason for strict prop init in tsconfig.json
+    const vi = new VoucherInit();
 
     console.log('vouchertext is:' + v.Text);
 
@@ -57,7 +68,7 @@ export class ClassesComponent implements OnInit {
       private alive: boolean;
 
       get status(): string {
-        return this.name + ' is alive:' + this.alive;
+        return `"${this.name}" is alive:${this.alive}`;
       }
 
       get liveness(): boolean {

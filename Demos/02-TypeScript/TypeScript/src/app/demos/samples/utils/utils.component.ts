@@ -84,10 +84,8 @@ export class UtilsComponent implements OnInit {
 
     console.log(cherry);
 
-    // filter -> returns array
-    const cheap = fruits.filter(function (item) {
-      return item.price < 6;
-    });
+    // filter -> returns all items in arry that match the condition
+    const cheap = fruits.filter((item) => item.price < 6);
     console.log(cheap);
 
     // map -> shape arr
