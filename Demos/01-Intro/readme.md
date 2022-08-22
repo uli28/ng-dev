@@ -32,6 +32,10 @@ Install Angular CLI
 npm i -g @angular/cli
 ```
 
+>Note: Before using the Angular CLI for the first time on a Windows PC you might have to allow script execution in an elevated PowerShell prompt: `Set-ExecutionPolicy bypass`
+
+![powershell](_images/ps.jpg)
+
 Run an Angular project on a custom port
 
 ```
