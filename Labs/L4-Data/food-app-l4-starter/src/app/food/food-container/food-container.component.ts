@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
-import { FoodItem } from "../foodItem";
 import { FoodService } from "../food.service";
+import { FoodItem } from "../food.model";
 
 @Component({
   selector: "app-food-container",
@@ -8,8 +8,8 @@ import { FoodService } from "../food.service";
   styleUrls: ["./food-container.component.scss"],
 })
 export class FoodContainerComponent implements OnInit {
-  food: FoodItem[];
-  selected: FoodItem;
+  food: FoodItem[] = [];
+  selected: FoodItem | null = null;
 
   constructor(private fs: FoodService) {}
 
@@ -21,9 +21,23 @@ export class FoodContainerComponent implements OnInit {
     this.selected = { ...f };
   }
 
-  foodSaved(f: FoodItem) {
-    let arr = this.food.filter((item) => item.id != f.id);
-    arr.push(f);
-    this.food = [...arr];
+  deleteFood(item: FoodItem) {
+    console.log("mock deleting ", item);
+  }
+
+  addFood(item: FoodItem) {
+    this.selected = item;
+  }
+
+  foodSaved(item: FoodItem) {
+    const clone = Object.assign([], this.food) as Array<FoodItem>;
+    let idx = clone.findIndex((c) => c.id == item.id);
+    if (idx > -1) {
+      clone[idx] = item;
+    } else {
+      clone.push(item);
+    }
+    this.food = clone;
+    this.selected = null;
   }
 }

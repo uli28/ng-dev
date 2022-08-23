@@ -1,7 +1,7 @@
 <mat-toolbar color="primary">
   <mat-toolbar-row>
     
-      <div class="navItem" *ngFor="let item of items" [routerLink]="[item.url]">{{ item.title }}</div>
+      <div class="navItem" *ngFor="let item of navItems" [routerLink]="[item.url]">{{ item.title }}</div>
     
   </mat-toolbar-row>
 </mat-toolbar>
