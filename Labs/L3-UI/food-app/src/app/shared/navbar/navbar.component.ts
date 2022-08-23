@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { NavItem } from "./navItem";
+import { NavItem } from "./nav-item.model";
 
 @Component({
   selector: "app-navbar",
@@ -9,7 +9,7 @@ import { NavItem } from "./navItem";
 export class NavbarComponent implements OnInit {
   constructor() {}
 
-  items: NavItem[];
+  items: NavItem[] = [];
 
   ngOnInit() {
     this.items = [

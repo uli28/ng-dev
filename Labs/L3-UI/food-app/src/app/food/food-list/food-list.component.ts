@@ -8,7 +8,7 @@ import {
   OnChanges,
 } from "@angular/core";
 import { MatTableDataSource } from "@angular/material/table";
-import { FoodItem } from "../foodItem";
+import { FoodItem } from "../food.model";
 
 @Component({
   selector: "app-food-list",
@@ -18,10 +18,8 @@ import { FoodItem } from "../foodItem";
 export class FoodListComponent implements OnInit, OnChanges {
   constructor() {}
 
-  @Input()
-  food: FoodItem[];
-  @Output()
-  foodSelected: EventEmitter<FoodItem> = new EventEmitter();
+  @Input() food: FoodItem[] = [];
+  @Output() foodSelected: EventEmitter<FoodItem> = new EventEmitter<FoodItem>();
 
   displayedColumns: string[] = ["id", "name", "price", "calories", "editItem"];
   dataSource = new MatTableDataSource([]);
