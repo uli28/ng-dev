@@ -22,7 +22,13 @@ export class FoodContainerComponent implements OnInit {
   }
 
   foodSaved(item: FoodItem) {
-    this.food = this.food.filter((f) => f.id != item.id);
-    this.food.push(item);
+    const clone = Object.assign([], this.food) as Array<FoodItem>;
+    let idx = clone.findIndex((c) => c.id == item.id);
+    if (idx > -1) {
+      clone[idx] = item;
+    } else {
+      clone.push(item);
+    }
+    this.food = clone;
   }
 }

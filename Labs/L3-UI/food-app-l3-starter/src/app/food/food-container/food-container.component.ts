@@ -14,15 +14,21 @@ export class FoodContainerComponent implements OnInit {
   constructor(private fs: FoodService) {}
 
   ngOnInit() {
-    this.fs.getFood().subscribe((data: FoodItem[]) => (this.food = data));
+    this.fs.getFood().subscribe((data) => (this.food = data));
   }
 
   selectFood(f: FoodItem) {
-    this.selected = f;
+    this.selected = { ...f };
   }
 
   foodSaved(item: FoodItem) {
-    this.food = this.food.filter((f) => f.id != item.id);
-    this.food.push(item);
+    const clone = Object.assign([], this.food) as Array<FoodItem>;
+    let idx = clone.findIndex((c) => c.id == item.id);
+    if (idx > -1) {
+      clone[idx] = item;
+    } else {
+      clone.push(item);
+    }
+    this.food = clone;
   }
 }

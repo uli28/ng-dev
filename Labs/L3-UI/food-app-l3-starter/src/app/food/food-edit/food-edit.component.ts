@@ -1,4 +1,11 @@
-import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnInit,
+  Output,
+  SimpleChanges,
+} from "@angular/core";
 import { FoodItem } from "../food.model";
 
 @Component({
@@ -14,7 +21,11 @@ export class FoodEditComponent implements OnInit {
 
   ngOnInit() {}
 
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log("receiving data on input:", changes["food"]);
+  }
+
   doSave() {
-    this.saveFood.emit(this.food);
+    if (this.food) this.saveFood.emit(this.food);
   }
 }

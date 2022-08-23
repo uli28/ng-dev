@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
-import { FoodService } from "src/app/food/food.service";
 import { FoodItem } from "../food.model";
+import { FoodService } from "../food.service";
 
 @Component({
   selector: "app-food-container",
@@ -18,11 +18,17 @@ export class FoodContainerComponent implements OnInit {
   }
 
   selectFood(f: FoodItem) {
-    this.selected = f;
+    this.selected = { ...f };
   }
 
   foodSaved(item: FoodItem) {
-    this.food = this.food.filter((f) => f.id != item.id);
-    this.food.push(item);
+    const clone = Object.assign([], this.food) as Array<FoodItem>;
+    let idx = clone.findIndex((c) => c.id == item.id);
+    if (idx > -1) {
+      clone[idx] = item;
+    } else {
+      clone.push(item);
+    }
+    this.food = clone;
   }
 }
