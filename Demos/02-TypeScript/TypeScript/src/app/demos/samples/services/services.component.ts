@@ -1,8 +1,9 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import axios from 'axios';
 import { Skill } from '../skills/skill.model';
 import { SkillsService } from '../skills/skills.service';
-import { HttpClient } from '@angular/common/http';
+import { environment } from '../../../../environments/environment';
 
 @Component({
   selector: 'app-services',
@@ -35,10 +36,9 @@ export class ServicesComponent implements OnInit {
 
   usingFetchAwait() {
     async function getSkills() {
-      const response = await fetch(this.url);
-      const voucher = await response.json();
-      console.log('Data received using fetch - await');
-      console.log(voucher);
+      const response = await fetch(environment.skillsApi);
+      const skills = await response.json();
+      console.log('Data received using fetch - await', skills);
     }
 
     getSkills();
@@ -86,7 +86,7 @@ export class ServicesComponent implements OnInit {
     axios.post(api, param);
   }
 
-  //Antipattern
+  // antipattern - try to keep data operation in services
   useClientInComponent() {
     //untyped
     this.http.get(this.url).subscribe((data) => console.log(data));
@@ -95,12 +95,9 @@ export class ServicesComponent implements OnInit {
   }
 
   consumeService() {
-    this.skillsService.getSkills().subscribe(
-      //handles event
-      (data: Skill[]) => {
-        console.log('Data from skillsService ', data);
-        this.skills = data;
-      }
-    );
+    // assign to prop in component for use in template
+    this.skillsService.getSkills().subscribe((data) => {
+      this.skills = data;
+    });
   }
 }
