@@ -1,9 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import axios from 'axios';
+import { environment } from '../../../../environments/environment';
 import { Skill } from '../skills/skill.model';
 import { SkillsService } from '../skills/skills.service';
-import { environment } from '../../../../environments/environment';
 
 @Component({
   selector: 'app-services',
@@ -11,7 +11,7 @@ import { environment } from '../../../../environments/environment';
   styleUrls: ['./services.component.scss'],
 })
 export class ServicesComponent implements OnInit {
-  // Antipattern
+  // antipattern - use environment.ts
   url = 'http://localhost:3000/skills';
   skills: Skill[];
 
