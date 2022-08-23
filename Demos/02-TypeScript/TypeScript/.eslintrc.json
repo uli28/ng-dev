@@ -36,7 +36,8 @@
             "type": "attribute"
           }
         ],
-        "@angular-eslint/no-empty-lifecycle-method": "warn"
+        "@angular-eslint/no-empty-lifecycle-method": "warn",
+        "no-await-in-loop":"warn"
       }
     },
     {
@@ -46,7 +47,8 @@
       "extends": [
         "plugin:@angular-eslint/template/recommended"
       ],
-      "rules": {        
+      "rules": {      
+       
       }
     }
   ]
