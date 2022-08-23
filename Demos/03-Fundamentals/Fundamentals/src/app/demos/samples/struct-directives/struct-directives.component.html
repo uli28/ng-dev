@@ -68,12 +68,12 @@
       Current value for "currentDirection": {{ currentDirection }} - remember it
       is an 0 based Enum
     </div>
-    <ng-container [ngSwitch]="currentDirection">
+    <div [ngSwitch]="currentDirection" class="direction">
       <b *ngSwitchCase="direction.East">Going East Direction ...</b>
       <b *ngSwitchCase="direction.West">Going West Direction ...</b>
       <b *ngSwitchCase="direction.North">Going North Direction ...</b>
       <b *ngSwitchCase="direction.South">Going South Direction ...</b>
       <b *ngSwitchDefault>No Direction</b>
-    </ng-container>
+    </div>
   </mat-card-content>
 </mat-card>

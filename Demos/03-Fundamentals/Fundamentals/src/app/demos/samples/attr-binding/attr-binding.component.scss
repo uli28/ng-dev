@@ -1,8 +1,9 @@
 .inputContainer{
-    input{
-      margin-top: 1rem;
-      line-height: 2rem;
-      width: 300px;
-      border: 1px solid var(--color-primary);
-      padding: 0.5rem;
-    }}
+  margin-right: 1rem;
+  
+  input{
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid var(--color-primary);
+  }
+}

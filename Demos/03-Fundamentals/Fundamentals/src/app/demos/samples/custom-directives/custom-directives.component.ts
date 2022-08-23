@@ -1,19 +1,12 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-custom-directives',
   templateUrl: './custom-directives.component.html',
   styleUrls: ['./custom-directives.component.scss'],
 })
-export class CustomDirectivesComponent implements OnInit {
-  @Output() changes = new EventEmitter();
+export class CustomDirectivesComponent {
   price: number;
 
   constructor() {}
-
-  ngOnInit() {}
-
-  // changed(value) {
-  //   this.changes.emit(value);
-  // }
 }

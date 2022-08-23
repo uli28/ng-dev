@@ -16,7 +16,9 @@
   <mat-card-content>
     Person: {{ person.name }}, {{ person.age }}<br />
     Salary: {{ person.salary | currency }}<br />
+    Salary: {{ person.salary | currency:'€' }}<br />
     DoB: {{ person.dateOfBirth | date: "longDate" }}<br />
+    DoB: {{ person.dateOfBirth | date: "ww - yy" }}<br />
   </mat-card-content>
 </mat-card>
 

@@ -8,16 +8,16 @@
     "title": "Inline Component"
   },
   {
+    "url": "expressions",
+    "title": "Expressions & Interpolation"
+  },
+  {
     "url": "binding",
     "title": "Model Binding"
   },
   {
     "url": "attrbinding",
     "title": "Attribute Binding"
-  },
-  {
-    "url": "expressions",
-    "title": "Expressions & Interpolation"
   },
   {
     "url": "di",
