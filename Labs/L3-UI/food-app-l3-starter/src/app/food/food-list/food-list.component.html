@@ -4,6 +4,8 @@
       <th>Name</th>
       <th>Price</th>
       <th>Calories</th>
+      <th>&nbsp;</th>
+      <th>&nbsp;</th>
     </tr>
   </thead>
   <tbody>
@@ -11,7 +13,8 @@
       <td>{{ p.name }}</td>
       <td>{{ p.price }}</td>
       <td>{{ p.calories }}</td>
-      <td style="cursor: pointer;"><a (click)="selectFood(p)">Select</a></td>
+      <td><a (click)="deleteFood(p)">Delete</a></td>
+      <td><a (click)="selectFood(p)">Select</a></td>
     </tr>
   </tbody>
 </table>

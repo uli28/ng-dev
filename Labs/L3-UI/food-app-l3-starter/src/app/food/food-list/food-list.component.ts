@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
+import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
 import { FoodItem } from "../food.model";
 
 @Component({
@@ -13,10 +13,16 @@ export class FoodListComponent implements OnInit {
   food: FoodItem[] = [];
   @Output()
   foodSelected: EventEmitter<FoodItem> = new EventEmitter<FoodItem>();
+  @Output()
+  foodDeleted: EventEmitter<FoodItem> = new EventEmitter<FoodItem>();
 
   ngOnInit() {}
 
-  selectFood(p: FoodItem) {
-    this.foodSelected.emit(p);
+  selectFood(item: FoodItem) {
+    this.foodSelected.emit(item);
+  }
+
+  deleteFood(item: FoodItem) {
+    this.foodDeleted.emit(item);
   }
 }
