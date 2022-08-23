@@ -9,7 +9,7 @@ import { NavItem } from "../navItem";
 export class NavbarComponent implements OnInit {
   constructor() {}
 
-  items: NavItem[];
+  items: NavItem[] = [];
 
   ngOnInit() {
     this.items = [

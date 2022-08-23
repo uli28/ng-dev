@@ -4,15 +4,15 @@ import { MenuService } from "../menu.service";
 @Component({
   selector: "app-navbar",
   templateUrl: "./navbar.component.html",
-  styleUrls: ["./navbar.component.scss"]
+  styleUrls: ["./navbar.component.scss"],
 })
 export class NavbarComponent implements OnInit {
   constructor(private ms: MenuService) {}
 
-  navItems: string[];
+  navItems: string[] = [];
 
   ngOnInit() {
-    this.ms.getMenuItems().subscribe(data => {
+    this.ms.getMenuItems().subscribe((data) => {
       this.navItems = data;
     });
   }

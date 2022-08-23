@@ -3,7 +3,7 @@
 <div *ngFor="let p of persons">
   <app-person-edit
     [person]="p"
-    [editMode]="true"
+    [editMode]="false"
     (savePerson)="savePersonToDB($event)"
     #personRef
   ></app-person-edit>

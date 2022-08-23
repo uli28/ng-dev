@@ -10,7 +10,7 @@ export class PersonsListComponent implements OnInit {
   constructor() {}
 
   @Input() persons: Person[];
-  @Output() personSelected: EventEmitter<Person> = new EventEmitter();
+  @Output() personSelected = new EventEmitter<Person>();
 
   ngOnInit() {}
 
