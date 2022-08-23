@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core'; // ES 6 module import
-import { ChildrenOutletContexts } from '@angular/router';
 import * as moment from 'moment'; // Non ES6 Moduel import
 import { Voucher } from '../model';
 
@@ -134,7 +133,7 @@ export class TypesComponent implements OnInit {
   }
 
   useTypings() {
-    // using moment
+    // typing from moment.js - import * as moment from 'moment';
     const dt = new Date(1990, 3, 2);
     console.log('Using time format: ', moment(dt).format('LTS'));
   }

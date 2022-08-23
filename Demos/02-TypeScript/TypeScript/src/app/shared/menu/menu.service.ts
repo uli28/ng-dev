@@ -33,7 +33,6 @@ export class MenuService {
     return of([
       { label: 'Home', url: '' },
       { label: 'Demos', url: 'demos' },
-      { label: 'Skills', url: 'skills' },
     ]);
   }
 

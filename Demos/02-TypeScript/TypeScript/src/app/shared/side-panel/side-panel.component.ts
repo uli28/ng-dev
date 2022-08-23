@@ -16,10 +16,10 @@ export class SidePanelComponent implements OnInit {
   }
 
   toggleEditor() {
-    this.sns.displayAlert('Info', 'Not implemented - just a Demo');
+    this.sns.displayAlert('Info', 'Not implemented - just a mock');
   }
 
   showUpload() {
-    this.sns.displayAlert('Info', 'Not implemented - just a Demo');
+    this.sns.displayAlert('Info', 'Not implemented - just a mock');
   }
 }
