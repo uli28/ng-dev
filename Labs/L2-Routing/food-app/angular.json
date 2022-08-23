@@ -1,8 +1,5 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "cli": {
-    "analytics": "9e65ddda-6b41-473a-bcc6-7172f5663895"
-  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
@@ -116,6 +113,9 @@
           }
         }
       }
-    }},
-  "defaultProject": "food-app"
+    }
+  },
+  "cli": {
+    "analytics": "f3dcc325-7fb0-4587-a598-7e41f28d0c8b"
+  }
 }
