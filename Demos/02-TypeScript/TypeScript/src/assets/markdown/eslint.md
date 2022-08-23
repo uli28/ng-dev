@@ -1,13 +1,12 @@
 - Show [ES Lint Documentations - Rules](https://eslint.org/docs/rules)
 - Show [Angular ES Lint Repo](https://github.com/angular-eslint/angular-eslint)
-
-Add Linting to project:
+- Add Linting to project:
 
 ```bash
 ng add @angular-eslint/schematics
 ```
 
-Point out `"no-await-in-loop":"warn"` in `.eslintrc.json` and explain code in eslint.component.ts:
+- Point out `"no-await-in-loop":"warn"` in `.eslintrc.json` and explain code in eslint.component.ts:
 
 ```typescript
 async function foo(things) {
@@ -20,7 +19,7 @@ async function foo(things) {
 }
 ```
 
-Run Linter
+- Run Linter
 
 ```bash
 ng lint
