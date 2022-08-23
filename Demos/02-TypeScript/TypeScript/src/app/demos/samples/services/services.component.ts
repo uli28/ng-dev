@@ -10,21 +10,15 @@ import { SkillsService } from '../skills/skills.service';
   templateUrl: './services.component.html',
   styleUrls: ['./services.component.scss'],
 })
-export class ServicesComponent implements OnInit {
+export class ServicesComponent {
   // antipattern - use environment.ts
-  url = 'http://localhost:3000/skills';
+  skillsapi = 'http://localhost:3000/skills';
   skills: Skill[];
 
   constructor(private skillsService: SkillsService, private http: HttpClient) {}
 
-  ngOnInit() {}
-
-  logPipe = (msg: string, data: any) => {
-    console.log(`logPipe() - ${msg}:`, data);
-  };
-
   usingFetch() {
-    fetch(this.url)
+    fetch(this.skillsapi)
       .then((resp: Response) => {
         console.log('Response received from fetch', resp);
         return resp.json(); // Notice Response Object
@@ -61,7 +55,7 @@ export class ServicesComponent implements OnInit {
       },
     };
 
-    fetch(this.url, options)
+    fetch(this.skillsapi, options)
       .then(function (res) {
         if (res.ok) {
           return res.statusText;
@@ -74,7 +68,7 @@ export class ServicesComponent implements OnInit {
   }
 
   async usingAxios() {
-    const api = this.url;
+    const api = this.skillsapi;
 
     await axios.get(api).then((result) => console.log(result.data));
 
@@ -89,9 +83,11 @@ export class ServicesComponent implements OnInit {
   // antipattern - try to keep data operation in services
   useClientInComponent() {
     //untyped
-    this.http.get(this.url).subscribe((data) => console.log(data));
+    this.http.get(this.skillsapi).subscribe((data) => console.log(data));
     //typed
-    this.http.get<Skill[]>(this.url).subscribe((data) => console.log(data));
+    this.http
+      .get<Skill[]>(this.skillsapi)
+      .subscribe((data) => console.log(data));
   }
 
   consumeService() {
