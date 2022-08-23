@@ -12,10 +12,15 @@ export class ExpressionsComponent implements OnInit {
   nbr = 7;
   isFalse = false;
   myObj = { a: 10, b: 20 };
+  divVisible = true;
 
   ngOnInit() {}
 
   addNumbers(a: number, b: number) {
     return a + b;
+  }
+
+  showDiv() {
+    return this.divVisible;
   }
 }

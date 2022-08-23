@@ -14,6 +14,10 @@
       {{ isFalse ? 'flasch' : 'nicht falsch' }}
     </p>
     <p>Function Call: {{ addNumbers(10, myObj.a) }}</p>
+    <div>
+      <div [hidden]="!showDiv()" >The (in)visible Div</div>
+      <button mat-raised-button (click)="divVisible = !divVisible" color="primary" >Toggle the div</button>
+    </div>
     <p>
       Read more on
       <a href="https://angular.io/guide/template-syntax#more-on-template-syntax"

@@ -21,7 +21,7 @@ export class BindingComponent implements OnInit {
   ngOnInit() {
     this.ps.getPersons().subscribe((data) => {
       this.persons = data;
-      if (this.persons.length > 0) {
+      if (this.persons) {
         this.selectedPerson = this.persons[0];
       }
     });
