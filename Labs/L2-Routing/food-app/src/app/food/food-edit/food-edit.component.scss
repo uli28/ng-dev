@@ -2,17 +2,23 @@
     width: 100%;
 }
 
-div.form > div {
-    min-width: 600px;
-    width: 100%;
+.row{
+    display: flex;
+    flex-direction: row nowrap;
+    justify-content: space-between;
+    margin: 0.5rem;
 }
-
 
 label{
     margin-right: 2rem;
-    min-width: 200px !important;
+    width: 150px;
 }
 
 input{
     min-width: 400px;
+    flex-grow: 1;
+}
+
+button{
+    min-width: 200px
 }

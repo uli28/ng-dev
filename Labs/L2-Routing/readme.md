@@ -2,7 +2,9 @@
 
 - Implement Routing for the navbar elements.
     - Add a `home.component.ts` using the [Angular CLI](https://angular.io/cli/generate#component-command)
+    
     - Add an `about.component.ts`
+    
     - Implement `app-routing.module.ts` and add the following routes: 
 
         ```
@@ -35,5 +37,3 @@
         ```
         { path: '', component: FoodContainerComponent }        
         ```
-
-- Implement a Save-Button in `FoodEditComponent` that updates the list

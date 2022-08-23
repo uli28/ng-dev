@@ -21,6 +21,10 @@ export class FoodContainerComponent implements OnInit {
     this.selected = { ...f };
   }
 
+  deleteFood(item: FoodItem) {
+    console.log("mock deleting ", item);
+  }
+
   foodSaved(item: FoodItem) {
     const clone = Object.assign([], this.food) as Array<FoodItem>;
     let idx = clone.findIndex((c) => c.id == item.id);
@@ -30,5 +34,6 @@ export class FoodContainerComponent implements OnInit {
       clone.push(item);
     }
     this.food = clone;
+    this.selected = null;
   }
 }

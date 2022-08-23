@@ -1,11 +1,14 @@
-.nav {
-  display: flex;
-  flex-direction: row;
-  padding: 1rem;
-  margin: 1rem;
+.menu{
+    display: flex; 
+    flex-direction: row;
+    padding: 1rem;
 }
 
-.navItem {
-  margin: 0.5rem;
-  cursor: pointer;
+.menuItem{
+    margin-right: 0.5rem;
+    
+    &:hover{
+        text-decoration: underline;
+        cursor: pointer;
+    }
 }
