@@ -11,10 +11,15 @@ import { Skill } from './skill.model';
 export class SkillsService {
   constructor(private httpClient: HttpClient) {}
 
+  // the return type can be avoided - just there to show the antipattern
   getSkills(): Observable<Skill[]> {
     return this.httpClient
       .get<Skill[]>(environment.skillsApi)
       .pipe(tap((data) => console.log('Received skills:', data)));
+  }
+
+  getSkill(id: number) {
+    return this.httpClient.get<Skill>(`${environment.skillsApi}/${id}`);
   }
 
   addSkill(skill: Skill) {
@@ -22,7 +27,10 @@ export class SkillsService {
   }
 
   updateSkill(skill: Skill) {
-    return this.httpClient.patch<Skill>(environment.skillsApi, skill);
+    return this.httpClient.put<Skill>(
+      `${environment.skillsApi}/${skill.id}`,
+      skill
+    );
   }
 
   deleteSkill(skill: Skill) {

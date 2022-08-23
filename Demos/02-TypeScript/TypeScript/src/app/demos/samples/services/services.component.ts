@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
-import axios from 'axios';
+import axios from 'axios'; //alias import
 import { environment } from '../../../../environments/environment';
 import { Skill } from '../skills/skill.model';
 import { SkillsService } from '../skills/skills.service';
@@ -39,8 +39,6 @@ export class ServicesComponent {
   }
 
   postFetch() {
-    // Make sure you have installed json-server: npm i -g json-server
-    // Run it: json-server db.json -> provides skills api
     const param: Skill = {
       name: 'Azure',
       completed: true,
@@ -55,7 +53,7 @@ export class ServicesComponent {
       },
     };
 
-    fetch(this.skillsapi, options)
+    fetch(`${environment.api}/skills`, options)
       .then(function (res) {
         if (res.ok) {
           return res.statusText;
@@ -83,15 +81,23 @@ export class ServicesComponent {
   // antipattern - try to keep data operation in services
   useClientInComponent() {
     //untyped
-    this.http.get(this.skillsapi).subscribe((data) => console.log(data));
-    //typed
     this.http
-      .get<Skill[]>(this.skillsapi)
+      .get(environment.skillsApi)
+      .subscribe((data: Skill[]) => console.log(data));
+
+    //typed - preferred pattern to use get<T>
+    this.http
+      .get<Skill[]>(environment.skillsApi)
       .subscribe((data) => console.log(data));
   }
 
   consumeService() {
+    // just to show the observable
+    let obs = this.skillsService.getSkills().subscribe();
+    console.log('skills obs: ', obs);
+
     // assign to prop in component for use in template
+    // subscribe return the native type that was wrapped in the observable
     this.skillsService.getSkills().subscribe((data) => {
       this.skills = data;
     });
