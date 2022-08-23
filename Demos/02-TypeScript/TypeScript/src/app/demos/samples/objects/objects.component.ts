@@ -3,16 +3,16 @@ import { format } from 'date-fns';
 
 @Component({
   selector: 'app-object-literals',
-  templateUrl: './object-literals.component.html',
-  styleUrls: ['./object-literals.component.scss'],
+  templateUrl: './objects.component.html',
+  styleUrls: ['./objects.component.scss'],
 })
-export class ObjectLiteralsComponent implements OnInit {
+export class ObjectsComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {}
 
   objectsBasics() {
-    // Plain old JavaScript -> deprecated pattern
+    // Plain old JavaScript -> anti-pattern
     const myPerson = new Object();
     // myPerson.smile = function() {
     //   console.log;
@@ -29,7 +29,14 @@ export class ObjectLiteralsComponent implements OnInit {
     person.walk();
   }
 
-  enhancedObjectLiterals() {
+  objectsTyped() {
+    let person: { id: number; name: string };
+    person = { id: 1, name: 'Susi' };
+
+    let dog = { id: 1, name: 'Soi' };
+  }
+
+  propertyShorthand() {
     function getCarES5(make, model, value) {
       return {
         make: make,
@@ -46,10 +53,6 @@ export class ObjectLiteralsComponent implements OnInit {
         value,
       };
     }
-
-    const person: any = { Id: 1, Name: 'Alexander' };
-    const cloned = { ...person }; //cloned using spread
-    cloned.Name = 'Sabine';
   }
 
   destructuring() {
@@ -63,14 +66,6 @@ export class ObjectLiteralsComponent implements OnInit {
     let { firstName, age } = fullPerson;
 
     console.log(firstName + ', ' + age); //implicit cast of age
-  }
-
-  objAssign() {
-    const obj = { name: 'Soi' };
-    const clone = Object.assign({}, obj, {
-      birth: format(new Date(), 'MMM d yy'),
-    });
-    console.log(clone);
   }
 
   valref() {
@@ -98,12 +93,20 @@ export class ObjectLiteralsComponent implements OnInit {
     console.log('result for myNumber & person using spread:', myNumber, person);
   }
 
-  copyspread() {
-    // Spred operator on arrays
-    const [x, y, ...remaining] = [1, 2, 3, 4];
-    console.log(x, y); // 1, 2,
-    console.log(remaining);
+  objAssign() {
+    const obj = { name: 'Soi' };
+    const clone = Object.assign({}, obj, {
+      birth: format(new Date(), 'MMM d yy'),
+    });
+    console.log(clone);
 
+    const arr = [1, 2];
+
+    let notArr = Object.assign({}, arr); //Object
+    let isArr = Object.assign([], arr);
+  }
+
+  cloneSpread() {
     // Spread operator on objects
     const simplePerson = { name: 'Schnuppi' };
     const dataPerson = {

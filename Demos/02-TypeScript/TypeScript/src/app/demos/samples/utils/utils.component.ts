@@ -10,6 +10,39 @@ export class UtilsComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  stringFunctions() {
+    const productID = 100;
+    const category = 'music';
+
+    // string concatenation
+    const url = 'http://server/' + category + '/' + productID;
+    console.log(url);
+
+    // Template strings using backticks `
+    const tl = `http://server/${category}/${productID}`;
+    console.log(tl);
+
+    // startswith
+    const str = 'To be, or not to be, that is the question.';
+    console.log(str.startsWith('To be')); // true
+    console.log(str.endsWith('question.')); // true
+
+    // include -> C# string.contains
+    function countString(ts) {
+      const characters = ['a', 'b', 'c'];
+
+      let ct = 0;
+      for (const char of ts) {
+        if (characters.includes(char)) {
+          ct++;
+        }
+      }
+      return ct;
+    }
+
+    console.log(`chars included in your string: ${countString('abheben')}`);
+  }
+
   introArrays() {
     // declaration using type followed by []
     const customers: string[] = ['Alex', 'Giro', 'Sonja', 'Soi', 'David'];
@@ -88,7 +121,7 @@ export class UtilsComponent implements OnInit {
     const cheap = fruits.filter((item) => item.price < 6);
     console.log(cheap);
 
-    // map -> shape arr
+    // map -> shape each item in arr
     const names = fruits.map(function (item) {
       return { name: item.name };
     });
@@ -130,7 +163,7 @@ export class UtilsComponent implements OnInit {
     const food = [
       { id: 1, name: 'Butter Chicken', price: 9, calories: 1200 },
       { id: 2, name: 'Curry Wurst', price: 2.7, calories: 730 },
-      { id: 3, name: 'Blini with Salmon', price: 8.3, calories: 600 },
+      { id: 4, name: 'Blini with Salmon', price: 8.3, calories: 600 },
     ];
 
     const nextId =
@@ -147,6 +180,7 @@ export class UtilsComponent implements OnInit {
     console.log(dogs); // ["whippet", "galgo espanol", "chart polski", "magyar agar"]
 
     // flatmap
+    // returns a new array formed by applying a given callback function to each element of the array, and then flattening the result by one level
     const orders = [
       {
         orderId: 1,
@@ -164,76 +198,8 @@ export class UtilsComponent implements OnInit {
       },
     ];
 
-    const items = orders.flatMap((o) => o.items.map((i) => i.name));
-  }
-
-  chainingArrayHelpers() {
-    interface Dog {
-      name: string;
-      age: number;
-      breed: string;
-    }
-
-    const dogs: Dog[] = [
-      {
-        name: 'Cleo',
-        age: 17,
-        breed: 'Whippet',
-      },
-      {
-        name: 'Giro',
-        age: 9,
-        breed: 'Galgo Espanol',
-      },
-      {
-        name: 'Flora',
-        age: 7,
-        breed: 'Italian Sighthound',
-      },
-      {
-        name: 'Soi',
-        age: 5,
-        breed: 'Whippet',
-      },
-    ];
-
-    // Tasks:
-    // Select only whippets
-    // Translate into dog years
-    // Sum result
-
-    // typical ECMA Script 5 pattern
-    function getAges(doggies) {
-      let sum = 0;
-      for (let i = 0; i < doggies.length; i++) {
-        if (doggies[i].breed === 'Whippet') {
-          const tempAge = doggies[i].age;
-          sum += tempAge * 7;
-        }
-      }
-      return sum;
-    }
-    console.log('Ages using for loop: ', getAges(dogs));
-
-    // functional approach
-
-    const whippets = dogs.filter((dog) => {
-      return dog.breed === 'Whippet';
-    });
-
-    const adjustAge = dogs.map((dog) => dog.age * 7);
-
-    const calSum = dogs.reduce((sum, animal) => {
-      return sum + animal.age;
-    }, 0);
-
-    const sumFunctional = whippets
-      .map((dog) => dog.age * 7)
-      .reduce((sum, animalAge) => {
-        return sum + animalAge;
-      });
-
-    console.log('Ages using functional approach: ', getAges(dogs));
+    const flattened = orders.flatMap((o) => o.items.map((i) => i.name));
+    console.log('flatmap result: ', flattened);
   }
 
   restParams() {
@@ -343,13 +309,5 @@ export class UtilsComponent implements OnInit {
       'totalArrow 2',
       Array.from(setNbrs).reduce((a, b) => a + b)
     );
-  }
-
-  usePipeline() {
-    const double = (n) => n * 2;
-    const increment = (n) => n + 1;
-
-    // without pipeline operator
-    double(increment(double(double(5)))); // 42
   }
 }

@@ -20,7 +20,7 @@ export class ClassesComponent implements OnInit {
       Total?: number;
     }
 
-    class VoucherInit {
+    class VoucherPropInit {
       ID: number = 0;
       Text: string = '';
       Amount: number = 0;
@@ -36,9 +36,8 @@ export class ClassesComponent implements OnInit {
     v.Text = 'Demo Voucher';
 
     //Reason for strict prop init in tsconfig.json
-    const vi = new VoucherInit();
-
-    console.log('vouchertext is:' + v.Text);
+    //Props are there - no {}
+    const vi = new VoucherPropInit();
 
     const vouchers = new Array<Voucher>();
 
@@ -49,6 +48,7 @@ export class ClassesComponent implements OnInit {
       Date: new Date(),
     };
     vouchers.push(voucherA);
+
     const voucherB: Voucher = {
       ID: 2,
       Text: 'Amazon',
@@ -71,7 +71,7 @@ export class ClassesComponent implements OnInit {
         return `"${this.name}" is alive:${this.alive}`;
       }
 
-      get liveness(): boolean {
+      get isAlive(): boolean {
         return this.alive;
       }
 

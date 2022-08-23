@@ -11,7 +11,6 @@ export class FunctionsComponent implements OnInit {
   ngOnInit() {}
 
   typedFunctions() {
-    // C# delegate ... variable that contains a function
     const addFunction = function (x: number, y: number): number {
       return x + y;
     };
@@ -48,15 +47,16 @@ export class FunctionsComponent implements OnInit {
       );
     }
 
+    // everything except Beeren goes to fruits array
     buildFruitBucket('Beeren', 'Himbeeren', 'Brombeeren', 'Goji Beeren');
   }
 
   returnValue() {
-    function twoReturns(): string | string[] {
-      return ['abc', 'cde'];
+    function twoReturns(choice: boolean): string[] | null {
+      return choice ? ['abc', 'cde'] : null;
     }
 
-    console.log('result of function with two returns: ', twoReturns());
+    console.log('result of function with two returns: ', twoReturns(false));
   }
 
   arrowFunctions() {
@@ -64,12 +64,16 @@ export class FunctionsComponent implements OnInit {
       return width * height;
     };
 
-    // Implemented as Lambda or "Arrow" Function
+    // when using types you have to write brackets
+    // method body & return can be omitted if single line statement
     const rectangleFunctionArrow = (width: number, height: number) =>
       height * width;
 
     const result: number = rectangleFunctionArrow(10, 22);
     console.log(result);
+
+    // not using types
+    const doDouble = (nbr) => nbr * 2;
   }
 
   functionOverloads() {
@@ -99,32 +103,5 @@ export class FunctionsComponent implements OnInit {
 
     const pickedCard2 = pickCard(15);
     console.log('card: ' + pickedCard2.card + ' of ' + pickedCard2.suit);
-  }
-
-  generatorFunction() {
-    function* getColors() {
-      // Code to be executed in between
-      yield 'green';
-      // Code to be executed in between
-      yield 'red';
-      // Code to be executed in between
-      yield 'blue';
-    }
-
-    const colorGenerator = getColors();
-
-    console.log(colorGenerator.next());
-    console.log(colorGenerator.next());
-    console.log(colorGenerator.next());
-
-    // practical usage many time together with for ... of
-    const arrColor = [];
-    const cols = getColors();
-
-    for (const col of Array.from(cols)) {
-      // Array.from casts IterableIterator<string> to Array<string>
-      arrColor.push(col);
-    }
-    console.log(arrColor);
   }
 }

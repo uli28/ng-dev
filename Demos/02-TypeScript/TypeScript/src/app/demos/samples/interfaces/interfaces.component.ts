@@ -26,6 +26,15 @@ export class InterfacesComponent implements OnInit {
 
     const rob: Knight = new Knight();
     rob.name = 'Rob Stark';
+
+    interface ILongLat {
+      Long: number;
+      Lat: number;
+    }
+    const position: ILongLat = { Long: 17.123123, Lat: 12.123123 };
+    console.log(
+      'We are at position Long: ' + position.Long + ' Lat: ' + position.Lat
+    );
   }
 
   interfacesNullability() {
@@ -47,17 +56,6 @@ export class InterfacesComponent implements OnInit {
     class DeliveryManager implements IManager {
       name: string;
     }
-  }
-
-  interfacesObjectLiterals() {
-    interface ILongLat {
-      Long: number;
-      Lat: number;
-    }
-    const position: ILongLat = { Long: 17.123123, Lat: 12.123123 };
-    console.log(
-      'We are at position Long: ' + position.Long + ' Lat: ' + position.Lat
-    );
   }
 
   interfacesFunctions() {

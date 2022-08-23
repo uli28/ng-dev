@@ -19,7 +19,7 @@ import { FunctionsComponent } from './samples/functions/functions.component';
 import { GenericsComponent } from './samples/generics/generics.component';
 import { InterfacesComponent } from './samples/interfaces/interfaces.component';
 import { ModulesComponent } from './samples/modules/modules.component';
-import { ObjectLiteralsComponent } from './samples/object-literals/object-literals.component';
+import { ObjectsComponent } from './samples/objects/objects.component';
 import { ServicesComponent } from './samples/services/services.component';
 import { TypesComponent } from './samples/types/types.component';
 import { UtilsComponent } from './samples/utils/utils.component';
@@ -32,7 +32,7 @@ const demoRoutes: Routes = [
     children: [
       { path: 'types', component: TypesComponent },
       { path: 'utils', component: UtilsComponent },
-      { path: 'objects', component: ObjectLiteralsComponent },
+      { path: 'objects', component: ObjectsComponent },
       { path: 'classes', component: ClassesComponent },
       { path: 'functions', component: FunctionsComponent },
       { path: 'interfaces', component: InterfacesComponent },
@@ -53,7 +53,7 @@ const demoRoutes: Routes = [
     GenericsComponent,
     InterfacesComponent,
     ModulesComponent,
-    ObjectLiteralsComponent,
+    ObjectsComponent,
     ServicesComponent,
     EslintComponent,
     UtilsComponent,
