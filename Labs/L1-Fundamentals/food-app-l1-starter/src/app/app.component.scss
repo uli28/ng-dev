@@ -1,20 +1,22 @@
-.navbar {
-  background-color: lightblue;
-  height: 10vh;
+.navbar{
+  background-color: lavender;
+  height: 150px
 }
 
-.sidemenu {
-  background-color: lightgray;
-  width: 20vw;
-}
-
-.home {
+.sidebar{
   background-color: yellow;
-  width: 80vw;
+  min-width: 200px;
+  padding: 1rem;
 }
 
-.mainrow {
+.main{
+  background-color: whitesmoke;
+  width: calc(100vw - 200px);
+  padding: 1rem;
+}
+
+.mainrow{
   display: flex;
   flex-direction: row;
-  height: 90vh;
+  height: calc(100vh - 150px);
 }

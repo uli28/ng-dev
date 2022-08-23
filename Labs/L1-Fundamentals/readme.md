@@ -4,7 +4,7 @@ Implement a food list with a simple edit from. Do not invest too much time in fo
 
 ![food-list](_images/food-list.png)
 
-Use the following nested components:
+Use the following nested components the you create using the [Angular CLI](https://angular.io/cli/generate#component-command):
 
 - food/food-container -> container
 - food/food-list -> nested in container
@@ -14,11 +14,11 @@ Example:
 
 ```
 ng g component food/food-container
-
 ```
+
 Add the `food-container` component to `app.component.html`. Routing will be implemented later on. 
 
-```
+```html
 <div class="main">
     <app-food-container></app-food-container>
 </div>
@@ -35,7 +35,7 @@ export class FoodItem {
 }
 ```
 
-Implement a `food/food-service.ts` using the following `food-item.ts` model:
+Implement a `food/food-service.ts` using the following `food.model.ts` model:
 
 ```
 ng g service food/food
@@ -49,7 +49,7 @@ Implement a `getFood()` method in food-service and load the data from `assets/fo
 [
   { "id": 1, "name": "Butter Chicken", "price": 9, "calories": 1200 },
   { "id": 2, "name": "Curry Wurst", "price": 2.7, "calories": 730 },
-  { "id": 3, "name": "Blini with Salmon", "price": 8.3, "calories": 600 }
+  { "id": 3, "name": "Boeuf Stroganoff", "price": 18.3, "calories": 600 }
 ]
 ```
 Use the following reference: 
@@ -62,4 +62,21 @@ Implement a Container-Presenter Pattern in `food/food-container`, `food/food-lis
 
 - [Presenter](/Demos/03-Fundamentals/Fundamentals/src/app/demos/samples/persons)
 
-At the moment do not use Angular Material. Just put the `input`-tags into `div`-tags. You might also have to import [FormsModule](https://angular.io/guide/frequent-ngmodules) into `app.module.ts` in order to use the `ngModel` directive in `food-edit.html`
+At the moment do not use Angular Material. Just put the `input`-tags into `div`-tags. You might also have to import [FormsModule](https://angular.io/guide/frequent-ngmodules) into `app.module.ts` in order to use the `ngModel` directive in `food-edit.component.html`
+
+Implement `Select` and `Delete` in the list and `Save` in the edit component.
+
+Use the following code to implement updating the `FoodItem[]` in the container:
+
+```javascript
+const clone = Object.assign([], this.food) as Array<FoodItem>;
+let idx = clone.findIndex((c) => c.id == item.id);
+if (idx > -1) {
+  clone[idx] = item;
+} else {
+  clone.push(item);
+}
+this.food = clone;
+```
+
+Hide the edit form after an item has been saved

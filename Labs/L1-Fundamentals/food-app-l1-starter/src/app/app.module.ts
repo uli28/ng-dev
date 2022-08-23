@@ -7,7 +7,6 @@ import { NavbarComponent } from "./shared/navbar/navbar.component";
 import { SidemenuComponent } from "./shared/sidemenu/sidemenu.component";
 import { HomeComponent } from "./home/home.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { MenuService } from "./shared/menu.service";
 import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
@@ -15,15 +14,14 @@ import { HttpClientModule } from "@angular/common/http";
     AppComponent,
     NavbarComponent,
     SidemenuComponent,
-    HomeComponent
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
-  providers: [MenuService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}

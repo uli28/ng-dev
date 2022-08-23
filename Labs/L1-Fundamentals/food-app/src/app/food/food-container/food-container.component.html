@@ -1,6 +1,7 @@
 <app-food-list
   [food]="food"
   (foodSelected)="selectFood($event)"
+  (foodDeleted)="deleteFood($event)"
 ></app-food-list>
 
 <app-food-edit

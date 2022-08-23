@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
-import { MenuService } from "../menu.service";
+import { NavbarService } from "./navbar.service";
+import { NavItem } from "./nav-item.model";
 
 @Component({
   selector: "app-navbar",
@@ -7,12 +8,12 @@ import { MenuService } from "../menu.service";
   styleUrls: ["./navbar.component.scss"],
 })
 export class NavbarComponent implements OnInit {
-  constructor(private ms: MenuService) {}
+  constructor(private ns: NavbarService) {}
 
-  navItems: string[] = [];
+  navItems: NavItem[] = [];
 
   ngOnInit() {
-    this.ms.getMenuItems().subscribe((data) => {
+    this.ns.getItems().subscribe((data) => {
       this.navItems = data;
     });
   }

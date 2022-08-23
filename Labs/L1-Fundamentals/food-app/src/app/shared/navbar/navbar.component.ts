@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
-import { NavItem } from "../navItem";
+import { NavbarService } from "./navbar.service";
+import { NavItem } from "./nav-item.model";
 
 @Component({
   selector: "app-navbar",
@@ -7,15 +8,13 @@ import { NavItem } from "../navItem";
   styleUrls: ["./navbar.component.scss"],
 })
 export class NavbarComponent implements OnInit {
-  constructor() {}
+  constructor(private ns: NavbarService) {}
 
-  items: NavItem[] = [];
+  navItems: NavItem[] = [];
 
   ngOnInit() {
-    this.items = [
-      { title: "Home", url: "/" },
-      { title: "Food", url: "/food" },
-      { title: "About", url: "/about" },
-    ];
+    this.ns.getItems().subscribe((data) => {
+      this.navItems = data;
+    });
   }
 }

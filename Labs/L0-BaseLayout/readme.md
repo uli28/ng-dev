@@ -10,38 +10,61 @@ npm i -g @angular/cli
 
 Also install the [Angular Language Service - Visual Studio Code extension](https://marketplace.visualstudio.com/items?itemName=Angular.ng-template).
 
-Create an Angular App with the following layout containing thw following components:
+Create an Angular App with the following layout containing the following components:
 
-- home.ts
-- shared/sidemenu.ts
-- shared/navbar.ts
+- home
+- shared/sidemenu
+- shared/navbar
 
 ![layout](_images/food-layout.png)
 
-Load the menu items in the navbar using a menu.service that thakes its values from `assets/menuItems.json`:
+Load the menu items in the navbar using a menu.service that thakes its values from `assets/menu-items.json`:
 
 ```json
-["Home", "Food", "Admin"]
+[
+    {
+        "title": "Home",
+        "url": "/"
+    },
+    {
+        "title": "Food",
+        "url": "/food"
+    },
+    {
+        "title": "About",
+        "url": "/about"
+    }
+]
 ```
 
 A solution is provided in the folder `food-app`.
 
 ## Step-by-Step Guide:
 
-Create Angular Project:
+Create Angular Project using the [Angular CLI](https://angular.io/cli/new):
 
 ```
-ng new food-app-l0
+ng new food-app-l0 --routing true --style scss 
 cd food-app-l0
 ```
 
 >Note: Add routing to the project as it will be used later on. Choose scss as your prefered style schematic. You could change this later on in `angular.json`:
 
-```
+```json
 "@schematics/angular:component": {
           "style": "scss"
 }
 ```
+
+Delete the default content of `app.component.ts` and start the dev server:
+
+```
+ng s -o
+```
+
+>Note: Typically dev server is running while you are working. You can split your terminal to execute other CLI commands
+
+![terminal](_images/terminal.png)
 
 Add the components:
 
@@ -87,37 +110,52 @@ Add the following styles to `app.component.scss`:
 
 ```css
 .navbar{
-    background-color: lavender;
-    height: 150px
+  background-color: lavender;
+  height: 150px
 }
 
 .sidebar{
-    background-color: yellow;
-    min-width: 200px;
+  background-color: yellow;
+  min-width: 200px;
+  padding: 1rem;
 }
 
 .main{
-    background-color: lightgray;
-    width: calc(100vw - 200px);
+  background-color: whitesmoke;
+  width: calc(100vw - 200px);
+  padding: 1rem;
 }
 
 .mainrow{
-    display: flex;
-    flex-direction: row;
-    height: calc(100vh - 150px);
+  display: flex;
+  flex-direction: row;
+  height: calc(100vh - 150px);
 }
 ```
 
 Add the menu service:
 
 ```
-ng g s shared/menu
+ng g s shared/navbar/navbar
 ```
 
-Add `assets/menuItems.json`:
+Add `assets/menu-items.json`:
 
 ```json
-["Home", "Food", "Admin"]
+[
+    {
+        "title": "Home",
+        "url": "/"
+    },
+    {
+        "title": "Food",
+        "url": "/food"
+    },
+    {
+        "title": "About",
+        "url": "/about"
+    }
+]
 ```
 
 Add `HttpClientModule` and `CommonModule` from [Frequently used Angular Modules](https://angular.io/guide/frequent-ngmodules) to `app.module.ts`:
@@ -130,25 +168,25 @@ import { HttpClientModule } from "@angular/common/http";
     HttpClientModule
 ```
 
-Inject Angular HttpClient in the constructor of `menu.service.ts` and load `assets/menuItems.json`:
+Inject Angular HttpClient in the constructor of `navbar.service.ts` and load `assets/menu-items.json`:
 
 ```typescript
 constructor(private httpClient: HttpClient) {}
 
-getMenuItems(): Observable<string[]> {
-    return this.httpClient.get<string[]>("assets/menuItems.json");
-}
+getItems() {
+    return this.httpClient.get<NavItem[]>("assets/menu-items.json");
+  }
 ```
 
-Inject menu.service in `navbar.component.ts` and get the menu items:
+Inject navbar.service in `navbar.component.ts` and get the menu items:
 
 ```typescript
-constructor(private ms: MenuService) {}
+constructor(private ns: NavbarService) {}
 
-navItems: string[];
+navItems: NavItem[] = [];
 
 ngOnInit() {
-  this.ms.getMenuItems().subscribe(data => {
+  this.ns.getItems().subscribe(data => {
     this.navItems = data;
   });
 }
@@ -158,7 +196,7 @@ Render the menu items in `navbar.component.html`:
 
 ```html
 <div class="menu">
-  <div class="menuItem" *ngFor="let item of navItems">{{ item }}</div>
+  <div class="menuItem" *ngFor="let item of navItems">{{ item.title }}</div>
 </div>
 ```
 
@@ -170,9 +208,16 @@ Style `navbar.component.scss`:
     width: 100%;
     flex-direction: row;
     padding: 1rem;
+
+
 }
 
 .menuItem{
     margin-right: 0.5rem;
+    
+    &:hover{
+        text-decoration: underline;
+        cursor: pointer;
+    }
 }
 ```
