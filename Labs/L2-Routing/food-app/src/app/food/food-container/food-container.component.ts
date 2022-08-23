@@ -21,8 +21,8 @@ export class FoodContainerComponent implements OnInit {
     this.selected = f;
   }
 
-  foodSaved(f: FoodItem) {
-    this.food = this.food.filter((f) => f.id != f.id);
-    this.food.push(f);
+  foodSaved(item: FoodItem) {
+    this.food = this.food.filter((f) => f.id != item.id);
+    this.food.push(item);
   }
 }

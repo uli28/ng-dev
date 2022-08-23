@@ -21,9 +21,8 @@ export class FoodContainerComponent implements OnInit {
     this.selected = { ...f };
   }
 
-  foodSaved(f: FoodItem) {
-    let arr = this.food.filter((item) => item.id != f.id);
-    arr.push(f);
-    this.food = [...arr];
+  foodSaved(item: FoodItem) {
+    this.food = this.food.filter((f) => f.id != item.id);
+    this.food.push(item);
   }
 }
