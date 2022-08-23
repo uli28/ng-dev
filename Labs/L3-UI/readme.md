@@ -1,5 +1,7 @@
 # Food App - UI
 
+![material](_images/material.png)
+
 Add [Angular Material](https://material.angular.io) & [Angular Flex Layout](https://github.com/angular/flex-layout/wiki) to your project:
 
 - Install Angular Material using the [Material Getting Started](https://material.angular.io/guide/getting-started) and choose a theme of your choice.
@@ -28,9 +30,6 @@ Implement a Material Design for Food App:
 - Use [mat-input](https://material.angular.io/components/form-field/overview) for `food-edit.component.html`
 
 - Use the [mat-button-directive](https://material.angular.io/components/button/examples) for the `Save`-button in `food-edit.component.html`
-
-![material](_images/material.png)
-
 
 Optional: Implement a custom material theme with a [custom color palette](https://material.io/resources/color/#!/?view.left=0&view.right=0) and replace the theme that you have choosen at the beginning of this lab:
 
