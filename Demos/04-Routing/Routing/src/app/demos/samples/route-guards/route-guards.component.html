@@ -1,15 +1,13 @@
+<app-markdown-renderer [md]="'guards'"></app-markdown-renderer>
+
 <mat-card>
   <mat-card-header>
     <mat-card-title>Protecting Routs usind Route Guards</mat-card-title>
   </mat-card-header>
-  <mat-card-content>
-    Inspect: app-routing.module.ts<br />
-    Notice resolve instruction on 'admin' route<br />
-    Go to 'environment.ts' - Try link below with authEnabled: false | true<br />
-
+  <mat-card-content>    
   </mat-card-content>
-  <mat-card-actions align="end">
-    <button mat-raised-button [routerLink]="['/admin']" color="accent">
+  <mat-card-actions>
+    <button mat-raised-button [routerLink]="['/admin']" color="primary">
       Go to Admin Page
     </button>
   </mat-card-actions>

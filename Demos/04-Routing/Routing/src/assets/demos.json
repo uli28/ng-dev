@@ -1,5 +1,9 @@
 [
   {
+    "url": "childroutes",
+    "title": "Routes"
+  },
+  {
     "url": "routingbasics",
     "title": "Routing Basics"
   },
@@ -12,20 +16,16 @@
     "title": "Router State"
   },
   {
-    "url": "childroutes",
-    "title": "Child Routes"
-  },
-  {
-    "url": "secondary",
-    "title": "Secondary Routes"
-  },
-  {
     "url": "lazy-loading",
     "title": "Lazy Loading"
   },
   {
     "url": "standalone-comp",
     "title": "Standalone Component"
+  },
+  {
+    "url": "secondary",
+    "title": "Secondary Routes"
   },
   {
     "url": "component-less",
