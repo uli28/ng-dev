@@ -37,6 +37,6 @@ Implement a custom material theme with a [custom color palette](https://material
 
 - Use the [Demo App](https://github.com/arambazamba/ng-dev/tree/main/Demos/05-UI/UserInterface/src/theme) Theme as a reference.
 
-Add the `burger.png` file as a centered image to the `home.component.html`
+Add the `burger.png` file as a centered image to the `home.component.html` and use a custom [web font](https://fonts.google.com/) in the welcome text by registering it in `index.html`.
 
 ![home](_images/home.jpg)
