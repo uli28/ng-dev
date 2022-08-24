@@ -7,14 +7,12 @@
     fxLayoutAlign.lt-md="center center"
   >
     <mat-card-title>Angular Flex Layout</mat-card-title>
-    <mat-card-subtitle
-      >Notice the change of the image on mobile</mat-card-subtitle
-    >
   </mat-card-header>
   <mat-card-content>
     
     <!-- FlexSample Begin-->
     <form fxLayout="column">      
+      <!-- First Row -->
       <div
         fxLayout="row"
         fxLayout.lt-md="column"
@@ -40,7 +38,7 @@
           />
         </mat-form-field>
       </div>
-
+      <!-- Second Row - hidden on lt.md -->
       <div fxHide.lt-md>
         <mat-form-field fxFlex>
           <input

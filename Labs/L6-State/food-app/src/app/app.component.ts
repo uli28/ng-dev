@@ -25,7 +25,6 @@ export class AppComponent {
           }
         : {};
     });
-    console.log('style:', result);
     return result;
   }
 }
