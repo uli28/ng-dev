@@ -31,6 +31,12 @@ Implement a Material Design for Food App:
 
 - Use the [mat-button-directive](https://material.angular.io/components/button/examples) for the `Save`-button in `food-edit.component.html`
 
-Optional: Implement a custom material theme with a [custom color palette](https://material.io/resources/color/#!/?view.left=0&view.right=0) and replace the theme that you have choosen at the beginning of this lab:
+## Optional 
+
+Implement a custom material theme with a [custom color palette](https://material.io/resources/color/#!/?view.left=0&view.right=0) and replace the theme that you have choosen at the beginning of this lab:
 
 - Use the [Demo App](https://github.com/arambazamba/ng-dev/tree/main/Demos/05-UI/UserInterface/src/theme) Theme as a reference.
+
+Add the `burger.png` file as a centered image to the `home.component.html`
+
+![home](_images/home.jpg)

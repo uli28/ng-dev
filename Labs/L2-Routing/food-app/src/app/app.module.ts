@@ -5,7 +5,6 @@ import { FormsModule } from "@angular/forms";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { NavbarComponent } from "./shared/navbar/navbar.component";
-import { MainComponent } from "./main/main.component";
 import { HomeComponent } from "./home/home.component";
 import { AboutComponent } from "./about/about.component";
 import { SidemenuComponent } from "./shared/sidemenu/sidemenu.component";
@@ -15,7 +14,6 @@ import { SidemenuComponent } from "./shared/sidemenu/sidemenu.component";
     AppComponent,
     NavbarComponent,
     SidemenuComponent,
-    MainComponent,
     HomeComponent,
     AboutComponent,
   ],

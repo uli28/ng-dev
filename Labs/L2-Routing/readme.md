@@ -12,7 +12,7 @@
         { path: "food", component: FoodContainerComponent },
         { path: "about", component: AboutComponent },
         ```
-    - Add [RouterLink](https://angular.io/api/router/RouterLink) directives to `navbar.component.html` to enable navigation
+    - Add [RouterLink](https://angular.io/api/router/RouterLink) directives to `navbar.component.html` to enable navigation. Apply a style for the active link - use [this reference](https://github.com/arambazamba/ng-dev/blob/main/Demos/04-Routing/Routing/src/app/shared/navbar/navbar.component.ts)
 
 - Refactor `app/food` to be a lazy loaded module in `app-routing.module.ts`
     - Add a [feature module](https://angular.io/guide/feature-modules) using the [Angular CLI](https://angular.io/cli/generate#module-command) and 
@@ -36,4 +36,4 @@
 
         ```
         { path: '', component: FoodContainerComponent }        
-        ```
+        ```        
