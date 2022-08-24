@@ -1,5 +1,7 @@
 # Food App - State
 
+![menu](_images/menu.jpg)
+
 Implement a responsive Side Menu:
 
 - Implement a menu.service.ts as a Stateful Service using BehaviorSubjects with the two properties:
