@@ -1,5 +1,5 @@
 mat-toolbar {
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.8rem;
 }
 
 mat-toolbar-row {
@@ -7,4 +7,12 @@ mat-toolbar-row {
     margin: 0.5rem;
     cursor: pointer;
   }
+}
+
+.navLinkActive{
+  text-decoration: underline;
+}
+
+.menu{
+  padding-top: 0.5rem;
 }

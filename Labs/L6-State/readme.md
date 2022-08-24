@@ -2,7 +2,7 @@
 
 Implement a responsive Side Menu:
 
-- Implement a menu.service as a Stateful Service using BehaviorSubjects with the two properties:
+- Implement a menu.service.ts as a Stateful Service using BehaviorSubjects with the two properties:
 
     - sideNavVisible: boolean
     - sideNavPosition: over | side

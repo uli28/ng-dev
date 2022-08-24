@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
-import { MediaObserver, MediaChange } from '@angular/flex-layout';
-import { BehaviorSubject, Observable, of } from 'rxjs';
-import { MenuItem } from './menu-item.model';
-import { filter, map } from 'rxjs/operators';
+import { MediaChange, MediaObserver } from '@angular/flex-layout';
 import { MatDrawerMode } from '@angular/material/sidenav';
+import { BehaviorSubject } from 'rxjs';
+import { filter, map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',
@@ -28,13 +27,6 @@ export class MenuService {
         this.sideNavVisible.next(change.mqAlias === 'xs' ? false : true);
         this.sideNavPosition.next(change.mqAlias === 'xs' ? 'over' : 'side');
       });
-  }
-
-  getTopItems(): Observable<MenuItem[]> {
-    return of([
-      { label: 'Home', url: '' },
-      { label: 'Demos', url: 'demos' },
-    ]);
   }
 
   toggleMenuVisibility() {

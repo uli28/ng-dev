@@ -11,7 +11,7 @@
       <mat-sidenav  #sidenav
       [opened]="ms.sideNavVisible | async"
       [mode]="mode">
-        <app-sidebar></app-sidebar>
+        <app-sidemenu></app-sidemenu>
       </mat-sidenav>
       <mat-sidenav-content [ngStyle]="getWorbenchStyle()">
         <router-outlet></router-outlet>
