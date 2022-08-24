@@ -1,5 +1,7 @@
 # Food App - Testing
 
+![test-explorer](_images/test-explorer.jpg)
+
 Tools Setup:
 
 - Install [Test Explorer UI](https://marketplace.visualstudio.com/items?itemName=hbenl.vscode-test-explorer)
