@@ -9,7 +9,7 @@ import { MenuService } from '../menu/menu.service';
   styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent implements OnInit {
-  constructor(private ns: NavbarService, private ms: MenuService) {}
+  constructor(public ns: NavbarService, public ms: MenuService) {}
 
   navItems: NavItem[] = [];
 

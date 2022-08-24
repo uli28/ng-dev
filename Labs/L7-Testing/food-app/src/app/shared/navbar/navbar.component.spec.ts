@@ -2,6 +2,8 @@ import { DebugElement } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { NavbarComponent } from './navbar.component';
+import { HttpClientModule } from '@angular/common/http';
+import { MaterialModule } from '../../material.module';
 
 describe('navbar.component', () => {
   let comp: NavbarComponent;
@@ -11,6 +13,7 @@ describe('navbar.component', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [NavbarComponent],
+      imports: [HttpClientModule, MaterialModule],
     }).compileComponents();
 
     fixture = TestBed.createComponent(NavbarComponent);
