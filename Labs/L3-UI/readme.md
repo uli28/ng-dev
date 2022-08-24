@@ -1,6 +1,6 @@
 # Food App - UI
 
-![material](_images/material.png)
+![material](_images/material.jpg)
 
 Add [Angular Material](https://material.angular.io) & [Angular Flex Layout](https://github.com/angular/flex-layout/wiki) to your project:
 
