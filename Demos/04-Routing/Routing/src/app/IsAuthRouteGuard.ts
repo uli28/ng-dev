@@ -23,6 +23,7 @@ export class IsAuthRouteGuard implements CanActivate, CanActivateChild {
       return true;
     } else {
       this.sns.displayAlert('Hey Dude', 'You are not allowed in here');
+      this.router.navigate(['/']);
     }
   }
 

@@ -5,6 +5,8 @@
     
     - Add an `about.component.ts`
     
+    - Replace `<app-food-container></app-food-container>` with a `<router-outlet></router-outlet>` in `app.component.html`
+    
     - Implement `app-routing.module.ts` and add the following routes: 
 
         ```
@@ -14,7 +16,10 @@
         ```
     - Add [RouterLink](https://angular.io/api/router/RouterLink) directives to `navbar.component.html` to enable navigation. Apply a style for the active link - use [this reference](https://github.com/arambazamba/ng-dev/blob/main/Demos/04-Routing/Routing/src/app/shared/navbar/navbar.component.ts)
 
-- Refactor `app/food` to be a lazy loaded module in `app-routing.module.ts`
+    - Test the routing
+
+- Refactor `app/food` to be a lazy loaded module in `app-routing.module.ts`    
+    
     - Add a [feature module](https://angular.io/guide/feature-modules) using the [Angular CLI](https://angular.io/cli/generate#module-command) and 
     use the Code Splitting Pattern 
 
