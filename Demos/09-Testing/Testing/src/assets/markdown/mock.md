@@ -1,8 +1,14 @@
-- Navigate to folder `\demos\samples\use-mock`
-- Investigate `auth.service.ts`, `use-mock.component.ts` and `use-mock.component.spec.ts`.
-- A component fixture is a test harness for interacting with the created component and its corresponding element.
-- A testbed allows us to create the component and its supporting module.
-- Learn how to inject a mock implementation into the `TestingModule` by using `providers` and `useValue`:
+- Navigate to folder `\demos\samples\mocking` and examine `auth.service.ts` and compare it to `auth.service.mock.ts`. They are used in `use-mock.component.ts` and `use-mock.component.spec.ts`.
+
+```typescript
+export class UseMockComponent {
+  constructor(private as: AuthService) {
+    this.loggedIn = this.as.isAuthenticated();
+  }
+  loggedIn: boolean;
+}
+```
+- The TestBed used in `use-mock.component.spec.ts` allows us to create the component and its supporting module. A `ComponentFixture` is a TestHarness for interacting with a component and its corresponding elements. In the providers section the mock object is used
 
 ```javascript
 beforeEach(async () => {
