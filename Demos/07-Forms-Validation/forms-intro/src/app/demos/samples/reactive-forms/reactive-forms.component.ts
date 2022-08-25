@@ -1,9 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {
-  UntypedFormControl,
-  UntypedFormGroup,
-  Validators,
-} from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Person, wealthOptsValues } from '../person.model';
 import { PersonService } from '../person.service';
 
@@ -13,22 +9,21 @@ import { PersonService } from '../person.service';
   styleUrls: ['./reactive-forms.component.scss'],
 })
 export class ReactiveFormsComponent implements OnInit {
-  constructor(private ps: PersonService) {}
-
   person: Person = new Person();
   wealthOpts = wealthOptsValues;
+  personForm: FormGroup;
 
-  personForm: UntypedFormGroup;
+  constructor(private ps: PersonService) {
+    this.personForm = new FormGroup({
+      name: new FormControl(this.person.name, Validators.required),
+      age: new FormControl(this.person.age),
+      email: new FormControl(this.person.email),
+      gender: new FormControl(this.person.gender),
+      wealth: new FormControl(this.person.wealth),
+    });
+  }
 
   ngOnInit() {
-    this.personForm = new UntypedFormGroup({
-      name: new UntypedFormControl(this.person.name, Validators.required),
-      age: new UntypedFormControl(this.person.age),
-      email: new UntypedFormControl(this.person.email),
-      gender: new UntypedFormControl(this.person.gender),
-      wealth: new UntypedFormControl(this.person.wealth),
-    });
-
     this.ps.getPerson().subscribe((p) => {
       // Could be setValue if model is implemented with all props in form
       // Oherwise use patchValue
