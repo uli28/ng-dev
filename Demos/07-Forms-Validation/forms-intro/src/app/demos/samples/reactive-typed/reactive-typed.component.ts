@@ -9,8 +9,6 @@ import { PersonService } from '../person.service';
   styleUrls: ['./reactive-typed.component.scss'],
 })
 export class ReactiveTypedComponent implements OnInit {
-  constructor(private ps: PersonService) {}
-
   person: Person = new Person();
   wealthOpts = wealthOptsValues;
 
@@ -22,8 +20,7 @@ export class ReactiveTypedComponent implements OnInit {
     wealth: FormControl<string | null>;
   }>;
 
-  ngOnInit() {
-    //with strictPropertyInitialization:true in tsconfig.json this must be done in the constructor
+  constructor(private ps: PersonService) {
     this.personForm = new FormGroup({
       name: new FormControl(this.person.name, Validators.required),
       age: new FormControl(this.person.age),
@@ -31,7 +28,9 @@ export class ReactiveTypedComponent implements OnInit {
       gender: new FormControl(this.person.gender),
       wealth: new FormControl(this.person.wealth),
     });
+  }
 
+  ngOnInit() {
     this.ps.getPerson().subscribe((p) => {
       // Could be setValue if model is implemented with all props in form
       // Oherwise use patchValue
