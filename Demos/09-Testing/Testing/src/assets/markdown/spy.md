@@ -1,11 +1,23 @@
-- Navigate to folder `\demos\samples\spy` and notice the use of the spy object in `msg-srv-with-injection.service.spec.ts`
+- Navigate to folder `\demos\samples\mocking`. For better comparison the mocking example is solved using a spy in the use-spy folder.
+
+- Creation of the spy object
 
 ```javascript
-util = jasmine.createSpyObj('Util', ['log']);
+beforeEach(() => {
+    spy = jasmine.createSpyObj('AuthService', ['isAuthenticated']);
+    spy.isAuthenticated.and.returnValue(true);
+    comp = new UseSpyComponent(spy);
+  });
 ```
-and
+
+- In the providers section the spy object is used
 
 ```javascript
-expect(util.log).toHaveBeenCalledTimes(2);
+beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [],
+      declarations: [UseSpyComponent],
+      providers: [{ provide: AuthService, useValue: spy }],
+    }).compileComponents();;
+});
 ```
-

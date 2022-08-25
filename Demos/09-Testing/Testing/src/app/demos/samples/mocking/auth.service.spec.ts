@@ -9,13 +9,12 @@ describe('AuthService', () => {
 
   it('should be created', () => {
     expect(as).toBeTruthy();
-    expect(as.isAuth).toEqual(false);
   });
 
   it('should indicate the correct login state', () => {
     as.logIn();
-    expect(as.isAuth).toEqual(true);
+    expect(as.isAuthenticated()).toEqual(true);
     as.logOff();
-    expect(as.isAuth).toEqual(false);
+    expect(as.isAuthenticated()).toEqual(false);
   });
 });

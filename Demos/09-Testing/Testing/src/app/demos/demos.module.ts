@@ -31,11 +31,11 @@ import { FoodHttpComponent } from './samples/service-http-injection/food-http/fo
 import { ServiceHttpInjectionComponent } from './samples/service-http-injection/service-http-injection.component';
 import { SimpleServiceComponent } from './samples/simple-service/simple-service.component';
 import { UnitTestingComponent } from './samples/simple-tests/unit-testing.component';
-import { SpyComponent } from './samples/spy/spy.component';
 import { StatefulComponent } from './samples/stateful/stateful.component';
-import { UseMockComponent } from './samples/use-mock/use-mock.component';
+import { UseMockComponent } from './samples/mocking/use-mock/use-mock.component';
 import { LoadingService } from '../shared/loading/loading.service';
 import { LoadingInterceptor } from '../shared/loading/loading-interceptor';
+import { UseSpyComponent } from './samples/mocking/use-spy/use-spy.component';
 
 const demoRoutes: Routes = [
   {
@@ -54,7 +54,7 @@ const demoRoutes: Routes = [
       { path: 'component-write', component: ComponentWriteComponent },
       { path: 'harness', component: MaterialComponent },
       { path: 'e2e', component: Introe2eComponent },
-      { path: 'spy', component: SpyComponent },
+      { path: 'spy', component: UseSpyComponent },
       { path: 'comp-class', component: ComponentClassComponent },
       {
         path: 'comp-testingmodule',
@@ -79,13 +79,11 @@ const demoRoutes: Routes = [
     RatingPipe,
     FoodRowComponent,
     FoodListComponent,
-    UseMockComponent,
     ComponentEventsComponent,
     ComponentWriteComponent,
     MaterialComponent,
     Introe2eComponent,
     FoodHttpComponent,
-    SpyComponent,
     ServiceHttpInjectionComponent,
     ComponentClassComponent,
     ComponentInjectionComponent,
@@ -94,6 +92,8 @@ const demoRoutes: Routes = [
     TestingModuleInlineComponent,
     InjectionComponent,
     StatefulComponent,
+    UseSpyComponent,
+    UseMockComponent,
   ],
   imports: [
     CommonModule,

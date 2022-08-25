@@ -1,22 +1,22 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { AuthService } from './auth.service';
 import { MockAuthService } from './auth.service.mock';
 import { UseMockComponent } from './use-mock.component';
+import { AuthService } from '../auth.service';
 
 describe('UseMockComponent with MockAuth Service', () => {
-  const ms = new MockAuthService();
+  const mock = new MockAuthService();
   let comp: UseMockComponent;
   let fixture: ComponentFixture<UseMockComponent>;
 
   beforeEach(() => {
-    comp = new UseMockComponent(ms);
+    comp = new UseMockComponent(mock);
   });
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [],
       declarations: [UseMockComponent],
-      providers: [{ provide: AuthService, useValue: ms }],
+      providers: [{ provide: AuthService, useValue: mock }],
     }).compileComponents();
 
     fixture = TestBed.createComponent(UseMockComponent);
