@@ -10,21 +10,15 @@ import { Voucher } from './voucher.model';
   providedIn: 'root',
 })
 export class StatefulVoucherService {
-  constructor(private httpClient: HttpClient) {
-    this.initData();
-    this.addLateVoucher();
-  }
-
   private vouchers: BehaviorSubject<Voucher[]> = new BehaviorSubject<Voucher[]>(
     []
   );
 
-  url = environment.apiUrl;
-
-  private initData() {
-    this.httpClient.get<Voucher[]>(this.url).subscribe((data) => {
+  constructor(private httpClient: HttpClient) {
+    this.httpClient.get<Voucher[]>(environment.apiUrl).subscribe((data) => {
       this.vouchers.next(data);
     });
+    this.addLateVoucher();
   }
 
   addLateVoucher() {
@@ -44,8 +38,7 @@ export class StatefulVoucherService {
   }
 
   insertVoucher(v: Voucher) {
-    // send to db
-    this.httpClient.post(this.url, v).subscribe((result: any) => {
+    this.httpClient.post(environment.apiUrl, v).subscribe((result: any) => {
       var arr = this.vouchers.getValue();
       arr.push(result as Voucher);
       this.vouchers.next(arr);

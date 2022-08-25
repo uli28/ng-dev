@@ -1,21 +1,17 @@
-- Examine stateful-voucher.service.ts and its use of the BehaviorSubject:
+- Examine `stateful-voucher.service.ts` and its use of the BehaviorSubject. Examine how it is injected and used in `stateful-vouchers.component.ts`.
 
     ```typescript
-    private vouchers: BehaviorSubject<Voucher[]> = new BehaviorSubject<Voucher[]>([]);
-    ```
-- Add the app-sum to the `demo-container.component.html`:
+    export class StatefulVoucherService {
+        private vouchers: BehaviorSubject<Voucher[]> = new BehaviorSubject<Voucher[]>([]);
 
-    ```html
-    <mat-sidenav #sidenav [opened]="ms.visible$ | async" [mode]="sidenavMode">
-    <mat-toolbar color="accent">
-    ...
-    </mat-toolbar>
-    <mat-nav-list>
-    ...
-    </mat-nav-list>
-    <app-sum></app-sum>
+        constructor(private httpClient: HttpClient) {
+            this.httpClient.get<Voucher[]>(environment.apiUrl).subscribe((data) => {
+            this.vouchers.next(data);
+            });
+            this.addLateVoucher();
+        }
     ```
-- Discuss it's implementation code:
+- Add the app-sum to the `stateful.component.html` and discuss it's implementation code:
 
     ```typescript
     constructor(private vs: StatefulVoucherService) {}
