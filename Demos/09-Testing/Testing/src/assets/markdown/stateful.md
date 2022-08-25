@@ -3,10 +3,19 @@ Navigate to `demos/samples/stateful` and inverstigate `food-stateful.service.spe
 ```typescript
 export class FoodServiceStateful {
   constructor(private httpClient: HttpClient) {}
-
-  private food: BehaviorSubject<FoodItem[]> = new BehaviorSubject<FoodItem[]>(
-    []
-  );
+  private food: BehaviorSubject<FoodItem[]> = new BehaviorSubject<FoodItem[]>([]);
 ```
 
-The stateful service is used in `stateful.component.ts`. The `StatefulComponent` is not formatted with Angular Material to keep the Test simpler.
+Notice how the methods manipulate the BehaviorSubject:
+
+```typescript
+getAllFood() {
+  if (this.food.value.length == 0) {
+    this.httpClient.get<FoodItem[]>(`${environment.api}food`)
+      .subscribe((data) => {this.food.next(data);});
+  }
+  return this.food.asObservable();
+}
+```
+
+Examine the tests in `food-stateful.service.spec.ts`.
