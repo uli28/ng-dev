@@ -1,14 +1,15 @@
-<div>
+<div fxLayout="column">
+  <button mat-raised-button (click)="addFood()">Add Food</button>
+
   <app-food-list
     [food]="food"
     (foodSelected)="selectFood($event)"
     (foodDeleted)="deleteFood($event)"
-    (foodAdding)="addFood($event)"
   ></app-food-list>
-
+  
   <app-food-edit
     *ngIf="selected"
     [food]="selected"
-    (saveFood)="foodSaved($event)"
+    (saveFood)="saveFood($event)"
   ></app-food-edit>
 </div>

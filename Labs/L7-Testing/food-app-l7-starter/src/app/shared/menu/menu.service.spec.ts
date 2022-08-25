@@ -1,3 +1,4 @@
+import { MenuItem } from './menu-item.model';
 import { MenuService } from './menu.service';
 
 describe('MenuService', () => {

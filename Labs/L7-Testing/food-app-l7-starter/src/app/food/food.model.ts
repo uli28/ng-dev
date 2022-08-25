@@ -1,6 +1,6 @@
 export class FoodItem {
-  id: number = 0;
-  name: string = "";
-  price: number = 0;
-  calories: number = 0;
+  id: number;
+  name: string;
+  price: number;
+  calories: number;
 }
