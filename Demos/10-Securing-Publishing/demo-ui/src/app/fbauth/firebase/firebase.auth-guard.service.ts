@@ -29,6 +29,7 @@ export class FBAuthGuard implements CanActivate, CanActivateChild {
       return true;
     } else {
       this.router.navigate(['/']);
+      return false;
     }
   }
 

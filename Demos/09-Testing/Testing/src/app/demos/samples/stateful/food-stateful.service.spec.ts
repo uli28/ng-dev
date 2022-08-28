@@ -13,7 +13,6 @@ import {
 } from '../foodService/food.mocks';
 import { FoodItem } from '../foodService/food.model';
 import { FoodServiceStateful } from './food-stateful.service';
-import { StatefulComponent } from './stateful.component';
 
 describe('Stateful Service', () => {
   let fs: FoodServiceStateful;
@@ -21,9 +20,8 @@ describe('Stateful Service', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [StatefulComponent],
       imports: [HttpClientTestingModule],
-      providers: [FoodServiceStateful],
+      providers: [FoodServiceStateful, HttpClientTestingModule],
     });
     fs = TestBed.inject(FoodServiceStateful);
     controller = TestBed.inject(HttpTestingController);
@@ -44,8 +42,7 @@ describe('Stateful Service', () => {
       });
 
     // test if a specific url has been called using GET
-    const url = `${environment.api}food`;
-    const req = controller.expectOne(url);
+    const req = controller.expectOne(`${environment.api}food`);
     expect(req.request.method).toEqual('GET');
     // flushing down mock data
     req.flush(foodLoadData);
@@ -53,23 +50,41 @@ describe('Stateful Service', () => {
 
   it('should create food in an array', () => {
     fs.addFood(foodAddItem as FoodItem);
-
     // test if a specific url has been called using POST
-    const url = `${environment.api}food`;
-    const req = controller.expectOne(url);
+    const req = controller.expectOne(`${environment.api}food`);
     expect(req.request.method).toEqual('POST');
+
     // flushing down mock data
     req.flush(foodAddedItem);
+
+    //test the expectation using subscibe
+    fs.getAllFood().subscribe((food) => {
+      expect(food.length).toBe(1);
+    });
   });
 
   it('should delete food in an array', () => {
-    fs.deleteFood(foodDeleteItem as FoodItem);
+    fs.getAllFood()
+      .pipe(skip(1))
+      .subscribe((data) => {
+        // several data tests
+        expect(data).toBeTruthy();
+        expect(data.length).toBe(4);
+      });
 
-    // test if a specific url has been called using POST
-    const url = `${environment.api}food/${foodDeleteItem.id}`;
-    const req = controller.expectOne(url);
-    expect(req.request.method).toEqual('DELETE');
+    // test if a specific url has been called using GET
+    const req = controller.expectOne(`${environment.api}food`);
+    expect(req.request.method).toEqual('GET');
     // flushing down mock data
-    req.flush(foodAddedItem);
+    req.flush(foodLoadData);
+
+    fs.deleteFood(foodDeleteItem);
+
+    const reqDelete = controller.expectOne(
+      `${environment.api}food/${foodDeleteItem.id}`
+    );
+    expect(reqDelete.request.method).toEqual('DELETE');
+    // flushing down mock data
+    reqDelete.flush(foodLoadData);
   });
 });
