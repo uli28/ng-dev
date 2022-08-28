@@ -24,10 +24,6 @@
     "title": "Standalone Component"
   },
   {
-    "url": "secondary",
-    "title": "Secondary Routes"
-  },
-  {
     "url": "component-less",
     "title": "Component Less"
   },

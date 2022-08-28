@@ -17,17 +17,14 @@ import { ParamMapComponent } from './samples/paramMap/param-map/param-map.compon
 import { PmChildComponent } from './samples/paramMap/pm-child/pm-child.component';
 import { PreloadComponent } from './samples/preload/preload.component';
 import { RouteGuardsComponent } from './samples/route-guards/route-guards.component';
-import { RouterAnimationsComponent } from './samples/router-animations/router-animations.component';
 import { RouterStateComponent } from './samples/router-state/router-state.component';
 import { RoutingBasicsComponent } from './samples/routing-basics/routing-basics.component';
-import { SecondaryRoutesComponent } from './samples/secondary-routes/secondary-routes.component';
 
 @NgModule({
   declarations: [
     DemoContainerComponent,
     RoutingBasicsComponent,
     ChildRoutesComponent,
-    SecondaryRoutesComponent,
     RouteGuardsComponent,
     PreloadComponent,
     ParamMapComponent,
@@ -35,7 +32,6 @@ import { SecondaryRoutesComponent } from './samples/secondary-routes/secondary-r
     ComponentLessComponent,
     LazyLoadingComponent,
     RouterStateComponent,
-    RouterAnimationsComponent,
   ],
   imports: [
     CommonModule,
