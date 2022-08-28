@@ -29,7 +29,7 @@ export class FoodServiceStateful {
     this.httpClient
       .delete<void>(`${environment.api}food/${item.id}`)
       .subscribe(() => {
-        let arr = this.food.value.filter((f) => f != item);
+        let arr = this.food.value.filter((f) => f.id != item.id);
         this.food.next(arr);
       });
   }
