@@ -54,15 +54,11 @@
   },
   { "url": "repeater", "title": "Repeater" },
   {
-    "url": "ng-template",
-    "title": "ng-template"
-  },
-  {
     "url": "projection",
     "title": "Content Projection"
   },
   {
-    "url": "viewchild",
-    "title": "View Child"
+    "url": "ng-template",
+    "title": "ng-template"
   }
 ]
