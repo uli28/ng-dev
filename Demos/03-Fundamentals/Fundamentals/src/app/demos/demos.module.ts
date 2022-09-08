@@ -32,8 +32,6 @@ import { PipesComponent } from './samples/pipes/pipes.component';
 import { RepeaterComponent } from './samples/repeater/repeater.component';
 import { StructDirectivesComponent } from './samples/struct-directives/struct-directives.component';
 import { TemplateComponent } from './samples/template/template.component';
-import { AlertComponent } from './samples/view-child/alert/alert.component';
-import { ViewChildComponent } from './samples/view-child/view-child.component';
 import { AttrBindingComponent } from './samples/attr-binding/attr-binding.component';
 import { DependencyInjectionComponent } from './samples/dependency-injection/dependency-injection.component';
 
@@ -58,7 +56,6 @@ const demoRoutes: Routes = [
       { path: 'custompipes', component: CustomPipesComponent },
       { path: 'localization', component: LocalizationComponent },
       { path: 'expressions', component: ExpressionsComponent },
-      { path: 'viewchild', component: ViewChildComponent },
       { path: 'ng-template', component: NgTemplateComponent },
       { path: 'di', component: DependencyInjectionComponent },
     ],
@@ -81,13 +78,11 @@ const demoRoutes: Routes = [
     CustomDirectivesComponent,
     LocalizationComponent,
     ExpressionsComponent,
-    ViewChildComponent,
     ToEuroPipe,
     EuroDirective,
     CheckPipe,
     PersonEditComponent,
     PersonsListComponent,
-    AlertComponent,
     uxButtonComponent,
     uxSplitComponent,
     SplitPopupComponent,
