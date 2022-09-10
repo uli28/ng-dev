@@ -10,7 +10,6 @@ import { SharedModule } from '../shared/shared.module';
 import { MarkdownEditorComponent } from './comments/markdown-editor/markdown-editor.component';
 import { DemoService } from './demo-base/demo.service';
 import { DemoContainerComponent } from './demo-container/demo-container.component';
-import { AsyncComponent } from './samples/async/async.component';
 import { CreatingObservableComponent } from './samples/creating-observables/creating-observable.component';
 import { EventBusComponent } from './samples/event-bus/event-bus.component';
 import { FlexLayoutApiComponent } from './samples/flex-layout-api/flex-layout-api.component';
@@ -22,6 +21,10 @@ import { SubjectsComponent } from './samples/subjects/subjects.component';
 import { UnsubscribingComponent } from './samples/unsubscribing/unsubscribing.component';
 import { StatefulVouchersComponent } from './samples/vouchers/stateful-vouchers/stateful-vouchers.component';
 import { FormControlsComponent } from './samples/form-controls/form-controls.component';
+import { SignPadComponent } from './samples/unsubscribing/sign-pad/sign-pad.component';
+import { ImperativeComponent } from './samples/imperative/imperative.component';
+import { AsyncPipeComponent } from './samples/async-pipe/async-pipe.component';
+import { ReifiedReactiveComponent } from './samples/reified-reactive/reified-reactive.component';
 
 const demoRoutes: Routes = [
   {
@@ -29,12 +32,14 @@ const demoRoutes: Routes = [
     component: DemoContainerComponent,
     children: [
       { path: 'subjects', component: SubjectsComponent },
+      { path: 'imperative', component: ImperativeComponent },
+      { path: 'reactive', component: ReifiedReactiveComponent },
       { path: 'creating', component: CreatingObservableComponent },
       { path: 'formcontrols', component: FormControlsComponent },
       { path: 'operators', component: OperatorsComponent },
       { path: 'flexlayoutapi', component: FlexLayoutApiComponent },
       { path: 'unsubscribe', component: UnsubscribingComponent },
-      { path: 'streams', component: AsyncComponent },
+      { path: 'streams', component: AsyncPipeComponent },
       { path: 'stateful', component: StatefulComponent },
       { path: 'eventbus', component: EventBusComponent },
       { path: 'search', component: DebouncedSearchComponent },
@@ -55,10 +60,13 @@ const demoRoutes: Routes = [
     StatefulComponent,
     EventBusComponent,
     MarkdownEditorComponent,
-    AsyncComponent,
+    AsyncPipeComponent,
     StatefulVouchersComponent,
     LoadingHostComponent,
     FormControlsComponent,
+    SignPadComponent,
+    ImperativeComponent,
+    ReifiedReactiveComponent,
   ],
   imports: [
     CommonModule,

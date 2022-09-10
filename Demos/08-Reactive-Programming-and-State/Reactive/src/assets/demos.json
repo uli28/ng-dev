@@ -12,8 +12,16 @@
     "title": "Unsubscribing"
   },
   {
+    "url": "imperative",
+    "title": "Imperative Programming"
+  },
+  {
     "url": "streams",
     "title": "Async Pipe"
+  },
+  {
+    "url": "reactive",
+    "title": "Reactive Programming"
   },
   {
     "url": "operators",
