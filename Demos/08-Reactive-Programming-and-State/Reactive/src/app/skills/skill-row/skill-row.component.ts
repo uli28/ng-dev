@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Skill } from '../skill.model';
 
 @Component({
@@ -8,13 +8,18 @@ import { Skill } from '../skill.model';
 })
 export class SkillRowComponent implements OnInit {
   @Input() skill: Skill;
-  @Output() editItem: EventEmitter<Skill> = new EventEmitter();
+  @Output() itemDeleted: EventEmitter<Skill> = new EventEmitter();
+  @Output() itemCompleted: EventEmitter<Skill> = new EventEmitter();
 
   constructor() {}
 
   ngOnInit(): void {}
 
-  edit(item: Skill): void {
-    this.editItem.emit(item);
+  deleteItem(item: Skill): void {
+    this.itemDeleted.emit(item);
+  }
+
+  toggleItemCompleted(item: Skill): void {
+    this.itemCompleted.emit(item);
   }
 }

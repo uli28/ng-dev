@@ -1,21 +1,53 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { SkillsRoutingModule } from './skills-routing.module';
+import { NgModule } from '@angular/core';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { ReactiveFormsModule } from '@angular/forms';
+import {
+  EntityDataService,
+  EntityDefinitionService,
+  HttpUrlGenerator,
+} from '@ngrx/data';
 import { MaterialModule } from '../material.module';
-import { SkillsListComponent } from './skills-list/skills-list.component';
+import { CustomurlHttpGenerator } from './custom-url-generator';
 import { SkillRowComponent } from './skill-row/skill-row.component';
-import { SkillsEditComponent } from './skills-edit/skills-edit.component';
+import { SkillsContainerComponent } from './skills-container/skills-container.component';
+import { SkillsDataService } from './skills-data.service';
+import { SkillsEntityService } from './skills-entity.service';
+import { SkillsKpiComponent } from './skills-kpi/skills-kpi.component';
+import { entityMetadata } from './skills.metadata';
+import { SkillsRoutingModule } from './skills.routing.module';
 
 @NgModule({
-  declarations: [SkillsListComponent, SkillRowComponent, SkillsEditComponent],
+  declarations: [
+    SkillsContainerComponent,
+    SkillsKpiComponent,
+    SkillRowComponent,
+  ],
   imports: [
-    MaterialModule,
     CommonModule,
-    FormsModule,
-    HttpClientModule,
     SkillsRoutingModule,
+    MaterialModule,
+    FlexLayoutModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+  ],
+  providers: [
+    SkillsEntityService,
+    SkillsDataService,
+    {
+      provide: HttpUrlGenerator,
+      useClass: CustomurlHttpGenerator,
+    },
   ],
 })
-export class SkillsModule {}
+export class SkillsModule {
+  constructor(
+    entityDefinitionService: EntityDefinitionService,
+    entityDataService: EntityDataService,
+    skillsDataService: SkillsDataService
+  ) {
+    entityDefinitionService.registerMetadataMap(entityMetadata);
+    entityDataService.registerService('Skill', skillsDataService);
+  }
+}

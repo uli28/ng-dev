@@ -40,5 +40,6 @@
     "title": "Stateful Service"
   },
   { "url": "eventbus", "title": "Event Bus" },
-  { "url": "loading", "title": "Loading Indicator" }
+  { "url": "loading", "title": "Loading Indicator" },
+  { "url": "ngrx-data", "title": "@ngrx-data Showcase" }
 ]
