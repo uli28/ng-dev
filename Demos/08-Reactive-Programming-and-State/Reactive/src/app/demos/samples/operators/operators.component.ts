@@ -8,7 +8,17 @@ import {
   Subscription,
   throwError,
 } from 'rxjs';
-import { catchError, delay, finalize, map, take, tap } from 'rxjs/operators';
+import {
+  catchError,
+  combineLatestWith,
+  delay,
+  filter,
+  finalize,
+  find,
+  map,
+  take,
+  tap,
+} from 'rxjs/operators';
 import { Voucher } from '../vouchers/voucher.model';
 import { VouchersService } from '../vouchers/voucher.service';
 import { DoublerService } from './doubler.service';
@@ -27,7 +37,6 @@ export class OperatorsComponent implements OnInit {
 
   ngOnInit() {}
 
-  unsbscribe = () => (this.sub != null ? this.sub.unsubscribe() : null);
   setLabel = (v: Voucher) => ({ ...v, Label: `${v.Text} costs € ${v.Amount}` });
 
   log = (msg: string, data: any) => {
@@ -81,17 +90,32 @@ export class OperatorsComponent implements OnInit {
   }
 
   useFind() {
+    // ES6 array.find() because stream is one marble containing an array
     this.vs
       .getVouchers()
       .pipe(map((arr) => arr.find((v: Voucher) => v.ID == 3)))
       .subscribe((data) => this.log('getByID - using find()', data));
+
+    // RxJS find operator because array is converted of steam emmitting each item as a marble using from
+    let arr = from([{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }]);
+    arr.pipe(find((x) => x.id == 3)).subscribe((x) => console.log(x));
   }
 
   useFilter() {
+    // ES6 array.filter() because stream is one marble containing an array
     this.vs
       .getVouchers()
       .pipe(map((arr) => arr.filter((v: Voucher) => v.Paid)))
       .subscribe((data) => this.log('useFilter', data));
+
+    // RxJS filter operator because array is converted of steam emmitting each item as a marble using from
+    let arr = from([
+      { id: 1, disabled: true },
+      { id: 2, disabled: false },
+      { id: 3, disabled: false },
+      { id: 4, disabled: true },
+    ]);
+    arr.pipe(filter((x) => x.disabled)).subscribe((x) => console.log(x));
   }
 
   // Compare the two outputs
@@ -119,6 +143,23 @@ export class OperatorsComponent implements OnInit {
     const response2 = this.ds.double(9);
     const response3 = this.ds.double(2);
     return forkJoin([response1, response2, response3]);
+  }
+
+  useSwitchmap() {}
+
+  useCombineLatestWith() {
+    this.vs
+      .getVouchers()
+      .pipe(
+        // Mocking a filter emmitting "BP Tankstelle"
+        combineLatestWith(of('BP Tankstelle')),
+        map(([vouchers, filter]) => {
+          return filter == ''
+            ? vouchers
+            : vouchers.filter((v: Voucher) => v.Text.includes(filter));
+        })
+      )
+      .subscribe((data) => this.log('useCombineLatestWith', data));
   }
 
   useForkJoin() {

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { MatTableDataSource } from '@angular/material/table';
+import { combineLatestWith, map, startWith, tap } from 'rxjs';
 import { StatefulVoucherService } from '../stateful-voucher.service';
 import { Voucher } from '../voucher.model';
 
@@ -10,22 +11,38 @@ import { Voucher } from '../voucher.model';
   styleUrls: ['./stateful-vouchers.component.scss'],
 })
 export class StatefulVouchersComponent implements OnInit {
-  filter = new FormControl<string>('');
+  filter$ = new FormControl<string>('', { nonNullable: true });
   dataSource: MatTableDataSource<Voucher>;
   displayedColumns = ['ID', 'Text', 'Date', 'Amount', 'deleteItem'];
 
   constructor(private vs: StatefulVoucherService) {}
 
   ngOnInit() {
-    this.vs.getAllVouchers().subscribe((data) => {
-      this.dataSource = new MatTableDataSource(data);
-    });
+    this.vs
+      .getAllVouchers()
+      .pipe(
+        // initialization: startWith('') will emit an empty string to the stream
+        combineLatestWith(this.filter$.valueChanges.pipe(startWith(''))),
+        map(([vouchers, filter]) => {
+          return filter == ''
+            ? vouchers
+            : vouchers.filter((v) => v.Text.includes(filter));
+        })
+      )
+      .subscribe(
+        (vouchers) => (this.dataSource = new MatTableDataSource(vouchers))
+      );
 
-    this.filter.valueChanges.subscribe((filterValue) => {
-      if (filterValue) {
-        this.dataSource.filter = filterValue.trim().toLowerCase();
-      }
-    });
+    // Imperative approach
+    // this.vs.getAllVouchers().subscribe((data) => {
+    //   this.dataSource = new MatTableDataSource(data);
+    // });
+
+    // this.filter.valueChanges.subscribe((filterValue) => {
+    //   if (filterValue) {
+    //     this.dataSource.filter = filterValue.trim().toLowerCase();
+    //   }
+    // });
   }
 
   editItem(row: any) {

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { UntypedFormControl } from '@angular/forms';
+import { FormControl } from '@angular/forms';
 import { debounceTime } from 'rxjs/operators';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-debounced-search',
@@ -10,11 +11,19 @@ import { debounceTime } from 'rxjs/operators';
 export class DebouncedSearchComponent implements OnInit {
   constructor() {}
 
-  searchterm: UntypedFormControl = new UntypedFormControl('');
+  subsSearchterms: Subscription;
+
+  searchterm = new FormControl<string | null>('');
 
   ngOnInit() {
-    this.searchterm.valueChanges.pipe(debounceTime(750)).subscribe((val) => {
-      console.log('Currently your searching debounced for:', val);
-    });
+    this.subsSearchterms = this.searchterm.valueChanges
+      .pipe(debounceTime(750))
+      .subscribe((val) => {
+        console.log('Currently your searching debounced for:', val);
+      });
+  }
+
+  ngOnDestroy() {
+    this.subsSearchterms.unsubscribe();
   }
 }
