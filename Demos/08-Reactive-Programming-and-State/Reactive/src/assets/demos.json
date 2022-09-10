@@ -4,8 +4,16 @@
     "title": "Creating Observables"
   },
   {
+    "url": "formcontrols",
+    "title": "Form Controls"
+  },
+  {
     "url": "unsubscribe",
     "title": "Unsubscribing"
+  },
+  {
+    "url": "streams",
+    "title": "Async Pipe"
   },
   {
     "url": "operators",
@@ -14,10 +22,6 @@
   {
     "url": "flexlayoutapi",
     "title": "Flex Layout Api"
-  },
-  {
-    "url": "streams",
-    "title": "Async Pipe"
   },
   {
     "url": "subjects",

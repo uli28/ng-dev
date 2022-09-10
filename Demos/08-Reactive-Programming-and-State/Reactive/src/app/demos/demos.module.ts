@@ -21,6 +21,7 @@ import { StatefulComponent } from './samples/stateful/stateful.component';
 import { SubjectsComponent } from './samples/subjects/subjects.component';
 import { UnsubscribingComponent } from './samples/unsubscribing/unsubscribing.component';
 import { StatefulVouchersComponent } from './samples/vouchers/stateful-vouchers/stateful-vouchers.component';
+import { FormControlsComponent } from './samples/form-controls/form-controls.component';
 
 const demoRoutes: Routes = [
   {
@@ -29,6 +30,7 @@ const demoRoutes: Routes = [
     children: [
       { path: 'subjects', component: SubjectsComponent },
       { path: 'creating', component: CreatingObservableComponent },
+      { path: 'formcontrols', component: FormControlsComponent },
       { path: 'operators', component: OperatorsComponent },
       { path: 'flexlayoutapi', component: FlexLayoutApiComponent },
       { path: 'unsubscribe', component: UnsubscribingComponent },
@@ -56,6 +58,7 @@ const demoRoutes: Routes = [
     AsyncComponent,
     StatefulVouchersComponent,
     LoadingHostComponent,
+    FormControlsComponent,
   ],
   imports: [
     CommonModule,
