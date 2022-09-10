@@ -25,6 +25,7 @@ import { SignPadComponent } from './samples/unsubscribing/sign-pad/sign-pad.comp
 import { ImperativeComponent } from './samples/imperative/imperative.component';
 import { AsyncPipeComponent } from './samples/async-pipe/async-pipe.component';
 import { ReifiedReactiveComponent } from './samples/reified-reactive/reified-reactive.component';
+import { NgrxDataComponent } from './samples/ngrx-data/ngrx-data.component';
 
 const demoRoutes: Routes = [
   {
@@ -44,6 +45,7 @@ const demoRoutes: Routes = [
       { path: 'eventbus', component: EventBusComponent },
       { path: 'search', component: DebouncedSearchComponent },
       { path: 'loading', component: LoadingHostComponent },
+      { path: 'ngrx-data', component: NgrxDataComponent },
     ],
   },
 ];
@@ -67,6 +69,7 @@ const demoRoutes: Routes = [
     SignPadComponent,
     ImperativeComponent,
     ReifiedReactiveComponent,
+    NgrxDataComponent,
   ],
   imports: [
     CommonModule,

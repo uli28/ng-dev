@@ -1,6 +1,5 @@
-export class Skill {
+export interface Skill {
   id: number;
-  name: string = '';
-  hours: number = 0;
+  name: string;
   completed: boolean;
 }
