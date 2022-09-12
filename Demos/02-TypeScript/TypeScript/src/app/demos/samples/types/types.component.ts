@@ -17,8 +17,10 @@ export class TypesComponent implements OnInit {
 
     // Numbers
     const age: number = 50;
+
     const weight = 83.12;
     // weight = 11; //re-assignment to const
+
     let dogWeight = 25.4;
     // dogWeight = "heavy"; //string assignment to number
     const rand = Math.random();

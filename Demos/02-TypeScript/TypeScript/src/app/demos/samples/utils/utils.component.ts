@@ -49,7 +49,7 @@ export class UtilsComponent implements OnInit {
     // declaration using generic array type
     const nbrs: Array<number> = [3, 4, 5];
 
-    console.log(customers.length + 'Persons in Array');
+    console.log(customers.length + ' Persons in Array');
     customers[2] = 'Brunhilde';
     console.log('Person with index 1 is' + customers[1]);
 
@@ -58,6 +58,7 @@ export class UtilsComponent implements OnInit {
 
     for (const i in list) {
       console.log(i); // "0", "1", "2", -> for ... in loop returns index
+      console.log('item:', list[i]); // "a", "b", "c"
     }
 
     for (const i of list) {
@@ -68,6 +69,9 @@ export class UtilsComponent implements OnInit {
     const arrNbr = [8, 4, 100, -5, 20];
     const [first, second, third] = arrNbr;
     console.log(third, second, first); // output: 100, 4, 8
+
+    const arrClone = [...arrNbr]; // clone array
+    const arrCloneAssign = Object.assign([], arrNbr); // clone array
   }
 
   arrayHelpers() {
@@ -94,8 +98,6 @@ export class UtilsComponent implements OnInit {
       { name: 'bananas', quantity: 0, price: 5, region: 'caribean' },
       { name: 'cherries', quantity: 5, price: 8, region: 'europe' },
     ]; // -> Json Objects from REST call
-
-    var mystate: 'born' | 'died';
 
     // forEach
     fruits.forEach(function (fruit) {
