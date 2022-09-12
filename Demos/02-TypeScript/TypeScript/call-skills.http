@@ -9,7 +9,18 @@ Accept: application/json
 Content-Type: application/json
 
 ### Simple Post
+# @name postedSkill
 POST http://localhost:3000/skills HTTP/1.1
+content-type: application/json
+
+{
+      "name": "Cooking Butter Chicken",
+      "hours": 1,
+      "completed": false
+}
+
+### Delete
+DELETE  http://localhost:3000/skills/{@postedSkill.response.id} HTTP/1.1
 content-type: application/json
 
 {

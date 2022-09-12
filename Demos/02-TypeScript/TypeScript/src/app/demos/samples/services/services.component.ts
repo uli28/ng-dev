@@ -15,9 +15,11 @@ export class ServicesComponent {
   skillsapi = 'http://localhost:3000/skills';
   skills: Skill[];
 
+  // direct data access in components is an antipattern
   constructor(private skillsService: SkillsService, private http: HttpClient) {}
 
   usingFetch() {
+    //using fetch in angular is an antipattern
     fetch(this.skillsapi)
       .then((resp: Response) => {
         console.log('Response received from fetch', resp);
@@ -92,9 +94,9 @@ export class ServicesComponent {
   }
 
   consumeService() {
-    // just to show the observable
-    let obs = this.skillsService.getSkills().subscribe();
-    console.log('skills obs: ', obs);
+    // just to show the subscription
+    let subscription = this.skillsService.getSkills().subscribe();
+    console.log('skills obs: ', subscription);
 
     // assign to prop in component for use in template
     // subscribe return the native type that was wrapped in the observable
