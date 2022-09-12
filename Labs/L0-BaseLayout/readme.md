@@ -56,7 +56,7 @@ cd food-app-l0
 }
 ```
 
-Delete the default content of `app.component.ts` and start the dev server:
+Delete the default content of `app.component.html` and start the dev server:
 
 ```
 ng s -o
