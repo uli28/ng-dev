@@ -29,6 +29,7 @@ export class ClassesComponent implements OnInit {
     }
 
     const v: Voucher = new Voucher(); // v: {}
+
     if (v.ID != null) {
       console.log(v.ID); // -> undefined err
     }
@@ -47,6 +48,7 @@ export class ClassesComponent implements OnInit {
       Amount: 22,
       Date: new Date(),
     };
+
     vouchers.push(voucherA);
 
     const voucherB: Voucher = {
@@ -85,6 +87,7 @@ export class ClassesComponent implements OnInit {
     console.log(jim.status);
 
     class Dog {
+      //private or public creats prop implicitly
       constructor(private name: string, public breed: string) {}
 
       barkName() {

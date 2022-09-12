@@ -32,7 +32,7 @@ export class FunctionsComponent implements OnInit {
     console.log(buildName('Bob'));
     console.log(buildName('Giro', 'Galgohead'));
 
-    // default param
+    // default param value
     function getAddress(street: string, city = 'Vienna') {
       return `${street}, ${city}`;
     }
@@ -53,6 +53,7 @@ export class FunctionsComponent implements OnInit {
 
   returnValue() {
     function twoReturns(choice: boolean): string[] | null {
+      // if ? then : else -> ternary operator
       return choice ? ['abc', 'cde'] : null;
     }
 
@@ -66,13 +67,14 @@ export class FunctionsComponent implements OnInit {
 
     // when using types you have to write brackets
     // method body & return can be omitted if single line statement
-    const rectangleFunctionArrow = (width: number, height: number) =>
+    const rectangleFunctionArrow = (width: number, height: number): number =>
       height * width;
 
     const result: number = rectangleFunctionArrow(10, 22);
     console.log(result);
 
     // not using types
+    const doubleArrow = (height) => 2 * height;
     const doDouble = (nbr) => nbr * 2;
   }
 

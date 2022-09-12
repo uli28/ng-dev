@@ -56,7 +56,7 @@ cd food-app-l0
 }
 ```
 
-Delete the default content of `app.component.ts` and start the dev server:
+Delete the default content of `app.component.html` and start the dev server:
 
 ```
 ng s -o
@@ -137,6 +137,15 @@ Add the menu service:
 
 ```
 ng g s shared/navbar/navbar
+```
+
+In shared/navbar/ create a nav-item.model.ts and add the following content to it:
+
+```
+export class NavItem {
+  title: string = "";
+  url: string = "";
+}
 ```
 
 Add `assets/menu-items.json`:

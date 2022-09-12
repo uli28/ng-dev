@@ -59,8 +59,8 @@ export class ObjectsComponent implements OnInit {
     let fullPerson = { firstName: 'John', name: 'Doe', age: 17, children: 5 };
 
     //antipattern
-    let first = fullPerson.firstName;
-    let alter = fullPerson.age;
+    // let first = fullPerson.firstName;
+    // let alter = fullPerson.age;
 
     //destructuring
     let { firstName, age } = fullPerson;
@@ -82,7 +82,9 @@ export class ObjectsComponent implements OnInit {
 
     myNumber = 500;
     person.Name = 'Alexander';
-    passArgs(myNumber, Object.assign({}, person));
+
+    let copy = Object.assign({}, person);
+    passArgs(myNumber, copy);
     console.log(
       'result for myNumber & person using Object.assign():',
       myNumber,
