@@ -139,6 +139,15 @@ Add the menu service:
 ng g s shared/navbar/navbar
 ```
 
+In shared/navbar/ create a nav-item.model.ts and add the following content to it:
+
+```
+export class NavItem {
+  title: string = "";
+  url: string = "";
+}
+```
+
 Add `assets/menu-items.json`:
 
 ```json
