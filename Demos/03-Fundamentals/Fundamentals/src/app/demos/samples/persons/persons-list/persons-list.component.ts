@@ -1,4 +1,11 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnInit,
+  Output,
+  SimpleChanges,
+} from '@angular/core';
 import { Person } from '../person.model';
 
 @Component({
@@ -13,6 +20,12 @@ export class PersonsListComponent implements OnInit {
   @Output() personSelected = new EventEmitter<Person>();
 
   ngOnInit() {}
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['persons']) {
+      console.log('receiving new persons:', changes['persons'].currentValue);
+    }
+  }
 
   selectPerson(p: Person) {
     this.personSelected.emit(p);
