@@ -7,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TemplateComponent implements OnInit {
   title = 'About Templated Components';
-  theValue = 'Hello World';
+  theValue = 100;
 
   constructor() {}
 
   ngOnInit() {}
+
+  doDouble() {
+    return this.theValue * 2;
+  }
 }

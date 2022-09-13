@@ -1,5 +1,6 @@
 <mat-card>
   <mat-card-header>
+    <!-- interpolation -->
     <mat-card-title>{{ title }}</mat-card-title>
   </mat-card-header>
 
@@ -14,8 +15,8 @@
 <mat-card>
   <mat-card-content>
     I am using Interpolation to transfer a value from the *.ts file to the template:
-
-    {{theValue}}
+    <!-- interpolation: can use props or methods -->
+    {{theValue}} * 2 = {{doDouble()}}
   </mat-card-content>
 </mat-card>
 

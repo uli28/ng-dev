@@ -1,9 +1,9 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'toEuro',
+  name: 'euro',
 })
-export class ToEuroPipe implements PipeTransform {
+export class EuroPipe implements PipeTransform {
   transform(value: number, args?: any): any {
     let result = `${value} €`;
     return result;

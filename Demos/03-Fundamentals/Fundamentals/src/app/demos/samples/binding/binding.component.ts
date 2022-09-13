@@ -20,13 +20,15 @@ export class BindingComponent implements OnInit {
 
   ngOnInit() {
     this.ps.getPersons().subscribe((data) => {
-      this.persons = data;
-      if (this.persons) {
+      if (data) {
+        this.persons = data;
         this.selectedPerson = this.persons[0];
       }
     });
 
-    of({ name: 'Heidi', age: 13, gender: 'female' } as Person)
+    let p: Person = { id: 17, name: 'Heidi', age: 13, gender: 'female' };
+    //convert person to observable using of operator
+    of(p)
       .pipe(delay(4000))
       .subscribe((data) => {
         this.latePerson = data;

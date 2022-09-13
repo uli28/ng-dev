@@ -19,7 +19,6 @@ import { CustomDirectivesComponent } from './samples/custom-directives/custom-di
 import { EuroDirective } from './samples/custom-directives/euro.directive';
 import { CheckPipe } from './samples/custom-pipes/check.pipe';
 import { CustomPipesComponent } from './samples/custom-pipes/custom-pipes.component';
-import { ToEuroPipe } from './samples/custom-pipes/to-euro.pipe';
 import { DirectivesComponent } from './samples/directives/directives.component';
 import { ExpressionsComponent } from './samples/expressions/expressions.component';
 import { InlineComponent } from './samples/inline/inline.component';
@@ -34,6 +33,7 @@ import { StructDirectivesComponent } from './samples/struct-directives/struct-di
 import { TemplateComponent } from './samples/template/template.component';
 import { AttrBindingComponent } from './samples/attr-binding/attr-binding.component';
 import { DependencyInjectionComponent } from './samples/dependency-injection/dependency-injection.component';
+import { EuroPipe } from './samples/custom-pipes/euro.pipe';
 
 const demoRoutes: Routes = [
   {
@@ -78,7 +78,7 @@ const demoRoutes: Routes = [
     CustomDirectivesComponent,
     LocalizationComponent,
     ExpressionsComponent,
-    ToEuroPipe,
+    EuroPipe,
     EuroDirective,
     CheckPipe,
     PersonEditComponent,
