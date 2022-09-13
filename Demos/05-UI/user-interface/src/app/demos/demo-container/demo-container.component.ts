@@ -17,7 +17,7 @@ import { LoadingService } from '../../shared/loading/loading.service';
 export class DemoContainerComponent implements OnInit {
   title: string = environment.title;
   header = 'Please select a demo';
-  demos$: Observable<DemoItem[]>;
+  demos$: Observable<DemoItem[]> | null = null;
   sidenavMode: MatDrawerMode = 'side';
   isLoading = true;
 

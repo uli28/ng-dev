@@ -13,10 +13,10 @@ import { SnackbarService } from '../snackbar/snackbar.service';
 export class NavbarComponent implements OnInit {
   constructor(private ms: MenuService, private sns: SnackbarService) {}
 
-  editorDisplayed: boolean;
+  editorDisplayed: boolean = false;
   hamburgerVisible = true;
-  rootRoutes: Route[];
-  menuItems: Observable<MenuItem[]>;
+  rootRoutes: Route[] = [];
+  menuItems: Observable<MenuItem[]> | null = null;
 
   ngOnInit() {
     this.editorDisplayed = false;

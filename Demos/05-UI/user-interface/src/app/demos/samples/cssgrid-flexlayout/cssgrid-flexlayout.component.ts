@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class CssgridFlexlayoutComponent implements OnInit {
   constructor() {}
 
-  useFlexLayout: boolean;
+  useFlexLayout: boolean = false;
 
   ngOnInit() {}
 }
