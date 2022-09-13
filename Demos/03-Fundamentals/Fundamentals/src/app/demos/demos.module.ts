@@ -34,6 +34,7 @@ import { TemplateComponent } from './samples/template/template.component';
 import { AttrBindingComponent } from './samples/attr-binding/attr-binding.component';
 import { DependencyInjectionComponent } from './samples/dependency-injection/dependency-injection.component';
 import { EuroPipe } from './samples/custom-pipes/euro.pipe';
+import { EditableDirective } from './samples/custom-directives/editable.directive';
 
 const demoRoutes: Routes = [
   {
@@ -90,6 +91,7 @@ const demoRoutes: Routes = [
     NgTemplateComponent,
     AttrBindingComponent,
     DependencyInjectionComponent,
+    EditableDirective,
   ],
   imports: [
     CommonModule,
