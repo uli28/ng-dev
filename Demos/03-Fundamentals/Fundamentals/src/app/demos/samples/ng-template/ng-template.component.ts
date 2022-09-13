@@ -11,7 +11,7 @@ import { delay } from 'rxjs/operators';
 export class NgTemplateComponent implements OnInit {
   constructor(private ps: PersonService) {}
 
-  persons: Person[];
+  persons: Person[] = [];
 
   ngOnInit(): void {
     this.ps

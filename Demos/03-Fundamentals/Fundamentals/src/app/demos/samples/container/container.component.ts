@@ -10,8 +10,8 @@ import { Person } from '../persons/person.model';
 export class ContainerComponent implements OnInit {
   constructor(private ps: PersonService) {}
 
-  persons: Person[];
-  current: Person;
+  persons: Person[] = [];
+  current: Person | null = null;
 
   ngOnInit() {
     this.ps.getPersons().subscribe((data) => {

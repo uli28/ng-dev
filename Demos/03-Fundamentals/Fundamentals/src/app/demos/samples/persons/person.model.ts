@@ -1,8 +1,8 @@
 export class Person {
-  id: number;
-  age: number;
-  name: string;
-  gender: string;
+  id: number = 0;
+  age: number = 0;
+  name: string = '';
+  gender: string = '';
   married?: boolean;
   imgUrl?: string;
 }

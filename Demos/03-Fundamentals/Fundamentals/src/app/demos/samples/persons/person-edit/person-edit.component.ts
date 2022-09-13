@@ -15,8 +15,8 @@ import { Person } from '../person.model';
   styleUrls: ['./person-edit.component.scss'],
 })
 export class PersonEditComponent implements OnInit, OnChanges {
-  @Input() person: Person;
-  @Input() editMode: boolean;
+  @Input() person: Person = new Person();
+  @Input() editMode: boolean = false;
   @Output() savePerson: EventEmitter<Person> = new EventEmitter<Person>();
 
   constructor() {}

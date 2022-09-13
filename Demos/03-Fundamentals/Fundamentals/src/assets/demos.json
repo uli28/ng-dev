@@ -45,14 +45,14 @@
     "title": "Custom Pipes"
   },
   {
+    "url": "container",
+    "title": "Container Presenter"
+  },
+  { "url": "repeater", "title": "Repeater with local ref" },
+  {
     "url": "lifecycle",
     "title": "Component Lifecycle"
   },
-  {
-    "url": "container",
-    "title": "Container Component"
-  },
-  { "url": "repeater", "title": "Repeater" },
   {
     "url": "projection",
     "title": "Content Projection"

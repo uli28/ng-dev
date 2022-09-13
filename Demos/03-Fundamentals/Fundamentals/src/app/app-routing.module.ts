@@ -10,17 +10,17 @@ const routes: Routes = [
     component: HomeComponent,
   },
   {
+    path: 'demos',
+    loadChildren: () =>
+      import('./demos/demos.module').then((m) => m.DemosModule),
+  },
+  {
     path: 'skills',
     component: SkillsListComponent,
   },
   {
     path: 'skills/:id',
     component: SkillsEditComponent,
-  },
-  {
-    path: 'demos',
-    loadChildren: () =>
-      import('./demos/demos.module').then((m) => m.DemosModule),
   },
 ];
 

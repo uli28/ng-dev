@@ -9,11 +9,9 @@ import { SnackbarService } from '../snackbar/snackbar.service';
 export class SidePanelComponent implements OnInit {
   constructor(private sns: SnackbarService) {}
 
-  editorDisplayed: boolean;
+  editorDisplayed: boolean = false;
 
-  ngOnInit() {
-    this.editorDisplayed = false;
-  }
+  ngOnInit() {}
 
   toggleEditor() {
     this.sns.displayAlert('Info', 'Not implemented - just a Demo');

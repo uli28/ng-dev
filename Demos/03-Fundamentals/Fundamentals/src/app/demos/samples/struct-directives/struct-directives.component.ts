@@ -13,7 +13,7 @@ export class StructDirectivesComponent implements OnInit {
   persons = [{ name: 'Heinz' }, { name: 'Brunhilde' }, { name: 'Susi' }];
   selectedPerson: string = this.persons[0].name;
 
-  vouchers: Voucher[];
+  vouchers: Voucher[] = [];
 
   showTextOne = true;
 
