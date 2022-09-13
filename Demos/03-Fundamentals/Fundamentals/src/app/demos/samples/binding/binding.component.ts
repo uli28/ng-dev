@@ -13,9 +13,9 @@ export class BindingComponent implements OnInit {
   constructor(private ps: PersonService) {}
 
   hide = false;
-  persons: Person[];
+  persons: Person[] = [];
   selectedPerson: Person = { id: 0, name: '', age: 0, gender: '' };
-  latePerson: Person;
+  latePerson: Person | null = null;
   isActive: boolean = false;
 
   ngOnInit() {

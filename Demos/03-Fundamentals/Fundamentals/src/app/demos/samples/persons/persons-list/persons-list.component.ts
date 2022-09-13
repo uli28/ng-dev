@@ -16,7 +16,7 @@ import { Person } from '../person.model';
 export class PersonsListComponent implements OnInit {
   constructor() {}
 
-  @Input() persons: Person[];
+  @Input() persons: Person[] = [];
   @Output() personSelected = new EventEmitter<Person>();
 
   ngOnInit() {}

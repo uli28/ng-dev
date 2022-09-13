@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./custom-directives.component.scss'],
 })
 export class CustomDirectivesComponent {
-  price: number;
+  price: number = 0;
 
   constructor() {}
 }

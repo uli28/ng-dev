@@ -10,9 +10,9 @@ import { VouchersService } from '../vouchers/voucher.service';
 export class CustomPipesComponent implements OnInit {
   isChecked = false;
   price = 12.33;
-  vouchers: Voucher[];
+  vouchers: Voucher[] = [];
 
-  currentFilter: string;
+  currentFilter: string = '';
 
   constructor(private vs: VouchersService) {}
 

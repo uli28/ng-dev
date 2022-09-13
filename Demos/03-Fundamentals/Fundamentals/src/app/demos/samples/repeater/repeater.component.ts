@@ -8,7 +8,7 @@ import { PersonService } from '../persons/person.service';
   styleUrls: ['./repeater.component.scss'],
 })
 export class RepeaterComponent implements OnInit {
-  persons: Person[];
+  persons: Person[] = [];
 
   constructor(private ps: PersonService) {}
 
