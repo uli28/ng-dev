@@ -9,7 +9,7 @@ import { Voucher } from '../vouchers/vouchers.model';
   styleUrls: ['./material-table.component.scss'],
 })
 export class MaterialTableComponent implements OnInit {
-  dataSource: MatTableDataSource<Voucher>;
+  dataSource: MatTableDataSource<Voucher> = new MatTableDataSource<Voucher>([]);
   displayedColumns = ['Text', 'Date', 'Amount', 'action'];
 
   constructor(private http: HttpClient) {}
@@ -24,7 +24,9 @@ export class MaterialTableComponent implements OnInit {
     let filterVal = (event.target as HTMLInputElement).value
       .trim()
       .toLowerCase();
-    this.dataSource.filter = filterVal;
+    if (this.dataSource) {
+      this.dataSource.filter = filterVal;
+    }
   }
 
   editItem(row: any) {

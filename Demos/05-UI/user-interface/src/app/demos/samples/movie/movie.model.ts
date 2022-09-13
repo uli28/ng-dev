@@ -1,7 +1,6 @@
-
-export class Movie{    
-    title: string
-    startTime: Date
-    img: string
-    url: string
+export class Movie {
+  title: string = '';
+  startTime: Date = new Date();
+  img: string = '';
+  url: string = '';
 }

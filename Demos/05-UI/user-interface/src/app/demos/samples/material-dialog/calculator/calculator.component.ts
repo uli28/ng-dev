@@ -14,7 +14,7 @@ export class CalculatorComponent {
   currencies: string[] = [];
   selectedCurrency = 'THB';
   rate: number | undefined;
-  converted: number;
+  converted: number = 0;
   fcAmount = new UntypedFormControl(this.data.amount);
 
   constructor(

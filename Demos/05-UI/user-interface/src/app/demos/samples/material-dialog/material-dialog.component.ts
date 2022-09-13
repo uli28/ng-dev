@@ -11,9 +11,9 @@ export class MaterialDialogComponent implements OnInit {
   ngOnInit(): void {}
 
   amount: number = 100;
-  name: string;
+  name: string = '';
   calculated: boolean = false;
-  msg: string;
+  msg: string = '';
 
   constructor(public dialog: MatDialog) {}
 

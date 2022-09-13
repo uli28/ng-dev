@@ -8,7 +8,7 @@ import { Person } from '../persons/person.model';
   styleUrls: ['./flex-layout.component.scss'],
 })
 export class FlexLayoutComponent implements OnInit {
-  persons: Person[];
+  persons: Person[] = [];
   current: Person = new Person();
 
   constructor(private ps: PersonService) {}

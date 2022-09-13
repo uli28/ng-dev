@@ -8,7 +8,7 @@ import { Movie } from '../movie/movie.model';
   styleUrls: ['./flexbox.component.scss'],
 })
 export class FlexboxComponent implements OnInit {
-  movies: Movie[];
+  movies: Movie[] = [];
   currclass = 'flex-container';
 
   constructor(private ms: MovieService) {}

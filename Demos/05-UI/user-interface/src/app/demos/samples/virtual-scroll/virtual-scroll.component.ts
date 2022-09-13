@@ -14,5 +14,5 @@ export class VirtualScrollComponent implements OnInit {
   ngOnInit() {}
 
   @ViewChild(CdkVirtualScrollViewport, { static: true })
-  viewport: CdkVirtualScrollViewport;
+  viewport: CdkVirtualScrollViewport | null = null;
 }
