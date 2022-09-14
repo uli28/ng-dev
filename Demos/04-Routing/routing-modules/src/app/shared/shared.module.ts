@@ -26,8 +26,8 @@ const mods = [
     FormsModule,
     RouterModule,
     HttpClientModule,
-    // MaterialModule,
-    // FlexLayoutModule,
+    MaterialModule,
+    FlexLayoutModule,
     MarkdownModule.forRoot({
       loader: HttpClient,
     }),

@@ -9,8 +9,8 @@ import { ActivatedRoute } from '@angular/router';
 export class PmChildComponent implements OnInit {
   constructor(private route: ActivatedRoute) {}
 
-  id: number;
-  readonly: boolean;
+  id: number = 0;
+  readonly: boolean = false;
 
   ngOnInit() {
     this.useSnapShot();
@@ -25,7 +25,6 @@ export class PmChildComponent implements OnInit {
   useParamMap() {
     this.route.paramMap.subscribe((params) => {
       console.log('paramMap:', params);
-      this.id = +params.get('id');
     });
 
     this.route.queryParamMap.subscribe((qpm) => {

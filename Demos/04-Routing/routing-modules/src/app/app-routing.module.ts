@@ -2,8 +2,6 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.component';
-import { EditorComponent } from './shared/editor/editor.component';
-import { UploaderComponent } from './shared/uploader/uploader.component';
 import { AdminComponent } from './admin/admin.component';
 import { IsAuthRouteGuard } from './IsAuthRouteGuard';
 import { AdminAComponent } from './admin/admin-a/admin-a.component';

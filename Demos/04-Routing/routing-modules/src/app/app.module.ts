@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CKEditorModule } from 'ngx-ckeditor';
 import { AdminComponent } from './admin/admin.component';
 import { AdminModule } from './admin/admin.module';
 import { AppRoutingModule } from './app-routing.module';
@@ -36,7 +35,6 @@ import { SkillResolverService } from './skills/skill-resolver.service';
     MaterialModule,
     SharedModule,
     FormsModule,
-    CKEditorModule,
     AdminModule,
   ],
   providers: [IsAuthRouteGuard, SkillResolverService],

@@ -19,6 +19,7 @@ import { PreloadComponent } from './samples/preload/preload.component';
 import { RouteGuardsComponent } from './samples/route-guards/route-guards.component';
 import { RouterStateComponent } from './samples/router-state/router-state.component';
 import { RoutingBasicsComponent } from './samples/routing-basics/routing-basics.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { RoutingBasicsComponent } from './samples/routing-basics/routing-basics.
     CommonModule,
     FormsModule,
     RouterModule.forChild(demoRoutes),
+    FlexLayoutModule,
     MaterialModule,
     SharedModule,
     HttpClientModule,

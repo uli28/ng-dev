@@ -43,15 +43,13 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatTreeModule } from '@angular/material/tree';
 import { OverlayModule } from '@angular/cdk/overlay';
-import { CdkMenuModule } from '@angular/cdk/menu';
-import { DialogModule } from '@angular/cdk/dialog';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   exports: [
     A11yModule,
     CdkAccordionModule,
     ClipboardModule,
-    CdkMenuModule,
     CdkStepperModule,
     CdkTableModule,
     CdkTreeModule,
@@ -94,7 +92,7 @@ import { DialogModule } from '@angular/cdk/dialog';
     OverlayModule,
     PortalModule,
     ScrollingModule,
-    DialogModule,
+    FlexLayoutModule,
   ],
 })
 export class MaterialModule {}
