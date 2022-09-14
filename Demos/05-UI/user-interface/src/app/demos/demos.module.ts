@@ -30,6 +30,7 @@ import { MaterialShowCaseComponent } from './samples/material-showcase/material-
 import { StepperComponent } from './samples/material-stepper/stepper.component';
 import { MaterialTableComponent } from './samples/material-table/material-table.component';
 import { VirtualScrollComponent } from './samples/virtual-scroll/virtual-scroll.component';
+import { MatFormFieldComponent } from './samples/mat-form-field/mat-form-field.component';
 
 const demoRoutes: Routes = [
   {
@@ -38,6 +39,7 @@ const demoRoutes: Routes = [
 
     children: [
       { path: 'inline-css', component: InlineCssComponent },
+      { path: 'mat-form-field', component: MatFormFieldComponent },
       { path: 'cssbasics', component: CSSBindingComponent },
       { path: 'bootstrap', component: BoostrapComponent },
       { path: 'cssgrid', component: CssgridComponent },
@@ -82,6 +84,7 @@ const demoRoutes: Routes = [
     BoostrapComponent,
     ChartComponent,
     MarkdownThirdPartyComponent,
+    MatFormFieldComponent,
   ],
   imports: [
     CommonModule,
