@@ -9,7 +9,7 @@ import { PersonService } from '../person.service';
   styleUrls: ['./template-validation.component.scss'],
 })
 export class TemplateValidationComponent implements OnInit {
-  @ViewChild('personForm') form: NgForm;
+  @ViewChild('personForm') form: NgForm | null = null;
 
   person: Person = new Person();
 
@@ -22,7 +22,7 @@ export class TemplateValidationComponent implements OnInit {
   }
 
   patchValue() {
-    this.form.controls['name'].setValue('Heinrich');
+    this.form?.controls['name'].setValue('Heinrich');
   }
 
   savePerson(personForm: any): void {

@@ -18,7 +18,21 @@ export class ReactiveValidationComponent implements OnInit {
   person: Person = new Person();
   wealthOpts = ['poor', 'rich', 'middle_class'];
 
-  personForm: UntypedFormGroup;
+  personForm = this.fb.group({
+    name: [
+      this.person.name,
+      [Validators.required, Validators.minLength(4), this.validateName],
+    ],
+    age: [this.person.age, [Validators.min(18), Validators.max(99)]],
+    gender: [this.person.gender],
+    email: [
+      this.person.email,
+      [Validators.required, Validators.email],
+      [this.mailExistsValidator],
+      { updateOn: 'blur' },
+    ],
+    wealth: [this.person.wealth],
+  });
 
   constructor(
     private fb: UntypedFormBuilder,
@@ -28,31 +42,12 @@ export class ReactiveValidationComponent implements OnInit {
 
   ngOnInit() {
     this.loadData();
-    this.initForm();
     this.subscribeChanges();
   }
 
   private loadData() {
     this.ps.getPerson().subscribe((p) => {
       this.personForm.patchValue(p);
-    });
-  }
-
-  private initForm() {
-    this.personForm = this.fb.group({
-      name: [
-        this.person.name,
-        [Validators.required, Validators.minLength(4), this.validateName],
-      ],
-      age: [this.person.age, [Validators.min(18), Validators.max(99)]],
-      gender: [this.person.gender],
-      email: [
-        this.person.email,
-        [Validators.required, Validators.email],
-        [this.mailExistsValidator],
-        { updateOn: 'blur' },
-      ],
-      wealth: [this.person.wealth],
     });
   }
 
