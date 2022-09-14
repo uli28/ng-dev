@@ -20,6 +20,10 @@
     "title": "Reactive Forms"
   },
   {
+    "url": "formsbuilder",
+    "title": "Reactive FormsBuilder"
+  },
+  {
     "url": "reactive-typed",
     "title": "Reactive Typed Forms"
   },
@@ -27,10 +31,7 @@
     "url": "formarray",
     "title": "Reactive Form Array"
   },
-  {
-    "url": "formsbuilder",
-    "title": "Reactive FormsBuilder"
-  },
+
   {
     "url": "reactivevalidation",
     "title": "Reactive Validation"

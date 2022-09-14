@@ -13,14 +13,12 @@ export class FormControlComponent implements OnInit {
     Validators.required,
     Validators.minLength(3),
   ]);
+
   postal = new UntypedFormControl('3544', [Validators.minLength(4)]);
+
   city = new FormControl<string>('Idolsberg', [Validators.maxLength(15)]);
 
   ngOnInit() {
-    this.subscribeNameChanges();
-  }
-
-  subscribeNameChanges() {
     this.name.valueChanges.subscribe((data) =>
       console.log('Form values changed', data)
     );
@@ -35,5 +33,9 @@ export class FormControlComponent implements OnInit {
 
   resetName() {
     this.name.reset('Giro');
+  }
+
+  getValue() {
+    console.log(this.name.value);
   }
 }
