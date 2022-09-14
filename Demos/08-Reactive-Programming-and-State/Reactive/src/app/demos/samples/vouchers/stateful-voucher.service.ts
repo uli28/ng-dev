@@ -4,7 +4,7 @@ import { BehaviorSubject } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 import { lateVoucher } from './late-voucher';
-import { Voucher } from './voucher.model';
+import { Voucher } from './vouchers.model';
 
 @Injectable({
   providedIn: 'root',

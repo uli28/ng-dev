@@ -12,11 +12,11 @@ import { tap } from 'rxjs/internal/operators/tap';
 export class MarkdownEditorComponent implements OnInit {
   constructor(private sns: SnackbarService, private cs: CommentService) {}
 
-  @Input() component: string;
+  @Input() component: string = '';
 
   comments = this.cs.getComments().pipe(tap((cs) => console.log(cs)));
   editorEdit = false;
-  current: CommentItem;
+  current: CommentItem | null = null;
 
   ngOnInit() {}
 

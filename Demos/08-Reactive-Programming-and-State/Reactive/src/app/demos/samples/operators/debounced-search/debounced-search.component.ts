@@ -11,7 +11,7 @@ import { Subscription } from 'rxjs';
 export class DebouncedSearchComponent implements OnInit {
   constructor() {}
 
-  subsSearchterms: Subscription;
+  subsSearchterms: Subscription | null = null;
 
   searchterm = new FormControl<string | null>('');
 
@@ -24,6 +24,6 @@ export class DebouncedSearchComponent implements OnInit {
   }
 
   ngOnDestroy() {
-    this.subsSearchterms.unsubscribe();
+    if (this.subsSearchterms) this.subsSearchterms.unsubscribe();
   }
 }
