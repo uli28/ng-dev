@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavigationEnd, Route, Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { filter } from 'rxjs/operators';
 import { MenuItem } from '../menu/menu-item.model';
 import { MenuService } from '../menu/menu.service';
 import { SnackbarService } from '../snackbar/snackbar.service';
@@ -12,15 +10,10 @@ import { SnackbarService } from '../snackbar/snackbar.service';
   styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent implements OnInit {
-  constructor(
-    private router: Router,
-    private ms: MenuService,
-    private sns: SnackbarService
-  ) {}
+  constructor(private ms: MenuService, private sns: SnackbarService) {}
 
-  editorDisplayed: boolean;
-  rootRoutes: Route[];
-  menuItems: Observable<MenuItem[]>;
+  editorDisplayed: boolean = false;
+  menuItems: Observable<MenuItem[]> | null = null;
 
   ngOnInit() {
     this.editorDisplayed = false;

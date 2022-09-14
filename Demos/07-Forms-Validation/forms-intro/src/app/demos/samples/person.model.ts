@@ -5,7 +5,7 @@ export class Person {
   wealth: string = '';
   state?: 'HappySheep' | 'Unsatisfied' | 'ReadyForRevolution';
   lastname?: string;
-  gender: string;
+  gender: string = 'male';
   married?: boolean;
   imgUrl?: string;
   address?: Address;
