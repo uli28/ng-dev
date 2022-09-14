@@ -19,7 +19,7 @@ import {
   take,
   tap,
 } from 'rxjs/operators';
-import { Voucher } from '../vouchers/voucher.model';
+import { Voucher } from '../vouchers/vouchers.model';
 import { VouchersService } from '../vouchers/voucher.service';
 import { DoublerService } from './doubler.service';
 
@@ -31,9 +31,9 @@ import { DoublerService } from './doubler.service';
 export class OperatorsComponent implements OnInit {
   constructor(private vs: VouchersService, private ds: DoublerService) {}
 
-  sub: Subscription;
+  sub: Subscription | null = null;
   response: any;
-  vouchers: Voucher[];
+  vouchers: Voucher[] = [];
 
   ngOnInit() {}
 

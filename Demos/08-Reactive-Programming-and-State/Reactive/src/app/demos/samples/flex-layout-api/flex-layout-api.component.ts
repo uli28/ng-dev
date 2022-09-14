@@ -13,10 +13,10 @@ export class FlexLayoutApiComponent implements OnInit {
     this.subscribeScreen();
   }
 
-  watcher: Subscription;
-  mq: string;
-  isPhone: boolean;
-  isTablet: boolean;
+  watcher: Subscription | null = null;
+  mq: string = '';
+  isPhone: boolean = false;
+  isTablet: boolean = false;
 
   ngOnInit() {}
 

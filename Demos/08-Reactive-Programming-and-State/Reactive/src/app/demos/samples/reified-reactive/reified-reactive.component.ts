@@ -11,7 +11,7 @@ import { SkillsService } from '../../../skills/skills.service';
 })
 export class ReifiedReactiveComponent implements OnInit {
   filter$ = new FormControl('', { nonNullable: true });
-  skills$: Observable<Skill[]>;
+  skills$: Observable<Skill[]> | null = null;
 
   constructor(private service: SkillsService) {}
 

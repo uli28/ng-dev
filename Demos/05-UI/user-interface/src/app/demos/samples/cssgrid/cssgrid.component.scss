@@ -1,4 +1,4 @@
-.csscontainer {
+.gridcontainer {
   display: grid;
   grid-template-columns: 3fr 1fr;
   // grid-template-columns: repeat(2, 1fr);
@@ -7,12 +7,12 @@
   grid-auto-rows: minmax(100px, auto);
 }
 
-.csscontainer > div {
+.gridcontainer > div {
   background: lawngreen;
   padding: 1em;
 }
 
-.csscontainer > div:nth-child(odd) {
+.gridcontainer > div:nth-child(odd) {
   background: darkgoldenrod;
 }
 

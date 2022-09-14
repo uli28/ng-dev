@@ -11,7 +11,7 @@ import { SidebarActions } from './sidebar.actions';
 export class SidePanelComponent implements OnInit {
   constructor(private sns: SnackbarService, private eb: SidePanelService) {}
 
-  editorDisplayed: boolean;
+  editorDisplayed: boolean = false;
 
   ngOnInit() {
     this.editorDisplayed = false;
