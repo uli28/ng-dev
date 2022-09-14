@@ -27,10 +27,12 @@ export class SkillsEditComponent implements OnInit {
     // this.readParamUsingResolverObs();
   }
 
-  getSkill(id) {
+  getSkill(id: number) {
     this.service.getSkill(id).subscribe((data) => {
-      this.skill = data;
-      console.log('setting skill: ', data);
+      if (data) {
+        this.skill = data;
+        console.log('setting skill: ', data);
+      }
     });
   }
 
