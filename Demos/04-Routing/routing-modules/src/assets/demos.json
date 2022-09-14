@@ -1,0 +1,39 @@
+[
+  {
+    "url": "childroutes",
+    "title": "Routes"
+  },
+  {
+    "url": "routingbasics",
+    "title": "Routing Basics"
+  },
+  {
+    "url": "parammap",
+    "title": "paramMap"
+  },
+  {
+    "url": "router-state",
+    "title": "Router State"
+  },
+  {
+    "url": "lazy-loading",
+    "title": "Lazy Loading"
+  },
+  {
+    "url": "standalone-comp",
+    "title": "Standalone Component"
+  },
+  {
+    "url": "component-less",
+    "title": "Component Less"
+  },
+
+  {
+    "url": "routeguards",
+    "title": "Route Guards"
+  },
+  {
+    "url": "preload",
+    "title": "Preload Data"
+  }
+]
