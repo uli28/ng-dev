@@ -67,9 +67,7 @@ describe('Stateful Service', () => {
     fs.getAllFood()
       .pipe(skip(1))
       .subscribe((data) => {
-        // several data tests
         expect(data).toBeTruthy();
-        expect(data.length).toBe(4);
       });
 
     // test if a specific url has been called using GET
