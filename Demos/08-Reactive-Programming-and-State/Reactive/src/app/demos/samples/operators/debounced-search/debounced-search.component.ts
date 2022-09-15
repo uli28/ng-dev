@@ -17,7 +17,11 @@ export class DebouncedSearchComponent implements OnInit {
 
   ngOnInit() {
     this.subsSearchterms = this.searchterm.valueChanges
-      .pipe(debounceTime(750))
+      .pipe(
+        debounceTime(750) // wait 750ms after each keystroke
+        //operator 2
+        //operator 3
+      )
       .subscribe((val) => {
         console.log('Currently your searching debounced for:', val);
       });
