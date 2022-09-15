@@ -1,12 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {
-  UntypedFormBuilder,
-  UntypedFormGroup,
-  Validators,
-} from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 import { Person, wealthOptsValues } from '../person.model';
 import { PersonService } from '../person.service';
-import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-forms-builder',
@@ -17,17 +12,15 @@ export class FormsBuilderComponent implements OnInit {
   person: Person = new Person();
   wealthOpts = wealthOptsValues;
 
-  personForm: FormGroup;
+  personForm = this.fb.group({
+    name: [this.person.name, Validators.required],
+    age: [this.person.age],
+    gender: [this.person.gender],
+    email: [this.person.email],
+    wealth: [this.person.wealth],
+  });
 
-  constructor(private fb: UntypedFormBuilder, private ps: PersonService) {
-    this.personForm = this.fb.group({
-      name: [this.person.name, Validators.required],
-      age: [this.person.age],
-      gender: [this.person.gender],
-      email: [this.person.email],
-      wealth: [this.person.wealth],
-    });
-  }
+  constructor(private fb: FormBuilder, private ps: PersonService) {}
 
   ngOnInit() {
     this.ps.getPerson().subscribe((p) => {

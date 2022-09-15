@@ -12,6 +12,7 @@ import { DemoContainerComponent } from './demo-container/demo-container.componen
 import { AdvHttpClientComponent } from './samples/adv-http-client/adv-http-client.component';
 import { JsonServerComponent } from './samples/json-server/json-server.component';
 import { ObservableCrudComponent } from './samples/observable-crud/observable-crud.component';
+import { AuthInterceptor } from '../auth-interceptor';
 
 const demoRoutes: Routes = [
   {
@@ -45,6 +46,7 @@ const demoRoutes: Routes = [
   providers: [
     DemoService,
     LoadingService,
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true },
   ],
 })

@@ -12,23 +12,23 @@ export class SkillsService {
 
   private url = `${environment.api}skills`;
 
-  getSkills(): Observable<Skill[]> {
+  getSkills() {
     return this.httpClient.get<Skill[]>(this.url);
   }
 
-  getSkill(id: number): Observable<Skill> {
+  getSkill(id: number) {
     return this.httpClient.get<Skill>(`${this.url}/${id}`);
   }
 
-  addSkill(skill: Skill): Observable<Skill> {
+  addSkill(skill: Skill) {
     return this.httpClient.post<Skill>(this.url, skill);
   }
 
-  updateSkill(skill: Skill): Observable<Skill> {
+  updateSkill(skill: Skill) {
     return this.httpClient.put<Skill>(`${this.url}/${skill.id}`, skill);
   }
 
-  deleteSkill(id: number): Observable<any> {
+  deleteSkill(id: number) {
     return this.httpClient.delete(`${this.url}/${id}`);
   }
 }

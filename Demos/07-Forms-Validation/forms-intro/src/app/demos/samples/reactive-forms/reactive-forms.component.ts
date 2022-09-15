@@ -11,17 +11,16 @@ import { PersonService } from '../person.service';
 export class ReactiveFormsComponent implements OnInit {
   person: Person = new Person();
   wealthOpts = wealthOptsValues;
-  personForm: FormGroup;
 
-  constructor(private ps: PersonService) {
-    this.personForm = new FormGroup({
-      name: new FormControl(this.person.name, Validators.required),
-      age: new FormControl(this.person.age),
-      email: new FormControl(this.person.email),
-      gender: new FormControl(this.person.gender),
-      wealth: new FormControl(this.person.wealth),
-    });
-  }
+  personForm = new FormGroup({
+    name: new FormControl(this.person.name, Validators.required),
+    age: new FormControl(this.person.age),
+    email: new FormControl(this.person.email),
+    gender: new FormControl(this.person.gender),
+    wealth: new FormControl(this.person.wealth),
+  });
+
+  constructor(private ps: PersonService) {}
 
   ngOnInit() {
     this.ps.getPerson().subscribe((p) => {
