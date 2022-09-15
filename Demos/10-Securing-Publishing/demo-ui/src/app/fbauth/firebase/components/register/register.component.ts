@@ -12,26 +12,22 @@ import { FirebaseAuthService } from '../../firebase-auth.service';
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss'],
 })
-export class RegisterComponent implements OnInit {
+export class RegisterComponent {
   constructor(private as: FirebaseAuthService) {}
 
-  registerForm: FormGroup;
-
-  ngOnInit() {
-    this.registerForm = new FormGroup({
-      email: new FormControl('', [Validators.required, Validators.email]),
-      passwords: new FormGroup(
-        {
-          password: new FormControl('', [
-            Validators.required,
-            Validators.minLength(4),
-          ]),
-          passwordRepeat: new FormControl('', [Validators.required]),
-        },
-        { validators: this.passwordConfirming }
-      ),
-    });
-  }
+  registerForm = new FormGroup({
+    email: new FormControl('', [Validators.required, Validators.email]),
+    passwords: new FormGroup(
+      {
+        password: new FormControl('', [
+          Validators.required,
+          Validators.minLength(4),
+        ]),
+        passwordRepeat: new FormControl('', [Validators.required]),
+      },
+      { validators: this.passwordConfirming }
+    ),
+  });
 
   registerUser(form: FormGroup) {
     this.as.registerUser(form.value.email, form.value.passwords.password);
