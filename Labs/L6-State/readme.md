@@ -19,13 +19,13 @@ Implement a responsive Side Menu:
     class="grid"
     >
     <div gdArea="navbar"><app-navbar></app-navbar></div>
-    <div gdArea=loading><app-loading *ngIf="ls.isLoading | async"></app-loading> </div>
+    <div gdArea=loading></app-loading> </div>
     <div gdArea="mainrow" class="main">
         <mat-sidenav-container>
         <mat-sidenav  #sidenav
         [opened]="ms.sideNavVisible | async"
         [mode]="mode">
-            <app-sidebar></app-sidebar>
+            <app-sidemenu></app-sidemenu>
         </mat-sidenav>
         <mat-sidenav-content [ngStyle]="getWorkbenchStyle()">
             <router-outlet></router-outlet>
