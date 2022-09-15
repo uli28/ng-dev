@@ -18,7 +18,7 @@ export class FirebaseAuthInterceptor implements HttpInterceptor {
     });
   }
 
-  token: string;
+  token: string = '';
 
   public intercept(
     req: HttpRequest<any>,
