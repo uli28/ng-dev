@@ -32,17 +32,6 @@ export class StatefulVouchersComponent implements OnInit {
       .subscribe(
         (vouchers) => (this.dataSource = new MatTableDataSource(vouchers))
       );
-
-    // Imperative approach
-    // this.vs.getAllVouchers().subscribe((data) => {
-    //   this.dataSource = new MatTableDataSource(data);
-    // });
-
-    // this.filter.valueChanges.subscribe((filterValue) => {
-    //   if (filterValue) {
-    //     this.dataSource.filter = filterValue.trim().toLowerCase();
-    //   }
-    // });
   }
 
   editItem(row: any) {

@@ -22,9 +22,9 @@ export class CreatingObservableComponent implements OnInit {
     //this overload of subscribe is depricated
     from(arr).subscribe(
       //emit each item from the array after the other
-      (data: number) => console.log('from(): ', data),
-      this.onErr,
-      this.onComplete
+      (data: number) => console.log('from(): ', data), //success
+      this.onErr, //error
+      this.onComplete //complete
     );
 
     //use this pattern when subscribing and handling complete and error case
@@ -66,6 +66,8 @@ export class CreatingObservableComponent implements OnInit {
       }, 500);
     });
 
+    //easies way to create an observable: let skills$ = of(skills)
+
     skills$.subscribe((data) => console.log('skill item: ', data));
   }
 
@@ -102,7 +104,7 @@ export class CreatingObservableComponent implements OnInit {
     axios.get(url).then((data) => console.log('received data', data));
 
     // from casts a promise to an observable so that it can be subscribe
-    from(axios(url)).subscribe(
+    from(axios.get(url)).subscribe(
       (data) => console.log('data from axios', data),
       (err) => console.log('err:', err),
       () => console.log('complete')
