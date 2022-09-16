@@ -1,46 +1,43 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
-import { BehaviorSubject, Observable, of } from 'rxjs';
+import { BehaviorSubject, map, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class FirebaseAuthService {
+  private token: BehaviorSubject<string> = new BehaviorSubject<string>('');
+  private user: BehaviorSubject<firebase.default.User | null> =
+    new BehaviorSubject<firebase.default.User | null>(null);
+  // public User = this.user.asObservable();
+
   constructor(private fireAuth: AngularFireAuth) {
     this.onUserChanged();
   }
 
-  private Token: BehaviorSubject<string> = new BehaviorSubject<string>('');
-
-  private fbUser: firebase.default.User | null = null;
-  public User: BehaviorSubject<firebase.default.User | null> =
-    new BehaviorSubject(this.fbUser);
-
   private onUserChanged() {
     this.fireAuth.authState.subscribe((user) => {
-      this.fbUser = user;
-      this.User.next(user);
-
-      if (user != null) {
-        this.fbUser?.getIdToken().then((token) => {
-          this.Token.next(token);
-        });
-      } else {
-        this.Token.next('');
-      }
+      this.user.next(user);
+      user != null
+        ? user.getIdToken().then((token) => this.token.next(token))
+        : this.token.next('');
     });
   }
 
-  getToken(): Observable<string> {
-    return this.Token;
+  getUser() {
+    return this.user.asObservable();
+  }
+
+  getToken() {
+    return this.token.asObservable();
   }
 
   isAuthenticated(): Observable<boolean> {
-    this.User.subscribe((user) => {
-      const auth: boolean = user == null ? false : true;
-      return of(auth);
-    });
-    return of(false);
+    return this.user.pipe(
+      map((user) => {
+        return user == null ? false : true;
+      })
+    );
   }
 
   registerUser(
@@ -50,7 +47,7 @@ export class FirebaseAuthService {
     return this.fireAuth
       .createUserWithEmailAndPassword(email, password)
       .catch((err) => {
-        console.log('Error logging in', err);
+        console.log('Error in registerUser', err);
         return err;
       });
   }
@@ -62,17 +59,17 @@ export class FirebaseAuthService {
     return this.fireAuth
       .signInWithEmailAndPassword(email, password)
       .catch((err) => {
-        console.log('Error logging in', err);
+        console.log('Error in logOn', err);
         return err;
       });
   }
 
-  logOff() {
+  signOut() {
     this.fireAuth
       .signOut()
       .then(() => {
-        this.fbUser = null;
+        this.user.next(null);
       })
-      .catch((err) => console.log('Error logging out', err));
+      .catch((err) => console.log('Error in signOut', err));
   }
 }

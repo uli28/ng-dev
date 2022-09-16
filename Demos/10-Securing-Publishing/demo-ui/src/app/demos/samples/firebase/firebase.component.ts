@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { FirebaseAuthService } from '../../../fbauth/firebase/firebase-auth.service';
+import { environment } from 'src/environments/environment';
+import { catchError, map } from 'rxjs';
 
 @Component({
   selector: 'app-firebase',
@@ -11,29 +13,30 @@ export class FirebaseComponent implements OnInit {
   constructor(private httpClient: HttpClient, public as: FirebaseAuthService) {}
 
   currentUser: firebase.default.User | null = null;
-
   resp: any;
 
   ngOnInit() {
-    this.as.User.subscribe((user: any) => {
+    this.as.getUser().subscribe((user: any) => {
       this.currentUser = user;
     });
   }
 
   callCoreApi() {
-    this.resp = null;
-    this.httpClient.get('https://localhost:5001/api/demo').subscribe(
-      (data) => {
-        this.resp = data;
-      },
-      (err) => {
-        console.log('service call err:', err);
-        this.resp = err;
-      }
-    );
+    this.httpClient
+      .get(`${environment.api}demo`)
+      .pipe(
+        map((data) => {
+          this.resp = data;
+        }),
+        catchError((err) => {
+          this.resp = err;
+          return err;
+        })
+      )
+      .subscribe();
   }
 
   logOut() {
-    this.as.logOff();
+    this.as.signOut();
   }
 }
