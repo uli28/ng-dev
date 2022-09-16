@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 namespace ngDemoApp
 {
     // [Authorize]
-    [Route("api/skills")]
+    [Route("skills")]
     public class SkillsController : Microsoft.AspNetCore.Mvc.Controller
     {
         private SkillDBContext ctx;
@@ -20,14 +20,14 @@ namespace ngDemoApp
             ctx = dbctx;
         }
 
-        // http://localhost:5000/api/skills
+        // http://localhost:5001/skills
         [HttpGet]
         public ActionResult<Skill[]> GetSkills()
         {
             return this.ctx.Skills.ToArray();
         }
 
-        // http://localhost:5000/api/skills/1
+        // http://localhost:5001/skills/1
         [HttpGet("{id}")]
         public ActionResult<Skill> GetSkill(int id)
         {

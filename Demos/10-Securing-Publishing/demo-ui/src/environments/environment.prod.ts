@@ -13,5 +13,4 @@ export const environment = {
     appId: '1:271611339527:web:18d657e71cc44b06089ba2',
     measurementId: 'G-P3N42J6HVK',
   },
-  o365Config: {},
 };

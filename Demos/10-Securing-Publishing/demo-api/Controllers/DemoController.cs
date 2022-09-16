@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ngDemoApp
 {
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     [Authorize]
     [ApiController]
     public class DemoController : ControllerBase
@@ -16,15 +16,14 @@ namespace ngDemoApp
         {
         }
 
-        // GET api/Demo
+        // GET http://localhost:5001/demo
         [HttpGet("")]
         public ActionResult<Demo[]> GetDemos()
         {
             List<Demo> demos = new List<Demo>();
-            demos.Add(new Demo { title = "abc", url = "abc", component = "abc" });
-            demos.Add(new Demo { title = "fgh", url = "fgh", component = "fgh" });
+            demos.Add(new Demo { title = "NgRx", url = "ngrx", component = "NgRxComponent" });
+            demos.Add(new Demo { title = "Reusability", url = "reusability", component = "ReusabilityComponent" });
             return Ok(demos); 
         }
-
     }
 }
