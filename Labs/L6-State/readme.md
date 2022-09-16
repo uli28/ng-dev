@@ -19,7 +19,7 @@ Implement a responsive Side Menu:
     class="grid"
     >
     <div gdArea="navbar"><app-navbar></app-navbar></div>
-    <div gdArea=loading></app-loading> </div>
+    <div gdArea=loading></div>
     <div gdArea="mainrow" class="main">
         <mat-sidenav-container>
         <mat-sidenav  #sidenav
