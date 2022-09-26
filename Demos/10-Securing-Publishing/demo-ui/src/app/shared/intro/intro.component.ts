@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { FirebaseAuthService } from 'src/app/fbauth/firebase/firebase-auth.service';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-intro',
@@ -9,8 +11,9 @@ export class IntroComponent implements OnInit {
   @Input() title: string = '';
   @Input() subtitle: string = '';
   @Input() img: string = '';
+  authEnabled = environment.authEnabled;
 
-  constructor() {}
+  constructor(private auth: FirebaseAuthService) {}
 
   ngOnInit(): void {}
 }

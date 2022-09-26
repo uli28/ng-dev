@@ -37,6 +37,6 @@ export class FirebaseComponent implements OnInit {
   }
 
   logOut() {
-    this.as.signOut();
+    this.as.logOut();
   }
 }

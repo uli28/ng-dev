@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { environment } from 'src/environments/environment';
 import { Title } from '@angular/platform-browser';
+import { Observable, of, tap } from 'rxjs';
+import { environment } from 'src/environments/environment';
+import { FirebaseAuthService } from './fbauth/firebase/firebase-auth.service';
 
 @Component({
   selector: 'app-root',
@@ -8,11 +10,16 @@ import { Title } from '@angular/platform-browser';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-  constructor(private titleService: Title) {}
+  isAuthenticated: Observable<boolean> = of(false);
+
+  constructor(private titleService: Title, private auth: FirebaseAuthService) {}
 
   title: string = environment.title;
 
   ngOnInit() {
     this.titleService.setTitle(this.title);
+    this.isAuthenticated = this.auth
+      .isAuthenticated()
+      .pipe(tap((auth) => console.log('auth changed to autheticated: ', auth)));
   }
 }

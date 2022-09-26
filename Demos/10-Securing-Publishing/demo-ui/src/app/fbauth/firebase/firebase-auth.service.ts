@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { BehaviorSubject, map, Observable } from 'rxjs';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -9,7 +10,6 @@ export class FirebaseAuthService {
   private token: BehaviorSubject<string> = new BehaviorSubject<string>('');
   private user: BehaviorSubject<firebase.default.User | null> =
     new BehaviorSubject<firebase.default.User | null>(null);
-  // public User = this.user.asObservable();
 
   constructor(private fireAuth: AngularFireAuth) {
     this.onUserChanged();
@@ -35,36 +35,37 @@ export class FirebaseAuthService {
   isAuthenticated(): Observable<boolean> {
     return this.user.pipe(
       map((user) => {
-        return user == null ? false : true;
+        let authEnabled = environment.authEnabled;
+        return authEnabled == false || user != null ? true : false;
       })
     );
   }
 
-  registerUser(
+  createUser(
     email: string,
     password: string
   ): Promise<firebase.default.auth.UserCredential> {
     return this.fireAuth
       .createUserWithEmailAndPassword(email, password)
       .catch((err) => {
-        console.log('Error in registerUser', err);
+        console.log('Error creating User', err);
         return err;
       });
   }
 
-  logOn(
+  logIn(
     email: string,
     password: string
   ): Promise<firebase.default.auth.UserCredential> {
     return this.fireAuth
       .signInWithEmailAndPassword(email, password)
       .catch((err) => {
-        console.log('Error in logOn', err);
+        console.log('Error logging in', err);
         return err;
       });
   }
 
-  signOut() {
+  logOut() {
     this.fireAuth
       .signOut()
       .then(() => {

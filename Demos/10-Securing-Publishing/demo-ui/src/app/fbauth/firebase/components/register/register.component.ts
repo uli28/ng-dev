@@ -30,7 +30,7 @@ export class RegisterComponent {
   });
 
   registerUser(form: FormGroup) {
-    this.as.registerUser(form.value.email, form.value.passwords.password);
+    this.as.createUser(form.value.email, form.value.passwords.password);
   }
 
   passwordConfirming(c: AbstractControl): { invalid: boolean } | null {
