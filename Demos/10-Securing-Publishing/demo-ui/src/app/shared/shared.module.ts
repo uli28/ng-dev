@@ -12,6 +12,7 @@ import { SidePanelComponent } from './side-panel/side-panel.component';
 import { IntroComponent } from './intro/intro.component';
 import { LoadingComponent } from './loading/loading.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { FBAuthModule } from '../fbauth/fbauth.module';
 
 const mods = [
   NavbarComponent,
@@ -32,6 +33,7 @@ const mods = [
     MarkdownModule.forRoot({
       loader: HttpClient,
     }),
+    FBAuthModule,
   ],
   declarations: mods,
   exports: mods,
