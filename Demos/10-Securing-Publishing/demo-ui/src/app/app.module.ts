@@ -10,6 +10,7 @@ import { SharedModule } from './shared/shared.module';
 import { HomeComponent } from './home/home.component';
 import { environment } from 'src/environments/environment';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { FirebaseAuthModule } from './fbauth/fbauth.module';
 
 @NgModule({
   declarations: [AppComponent, HomeComponent],
@@ -22,6 +23,7 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
     SharedModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AuthModule,
+    FirebaseAuthModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

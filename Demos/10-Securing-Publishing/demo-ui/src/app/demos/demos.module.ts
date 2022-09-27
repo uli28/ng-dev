@@ -3,7 +3,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
-import { FBAuthModule } from '../fbauth/fbauth.module';
+import { FirebaseAuthModule } from '../fbauth/fbauth.module';
 import { MaterialModule } from '../material.module';
 import { SharedModule } from '../shared/shared.module';
 import { DemoContainerComponent } from './demo-container/demo-container.component';
@@ -32,7 +32,7 @@ const demoRoutes: Routes = [
     MaterialModule,
     HttpClientModule,
     SharedModule,
-    FBAuthModule,
+    FirebaseAuthModule,
   ],
   providers: [
     DemoService,
