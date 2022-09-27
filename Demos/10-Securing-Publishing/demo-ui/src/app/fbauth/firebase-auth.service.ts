@@ -21,7 +21,10 @@ export class FirebaseAuthService {
             user.getIdToken().then((token) => this.token.next(token));
           } else {
             this.token.next('');
-            this.router.navigate(['/']);
+            // stay on the same route if auth is not enabled
+            if (environment.authEnabled) {
+              this.router.navigate(['/']);
+            }
           }
         })
       )
