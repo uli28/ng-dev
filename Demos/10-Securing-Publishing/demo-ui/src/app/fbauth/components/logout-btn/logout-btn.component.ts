@@ -7,6 +7,7 @@ import { FirebaseAuthService } from '../../firebase-auth.service';
   styleUrls: ['./logout-btn.component.scss'],
 })
 export class LogoutBtnComponent implements OnInit {
+  currentUser = this.as.getUser();
   constructor(private as: FirebaseAuthService) {}
 
   ngOnInit(): void {}

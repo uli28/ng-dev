@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
-import { BehaviorSubject, map, Observable } from 'rxjs';
+import { Router } from '@angular/router';
+import { BehaviorSubject, map, Observable, switchMap, tap } from 'rxjs';
 import { environment } from '../../environments/environment';
 
 @Injectable({
@@ -11,17 +12,20 @@ export class FirebaseAuthService {
   private user: BehaviorSubject<firebase.default.User | null> =
     new BehaviorSubject<firebase.default.User | null>(null);
 
-  constructor(private fireAuth: AngularFireAuth) {
-    this.onUserChanged();
-  }
-
-  private onUserChanged() {
-    this.fireAuth.authState.subscribe((user) => {
-      this.user.next(user);
-      user != null
-        ? user.getIdToken().then((token) => this.token.next(token))
-        : this.token.next('');
-    });
+  constructor(private fireAuth: AngularFireAuth, private router: Router) {
+    this.fireAuth.authState
+      .pipe(
+        tap((user) => {
+          this.user.next(user);
+          if (user != null) {
+            user.getIdToken().then((token) => this.token.next(token));
+          } else {
+            this.token.next('');
+            this.router.navigate(['/']);
+          }
+        })
+      )
+      .subscribe();
   }
 
   getUser() {
