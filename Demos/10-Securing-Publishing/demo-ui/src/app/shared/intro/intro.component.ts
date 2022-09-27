@@ -1,5 +1,11 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { FirebaseAuthService } from 'src/app/fbauth/firebase/firebase-auth.service';
+import {
+  Component,
+  Input,
+  OnInit,
+  TemplateRef,
+  ViewChild,
+} from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { environment } from '../../../environments/environment';
 
 @Component({
@@ -8,12 +14,22 @@ import { environment } from '../../../environments/environment';
   styleUrls: ['./intro.component.scss'],
 })
 export class IntroComponent implements OnInit {
+  @ViewChild('register') registerTemplate!: TemplateRef<any>;
+  @ViewChild('login') loginTemplate!: TemplateRef<any>;
   @Input() title: string = '';
   @Input() subtitle: string = '';
   @Input() img: string = '';
   authEnabled = environment.authEnabled;
 
-  constructor(private auth: FirebaseAuthService) {}
+  constructor(private dialog: MatDialog) {}
 
   ngOnInit(): void {}
+
+  logIn() {
+    this.dialog.open(this.loginTemplate, { width: '350px' });
+  }
+
+  registerUser() {
+    this.dialog.open(this.registerTemplate, { width: '350px' });
+  }
 }

@@ -20,14 +20,14 @@
     <div *ngIf="authEnabled">
       <button
         mat-raised-button
-        [routerLink]="[{ outlets: { actions: ['auth', 'sign-in'] } }]"
+        (click)="logIn()"
         color="primary"
       >
         Log In
       </button>
       <button
         mat-raised-button
-        [routerLink]="[{ outlets: { actions: ['auth', 'sign-up'] } }]"
+        (click)="registerUser()"
         color="primary"
       >
         Register
@@ -35,3 +35,11 @@
     </div>
   </mat-card-actions>
 </mat-card>
+
+<ng-template #register>
+  <app-register></app-register>
+</ng-template>
+
+<ng-template #login>
+  <app-login></app-login>
+</ng-template>

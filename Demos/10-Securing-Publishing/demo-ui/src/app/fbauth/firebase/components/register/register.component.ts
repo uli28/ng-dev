@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import {
-  FormGroup,
-  FormControl,
-  Validators,
   AbstractControl,
+  FormControl,
+  FormGroup,
+  Validators,
 } from '@angular/forms';
 import { FirebaseAuthService } from '../../firebase-auth.service';
 
