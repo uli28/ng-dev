@@ -6,7 +6,10 @@ import {
   ViewChild,
 } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
+import { combineLatestWith, map } from 'rxjs/operators';
 import { environment } from '../../../environments/environment';
+import { FirebaseAuthService } from '../../fbauth/firebase/firebase-auth.service';
 
 @Component({
   selector: 'app-intro',
@@ -21,15 +24,45 @@ export class IntroComponent implements OnInit {
   @Input() img: string = '';
   authEnabled = environment.authEnabled;
 
-  constructor(private dialog: MatDialog) {}
+  constructor(
+    private dialog: MatDialog,
+    private as: FirebaseAuthService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {}
 
   logIn() {
-    this.dialog.open(this.loginTemplate, { width: '350px' });
+    this.dialog
+      .open(this.loginTemplate, { width: '350px' })
+      .afterClosed()
+      .pipe(
+        combineLatestWith(this.as.isAuthenticated()),
+        map(([close, isAuthenticated]) => {
+          if (isAuthenticated) {
+            this.router.navigate(['demos']);
+          } else {
+            this.router.navigate(['/']);
+          }
+        })
+      )
+      .subscribe();
   }
 
   registerUser() {
-    this.dialog.open(this.registerTemplate, { width: '350px' });
+    this.dialog
+      .open(this.registerTemplate, { width: '350px' })
+      .afterClosed()
+      .pipe(
+        combineLatestWith(this.as.isAuthenticated()),
+        map(([close, isAuthenticated]) => {
+          if (isAuthenticated) {
+            this.router.navigate(['demos']);
+          } else {
+            this.router.navigate(['/']);
+          }
+        })
+      )
+      .subscribe();
   }
 }
