@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FirebaseAuthService } from '../../../firebase-auth.service';
+import { FirebaseAuthService } from '../../firebase-auth.service';
 import {
   AbstractControl,
   FormControl,
