@@ -15,6 +15,11 @@
     "component": "InterceptorComponent"
   },
   {
+    "url": "secured-api",
+    "title": "Secured Api",
+    "component": "ProtectedApiComponent"
+  },
+  {
     "url": "auth-guard",
     "title": "Auth Guard",
     "component": "AuthGuardComponent"

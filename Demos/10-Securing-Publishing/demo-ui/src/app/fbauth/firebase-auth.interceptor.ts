@@ -1,37 +1,34 @@
-import { Observable } from 'rxjs';
 import {
   HttpEvent,
   HttpHandler,
   HttpInterceptor,
   HttpRequest,
 } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { Observable, switchMap } from 'rxjs';
 import { FirebaseAuthService } from './firebase-auth.service';
-import { Inject, forwardRef, Injectable } from '@angular/core';
 
 @Injectable()
 export class FirebaseAuthInterceptor implements HttpInterceptor {
-  constructor(
-    @Inject(forwardRef(() => FirebaseAuthService)) as: FirebaseAuthService
-  ) {
-    as.getToken().subscribe((t) => {
-      this.token = t;
-    });
-  }
+  private token = this.as.getToken();
 
-  token: string = '';
+  constructor(private as: FirebaseAuthService) {}
 
   public intercept(
     req: HttpRequest<any>,
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
-    if (this.token != '') {
-      const cloned = req.clone({
-        setHeaders: { Authorization: `Bearer ${this.token}` },
-      });
-      console.log('Interceptor added Bearer Token for request', cloned);
-      return next.handle(cloned);
-    } else {
-      return next.handle(req);
-    }
+    return this.token.pipe(
+      switchMap((token) => {
+        if (token != '') {
+          const authReq = req.clone({
+            headers: req.headers.set('Authorization', `Bearer ${token}`),
+          });
+          return next.handle(authReq);
+        } else {
+          return next.handle(req);
+        }
+      })
+    );
   }
 }

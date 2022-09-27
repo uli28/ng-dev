@@ -26,6 +26,7 @@ const demoRoutes: Routes = [
       { path: 'firebase', component: FirebaseComponent },
       { path: 'app-auth', component: AppAuthComponent },
       { path: 'interceptor', component: InterceptorComponent },
+      { path: 'secured-api', component: ProtectedApiComponent },
       { path: 'auth-guard', component: AuthGuardComponent },
     ],
   },
