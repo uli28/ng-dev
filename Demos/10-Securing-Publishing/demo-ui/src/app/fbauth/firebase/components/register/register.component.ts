@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
+import { FirebaseAuthService } from '../../../firebase-auth.service';
 import {
   AbstractControl,
   FormControl,
   FormGroup,
   Validators,
 } from '@angular/forms';
-import { FirebaseAuthService } from '../../firebase-auth.service';
 
 @Component({
   selector: 'app-register',

@@ -9,7 +9,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { combineLatestWith, map } from 'rxjs/operators';
 import { environment } from '../../../environments/environment';
-import { FirebaseAuthService } from '../../fbauth/firebase/firebase-auth.service';
+import { FirebaseAuthService } from '../../fbauth/firebase-auth.service';
 
 @Component({
   selector: 'app-intro',

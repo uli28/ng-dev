@@ -8,10 +8,10 @@ import { MaterialModule } from '../material.module';
 import { SharedModule } from '../shared/shared.module';
 import { DemoContainerComponent } from './demo-container/demo-container.component';
 import { FirebaseComponent } from './samples/firebase/firebase.component';
-import { FirebaseAuthInterceptor } from '../fbauth/firebase/firebase-auth.interceptor';
 import { DemoService } from './demo-base/demo.service';
 import { LoadingService } from '../shared/loading/loading.service';
 import { LoadingInterceptor } from '../shared/loading/loading-interceptor';
+import { FirebaseAuthInterceptor } from '../fbauth/firebase-auth.interceptor';
 
 const demoRoutes: Routes = [
   {

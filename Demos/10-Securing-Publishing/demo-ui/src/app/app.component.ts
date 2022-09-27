@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { Observable, of, tap } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { FirebaseAuthService } from './fbauth/firebase/firebase-auth.service';
+import { FirebaseAuthService } from './fbauth/firebase-auth.service';
 
 @Component({
   selector: 'app-root',

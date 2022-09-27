@@ -8,7 +8,7 @@ import {
 import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { FirebaseAuthService } from './firebase-auth.service';
-import { environment } from '../../../environments/environment.prod';
+import { environment } from '../../environments/environment';
 @Injectable({
   providedIn: 'root',
 })
