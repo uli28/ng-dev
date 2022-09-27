@@ -5,8 +5,14 @@ import { RegisterComponent } from './components/register/register.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from '../material.module';
 import { CurrentUserComponent } from './components/current-user/current-user.component';
+import { LogoutBtnComponent } from './components/logout-btn/logout-btn.component';
 
-const comps = [LoginComponent, RegisterComponent, CurrentUserComponent];
+const comps = [
+  LoginComponent,
+  RegisterComponent,
+  CurrentUserComponent,
+  LogoutBtnComponent,
+];
 
 @NgModule({
   declarations: comps,

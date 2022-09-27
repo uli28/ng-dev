@@ -1,15 +1,17 @@
 import { Component, OnInit } from '@angular/core';
+import { FirebaseAuthService } from '../../firebase-auth.service';
 
 @Component({
   selector: 'app-logout-btn',
   templateUrl: './logout-btn.component.html',
-  styleUrls: ['./logout-btn.component.scss']
+  styleUrls: ['./logout-btn.component.scss'],
 })
 export class LogoutBtnComponent implements OnInit {
+  constructor(private as: FirebaseAuthService) {}
 
-  constructor() { }
+  ngOnInit(): void {}
 
-  ngOnInit(): void {
+  logOut() {
+    this.as.logOut();
   }
-
 }
