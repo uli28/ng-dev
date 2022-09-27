@@ -1,7 +1,22 @@
 [
   {
     "url": "firebase",
-    "title": "Firebase Authentication ",
+    "title": "Firebase Authentication",
     "component": "FirebaseComponent"
+  },
+  {
+    "url": "app-auth",
+    "title": "App Authentication",
+    "component": "AppAuthComponent"
+  },
+  {
+    "url": "interceptor",
+    "title": "Auth Interceptor",
+    "component": "InterceptorComponent"
+  },
+  {
+    "url": "auth-guard",
+    "title": "Auth Guard",
+    "component": "AuthGuardComponent"
   }
 ]

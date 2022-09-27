@@ -12,18 +12,32 @@ import { DemoService } from './demo-base/demo.service';
 import { LoadingService } from '../shared/loading/loading.service';
 import { LoadingInterceptor } from '../shared/loading/loading-interceptor';
 import { FirebaseAuthInterceptor } from '../fbauth/firebase-auth.interceptor';
+import { AppAuthComponent } from './samples/app-auth/app-auth.component';
+import { InterceptorComponent } from './samples/interceptor/interceptor.component';
+import { AuthGuardComponent } from './samples/auth-guard/auth-guard.component';
 
 const demoRoutes: Routes = [
   {
     path: '',
     component: DemoContainerComponent,
 
-    children: [{ path: 'firebase', component: FirebaseComponent }],
+    children: [
+      { path: 'firebase', component: FirebaseComponent },
+      { path: 'app-auth', component: AppAuthComponent },
+      { path: 'interceptor', component: InterceptorComponent },
+      { path: 'auth-guard', component: AuthGuardComponent },
+    ],
   },
 ];
 
 @NgModule({
-  declarations: [DemoContainerComponent, FirebaseComponent],
+  declarations: [
+    DemoContainerComponent,
+    FirebaseComponent,
+    AppAuthComponent,
+    InterceptorComponent,
+    AuthGuardComponent,
+  ],
   imports: [
     CommonModule,
     FormsModule,

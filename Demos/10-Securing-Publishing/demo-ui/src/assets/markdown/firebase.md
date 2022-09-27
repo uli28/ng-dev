@@ -5,21 +5,8 @@ To be able to use Firebase Auth you must:
 - Create an account at [Firebase](https://firebase.google.com/)
 - Update your Firebase Config in `environment.ts`
 
-   ```
-   firebaseConfig: {
-      ...
-   },
-   ```
-
-- Register FirebaseAuthInterceptor in `demos.module.ts`:
-
    ```json
-   providers: [
-      ...,
-      {
-      provide: HTTP_INTERCEPTORS,
-      useClass: FirebaseAuthInterceptor,
-      multi: true,
-      },
-   ],
+   firebaseConfig: {...},
    ```
+
+- Examine `firebase-auth.service.ts` and its usage in `register.component.ts` and `login.component.ts`
