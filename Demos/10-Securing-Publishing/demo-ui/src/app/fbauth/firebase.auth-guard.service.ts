@@ -1,18 +1,21 @@
+import { Injectable } from '@angular/core';
 import {
-  CanActivate,
   ActivatedRouteSnapshot,
-  RouterStateSnapshot,
+  CanActivate,
+  CanLoad,
+  Route,
   Router,
-  CanActivateChild,
+  RouterStateSnapshot,
+  UrlSegment,
+  UrlTree,
 } from '@angular/router';
 import { Observable } from 'rxjs';
-import { Injectable } from '@angular/core';
-import { FirebaseAuthService } from './firebase-auth.service';
 import { environment } from '../../environments/environment';
+import { FirebaseAuthService } from './firebase-auth.service';
 @Injectable({
   providedIn: 'root',
 })
-export class FBAuthGuard implements CanActivate, CanActivateChild {
+export class FirebaseAuthGuard implements CanActivate, CanLoad {
   constructor(private router: Router, private as: FirebaseAuthService) {
     as.getToken().subscribe((t) => {
       this.token = t;
@@ -33,10 +36,19 @@ export class FBAuthGuard implements CanActivate, CanActivateChild {
     }
   }
 
-  canActivateChild(
-    route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot
-  ): Observable<boolean> | Promise<boolean> | boolean {
-    return this.canActivate(route, state);
+  canLoad(
+    route: Route,
+    segments: UrlSegment[]
+  ):
+    | boolean
+    | UrlTree
+    | Observable<boolean | UrlTree>
+    | Promise<boolean | UrlTree> {
+    if (environment.authEnabled == false || this.token != '') {
+      return true;
+    } else {
+      this.router.navigate(['/']);
+      return false;
+    }
   }
 }

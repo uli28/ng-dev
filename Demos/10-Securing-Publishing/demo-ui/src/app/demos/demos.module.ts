@@ -15,6 +15,7 @@ import { FirebaseAuthInterceptor } from '../fbauth/firebase-auth.interceptor';
 import { AppAuthComponent } from './samples/app-auth/app-auth.component';
 import { InterceptorComponent } from './samples/interceptor/interceptor.component';
 import { AuthGuardComponent } from './samples/auth-guard/auth-guard.component';
+import { ProtectedApiComponent } from './samples/protected-api/protected-api.component';
 
 const demoRoutes: Routes = [
   {
@@ -37,6 +38,7 @@ const demoRoutes: Routes = [
     AppAuthComponent,
     InterceptorComponent,
     AuthGuardComponent,
+    ProtectedApiComponent,
   ],
   imports: [
     CommonModule,

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
-import { BehaviorSubject, map, Observable, switchMap, tap } from 'rxjs';
+import { BehaviorSubject, map, Observable, tap } from 'rxjs';
 import { environment } from '../../environments/environment';
 
 @Injectable({
@@ -9,30 +9,26 @@ import { environment } from '../../environments/environment';
 })
 export class FirebaseAuthService {
   private token: BehaviorSubject<string> = new BehaviorSubject<string>('');
-  private user: BehaviorSubject<firebase.default.User | null> =
-    new BehaviorSubject<firebase.default.User | null>(null);
 
-  constructor(private fireAuth: AngularFireAuth, private router: Router) {
-    this.fireAuth.authState
-      .pipe(
-        tap((user) => {
-          this.user.next(user);
-          if (user != null) {
-            user.getIdToken().then((token) => this.token.next(token));
-          } else {
-            this.token.next('');
-            // stay on the same route if auth is not enabled
-            if (environment.authEnabled) {
-              this.router.navigate(['/']);
-            }
-          }
-        })
-      )
-      .subscribe();
-  }
+  private user = this.fireAuth.authState.pipe(
+    //using a side effect to update the token
+    tap((user) => {
+      if (user != null) {
+        user.getIdToken().then((token) => this.token.next(token));
+      } else {
+        this.token.next('');
+        // stay on the same route if auth is not enabled
+        if (user == null && environment.authEnabled) {
+          this.router.navigate(['/']);
+        }
+      }
+    })
+  );
+
+  constructor(private fireAuth: AngularFireAuth, private router: Router) {}
 
   getUser() {
-    return this.user.asObservable();
+    return this.user;
   }
 
   getToken() {
@@ -75,9 +71,9 @@ export class FirebaseAuthService {
   logOut() {
     this.fireAuth
       .signOut()
-      .then(() => {
-        this.user.next(null);
-      })
+      // .then(() => {
+      //   this.user.next(null);
+      // })
       .catch((err) => console.log('Error in signOut', err));
   }
 }
