@@ -7,9 +7,9 @@ import { FoodItem } from '../../foodService/food.model';
   styleUrls: ['./food-row.component.scss'],
 })
 export class FoodRowComponent {
-  @Input() food: FoodItem;
-  @Output() onDelete: EventEmitter<FoodItem> = new EventEmitter();
-  @Output() onSelect: EventEmitter<FoodItem> = new EventEmitter();
+  @Input() food: FoodItem = new FoodItem();
+  @Output() onDelete: EventEmitter<FoodItem> = new EventEmitter<FoodItem>();
+  @Output() onSelect: EventEmitter<FoodItem> = new EventEmitter<FoodItem>();
 
   deleteFood(item: FoodItem) {
     this.onDelete.emit(item);

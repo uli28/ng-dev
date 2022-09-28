@@ -10,7 +10,7 @@ import { FoodServiceStateful } from './food-stateful.service';
 export class StatefulComponent implements OnInit {
   constructor(private service: FoodServiceStateful) {}
 
-  food: FoodItem[];
+  food: FoodItem[] = [];
 
   ngOnInit(): void {
     this.service.getAllFood().subscribe((data) => {

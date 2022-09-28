@@ -19,7 +19,7 @@ import { FoodItem } from '../foodService/food.model';
 })
 export class ComponentClassComponent implements OnInit {
   title = '';
-  food: FoodItem[];
+  food: FoodItem[] = [];
 
   constructor() {}
 

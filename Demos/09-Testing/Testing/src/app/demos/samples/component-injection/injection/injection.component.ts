@@ -10,7 +10,7 @@ import { FoodService } from '../../foodService/food.service';
 export class InjectionComponent implements OnInit {
   constructor(private fs: FoodService) {}
 
-  food: FoodItem[];
+  food: FoodItem[] = [];
 
   ngOnInit() {
     this.fs.getAllFood().subscribe((data: FoodItem[]) => {
