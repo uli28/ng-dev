@@ -14,6 +14,10 @@
   {
     "url": "comp-class",
     "title": "Test Component Class"
+  },  
+  {
+    "url": "comp-testingmodule",
+    "title": "Component Testingmodule"
   },
   {
     "url": "mock",
@@ -30,11 +34,6 @@
   {
     "url": "stateful",
     "title": "Stateful Service"
-  },
-
-  {
-    "url": "comp-testingmodule",
-    "title": "Component Testingmodule"
   },
   {
     "url": "comp-inject",
