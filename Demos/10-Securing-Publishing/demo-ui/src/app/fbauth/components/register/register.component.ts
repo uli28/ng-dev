@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-import {
-  FormGroup,
-  FormControl,
-  Validators,
-  AbstractControl,
-} from '@angular/forms';
+import { Component } from '@angular/core';
 import { FirebaseAuthService } from '../../firebase-auth.service';
+import {
+  AbstractControl,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
 
 @Component({
   selector: 'app-register',
@@ -30,7 +30,7 @@ export class RegisterComponent {
   });
 
   registerUser(form: FormGroup) {
-    this.as.registerUser(form.value.email, form.value.passwords.password);
+    this.as.createUser(form.value.email, form.value.passwords.password);
   }
 
   passwordConfirming(c: AbstractControl): { invalid: boolean } | null {

@@ -3,27 +3,44 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
-import { FBAuthModule } from '../fbauth/fbauth.module';
+import { FirebaseAuthModule } from '../fbauth/fbauth.module';
 import { MaterialModule } from '../material.module';
 import { SharedModule } from '../shared/shared.module';
 import { DemoContainerComponent } from './demo-container/demo-container.component';
 import { FirebaseComponent } from './samples/firebase/firebase.component';
-import { FirebaseAuthInterceptor } from '../fbauth/firebase/firebase-auth.interceptor';
 import { DemoService } from './demo-base/demo.service';
 import { LoadingService } from '../shared/loading/loading.service';
 import { LoadingInterceptor } from '../shared/loading/loading-interceptor';
+import { FirebaseAuthInterceptor } from '../fbauth/firebase-auth.interceptor';
+import { AppAuthComponent } from './samples/app-auth/app-auth.component';
+import { InterceptorComponent } from './samples/interceptor/interceptor.component';
+import { AuthGuardComponent } from './samples/auth-guard/auth-guard.component';
+import { ProtectedApiComponent } from './samples/protected-api/protected-api.component';
 
 const demoRoutes: Routes = [
   {
     path: '',
     component: DemoContainerComponent,
 
-    children: [{ path: 'firebase', component: FirebaseComponent }],
+    children: [
+      { path: 'firebase', component: FirebaseComponent },
+      { path: 'app-auth', component: AppAuthComponent },
+      { path: 'interceptor', component: InterceptorComponent },
+      { path: 'secured-api', component: ProtectedApiComponent },
+      { path: 'auth-guard', component: AuthGuardComponent },
+    ],
   },
 ];
 
 @NgModule({
-  declarations: [DemoContainerComponent, FirebaseComponent],
+  declarations: [
+    DemoContainerComponent,
+    FirebaseComponent,
+    AppAuthComponent,
+    InterceptorComponent,
+    AuthGuardComponent,
+    ProtectedApiComponent,
+  ],
   imports: [
     CommonModule,
     FormsModule,
@@ -32,7 +49,7 @@ const demoRoutes: Routes = [
     MaterialModule,
     HttpClientModule,
     SharedModule,
-    FBAuthModule,
+    FirebaseAuthModule,
   ],
   providers: [
     DemoService,

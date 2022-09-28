@@ -1,8 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { FirebaseAuthService } from '../../../fbauth/firebase/firebase-auth.service';
-import { environment } from 'src/environments/environment';
-import { catchError, map } from 'rxjs';
+import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { FirebaseAuthService } from '../../../fbauth/firebase-auth.service';
 
 @Component({
   selector: 'app-firebase',
@@ -10,10 +8,11 @@ import { catchError, map } from 'rxjs';
   styleUrls: ['./firebase.component.scss'],
 })
 export class FirebaseComponent implements OnInit {
-  constructor(private httpClient: HttpClient, public as: FirebaseAuthService) {}
+  @ViewChild('register') registerTemplate!: TemplateRef<any>;
+  @ViewChild('login') loginTemplate!: TemplateRef<any>;
+  constructor(private dialog: MatDialog, public as: FirebaseAuthService) {}
 
   currentUser: firebase.default.User | null = null;
-  resp: any;
 
   ngOnInit() {
     this.as.getUser().subscribe((user: any) => {
@@ -21,22 +20,11 @@ export class FirebaseComponent implements OnInit {
     });
   }
 
-  callCoreApi() {
-    this.httpClient
-      .get(`${environment.api}demo`)
-      .pipe(
-        map((data) => {
-          this.resp = data;
-        }),
-        catchError((err) => {
-          this.resp = err;
-          return err;
-        })
-      )
-      .subscribe();
+  logIn() {
+    this.dialog.open(this.loginTemplate, { width: '350px' });
   }
 
-  logOut() {
-    this.as.signOut();
+  registerUser() {
+    this.dialog.open(this.registerTemplate, { width: '350px' });
   }
 }

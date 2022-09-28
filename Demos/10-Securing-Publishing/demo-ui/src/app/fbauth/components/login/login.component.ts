@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Component } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { LoginCredentials } from '../../credential.model';
 import { FirebaseAuthService } from '../../firebase-auth.service';
 
@@ -21,6 +21,6 @@ export class LoginComponent {
 
   logIn(form: FormGroup) {
     let vm: LoginCredentials = form.value;
-    this.as.logOn(vm.email, vm.password);
+    this.as.logIn(vm.email, vm.password);
   }
 }
