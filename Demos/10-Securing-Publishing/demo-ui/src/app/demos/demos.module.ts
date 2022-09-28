@@ -11,10 +11,11 @@ import { FirebaseComponent } from './samples/firebase/firebase.component';
 import { DemoService } from './demo-base/demo.service';
 import { LoadingService } from '../shared/loading/loading.service';
 import { LoadingInterceptor } from '../shared/loading/loading-interceptor';
+import { PublishComponent } from './samples/publish/publish.component';
 import { FirebaseAuthInterceptor } from '../fbauth/firebase-auth.interceptor';
 import { AppAuthComponent } from './samples/app-auth/app-auth.component';
-import { InterceptorComponent } from './samples/interceptor/interceptor.component';
 import { AuthGuardComponent } from './samples/auth-guard/auth-guard.component';
+import { InterceptorComponent } from './samples/interceptor/interceptor.component';
 import { ProtectedApiComponent } from './samples/protected-api/protected-api.component';
 
 const demoRoutes: Routes = [
@@ -28,6 +29,7 @@ const demoRoutes: Routes = [
       { path: 'interceptor', component: InterceptorComponent },
       { path: 'secured-api', component: ProtectedApiComponent },
       { path: 'auth-guard', component: AuthGuardComponent },
+      { path: 'publish', component: PublishComponent },
     ],
   },
 ];
@@ -40,6 +42,7 @@ const demoRoutes: Routes = [
     InterceptorComponent,
     AuthGuardComponent,
     ProtectedApiComponent,
+    PublishComponent,
   ],
   imports: [
     CommonModule,
