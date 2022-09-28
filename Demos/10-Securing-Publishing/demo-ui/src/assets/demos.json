@@ -23,5 +23,10 @@
     "url": "auth-guard",
     "title": "Auth Guard",
     "component": "AuthGuardComponent"
+  },
+  {
+    "url": "publish",
+    "title": "Publishing",
+    "component": "PublishComponent"
   }
 ]
