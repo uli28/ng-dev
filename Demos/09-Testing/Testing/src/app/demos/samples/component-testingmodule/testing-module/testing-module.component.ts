@@ -9,7 +9,7 @@ import { FoodItem } from '../../foodService/food.model';
 })
 export class TestingModuleComponent {
   food: FoodItem[] = foodLoadData;
-  foodToAdd: FoodItem | null;
+  foodToAdd: FoodItem | null = null;
 
   constructor() {}
 

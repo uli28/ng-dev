@@ -1,5 +1,5 @@
 export class FoodItem {
-  id: number | undefined;
-  name: string;
-  rating: number;
+  id: number = 0;
+  name: string = '';
+  rating: number = 0;
 }
