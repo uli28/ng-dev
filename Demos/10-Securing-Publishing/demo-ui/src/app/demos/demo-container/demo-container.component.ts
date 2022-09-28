@@ -30,7 +30,7 @@ export class DemoContainerComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.setMenu();
+    this.getDemoItems();
     this.setMetadata();
     this.setMenuPosition();
     this.getWorbenchStyle();
@@ -49,7 +49,7 @@ export class DemoContainerComponent implements OnInit {
     });
   }
 
-  setMenu() {
+  getDemoItems() {
     this.demos$ = this.demoService.getItems();
   }
 

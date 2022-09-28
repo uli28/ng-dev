@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
-import { map, Observable, switchMap, tap } from 'rxjs';
+import { concatMap, map, mergeMap, Observable, switchMap, tap } from 'rxjs';
 import { environment } from '../../environments/environment';
 
 @Injectable({
@@ -12,7 +12,7 @@ export class FirebaseAuthService {
     tap((state) => console.log('auth state: ', state))
   );
 
-  private token = this.user.pipe(
+  private token = this.fireAuth.authState.pipe(
     switchMap((user) => {
       if (user) {
         return user.getIdToken();

@@ -1,6 +1,6 @@
 export const environment = {
   production: false,
-  authEnabled: true,
+  authEnabled: false,
   title: 'Security & Publishing',
   markdownPath: '/assets/markdown/',
   api: 'https://localhost:5001/',
