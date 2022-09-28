@@ -22,7 +22,7 @@ export class IntroComponent implements OnInit {
   @Input() title: string = '';
   @Input() subtitle: string = '';
   @Input() img: string = '';
-  authEnabled = environment.authEnabled;
+  authEnabled = this.as.isAuthenticated();
 
   constructor(
     private dialog: MatDialog,
