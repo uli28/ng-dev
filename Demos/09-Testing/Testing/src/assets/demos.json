@@ -1,55 +1,44 @@
 [
   {
     "url": "unittesting",
-    "title": "Into Unit Testing",
-    "markdown": "unit-testing",
-    "mdonly": true
+    "title": "Into Unit Testing"
   },
   {
     "url": "testpipe",
-    "title": "Test Pipe",
-    "markdown": "pipe"
+    "title": "Test Pipe"
   },
   {
     "url": "simpleservice",
-    "title": "Simple Service",
-    "markdown": "simpleservice",
-    "mdonly": true
-  },
-  {
-    "url": "mock",
-    "title": "Use Mock",
-    "markdown": "mock"
-  },
-  {
-    "url": "spy",
-    "title": "Use Spy",
-    "markdown": "spy"
-  },
-  {
-    "url": "httptest",
-    "title": "Inject HttpClient",
-    "markdown": "mock"
-  },
-  {
-    "url": "stateful",
-    "title": "Stateful Service",
-    "markdown": "stateful"
+    "title": "Simple Service"
   },
   {
     "url": "comp-class",
-    "title": "Test Component Class",
-    "markdown": "comp-class"
+    "title": "Test Component Class"
   },
   {
+    "url": "mock",
+    "title": "Inject Mock Implementation"
+  },
+  {
+    "url": "spy",
+    "title": "Inject Spy"
+  },
+  {
+    "url": "httptest",
+    "title": "Inject HttpClient"
+  },
+  {
+    "url": "stateful",
+    "title": "Stateful Service"
+  },
+
+  {
     "url": "comp-testingmodule",
-    "title": "Component Testingmodule",
-    "markdown": "testingmodule"
+    "title": "Component Testingmodule"
   },
   {
     "url": "comp-inject",
-    "title": "Component Injection",
-    "markdown": "simplecomp"
+    "title": "Component Injection"
   },
   {
     "url": "component-write",
