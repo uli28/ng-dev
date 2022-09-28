@@ -9,31 +9,32 @@ import {
   UrlSegment,
   UrlTree,
 } from '@angular/router';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { environment } from '../../environments/environment';
 import { FirebaseAuthService } from './firebase-auth.service';
+
 @Injectable({
   providedIn: 'root',
 })
 export class FirebaseAuthGuard implements CanActivate, CanLoad {
-  constructor(private router: Router, private as: FirebaseAuthService) {
-    as.getToken().subscribe((t) => {
-      this.token = t;
-    });
-  }
+  constructor(private router: Router, private as: FirebaseAuthService) {}
 
-  token = '';
+  user = this.as.getUser();
 
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): Observable<boolean> | Promise<boolean> | boolean {
-    if (environment.authEnabled == false || this.token != '') {
-      return true;
-    } else {
-      this.router.navigate(['/']);
-      return false;
-    }
+    return this.user.pipe(
+      map((user) => {
+        if (environment.authEnabled == false || user != null) {
+          return true;
+        } else {
+          this.router.navigate(['/']);
+          return false;
+        }
+      })
+    );
   }
 
   canLoad(
@@ -44,11 +45,15 @@ export class FirebaseAuthGuard implements CanActivate, CanLoad {
     | UrlTree
     | Observable<boolean | UrlTree>
     | Promise<boolean | UrlTree> {
-    if (environment.authEnabled == false || this.token != '') {
-      return true;
-    } else {
-      this.router.navigate(['/']);
-      return false;
-    }
+    return this.user.pipe(
+      map((user) => {
+        if (environment.authEnabled == false || user != null) {
+          return true;
+        } else {
+          this.router.navigate(['/']);
+          return false;
+        }
+      })
+    );
   }
 }

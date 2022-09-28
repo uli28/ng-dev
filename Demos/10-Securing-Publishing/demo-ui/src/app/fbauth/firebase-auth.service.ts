@@ -1,26 +1,29 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
-import { BehaviorSubject, map, Observable, tap } from 'rxjs';
+import { map, Observable, switchMap, tap } from 'rxjs';
 import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class FirebaseAuthService {
-  private token: BehaviorSubject<string> = new BehaviorSubject<string>('');
-
   private user = this.fireAuth.authState.pipe(
-    //using a side effect to update the token
-    tap((user) => {
-      if (user != null) {
-        user.getIdToken().then((token) => this.token.next(token));
+    tap((state) => console.log('auth state: ', state))
+  );
+
+  private token = this.user.pipe(
+    switchMap((user) => {
+      if (user) {
+        return user.getIdToken();
       } else {
-        this.token.next('');
-        // stay on the same route if auth is not enabled
-        if (user == null && environment.authEnabled) {
-          this.router.navigate(['/']);
-        }
+        return '';
+      }
+    }),
+    tap((token) => {
+      // stay on the same route if auth is not enabled
+      if (token == '' && environment.authEnabled) {
+        this.router.navigate(['/']);
       }
     })
   );
@@ -32,7 +35,7 @@ export class FirebaseAuthService {
   }
 
   getToken() {
-    return this.token.asObservable();
+    return this.token;
   }
 
   isAuthenticated(): Observable<boolean> {
@@ -71,9 +74,6 @@ export class FirebaseAuthService {
   logOut() {
     this.fireAuth
       .signOut()
-      // .then(() => {
-      //   this.user.next(null);
-      // })
       .catch((err) => console.log('Error in signOut', err));
   }
 }

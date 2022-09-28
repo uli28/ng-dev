@@ -12,7 +12,7 @@ const routes: Routes = [
     path: 'demos',
     loadChildren: () =>
       import('./demos/demos.module').then((m) => m.DemosModule),
-    // canLoad: [FirebaseAuthGuard],
+    canLoad: [FirebaseAuthGuard],
   },
   {
     path: 'skills',

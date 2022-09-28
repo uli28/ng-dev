@@ -1,7 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { environment } from 'src/environments/environment';
-import { catchError, map } from 'rxjs';
+import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { FirebaseAuthService } from '../../../fbauth/firebase-auth.service';
 
 @Component({
@@ -10,7 +8,9 @@ import { FirebaseAuthService } from '../../../fbauth/firebase-auth.service';
   styleUrls: ['./firebase.component.scss'],
 })
 export class FirebaseComponent implements OnInit {
-  constructor(private httpClient: HttpClient, public as: FirebaseAuthService) {}
+  @ViewChild('register') registerTemplate!: TemplateRef<any>;
+  @ViewChild('login') loginTemplate!: TemplateRef<any>;
+  constructor(private dialog: MatDialog, public as: FirebaseAuthService) {}
 
   currentUser: firebase.default.User | null = null;
 
@@ -20,7 +20,11 @@ export class FirebaseComponent implements OnInit {
     });
   }
 
-  logOut() {
-    this.as.logOut();
+  logIn() {
+    this.dialog.open(this.loginTemplate, { width: '350px' });
+  }
+
+  registerUser() {
+    this.dialog.open(this.registerTemplate, { width: '350px' });
   }
 }
