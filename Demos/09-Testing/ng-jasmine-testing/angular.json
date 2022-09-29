@@ -1,22 +1,13 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "cli": {
-    "analytics": false,
-    "cache": {
-      "enabled": false
-    }
-  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Testing": {
+    "ng-jasmine-testing": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
           "style": "scss"
-        },
-        "@schematics/angular:application": {
-          "strict": true
         }
       },
       "root": "",
@@ -26,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/Testing",
+            "outputPath": "dist/ng-jasmine-testing",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -90,12 +81,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "Testing:build:production",
-              "ssl":true
+              "browserTarget": "ng-jasmine-testing:build:production"
             },
             "development": {
-              "browserTarget": "Testing:build:development",
-              "ssl":true
+              "browserTarget": "ng-jasmine-testing:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -103,7 +92,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "Testing:build"
+            "browserTarget": "ng-jasmine-testing:build"
           }
         },
         "test": {
@@ -138,5 +127,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "10dab8d4-6ae0-4dd7-9d73-b63e89b76fbe"
   }
 }
