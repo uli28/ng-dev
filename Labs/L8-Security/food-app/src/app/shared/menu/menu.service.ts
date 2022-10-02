@@ -30,13 +30,6 @@ export class MenuService {
       });
   }
 
-  getTopItems(): Observable<MenuItem[]> {
-    return of([
-      { label: 'Home', url: '' },
-      { label: 'Demos', url: 'demos' },
-    ]);
-  }
-
   toggleMenuVisibility() {
     const visible = !this.sideNavVisible.getValue();
     this.sideNavVisible.next(visible);
