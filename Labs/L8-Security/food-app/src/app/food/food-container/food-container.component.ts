@@ -8,8 +8,8 @@ import { FoodService } from '../food.service';
   styleUrls: ['./food-container.component.scss'],
 })
 export class FoodContainerComponent implements OnInit {
-  food: FoodItem[];
-  selected: FoodItem | null;
+  food: FoodItem[] = [];
+  selected: FoodItem | null = null;
 
   constructor(private fs: FoodService) {}
 
@@ -37,8 +37,10 @@ export class FoodContainerComponent implements OnInit {
     if (f.id) {
       this.fs.updateFood(f).subscribe((result) => {
         let existing = this.food.find((f) => f.id == result.id);
-        Object.assign(existing, result);
-        this.food = [...this.food];
+        if (existing) {
+          Object.assign(existing, result);
+          this.food = [...this.food];
+        }
       });
     } else {
       this.fs.addFood(f).subscribe((result) => {

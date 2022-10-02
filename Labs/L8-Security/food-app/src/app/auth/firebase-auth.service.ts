@@ -1,61 +1,65 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
-import { BehaviorSubject, Observable, of } from 'rxjs';
+import { Router } from '@angular/router';
+import { concatMap, map, mergeMap, Observable, switchMap, tap } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
-export class FBAuthService {
-  constructor(private fireAuth: AngularFireAuth) {
-    this.onUserChanged();
-  }
+export class FirebaseAuthService {
+  private user = this.fireAuth.authState.pipe(
+    tap((state) => console.log('auth state: ', state))
+  );
 
-  private Token: BehaviorSubject<string> = new BehaviorSubject<string>('');
-
-  private fbUser: firebase.default.User | null = null;
-  public User: BehaviorSubject<firebase.default.User | null> =
-    new BehaviorSubject(this.fbUser);
-
-  private onUserChanged() {
-    this.fireAuth.authState.subscribe((user) => {
-      this.fbUser = user;
-      this.User.next(user);
-
-      if (user != null) {
-        this.fbUser?.getIdToken().then((token) => {
-          this.Token.next(token);
-        });
+  private token = this.fireAuth.authState.pipe(
+    switchMap((user) => {
+      if (user) {
+        return user.getIdToken();
       } else {
-        this.Token.next('');
+        return '';
       }
-    });
+    }),
+    tap((token) => {
+      // stay on the same route if auth is not enabled
+      if (token == '' && environment.authEnabled) {
+        this.router.navigate(['/']);
+      }
+    })
+  );
+
+  constructor(private fireAuth: AngularFireAuth, private router: Router) {}
+
+  getUser() {
+    return this.user;
   }
 
-  getToken(): Observable<string> {
-    return this.Token;
+  getToken() {
+    return this.token;
   }
 
   isAuthenticated(): Observable<boolean> {
-    this.User.subscribe((user) => {
-      const auth: boolean = user == null ? false : true;
-      return of(auth);
-    });
-    return of(false);
+    return this.user.pipe(
+      map((user) => {
+        let authEnabled = environment.authEnabled;
+        return authEnabled == false || user != null ? true : false;
+      })
+    );
   }
 
-  registerUser(
+  createUser(
     email: string,
     password: string
   ): Promise<firebase.default.auth.UserCredential> {
     return this.fireAuth
       .createUserWithEmailAndPassword(email, password)
       .catch((err) => {
-        console.log('Error logging in', err);
+        console.log('Error creating User', err);
         return err;
       });
   }
 
-  logOn(
+  logIn(
     email: string,
     password: string
   ): Promise<firebase.default.auth.UserCredential> {
@@ -67,12 +71,9 @@ export class FBAuthService {
       });
   }
 
-  logOff() {
+  logOut() {
     this.fireAuth
       .signOut()
-      .then(() => {
-        this.fbUser = null;
-      })
-      .catch((err) => console.log('Error logging out', err));
+      .catch((err) => console.log('Error in signOut', err));
   }
 }

@@ -1,7 +1,7 @@
 export class LoginCredentials {
-  email: string;
-  pwd: string;
-  pwdRepeat?: string;
+  email: string = '';
+  password: string = '';
+  passwordRepeat?: string;
   remember?: boolean;
   displayName?: string;
 }

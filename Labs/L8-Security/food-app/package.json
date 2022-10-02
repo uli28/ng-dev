@@ -10,8 +10,8 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "test": "ng test",
-    "lint": "ng lint"
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test"
   },
   "private": true,
   "dependencies": {
@@ -28,7 +28,7 @@
     "@angular/platform-browser-dynamic": "^14.2.3",
     "@angular/router": "^14.2.3",
     "firebase": "^9.8.2",
-    "rxjs": "~6.5.4",
+    "rxjs": "~7.5.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.4"
   },
