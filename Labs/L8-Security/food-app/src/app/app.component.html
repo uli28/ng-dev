@@ -4,18 +4,21 @@
   gdColumns="auto"
   class="grid"
 >
-  <div gdArea="navbar"><app-navbar></app-navbar></div>
-  <div gdArea=loading><app-loading *ngIf="ls.isLoading | async"></app-loading> </div>
+  <div gdArea="navbar">
+    <app-navbar *ngIf="isAuthenticated | async"></app-navbar>
+  </div>
+  <div gdArea="loading">
+    <app-loading *ngIf="ls.isLoading | async"></app-loading>
+  </div>
   <div gdArea="mainrow" class="main">
-    <mat-sidenav-container>
-      <mat-sidenav  #sidenav
-      [opened]="ms.sideNavVisible | async"
-      [mode]="mode">
-        <app-sidebar></app-sidebar>
+    <mat-sidenav-container *ngIf="isAuthenticated | async">
+      <mat-sidenav #sidenav [opened]="ms.sideNavVisible | async" [mode]="mode" >
+        <app-sidebar *ngIf="isAuthenticated | async"></app-sidebar>
       </mat-sidenav>
       <mat-sidenav-content [ngStyle]="getWorbenchStyle()">
         <router-outlet></router-outlet>
       </mat-sidenav-content>
     </mat-sidenav-container>
-  </div> 
+    <router-outlet *ngIf="(isAuthenticated | async)==false"></router-outlet>    
+  </div>
 </div>

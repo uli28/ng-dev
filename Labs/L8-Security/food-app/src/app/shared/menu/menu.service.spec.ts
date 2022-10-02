@@ -24,9 +24,5 @@ describe('menu.service', () => {
       { label: 'Home', url: '' },
       { label: 'Demos', url: 'demos' },
     ];
-
-    ms.getTopItems().subscribe((data) => {
-      expect(data).toEqual(result);
-    });
   });
 });

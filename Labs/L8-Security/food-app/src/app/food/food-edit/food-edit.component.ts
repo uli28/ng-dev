@@ -14,7 +14,7 @@ import { FoodItem } from '../food.model';
   styleUrls: ['./food-edit.component.scss'],
 })
 export class FoodEditComponent {
-  @Input() food: FoodItem;
+  @Input() food: FoodItem = new FoodItem();
   @Output() saveFood: EventEmitter<FoodItem> = new EventEmitter();
   form: FormGroup;
 

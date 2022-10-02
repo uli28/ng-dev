@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { MatDrawerMode } from '@angular/material/sidenav';
-import { MenuService } from './shared/menu/menu.service';
+import { Observable, of, tap } from 'rxjs';
+import { FirebaseAuthService } from './auth/firebase-auth.service';
 import { LoadingService } from './shared/loading/loading.service';
+import { MenuService } from './shared/menu/menu.service';
 
 @Component({
   selector: 'app-root',
@@ -9,11 +11,22 @@ import { LoadingService } from './shared/loading/loading.service';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
+  isAuthenticated: Observable<boolean> = of(false);
   title = 'Food App';
   mode: MatDrawerMode = 'side';
 
-  constructor(public ms: MenuService, public ls: LoadingService) {
+  constructor(
+    public ms: MenuService,
+    public ls: LoadingService,
+    private auth: FirebaseAuthService
+  ) {
     ms.sideNavPosition.subscribe((m) => (this.mode = m));
+  }
+
+  ngOnInit() {
+    this.isAuthenticated = this.auth
+      .isAuthenticated()
+      .pipe(tap((auth) => console.log('auth changed to autheticated: ', auth)));
   }
 
   getWorbenchStyle() {
