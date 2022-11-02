@@ -283,4 +283,10 @@ export class ClassesComponent implements OnInit {
     const nbr = 22;
     const nbrSTring: string = String(nbr);
   }
+
+  protected access() {
+    console.log(
+      'Props & Methods that are public or protected can be accessed from the template of the corresponding component.'
+    );
+  }
 }

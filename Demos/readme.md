@@ -31,9 +31,9 @@ The `demo-app` consists of `app.component.html` that defines the base structure 
 
 - ECMA Script Standards
 - TypeScript Overview, Configuration, Debugging, ES Lint
-- Types, Arrays & Functions
-- ECMA Script 6+ Essentials
+- Types, Variables, Literal Types, Functions
 - Objects, Classes, Interfaces
+- ECMA Script 6+ Essentials Util Functions
 - 3rd Party Libraries & Type Definitions
 - Async Operations, Promises & Observables
 

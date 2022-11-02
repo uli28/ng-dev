@@ -129,9 +129,11 @@ export class TypesComponent implements OnInit {
 
     function processChoice(ch: choice) {
       if (ch == 'ok') {
-        console.log(`well ... thats ${ch}`);
+        console.log(`well ... you choose ${ch}`);
       }
     }
+
+    processChoice('ok');
   }
 
   useTypings() {
