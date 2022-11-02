@@ -16,7 +16,7 @@ export class NgTemplateComponent implements OnInit {
   ngOnInit(): void {
     this.ps
       .getPersons()
-      .pipe(delay(1500))
+      .pipe(delay(2500))
       .subscribe((data) => {
         this.persons = data;
       });

@@ -6,7 +6,9 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class CheckPipe implements PipeTransform {
   transform(checked: boolean): any {
     const result: string =
-      checked == true ? '<i class="material-icons">check</i>' : '';
+      checked == true
+        ? '<span class="material-icons">check</span>'
+        : '<span>&nbsp</span>';
     return result;
   }
 }

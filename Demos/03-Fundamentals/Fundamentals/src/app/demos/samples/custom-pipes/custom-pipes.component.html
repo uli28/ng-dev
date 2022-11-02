@@ -8,8 +8,8 @@
       <input type="checkbox" [(ngModel)]="isChecked" />
     </div>
     <div>
-      <span>Is selected: </span
-      ><span class="checked" [innerHTML]="isChecked | toChecked"></span>
+      <div>Is selected:</div>
+      <div class="checked" [innerHTML]="isChecked | toChecked"></div>
     </div>
   </mat-card-content>
 </mat-card>
@@ -19,10 +19,9 @@
     <mat-card-title> Cust Currency Pipe </mat-card-title>
   </mat-card-header>
   <mat-card-content>
-    <div>Price: {{ price | euro}}</div>
+    <div>Price: {{ price | euro }}</div>
     <div>Price: {{ 100 | euro }}</div>
-    <div>Price: {{ 50 | euro }}</div>
-    <div>Price: {{ 12 | euro }}</div>
+    <div>Price: {{ 50.1 | euro }}</div>
     <div>Price: {{ 0.12 | euro }}</div></mat-card-content
   >
 </mat-card>

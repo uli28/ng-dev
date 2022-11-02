@@ -5,7 +5,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class EuroPipe implements PipeTransform {
   transform(value: number, args?: any): any {
-    let result = `${value} €`;
+    let result = `${value.toFixed(2)} €`;
     return result;
   }
 }

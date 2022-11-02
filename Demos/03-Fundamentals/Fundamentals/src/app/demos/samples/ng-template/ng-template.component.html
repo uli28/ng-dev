@@ -4,7 +4,7 @@
   <mat-progress-bar mode="indeterminate"></mat-progress-bar>
 </ng-template>
 
-<mat-card *ngIf="persons; else loading">
+<mat-card *ngIf="persons.length>0; else loading">
   <mat-card-header>
     <mat-card-title>Persons</mat-card-title>
   </mat-card-header>
