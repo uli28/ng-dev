@@ -6,7 +6,7 @@ import { FoodItem } from '../foodService/food.model';
   template: `<app-markdown-renderer
       [md]="'component-class'"
     ></app-markdown-renderer>
-    <mat-card>
+    <mat-card appearance="outlined">
       <mat-card-header>
         <mat-card-title>ComponentClassComponent</mat-card-title>
       </mat-card-header>
