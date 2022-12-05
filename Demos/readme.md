@@ -13,6 +13,8 @@ The `demo-app` consists of `app.component.html` that defines the base structure 
 
 ![demo-container.component](_images/demo-container.png)
 
+> Note: If you find any errors or have any suggestions, please create an issue on this repo
+
 ## Topics covered in the class
 
 ### Angular Introduction & Setup
