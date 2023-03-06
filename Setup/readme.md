@@ -1,92 +1,50 @@
-# Lab Setup Guide
+# Class Environment Setup
 
-- Install software
-- Fork & Clone Class Repo and set Github requirements
-- Create Azure hosted Lab VM (optional)
+- Install Software
+- Install Windows Subsystem Linux - Optional
+- Setup local container support - Optional
+- Create Lab VM - Optional
 
 ## Install Software
 
-Base Software Requirements:
+>Note: Create Lab VM is an optional step that you could execute if you want to develop on azure hosted VM. If you want to develop on your local machine you can skip this step.
 
-- [Node 14.x](https://nodejs.org/download/release/v14.18.0/)
-- [Visual Studio Code](https://code.visualstudio.com/)
-- [Angular Language Service](https://marketplace.visualstudio.com/items?itemName=Angular.ng-template)
-- [Git](https://git-scm.com/downloads)
-
-To install an optimal software configuration run the script `setup-angular-dev.ps1` from an elevated PowerShell prompt:
+To install Software run the script `setup-angular-dev.ps1` from an elevated PowerShell prompt:
 
 ![run-as](_images/run-as.jpg)
 
 ```powershell
 Set-ExecutionPolicy Bypass -Scope Process -Force;
-Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/arambazamba/ng-dev/main/Setup/setup-angular-dev.ps1'))
+Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/arambazamba/ng-adv/main/setup/setup-angular-dev.ps1'))
 ```
 
-> Note: This script will run for approx 15 min. No need to wait! In the meantime you can continue to fork and clone my repo as described in the next section.
+> Note: This script will run for approx 15 min. 
 
-## Fork & Clone Class Repo and set Github requirements
+## Setup Git & Clone Class Repository
 
-Set User and E-Mail in order to be able to commit to git:
+Login to GitHub using [GitHub CLI](https://cli.github.com/manual/):
+
+```bash
+gh auth login
+```
+
+Fork the class repository:
+
+```bash
+gh repo fork https://github.com/arambazamba/ng-adv/
+```
+
+Download the forked repository:
+
+```bash 
+gh repo clone https://github.com/<USERNAME>/ng-adv/
+```
+
+Set User and E-Mail:
 
 ```bash
 git config --global user.name "Your Name"
-git config --global user.email "your.email@yourdomain.com"
+git config --global user.email "your.email@yourdomain.com
 ```
 
-Go to `https://github.com/arambazamba/ng-dev` and fork the repo
-
-![forking-wf](_images/fork.jpg)
-
-The forking-workflow allows you to commit your changes to your fork of the repo and still get updates on the repo
-
-![forking-wf](_images/forking-workflow.jpg)
-
-Clone Class Repo:
-
-```bash
-git clone https://github.com/Student01/ng-dev
-```
-
-> Note: If you have forked the class repo clone your own fork, otherwise use https://github.com/ARambazamba/ng-dev
-
-## Create Azure hosted Lab VM - optional
-
-Execute `create-lab-vm.azcli` or run the following remote script in Cloud Shell
-
-```bash
-curl https://raw.githubusercontent.com/arambazamba/ng-dev/main/Setup/create-lab-vm.azcli | bash
-```
-
-![create-labvm](_images/create-lab-vm.jpg)
-
-> Note: In order for Docker to work on a Windows 10 host you need to install Hyper-V or use Windows Subsystem for Linux 2 (WSL2). A detailed Setup Guide can be found [here](https://github.com/ARambazamba/ClassSetup)
-
-### Connect to VM
-
-Go to Ressource Group `ng-dev` and connect to VM using RDP and the credentials that you have used in the script:
-
-Download RDP File:
-
-![download-rdp](_images/download-rdp.jpg)
-
-Optional - Disable Login:
-
-![disable-login](_images/disable-login.jpg)
-
-Sign In & Remember:
-
-![connect-rdp](_images/trust-vm.jpg)
-
-Credentials:
-
-```
-user=ng-devlabadmin
-pwd=Lab@dmin1233
-```
-
-![sign-in.jpg](_images/sign-in.jpg)
-
-Accept Settings:
-
-![accept-settings](_images/accept-settings.jpg)
-
+Congratulations you have completed the base setup of your class software requirements.
