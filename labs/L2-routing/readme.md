@@ -13,7 +13,7 @@
         { path: "food", component: FoodContainerComponent },
         { path: "about", component: AboutComponent },
         ```
-    - Add [RouterLink](https://angular.io/api/router/RouterLink) directives to `navbar.component.html` to enable navigation. Apply a style for the active link - use [this reference](https://github.com/arambazamba/ng-dev/blob/main/Demos/04-Routing/routing-modules/src/app/shared/navbar/navbar.component.ts)
+    - Add [RouterLink](https://angular.io/api/router/RouterLink) directives to `navbar.component.html` to enable navigation. Apply a style for the active link - use [this reference](https://github.com/arambazamba/ng-dev/blob/main/demos/04-routing/routing-modules/src/app/shared/navbar/navbar.component.ts)
 
     - Test the routing
 

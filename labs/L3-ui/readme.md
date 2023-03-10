@@ -18,7 +18,7 @@ Add [Angular Material](https://material.angular.io) & [Angular Flex Layout](http
 
 Implement the Base Layout using CSS Grid:
 
-- Change to base layout in app.component to use [CSS Grid](https://css-tricks.com/snippets/css/complete-guide-grid/) and the [@angular/flex-layout css grid implementation](https://github.com/angular/flex-layout/blob/master/guides/Grid.md). Use the [Demo App](.../../Demos/05-UI/user-interface/src/app/app.component.html) Layout as a reference.
+- Change to base layout in app.component to use [CSS Grid](https://css-tricks.com/snippets/css/complete-guide-grid/) and the [@angular/flex-layout css grid implementation](https://github.com/angular/flex-layout/blob/master/guides/Grid.md). Use the [Demo App](.../../demos/05-ui/user-interface/src/app/app.component.html) Layout as a reference.
     
     - Hide the sidebar on devices with a horizontal width less than medium. We will add a toggle button in another lab.
 
