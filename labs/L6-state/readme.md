@@ -34,7 +34,7 @@ Implement a responsive Side Menu:
     </div> 
     </div>
     ``` 
-- Take the solution from the [Demo App](/Demos/08-Reactive-Programming-and-State/Reactive/src/app/shared/menu/menu.service.ts) as a reference.
+- Take the solution from the [Demo App](/demos/08-rxjs-state/ng-reactive/src/app/shared/menu/menu.service.ts) as a reference.
 
 Implement a global loading inicator (Advanced Optional):
 

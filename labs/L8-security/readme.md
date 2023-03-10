@@ -14,4 +14,4 @@
 
     ![web-app](_images/config.jpg)
 
-- Implement Authentication. Use this [reference](/Demos/10-Securing-Publishing/demo-ui)
+- Implement Authentication. Use this [reference](/demos/10-securing-publishing/demo-ui)
