@@ -1,6 +1,6 @@
 # Angular Single Page Application (SPA) Development
 
-Companion Material for Angular Developer Basics by [Alexander Pajer](https://www.integrations.at/kontakt-impressum.aspx) containing:
+Companion Material for Angular Developer Basics by [Alexander Pajer](https://github.com/arambazamba) containing:
 
 - [Requirements / Tooling](./Tooling)
   - [Git & GitHub Basics](./Tooling/01-Github)
