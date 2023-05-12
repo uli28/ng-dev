@@ -23,6 +23,7 @@ import { ObjectsComponent } from './samples/objects/objects.component';
 import { ServicesComponent } from './samples/services/services.component';
 import { TypesComponent } from './samples/types/types.component';
 import { UtilsComponent } from './samples/utils/utils.component';
+import { MdRendererModule } from '../shared/markdown-renderer/md-renderer.module';
 
 const demoRoutes: Routes = [
   {
@@ -67,6 +68,7 @@ const demoRoutes: Routes = [
     MarkdownModule.forRoot({
       loader: HttpClient,
     }),
+    MdRendererModule
   ],
   providers: [
     DemoService,
@@ -74,4 +76,4 @@ const demoRoutes: Routes = [
     { provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true },
   ],
 })
-export class DemosModule {}
+export class DemosModule { }

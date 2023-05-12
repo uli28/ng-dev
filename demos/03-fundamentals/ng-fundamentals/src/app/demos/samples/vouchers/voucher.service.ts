@@ -7,9 +7,9 @@ import { Voucher } from './vouchers.model';
   providedIn: 'root',
 })
 export class VouchersService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   getVouchers() {
-    return this.http.get<Voucher[]>(environment.vouchersApi);
+    return this.http.get<Voucher[]>(`${environment.api}vouchers`);
   }
 }

@@ -11,16 +11,14 @@ import { SkillsService } from '../skills/skills.service';
   styleUrls: ['./services.component.scss'],
 })
 export class ServicesComponent {
-  // antipattern - use environment.ts
-  skillsapi = 'http://localhost:3000/skills';
   skills: Skill[];
 
   // direct data access in components is an antipattern
-  constructor(private skillsService: SkillsService, private http: HttpClient) {}
+  constructor(private service: SkillsService, private http: HttpClient) { }
 
   usingFetch() {
     //using fetch in angular is an antipattern
-    fetch(this.skillsapi)
+    fetch(`${environment.api}skills`)
       .then((resp: Response) => {
         console.log('Response received from fetch', resp);
         return resp.json(); // Notice Response Object
@@ -32,7 +30,7 @@ export class ServicesComponent {
 
   usingFetchAwait() {
     async function getSkills() {
-      const response = await fetch(environment.skillsApi);
+      const response = await fetch(`${environment.api}skills`);
       const skills = await response.json();
       console.log('Data received using fetch - await', skills);
     }
@@ -55,7 +53,7 @@ export class ServicesComponent {
       },
     };
 
-    fetch(`${environment.api}/skills`, options)
+    fetch(`${environment.api}skills`, options)
       .then(function (res) {
         if (res.ok) {
           return res.statusText;
@@ -68,39 +66,37 @@ export class ServicesComponent {
   }
 
   async usingAxios() {
-    const api = this.skillsapi;
+    await axios.get(`${environment.api}skills`).then((result) => console.log(result.data));
 
-    await axios.get(api).then((result) => console.log(result.data));
-
-    const param: Skill = {
+    const sk: Skill = {
       name: 'Azure',
       completed: true,
     };
 
-    axios.post(api, param);
+    axios.post(`${environment.api}skills`, sk);
   }
 
   // antipattern - try to keep data operation in services
   useClientInComponent() {
     //untyped
     this.http
-      .get(environment.skillsApi)
+      .get(`${environment.api}skills`)
       .subscribe((data: Skill[]) => console.log(data));
 
     //typed - preferred pattern to use get<T>
     this.http
-      .get<Skill[]>(environment.skillsApi)
+      .get<Skill[]>(`${environment.api}skills`)
       .subscribe((data) => console.log(data));
   }
 
   consumeService() {
     // just to show the subscription
-    let subscription = this.skillsService.getSkills().subscribe();
+    let subscription = this.service.getSkills().subscribe();
     console.log('skills obs: ', subscription);
 
     // assign to prop in component for use in template
     // subscribe return the native type that was wrapped in the observable
-    this.skillsService.getSkills().subscribe((data) => {
+    this.service.getSkills().subscribe((data) => {
       this.skills = data;
     });
   }

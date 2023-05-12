@@ -7,9 +7,9 @@ import { Person } from './person.model';
   providedIn: 'root',
 })
 export class PersonService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   getPersons() {
-    return this.http.get<Person[]>(environment.personApi);
+    return this.http.get<Person[]>(`${environment.api}persons`);
   }
 }
