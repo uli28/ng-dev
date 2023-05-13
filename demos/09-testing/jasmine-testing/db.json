@@ -115,6 +115,20 @@
       "sortOrder": 0
     }
   ],
+  "top-links": [
+    {
+      "label": "Home",
+      "url": ""
+    },
+    {
+      "label": "Demos",
+      "url": "demos"
+    },
+    {
+      "label": "Skills",
+      "url": "skills"
+    }
+  ],
   "food": [
     {
       "id": 1,
