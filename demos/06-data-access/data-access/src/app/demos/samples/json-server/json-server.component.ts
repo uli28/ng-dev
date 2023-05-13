@@ -10,12 +10,12 @@ import { SkillsService } from '../../../skills/skills.service';
   styleUrls: ['./json-server.component.scss'],
 })
 export class JsonServerComponent implements OnInit {
-  constructor(private service: SkillsService, private sns: SnackbarService) {}
+  constructor(private service: SkillsService, private sns: SnackbarService) { }
 
   result: any;
   loading = false;
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   getSkills(): void {
     this.loading = true;
@@ -42,11 +42,16 @@ export class JsonServerComponent implements OnInit {
   }
 
   deleteSkill(): void {
-    const id = 3;
+    const sk: Skill = {
+      "name": "Cooking Pad Krapao",
+      "hours": 1,
+      "completed": false,
+      "id": 3
+    };
 
-    this.service.deleteSkill(id).subscribe(() => {
+    this.service.deleteSkill(sk).subscribe(() => {
       this.loading = false;
-      this.sns.displayAlert('json-server', `Deleted with id: ${id}`);
+      this.sns.displayAlert('json-server', `Deleted with id: ${sk.id}`);
     });
   }
 

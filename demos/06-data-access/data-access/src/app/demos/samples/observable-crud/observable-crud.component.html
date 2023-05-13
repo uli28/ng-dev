@@ -1,9 +1,9 @@
-<app-markdown-renderer [md]="'netcore'"></app-markdown-renderer>
+<app-markdown-renderer [md]="'crud'"></app-markdown-renderer>
 <mat-card appearance="outlined">
   <mat-card-header>
     <mat-card-title>ObservableCrudComponent</mat-card-title>
   </mat-card-header>
-  <mat-card-content fxLayout="column">
+  <mat-card-content class="cmdItems" >
     <button mat-raised-button (click)="getSkills()" color="accent">Get Skills</button>
     <button mat-raised-button (click)="getSkill()" color="accent">Get Skill</button>
     <button mat-raised-button (click)="insertSkill()" color="accent">Insert Skill</button>

@@ -1,4 +1,32 @@
 {
+  "demos":[
+    {
+      "url": "observables-crud",
+      "title": "CRUD"
+    },
+    {
+      "url": "json-server",
+      "title": "Json Server"
+    },
+    {
+      "url": "adv-httpclient",
+      "title": "Adv HttpClient"
+    }
+  ],
+  "top-links": [
+    {
+      "label": "Home",
+      "url": ""
+    },
+    {
+      "label": "Demos",
+      "url": "demos"
+    },
+    {
+      "label": "Skills",
+      "url": "skills"
+    }
+  ],
   "skills": [
     {
       "id": 1,

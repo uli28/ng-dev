@@ -3,5 +3,4 @@ export class Skill {
   name: string = '';
   hours: number = 0;
   completed: boolean = false;
-  dueDate?: Date;
 }

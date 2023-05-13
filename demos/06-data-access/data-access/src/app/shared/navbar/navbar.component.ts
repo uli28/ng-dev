@@ -1,37 +1,22 @@
-import { Component, OnInit } from '@angular/core';
-import { NavigationEnd, Route, Router } from '@angular/router';
-import { Observable } from 'rxjs';
-import { filter } from 'rxjs/operators';
-import { MenuItem } from '../menu/menu-item.model';
-import { MenuService } from '../menu/menu.service';
+import { Component, inject } from '@angular/core';
 import { SnackbarService } from '../snackbar/snackbar.service';
+import { SideNavService } from '../sidenav/sidenav.service';
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss'],
 })
-export class NavbarComponent implements OnInit {
-  constructor(
-    private router: Router,
-    private ms: MenuService,
-    private sns: SnackbarService
-  ) {}
-
-  editorDisplayed: boolean = false;
-  rootRoutes: Route[] = [];
-  menuItems: Observable<MenuItem[]> | null = null;
-
-  ngOnInit() {
-    this.editorDisplayed = false;
-    this.menuItems = this.ms.getTopItems();
-  }
+export class NavbarComponent {
+  ms = inject(SideNavService);
+  sns = inject(SnackbarService);
+  menuItems = this.ms.getTopItems();
 
   toggleMenu() {
-    this.ms.toggleMenu();
+    this.ms.toggleMenuVisibility();
   }
 
   toggleApps() {
-    this.sns.displayAlert('Apps', 'Not implemented! - just a mock');
+    this.sns.displayAlert('Apps', 'Not implemented - just a mock');
   }
 }
