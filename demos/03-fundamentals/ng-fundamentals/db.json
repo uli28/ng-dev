@@ -82,21 +82,25 @@
     {
       "id": "123",
       "name": "RxJs",
+      "hours":8,
       "completed": false
     },
     {
       "id": "456",
       "name": "NgRx",
+      "hours":10,
       "completed": false
     },
     {
       "id": "223",
       "name": "Angular",
+      "hours":7,
       "completed": true
     },
     {
       "id": "436",
       "name": "TypeScript",
+      "hours":2,
       "completed": true
     }
   ],

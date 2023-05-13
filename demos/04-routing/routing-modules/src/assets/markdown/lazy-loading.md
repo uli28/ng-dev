@@ -1,4 +1,4 @@
-Investigate `demos`-route in `app.routing.module.ts` and `demos.module.ts`:
+Examine `demos`-route in `app.routing.module.ts` and `demos.module.ts`:
 
 ```typescript
 {

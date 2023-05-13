@@ -6,10 +6,8 @@ import { Router } from '@angular/router';
   templateUrl: './router-state.component.html',
   styleUrls: ['./router-state.component.scss'],
 })
-export class RouterStateComponent implements OnInit {
-  constructor(private router: Router) {}
-
-  ngOnInit(): void {}
+export class RouterStateComponent {
+  constructor(private router: Router) { }
 
   navigateTo() {
     this.router.navigate(['/skills', 1], { state: { data: 99 } });

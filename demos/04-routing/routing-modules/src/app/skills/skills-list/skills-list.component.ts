@@ -8,12 +8,12 @@ import { Skill } from '../skill.model';
   styleUrls: ['./skills-list.component.scss'],
 })
 export class SkillsListComponent implements OnInit {
-  constructor(private service: SkillsService) { }
+  constructor(private service: SkillsService) {}
 
   skills: Skill[] = [];
 
   ngOnInit(): void {
-    this.service.getSkills().subscribe((data: Skill[]) => {
+    this.service.getSkills().subscribe((data) => {
       this.skills = data;
     });
   }

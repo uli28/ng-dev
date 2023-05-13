@@ -1,16 +1,11 @@
 import { Injectable } from '@angular/core';
-import {
-  ActivatedRouteSnapshot,
-  CanActivate,
-  RouterStateSnapshot,
-  UrlTree,
-} from '@angular/router';
+import { ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
-export class IsAdminGuard implements CanActivate {
+export class IsAdminGuard  {
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
