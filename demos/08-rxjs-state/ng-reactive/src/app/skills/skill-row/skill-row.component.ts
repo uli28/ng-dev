@@ -3,12 +3,9 @@ import {
   Component,
   EventEmitter,
   Input,
-  OnInit,
-  Output,
-  SimpleChanges,
+  Output
 } from '@angular/core';
 import { Skill } from '../skill.model';
-import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-skill-row',
