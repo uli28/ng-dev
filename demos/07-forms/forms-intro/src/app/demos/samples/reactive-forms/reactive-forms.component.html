@@ -3,19 +3,13 @@
     <mat-card-title> Reactive Form - No Builder </mat-card-title>
   </mat-card-header>
   <mat-card-content>
-    <form
-      [formGroup]="personForm"
-      (ngSubmit)="savePerson(personForm)"
-      fxLayout="column"
-    >
+    <form [formGroup]="personForm" (ngSubmit)="savePerson(personForm)" column>
       <mat-form-field>
         <input matInput type="text" placeholder="Name" formControlName="name" />
       </mat-form-field>
-
       <mat-form-field>
         <input matInput type="number" placeholder="Age" formControlName="age" />
       </mat-form-field>
-
       <mat-form-field>
         <input
           matInput
@@ -24,7 +18,6 @@
           formControlName="email"
         />
       </mat-form-field>
-
       <mat-form-field>
         <mat-select placeholder="Gender" formControlName="gender">
           <mat-option value="male">Male</mat-option>

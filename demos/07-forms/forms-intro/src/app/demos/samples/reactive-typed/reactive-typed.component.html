@@ -7,16 +7,15 @@
         [formGroup]="personForm"
         (ngSubmit)="savePerson(personForm)"
         novalidate
-        fxLayout="column"
-      >
+        column>
         <mat-form-field>
           <input matInput type="text" placeholder="Name" formControlName="name" />
         </mat-form-field>
-  
+
         <mat-form-field>
           <input matInput type="number" placeholder="Age" formControlName="age" />
         </mat-form-field>
-  
+
         <mat-form-field>
           <input
             matInput
@@ -25,14 +24,14 @@
             formControlName="email"
           />
         </mat-form-field>
-  
+
         <mat-form-field>
           <mat-select placeholder="Gender" formControlName="gender">
             <mat-option value="male">Male</mat-option>
             <mat-option value="female">Female</mat-option>
           </mat-select>
         </mat-form-field>
-  
+
         <mat-radio-group name="wealth" formControlName="wealth">
           <mat-label>Wealth:</mat-label>
           <mat-radio-button *ngFor="let opt of wealthOpts" value="{{ opt }}">{{
@@ -43,4 +42,3 @@
       </form>
     </mat-card-content>
   </mat-card>
-  

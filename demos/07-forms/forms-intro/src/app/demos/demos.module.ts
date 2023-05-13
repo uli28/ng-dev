@@ -18,6 +18,7 @@ import { ReactiveValidationComponent } from './samples/reactive-validation/react
 import { TemplateDrivenComponent } from './samples/template-driven/template-driven.component';
 import { TemplateValidationComponent } from './samples/template-validation/template-validation.component';
 import { ReactiveTypedComponent } from './samples/reactive-typed/reactive-typed.component';
+import { ColumnDirective, RowDirective } from '../shared/formatting/formatting-directives';
 
 const demoRoutes: Routes = [
   {
@@ -59,6 +60,8 @@ const demoRoutes: Routes = [
     MaterialModule,
     HttpClientModule,
     SharedModule,
+    RowDirective,
+    ColumnDirective
   ],
   providers: [
     DemoService,
@@ -66,4 +69,4 @@ const demoRoutes: Routes = [
     { provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true },
   ],
 })
-export class DemosModule {}
+export class DemosModule { }

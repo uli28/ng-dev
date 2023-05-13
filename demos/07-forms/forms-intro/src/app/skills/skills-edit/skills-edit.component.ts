@@ -10,81 +10,27 @@ import { SnackbarService } from '../../shared/snackbar/snackbar.service';
   styleUrls: ['./skills-edit.component.scss'],
 })
 export class SkillsEditComponent implements OnInit {
-  skill: Skill = { id: 0, name: '', hours: 1, completed: false };
+  skill: Skill = new Skill();
 
   constructor(
     private service: SkillsService,
     private route: ActivatedRoute,
     private router: Router,
     private sns: SnackbarService
-  ) {}
+  ) { }
 
   ngOnInit(): void {
-    this.readParamUsingSnapshot();
-    // this.readParamUsingParamMap();
-    // this.readParamUsingResolver();
-    // this.readParamUsingResolverObs();
+    this.getSkill();
   }
 
-  getSkill(id) {
+  getSkill() {
+    const id = this.route.snapshot.params['id'];
+    console.log('id-param:', id);
     this.service.getSkill(id).subscribe((data) => {
       this.skill = data;
       console.log('setting skill: ', data);
     });
   }
-
-  /* #region params */
-
-  readParamUsingSnapshot() {
-    // id param
-    const id = this.route.snapshot.params['id'];
-    this.getSkill(id);
-    // query params
-    const readonly = this.route.snapshot.queryParams['readonly'];
-    if (readonly != null) {
-      console.log(`Page is readonly: ${readonly}`);
-    }
-    // fragments
-    const fragments = this.route.snapshot.fragment;
-    if (fragments != undefined) {
-      console.log(`Section to navigate to: ${fragments}`);
-    }
-    //state
-    const state = history.state.data;
-    if (state != null) {
-      console.log('state: ', state);
-    }
-  }
-
-  readParamUsingParamMap() {
-    // id param
-    this.route.paramMap.subscribe((params) => {
-      console.log('paramMap:', params);
-      const id = +params.get('id');
-    });
-    // query params
-    this.route.queryParamMap.subscribe((qpm) => {
-      console.log('paramMap:', qpm);
-      const readonly = qpm.get('readonly') === 'true';
-    });
-    // fragments
-    this.route.fragment.subscribe((fr) => {
-      console.log('paramMap:', fr);
-      const fragment = fr;
-    });
-  }
-
-  readParamUsingResolver() {
-    this.skill = this.route.snapshot.data['skillData'];
-  }
-
-  readParamUsingResolverObs() {
-    this.route.data.subscribe((data) => {
-      this.skill = data['skillData'];
-    });
-  }
-
-  /* #endregion */
 
   saveSkill() {
     this.sns.displayAlert('Warning', 'Save not implemented');
