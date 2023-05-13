@@ -16,10 +16,8 @@ import { ChartComponent } from './samples/chart/chart.component';
 import { ClassicDialogComponent } from './samples/classic-dialog/classic-dialog.component';
 import { DialogComponent } from './samples/classic-dialog/dialog/dialog.component';
 import { CSSBindingComponent } from './samples/cssbinding/binding.component';
-import { CssgridFlexlayoutComponent } from './samples/cssgrid-flexlayout/cssgrid-flexlayout.component';
 import { CssgridComponent } from './samples/cssgrid/cssgrid.component';
 import { DragDropComponent } from './samples/drag-drop/drag-drop.component';
-import { FlexLayoutComponent } from './samples/flex-layout/flex-layout.component';
 import { FlexMediaQueryComponent } from './samples/flex-media-query/flex-media-query.component';
 import { FlexboxComponent } from './samples/flexbox/flexbox.component';
 import { GoogleFontsComponent } from './samples/google-fonts/google-fonts.component';
@@ -31,6 +29,7 @@ import { StepperComponent } from './samples/material-stepper/stepper.component';
 import { MaterialTableComponent } from './samples/material-table/material-table.component';
 import { VirtualScrollComponent } from './samples/virtual-scroll/virtual-scroll.component';
 import { MatFormFieldComponent } from './samples/mat-form-field/mat-form-field.component';
+import { CenteredDirective, RowDirective } from '../shared/formatting/formatting-directives';
 
 const demoRoutes: Routes = [
   {
@@ -43,7 +42,6 @@ const demoRoutes: Routes = [
       { path: 'cssbasics', component: CSSBindingComponent },
       { path: 'bootstrap', component: BoostrapComponent },
       { path: 'cssgrid', component: CssgridComponent },
-      { path: 'cssgrid-flex', component: CssgridFlexlayoutComponent },
       { path: 'material', component: MaterialShowCaseComponent },
       { path: 'material-table', component: MaterialTableComponent },
       { path: 'classic-dialog', component: ClassicDialogComponent },
@@ -52,7 +50,6 @@ const demoRoutes: Routes = [
       { path: 'fonts', component: GoogleFontsComponent },
       { path: 'flexbox', component: FlexboxComponent },
       { path: 'flexmediaq', component: FlexMediaQueryComponent },
-      { path: 'flexlayout', component: FlexLayoutComponent },
       { path: 'dragdrop', component: DragDropComponent },
       { path: 'virtualscroll', component: VirtualScrollComponent },
       { path: 'chart', component: ChartComponent },
@@ -66,14 +63,12 @@ const demoRoutes: Routes = [
     DemoContainerComponent,
     CSSBindingComponent,
     CssgridComponent,
-    CssgridFlexlayoutComponent,
     MaterialShowCaseComponent,
     MaterialTableComponent,
     MaterialDialogComponent,
     GoogleFontsComponent,
     FlexboxComponent,
     FlexMediaQueryComponent,
-    FlexLayoutComponent,
     DragDropComponent,
     VirtualScrollComponent,
     StepperComponent,
@@ -97,7 +92,9 @@ const demoRoutes: Routes = [
     NgxChartsModule,
     SharedModule,
     HttpClientModule,
+    CenteredDirective,
+    RowDirective,
   ],
   providers: [DemoService],
 })
-export class DemosModule {}
+export class DemosModule { }

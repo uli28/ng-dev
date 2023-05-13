@@ -1,12 +1,10 @@
+<app-markdown-renderer [md]="'charting'"></app-markdown-renderer>
+
 <mat-card appearance="outlined">
   <mat-card-header>
     <mat-card-title>Chart</mat-card-title>
   </mat-card-header>
-  <mat-card-content
-    class="chart"
-    fxLayout="column"
-    fxLayoutAlign="center center"
-  >
+  <mat-card-content class="chart" row centered>
     <ngx-charts-bar-vertical
       [view]="[800, 400]"
       [results]="saleData"

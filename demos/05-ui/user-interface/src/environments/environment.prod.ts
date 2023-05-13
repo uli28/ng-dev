@@ -3,8 +3,7 @@ export const environment = {
   authEnabled: false,
   title: 'User Interface',
   markdownPath: '/assets/markdown/',
-  jsonApi: 'http://localhost:3000/',
-  personApi: '/assets/persons.json',
+  api: 'http://localhost:3000/',
   fixerAPIKey: '',
   fixerApi: '/assets/fixer.json',
 };
