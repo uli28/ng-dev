@@ -1,4 +1,4 @@
-<app-markdown-renderer [md]="'signal-basics'"></app-markdown-renderer>
+<app-markdown-renderer [md]="'signals-basics'"></app-markdown-renderer>
 
 <mat-card appearance="outlined">
   <mat-card-header>
@@ -16,15 +16,13 @@
     <button mat-raised-button color="accent" (click)="signalTyped()">
       Signals Typed
     </button>
-    <button mat-raised-button color="accent" (click)="signalObservable()">
+    <!-- <button mat-raised-button color="accent" (click)="signalObservable()">
       Signals Observable
-    </button>
+    </button> -->
   </mat-card-content>
 </mat-card>
 
-<mat-card>
-  <mat-card-content>
-    <div>Total Amount {{ totalAmount()}} </div>
-    <div>Running Amount {{ runningAmount()}} </div>
-  </mat-card-content>
-</mat-card>
+<div border>
+  <div>Total Amount {{ totalAmount()}} </div>
+  <div>Running Amount {{ runningAmount()}} </div>
+</div>

@@ -27,6 +27,7 @@ import { ResponsiveScreenComponent } from './samples/responsive-screen/responsiv
 import { TakeUntilDestroyedComponent } from './samples/take-until-destroyed/take-until-destroyed.component';
 import { SignalsBasicsComponent } from './samples/signals-basics/signals-basics.component';
 import { SignalsEventBusComponent } from './samples/signals-event-bus/signals-event-bus.component';
+import { BorderDirective } from '../shared/formatting/formatting-directives';
 
 const demoRoutes: Routes = [
   {
@@ -82,6 +83,7 @@ const demoRoutes: Routes = [
     MaterialModule,
     HttpClientModule,
     SharedModule,
+    BorderDirective
   ],
   providers: [
     DemoService,
