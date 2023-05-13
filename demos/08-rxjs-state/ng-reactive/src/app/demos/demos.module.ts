@@ -25,6 +25,8 @@ import { ReifiedReactiveComponent } from './samples/reified-reactive/reified-rea
 import { NgrxDataComponent } from './samples/ngrx-data/ngrx-data.component';
 import { ResponsiveScreenComponent } from './samples/responsive-screen/responsive-screen.component';
 import { TakeUntilDestroyedComponent } from './samples/take-until-destroyed/take-until-destroyed.component';
+import { SignalsBasicsComponent } from './samples/signals-basics/signals-basics.component';
+import { SignalsEventBusComponent } from './samples/signals-event-bus/signals-event-bus.component';
 
 const demoRoutes: Routes = [
   {
@@ -44,6 +46,8 @@ const demoRoutes: Routes = [
       { path: 'event-bus', component: EventBusComponent },
       { path: 'loading', component: LoadingHostComponent },
       { path: 'ngrx-data', component: NgrxDataComponent },
+      { path: 'signals-basics', component: SignalsBasicsComponent },
+      { path: 'signals-bus', component: SignalsEventBusComponent },
     ],
   },
 ];
@@ -66,7 +70,9 @@ const demoRoutes: Routes = [
     ReifiedReactiveComponent,
     NgrxDataComponent,
     ResponsiveScreenComponent,
-    TakeUntilDestroyedComponent
+    TakeUntilDestroyedComponent,
+    SignalsBasicsComponent,
+    SignalsEventBusComponent,
   ],
   imports: [
     CommonModule,

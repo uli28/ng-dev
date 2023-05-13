@@ -30,7 +30,7 @@
     },
     {
       "url": "responsive-screen",
-      "title": "Observable Screen"
+      "title": "Screen & Events"
     },
     {
       "url": "subjects",
@@ -42,7 +42,9 @@
     },
     { "url": "event-bus", "title": "Event Bus" },
     { "url": "loading", "title": "Loading Indicator" },
-    { "url": "ngrx-data", "title": "@ngrx-data" }
+    { "url": "ngrx-data", "title": "@ngrx-data" },
+    { "url": "signals-basics", "title": "Signals basics" },
+    { "url": "signals-bus", "title": "Signals event bus" }
   ],
   "top-links": [
     {
