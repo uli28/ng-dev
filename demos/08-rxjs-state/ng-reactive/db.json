@@ -2,7 +2,11 @@
   "demos":[
     {
       "url": "creating",
-      "title": "Creating Observables"
+      "title": "Observable Basics"
+    },
+    {
+      "url": "async-pipe",
+      "title": "Template / Async Pipe"
     },
     {
       "url": "formcontrols",
@@ -17,10 +21,6 @@
       "title": "Imperative Programming"
     },
     {
-      "url": "streams",
-      "title": "Async Pipe"
-    },
-    {
       "url": "reactive",
       "title": "Reactive Programming"
     },
@@ -30,7 +30,7 @@
     },
     {
       "url": "responsive-screen",
-      "title": "Responsive Screen"
+      "title": "Observable Screen"
     },
     {
       "url": "subjects",

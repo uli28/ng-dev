@@ -12,7 +12,6 @@ import { DemoContainerComponent } from './demo-container/demo-container.componen
 import { CreatingObservableComponent } from './samples/creating-observables/creating-observable.component';
 import { EventBusComponent } from './samples/event-bus/event-bus.component';
 import { LoadingHostComponent } from './samples/loading-host/loading-host.component';
-import { DebouncedSearchComponent } from './samples/operators/debounced-search/debounced-search.component';
 import { OperatorsComponent } from './samples/operators/operators.component';
 import { StatefulComponent } from './samples/stateful/stateful.component';
 import { SubjectsComponent } from './samples/subjects/subjects.component';
@@ -39,10 +38,9 @@ const demoRoutes: Routes = [
       { path: 'operators', component: OperatorsComponent },
       { path: 'responsive-screen', component: ResponsiveScreenComponent },
       { path: 'unsubscribe', component: UnsubscribingComponent },
-      { path: 'streams', component: AsyncPipeComponent },
+      { path: 'async-pipe', component: AsyncPipeComponent },
       { path: 'stateful', component: StatefulComponent },
       { path: 'event-bus', component: EventBusComponent },
-      { path: 'search', component: DebouncedSearchComponent },
       { path: 'loading', component: LoadingHostComponent },
       { path: 'ngrx-data', component: NgrxDataComponent },
     ],
@@ -55,7 +53,6 @@ const demoRoutes: Routes = [
     CreatingObservableComponent,
     OperatorsComponent,
     UnsubscribingComponent,
-    DebouncedSearchComponent,
     SubjectsComponent,
     StatefulComponent,
     EventBusComponent,
