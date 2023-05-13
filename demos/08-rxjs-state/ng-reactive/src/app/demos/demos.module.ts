@@ -7,12 +7,10 @@ import { MaterialModule } from '../material.module';
 import { LoadingInterceptor } from '../shared/loading/loading-interceptor';
 import { LoadingService } from '../shared/loading/loading.service';
 import { SharedModule } from '../shared/shared.module';
-import { MarkdownEditorComponent } from './comments/markdown-editor/markdown-editor.component';
 import { DemoService } from './demo-base/demo.service';
 import { DemoContainerComponent } from './demo-container/demo-container.component';
 import { CreatingObservableComponent } from './samples/creating-observables/creating-observable.component';
 import { EventBusComponent } from './samples/event-bus/event-bus.component';
-import { FlexLayoutApiComponent } from './samples/flex-layout-api/flex-layout-api.component';
 import { LoadingHostComponent } from './samples/loading-host/loading-host.component';
 import { DebouncedSearchComponent } from './samples/operators/debounced-search/debounced-search.component';
 import { OperatorsComponent } from './samples/operators/operators.component';
@@ -26,6 +24,7 @@ import { ImperativeComponent } from './samples/imperative/imperative.component';
 import { AsyncPipeComponent } from './samples/async-pipe/async-pipe.component';
 import { ReifiedReactiveComponent } from './samples/reified-reactive/reified-reactive.component';
 import { NgrxDataComponent } from './samples/ngrx-data/ngrx-data.component';
+import { ResponsiveScreenComponent } from './samples/responsive-screen/responsive-screen.component';
 
 const demoRoutes: Routes = [
   {
@@ -38,11 +37,11 @@ const demoRoutes: Routes = [
       { path: 'creating', component: CreatingObservableComponent },
       { path: 'formcontrols', component: FormControlsComponent },
       { path: 'operators', component: OperatorsComponent },
-      { path: 'flexlayoutapi', component: FlexLayoutApiComponent },
+      { path: 'responsive-screen', component: ResponsiveScreenComponent },
       { path: 'unsubscribe', component: UnsubscribingComponent },
       { path: 'streams', component: AsyncPipeComponent },
       { path: 'stateful', component: StatefulComponent },
-      { path: 'eventbus', component: EventBusComponent },
+      { path: 'event-bus', component: EventBusComponent },
       { path: 'search', component: DebouncedSearchComponent },
       { path: 'loading', component: LoadingHostComponent },
       { path: 'ngrx-data', component: NgrxDataComponent },
@@ -55,13 +54,11 @@ const demoRoutes: Routes = [
     DemoContainerComponent,
     CreatingObservableComponent,
     OperatorsComponent,
-    FlexLayoutApiComponent,
     UnsubscribingComponent,
     DebouncedSearchComponent,
     SubjectsComponent,
     StatefulComponent,
     EventBusComponent,
-    MarkdownEditorComponent,
     AsyncPipeComponent,
     StatefulVouchersComponent,
     LoadingHostComponent,
@@ -70,6 +67,7 @@ const demoRoutes: Routes = [
     ImperativeComponent,
     ReifiedReactiveComponent,
     NgrxDataComponent,
+    ResponsiveScreenComponent,
   ],
   imports: [
     CommonModule,
@@ -86,4 +84,4 @@ const demoRoutes: Routes = [
     { provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true },
   ],
 })
-export class DemosModule {}
+export class DemosModule { }

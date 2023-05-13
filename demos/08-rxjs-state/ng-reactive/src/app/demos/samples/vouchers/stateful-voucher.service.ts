@@ -15,7 +15,7 @@ export class StatefulVoucherService {
   );
 
   constructor(private httpClient: HttpClient) {
-    this.httpClient.get<Voucher[]>(environment.apiUrl).subscribe((data) => {
+    this.httpClient.get<Voucher[]>(`${environment.api}vouchers`).subscribe((data) => {
       this.vouchers.next(data);
     });
     this.addLateVoucher();
@@ -38,14 +38,14 @@ export class StatefulVoucherService {
   }
 
   insertVoucher(v: Voucher) {
-    this.httpClient.post(environment.apiUrl, v).subscribe((result: any) => {
+    this.httpClient.post(environment.api, v).subscribe((result: any) => {
       var arr = this.vouchers.getValue();
       arr.push(result as Voucher);
       this.vouchers.next(arr);
     });
   }
 
-  updateVoucher(v: Voucher) {}
+  updateVoucher(v: Voucher) { }
 
   deleteVoucher(id: number) {
     var arr = this.vouchers.getValue();

@@ -1,4 +1,4 @@
-- @ngrx/dataallows easy NgRx (not covered in details here -> ng-adv)
+- @ngrx/data allows easy NgRx
 - Navigate to Skills route to see it working
 - Implementation is in skills module
 
