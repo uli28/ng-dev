@@ -1,6 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, inject } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { of, Subject, takeUntil } from 'rxjs';
+import { of, Subject, takeUntil, Subscription } from 'rxjs';
 import { Skill } from 'src/app/skills/skill.model';
 import { SkillsService } from '../../../skills/skills.service';
 
@@ -12,40 +12,34 @@ import { SkillsService } from '../../../skills/skills.service';
 export class ImperativeComponent implements OnInit {
   @Input() title = 'ImperativeProgramming';
   @Input() showMD = true;
-
+  service = inject(SkillsService);
   filter$ = new FormControl('', { nonNullable: true });
+  filterSubscription: Subscription | null = null;
 
   //local vars for values taken out of the stream
   skills: Skill[] = [];
   view: Skill[] = [];
 
-  //destroy$ is a Subject that will emit a value when the component is destroyed. Implemented in ngOnDestroy()
-  private destroy$ = new Subject();
-
-  constructor(private service: SkillsService) {}
 
   ngOnInit(): void {
-    this.service
+    this.filterSubscription = this.service
       .getSkills()
       //takeUntil will unsubscribe from the stream when the destroy$ Subject emits a value
-      .pipe(takeUntil(this.destroy$))
       .subscribe((skills) => {
         this.skills = skills;
         this.view = skills;
       });
 
     this.filter$.valueChanges
-      .pipe(takeUntil(this.destroy$))
       .subscribe((val) => {
         this.view =
           val == ''
             ? this.skills
-            : this.skills.filter((skill) => skill.name.includes(val));
+            : this.skills.filter((skill) => skill.name.toLowerCase().includes(val.toLocaleLowerCase()));
       });
   }
 
   ngOnDestroy() {
-    this.destroy$.next(true);
-    this.destroy$.complete();
+    this.filterSubscription?.unsubscribe();
   }
 }

@@ -18,12 +18,13 @@ import { SubjectsComponent } from './samples/subjects/subjects.component';
 import { UnsubscribingComponent } from './samples/unsubscribing/unsubscribing.component';
 import { StatefulVouchersComponent } from './samples/vouchers/stateful-vouchers/stateful-vouchers.component';
 import { FormControlsComponent } from './samples/form-controls/form-controls.component';
-import { SignPadComponent } from './samples/unsubscribing/sign-pad/sign-pad.component';
+import { SignPadComponent } from './samples/sign-pad/sign-pad.component';
 import { ImperativeComponent } from './samples/imperative/imperative.component';
 import { AsyncPipeComponent } from './samples/async-pipe/async-pipe.component';
 import { ReifiedReactiveComponent } from './samples/reified-reactive/reified-reactive.component';
 import { NgrxDataComponent } from './samples/ngrx-data/ngrx-data.component';
 import { ResponsiveScreenComponent } from './samples/responsive-screen/responsive-screen.component';
+import { TakeUntilDestroyedComponent } from './samples/take-until-destroyed/take-until-destroyed.component';
 
 const demoRoutes: Routes = [
   {
@@ -65,6 +66,7 @@ const demoRoutes: Routes = [
     ReifiedReactiveComponent,
     NgrxDataComponent,
     ResponsiveScreenComponent,
+    TakeUntilDestroyedComponent
   ],
   imports: [
     CommonModule,

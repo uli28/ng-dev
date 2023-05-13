@@ -1,4 +1,5 @@
-Samples require json-server: `json-server db.json`
+- Unsubscribing can be done manually using a Subject and ngOnDestroy or using the `takeUntilDestroyed` operator. The latter is the preferred way.
 
-- sign-pad.component.ts uses individual unsubscribe
-- imperative.component.ts uses a very common global component unsubscribe pattern
+- Examine Subject basedd unsubscribe pattern in `imperative.component.ts`
+
+- Examine the use of `takeUntilDestroyed` in `take-until-destroyed.component.ts`
