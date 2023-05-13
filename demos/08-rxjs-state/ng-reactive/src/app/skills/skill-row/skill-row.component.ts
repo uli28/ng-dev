@@ -1,20 +1,31 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  EventEmitter,
+  Input,
+  OnInit,
+  Output,
+  SimpleChanges,
+} from '@angular/core';
 import { Skill } from '../skill.model';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-skill-row',
   templateUrl: './skill-row.component.html',
   styleUrls: ['./skill-row.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class SkillRowComponent implements OnInit {
+export class SkillRowComponent {
   @Input() skill: Skill = new Skill();
-  @Output() editItem: EventEmitter<Skill> = new EventEmitter();
+  @Output() itemDeleted: EventEmitter<Skill> = new EventEmitter();
+  @Output() itemCompleted: EventEmitter<Skill> = new EventEmitter();
 
-  constructor() {}
+  deleteItem(item: Skill): void {
+    this.itemDeleted.emit(item);
+  }
 
-  ngOnInit(): void {}
-
-  edit(item: Skill): void {
-    this.editItem.emit(item);
+  toggleItemCompleted(item: Skill): void {
+    this.itemCompleted.emit(item);
   }
 }
