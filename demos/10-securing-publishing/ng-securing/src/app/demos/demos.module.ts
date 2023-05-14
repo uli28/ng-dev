@@ -17,6 +17,7 @@ import { AppAuthComponent } from './samples/app-auth/app-auth.component';
 import { AuthGuardComponent } from './samples/auth-guard/auth-guard.component';
 import { InterceptorComponent } from './samples/interceptor/interceptor.component';
 import { ProtectedApiComponent } from './samples/protected-api/protected-api.component';
+import { MarkdownRendererModule } from '../shared/markdown-renderer/md-renderer.module';
 
 const demoRoutes: Routes = [
   {
@@ -53,6 +54,7 @@ const demoRoutes: Routes = [
     HttpClientModule,
     SharedModule,
     FirebaseAuthModule,
+    MarkdownRendererModule
   ],
   providers: [
     DemoService,
@@ -65,4 +67,4 @@ const demoRoutes: Routes = [
     },
   ],
 })
-export class DemosModule {}
+export class DemosModule { }

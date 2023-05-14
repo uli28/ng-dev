@@ -1,4 +1,46 @@
 {
+  "demos":[
+    {
+      "url": "firebase",
+      "title": "Firebase Authentication",
+      "component": "FirebaseComponent"
+    },
+    {
+      "url": "app-auth",
+      "title": "App Authentication",
+      "component": "AppAuthComponent"
+    },
+    {
+      "url": "interceptor",
+      "title": "Auth Interceptor",
+      "component": "InterceptorComponent"
+    },
+    {
+      "url": "secured-api",
+      "title": "Secured Api",
+      "component": "ProtectedApiComponent"
+    },
+    {
+      "url": "auth-guard",
+      "title": "Auth Guard",
+      "component": "AuthGuardComponent"
+    },
+    {
+      "url": "publish",
+      "title": "Publishing",
+      "component": "PublishComponent"
+    }
+  ],
+  "top-links": [
+    {
+      "label": "Home",
+      "url": ""
+    },
+    {
+      "label": "Demos",
+      "url": "demos"
+    }
+  ],
   "vouchers": [
     {
       "ID": 2,
