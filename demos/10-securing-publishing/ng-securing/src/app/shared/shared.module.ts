@@ -9,7 +9,7 @@ import { LoadingComponent } from './loading/loading.component';
 import { MarkdownEditorComponent } from './markdown-editor/markdown-editor.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SidePanelComponent } from './side-panel/side-panel.component';
-import { CenteredDirective } from './formatting-directives';
+import { CenteredDirective, RowDirective } from './formatting-directives';
 
 const mods = [
   NavbarComponent,
@@ -26,7 +26,8 @@ const mods = [
     RouterModule,
     MaterialModule,
     FirebaseAuthModule,
-    CenteredDirective
+    CenteredDirective,
+    RowDirective
   ],
   declarations: mods,
   exports: mods,
