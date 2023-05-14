@@ -1,4 +1,4 @@
-import { FoodItem } from '../../food/food.model';
+import { FoodItem } from '../../component-integration/food.model';
 
 export const foodData: FoodItem[] = [
   { id: 1, name: 'Pad Thai', rating: 5 },

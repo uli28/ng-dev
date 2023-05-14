@@ -2,9 +2,9 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { MatCardModule } from '@angular/material/card';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { of } from 'rxjs';
-import { FoodService } from '../../food/food.service';
 import { foodData, serviceResult } from './simple-food-component.data';
 import { SimpleFoodComponent } from './simple-food.component';
+import { FoodServiceBS } from '../../component-integration/food.service-bs';
 
 describe('Component - Spy - FoodComponent:', () => {
   let spy: any;
@@ -18,7 +18,7 @@ describe('Component - Spy - FoodComponent:', () => {
     TestBed.configureTestingModule({
       imports: [MatCardModule, NoopAnimationsModule],
       declarations: [SimpleFoodComponent],
-      providers: [{ provide: FoodService, useValue: spy }],
+      providers: [{ provide: FoodServiceBS, useValue: spy }],
     });
 
     fixture = TestBed.createComponent(SimpleFoodComponent);

@@ -9,23 +9,3 @@ describe('Class - Hello world Test', () => {
   it('says Hello World!', () =>
     expect(SimpleClass.sayHelloWorld()).toEqual('Hello World!'));
 });
-
-
-
-
-
-
-
-DirectiveComponent,
-  SimpleServiceComponent,
-  TestPipeComponent,
-  RatingPipe,
-  PhonenumberPipe,
-  FoodRowComponent,
-  FoodListComponent,
-  MaterialComponent,
-  ComponentClassComponent,
-  ComponentInjectionComponent,
-  UseSpyComponent,
-  UseMockComponent,
-  CypressComponent

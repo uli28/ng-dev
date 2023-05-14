@@ -1,7 +1,6 @@
 import { ElementRef } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
-import { RatingPipe } from '../../pipe/rating.pipe';
 import { FoodRowComponent } from './food-row.component';
 
 describe('Component -Integration Test - Food Row', () => {
@@ -32,11 +31,11 @@ describe('Component -Integration Test - Food Row', () => {
   // Test for component rendering
   it('should render the food name', () => {
     // Do one of the tests below
-    expect(fixture.nativeElement.querySelector('#itemName').textContent
+    expect(fixture.nativeElement.querySelector('.name').textContent
     ).toContain('Pad Thai');
 
     expect(
-      fixture.debugElement.query(By.css('#itemName')).nativeElement.textContent
+      fixture.debugElement.query(By.css('.name')).nativeElement.textContent
     ).toContain('Pad Thai');
   });
 
@@ -44,7 +43,7 @@ describe('Component -Integration Test - Food Row', () => {
     component.food = { id: 2, name: 'Wiener Schnitzel', rating: 5 };
     fixture.detectChanges();
     // Do one of the tests below
-    expect(fixture.nativeElement.querySelector('#itemName').textContent
+    expect(fixture.nativeElement.querySelector('.name').textContent
     ).toContain('Wiener Schnitzel');
   });
 

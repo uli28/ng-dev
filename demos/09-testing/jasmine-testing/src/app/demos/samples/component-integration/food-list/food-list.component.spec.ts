@@ -2,10 +2,10 @@ import { DebugElement, NO_ERRORS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed, fakeAsync, flush, tick, flushMicrotasks } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { of } from 'rxjs';
-import { FoodServiceBS } from '../../food/food.service-bs';
 import { RatingPipe } from '../../pipe/rating.pipe';
 import { FoodRowComponent } from '../food-row/food-row.component';
 import { FoodListComponent } from './food-list.component';
+import { FoodServiceBS } from '../food.service-bs';
 
 describe('Component - Integration Test', () => {
   let fs: any;
