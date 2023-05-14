@@ -4,17 +4,16 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { FirebaseAuthModule } from '../fbauth/fbauth.module';
 import { MaterialModule } from '../material.module';
-import { FooterComponent } from './footer/footer.component';
 import { IntroComponent } from './intro/intro.component';
 import { LoadingComponent } from './loading/loading.component';
 import { MarkdownEditorComponent } from './markdown-editor/markdown-editor.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SidePanelComponent } from './side-panel/side-panel.component';
+import { CenteredDirective } from './formatting-directives';
 
 const mods = [
   NavbarComponent,
   SidePanelComponent,
-  FooterComponent,
   IntroComponent,
   LoadingComponent,
   MarkdownEditorComponent
@@ -27,6 +26,7 @@ const mods = [
     RouterModule,
     MaterialModule,
     FirebaseAuthModule,
+    CenteredDirective
   ],
   declarations: mods,
   exports: mods,

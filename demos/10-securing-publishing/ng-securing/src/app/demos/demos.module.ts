@@ -17,7 +17,7 @@ import { AppAuthComponent } from './samples/app-auth/app-auth.component';
 import { AuthGuardComponent } from './samples/auth-guard/auth-guard.component';
 import { InterceptorComponent } from './samples/interceptor/interceptor.component';
 import { ProtectedApiComponent } from './samples/protected-api/protected-api.component';
-import { MarkdownRendererModule } from '../shared/markdown-renderer/md-renderer.module';
+import { MarkdownRendererModule } from '../shared/markdown-renderer/markdown-renderer.module';
 
 const demoRoutes: Routes = [
   {
