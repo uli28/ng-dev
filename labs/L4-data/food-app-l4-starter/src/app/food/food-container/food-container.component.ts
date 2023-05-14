@@ -38,6 +38,5 @@ export class FoodContainerComponent implements OnInit {
       clone.push(item);
     }
     this.food = clone;
-    this.selected = null;
   }
 }
