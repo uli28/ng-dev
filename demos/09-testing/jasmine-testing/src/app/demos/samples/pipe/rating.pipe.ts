@@ -10,22 +10,23 @@ export class RatingPipe implements PipeTransform {
       case value <= 0:
         throw new Error('Invalid param');
       case value == 1:
-        result = 'outrageous';
+        result = 'umwerfend';
         break;
       case value == 2:
-        result = 'excellent';
+        result = 'ausgezeichnet';
         break;
       case value == 3:
-        result = 'quite good';
+        result = 'in ordnung';
         break;
       case value == 4:
-        result = 'could be better';
+        result = 'könnte besser sein';
         break;
       case value == 5:
-        result = 'too bad';
+        result = 'nicht das gelbe vom ei';
         break;
       default:
         throw new Error('Argument out of range');
+        break;
     }
     return result;
   }

@@ -1,7 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { Injectable, inject } from '@angular/core';
 import { environment } from '../../environments/environment';
 import { Skill } from './skill.model';
 
@@ -9,25 +7,21 @@ import { Skill } from './skill.model';
   providedIn: 'root',
 })
 export class SkillsService {
-  constructor(private httpClient: HttpClient) {}
-
-  private url = `${environment.api}skills`;
+  httpClient = inject(HttpClient);
 
   getSkills() {
-    return this.httpClient.get<Skill[]>(this.url);
+    return this.httpClient.get<Skill[]>(`${environment.api}skills`);
   }
 
   getSkill(id: number) {
-    return this.getSkills().pipe(
-      map((skills) => skills.find((sk) => sk.id == id))
-    );
+    return this.httpClient.get<Skill>(`${environment.api}skills/${id}`);
   }
 
   addSkill(skill: Skill) {
-    return this.httpClient.post<Skill>(this.url, skill);
+    return this.httpClient.post<Skill>(`${environment.api}skills`, skill);
   }
 
   deleteSkill(skill: Skill) {
-    return this.httpClient.delete(this.url);
+    return this.httpClient.delete(`${environment.api}skills`);
   }
 }

@@ -1,9 +1,19 @@
-- Navigate to folder `\demos\samples\pipe`
-- Investigate `test-pipe.component.ts` and `test-pipe.component.spec.ts`
-- Notice code to test a method of a pipe:
+- Examine `phonenumber.pipe.ts` and `phonenumber.pipe.spec.ts`
 
-```javascript
-it("returns 'ausgezeichnet' when 2 is passed", () => {
-    expect(p.transform(2)).toEqual('ausgezeichnet');    
-});
+```typescript
+export class PhonenumberPipe implements PipeTransform {
+  transform(value: any, args?: any): any {
+    if (undefined !== value && value.length === 10) {
+      return (
+        '(' +
+        value.substring(0, 3) +
+        ') ' +
+        value.substring(3, 6) +
+        ' ' +
+        value.substring(6)
+      );
+    }
+    return '';
+  }
+}
 ```

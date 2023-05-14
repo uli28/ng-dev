@@ -5,10 +5,12 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './component-events.component.html',
   styleUrls: ['./component-events.component.scss'],
 })
-export class ComponentEventsComponent {
+export class ComponentEventsComponent implements OnInit {
   constructor() {}
 
   count = 0;
+
+  ngOnInit(): void {}
 
   incrementCount() {
     this.count += 1;

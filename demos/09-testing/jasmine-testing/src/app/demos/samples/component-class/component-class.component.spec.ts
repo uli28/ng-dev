@@ -1,4 +1,4 @@
-import { FoodItem } from '../foodService/food.model';
+import { FoodItem } from '../food/food.model';
 import { ComponentClassComponent } from './component-class.component';
 
 describe('ComponentClassComponent', () => {
@@ -19,7 +19,7 @@ describe('ComponentClassComponent', () => {
     let item: FoodItem = { id: 4, name: 'Blini with Salmon', rating: 1 };
     component.ngOnInit();
     expect(component.food.length).toEqual(2);
-    component.add(item);
+    component.addFood(item);
     expect(component.food.length).toEqual(3);
     expect(component.food[2]).toEqual(item);
   });

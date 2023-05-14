@@ -1,118 +1,64 @@
 {
   "demos": [
     {
-      "url": "unittesting",
-      "title": "Into Unit Testing",
-      "component": "UnitTestingComponent",
-      "id": 1,
-      "topicid": 1,
-      "visible": true,
-      "sortOrder": 0
-    },
-    {
-      "url": "simpleservice",
-      "title": "Simple Service",
-      "component": "SimpleServiceComponent",
-      "id": 3,
-      "topicid": 1,
-      "visible": true,
-      "sortOrder": 0
-    },
-    {
-      "url": "mock",
-      "title": "Use Mock",
-      "component": "UseMockComponent",
-      "id": 4,
-      "topicid": 1,
-      "visible": true,
-      "sortOrder": 0
-    },
-    {
-      "url": "component-test",
-      "title": "Component Test",
-      "component": "ComponentTestComponent",
-      "id": 5,
-      "topicid": 1,
-      "visible": true,
-      "sortOrder": 0
-    },
-    {
-      "url": "integrationtests",
-      "title": "Integration Tests",
-      "component": "IntegrationTestComponent",
-      "id": 6,
-      "topicid": 1,
-      "visible": true,
-      "sortOrder": 0
-    },
-    {
-      "url": "component-events",
-      "title": "Component Events",
-      "id": 89,
-      "topicid": 1,
-      "visible": true,
-      "sortOrder": 0
-    },
-    {
-      "url": "directive",
-      "title": "Test Directive",
-      "id": 88,
-      "topicid": 1,
-      "visible": true,
-      "sortOrder": 0
+      "url": "basic-tests",
+      "title": "Testing Intro"
     },
     {
       "url": "testpipe",
-      "title": "Test Pipe",
-      "id": 2,
-      "topicid": 1,
-      "visible": true,
-      "sortOrder": 0
+      "title": "Test Pipe"
     },
     {
-      "url": "httptests",
-      "title": "Http Tests",
-      "component": "HttptestsComponent",
-      "id": 8,
-      "topicid": 1,
-      "visible": true,
-      "sortOrder": 0
+      "url": "directive",
+      "title": "Test Directive"
     },
     {
-      "url": "async",
-      "title": "Async Tests",
-      "component": "AsyncComponent",
-      "id": 9,
-      "topicid": 1,
-      "visible": true,
-      "sortOrder": 0
+      "url": "simpleservice",
+      "title": "Simple Service"
     },
     {
-      "url": "marbles",
-      "title": "Marbles",
-      "component": "MarblesComponent",
-      "id": 10,
-      "topicid": 1,
-      "visible": true,
-      "sortOrder": 0
+      "url": "component-class",
+      "title": "Comp Test Class"
     },
     {
-      "url": "ngrx",
-      "title": "NgRx Tests",
-      "component": "NgrxComponent",
-      "id": 11,
-      "topicid": 1,
-      "visible": true,
-      "sortOrder": 0
+      "url": "mock",
+      "title": "Comp Inject Mock"
     },
     {
-      "url": "mockstore",
-      "title": "NgRx Mock Store",
-      "component": "MockStoreComponent",
-      "id": 12,
-      "topicid": 1,
-      "visible": true,
-      "sortOrder": 0
+      "url": "spy",
+      "title": "Comp Inject Spy"
+    },
+    {
+      "url": "component-test",
+      "title": "Comp Spy returnValue"
+    },
+    {
+      "url": "component-write",
+      "title": "Comp Write / Read"
+    },
+    {
+      "url": "component-events",
+      "title": "Comp Events"
+    },
+    {
+      "url": "material",
+      "title": "Comp Material Harness"
+    },
+    {
+      "url": "material-async",
+      "title": "Comp Material Async"
+    },
+    {
+      "url": "integrationtests",
+      "title": "Comp Integration Tests"
+    },
+    {
+      "url": "cypress",
+      "title": "Cypress E2E Tests"
+    },
+    {
+      "url": "cypress",
+      "title": "Cypress Component Tests"
     }
   ],
   "top-links": [

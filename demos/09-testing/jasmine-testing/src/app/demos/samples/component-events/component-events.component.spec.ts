@@ -1,18 +1,18 @@
-import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
-import { ComponentEventsComponent } from './component-events.component';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
 import { By } from '@angular/platform-browser';
+import { ComponentEventsComponent } from './component-events.component';
 
 describe('Component - Events - EventsComponent', () => {
   let component: ComponentEventsComponent;
   let fixture: ComponentFixture<ComponentEventsComponent>;
 
-  beforeEach(waitForAsync(() => {
+  beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [ComponentEventsComponent],
+      imports: [MatCardModule, MatButtonModule],
     }).compileComponents();
-  }));
-
-  beforeEach(() => {
     fixture = TestBed.createComponent(ComponentEventsComponent);
     component = fixture.componentInstance;
   });
@@ -22,28 +22,25 @@ describe('Component - Events - EventsComponent', () => {
   });
 
   it('should increment the count - triggerEventHandler', () => {
-    const divClick = fixture.debugElement.query(By.css('#clickable'));
+    const divClick = fixture.debugElement.query(By.css('button'));
     divClick.triggerEventHandler('click', {});
-    fixture.detectChanges();
 
     expect(component.count).toBe(1);
+    fixture.detectChanges();
 
-    // Actually not needed as this would test Angular - just to show
-    const divResult = fixture.debugElement.query(By.css('.result'));
+    const divResult = fixture.debugElement.query(By.css('#result'));
     expect(divResult.nativeElement.innerText).toContain('1');
   });
 
   it('should increment the count - Native Api', () => {
-    const divClick = fixture.debugElement.query(By.css('#clickable'));
+    const divClick = fixture.debugElement.query(By.css('button'));
     divClick.nativeElement.click();
     divClick.nativeElement.click();
-    divClick.nativeElement.click();
+
+    expect(component.count).toBe(2);
     fixture.detectChanges();
 
-    expect(component.count).toBe(3);
-
-    // Actually not needed as this would test Angular - just to show
-    const divResult = fixture.debugElement.query(By.css('.result'));
-    expect(divResult.nativeElement.innerText).toContain('3');
+    const divResult = fixture.debugElement.query(By.css('#result'));
+    expect(divResult.nativeElement.innerText).toContain('2');
   });
 });
