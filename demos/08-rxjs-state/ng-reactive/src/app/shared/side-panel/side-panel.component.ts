@@ -1,29 +1,31 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { SnackbarService } from '../snackbar/snackbar.service';
-import { SidePanelService } from './sidepanel.service';
+import { ThemeService } from '../theme/theme.service';
 import { SidebarActions } from './sidebar.actions';
+import { SidePanelService } from './sidepanel.service';
 
 @Component({
   selector: 'app-side-panel',
   templateUrl: './side-panel.component.html',
   styleUrls: ['./side-panel.component.scss'],
 })
-export class SidePanelComponent implements OnInit {
-  constructor(private sns: SnackbarService, private eb: SidePanelService) {}
-
+export class SidePanelComponent {
+  sns: SnackbarService = inject(SnackbarService);
+  eb: SidePanelService = inject(SidePanelService);
+  ts: ThemeService = inject(ThemeService);
   editorDisplayed: boolean = false;
 
-  ngOnInit() {
-    this.editorDisplayed = false;
+  toggleTheme() {
+    this.ts.toggleTheme();
   }
 
   toggleEditor() {
+    if (this.editorDisplayed) {
+      this.eb.triggerCmd(SidebarActions.HIDE_MARKDOWN);
+    } else {
+      this.eb.triggerCmd(SidebarActions.SHOW_MARKDOWN);
+    }
     this.editorDisplayed = !this.editorDisplayed;
-    this.eb.triggerCmd(
-      this.editorDisplayed
-        ? SidebarActions.SHOW_MARKDOWN
-        : SidebarActions.HIDE_MARKDOWN
-    );
   }
 
   showUpload() {

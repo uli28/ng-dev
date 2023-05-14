@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { combineLatestWith, map, Observable, startWith } from 'rxjs';
-import { Skill } from 'src/app/skills/skill.model';
-import { SkillsService } from '../../../skills/skills.service';
+import { Person } from './person.model';
+import { PersonService } from './person.service';
+
 
 @Component({
   selector: 'app-reified-reactive',
@@ -11,19 +12,19 @@ import { SkillsService } from '../../../skills/skills.service';
 })
 export class ReifiedReactiveComponent implements OnInit {
   filter$ = new FormControl('', { nonNullable: true });
-  skills$: Observable<Skill[]> | null = null;
+  persons$: Observable<Person[]> | null = null;
 
-  constructor(private service: SkillsService) {}
+  constructor(private service: PersonService) { }
 
   ngOnInit(): void {
     // no unsubscribe needed because use of async pipe in template
-    this.skills$ = this.service.getSkills().pipe(
+    this.persons$ = this.service.getPersons().pipe(
       // initialization: startWith('') will emit an empty string to the stream
       combineLatestWith(this.filter$.valueChanges.pipe(startWith(''))),
-      map(([skills, filter]) => {
+      map(([persons, filter]) => {
         return filter == ''
-          ? skills
-          : skills.filter((skill) => skill.name.includes(filter));
+          ? persons
+          : persons.filter((skill) => skill.name.includes(filter));
       })
     );
   }

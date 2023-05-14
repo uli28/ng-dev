@@ -1,4 +1,65 @@
 {
+  "demos":[
+    {
+      "url": "creating",
+      "title": "Observable Basics"
+    },
+    {
+      "url": "async-pipe",
+      "title": "Template / Async Pipe"
+    },
+    {
+      "url": "formcontrols",
+      "title": "Form Controls"
+    },
+    {
+      "url": "unsubscribe",
+      "title": "Unsubscribing"
+    },
+    {
+      "url": "imperative",
+      "title": "Imperative Programming"
+    },
+    {
+      "url": "reactive",
+      "title": "Reactive Programming"
+    },
+    {
+      "url": "operators",
+      "title": "Observable Operators"
+    },
+    {
+      "url": "responsive-screen",
+      "title": "Screen & Events"
+    },
+    {
+      "url": "subjects",
+      "title": "Subjects"
+    },
+    {
+      "url": "stateful",
+      "title": "Stateful Service"
+    },
+    { "url": "event-bus", "title": "Event Bus" },
+    { "url": "loading", "title": "Loading Indicator" },
+    { "url": "ngrx-data", "title": "@ngrx-data" },
+    { "url": "signals-basics", "title": "Signals basics" },
+    { "url": "signals-bus", "title": "Signals event bus" }
+  ],
+  "top-links": [
+    {
+      "label": "Home",
+      "url": ""
+    },
+    {
+      "label": "Demos",
+      "url": "demos"
+    },
+    {
+      "label": "Skills",
+      "url": "skills"
+    }
+  ],
   "vouchers": [
     {
       "ID": 2,
@@ -125,6 +186,40 @@
       "dueDate": "2020-07-06T15:18:22.9848654"
     }
   ],
+  "persons": [
+    {
+       "id":1,
+       "name":"Cleo",
+       "age":15,
+       "gender":"female",
+       "married":true,
+       "imgUrl":"/assets/images/cleo.png"
+    },
+    {
+       "id":2,
+       "name":"Soi",
+       "age":9,
+       "gender":"female",
+       "married":false,
+       "imgUrl":"/assets/images/soi.png"
+    },
+    {
+       "id":3,
+       "name":"Giro",
+       "age":11,
+       "gender":"male",
+       "married":false,
+       "imgUrl":"/assets/images/giro.png"
+    },
+    {
+       "id":4,
+       "name":"Flora",
+       "age":14,
+       "gender":"female",
+       "married":false,
+       "imgUrl":"/assets/images/flora.png"
+    }
+ ],
   "comments": [
     {
       "id": 1,
@@ -140,37 +235,6 @@
       "comment": "abc",
       "saved": "2020-09-16T20:10:06.925Z"
     }
-  ],
-  "demos": [
-    {
-      "url": "creating",
-      "title": "Creating Observables"
-    },
-    {
-      "url": "unsubscribe",
-      "title": "Unsubscribing"
-    },
-    {
-      "url": "operators",
-      "title": "Observable Operators"
-    },
-    {
-      "url": "flexlayoutapi",
-      "title": "Flex Layout Api"
-    },
-    {
-      "url": "streams",
-      "title": "Async Pipe"
-    },
-    {
-      "url": "subjects",
-      "title": "Subjects"
-    },
-    {
-      "url": "stateful",
-      "title": "Stateful Service"
-    },
-    { "url": "evtbus", "title": "Event Bus" }
   ],
   "tasks": [
     {
@@ -204,5 +268,5 @@
       "completed": false
     }
   ]
-  
+
 }

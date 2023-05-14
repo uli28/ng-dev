@@ -25,7 +25,7 @@ The `demo-app` consists of `app.component.html` that defines the base structure 
 - Angular Technology Stack
 - Angular Essentials & CLI
 - Debugging Angular
-- Understanding Angulars Bootstrapping process and Configuration
+- Understanding Agular’s Bootstrapping process and Configuration
 - Updating Angular Projects
 - Introduction to the Demo App
 
@@ -41,19 +41,21 @@ The `demo-app` consists of `app.component.html` that defines the base structure 
 
 ### Fundamentals & Completing Basic Tasks
 
+- Imperative vs Reactive Programming Styles
 - Components, Modules & Dependency Injection
 - Expressions, Templates & Directives
 - String Interpolation, Property- & Event-Binding, Two-Way Binding
-- Pipes & Localization
+- Databinding Observables
+- Custom Pipes & Localization
 - Custom Directives & Pipes
-- Services & Dependency Injection
+- Modules, Services & Dependency Injection
 
 ### Nesting Components
 
 - Splitting the UI to Nested Components
-- Databinding & Events with Nested Components
+- Databinding & Events with Nested Components using @Input & @Output
 - Container vs Presentational Components
-- Understanding Component Lifecycle
+- Understanding & Using Component Lifecycle Events
 - Reusable Components using Local References & Content Projection
 - View Child, View Children
 
@@ -62,7 +64,6 @@ The `demo-app` consists of `app.component.html` that defines the base structure 
 - Routing Basics
 - Working with Parameterized Routes
 - Using Router State
-- Child- & Secondary (Auxiliary) Routes
 - Organizing Angular Applications using Modules
 - Modules Types (Root, Feature, Shared, ...)
 - Module Lazy Loading
@@ -75,10 +76,11 @@ The `demo-app` consists of `app.component.html` that defines the base structure 
 - Implementing a CSS Reset
 - Global & Component Styles
 - Using Sass (Synthetically Awesome Stylesheets)
-- Responsive Layout using Flexbox, CSS Grid & Angular Flex Layout
+- Layout using Flexbox, CSS Grid and Areas
+- Responsive Web Design using Media Queries
 - Angular Material Overview
 - Using Material Component schematics
-- Material Theming Colors
+- Material Theming Colours
 - Using Material Tables, Dialogs & Form Controls
 - Using Angular CDK & 3rd Party Components (Charting, File Upload, Drag & Drop)
 
@@ -94,27 +96,28 @@ The `demo-app` consists of `app.component.html` that defines the base structure 
 
 - Forms Introduction
 - Template Driven Forms vs Reactive (Model Based) Forms
-- Typed Forms
-- Forms Builder
+- Using Forms Builder
+- Typed Forms (Nullability, Nested Objects, Arrays)
 - FormControl, FormGroups & FormArrays
-- Form Validation Basics (Snychronous / Asynchronous)
+- Form Validation Basics (Synchronous / Asynchronous)
 - Cross Field / Multi Field Validation
 - Custom- & Code-Based Validators
 
-### Observables & Reactive Programming
+### Introduction to Reactive Programming using Signals & RxJS
 
 - What is Reactive Programming / Benefits
 - Observable, Observer & Subject
 - Creating Observables & Casting to Observables
 - Using the async pipe
 - Capturing Mouse & DOM Events as Observables
-- Subscribing to Routes & Params, Flex Layout API
+- Subscribing to Routes & Params as Observables
 - Using Common RxJS Operators
+- Introduction to Signals
 
 ### Managing State & Sharing Events
 
 - What is State Management
-- State Management Options
+- State Management Options: Signals vs Observables
 - Stateless & Stateful Services
 - Sharing Data between deeply Nested Components
 - Service Bus & Sharing Events between deeply Nested Components
@@ -126,18 +129,17 @@ The `demo-app` consists of `app.component.html` that defines the base structure 
 - Karma & Jasmine Basics
 - Test Setup & Mocking Data
 - Testing Classes, Directives and Pipes
-- Using Spies and Injections
-- Http-Testing and HttpTestingController
-- Intro to Component Testing: Testbed and Testing Module
-- Component DOM Testing
-- Interacting with Components in Tests
+- Using Mocks & Spies
+- Intro to Component DOM Testing: Testbed and Testing Module
+- Testing Component Interaction (Read, Write, Emit, Inputs)
+- Material Testing using Component Harnesses
 - In Short: End to End Testing using Cypress
 
 ### Securing & Publishing Angular
 
-- Authentication / Authorization Basics in SPAs
+- Authentication / Authorization Basics in Spa’s
 - Token based Auth: Understanding Jwt, OAuth 2.0 & OpenID Connect
 - Using Interceptors to Automate Authentication Tokens
 - Securing Angular Routes using Route Guards
-- Hosting Option Overview (Docker, Firebase, Azure CDN, …)
+- Hosting Option Overview (Docker, Firebase, Azure Static Web App, …)
 - Publishing Angular Apps

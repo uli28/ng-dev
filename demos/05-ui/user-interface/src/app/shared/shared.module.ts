@@ -11,13 +11,14 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { SidePanelComponent } from './side-panel/side-panel.component';
 import { IntroComponent } from './intro/intro.component';
-import { FlexLayoutModule } from '@angular/flex-layout';
+import { MarkdownEditorComponent } from './markdown-editor/markdown-editor.component';
 
 const mods = [
   NavbarComponent,
   SidePanelComponent,
   PageNotFoundComponent,
   MarkdownRendererComponent,
+  MarkdownEditorComponent,
   LoadingComponent,
   IntroComponent,
 ];
@@ -28,7 +29,6 @@ const mods = [
     FormsModule,
     RouterModule,
     MaterialModule,
-    FlexLayoutModule,
     MarkdownModule.forRoot({
       loader: HttpClient,
     }),
@@ -36,4 +36,4 @@ const mods = [
   declarations: mods,
   exports: mods,
 })
-export class SharedModule {}
+export class SharedModule { }

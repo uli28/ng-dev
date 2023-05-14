@@ -3,5 +3,5 @@ export const environment = {
   authEnabled: false,
   title: 'Forms',
   markdownPath: '/assets/markdown/',
-  apiUrl: 'http://localhost:5000/',
+  api: 'http://localhost:3000/',
 };

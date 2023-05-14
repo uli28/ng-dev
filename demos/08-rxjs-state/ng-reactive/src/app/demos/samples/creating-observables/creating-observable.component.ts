@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import axios from 'axios';
 import { from, Observable, of } from 'rxjs';
-import { filter, map } from 'rxjs/operators';
+import { filter, map, tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-simple-observable',
@@ -9,12 +9,12 @@ import { filter, map } from 'rxjs/operators';
   styleUrls: ['./creating-observable.component.scss'],
 })
 export class CreatingObservableComponent implements OnInit {
-  constructor() {}
+  constructor() { }
 
   onErr = (err: any) => console.log(err);
   onComplete = () => console.log('complete');
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   useObsFrom() {
     let arr = [2, 5, 9, 12, 22];
@@ -109,6 +109,17 @@ export class CreatingObservableComponent implements OnInit {
       (err) => console.log('err:', err),
       () => console.log('complete')
     );
+  }
+
+  useTap() {
+    from([2, 5, 9, 12, 22]) // 5 marbles
+      .pipe(
+        tap((n) => console.log('before filter: ', n)),
+        filter((n) => n > 6),
+        tap((n) => console.log('after filter: ', n)),
+        map((n) => n * 2)
+      )
+      .subscribe((data: number) => console.log('final: ', data));
   }
 
   useOperator() {

@@ -1,2 +1,2 @@
-Click on the button - investigate it.
-Go to Skills -> click an item on the list, and notice the [state] that is passed in the button
+Click on the button - it redirects to Skills -> notice the [state] that is passed will be written to the console.
+

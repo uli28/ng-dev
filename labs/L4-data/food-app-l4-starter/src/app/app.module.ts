@@ -1,15 +1,14 @@
-import { BrowserModule } from "@angular/platform-browser";
-import { NgModule } from "@angular/core";
 import { HttpClientModule } from "@angular/common/http";
+import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
+import { BrowserModule } from "@angular/platform-browser";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { AboutComponent } from "./about/about.component";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
-import { NavbarComponent } from "./shared/navbar/navbar.component";
 import { HomeComponent } from "./home/home.component";
-import { AboutComponent } from "./about/about.component";
-import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { MaterialModule } from "./material.module";
-import { FlexLayoutModule } from "@angular/flex-layout";
+import { NavbarComponent } from "./shared/navbar/navbar.component";
 import { SidemenuComponent } from "./shared/sidemenu/sidemenu.component";
 
 @NgModule({
@@ -27,7 +26,6 @@ import { SidemenuComponent } from "./shared/sidemenu/sidemenu.component";
     FormsModule,
     BrowserAnimationsModule,
     MaterialModule,
-    FlexLayoutModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

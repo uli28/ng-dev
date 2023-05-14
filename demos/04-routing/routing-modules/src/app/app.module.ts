@@ -12,20 +12,14 @@ import { MaterialModule } from './material.module';
 import { IsAuthRouteGuard } from './IsAuthRouteGuard';
 import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.component';
 import { SharedModule } from './shared/shared.module';
-import { SkillRowComponent } from './skills/skill-row/skill-row.component';
-import { SkillsEditComponent } from './skills/skills-edit/skills-edit.component';
-import { SkillsListComponent } from './skills/skills-list/skills-list.component';
-import { SkillResolverService } from './skills/skill-resolver.service';
+import { SkillsModule } from './skills/skills.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     PageNotFoundComponent,
-    AdminComponent,
-    SkillsListComponent,
-    SkillsEditComponent,
-    SkillRowComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
@@ -34,10 +28,11 @@ import { SkillResolverService } from './skills/skill-resolver.service';
     HttpClientModule,
     MaterialModule,
     SharedModule,
+    SkillsModule,
     FormsModule,
     AdminModule,
   ],
-  providers: [IsAuthRouteGuard, SkillResolverService],
+  providers: [IsAuthRouteGuard],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

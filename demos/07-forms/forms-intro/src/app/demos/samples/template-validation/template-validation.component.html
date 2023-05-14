@@ -7,7 +7,7 @@
       #personForm="ngForm"
       (ngSubmit)="savePerson(personForm)"
       novalidate
-      fxLayout="column"
+      column
     >
       <mat-form-field>
         <input
@@ -59,21 +59,21 @@
           <mat-option value="female">Female</mat-option>
         </mat-select>
       </mat-form-field>
-      <button
-        mat-raised-button        
+      <div class="cmdItems">
+        <button
+        mat-raised-button
         color="accent"
-        (click)="patchValue()"
-      >
+        (click)="patchValue()">
         Patch Value
       </button>
       <button
         mat-raised-button
         type="submit"
         [disabled]="personForm.invalid"
-        color="accent"
-      >
+        color="accent">
         Submit
       </button>
+      </div>
     </form>
   </mat-card-content>
 </mat-card>

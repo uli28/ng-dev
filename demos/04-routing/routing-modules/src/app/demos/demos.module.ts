@@ -19,7 +19,7 @@ import { PreloadComponent } from './samples/preload/preload.component';
 import { RouteGuardsComponent } from './samples/route-guards/route-guards.component';
 import { RouterStateComponent } from './samples/router-state/router-state.component';
 import { RoutingBasicsComponent } from './samples/routing-basics/routing-basics.component';
-import { FlexLayoutModule } from '@angular/flex-layout';
+import { MarkdownEditorComponent } from '../shared/markdown-editor/markdown-editor.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +38,6 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     CommonModule,
     FormsModule,
     RouterModule.forChild(demoRoutes),
-    FlexLayoutModule,
     MaterialModule,
     SharedModule,
     HttpClientModule,
@@ -49,4 +48,4 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     { provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true },
   ],
 })
-export class DemosModule {}
+export class DemosModule { }

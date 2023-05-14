@@ -7,7 +7,7 @@
       #personForm="ngForm"
       (ngSubmit)="savePerson(personForm)"
       novalidate
-      fxLayout="column"
+      column
     >
       <mat-form-field>
         <input
@@ -65,7 +65,7 @@
       </mat-radio-group>
 
       <!-- Model Group -->
-      
+
       <div ngModelGroup="address" fxLayout="column" class="address" *ngIf="person.address">
         <mat-form-field>
           <input

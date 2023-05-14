@@ -1,17 +1,11 @@
 import { Injectable } from '@angular/core';
-import {
-  ActivatedRouteSnapshot,
-  CanActivate,
-  CanActivateChild,
-  Router,
-  RouterStateSnapshot,
-} from '@angular/router';
+import { ActivatedRouteSnapshot, Router, RouterStateSnapshot } from '@angular/router';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { SnackbarService } from './shared/snackbar/snackbar.service';
 
 @Injectable()
-export class IsAuthRouteGuard implements CanActivate, CanActivateChild {
+export class IsAuthRouteGuard  {
   allowAccess: boolean = !environment.authEnabled;
   constructor(private router: Router, private sns: SnackbarService) {}
 

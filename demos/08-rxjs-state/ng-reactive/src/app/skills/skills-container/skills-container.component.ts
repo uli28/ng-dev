@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { combineLatest, Observable, of, combineLatestWith } from 'rxjs';
-import { map, startWith } from 'rxjs/operators';
+import { combineLatestWith, map, startWith } from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
 import { Skill } from '../skill.model';
 import { SkillsEntityService } from '../skills-entity.service';
 
@@ -11,32 +11,37 @@ import { SkillsEntityService } from '../skills-entity.service';
   styleUrls: ['./skills-container.component.scss'],
 })
 export class SkillsContainerComponent {
+  service = inject(SkillsEntityService);
   fcToggle = new FormControl(true);
-  skills: Observable<Skill[]> | null = null;
-  view: Observable<Skill[]> | null = null;
-
-  constructor(private skillsService: SkillsEntityService) {
-    this.skills = this.skillsService.entities$;
-    this.view = this.skills.pipe(
-      combineLatestWith(this.fcToggle.valueChanges.pipe(startWith(true))),
-      map(([skills, showAll]) => {
-        return showAll ? skills : skills.filter((s) => s.completed);
-      })
-    );
-  }
+  skills = this.service.entities$.pipe(
+    combineLatestWith(this.fcToggle.valueChanges.pipe(startWith(true))),
+    map(([skills, showAll]) => {
+      return showAll ? skills : skills.filter((sk: Skill) => sk.completed === showAll);
+    })
+  );
 
   ngOnInit(): void {
-    this.skillsService.getAll();
+    this.service.loaded$.subscribe((loaded) => {
+      if (!loaded) {
+        this.service.getAll();
+      }
+    });
   }
 
   addItem(): void {
-    const newItem: Skill = { id: 0, name: 'Container', completed: false };
-    this.skillsService.add(newItem);
+    const newItem: Skill = {
+      id: 0,
+      name: 'Configuration Mgmt',
+      completed: false,
+    };
+    this.service.add(newItem);
   }
 
   deleteItem(item: Skill): void {
-    this.skillsService.delete(item);
+    this.service.delete(item);
   }
 
-  toggleItemComplete(item: Skill): void {}
+  toggleItemComplete(item: Skill): void {
+    this.service.update({ ...item, completed: !item.completed });
+  }
 }

@@ -1,0 +1,103 @@
+{
+  "demos": [
+    {
+      "url": "inline-css",
+      "title": "Inline CSS"
+    },
+    {
+      "url": "cssbasics",
+      "title": "CSS Basics"
+    },
+    { "url": "flexbox", "title": "Flexbox" },
+    {
+      "url": "flexmediaq",
+      "title": "Flexbox Media Queries"
+    },
+    {
+      "url": "cssgrid",
+      "title": "CSS Grid"
+    },
+    {
+      "url": "material",
+      "title": "Material Showcase"
+    },
+    {
+      "url": "mat-form-field",
+      "title": "MatFormFields"
+    },
+    {
+      "url": "material-table",
+      "title": "Material Table"
+    },
+    {
+      "url": "classic-dialog",
+      "title": "Material Dialog Classic"
+    },
+    {
+      "url": "material-dialog",
+      "title": "Dialog with @Input()"
+    },
+    {
+      "url": "stepper",
+      "title": "Material Stepper"
+    },
+    {
+      "url": "fonts",
+      "title": "Using Webfonts"
+    },
+    {
+      "url": "dragdrop",
+      "title": "Drag & Drop"
+    },
+    {
+      "url": "virtualscroll",
+      "title": "VirtualScroll"
+    },
+    {
+      "url": "chart",
+      "title": "Chart"
+    },
+    {
+      "url": "markdown",
+      "title": "Markdown Renderer"
+    }
+  ]
+  ,
+  "top-links": [
+    {
+      "label": "Home",
+      "url": ""
+    },
+    {
+      "label": "Demos",
+      "url": "demos"
+    },
+    {
+      "label": "Skills",
+      "url": "skills"
+    }
+  ],
+  "skills": [
+    { "id": 1, "name": "Node.js", "hours": 3, "completed": false },
+    { "id": 2, "name": "TypeScript", "hours": 4, "completed": false },
+    { "id": 3, "name": "JavaScript", "hours": 10, "completed": false },
+    { "id": 4, "name": "Angular", "hours": 20, "completed": false }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

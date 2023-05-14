@@ -8,11 +8,11 @@ import { environment } from '../../../../environments/environment.prod';
   styleUrls: ['./loading-host.component.scss'],
 })
 export class LoadingHostComponent implements OnInit {
-  constructor(private client: HttpClient) {}
+  constructor(private client: HttpClient) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   doLoad() {
-    this.client.get(environment.apiUrl).subscribe((data) => console.log(data));
+    this.client.get(`${environment.api}vouchers`).subscribe((data) => console.log(data));
   }
 }

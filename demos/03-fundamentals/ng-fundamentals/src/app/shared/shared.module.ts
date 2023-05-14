@@ -11,7 +11,6 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { SidePanelComponent } from './side-panel/side-panel.component';
 import { IntroComponent } from './intro/intro.component';
 import { LoadingComponent } from './loading/loading.component';
-import { FlexLayoutModule } from '@angular/flex-layout';
 
 const mods = [
   NavbarComponent,
@@ -28,7 +27,6 @@ const mods = [
     FormsModule,
     RouterModule,
     MaterialModule,
-    FlexLayoutModule,
     MarkdownModule.forRoot({
       loader: HttpClient,
     }),
@@ -36,4 +34,4 @@ const mods = [
   declarations: mods,
   exports: mods,
 })
-export class SharedModule {}
+export class SharedModule { }

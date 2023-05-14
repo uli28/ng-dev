@@ -1,15 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { FlexLayoutModule } from '@angular/flex-layout';
 import { ReactiveFormsModule } from '@angular/forms';
-import {
-  EntityDataService,
-  EntityDefinitionService,
-  HttpUrlGenerator,
-} from '@ngrx/data';
+import { EntityDataService, EntityDefinitionService } from '@ngrx/data';
 import { MaterialModule } from '../material.module';
-import { CustomurlHttpGenerator } from './custom-url-generator';
 import { SkillRowComponent } from './skill-row/skill-row.component';
 import { SkillsContainerComponent } from './skills-container/skills-container.component';
 import { SkillsDataService } from './skills-data.service';
@@ -28,18 +22,10 @@ import { SkillsRoutingModule } from './skills.routing.module';
     CommonModule,
     SkillsRoutingModule,
     MaterialModule,
-    FlexLayoutModule,
     ReactiveFormsModule,
     HttpClientModule,
   ],
-  providers: [
-    SkillsEntityService,
-    SkillsDataService,
-    {
-      provide: HttpUrlGenerator,
-      useClass: CustomurlHttpGenerator,
-    },
-  ],
+  providers: [SkillsEntityService, SkillsDataService],
 })
 export class SkillsModule {
   constructor(

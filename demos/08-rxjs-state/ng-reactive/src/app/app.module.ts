@@ -12,7 +12,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { MaterialModule } from './material.module';
 import { SharedModule } from './shared/shared.module';
-import { reducers } from './store/reducers';
+import { reducers } from './store';
 
 @NgModule({
   declarations: [AppComponent, HomeComponent],
@@ -31,4 +31,4 @@ import { reducers } from './store/reducers';
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

@@ -2,7 +2,5 @@
 @import "mixins.scss";
 @import "mat-theme.scss";
 @import "mat-overrides.scss";
-
-.clickable {
-  cursor: pointer;
-}
+@import "tables.scss";
+@import "forms.scss";

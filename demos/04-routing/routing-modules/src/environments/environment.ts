@@ -1,7 +1,7 @@
 export const environment = {
   production: false,
   title: 'Routing',
-  api: '/assets/skills.json',
+  api: 'http://localhost:3000/',
   markdownPath: '/assets/markdown/',
   authEnabled: true,
 };

@@ -1,8 +1,8 @@
-<mat-card appearance="outlined">
+<mat-card>
   <mat-card-header>
     <mat-card-title>Using Router Link & Basic Routing</mat-card-title>
   </mat-card-header>
-  <mat-card-content fxLayout="column" fxLayoutGap="10px">
+  <mat-card-content class="cmdItems">
     <button mat-raised-button [routerLink]="['/skills']" color="accent"
       >Simple Route (Show Skills)</button>
     <button mat-raised-button [routerLink]="['/skills-old']" color="accent"
@@ -10,7 +10,7 @@
   </mat-card-content>
 </mat-card>
 
-<mat-card appearance="outlined">
+<mat-card>
   <mat-card-header>
     <mat-card-title>Using Query Params & Fragments</mat-card-title>
   </mat-card-header>
@@ -24,11 +24,11 @@
   </mat-card-content>
 </mat-card>
 
-<mat-card appearance="outlined">
+<mat-card>
   <mat-card-header>
     <mat-card-title>Route using Code</mat-card-title>
   </mat-card-header>
-  <mat-card-content fxLayout="column" fxLayoutGap="10px">
+  <mat-card-content class="cmdItems">
     <button mat-raised-button (click)="showSkills()" color="accent"
       >Simple Route using Code (Show Skills)</button>
     <button mat-raised-button (click)="showSkillParam(2)" color="accent"

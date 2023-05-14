@@ -187,6 +187,8 @@ getItems() {
   }
 ```
 
+>Note: A copy of `menu-items.json` is located in the folder of this lab
+
 Inject navbar.service in `navbar.component.ts` and get the menu items:
 
 ```typescript
@@ -217,16 +219,15 @@ Style `navbar.component.scss`:
     width: 100%;
     flex-direction: row;
     padding: 1rem;
-
-
 }
 
 .menuItem{
-    margin-right: 0.5rem;
-    
+    margin-right: 0.5rem;    
     &:hover{
         text-decoration: underline;
         cursor: pointer;
     }
 }
 ```
+
+>Note: In Angular 15 the default environment files where removed. If you want to use environment files you have to create them manually. See [https://angular.io/guide/build#configuring-application-environments](https://angular.io/guide/build#configuring-application-environments)

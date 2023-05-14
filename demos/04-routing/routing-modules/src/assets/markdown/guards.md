@@ -1,20 +1,20 @@
 - Examine `app-routing.module.ts` and notice `canActivate`:
 
-```json
+```
 {
-    path: 'admin',
-    component: AdminComponent,
-    children: [
-        {
-        path: 'admina',
-        component: AdminAComponent,
-        },
-        {
-        path: 'adminb',
-        component: AdminBComponent,
-        },
-    ],
-    canActivate: [IsAuthRouteGuard],
+  path: 'admin',
+  component: AdminComponent,
+  children: [
+      {
+      path: 'admina',
+      component: AdminAComponent,
+      },
+      {
+      path: 'adminb',
+      component: AdminBComponent,
+      },
+  ],
+  canActivate: [IsAuthRouteGuard],
 }
 ```
 
@@ -22,7 +22,7 @@
 
 - Go to 'environment.ts' - Try link below with `authEnabled: false | true`
 
-```
+```typescript
 export const environment = {
   production: false,
   title: 'Routing',
