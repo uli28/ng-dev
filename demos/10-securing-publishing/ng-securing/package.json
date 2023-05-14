@@ -1,11 +1,11 @@
 {
-  "name": "ng-demo-app",
+  "name": "ng-securing",
   "author": {
     "name": "Alexander Pajer",
     "email": "alexander.pajer@integrations.at",
     "url": "https://www.integrations.at"
   },
-  "version": "14.0.0",
+  "version": "16.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
