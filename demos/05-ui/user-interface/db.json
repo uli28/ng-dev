@@ -1,12 +1,16 @@
 {
   "demos": [
     {
+      "url": "css-binding",
+      "title": "CSS Binding"
+    },
+    {
       "url": "inline-css",
       "title": "Inline CSS"
     },
     {
-      "url": "cssbasics",
-      "title": "CSS Basics"
+      "url": "style-inheritence",
+      "title": "Style Inheritence"
     },
     { "url": "flexbox", "title": "Flexbox" },
     {
@@ -19,7 +23,7 @@
     },
     {
       "url": "material",
-      "title": "Material Showcase"
+      "title": "Angular Material"
     },
     {
       "url": "mat-form-field",
@@ -42,6 +46,10 @@
       "title": "Material Stepper"
     },
     {
+      "url": "material-theme",
+      "title": "Material Theme"
+    },
+    {
       "url": "fonts",
       "title": "Using Webfonts"
     },
@@ -60,9 +68,12 @@
     {
       "url": "markdown",
       "title": "Markdown Renderer"
+    },
+    {
+      "url": "bootstrap",
+      "title": "Bootstrap"
     }
-  ]
-  ,
+  ],
   "top-links": [
     {
       "label": "Home",

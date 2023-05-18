@@ -38,6 +38,7 @@ import { EditableDirective } from './samples/custom-directives/editable.directiv
 import { MarkdownRendererModule } from '../shared/markdown-renderer/markdown-renderer.module';
 import { FormControlsComponent } from './samples/form-controls/form-controls.component';
 import { BorderDirective, CenteredDirective } from './samples/custom-directives/formatting-directives';
+import { ServicesBasicsComponent } from './samples/services-basics/services-basics.component';
 
 const demoRoutes: Routes = [
   {
@@ -45,6 +46,7 @@ const demoRoutes: Routes = [
     component: DemoContainerComponent,
 
     children: [
+      { path: 'services-basics', component: ServicesBasicsComponent },
       { path: 'attrbinding', component: AttrBindingComponent },
       { path: 'lifecycle', component: LifecycleComponent },
       { path: 'inline', component: InlineComponent },
@@ -96,7 +98,8 @@ const demoRoutes: Routes = [
     AttrBindingComponent,
     DependencyInjectionComponent,
     EditableDirective,
-    FormControlsComponent
+    FormControlsComponent,
+    ServicesBasicsComponent
   ],
   imports: [
     CommonModule,

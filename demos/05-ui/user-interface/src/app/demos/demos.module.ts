@@ -31,6 +31,11 @@ import { VirtualScrollComponent } from './samples/virtual-scroll/virtual-scroll.
 import { MatFormFieldComponent } from './samples/mat-form-field/mat-form-field.component';
 import { CenteredDirective, RowDirective } from '../shared/formatting/formatting-directives';
 import { MarkdownRendererModule } from '../shared/markdown-renderer/markdown-renderer.module';
+import { StyleInheritanceComponent } from './samples/style-inheritance/style-inheritance.component';
+import { FirstChildComponent } from './samples/style-inheritance/first-child/first-child.component';
+import { SecondChildComponent } from './samples/style-inheritance/second-child/second-child.component';
+import { NestedChildComponent } from './samples/style-inheritance/nested-child/nested-child.component';
+import { MaterialThemeComponent } from './samples/material-theme/material-theme.component';
 
 const demoRoutes: Routes = [
   {
@@ -38,9 +43,10 @@ const demoRoutes: Routes = [
     component: DemoContainerComponent,
 
     children: [
+      { path: 'style-inheritence', component: StyleInheritanceComponent },
       { path: 'inline-css', component: InlineCssComponent },
       { path: 'mat-form-field', component: MatFormFieldComponent },
-      { path: 'cssbasics', component: CSSBindingComponent },
+      { path: 'css-binding', component: CSSBindingComponent },
       { path: 'bootstrap', component: BoostrapComponent },
       { path: 'cssgrid', component: CssgridComponent },
       { path: 'material', component: MaterialShowCaseComponent },
@@ -55,6 +61,8 @@ const demoRoutes: Routes = [
       { path: 'virtualscroll', component: VirtualScrollComponent },
       { path: 'chart', component: ChartComponent },
       { path: 'markdown', component: MarkdownThirdPartyComponent },
+      { path: 'bootstrap', component: BoostrapComponent },
+      { path: 'material-theme', component: MaterialThemeComponent },
     ],
   },
 ];
@@ -81,6 +89,11 @@ const demoRoutes: Routes = [
     ChartComponent,
     MarkdownThirdPartyComponent,
     MatFormFieldComponent,
+    StyleInheritanceComponent,
+    FirstChildComponent,
+    SecondChildComponent,
+    NestedChildComponent,
+    MaterialThemeComponent
   ],
   imports: [
     CommonModule,

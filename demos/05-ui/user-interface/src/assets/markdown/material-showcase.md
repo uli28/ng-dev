@@ -1,3 +1,7 @@
-- Show Material installation using `ng add` in a Hello-World app
-- Roughly Explain Material Theming and `mat-theme.scss`
-- Explain the different Controls used on this page and the use of `mat-overrides.scss`
+- Add material to a Hello-World app
+
+  ```
+  ng add @angular/material
+  ```
+
+- Explain the different Controls used on this page
