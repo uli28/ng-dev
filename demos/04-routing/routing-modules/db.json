@@ -2,7 +2,7 @@
   "demos": [
     {
       "url": "childroutes",
-      "title": "Routes"
+      "title": "Routing Configuration"
     },
     {
       "url": "routingbasics",
@@ -13,8 +13,8 @@
       "title": "paramMap"
     },
     {
-      "url": "router-state",
-      "title": "Router State"
+      "url": "router-binding",
+      "title": "Router Binding"
     },
     {
       "url": "lazy-loading",
@@ -52,6 +52,10 @@
       "url": "skills"
     },
     {
+      "label": "Customers",
+      "url": "customers"
+    },
+    {
       "label": "Admin",
       "url": "admin"
     }
@@ -61,6 +65,14 @@
     { "id": 2, "name": "TypeScript", "hours": 4, "completed": false },
     { "id": 3, "name": "JavaScript", "hours": 10, "completed": true },
     { "id": 4, "name": "Angular", "hours": 20, "completed": false }
+  ],
+  "customers": [
+    {
+      "id": 1, "name": "Fritzi"
+    },
+    {
+      "id": 2, "name": "Mimi"
+    }
   ],
   "posts": [
     {

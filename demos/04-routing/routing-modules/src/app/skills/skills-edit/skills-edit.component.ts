@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, RouterState } from '@angular/router';
 import { Skill } from '../skill.model';
 import { SkillsService } from '../skills.service';
 import { SnackbarService } from '../../shared/snackbar/snackbar.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-skills-edit',
@@ -38,7 +39,6 @@ export class SkillsEditComponent implements OnInit {
   }
 
   /* #region params */
-
   readParamUsingSnapshot() {
     // get id param -> load data with id
     const id = this.route.snapshot.params['id'];

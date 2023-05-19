@@ -13,15 +13,25 @@ import { IsAuthRouteGuard } from './IsAuthRouteGuard';
 import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.component';
 import { SharedModule } from './shared/shared.module';
 import { SkillsModule } from './skills/skills.module';
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import { CustomerEffects } from './customers/state/customers.effects';
+import { metaReducers, reducers } from './state';
+import { CommonModule } from '@angular/common';
+import { CustomerEditComponent } from './customers/component/customer-edit/customer-edit.component';
+import { CustomersComponent } from './customers/component/customer-list/customers.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     PageNotFoundComponent,
-    AdminComponent
+    AdminComponent,
+    CustomerEditComponent,
+    CustomersComponent,
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -31,6 +41,8 @@ import { SkillsModule } from './skills/skills.module';
     SkillsModule,
     FormsModule,
     AdminModule,
+    StoreModule.forRoot(reducers, { metaReducers }),
+    EffectsModule.forRoot([CustomerEffects]),
   ],
   providers: [IsAuthRouteGuard],
   bootstrap: [AppComponent],
