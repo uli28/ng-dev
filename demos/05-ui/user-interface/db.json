@@ -1,16 +1,16 @@
 {
   "demos": [
     {
+      "url": "style-inheritence",
+      "title": "Global / Component Styles"
+    },
+    {
       "url": "css-binding",
       "title": "CSS Binding"
     },
     {
       "url": "inline-css",
       "title": "Inline CSS"
-    },
-    {
-      "url": "style-inheritence",
-      "title": "Style Inheritence"
     },
     { "url": "flexbox", "title": "Flexbox" },
     {
