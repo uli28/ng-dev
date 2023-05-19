@@ -10,6 +10,8 @@ import { SkillsListComponent } from './skills/skills-list/skills-list.component'
 import { SkillsEditComponent } from './skills/skills-edit/skills-edit.component';
 import { SkillResolverService } from './skills/skill-resolver.service';
 import { IsAdminGuard } from './IsAdminGuard';
+import { CustomersComponent } from './customers/component/customer-list/customers.component';
+import { CustomerEditComponent } from './customers/component/customer-edit/customer-edit.component';
 
 const routes: Routes = [
   {
@@ -29,6 +31,14 @@ const routes: Routes = [
     path: 'skills/:id',
     component: SkillsEditComponent,
     resolve: { skillData: SkillResolverService },
+  },
+  {
+    path: 'customers',
+    component: CustomersComponent,
+  },
+  {
+    path: 'customers/:id',
+    component: CustomerEditComponent,
   },
   {
     path: 'admin',
@@ -58,11 +68,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [
-    RouterModule.forRoot(routes, {
-      enableTracing: false
-    }),
-  ],
+  imports: [RouterModule.forRoot(routes, { bindToComponentInputs: true })],
   exports: [RouterModule],
 })
 export class AppRoutingModule { }

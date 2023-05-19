@@ -17,10 +17,9 @@ import { ParamMapComponent } from './samples/paramMap/param-map/param-map.compon
 import { PmChildComponent } from './samples/paramMap/pm-child/pm-child.component';
 import { PreloadComponent } from './samples/preload/preload.component';
 import { RouteGuardsComponent } from './samples/route-guards/route-guards.component';
-import { RouterStateComponent } from './samples/router-state/router-state.component';
 import { RoutingBasicsComponent } from './samples/routing-basics/routing-basics.component';
-import { MarkdownEditorComponent } from '../shared/markdown-editor/markdown-editor.component';
 import { MarkdownRendererModule } from '../shared/markdown-renderer/markdown-renderer.module';
+import { RouterBindingComponent } from './samples/router-binding/router-binding.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +32,7 @@ import { MarkdownRendererModule } from '../shared/markdown-renderer/markdown-ren
     PmChildComponent,
     ComponentLessComponent,
     LazyLoadingComponent,
-    RouterStateComponent,
+    RouterBindingComponent
   ],
   imports: [
     CommonModule,
