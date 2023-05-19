@@ -41,6 +41,7 @@ The `demo-app` consists of `app.component.html` that defines the base structure 
 
 ### Fundamentals & Completing Basic Tasks
 
+- Services & Data Request
 - Components & Dependency Injection
 - Imperative vs Reactive Programming Styles
 - Expressions, Templates & Directives
@@ -83,14 +84,6 @@ The `demo-app` consists of `app.component.html` that defines the base structure 
 - Material Theming Colours
 - Using Material Tables, Dialogs & Form Controls
 - Using Angular CDK & 3rd Party Components (Charting, File Upload, Drag & Drop)
-
-### Consuming RESTful Services
-
-- RESTful APIs Overview
-- Implementing the Client-Side Data Models
-- Implementing CRUD Operations on RESTful APIs
-- Using JSON Server as API for Prototyping
-- Observe Response and Setting Custom Http Headers
 
 ### Forms Design & Validation
 
@@ -139,6 +132,7 @@ The `demo-app` consists of `app.component.html` that defines the base structure 
 
 - Authentication / Authorization Basics in Spa’s
 - Token based Auth: Understanding Jwt, OAuth 2.0 & OpenID Connect
+- Observe Response and Setting Custom Http Headers
 - Using Interceptors to Automate Authentication Tokens
 - Securing Angular Routes using Route Guards
 - Hosting Option Overview (Docker, Firebase, Azure Static Web App, …)

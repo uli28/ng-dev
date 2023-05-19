@@ -1,6 +1,14 @@
 {
   "demos": [
     {
+      "url": "services-basics",
+      "title": "Services Basics"
+    },
+    {
+      "url": "di",
+      "title": "Dependency Injection"
+    },
+    {
       "url": "expressions",
       "title": "Expressions & Events"
     },
@@ -11,10 +19,6 @@
     {
       "url": "inline",
       "title": "Inline Component"
-    },
-    {
-      "url": "di",
-      "title": "Dependency Injection"
     },
     {
       "url": "binding",
@@ -40,7 +44,10 @@
       "url": "structdirectives",
       "title": "Structural Directives"
     },
-    { "url": "pipes", "title": "Pipes" },
+    {
+      "url": "pipes",
+      "title": "Pipes"
+    },
     {
       "url": "custompipes",
       "title": "Custom Pipes"
@@ -53,7 +60,10 @@
       "url": "container",
       "title": "Container Presenter"
     },
-    { "url": "repeater", "title": "Repeater with local ref" },
+    {
+      "url": "repeater",
+      "title": "Repeater with local ref"
+    },
     {
       "url": "lifecycle",
       "title": "Component Lifecycle"
@@ -66,8 +76,7 @@
       "url": "ng-template",
       "title": "ng-template"
     }
-  ]
-  ,
+  ],
   "top-links": [
     {
       "label": "Home",
@@ -86,63 +95,68 @@
     {
       "id": "123",
       "name": "RxJs",
-      "hours":8,
+      "hours": 8,
       "completed": false
     },
     {
       "id": "456",
       "name": "NgRx",
-      "hours":10,
+      "hours": 10,
       "completed": false
     },
     {
       "id": "223",
       "name": "Angular",
-      "hours":7,
+      "hours": 7,
       "completed": true
     },
     {
       "id": "436",
       "name": "TypeScript",
-      "hours":2,
+      "hours": 2,
+      "completed": true
+    },
+    {
+      "id": "44",
+      "name": "Webpack",
+      "hours": 2,
       "completed": true
     }
   ],
   "persons": [
     {
-       "id":1,
-       "name":"Cleo",
-       "age":15,
-       "gender":"female",
-       "married":true,
-       "imgUrl":"/assets/images/cleo.png"
+      "id": 1,
+      "name": "Cleo",
+      "age": 15,
+      "gender": "female",
+      "married": true,
+      "imgUrl": "/assets/images/cleo.png"
     },
     {
-       "id":2,
-       "name":"Soi",
-       "age":9,
-       "gender":"female",
-       "married":false,
-       "imgUrl":"/assets/images/soi.png"
+      "id": 2,
+      "name": "Soi",
+      "age": 9,
+      "gender": "female",
+      "married": false,
+      "imgUrl": "/assets/images/soi.png"
     },
     {
-       "id":3,
-       "name":"Giro",
-       "age":11,
-       "gender":"male",
-       "married":false,
-       "imgUrl":"/assets/images/giro.png"
+      "id": 3,
+      "name": "Giro",
+      "age": 11,
+      "gender": "male",
+      "married": false,
+      "imgUrl": "/assets/images/giro.png"
     },
     {
-       "id":4,
-       "name":"Flora",
-       "age":14,
-       "gender":"female",
-       "married":false,
-       "imgUrl":"/assets/images/flora.png"
+      "id": 4,
+      "name": "Flora",
+      "age": 14,
+      "gender": "female",
+      "married": false,
+      "imgUrl": "/assets/images/flora.png"
     }
- ]
- ,
+  ],
   "authors": [
     {
       "id": 1,
@@ -157,7 +171,7 @@
       "mail": "giro.thegalgo@integrations.at"
     }
   ],
-  "vouchers":  [
+  "vouchers": [
     {
       "ID": 2,
       "Text": "BP Tankstelle",
@@ -278,40 +292,39 @@
   ],
   "accounts": [
     {
-        "ID": 1,
-        "Name": "Unclassified",
-        "Expense": true
+      "ID": 1,
+      "Name": "Unclassified",
+      "Expense": true
     },
     {
-        "ID": 2,
-        "Name": "Car Maintenance",
-        "Expense": true
+      "ID": 2,
+      "Name": "Car Maintenance",
+      "Expense": true
     },
     {
-        "ID": 3,
-        "Name": "Development",
-        "Expense": false
+      "ID": 3,
+      "Name": "Development",
+      "Expense": false
     },
     {
-        "ID": 4,
-        "Name": "Consulting",
-        "Expense": false
+      "ID": 4,
+      "Name": "Consulting",
+      "Expense": false
     },
     {
-        "ID": 5,
-        "Name": "Training",
-        "Expense": false
+      "ID": 5,
+      "Name": "Training",
+      "Expense": false
     },
     {
-        "ID": 6,
-        "Name": "Software",
-        "Expense": true
+      "ID": 6,
+      "Name": "Software",
+      "Expense": true
     },
     {
-        "ID": 7,
-        "Name": "Hosting & Internet",
-        "Expense": true
+      "ID": 7,
+      "Name": "Hosting & Internet",
+      "Expense": true
     }
-]
-
+  ]
 }

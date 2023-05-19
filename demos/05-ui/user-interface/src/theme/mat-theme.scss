@@ -8,7 +8,6 @@ $primary: mat.define-palette(mat.$blue-palette, 600);
 $accent: mat.define-palette(mat.$grey-palette, 400);
 $warn: mat.define-palette(mat.$red-palette);
 
-//Build theme
 $theme: mat.define-light-theme(
   (
     color: (

@@ -21,7 +21,11 @@ export class SkillsService {
     return this.httpClient.post<Skill>(`${environment.api}skills`, skill);
   }
 
-  deleteSkill(skill: Skill) {
-    return this.httpClient.delete(`${environment.api}skills`);
+  deleteSkill(id: number) {
+    return this.httpClient.delete(`${environment.api}skills/${id}`);
+  }
+
+  updateSkill(skill: Skill) {
+    return this.httpClient.put<Skill>(`${environment.api}skills/${skill.id}`, skill);
   }
 }
