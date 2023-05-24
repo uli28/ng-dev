@@ -6,13 +6,13 @@ Add [Angular Material](https://material.angular.io) to your project:
 
 - Install Angular Material using the [Material Getting Started](https://material.angular.io/guide/getting-started) and choose a theme of your choice.
 
-- Implement a `material.module.ts` and copy its default content from the [Demo App](.../../demos/05-ui/user-interface/src/material.module.ts).
+- Implement a `material.module.ts` and copy its default content from the [Demo App](.../../../../demos/05-ui/user-interface/src/app/material.module.ts).
 
 - Test the installation of Angular Material by replacing the `div` in the `navbar.component.html` with a [Material Toolbar](https://material.angular.io/components/toolbar/overview)
 
 Implement the Base Layout using CSS Grid:
 
-- Change to base layout in app.component to use [CSS Grid](https://css-tricks.com/snippets/css/complete-guide-grid/). Use the [Demo App](.../../demos/05-ui/user-interface/src/app/app.component.html) Layout as a reference.
+- Change to base layout in app.component to use [CSS Grid](https://css-tricks.com/snippets/css/complete-guide-grid/). Use the [Demo App](.../../../../demos/05-ui/user-interface/src/app/app.component.html) Layout as a reference.
     
 - Hide the sidebar on devices with a horizontal width less than medium. We will add a toggle button in another lab.
 
