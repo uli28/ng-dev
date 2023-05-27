@@ -11,8 +11,9 @@ import { environment } from 'src/environments/environment';
 export class HttpClientComponent {
   client = inject(HttpClient);
   result: any;
-  fname: string = '';
-  token: string = 'mock-token';
+  fname = '';
+  token = 'mock-token';
+  key = 'mock-key';
 
   observeResponse() {
     this.client.get(`${environment.api}skills`, {
@@ -29,8 +30,7 @@ export class HttpClientComponent {
     const header = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': 'Bearer ' + this.token,
-      'UserEmail': 'giro.galgo@sighthounds.at',
-      'SomeHeader': 'SomeVal'
+      'subscription-key': this.key
     });
 
     this.client

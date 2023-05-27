@@ -1,17 +1,17 @@
 export const environment = {
   production: false,
-  authEnabled: true,
+  authEnabled: false,
   title: 'Security & Publishing',
   markdownPath: '/assets/markdown/',
   api: 'http://localhost:3000/',
   netapi: 'https://localhost:5001/',
   firebaseConfig: {
-    apiKey: "AIzaSyDb3ho6XRO5N_BxFG9saj9H3oJKpWmZ830",
-    authDomain: "ng-dev-mai-2023.firebaseapp.com",
-    projectId: "ng-dev-mai-2023",
-    storageBucket: "ng-dev-mai-2023.appspot.com",
-    messagingSenderId: "70101520389",
-    appId: "1:70101520389:web:af35fc7ef6513b71cb0c6c",
-    measurementId: "G-9BYDMNRGRE"
+    apiKey: "AIzaSyBwZepJAqUZHwiuu5WZ7KqBlYFtMyinCEE",
+    authDomain: "auth-test-910e6.firebaseapp.com",
+    projectId: "auth-test-910e6",
+    storageBucket: "auth-test-910e6.appspot.com",
+    messagingSenderId: "978916591507",
+    appId: "1:978916591507:web:a6cca82e4bf1ce2f804a66",
+    measurementId: "G-XLKCLQP019"
   },
 };
