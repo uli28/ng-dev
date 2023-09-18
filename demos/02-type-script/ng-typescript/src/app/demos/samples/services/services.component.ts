@@ -4,6 +4,8 @@ import axios from 'axios'; //alias import
 import { environment } from '../../../../environments/environment';
 import { Skill } from '../skills/skill.model';
 import { SkillsService } from '../skills/skills.service';
+import { map, tap } from 'rxjs';
+import { ta } from 'date-fns/locale';
 
 @Component({
   selector: 'app-services',
@@ -14,6 +16,13 @@ export class ServicesComponent {
   service = inject(SkillsService);
   http = inject(HttpClient);
   skills: Skill[];
+  skills$ = this.service.getSkills().pipe(
+    tap((data) => {
+      // using tap to log data to console
+      console.log('Data from declarative binding', data);
+    })
+  );
+  showDeclarative = this.skills$.pipe(map((data) => data.length > 0));
 
   usingFetch() {
     //using fetch in angular is an antipattern
@@ -75,7 +84,6 @@ export class ServicesComponent {
     axios.post(`${environment.api}skills`, sk);
   }
 
-  // antipattern - try to keep data operation in services
   useClientInComponent() {
     //untyped
     this.http
