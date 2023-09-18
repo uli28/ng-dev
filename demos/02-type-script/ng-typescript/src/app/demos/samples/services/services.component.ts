@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import axios from 'axios'; //alias import
 import { environment } from '../../../../environments/environment';
 import { Skill } from '../skills/skill.model';
@@ -11,10 +11,9 @@ import { SkillsService } from '../skills/skills.service';
   styleUrls: ['./services.component.scss'],
 })
 export class ServicesComponent {
+  service = inject(SkillsService);
+  http = inject(HttpClient);
   skills: Skill[];
-
-  // direct data access in components is an antipattern
-  constructor(private service: SkillsService, private http: HttpClient) { }
 
   usingFetch() {
     //using fetch in angular is an antipattern
