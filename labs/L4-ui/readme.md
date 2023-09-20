@@ -10,7 +10,7 @@ We will also complete the implementation of the Food App by adding data access t
 
 ### Using Angular Material
 
-Add [Angular Material](https://material.angular.io) to your project:
+Add Angular Material to your project:
 
 - Install Angular Material using the [Material Getting Started](https://material.angular.io/guide/getting-started) and choose a theme of your choice.
 
@@ -48,9 +48,7 @@ Implement a Material Design for Food App:
 
 ### Load data from a REST API
 
-# Food App Data Access
-
-In this lab we will add data access to food-app. We will use [json-server](https://github.com/typicode/json-server) to provide a RESTful API for our food data. In real life you would use a backend service implemented in .NET or Spring to provide the data. 
+In this task we will add data access to food-app. We will use [json-server](https://github.com/typicode/json-server) to provide a RESTful API for our food data. In real life you would use a backend service implemented in .NET or Spring to provide the data. 
 
 ## Steps Outlined
 
@@ -77,11 +75,7 @@ In this lab we will add data access to food-app. We will use [json-server](https
     json-server db.json
     ```
 
-- Add food.service.ts, implement Create, Read, Update and Delete against the json-server api and use it in your app. Use the following [reference](/demos/05-ui/user-interface/src/app/skills/skills.service.ts)
-
-    ```bash
-    ng g s food/food
-    ```
+- Extend `food.service.ts` to implement Get, Create, Read, Update and Delete against the json-server api and use it in your app. Use the following [reference](/demos/05-ui/user-interface/src/app/skills/skills.service.ts)
 
 - If you want to generate and id for a new food item to be added, you could use this code fragment:
 
@@ -91,6 +85,8 @@ In this lab we will add data access to food-app. We will use [json-server](https
         return nextId;
     }
     ```
+
+- After this lab you should be able to add, edit and delete food items in the app.
 
 ### Implement a custom Material Theme
 
