@@ -47,6 +47,7 @@ The `demo-app` consists of `app.component.html` that defines the base structure 
 - Expressions, Templates & Directives
 - String Interpolation, Property- & Event-Binding, Two-Way Binding
 - Databinding Observables
+- Control Flow Syntax
 - Custom Pipes & Localization
 - Custom Directives & Pipes
 - Modules, Services & Dependency Injection
