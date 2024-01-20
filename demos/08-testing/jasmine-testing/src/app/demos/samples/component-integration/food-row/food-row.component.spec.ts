@@ -12,10 +12,10 @@ describe('Component -Integration Test - Food Row', () => {
   const food = { id: 1, name: 'Pad Thai', rating: 5 };
 
   beforeEach(() => {
-    TestBed.configureTestingModule({
-      declarations: [FoodRowComponent],
-    });
-    fixture = TestBed.createComponent(FoodRowComponent);
+    fixture = TestBed.configureTestingModule({
+      imports: [FoodRowComponent],
+    }).createComponent(FoodRowComponent);
+
     component = fixture.componentInstance;
     deleteFld = fixture.debugElement.query(By.css('#deleteFld'));
     editFld = fixture.debugElement.query(By.css('#editFld'));

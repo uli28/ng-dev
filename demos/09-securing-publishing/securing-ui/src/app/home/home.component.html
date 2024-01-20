@@ -1,6 +1,10 @@
 <app-intro
-  title="Angular - Single Page Application Development"
-  subtitle="Intro Securing & Deployment"
+  title={{app}}
+  subtitle={{subtitle}}
   img="authentication.png"
-  ><div class="instructions">Start json-server using: json-server db.json</div>
+  [isAuthenticated]="authEnabled |async"
+  >
+  <div class="instructions">
+    Start json-server using: json-server db.json
+  </div>
 </app-intro>

@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MaterialModule } from '../../../material.module';
+import { MarkdownModule } from 'ngx-markdown';
 import { MaterialAsyncComponent } from './material-async.component';
 
 describe('MaterialAsyncComponent', () => {
@@ -10,8 +10,11 @@ describe('MaterialAsyncComponent', () => {
   beforeEach(
     waitForAsync(() => {
       TestBed.configureTestingModule({
-        declarations: [MaterialAsyncComponent],
-        imports: [MaterialModule, BrowserAnimationsModule],
+        imports: [
+          MaterialAsyncComponent,
+          BrowserAnimationsModule,
+          MarkdownModule.forRoot(),
+        ],
       }).compileComponents();
     })
   );
@@ -42,7 +45,7 @@ describe('MaterialAsyncComponent', () => {
       fixture.detectChanges();
       let tabBody = fixture.nativeElement.querySelector('.mat-mdc-tab-body-content');
       done();
-      // expect(tabBody.innerHTML).toContain('Giro');
+      expect(tabBody.innerHTML).toContain('Giro');
     });
   });
 })

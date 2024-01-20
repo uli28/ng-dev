@@ -1,9 +1,20 @@
 import { Component } from '@angular/core';
+import { NgClass } from '@angular/common';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MarkdownRendererComponent } from '../../../shared/markdown-renderer/markdown-renderer.component';
 
 @Component({
-  selector: 'app-binding',
-  templateUrl: './binding.component.html',
-  styleUrls: ['./binding.component.scss'],
+    selector: 'app-binding',
+    templateUrl: './binding.component.html',
+    styleUrls: ['./binding.component.scss'],
+    standalone: true,
+    imports: [
+        MarkdownRendererComponent,
+        MatCardModule,
+        MatButtonModule,
+        NgClass,
+    ],
 })
 export class CSSBindingComponent {
   addClass = true;

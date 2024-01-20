@@ -6,7 +6,6 @@ import { RevenueComponent } from './revenue/revenue.component';
 import { CostComponent } from './cost/cost.component';
 
 @NgModule({
-  declarations: [RevenueComponent, CostComponent],
-  imports: [CommonModule, StatisticsRoutingModule],
+    imports: [CommonModule, StatisticsRoutingModule, RevenueComponent, CostComponent],
 })
 export class StatisticsModule {}

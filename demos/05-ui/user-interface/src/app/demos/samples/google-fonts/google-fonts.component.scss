@@ -1,11 +1,4 @@
-:host {
-  width: 60vw;
-}
 
-mat-card-title {
-  font-family: "Satisfy", cursive;
-  font-size: 1.5rem !important;
-}
 
 mat-card-header {
   margin-bottom: 2rem;
@@ -13,4 +6,13 @@ mat-card-header {
 
 button{
   margin-right: var(--gap-small);
+}
+
+
+.showText{
+  margin-top: var(--gap-big);
+  max-width: 600px;
+  line-height: 1.5rem;
+  font-family: "Satisfy", cursive;
+  font-size: larger;
 }

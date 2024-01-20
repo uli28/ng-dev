@@ -1,10 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 @Component({
-  selector: 'app-pm-child',
-  templateUrl: './pm-child.component.html',
-  styleUrls: ['./pm-child.component.scss'],
+    selector: 'app-pm-child',
+    templateUrl: './pm-child.component.html',
+    styleUrls: ['./pm-child.component.scss'],
+    standalone: true,
+    imports: [
+        MatFormFieldModule,
+        MatInputModule,
+        FormsModule,
+    ],
 })
 export class PmChildComponent implements OnInit {
   constructor(private route: ActivatedRoute) {}

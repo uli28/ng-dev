@@ -81,37 +81,10 @@
     },
     {
       "label": "Demos",
-      "url": "demos"
-    },
-    {
-      "label": "Skills",
-      "url": "skills"
+      "url": "main/demos"
     }
   ],
-  "skills": [
-    { "id": 1, "name": "Node.js", "hours": 3, "completed": true },
-    { "id": 2, "name": "TypeScript", "hours": 4, "completed": false },
-    { "id": 3, "name": "JavaScript", "hours": 10, "completed": true },
-    { "id": 4, "name": "Angular", "hours": 20, "completed": false }
-  ],
-  "posts": [
-    {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
-    {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
-    }
-  ],
-  "profile": {
-    "name": "typicode"
-  },
-  "vouchers":[
+  "vouchers": [
     {
       "ID": 2,
       "Text": "BP Tankstelle",
@@ -180,6 +153,16 @@
       ]
     },
     {
+      "ID": 5,
+      "Text": "Inserted by WebApi",
+      "Date": "2016-11-08T11:28:42.9",
+      "Amount": 0,
+      "Paid": false,
+      "Expense": false,
+      "Remark": false,
+      "Details": []
+    },
+    {
       "ID": 1,
       "Text": "Demo AG",
       "Date": "2016-11-06T10:50:04.1195889",
@@ -219,6 +202,26 @@
         }
       ]
     }
+  ],
+  "skills": [
+    {
+      "id": 1,
+      "name": "Custom Angular Theme",
+      "hours": 4,
+      "completed": true
+    },
+    {
+      "id": 2,
+      "name": "Theme Mixins",
+      "hours": 3,
+      "completed": false,
+      "dueDate": "2020-07-06T15:18:22.9848654"
+    },
+    {
+      "name": "Cooking Pad Krapao",
+      "hours": 1,
+      "completed": false,
+      "id": 3
+    }
   ]
-
 }

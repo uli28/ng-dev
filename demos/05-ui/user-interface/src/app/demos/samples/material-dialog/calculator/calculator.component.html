@@ -1,8 +1,6 @@
 <mat-card appearance="outlined">
   <mat-card-header>
-    <mat-card-title>
-      Currency Converter
-    </mat-card-title>
+    <mat-card-title> Currency Converter </mat-card-title>
   </mat-card-header>
   <mat-card-content>
     <mat-form-field>
@@ -22,12 +20,14 @@
     </mat-form-field>
     <div>
       The rate for {{ selectedCurrency }} is {{ rate }} - {{ data.amount }}
-      {{ selectedCurrency }} will give you {{ converted | currency: "€ " }}
+      {{ selectedCurrency }} will give you {{ converted | currency : "€ " }}
     </div>
   </mat-card-content>
-  <mat-card-actions>
+  
     <mat-card-actions align="end">
-      <button mat-raised-button [mat-dialog-close]="converted" color="accent">Convert</button>
+      <button mat-raised-button [mat-dialog-close]="converted" color="primary">
+        Convert
+      </button>
     </mat-card-actions>
-  </mat-card-actions>
+  
 </mat-card>

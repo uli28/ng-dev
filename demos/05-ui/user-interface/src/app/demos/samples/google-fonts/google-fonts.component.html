@@ -2,23 +2,22 @@
   <mat-card-header>
     <mat-card-title>{{ title }}</mat-card-title>
   </mat-card-header>
-  <div>
-    <img
+
+    <mat-card-content centered>
+      <img
       mat-card-image
       src="../../assets/images/title-pic.png"
-      alt="Wartungsplaner"
+      alt="Wartungs Planer"
     />
-    <mat-card-content>
-      <p>
+      <div class="showText">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit
         odio perspiciatis corporis non numquam ullam, eveniet pariatur dolorem,
         commodi nemo sapiente id adipisci quaerat animi, molestias amet mollitia
         vitae. Dolore.
-      </p>
+      </div>
     </mat-card-content>
-  </div>
   <mat-card-actions align="end">
-    <button mat-raised-button color="accent">REGISTER</button>
-    <button mat-raised-button color="accent">LOGIN</button>
+    <button mat-raised-button color="primary">Register</button>
+    <button mat-raised-button color="primary">Login</button>
   </mat-card-actions>
 </mat-card>

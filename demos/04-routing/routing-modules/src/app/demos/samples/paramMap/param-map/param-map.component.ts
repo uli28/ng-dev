@@ -1,9 +1,23 @@
 import { Component, OnInit } from '@angular/core';
+import { RouterLink, RouterOutlet } from '@angular/router';
+import { MatButtonModule } from '@angular/material/button';
+import { NgFor } from '@angular/common';
+import { MatCardModule } from '@angular/material/card';
+import { MarkdownRendererComponent } from '../../../../shared/markdown-renderer/markdown-renderer.component';
 
 @Component({
-  selector: 'app-param-map',
-  templateUrl: './param-map.component.html',
-  styleUrls: ['./param-map.component.scss'],
+    selector: 'app-param-map',
+    templateUrl: './param-map.component.html',
+    styleUrls: ['./param-map.component.scss'],
+    standalone: true,
+    imports: [
+        MarkdownRendererComponent,
+        MatCardModule,
+        NgFor,
+        MatButtonModule,
+        RouterLink,
+        RouterOutlet,
+    ],
 })
 export class ParamMapComponent implements OnInit {
   constructor() {}

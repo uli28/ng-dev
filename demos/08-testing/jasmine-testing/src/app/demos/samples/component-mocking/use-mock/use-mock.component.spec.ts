@@ -13,14 +13,12 @@ describe('UseMockComponent with MockAuth Service', () => {
     comp = new UseMockComponent(mock);
   });
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [MatCardModule],
-      declarations: [UseMockComponent],
+  beforeEach(() => {
+    fixture = TestBed.configureTestingModule({
+      imports: [MatCardModule, UseMockComponent],
       providers: [{ provide: AuthService, useValue: mock }],
-    }).compileComponents();
+    }).createComponent(UseMockComponent);
 
-    fixture = TestBed.createComponent(UseMockComponent);
     comp = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,16 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { IntroComponent } from '../shared/intro/intro.component';
+import { FirebaseAuthService } from '../firebase-auth/firebase-auth.service';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss'],
+    selector: 'app-home',
+    templateUrl: './home.component.html',
+    styleUrls: ['./home.component.scss'],
+    standalone: true,
+    imports: [IntroComponent, AsyncPipe],
 })
-export class HomeComponent implements OnInit {
-  title = 'Single Page Application Development';
-  subtitle = 'Typescript';
-  pic = 'user-interface.jpg';
-
-  constructor() {}
-
-  ngOnInit() {}
+export class HomeComponent {
+    auth = inject(FirebaseAuthService);
+    authEnabled = this.auth.isAuthenticated();
 }
