@@ -10,23 +10,23 @@ import { MatCardModule } from '@angular/material/card';
 import { MarkdownRendererComponent } from '../../../shared/markdown-renderer/markdown-renderer.component';
 
 @Component({
-    selector: 'app-binding',
-    templateUrl: './binding.component.html',
-    styleUrls: ['./binding.component.scss'],
-    standalone: true,
-    imports: [
+  selector: 'app-binding',
+  templateUrl: './binding.component.html',
+  styleUrls: ['./binding.component.scss'],
+  standalone: true,
+  imports: [
     MarkdownRendererComponent,
     MatCardModule,
     FormsModule,
     MatButtonModule,
     JsonPipe
-],
+  ],
 })
 export class BindingComponent implements OnInit {
   ps = inject(PersonService);
   hide = false;
   persons: Person[] = [];
-  selectedPerson: Person = new Person();
+  selectedPerson: Person | null = null;
   latePerson: Person | null = null;
   isActive: boolean = false;
 

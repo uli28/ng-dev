@@ -25,9 +25,9 @@
   </mat-card-header>
   <mat-card-content>
     @if (latePerson) {
-      <div>
-        <pre>{{ latePerson | json }}</pre>
-      </div>
+    <div>
+      <pre>{{ latePerson | json }}</pre>
+    </div>
     }
   </mat-card-content>
 </mat-card>
@@ -37,21 +37,20 @@
     <mat-card-title>Img & Select Binding</mat-card-title>
   </mat-card-header>
 
-  @if (selectedPerson.imgUrl) {
-    <mat-card-content>
-      <div>
-        <h2>{{ selectedPerson.name }}, {{ selectedPerson.age }}</h2>
-        <img [src]="selectedPerson.imgUrl" width="150px" />
-      </div>
-      <div>
-        <select [(ngModel)]="selectedPerson" style="width: 150px">
-          @for (p of persons; track p) {
-            <option [value]="p">{{ p.name }}</option>
-          }
-        </select>
-      </div>
-    </mat-card-content>
-  }
+  <mat-card-content>
+    <div>
+      <h2>{{ selectedPerson?.name }}, {{ selectedPerson?.age }}</h2>
+      @if (selectedPerson?.imgUrl) {
+      <img [src]="selectedPerson?.imgUrl" width="150px" /> }
+    </div>
+    <div>
+      <select [(ngModel)]="selectedPerson" style="width: 150px">
+        @for (p of persons; track p) {
+        <option [value]="p">{{ p.name }}</option>
+        }
+      </select>
+    </div>
+  </mat-card-content>
 </mat-card>
 
 <mat-card appearance="outlined">
@@ -82,29 +81,29 @@
         name="gender"
         [(ngModel)]="selectedPerson.gender"
         value="male"
-        />
-        Male
-        <input
-          type="radio"
-          name="gender"
-          [(ngModel)]="selectedPerson.gender"
-          value="female"
-          />
-          Female
-        </div>
-        <div>{{ selectedPerson.name }} is {{ selectedPerson.gender }}</div>
-      </mat-card-content>
-    </mat-card>
+      />
+      Male
+      <input
+        type="radio"
+        name="gender"
+        [(ngModel)]="selectedPerson.gender"
+        value="female"
+      />
+      Female
+    </div>
+    <div>{{ selectedPerson.name }} is {{ selectedPerson.gender }}</div>
+  </mat-card-content>
+</mat-card>
 
-    <mat-card appearance="outlined">
-      <mat-card-header>
-        <mat-card-title> Bindings Checkboxes </mat-card-title>
-      </mat-card-header>
-      <mat-card-content>
-        <div class="row">
-          <span>Is Active:</span>
-          <input type="checkbox" [(ngModel)]="isActive" />
-        </div>
-        <div>Current State: {{ isActive }}</div>
-      </mat-card-content>
-    </mat-card>
+<mat-card appearance="outlined">
+  <mat-card-header>
+    <mat-card-title> Bindings Checkboxes </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="row">
+      <span>Is Active:</span>
+      <input type="checkbox" [(ngModel)]="isActive" />
+    </div>
+    <div>Current State: {{ isActive }}</div>
+  </mat-card-content>
+</mat-card>
