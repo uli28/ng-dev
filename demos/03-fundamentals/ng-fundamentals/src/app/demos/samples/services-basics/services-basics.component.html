@@ -23,13 +23,17 @@
   </mat-card-content>
 </mat-card>
 
-<mat-progress-bar *ngIf="loading" mode="query"></mat-progress-bar>
+@if (loading) {
+  <mat-progress-bar mode="query"></mat-progress-bar>
+}
 
-<mat-card appearance="outlined" *ngIf="loading==false">
-  <mat-card-header>
-    <mat-card-title>Result from call</mat-card-title>
-  </mat-card-header>
-  <mat-card-content class="result">
-    <pre>{{ result | json }}</pre>
-  </mat-card-content>
-</mat-card>
+@if (loading==false) {
+  <mat-card appearance="outlined">
+    <mat-card-header>
+      <mat-card-title>Result from call</mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="result">
+      <pre>{{ result | json }}</pre>
+    </mat-card-content>
+  </mat-card>
+}

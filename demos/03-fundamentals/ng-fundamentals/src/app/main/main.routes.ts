@@ -2,7 +2,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { MainComponent } from './main.component';
 import { NgModule } from '@angular/core';
 
-const MAIN_ROUTES: Routes = [
+export const MAIN_ROUTES: Routes = [
     {
         path: '',
         component: MainComponent,
@@ -10,12 +10,7 @@ const MAIN_ROUTES: Routes = [
             {
                 path: 'demos',
                 loadChildren: () =>
-                    import('../demos/demos.module').then((m) => m.DemosModule),
-            },
-            {
-                path: 'skills',
-                loadChildren: () =>
-                    import('../skills/skills.module').then((m) => m.SkillsModule),
+                    import('../demos/demo.routes').then((m) => m.DEMO_ROUTES),
             }
         ]
     }

@@ -4,7 +4,7 @@ import { PersonService } from '../persons/person.service';
 import { delay, of, take } from 'rxjs';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { MatButtonModule } from '@angular/material/button';
-import { NgIf, NgFor, JsonPipe } from '@angular/common';
+import { JsonPipe } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
 import { MarkdownRendererComponent } from '../../../shared/markdown-renderer/markdown-renderer.component';
@@ -15,14 +15,12 @@ import { MarkdownRendererComponent } from '../../../shared/markdown-renderer/mar
     styleUrls: ['./binding.component.scss'],
     standalone: true,
     imports: [
-        MarkdownRendererComponent,
-        MatCardModule,
-        FormsModule,
-        NgIf,
-        NgFor,
-        MatButtonModule,
-        JsonPipe,
-    ],
+    MarkdownRendererComponent,
+    MatCardModule,
+    FormsModule,
+    MatButtonModule,
+    JsonPipe
+],
 })
 export class BindingComponent implements OnInit {
   ps = inject(PersonService);

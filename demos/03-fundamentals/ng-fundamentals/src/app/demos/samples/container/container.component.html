@@ -5,9 +5,10 @@
   (personSelected)="onPersonSelected($event)"
 ></app-persons-list>
 
-<app-person-edit
-  *ngIf="current"
-  [person]="current"
-  [editMode]="true"
-  (savePerson)="onPersonSaved($event)"
-></app-person-edit>
+@if (current) {
+  <app-person-edit
+    [person]="current"
+    [editMode]="true"
+    (savePerson)="onPersonSaved($event)"
+  ></app-person-edit>
+}

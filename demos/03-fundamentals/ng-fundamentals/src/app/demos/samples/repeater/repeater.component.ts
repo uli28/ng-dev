@@ -3,7 +3,7 @@ import { Person } from '../persons/person.model';
 import { PersonService } from '../persons/person.service';
 import { MatButtonModule } from '@angular/material/button';
 import { PersonEditComponent } from '../persons/person-edit/person-edit.component';
-import { NgFor } from '@angular/common';
+
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MarkdownRendererComponent } from '../../../shared/markdown-renderer/markdown-renderer.component';
 
@@ -13,12 +13,11 @@ import { MarkdownRendererComponent } from '../../../shared/markdown-renderer/mar
     styleUrls: ['./repeater.component.scss'],
     standalone: true,
     imports: [
-        MarkdownRendererComponent,
-        MatToolbarModule,
-        NgFor,
-        PersonEditComponent,
-        MatButtonModule,
-    ],
+    MarkdownRendererComponent,
+    MatToolbarModule,
+    PersonEditComponent,
+    MatButtonModule
+],
 })
 export class RepeaterComponent implements OnInit {
   persons: Person[] = [];

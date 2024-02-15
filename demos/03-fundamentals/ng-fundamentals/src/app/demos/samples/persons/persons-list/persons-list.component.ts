@@ -6,7 +6,7 @@ import {
   SimpleChanges
 } from '@angular/core';
 import { Person } from '../person.model';
-import { NgFor } from '@angular/common';
+
 import { MatCardModule } from '@angular/material/card';
 
 @Component({
@@ -14,7 +14,7 @@ import { MatCardModule } from '@angular/material/card';
     templateUrl: './persons-list.component.html',
     styleUrls: ['./persons-list.component.scss'],
     standalone: true,
-    imports: [MatCardModule, NgFor],
+    imports: [MatCardModule],
 })
 export class PersonsListComponent {
   @Input() persons: Person[] | null = [];
