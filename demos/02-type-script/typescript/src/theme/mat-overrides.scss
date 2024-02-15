@@ -34,11 +34,20 @@
 }
 
 //buttons
-button.mat-mdc-raised-button {
+button.mat-mdc-raised-button {  
   margin: var(--gap-small) 0;
   :hover {
     text-decoration: underline;
   }
+}
+
+.mdc-button__label {
+  color: var(--color-font);
+}
+
+//mat-icons
+.mat-icon {
+  color: var(--color-font);
 }
 
 //mat-snackbar
