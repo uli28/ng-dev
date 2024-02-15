@@ -1,20 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-import { SkillsService } from '../skills/skills.service';
-import { Skill } from '../skills/skill.model';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-home',
+  standalone: true,
+  imports: [],
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss'],
+  styleUrl: './home.component.scss'
 })
-export class HomeComponent implements OnInit {
-  skills: Skill[] = [];
+export class HomeComponent {
 
-  constructor(public service: SkillsService) {}
-
-  ngOnInit(): void {
-    this.service.getSkills().subscribe((data) => {
-      this.skills = data;
-    });
-  }
 }
