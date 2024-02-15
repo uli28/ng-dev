@@ -1,16 +1,19 @@
 # Implement the Container / Presenter pattern
 
-In this lab we will implement a container / presenter pattern to manage food. 
+- In this lab we will implement a container / presenter pattern to manage food. 
 
-![food-list](_images/food-list.png)
+  ![food-list](_images/food-list.png)
 
->Note: At the moment do not use Angular Material. Just put the `input`-tags into `div`-tags. 
+  >Note: At the moment do not use Angular Material. Just put the `input`-tags into `div`-tags. 
 
 ## Steps Outlined
 
-- Implement the components for the container / presenter pattern
+- Scaffold the components for the container / presenter pattern
+- Implement the container component
+- Implement the list component
+- Implement the edit component
 
-## Implement the components for the container / presenter pattern
+## Scaffold the components for the container / presenter pattern
 
 - Food is a feature of this application. Therefore, create a folder `food` in the `app` folder to group all the artifacts related to food. Previously this was called a `feature module`. Modules are no longer used in standalone applications.
 
@@ -73,25 +76,204 @@ In this lab we will implement a container / presenter pattern to manage food.
   ]
   ```
 
-Implement a `food/food-service.ts` using the following `food.model.ts` model:
+- Implement a `food/food-service.ts` using the client side model defined in `food.model.ts`:
 
-```bash
-ng g service food/food
-```
+  ```bash
+  ng g service food/food
+  ```
 
-- Inject the [Angular HttpClient](https://angular.io/guide/http) client into `food/food-service.ts` be adding `HttpClientModule` to `app.module.ts` and implement a `getFood()` method in food-service and load the data from `assets/food.json`. Take `navbar.service.ts` as a reference.
+- Inject the [Angular HttpClient](https://angular.io/guide/http) client into `food/food-service.ts` and implement a `getFood()` method in food-service and load the data from `assets/food.json`. Take `navbar.service.ts` as a reference.  
 
-- Implement a Container-Presenter Pattern in `food/food-container`, `food/food-list` and `food/food-edit`. Use the following reference: 
+## Implement the container component
+
+- Implement a Container-Presenter Pattern in `food/food-container` using `food/food-list` and `food/food-edit`. Use the following reference: 
 
 - [Container](/demos/03-fundamentals/ng-fundamentals/src/app/demos/samples/container)
 
 - [Presenter](/demos/03-fundamentals/ng-fundamentals/src/app/demos/samples/persons)
 
-You might also have to import [FormsModule](https://angular.io/guide/frequent-ngmodules) into `app.module.ts` in order to use the `ngModel` directive in `food-edit.component.html`
+  >Note: You can complete the container component on your own or use the following code as a reference
 
-Implement `Select` and `Delete` in the list and `Save` in the edit component.
+- Add the following code to `food-container.component.ts`. It imports the two presenter components and injects the `FoodService`. It also provides a selected item and a list of items to the presenters. To load the data it uses a subscribe method to the `getFood()` method of the `FoodService`. 
 
-Use the following code to implement `foodSaved()` in the container and hide the edit form after an item has been saved.
+  ```typescript
+  @Component({
+    selector: 'app-food-container',
+    standalone: true,
+    imports: [FoodListComponent, FoodEditComponent],
+    templateUrl: './food-container.component.html',
+    styleUrl: './food-container.component.scss'
+  })
+  export class FoodContainerComponent {
+    fs = inject(FoodService);
+    food: FoodItem[] = [];
+    selected: FoodItem | null = null;
+
+    ngOnInit() {
+      this.fs.getFood().subscribe((data) => (this.food = data));
+    }
+
+    selectFood(food: FoodItem) {
+      console.log('selecting', food);
+    }
+
+    deleteFood(food: FoodItem) {
+      console.log('deleting', food);
+    }
+  ```  
+
+## Implement the list component
+
+  - Implement a list component in `food/food-list` that displays a list of food items. It should also have a `select` and `delete` button for each item.  
+
+  >Note: You can complete the container component on your own or use the following code as a  reference
+
+- Copy `table.scss` to the `theme` folder and reference it in `styles.scss`.
+
+- Add the following html to `food-list.component.html` to display the list of food items.
+
+  ```html
+  <table class="table table-striped table-hover">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Calories</th>
+        <th>&nbsp;</th>
+        <th>&nbsp;</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (p of food; track p) {
+        <tr>
+          <td>{{ p.name }}</td>
+          <td>{{ p.price }}</td>
+          <td>{{ p.calories }}</td>
+          <td><a (click)="deleteFood(p)">Delete</a></td>
+          <td><a (click)="selectFood(p)">Select</a></td>
+        </tr>
+      }
+    </tbody>
+  </table>
+  ```
+
+- Add the following code to `food-list.component.ts` to implement the `selectFood` and `deleteFood` methods. It also emits the `foodSelected` and `foodDeleted` events.
+
+  ```typescript
+  @Component({
+    selector: 'app-food-list',
+    standalone: true,
+    templateUrl: './food-list.component.html',
+    styleUrl: './food-list.component.scss'
+  })
+  export class FoodListComponent {
+    @Input() food: FoodItem[] = [];
+    @Output() foodSelected = new EventEmitter<FoodItem>();
+    @Output() foodDeleted = new EventEmitter<FoodItem>();
+
+    selectFood(item: FoodItem) {
+      this.foodSelected.emit(item);
+    }
+
+    deleteFood(item: FoodItem) {
+      this.foodDeleted.emit(item);
+    }
+  }
+  ```
+
+- Add the following to food-container.component.html. It passes the `food` array to the list component and listens to the `foodSelected` and `foodDeleted` events, that we have to implement in the list component.
+
+  ```html
+  <app-food-list
+    [food]="food"
+    (foodSelected)="selectFood($event)"
+    (foodDeleted)="deleteFood($event)"
+  ></app-food-list>
+  ```
+
+- Now you should be able to test and debug the list component. 
+
+  ![test-list](_images/test-list.jpg)
+
+## Implement the edit component  
+
+- Update `selectFood(...)` in `food-container.component.ts` to set the selected item and pass it to the edit component. You will need to pass a copy to the selected item to the edit component. Otherwise the inner component will change the outer component's state.
+
+  ```typescript
+  selectFood(food: FoodItem) {
+    this.selected = Object.assign({}, food);
+  }
+  ```
+
+- Add an `@Input` to receive the selected item and an `@Output` to emit the save event in `food-edit.component.ts`. The `ngOnChanges` method is used to access the item when a new value is passed to the input.
+
+  ```typescript
+  @Input() food: FoodItem = new FoodItem();
+    @Output() onFoodSave: EventEmitter<FoodItem> = new EventEmitter<FoodItem>();
+
+    ngOnChanges(changes: SimpleChanges): void {
+      console.log("receiving data on input:", changes["food"]?.currentValue);
+    }
+
+    saveFood() {
+      if (this.food) this.onFoodSave.emit(this.food);
+    }
+  }
+  ```
+
+- Add a simple implementation of an edit form to `food-edit.component.html`. It should display the selected item and have a save button. 
+
+  ```html
+  <div class="form">
+    <div class="row">
+      <label>Name</label>
+      <input type="text" [(ngModel)]="food.name" />
+    </div>
+    <div class="row">
+      <label>Price</label>
+      <input type="number" [(ngModel)]="food.price" />
+    </div>
+    <div class="row">
+      <label>Calories</label>
+      <input type="number" [(ngModel)]="food.calories" />
+    </div>
+    <div class="row">
+      <label>&nbsp;</label>
+      <button (click)="saveFood()">Save</button>
+    </div>
+  </div>
+  ```  
+
+- Add some styles to `food-edit.component.scss` to make the form look nice. 
+
+  ```scss
+  .form{
+      width: 100%;
+  }
+
+  .row{
+      display: flex;
+      flex-direction: row nowrap;
+      justify-content: space-between;
+      margin: 0.5rem;
+  }
+
+  label{
+      margin-right: 2rem;
+      width: 150px;
+  }
+
+  input{
+      min-width: 400px;
+      flex-grow: 1;
+  }
+
+  button{
+      min-width: 200px
+  }
+  ```
+
+- Use the following code to implement `foodSaved()` in the container and hide the edit form after an item has been saved.
 
 ```typescript
 foodSaved(item: FoodItem) {

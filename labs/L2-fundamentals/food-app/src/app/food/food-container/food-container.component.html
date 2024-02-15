@@ -1,1 +1,5 @@
-<p>food-container works!</p>
+<app-food-list
+  [food]="food"
+  (foodSelected)="selectFood($event)"
+  (foodDeleted)="deleteFood($event)"
+></app-food-list>
