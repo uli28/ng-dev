@@ -4,18 +4,17 @@ import { MatCardModule } from '@angular/material/card';
 import { MarkdownRendererComponent } from '../../../shared/markdown-renderer/markdown-renderer.component';
 
 @Component({
-    selector: 'app-expressions',
-    templateUrl: './expressions.component.html',
-    styleUrls: ['./expressions.component.scss'],
-    standalone: true,
-    imports: [
-        MarkdownRendererComponent,
-        MatCardModule,
-        MatButtonModule,
-    ],
+  selector: 'app-expressions',
+  templateUrl: './expressions.component.html',
+  styleUrls: ['./expressions.component.scss'],
+  standalone: true,
+  imports: [
+    MarkdownRendererComponent,
+    MatCardModule,
+    MatButtonModule,
+  ],
 })
 export class ExpressionsComponent {
-
   title = 'Expressions & Interpolation';
   nbr = 7;
   isFalse = false;

@@ -8,6 +8,7 @@
 
 mat-card {
   min-width: 500px;
+  border: 1px solid var(--color-primary);
 }
 
 mat-card-header {
@@ -46,12 +47,12 @@ mat-card-actions {
 
     a{
       text-decoration: none;
-      color: var(--color-accent);    
+      color: black;     
     }
 
     a:hover{
-      // text-decoration: underline;
-      color: var(--color-primary);    
+      text-decoration: underline;
+      text-underline-offset: 0.3 rem;
     }
   }
 }

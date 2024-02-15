@@ -14,7 +14,7 @@
     },
     {
       "url": "template",
-      "title": "Seperated Component"
+      "title": "Separated Component"
     },
     {
       "url": "inline",
@@ -22,10 +22,10 @@
     },
     {
       "url": "binding",
-      "title": "Binding using ngModel"
+      "title": "Binding: ngModel"
     },
     {
-      "url": "attrbinding",
+      "url": "attribute-binding",
       "title": "Attribute Binding"
     },
     {
@@ -34,14 +34,14 @@
     },
     {
       "url": "directives",
-      "title": "Buildin Directives"
+      "title": "Builtin Directives"
     },
     {
-      "url": "customdirectives",
+      "url": "custom-directives",
       "title": "Custom Directives"
     },
     {
-      "url": "structdirectives",
+      "url": "structural-directives",
       "title": "Structural Directives"
     },
     {
@@ -49,7 +49,7 @@
       "title": "Pipes"
     },
     {
-      "url": "custompipes",
+      "url": "custom-pipes",
       "title": "Custom Pipes"
     },
     {
@@ -229,6 +229,26 @@
       "hours": 1,
       "completed": false,
       "id": 3
+    }
+  ],
+  "persons": [
+    {
+      "id": 1,
+      "name": "John Doe",
+      "age": 30,
+      "gender": "male"
+    },
+    {
+      "id": 2,
+      "name": "Jane Doe",
+      "age": 25,
+      "gender": "female"
+    },
+    {
+      "id": 3,
+      "name": "Jim Doe",
+      "age": 40,
+      "gender": "male"
     }
   ]
 }

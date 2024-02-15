@@ -12,13 +12,15 @@
           <mat-card-title>{{ title }}</mat-card-title>
         </mat-card-header>
         <mat-card-content>
-          By using backticks I can use mulitline text
+          By using backticks I can use multiline text
         </mat-card-content>
       </mat-card>
     `,
     styleUrls: ['./inline.component.scss'],
+    standalone: true,
+    imports: [MarkdownRendererComponent, MatCardModule],
   })
   export class InlineComponent {
-    title = 'I am defining my html inline by using template metadata';
+    title = 'Inline Templates';
   }
   ```

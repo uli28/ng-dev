@@ -5,18 +5,20 @@ import { CheckPipe } from './check.pipe';
 import { EuroPipe } from './euro.pipe';
 import { FormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
+import { ColumnDirective } from '../custom-directives/formatting-directives';
 
 @Component({
-    selector: 'app-custom-pipes',
-    templateUrl: './custom-pipes.component.html',
-    styleUrls: ['./custom-pipes.component.scss'],
-    standalone: true,
-    imports: [
-        MatCardModule,
-        FormsModule,
-        EuroPipe,
-        CheckPipe,
-    ],
+  selector: 'app-custom-pipes',
+  templateUrl: './custom-pipes.component.html',
+  styleUrls: ['./custom-pipes.component.scss'],
+  standalone: true,
+  imports: [
+    MatCardModule,
+    FormsModule,
+    EuroPipe,
+    CheckPipe,
+    ColumnDirective
+  ],
 })
 export class CustomPipesComponent implements OnInit {
   vs = inject(VouchersService);
