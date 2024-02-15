@@ -1,10 +1,10 @@
-import { Injectable, inject } from "@angular/core";
-import { HttpClient } from "@angular/common/http";
-import { Observable } from "rxjs";
-import { FoodItem } from "./food.model";
+import { HttpClient } from '@angular/common/http';
+import { Injectable, inject } from '@angular/core';
+import { Observable } from 'rxjs';
+import { FoodItem } from './food.model';
 
 @Injectable({
-  providedIn: "root",
+  providedIn: 'root'
 })
 export class FoodService {
   http = inject(HttpClient);

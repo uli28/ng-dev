@@ -12,24 +12,7 @@ Create the Angular app with the following layout containing the following compon
 
 It will load the menu items in the navbar using a navbar.service that takes its values from `assets/menu-items.json`:
 
-```json
-[
-    {
-        "title": "Home",
-        "url": "/"
-    },
-    {
-        "title": "Food",
-        "url": "/food"
-    },
-    {
-        "title": "About",
-        "url": "/about"
-    }
-]
-```
-
-## Steps
+## Steps Outlined
 
 - Check the environment setup
 - Scaffold the project and create the layout

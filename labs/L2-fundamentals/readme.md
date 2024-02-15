@@ -1,4 +1,4 @@
-# Food Container / Presenter
+# Implement the Container / Presenter pattern
 
 In this lab we will implement a container / presenter pattern to manage food. 
 
@@ -8,7 +8,13 @@ In this lab we will implement a container / presenter pattern to manage food.
 
 ## Steps Outlined
 
-  - Use the following nested components that you will create using the [Angular CLI](https://angular.io/cli/generate#component-command):
+- Implement the components for the container / presenter pattern
+
+## Implement the components for the container / presenter pattern
+
+- Food is a feature of this application. Therefore, create a folder `food` in the `app` folder to group all the artifacts related to food. Previously this was called a `feature module`. Modules are no longer used in standalone applications.
+
+- Use the following nested components that you will create using the [Angular CLI](https://angular.io/cli/generate#component-command):
 
   - food/food-container -> container
   - food/food-list -> nested in container
@@ -22,47 +28,60 @@ In this lab we will implement a container / presenter pattern to manage food.
 
   >Note: Repeat the above command for `food-list` and `food-edit`
 
-Add the `food-container` component to `app.component.html`. Routing will be implemented later on. 
+- Import food-container into app.component.ts:  
 
-```html
-<div class="main">
-    <app-food-container></app-food-container>
-</div>
-```
+  ```typescript
+  @Component({
+    selector: 'app-root',
+    standalone: true,
+    imports: [
+      ...
+      FoodContainerComponent
+    ],
+    templateUrl: './app.component.html',
+    styleUrl: './app.component.scss'
+  })
+  ```
 
-Add a `food.model.ts` file to folder `app/food`:
+- Replace `app-home` with `app-food-container` in `app.component.html`. Explicit routing to a `food-route` will be implemented in later modules. 
 
-```typescript
-export class FoodItem {
-  id: number = 0;
-  name: string = "";
-  price: number = 0;
-  calories: number = 0;
-}
-```
+    ```html
+    <div class="main">
+        <app-food-container></app-food-container>
+    </div>
+    ```
+
+- Add a `food.model.ts` file to folder `app/food`:
+
+  ```typescript
+  export class FoodItem {
+    id = 0;
+    name = "";
+    price = 0;
+    calories = 0;
+  }
+  ```
+
+- Add food.json to the assets folder:
+
+  ```json
+  [
+    { "id": 1, "name": "Butter Chicken", "price": 9, "calories": 1200 },
+    { "id": 2, "name": "Wiener Schnitzel vom Schwein", "price": 12.7, "calories": 730 },
+    { "id": 3, "name": "Boeuf Stroganoff", "price": 18.3, "calories": 600 },
+    { "id": 4, "name": "Pad Ka Prao", "price": 16.3, "calories": 600 }
+  ]
+  ```
 
 Implement a `food/food-service.ts` using the following `food.model.ts` model:
 
-```
+```bash
 ng g service food/food
 ```
 
-Inject the [Angular HttpClient](https://angular.io/guide/http) client into `food/food-service.ts` be adding `HttpClientModule` to `app.module.ts`
+- Inject the [Angular HttpClient](https://angular.io/guide/http) client into `food/food-service.ts` be adding `HttpClientModule` to `app.module.ts` and implement a `getFood()` method in food-service and load the data from `assets/food.json`. Take `navbar.service.ts` as a reference.
 
-Implement a `getFood()` method in food-service and load the data from `assets/food.json`:
-
-```json
-[
-  { "id": 1, "name": "Butter Chicken", "price": 9, "calories": 1200 },
-  { "id": 2, "name": "Curry Wurst", "price": 2.7, "calories": 730 },
-  { "id": 3, "name": "Boeuf Stroganoff", "price": 18.3, "calories": 600 }
-]
-```
-Use the following reference: 
-
-- [Load Data in Service](/demos/03-fundamentals/ng-fundamentals/src/app/demos/samples/persons/person.service.ts)
-
-Implement a Container-Presenter Pattern in `food/food-container`, `food/food-list` and `food/food-edit`. Use the following reference: 
+- Implement a Container-Presenter Pattern in `food/food-container`, `food/food-list` and `food/food-edit`. Use the following reference: 
 
 - [Container](/demos/03-fundamentals/ng-fundamentals/src/app/demos/samples/container)
 
