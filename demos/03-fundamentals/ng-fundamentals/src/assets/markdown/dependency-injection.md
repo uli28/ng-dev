@@ -1,9 +1,25 @@
-- Dependency Injection is used to provide instances of classes, mostly services to components
+- Dependency Injection is used to provide instances of classes, mostly services to components. In Angular providers are registered in `app.config.ts`:
 
 - Examine explicit registration of `DemoService` in `demos.module.ts`
 
     ```typescript
-    providers: [DemoService],
+    export const appConfig: ApplicationConfig = {
+      providers: [
+          provideHttpClient(),
+          provideRouter(routes),
+          provideAnimations(),
+          importProvidersFrom([
+              MarkdownModule.forRoot(),
+              MatSnackBarModule,
+              MatDialogModule,
+              provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
+              provideAuth(() => getAuth()),
+          ]),
+          provideStore(),
+          provideState(appState),
+          provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode(), connectInZone: true })
+      ],
+    };
     ```
 
 - Examine use of `providedIn` in `person.service.ts` which loosely couples the service to the module  
@@ -17,8 +33,8 @@
 
   ```typescript
   export class DependencyInjectionComponent implements OnInit {
+    ps = inject(PersonService);
     persons: Person[] = [];
-    constructor(private ps: PersonService) { }
 
     ngOnInit(): void {
       this.ps.getPersons().subscribe((persons: Person[]) => {
@@ -26,14 +42,4 @@
       });
     }
   }
-  ```
-
-- Examine use of inject-token in combination with declarative reactive programming in `demo-container.component.ts`:
-
-  ```typescript
-  export class DemoContainerComponent implements OnInit {
-    ...
-    ds = inject(DemoService);
-    ...
-    demos = this.ds.getItems();
   ```

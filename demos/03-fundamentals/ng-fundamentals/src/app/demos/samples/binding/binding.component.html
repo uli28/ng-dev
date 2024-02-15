@@ -24,9 +24,11 @@
     </mat-card-title>
   </mat-card-header>
   <mat-card-content>
-    <div *ngIf="latePerson">
+    @if (latePerson) {
+    <div>
       <pre>{{ latePerson | json }}</pre>
     </div>
+    }
   </mat-card-content>
 </mat-card>
 
@@ -35,14 +37,17 @@
     <mat-card-title>Img & Select Binding</mat-card-title>
   </mat-card-header>
 
-  <mat-card-content *ngIf="selectedPerson.imgUrl">
+  <mat-card-content>
     <div>
-      <h2>{{ selectedPerson.name }}, {{ selectedPerson.age }}</h2>
-      <img [src]="selectedPerson.imgUrl" width="150px" />
+      <h2>{{ selectedPerson?.name }}, {{ selectedPerson?.age }}</h2>
+      @if (selectedPerson?.imgUrl) {
+      <img [src]="selectedPerson?.imgUrl" width="150px" /> }
     </div>
     <div>
       <select [(ngModel)]="selectedPerson" style="width: 150px">
-        <option *ngFor="let p of persons" [value]="p">{{ p.name }}</option>
+        @for (p of persons; track p) {
+        <option [value]="p">{{ p.name }}</option>
+        }
       </select>
     </div>
   </mat-card-content>

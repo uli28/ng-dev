@@ -2,14 +2,16 @@
 
 <mat-toolbar color="accent"> List of Employees - Nested </mat-toolbar>
 
-<div *ngFor="let p of persons">
-  <app-person-edit
-    [person]="p"
-    [editMode]="false"
-    (savePerson)="savePersonToDB($event)"
-    #personRef
-  ></app-person-edit>
-  <button mat-raised-button (click)="personRef.doDelete()" color="primary">
-    Delete Person
-  </button>
-</div>
+@for (p of persons; track p) {
+  <div>
+    <app-person-edit
+      [person]="p"
+      [editMode]="false"
+      (savePerson)="savePersonToDB($event)"
+      #personRef
+    ></app-person-edit>
+    <button mat-raised-button (click)="personRef.doDelete()" color="primary">
+      Delete Person
+    </button>
+  </div>
+}

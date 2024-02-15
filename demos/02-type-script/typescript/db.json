@@ -1,0 +1,103 @@
+{
+  "demos": [
+    {
+      "url": "types",
+      "title": "Types",
+      "id": "6ff2"
+    },
+    {
+      "url": "functions",
+      "title": "Functions",
+      "id": "0e8d"
+    },
+    {
+      "url": "objects",
+      "title": "Objects",
+      "id": "39e9"
+    },
+    {
+      "url": "classes",
+      "title": "Classes",
+      "id": "f256"
+    },
+    {
+      "url": "utils",
+      "title": "Utils",
+      "id": "afe4"
+    },
+    {
+      "url": "interfaces",
+      "title": "Interfaces",
+      "id": "8e75"
+    },
+    {
+      "url": "services",
+      "title": "Async Operations",
+      "id": "d732"
+    },
+    {
+      "url": "observables",
+      "title": "Observables",
+      "id": "d731"
+    },
+    {
+      "url": "signals",
+      "title": "Signals",
+      "id": "d730"
+    }
+  ],
+  "top-links": [
+    {
+      "label": "Home",
+      "url": "",
+      "id": "d865"
+    },
+    {
+      "label": "Demos",
+      "url": "main/demos",
+      "id": "7513"
+    }
+  ],
+  "skills": [
+    {
+      "id": "123",
+      "name": "RxJs",
+      "completed": false
+    },
+    {
+      "id": "456",
+      "name": "NgRx",
+      "completed": false
+    },
+    {
+      "id": "223",
+      "name": "Angular",
+      "completed": true
+    },
+    {
+      "id": "436",
+      "name": "TypeScript",
+      "completed": true
+    },
+    {
+      "id": "fced",
+      "name": "Azure",
+      "completed": true
+    },
+    {
+      "id": "e831",
+      "name": "Azure",
+      "completed": true
+    }
+  ],
+  "authors": [
+    {
+      "id": "1",
+      "mail": "alexander.pajer@integrations.at"
+    },
+    {
+      "id": "3",
+      "mail": "giro.thegalgo@integrations.at"
+    }
+  ]
+}

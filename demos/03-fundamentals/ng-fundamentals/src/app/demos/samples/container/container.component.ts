@@ -2,7 +2,7 @@ import { Component, OnInit, inject } from '@angular/core';
 import { PersonService } from '../persons/person.service';
 import { Person } from '../persons/person.model';
 import { PersonEditComponent } from '../persons/person-edit/person-edit.component';
-import { NgIf } from '@angular/common';
+
 import { PersonsListComponent } from '../persons/persons-list/persons-list.component';
 import { MarkdownRendererComponent } from '../../../shared/markdown-renderer/markdown-renderer.component';
 
@@ -12,11 +12,10 @@ import { MarkdownRendererComponent } from '../../../shared/markdown-renderer/mar
     styleUrls: ['./container.component.scss'],
     standalone: true,
     imports: [
-        MarkdownRendererComponent,
-        PersonsListComponent,
-        NgIf,
-        PersonEditComponent,
-    ],
+    MarkdownRendererComponent,
+    PersonsListComponent,
+    PersonEditComponent
+],
 })
 export class ContainerComponent implements OnInit {
   ps = inject(PersonService);

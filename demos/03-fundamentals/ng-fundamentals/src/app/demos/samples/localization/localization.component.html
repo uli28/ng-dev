@@ -5,14 +5,11 @@
   </mat-card-header>
 
   <mat-card-content>
-    Person: {{ person.name }}, {{ person.age }}<br />
-    Salery: {{ person.salery | currency }}<br />
-    DoB: {{ person.dateOfBirth | date: "longDate" }}<div></div>
-    Salery with fixed Currency Symbol: {{ person.salery | currency: "EUR"
-    }}<br />
-    Salery with fixed Currency Symbol: € {{ person.salery | number: "1.2-2"
-    }}<br />
-    Salery with fixed Currency Symbol: {{ person.salery | number: "1.2-2"
-    }} € <br />
+    <div>Person: {{ person.name }}, {{ person.age }}</div>
+    <div>Salary: {{ person.salary | currency }}</div>
+    <div>DoB: {{ person.dateOfBirth | date: "longDate" }}</div>
+    <div>Salary with fixed Currency Symbol: {{ person.salary | currency: "EUR" }}</div>
+    <div>Salary with fixed Currency Symbol: € {{ person.salary | number: "1.2-2" }}</div>
+    <div>Salary with fixed Currency Symbol: {{ person.salary | number: "1.2-2" }} €</div>
   </mat-card-content>
 </mat-card>

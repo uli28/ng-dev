@@ -25,8 +25,8 @@ The `demo-app` consists of `app.component.html` that defines the base structure 
 - Angular Technology Stack
 - Angular Essentials & CLI
 - Debugging Angular
-- Understanding Agular’s Bootstrapping process and Configuration
-- Updating Angular Projects
+- Introduction to the Demo App
+- Maintaining & Updating projects
 - Introduction to the Demo App
 
 ### TypeScript Fundamentals
@@ -37,40 +37,40 @@ The `demo-app` consists of `app.component.html` that defines the base structure 
 - Objects, Classes, Interfaces
 - ECMA Script 6+ Essentials Util Functions
 - 3rd Party Libraries & Type Definitions
-- Async Operations, Promises & Observables
+- Async Operations, Promises 
+- Observables & Signals
 
 ### Fundamentals & Completing Basic Tasks
 
-- Services & Data Request
+- Modules vs Standalone Components
 - Components & Dependency Injection
+- Bootstrapping process and Configuration 
+- Services & Data Request
 - Imperative vs Reactive Programming Styles
 - Expressions, Templates & Directives
 - String Interpolation, Property- & Event-Binding, Two-Way Binding
-- Databinding Observables
+- Data binding Observables & Signals
 - Control Flow Syntax
 - Custom Pipes & Localization
 - Custom Directives & Pipes
-- Modules, Services & Dependency Injection
 
 ### Nesting Components
 
 - Splitting the UI to Nested Components
-- Databinding & Events with Nested Components using @Input & @Output
 - Container vs Presentational Components
-- Understanding & Using Component Lifecycle Events
+- Data binding & Events with Nested Components using @Input & @Output
+- Using Input Signals
 - Reusable Components using Local References & Content Projection
-- View Child, View Children
+- View Child, View Children & Signal Based Queries
 
 ### Routing & Modularity
 
 - Routing Basics
 - Working with Parameterized Routes
-- Using Router State
+- Component Input Bindings
 - Organizing Angular Applications using Modules
-- Modules Types (Root, Feature, Shared, ...)
-- Module Lazy Loading
-- Standalone Components
-- Component Less Routing
+- Module Types (Root, Feature, Shared, ...)
+- Lazy Loading of Components and Modules
 - Route Guards & Data Preloading
 
 ### Designing the User Interface
@@ -82,7 +82,7 @@ The `demo-app` consists of `app.component.html` that defines the base structure 
 - Responsive Web Design using Media Queries
 - Angular Material Overview
 - Using Material Component schematics
-- Material Theming Colours
+- Material Theming Colors
 - Using Material Tables, Dialogs & Form Controls
 - Using Angular CDK & 3rd Party Components (Charting, File Upload, Drag & Drop)
 
@@ -94,7 +94,6 @@ The `demo-app` consists of `app.component.html` that defines the base structure 
 - Typed Forms (Nullability, Nested Objects, Arrays)
 - FormControl, FormGroups & FormArrays
 - Form Validation Basics (Synchronous / Asynchronous)
-- Cross Field / Multi Field Validation
 - Custom- & Code-Based Validators
 
 ### Introduction to Reactive Programming using Signals & RxJS
@@ -106,7 +105,7 @@ The `demo-app` consists of `app.component.html` that defines the base structure 
 - Capturing Mouse & DOM Events as Observables
 - Subscribing to Routes & Params as Observables
 - Using Common RxJS Operators
-- Introduction to Signals
+- Signals, Calculated Signals & Effects
 
 ### Managing State & Sharing Events
 
@@ -115,7 +114,7 @@ The `demo-app` consists of `app.component.html` that defines the base structure 
 - Stateless & Stateful Services
 - Sharing Data between deeply Nested Components
 - Service Bus & Sharing Events between deeply Nested Components
-- Visual Feedback: Implementing a Loading Indicator
+
 
 ### Testing Basics
 

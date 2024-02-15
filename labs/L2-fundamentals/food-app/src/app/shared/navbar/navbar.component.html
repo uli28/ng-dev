@@ -1,3 +1,5 @@
 <div class="menu">
-  <div class="menuItem" *ngFor="let item of navItems">{{ item.title }}</div>
+  @for (item of navItems; track item) {
+  <div class="menuItem">{{ item.title }}</div>
+  }
 </div>
