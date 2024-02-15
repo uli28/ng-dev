@@ -19,7 +19,8 @@ import { RegisterComponent } from 'src/app/firebase-auth/components/register/reg
     RouterLink,
     AsyncPipe,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+
   ],
 })
 export class IntroComponent {

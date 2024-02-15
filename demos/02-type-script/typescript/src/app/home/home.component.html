@@ -5,6 +5,6 @@
   [isAuthenticated]="authEnabled |async"
   >
   <div class="instructions">
-    Start json-server using: json-server db.json
+    <markdown [src]="getMarkdown()"> </markdown>
   </div>
 </app-intro>
