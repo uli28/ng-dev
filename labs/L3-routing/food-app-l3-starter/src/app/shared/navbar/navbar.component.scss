@@ -1,14 +1,14 @@
-.menu{
-    display: flex; 
-    flex-direction: row;
-    padding: 1rem;
+.menu {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  padding: 1rem;
 }
 
-.menuItem{
-    margin-right: 0.5rem;
-    
-    &:hover{
-        text-decoration: underline;
-        cursor: pointer;
-    }
+.menuItem {
+  margin-right: 0.5rem;
+  &:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
 }

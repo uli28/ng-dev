@@ -88,9 +88,9 @@
 
 - Implement a Container-Presenter Pattern in `food/food-container` using `food/food-list` and `food/food-edit`. Use the following reference: 
 
-- [Container](/demos/03-fundamentals/ng-fundamentals/src/app/demos/samples/container)
+- [Container](/demos/03-fundamentals/fundamentals/src/app/demos/samples/container)
 
-- [Presenter](/demos/03-fundamentals/ng-fundamentals/src/app/demos/samples/persons)
+- [Presenter](/demos/03-fundamentals/fundamentals/src/app/demos/samples/persons)
 
   >Note: You can complete the container component on your own or use the following code as a reference
 

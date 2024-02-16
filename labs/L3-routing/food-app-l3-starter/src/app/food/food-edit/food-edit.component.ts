@@ -1,16 +1,13 @@
-import {
-  Component,
-  EventEmitter,
-  Input,
-  Output,
-  SimpleChanges
-} from "@angular/core";
-import { FoodItem } from "../food.model";
+import { Component, EventEmitter, Input, Output, SimpleChanges } from '@angular/core';
+import { FoodItem } from '../food.model';
+import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: "app-food-edit",
-  templateUrl: "./food-edit.component.html",
-  styleUrls: ["./food-edit.component.scss"],
+  selector: 'app-food-edit',
+  standalone: true,
+  imports: [FormsModule],
+  templateUrl: './food-edit.component.html',
+  styleUrl: './food-edit.component.scss'
 })
 export class FoodEditComponent {
   @Input() food: FoodItem = new FoodItem();
