@@ -126,7 +126,7 @@
 
   - Implement a list component in `food/food-list` that displays a list of food items. It should also have a `select` and `delete` button for each item.  
 
-  >Note: You can complete the container component on your own or use the following code as a  reference
+    >Note: You can complete the container component on your own or use the following code as a  reference
 
 - Copy `table.scss` to the `theme` folder and reference it in `styles.scss`.
 
@@ -196,6 +196,10 @@
   ![test-list](_images/test-list.jpg)
 
 ## Implement the edit component  
+
+- Implement a simple form to allow editing of a food item in `food/food-edit`. 
+
+  >Note: You can complete the container component on your own or use the following code as a reference
 
 - Update `selectFood(...)` in `food-container.component.ts` to set the selected item and pass it to the edit component. You will need to pass a copy to the selected item to the edit component. Otherwise the inner component will change the outer component's state.
 
@@ -275,16 +279,16 @@
 
 - Use the following code to implement `foodSaved()` in the container and hide the edit form after an item has been saved.
 
-```typescript
-foodSaved(item: FoodItem) {
-  const clone = Object.assign([], this.food) as Array<FoodItem>;
-  let idx = clone.findIndex((c) => c.id == item.id);
-  if (idx > -1) {
-    clone[idx] = item;
-  } else {
-    clone.push(item);
+  ```typescript
+  foodSaved(item: FoodItem) {
+    const clone = Object.assign([], this.food) as Array<FoodItem>;
+    let idx = clone.findIndex((c) => c.id == item.id);
+    if (idx > -1) {
+      clone[idx] = item;
+    } else {
+      clone.push(item);
+    }
+    this.food = clone;
+    this.selected = null;
   }
-  this.food = clone;
-  this.selected = null;
-}
-```
+  ```
