@@ -1,8 +1,13 @@
-Examine `demos`-route in `app.routing.module.ts` and `demos.module.ts`. DemosModule represents a lazy loaded module.
+- Modules can also be used to lazy load features and thus reduce the number of requests to the server and reduce `http-requests` and allow offline availability.
 
-```typescript
-{
-  path: 'demos',
-  loadChildren: () => import('./demos/demos.module').then((m) => m.DemosModule),
-},
-```
+- Examine `main.routes.ts` an how it lazy loads `StatisticsModule`:
+
+  ```typescript
+  {
+    path: 'statistics',
+    loadChildren: () =>
+        import('../statistics/statistics.module').then(
+          (m) => m.StatisticsModule
+        ),
+  },
+  ```
