@@ -4,7 +4,7 @@
   <button mat-icon-button [matMenuTriggerFor]="menu">
     <mat-icon>more_vert</mat-icon>
   </button>
-  <span>Angular Material Showcase</span>
+  <span>Angular Material Showcase using Cards</span>
 
   <mat-menu #menu="matMenu">
     <button mat-menu-item>
@@ -45,7 +45,6 @@
     <mat-card-title> Button with a badge on the left </mat-card-title>
   </mat-card-header>
   <mat-card-content>
-    <span class="btnLbls"></span>
     <button
       mat-raised-button
       color="primary"
@@ -53,7 +52,7 @@
       matBadgePosition="before"
       matBadgeColor="accent"
       (click)="incrementCt()"
-    >
+      >
       Click me
     </button>
   </mat-card-content>
@@ -61,7 +60,7 @@
 
 <mat-card appearance="outlined">
   <mat-card-header>
-    <mat-card-title> mat-button-toogle-group </mat-card-title>
+    <mat-card-title> mat-button-toggle-group </mat-card-title>
   </mat-card-header>
   <mat-card-content>
     <mat-button-toggle-group
@@ -70,16 +69,17 @@
       aria-label="Font Style"
       multiple="true"
       style="overflow: visible"
-    >
-      <mat-button-toggle
-        #imageButton
-        *ngFor="let image of images"
-        matBadge="&#x2714;"
-        matBadgeOverlap
-        matBadgePosition="before"
-        [matBadgeHidden]="!imageButton.checked"
-        >{{ image }}</mat-button-toggle
       >
-    </mat-button-toggle-group>
-  </mat-card-content>
-</mat-card>
+      @for (image of images; track image) {
+        <mat-button-toggle
+          #imageButton
+          matBadge="&#x2714;"
+          matBadgeOverlap
+          matBadgePosition="before"
+          [matBadgeHidden]="!imageButton.checked"
+          >{{ image }}</mat-button-toggle
+          >
+        }
+      </mat-button-toggle-group>
+    </mat-card-content>
+  </mat-card>

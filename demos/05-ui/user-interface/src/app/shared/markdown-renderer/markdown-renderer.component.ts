@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { HttpClientModule } from '@angular/common/http';
 import { Component, Input, inject, signal } from '@angular/core';
 import { MatExpansionModule } from '@angular/material/expansion';
@@ -13,10 +13,8 @@ import { RendererStateService } from './renderer-state.service';
   standalone: true,
 
   imports: [
-    CommonModule,
-    HttpClientModule,
     MarkdownModule,
-    MatExpansionModule,
+    MatExpansionModule
   ],
 })
 export class MarkdownRendererComponent {
