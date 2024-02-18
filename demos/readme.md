@@ -1,130 +1,106 @@
 # Demos
 
-Two types of Demos available:
+- Angular Introduction 
+- TypeScript in the Angular Ecosystem
+- Databinding & Completing Basic Tasks
+- Implementing Nested Components
+- Routing & Dependency Injection
+- Designing a responsive User Interface
+- Forms Design & Validation
+- Reactive Programming using Signals & RxJS
+- Managing State & Sharing Events
+- Testing Angular Applications
+- Securing & Publishing Angular
 
-- Isolated Demos located in `/app/demos/samples/<DEMOFOLDER>` of the corresponding module
-- Demos build-in to the `demo-app`
+### Angular Introduction
 
-The `demo-app` consists of `app.component.html` that defines the base structure and `primary router-outlet`. Subsequent routes are loaded into the outlet.
-
-![app.component](_images/app.component.html.png)
-
-`/app/demos/demo-container/demo-container.html` defines a `left-menu` and a `nested router-outlet` where the individual isolated demos will be displayed.
-
-![demo-container.component](_images/demo-container.png)
-
-> Note: If you find any errors or have any suggestions, please create an issue on this repo
-
-## Topics covered in the class
-
-### Angular Introduction & Setup
-
-- What is a Single Page Application? – SPA
-- Tooling: Node.js, npm and Workspace requirements
-- Angular Introduction
-- Angular Technology Stack
-- Angular Essentials & CLI
+- Angular Introduction & Technology Stack
+- Angular CLI Essentials
 - Debugging Angular
-- Introduction to the Demo App
+- Bootstrapping & Configuration
 - Maintaining & Updating projects
-- Introduction to the Demo App
 
-### TypeScript Fundamentals
+### TypeScript in the Angular Ecosystem
 
 - TypeScript Overview, ECMA Script Standards
-- Configuration, Debugging, ES Lint
 - Types, Variables, Literal Types, Functions
 - Objects, Classes, Interfaces
-- ECMA Script 6+ Essentials Util Functions
-- 3rd Party Libraries & Type Definitions
-- Async Operations, Promises 
-- Observables & Signals
+- Immutability, Cloning & Object Composition
+- Async Operations, Observables & Signals
+- Calculated Signals & Effects
 
-### Fundamentals & Completing Basic Tasks
+### Databinding & Completing Basic Tasks
 
-- Modules vs Standalone Components
-- Components & Dependency Injection
-- Bootstrapping process and Configuration 
+- Components & Dependency Injection 
 - Services & Data Request
-- Imperative vs Reactive Programming Styles
 - Expressions, Templates & Directives
-- String Interpolation, Property- & Event-Binding, Two-Way Binding
+- String Interpolation, Attribute- & Event-Binding, Two-Way Binding
+- Built-in Control Flow & Deferrable Views
 - Data binding Observables & Signals
-- Control Flow Syntax
-- Custom Pipes & Localization
-- Custom Directives & Pipes
+- Built in and Custom Pipes & Directives
 
-### Nesting Components
+### Implementing Nested Components
 
-- Splitting the UI to Nested Components
+- Benefits of Nested Components
 - Container vs Presentational Components
-- Data binding & Events with Nested Components using @Input & @Output
-- Using Input Signals
-- Reusable Components using Local References & Content Projection
-- View Child, View Children & Signal Based Queries
+- Data binding & Events using @Input & @Output
+- Nesting using Signal inputs & model outputs
+- View Child, View Children & Signal Queries
 
-### Routing & Modularity
+### Routing & Dependency Injection
 
-- Routing Basics
+- Register Providers & Dependency Injection
+- Routing & Navigation Basics
 - Working with Parameterized Routes
 - Component Input Bindings
-- Organizing Angular Applications using Modules
-- Module Types (Root, Feature, Shared, ...)
-- Lazy Loading of Components and Modules
+- Modules vs Standalone Components
+- Modules Use Cases & Lazy Loading
 - Route Guards & Data Preloading
 
-### Designing the User Interface
+### Designing a responsive User Interface
 
 - Implementing a CSS Reset
 - Global & Component Styles
-- Using Sass (Synthetically Awesome Stylesheets)
-- Layout using Flexbox, CSS Grid and Areas
 - Responsive Web Design using Media Queries
+- Layout using Flexbox, CSS Grid and Areas
 - Angular Material Overview
-- Using Material Component schematics
-- Material Theming Colors
-- Using Material Tables, Dialogs & Form Controls
-- Using Angular CDK & 3rd Party Components (Charting, File Upload, Drag & Drop)
+- Common controls: Tables, Dialogs & Form Controls ...
+- Angular CDK & 3rd Party Components (Virtual Lists, Drag & Drop, Markdown, ...)
 
 ### Forms Design & Validation
 
 - Forms Introduction
 - Template Driven Forms vs Reactive (Model Based) Forms
-- Using Forms Builder
-- Typed Forms (Nullability, Nested Objects, Arrays)
+- FormBuilder & Typed Forms (Nullability, Nested Objects, Arrays)
 - FormControl, FormGroups & FormArrays
 - Form Validation Basics (Synchronous / Asynchronous)
 - Custom- & Code-Based Validators
+- Signals & FormControls
 
-### Introduction to Reactive Programming using Signals & RxJS
+### Reactive Programming using Signals & RxJS
 
 - What is Reactive Programming / Benefits
-- Observable, Observer & Subject
+- Imperative vs Reactive Programming Styles
+- Observable, Observer, Async pipe & Unsubscribing
+- Common RxJS Operators
 - Creating Observables & Casting to Observables
-- Using the async pipe
 - Capturing Mouse & DOM Events as Observables
-- Subscribing to Routes & Params as Observables
-- Using Common RxJS Operators
-- Signals, Calculated Signals & Effects
+- Observable & Signal Interoperability
 
 ### Managing State & Sharing Events
 
 - What is State Management
 - State Management Options: Signals vs Observables
-- Stateless & Stateful Services
-- Sharing Data between deeply Nested Components
-- Service Bus & Sharing Events between deeply Nested Components
+- Stateful Services using Signals
+- Sharing Events between Components
 
+### Testing Angular Applications
 
-### Testing Basics
-
-- Unit Tests vs Integration Tests
-- Karma & Jasmine Basics
-- Test Setup & Mocking Data
+- Angular Testing Options
 - Testing Classes, Directives and Pipes
-- Using Mocks & Spies
-- Intro to Component DOM Testing: Testbed and Testing Module
-- Testing Component Interaction (Read, Write, Emit, Inputs)
+- Injections, Mocks & Spies
+- Intro to Component DOM Testing
+- Testing Component Interaction (Read, Write, Inputs, Events)
 - Material Testing using Component Harnesses
 - In Short: End to End Testing using Cypress
 
@@ -134,6 +110,6 @@ The `demo-app` consists of `app.component.html` that defines the base structure 
 - Token based Auth: Understanding Jwt, OAuth 2.0 & OpenID Connect
 - Observe Response and Setting Custom Http Headers
 - Using Interceptors to Automate Authentication Tokens
-- Securing Angular Routes using Route Guards
-- Hosting Option Overview (Docker, Firebase, Azure Static Web App, …)
+- Angular Routes & functional Route Guards
+- Hosting Options Overview (Docker, Firebase, Azure Static Web App, …)
 - Publishing Angular Apps
