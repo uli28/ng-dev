@@ -1,6 +1,10 @@
-- Create an account at [Firebase](https://firebase.google.com/)
-- Firebase Authentication is implemented in the `src/app/firebase-auth` folder. To be able to use Firebase Auth you must:
-- Update your Firebase Config in `environment.ts`
+- Firebase is a platform developed by Google for creating mobile and web applications. Besides authentication, it provides services like real-time database, cloud storage, and cloud functions. We will use it for authentication in this project because it is easy to use and provides a free tier.
+
+- Create an account at [Firebase Console](https://firebase.google.com/)
+
+- Firebase Authentication is implemented in the `src/app/firebase-auth` folder. 
+
+- To be able to use Firebase Auth you must update your Firebase Config in `environment.ts`
 
   ```typescript
   export const environment = {
@@ -10,13 +14,7 @@
     markdownPath: '/assets/markdown/',
     api: 'http://localhost:3000/',
     firebaseConfig: {
-      apiKey: "AIzaSyAegWtmbrV-ANmwcslPDUhAaftO39ylxxx",
-      authDomain: "ngfbdemo.firebaseapp.com",
-      projectId: "ngfbdemo",
-      storageBucket: "ngfbdemo.appspot.com",
-      messagingSenderId: "1012570687700",
-      appId: "1:1012570687704:web:574e8b717eba204dc4axxx",
-      measurementId: "G-61P0T6NFBX7"
+     <FIREBASE_CONFIGURATION>
     },
   };
   ```
