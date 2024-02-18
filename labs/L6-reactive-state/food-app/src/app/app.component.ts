@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, effect, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
@@ -31,4 +31,11 @@ export class AppComponent {
   navPosition = this.nav.getSideNavPosition();
   navVisible = this.nav.getSideNavVisible();
   workbenchMargin = {};
+
+  constructor() {
+    effect(() => {
+      this.workbenchMargin = this.navVisible() ? { 'margin-left': '0.5rem' } : {};
+      console.log('Workbench margin:', this.workbenchMargin);
+    })
+  }
 }
