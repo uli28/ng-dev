@@ -33,12 +33,12 @@
       "title": "Stateful Services"
     },
     {
-      "url": "event-bus",
-      "title": "Event Bus"
-    },
-    {
       "url": "signals-basics",
       "title": "Signals Basics"
+    },
+    {
+      "url": "stateful-signals",
+      "title": "Stateful Signals Services"
     },
     {
       "url": "signals-bus",
