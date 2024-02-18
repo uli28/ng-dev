@@ -1,40 +1,34 @@
-import { Component, inject, ChangeDetectorRef, AfterContentChecked } from '@angular/core';
-import { MatDrawerMode } from '@angular/material/sidenav';
-import { MenuService } from './shared/menu/menu.service';
-import { LoadingService } from './shared/loading/loading.service';
+import { Component, inject } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
+import { HomeComponent } from './home/home.component';
+import { NavbarComponent } from './shared/navbar/navbar.component';
+import { SideMenuComponent } from './shared/sidemenu/sidemenu.component';
+import { FoodContainerComponent } from './food/food-container/food-container.component';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { NgStyle } from '@angular/common';
+import { environment } from '../environments/environment';
+import { SideMenuService } from './shared/sidemenu/sidemenu.service';
 
 @Component({
   selector: 'app-root',
+  standalone: true,
+  imports: [
+    RouterOutlet,
+    HomeComponent,
+    NavbarComponent,
+    SideMenuComponent,
+    FoodContainerComponent,
+    MatSidenavModule,
+    NgStyle
+  ],
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
+  styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'Food App';
-  mode: MatDrawerMode = 'side';
-  visible = true;
-  ms = inject(MenuService);
-  ls = inject(LoadingService);
-  changeDetector = inject(ChangeDetectorRef);
-  isLoading = this.ls.getLoading();
+  nav = inject(SideMenuService);
+  title = environment.title;
 
-  constructor() {
-    this.ms.sideNavPosition.subscribe((currentMode) => { this.mode = currentMode });
-    this.ms.sideNavVisible.subscribe((visible) => { this.visible = visible });
-  }
-
-  ngAfterContentChecked(): void {
-    this.changeDetector.detectChanges();
-  }
-
-  getWorbenchStyle() {
-    let result = {};
-    this.ms.sideNavVisible.subscribe((visible) => {
-      result = visible
-        ? {
-          'padding-left': '10px',
-        }
-        : {};
-    });
-    return result;
-  }
+  navPosition = this.nav.getSideNavPosition();
+  navVisible = this.nav.getSideNavVisible();
+  workbenchMargin = {};
 }
