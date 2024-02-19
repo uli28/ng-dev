@@ -36,13 +36,10 @@ export class FoodStateService {
 
   updateFood(food: FoodItem) {
     this.service.updateFood(food).subscribe((data) => {
-
       this.#food.update((foods) => {
-
         const index = foods.findIndex((f) => f.id === data.id);
         foods[index] = data;
         return foods;
-
       });
     });
   }
