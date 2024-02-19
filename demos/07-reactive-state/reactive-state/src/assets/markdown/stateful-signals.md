@@ -24,7 +24,10 @@
 - The data from the injected service `getAllVouchers()` method can be rendered in `stateful-signals.component.html`:
 
     ```html
-    @for (v of vouchers(); track $index) {
-        <div>{{ v.Text }}</div>
-    }
+    <div boxed>
+        <h3>Current Vouchers - hover & click to remove</h3>
+        @for (v of vouchers(); track $index) {
+            <div class="item" (click)="removeVoucher(v.ID)">{{ v.Text }}</div>
+        }
+    </div>
     ```

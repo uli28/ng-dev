@@ -1,0 +1,8 @@
+.item{
+   margin: 10px 0;
+   
+   &:hover{
+      cursor: pointer;
+      text-decoration: underline;
+   }
+}

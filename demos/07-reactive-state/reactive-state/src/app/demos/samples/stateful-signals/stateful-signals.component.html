@@ -1,7 +1,8 @@
 <app-markdown-renderer [md]="'stateful-signals'"></app-markdown-renderer>
 
 <div boxed>
+  <h3>Current Vouchers - hover & click to remove</h3>
   @for (v of vouchers(); track $index) {
-  <div>{{ v.Text }}</div>
+    <div class="item" (click)="removeVoucher(v.ID)">{{ v.Text }}</div>
   }
 </div>

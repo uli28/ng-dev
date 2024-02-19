@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { MarkdownRendererComponent } from 'src/app/shared/markdown-renderer/markdown-renderer.component';
-import { StatefulSignalsService } from '../vouchers/stateful-signals.service';
+import { StatefulSignalsService } from './stateful-signals.service';
 import { BoxedDirective } from 'src/app/shared/formatting/formatting-directives';
 
 @Component({
@@ -13,4 +13,8 @@ import { BoxedDirective } from 'src/app/shared/formatting/formatting-directives'
 export class StatefulSignalsComponent {
   service = inject(StatefulSignalsService);
   vouchers = this.service.getAllVouchers();
+
+  removeVoucher(id: number) {
+    this.service.deleteVoucher(id);
+  }
 }
