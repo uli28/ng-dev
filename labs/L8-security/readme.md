@@ -26,6 +26,8 @@ In this lab we will add Firebase Authentication as an example for easy to implem
 
 -   In the Firebase console, expand `Build` and go to `Authentication` and enable `Email/Password` as a sign-in method. Skip the e-mail validation for now.
 
+- Add an `authEnabled` flag to your environment files and set it to `false`. This will allow you to turn off authentication for local development.,
+
 ## Copy and Use the provided Firebase Authentication artifacts
 
 -   Add the following dependencies to your project:
@@ -34,7 +36,7 @@ In this lab we will add Firebase Authentication as an example for easy to implem
     npm install firebase @angular/fire --save
     ```
 
--   Copy the following [artifacts](./auth-artifacts/) to your project. You can take the following [reference](../../demos/06-security/01-firebase/firebase-auth/) implementation. Fix any import path errors that might exist.
+-   Copy the following [artifacts](./auth-artifacts/) to your project. You can take the following [reference](/demos/09-securing-publishing/securing-publishing/) implementation. Fix any import path errors that might exist.
 
 -   Provide the firebase services in `app.config.ts`:
 
@@ -49,6 +51,7 @@ In this lab we will add Firebase Authentication as an example for easy to implem
 
     ```typescript
     auth = inject(FirebaseAuthService);
+    ...
     isAuthenticated = this.auth
       .isAuthenticated()
       .pipe(tap((auth) => console.log('authState changed to:', auth)));
@@ -60,11 +63,11 @@ In this lab we will add Firebase Authentication as an example for easy to implem
 
     > Note: You can turn off authentication by setting `authEnabled` to `false` in your environment file.
 
--   Review and add `app-current-user` and the `app-logout-btn` to nav.component.html. You might have to add missing imports in the `nav.component.ts` file. The logout button should only be visible when the user is logged in.
+-   Review `app-current-user` and the `app-logout-btn` and add it to `nav.component.html`. You might have to add missing imports in the `nav.component.ts` file. The logout button should only be visible when the user is logged in.
 
 ## Activate Security on the food route
 
-- Examine `firebase.auth-guard.service.ts` and activate the guard on the food route in `app.routes.ts`:
+- Examine `firebase.auth.guard.ts` and activate the guard on the food route in `app.routes.ts`:
 
   ```typescript
   export const routes: Routes = [
@@ -79,26 +82,6 @@ In this lab we will add Firebase Authentication as an example for easy to implem
   ```
 
 - Test if you can access the food route when you are not logged in. You should be redirected to the root page.
-
-- Refactor the guard to a functional implementation on your own. A possible Solution could look like this:
-
-  ```typescript
-  export const firebaseGuard = () => {
-    const router = inject(Router);
-    const auth = inject(FirebaseAuthService);
-    const user = auth.getUser();
-    return user.pipe(
-      map((user) => {
-        if (environment.authEnabled == false || user != null) {
-          return true;
-        } else {
-          router.navigate(['/']);
-          return false;
-        }
-      })
-    );
-  }
-  ```
 
   > Note: If you would like to forward the token to the backend, you can use `firebase-auth.interceptor.ts` as a reference and register the interceptor in `app.config.ts`:
 
