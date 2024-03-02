@@ -10,6 +10,7 @@ import { VouchersService } from '../vouchers/voucher.service';
 export class StatefulSignalsService {
   http = inject(HttpClient);
   vs = inject(VouchersService);
+
   // can not use toSignal here, because the result  is not writable
   // Signal<Voucher[] | undefined>
   #vouchers: WritableSignal<Voucher[]> = signal<Voucher[]>([]);
@@ -30,13 +31,13 @@ export class StatefulSignalsService {
   }
 
   insertVoucher(v: Voucher) {
-    this.http.post(environment.api, v).subscribe((result: any) => {
+    this.http.post(`${environment.api}vouchers`, v).subscribe((result: any) => {
       this.#vouchers.update((arr: Voucher[]) => [...arr, result as Voucher]);
     });
   }
 
   updateVoucher(v: Voucher) {
-    this.http.put(environment.api, v).subscribe(() => {
+    this.http.put(`${environment.api}vouchers`, v).subscribe(() => {
       this.#vouchers.update((arr: Voucher[]) => arr.map((item) => (item.ID === v.ID ? v : item)));
     });
   }

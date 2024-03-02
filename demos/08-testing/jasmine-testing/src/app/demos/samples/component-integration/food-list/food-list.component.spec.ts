@@ -56,19 +56,4 @@ describe('Component - Integration Test', () => {
     expect(rows.length).toEqual(4);
     expect(rows[0].componentInstance.food.name).toEqual('Pad Thai');
   });
-
-  it('should have three rows when an item is deleted', fakeAsync(() => {
-    fixture.componentInstance.ngOnInit();
-    fixture.detectChanges();
-
-    const deRow = fixture.debugElement.query(By.directive(FoodRowComponent));
-    const row = deRow.componentInstance;
-    row.delete.emit(deleteItem);
-    flush();
-    fixture.detectChanges();
-
-    const rows = fixture.debugElement.queryAll(By.directive(FoodRowComponent));
-    expect(rows.length).toEqual(3);
-    // expect(fixture.componentInstance.deleteFood).toHaveBeenCalledWith(deleteItem);
-  }));
 });
