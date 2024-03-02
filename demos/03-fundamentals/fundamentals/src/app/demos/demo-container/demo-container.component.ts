@@ -38,8 +38,8 @@ import { DemoService } from '../demo-base/demo.service';
 export class DemoContainerComponent {
   destroy = inject(DestroyRef)
   router = inject(Router);
-  route = inject(ActivatedRoute);
   ds = inject(DemoService);
+  route = inject(ActivatedRoute);
   nav = inject(SideNavService);
   eb = inject(SidePanelService);
 

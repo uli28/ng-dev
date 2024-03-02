@@ -1,38 +1,31 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { AuthService } from '../auth.service';
 import { MockAuthService } from './auth.service.mock';
 import { UseMockComponent } from './use-mock.component';
-import { AuthService } from '../auth.service';
-import { MatCardModule } from '@angular/material/card';
 
 describe('UseMockComponent with MockAuth Service', () => {
   const mock = new MockAuthService();
-  let comp: UseMockComponent;
   let fixture: ComponentFixture<UseMockComponent>;
 
   beforeEach(() => {
-    comp = new UseMockComponent(mock);
-  });
-
-  beforeEach(() => {
     fixture = TestBed.configureTestingModule({
-      imports: [MatCardModule, UseMockComponent],
       providers: [{ provide: AuthService, useValue: mock }],
     }).createComponent(UseMockComponent);
 
-    comp = fixture.componentInstance;
     fixture.detectChanges();
   });
 
   it('should create', () => {
-    expect(comp).toBeTruthy();
+    expect(fixture.componentInstance).toBeTruthy();
   });
 
   it('should return Authenticated true', () => {
+    const comp = fixture.componentInstance;
     expect(comp.loggedIn).toBe(true);
   });
 
   it('should have the correct login state on the Template', () => {
-    expect(fixture.nativeElement.querySelector('#auth').textContent).toContain(
+    expect(fixture.nativeElement.querySelector('[data-testid=auth]').textContent).toContain(
       'true'
     );
   });

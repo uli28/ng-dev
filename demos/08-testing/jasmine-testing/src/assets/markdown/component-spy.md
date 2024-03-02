@@ -1,23 +1,17 @@
-- Navigate to folder `component-mocking`. For better comparison the mocking example is solved using a spy in the use-spy folder.
+- Examine `use-spy.component.spec.ts` which uses a spy instead of a mock. 
 
-- Creation of the spy object
+- In the configuration of the `TestingModule` we use the spy instead of the original `AuthService`.
 
-```javascript
-beforeEach(() => {
+  ```javascript
+  beforeEach(() => {
     spy = jasmine.createSpyObj('AuthService', ['isAuthenticated']);
     spy.isAuthenticated.and.returnValue(true);
-    comp = new UseSpyComponent(spy);
-  });
-```
 
-- In the providers section the spy object is used
-
-```javascript
-beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [],
-      declarations: [UseSpyComponent],
+    fixture = TestBed.configureTestingModule({
       providers: [{ provide: AuthService, useValue: spy }],
-    }).compileComponents();;
-});
-```
+    }).createComponent(UseSpyComponent);
+
+    comp = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+  ```

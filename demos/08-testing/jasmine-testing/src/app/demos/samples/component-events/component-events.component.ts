@@ -15,6 +15,7 @@ import { MarkdownRendererComponent } from '../../../shared/markdown-renderer/mar
   ],
 })
 export class ComponentEventsComponent {
+
   count = 0;
 
   incrementCount() {

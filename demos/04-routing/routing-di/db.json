@@ -54,11 +54,6 @@
       "url": "preload",
       "title": "Data preloading",
       "id": "19c3"
-    },
-    {
-      "url": "component-less",
-      "title": "Component less routing",
-      "id": "3146"
     }
   ],
   "top-links": [
@@ -213,7 +208,7 @@
       "id": "2",
       "name": "Cloud Native Apps",
       "hours": 3,
-      "completed": false,
+      "completed": false
     },
     {
       "name": "Cooking Pad Kra Pao",

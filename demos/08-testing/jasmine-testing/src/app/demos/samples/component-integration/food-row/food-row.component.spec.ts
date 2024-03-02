@@ -8,13 +8,10 @@ describe('Component -Integration Test - Food Row', () => {
   let component: FoodRowComponent;
   let deleteFld: ElementRef;
   let editFld: ElementRef;
-
   const food = { id: 1, name: 'Pad Thai', rating: 5 };
 
   beforeEach(() => {
-    fixture = TestBed.configureTestingModule({
-      imports: [FoodRowComponent],
-    }).createComponent(FoodRowComponent);
+    fixture = TestBed.createComponent(FoodRowComponent);
 
     component = fixture.componentInstance;
     deleteFld = fixture.debugElement.query(By.css('#deleteFld'));

@@ -1,7 +1,6 @@
 import { Routes } from '@angular/router';
 import { DemoContainerComponent } from './demo-container/demo-container.component';
 import { ChildRoutesComponent } from './samples/child-routes/child-routes.component';
-import { ComponentLessComponent } from './samples/component-less/component-less.component';
 import { LazyLoadingComponent } from './samples/lazy-loading/lazy-loading.component';
 import { ParamMapComponent } from './samples/paramMap/param-map/param-map.component';
 import { PmChildComponent } from './samples/paramMap/pm-child/pm-child.component';
@@ -46,11 +45,7 @@ export const DEMO_ROUTES: Routes = [
         path: 'preload',
         component: PreloadComponent,
         resolve: { demos: demosResolver }
-      },
-      {
-        path: 'component-less',
-        component: ComponentLessComponent,
-      },
+      }
     ],
   },
 ];

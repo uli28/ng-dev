@@ -23,9 +23,9 @@ import { PersonService } from '../persons/person.service';
 })
 export class BindingComponent implements OnInit {
   ps = inject(PersonService);
-  hide = false;
   persons: Person[] = [];
   selectedPerson: Person = new Person();
+  hide = false;
   latePerson: Person | null = null;
   isActive: boolean = false;
 

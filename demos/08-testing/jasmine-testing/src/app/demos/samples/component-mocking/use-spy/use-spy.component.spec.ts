@@ -13,7 +13,6 @@ describe('UseMockComponent with MockAuth Service', () => {
     spy.isAuthenticated.and.returnValue(true);
 
     fixture = TestBed.configureTestingModule({
-      imports: [UseSpyComponent],
       providers: [{ provide: AuthService, useValue: spy }],
     }).createComponent(UseSpyComponent);
 
@@ -30,7 +29,7 @@ describe('UseMockComponent with MockAuth Service', () => {
   });
 
   it('should have the correct login state on the Template', () => {
-    const span = fixture.debugElement.query(By.css('[data-testid="result"]'));
+    const span = fixture.debugElement.query(By.css('[data-testid="auth"]'));
     expect(span.nativeElement.innerText).toContain(
       'true'
     );

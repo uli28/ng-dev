@@ -7,6 +7,7 @@ import { ComponentWriteComponent } from './component-write.component';
 
 describe('ComponentWriteComponent', () => {
   let fixture: ComponentFixture<ComponentWriteComponent>;
+
   beforeEach(() => {
     fixture = TestBed.configureTestingModule({
       imports: [
@@ -29,6 +30,7 @@ describe('ComponentWriteComponent', () => {
     const el = input.nativeElement as HTMLInputElement;
     el.value = soi;
     el.dispatchEvent(new Event('input'));
+
     expect(fixture.componentInstance.user.username).toBe(soi);
   })
 });

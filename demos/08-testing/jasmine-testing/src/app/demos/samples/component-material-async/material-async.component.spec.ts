@@ -1,3 +1,4 @@
+import { provideHttpClient } from '@angular/common/http';
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MarkdownModule } from 'ngx-markdown';
@@ -9,18 +10,19 @@ describe('MaterialAsyncComponent', () => {
 
   beforeEach(
     waitForAsync(() => {
-      TestBed.configureTestingModule({
+      fixture = TestBed.configureTestingModule({
         imports: [
-          MaterialAsyncComponent,
           BrowserAnimationsModule,
           MarkdownModule.forRoot(),
         ],
-      }).compileComponents();
+        providers: [
+          provideHttpClient()
+        ]
+      }).createComponent(MaterialAsyncComponent);
     })
   );
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MaterialAsyncComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

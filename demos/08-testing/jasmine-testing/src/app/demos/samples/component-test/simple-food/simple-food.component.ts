@@ -1,16 +1,14 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { FoodItem } from '../../component-integration/food.model';
 import { FoodServiceBS } from '../../component-integration/food.service-bs';
-
 import { MatCardModule } from '@angular/material/card';
 
-
 @Component({
-    selector: 'app-simple-food',
-    templateUrl: './simple-food.component.html',
-    styleUrls: ['./simple-food.component.scss'],
-    standalone: true,
-    imports: [MatCardModule],
+  selector: 'app-simple-food',
+  templateUrl: './simple-food.component.html',
+  styleUrls: ['./simple-food.component.scss'],
+  standalone: true,
+  imports: [MatCardModule],
 })
 export class SimpleFoodComponent implements OnInit {
   fs = inject(FoodServiceBS);
