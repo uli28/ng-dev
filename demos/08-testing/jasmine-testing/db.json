@@ -21,11 +21,11 @@
       "title": "Comp Test Class"
     },
     {
-      "url": "mock",
+      "url": "component-mock",
       "title": "Comp Inject Mock"
     },
     {
-      "url": "spy",
+      "url": "component-spy",
       "title": "Comp Inject Spy"
     },
     {
@@ -34,14 +34,14 @@
     },
     {
       "url": "component-write",
-      "title": "Comp Write / Read"
+      "title": "Comp Read / Write"
     },
     {
       "url": "component-events",
-      "title": "Comp Events"
+      "title": "Comp DOM Events"
     },
     {
-      "url": "material",
+      "url": "material-harness",
       "title": "Comp Material Harness"
     },
     {
@@ -50,11 +50,7 @@
     },
     {
       "url": "integration-tests",
-      "title": "Comp Integration Tests"
-    },
-    {
-      "url": "cypress",
-      "title": "Cypress E2E Tests"
+      "title": "Comp Nested Signals"
     }
   ],
   "top-links": [

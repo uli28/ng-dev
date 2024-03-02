@@ -8,6 +8,7 @@ import { MatButtonHarness } from '@angular/material/button/testing';
 import { MatInputHarness } from '@angular/material/input/testing';
 import { MatSliderHarness } from '@angular/material/slider/testing';
 import { MarkdownModule } from 'ngx-markdown';
+import { provideHttpClient } from '@angular/common/http';
 
 describe('MaterialComponent', () => {
   let fixture: ComponentFixture<MaterialComponent>;
@@ -18,9 +19,11 @@ describe('MaterialComponent', () => {
   beforeEach(() => {
     fixture = TestBed.configureTestingModule({
       imports: [
-        MaterialComponent,
         NoopAnimationsModule,
         MarkdownModule.forRoot()
+      ],
+      providers: [
+        provideHttpClient()
       ]
     }).createComponent(MaterialComponent);
     fixture.detectChanges();

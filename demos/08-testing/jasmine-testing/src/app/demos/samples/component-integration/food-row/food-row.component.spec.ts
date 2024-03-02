@@ -8,17 +8,14 @@ describe('Component -Integration Test - Food Row', () => {
   let component: FoodRowComponent;
   let deleteFld: ElementRef;
   let editFld: ElementRef;
-
   const food = { id: 1, name: 'Pad Thai', rating: 5 };
 
   beforeEach(() => {
-    fixture = TestBed.configureTestingModule({
-      imports: [FoodRowComponent],
-    }).createComponent(FoodRowComponent);
+    fixture = TestBed.createComponent(FoodRowComponent);
 
     component = fixture.componentInstance;
-    deleteFld = fixture.debugElement.query(By.css('#deleteFld'));
-    editFld = fixture.debugElement.query(By.css('#editFld'));
+    deleteFld = fixture.debugElement.query(By.css('[data-testid=delete]'));
+    editFld = fixture.debugElement.query(By.css('[data-testid=edit]'));
     fixture.componentInstance.food = food;
     fixture.detectChanges();
   });
@@ -39,7 +36,7 @@ describe('Component -Integration Test - Food Row', () => {
     ).toContain('Pad Thai');
   });
 
-  it('should render the food namen when food is changed', () => {
+  it('should render the food name when food is changed', () => {
     component.food = { id: 2, name: 'Wiener Schnitzel', rating: 5 };
     fixture.detectChanges();
     // Do one of the tests below

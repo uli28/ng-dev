@@ -1,10 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { MatCardModule } from '@angular/material/card';
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { of } from 'rxjs';
+import { FoodServiceState } from '../../component-integration/food.service-bs';
 import { foodData, serviceResult } from './simple-food-component.data';
 import { SimpleFoodComponent } from './simple-food.component';
-import { FoodServiceBS } from '../../component-integration/food.service-bs';
 
 describe('Component - Spy - FoodComponent:', () => {
   let spy: any;
@@ -13,11 +11,10 @@ describe('Component - Spy - FoodComponent:', () => {
 
   beforeEach(() => {
     spy = jasmine.createSpyObj(['getFood', 'deleteFood']);
-    spy.getFood.and.returnValue(of(foodData))
+    spy.getFood.and.returnValue(of(foodData));
 
     TestBed.configureTestingModule({
-      imports: [MatCardModule, NoopAnimationsModule, SimpleFoodComponent],
-      providers: [{ provide: FoodServiceBS, useValue: spy }],
+      providers: [{ provide: FoodServiceState, useValue: spy }],
     });
 
     fixture = TestBed.createComponent(SimpleFoodComponent);
@@ -25,6 +22,7 @@ describe('Component - Spy - FoodComponent:', () => {
     component.ngOnInit();
     fixture.detectChanges();
   })
+
   it('should call getItems to subscribe data', () => {
     expect(component.food.length).toBe(4)
     // you can access the html using fixture.nativeElement.innerHTML

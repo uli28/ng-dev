@@ -71,14 +71,6 @@
     {
       "url": "lifecycle",
       "title": "Component Lifecycle"
-    },
-    {
-      "url": "projection",
-      "title": "Content Projection"
-    },
-    {
-      "url": "ng-template",
-      "title": "ng-template"
     }
   ],
   "top-links": [
@@ -225,7 +217,7 @@
       "id": "2",
       "name": "Cloud Native Apps",
       "hours": 3,
-      "completed": false,
+      "completed": false
     },
     {
       "name": "Cooking Pad Kra Pao",

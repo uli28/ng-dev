@@ -1,6 +1,5 @@
-import { FoodItem } from '../../component-integration/food.model';
 
-export const foodData: FoodItem[] = [
+export const foodData = [
   { id: 1, name: 'Pad Thai', rating: 5 },
   { id: 2, name: 'Butter Chicken', rating: 5 },
   { id: 3, name: 'Cannelloni', rating: 4 },

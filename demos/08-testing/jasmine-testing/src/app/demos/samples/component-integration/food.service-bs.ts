@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-// import * as _ from 'lodash';
+import { Injectable, inject } from '@angular/core';
 import { BehaviorSubject, of } from 'rxjs';
 import { FoodItem } from './food.model';
 import { environment } from '../../../../environments/environment.development';
@@ -8,9 +7,11 @@ import { environment } from '../../../../environments/environment.development';
 @Injectable({
   providedIn: 'root',
 })
-export class FoodServiceBS {
-  constructor(private httpClient: HttpClient) {
-    this.httpClient
+export class FoodServiceState {
+  http = inject(HttpClient);
+
+  constructor() {
+    this.http
       .get<FoodItem[]>(`${environment.api}food`)
       .subscribe((data) => {
         this.food.next(data);

@@ -4,8 +4,6 @@ import { msgs } from './test-data';
 describe('Service - No Injection - SimpleMessageService', () => {
   let service: SimpleMessageService;
 
-  beforeEach(() => { });
-
   it('should have no messages to start', () => {
     service = new SimpleMessageService();
     expect(service.messages.length).toBe(0);

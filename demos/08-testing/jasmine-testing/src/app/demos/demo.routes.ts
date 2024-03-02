@@ -4,7 +4,6 @@ import { ComponentClassComponent } from './samples/component-class/component-cla
 import { ComponentEventsComponent } from './samples/component-events/component-events.component';
 import { ComponentTestComponent } from './samples/component-test/component-test.component';
 import { ComponentWriteComponent } from './samples/component-write/component-write.component';
-import { CypressComponent } from './samples/cypress/cypress.component';
 import { DirectiveHostComponent } from './samples/directive/directive-host/directive-host.component';
 import { MaterialAsyncComponent } from './samples/component-material-async/material-async.component';
 import { MockHostComponent } from './samples/component-mocking/mock-host/mock-host.component';
@@ -28,12 +27,11 @@ export const DEMO_ROUTES: Routes = [
       { path: 'simple-service', component: SimpleServiceComponent },
       { path: 'component-test', component: ComponentTestComponent },
       { path: 'integration-tests', component: IntegrationTestComponent },
-      { path: 'mock', component: MockHostComponent },
+      { path: 'component-mock', component: MockHostComponent },
       { path: 'material-async', component: MaterialAsyncComponent },
-      { path: 'material', component: MaterialComponent },
-      { path: 'cypress', component: CypressComponent },
+      { path: 'material-harness', component: MaterialComponent },
       { path: 'component-class', component: ComponentClassComponent },
-      { path: 'spy', component: SpyHostComponent }
+      { path: 'component-spy', component: SpyHostComponent }
     ],
   },
 ];

@@ -13,7 +13,6 @@ import { FormControlsComponent } from './samples/form-controls/form-controls.com
 import { InlineComponent } from './samples/inline/inline.component';
 import { LifecycleComponent } from './samples/lifecycle/lifecycle.component';
 import { LocalizationComponent } from './samples/localization/localization.component';
-import { NgTemplateComponent } from './samples/ng-template/ng-template.component';
 import { PipesComponent } from './samples/pipes/pipes.component';
 import { RepeaterComponent } from './samples/repeater/repeater.component';
 import { ServicesBasicsComponent } from './samples/services-basics/services-basics.component';
@@ -44,7 +43,6 @@ export const DEMO_ROUTES: Routes = [
       { path: 'custom-pipes', component: CustomPipesComponent },
       { path: 'localization', component: LocalizationComponent },
       { path: 'expressions', component: ExpressionsComponent },
-      { path: 'ng-template', component: NgTemplateComponent },
       { path: 'di', component: DependencyInjectionComponent },
       { path: 'form-controls', component: FormControlsComponent },
     ],
