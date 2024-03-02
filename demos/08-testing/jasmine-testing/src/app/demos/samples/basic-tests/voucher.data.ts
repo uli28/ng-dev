@@ -1,4 +1,4 @@
-export const goodVoucher = {
+export const good = {
     ID: 2,
     Text: 'BP Tankstelle',
     Date: '2016-11-15T00:00:00',

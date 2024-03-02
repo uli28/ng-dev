@@ -34,11 +34,11 @@
     },
     {
       "url": "component-write",
-      "title": "Comp Write / Read"
+      "title": "Comp Read / Write"
     },
     {
       "url": "component-events",
-      "title": "Comp Events"
+      "title": "Comp DOM Events"
     },
     {
       "url": "material",
@@ -50,7 +50,7 @@
     },
     {
       "url": "integration-tests",
-      "title": "Comp Integration Tests"
+      "title": "Comp Nested"
     }
   ],
   "top-links": [
