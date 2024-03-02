@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { of } from 'rxjs';
-import { FoodServiceBS } from '../../component-integration/food.service-bs';
+import { FoodServiceState } from '../../component-integration/food.service-bs';
 import { foodData, serviceResult } from './simple-food-component.data';
 import { SimpleFoodComponent } from './simple-food.component';
 
@@ -14,7 +14,7 @@ describe('Component - Spy - FoodComponent:', () => {
     spy.getFood.and.returnValue(of(foodData));
 
     TestBed.configureTestingModule({
-      providers: [{ provide: FoodServiceBS, useValue: spy }],
+      providers: [{ provide: FoodServiceState, useValue: spy }],
     });
 
     fixture = TestBed.createComponent(SimpleFoodComponent);

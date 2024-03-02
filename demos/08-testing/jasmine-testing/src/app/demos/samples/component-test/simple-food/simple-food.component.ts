@@ -1,6 +1,6 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { FoodItem } from '../../component-integration/food.model';
-import { FoodServiceBS } from '../../component-integration/food.service-bs';
+import { FoodServiceState } from '../../component-integration/food.service-bs';
 import { MatCardModule } from '@angular/material/card';
 
 @Component({
@@ -11,7 +11,7 @@ import { MatCardModule } from '@angular/material/card';
   imports: [MatCardModule],
 })
 export class SimpleFoodComponent implements OnInit {
-  fs = inject(FoodServiceBS);
+  fs = inject(FoodServiceState);
   food: FoodItem[] = [];
 
   ngOnInit() {

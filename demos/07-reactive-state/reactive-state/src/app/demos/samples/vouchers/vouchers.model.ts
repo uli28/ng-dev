@@ -16,7 +16,7 @@ export class BalanceAccount {
 }
 
 export class Voucher {
-  ID = "0";
+  ID = 0;
   Text = '';
   Date = '';
   Amount = 0;
