@@ -21,11 +21,11 @@
       "title": "Comp Test Class"
     },
     {
-      "url": "mock",
+      "url": "component-mock",
       "title": "Comp Inject Mock"
     },
     {
-      "url": "spy",
+      "url": "component-spy",
       "title": "Comp Inject Spy"
     },
     {
@@ -41,7 +41,7 @@
       "title": "Comp DOM Events"
     },
     {
-      "url": "material",
+      "url": "material-harness",
       "title": "Comp Material Harness"
     },
     {
@@ -50,7 +50,7 @@
     },
     {
       "url": "integration-tests",
-      "title": "Comp Nested"
+      "title": "Comp Nested Signals"
     }
   ],
   "top-links": [

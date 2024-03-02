@@ -1,8 +1,8 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, OnInit, inject, signal } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { FoodRowComponent } from '../food-row/food-row.component';
+import { FoodSignalsService } from '../food-signals.service';
 import { FoodItem } from '../food.model';
-import { FoodServiceState } from '../food.service-bs';
 
 @Component({
   selector: 'app-food-list',
@@ -15,17 +15,21 @@ import { FoodServiceState } from '../food.service-bs';
   ],
 })
 export class FoodListComponent implements OnInit {
-  fs = inject(FoodServiceState)
-  food: FoodItem[] = [];
 
-  ngOnInit() {
-    this.fs.getFood().subscribe((data) => {
-      this.food = data;
-    });
+  fs = inject(FoodSignalsService);
+  food = signal<FoodItem[]>([]);
+  // food = signal([
+  //   { name: 'Pad Thai', rating: 5 },
+  //   { name: 'Butter Chicken', rating: 5 },
+  //   { name: 'Cannelloni', rating: 4 },
+  //   { name: 'Cordon Blue', rating: 2 },
+  // ]);
+
+  ngOnInit(): void {
+    this.food.update(this.fs.getFood());
   }
 
   deleteFood(food: FoodItem) {
-    this.food = this.food.filter((i) => i != food);
     this.fs.deleteFood(food);
   }
 }

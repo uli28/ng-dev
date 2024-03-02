@@ -27,11 +27,11 @@ export const DEMO_ROUTES: Routes = [
       { path: 'simple-service', component: SimpleServiceComponent },
       { path: 'component-test', component: ComponentTestComponent },
       { path: 'integration-tests', component: IntegrationTestComponent },
-      { path: 'mock', component: MockHostComponent },
+      { path: 'component-mock', component: MockHostComponent },
       { path: 'material-async', component: MaterialAsyncComponent },
-      { path: 'material', component: MaterialComponent },
+      { path: 'material-harness', component: MaterialComponent },
       { path: 'component-class', component: ComponentClassComponent },
-      { path: 'spy', component: SpyHostComponent }
+      { path: 'component-spy', component: SpyHostComponent }
     ],
   },
 ];
