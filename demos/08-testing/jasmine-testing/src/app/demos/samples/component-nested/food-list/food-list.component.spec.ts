@@ -51,7 +51,6 @@ describe('Component - Integration Test', () => {
   });
 
   it('should render each FoodItem as FoodItemRow', () => {
-    comp.ngOnInit();
     fixture.detectChanges();
     const rows = fixture.debugElement.queryAll(By.directive(FoodRowComponent));
     expect(rows.length).toEqual(4);

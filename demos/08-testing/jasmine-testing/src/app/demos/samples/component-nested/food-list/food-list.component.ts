@@ -16,15 +16,9 @@ import { AsyncPipe } from '@angular/common';
     AsyncPipe
   ],
 })
-export class FoodListComponent implements OnInit {
+export class FoodListComponent {
   fs = inject(FoodServiceStateful)
   food = this.fs.getFood();
-
-  ngOnInit() {
-    // this.fs.getFood().subscribe((data) => {
-    //   this.food = data;
-    // });
-  }
 
   deleteFood(food: FoodItem) {
     this.fs.deleteFood(food);
