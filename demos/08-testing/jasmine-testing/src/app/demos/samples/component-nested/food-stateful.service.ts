@@ -2,11 +2,11 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { environment } from '../../../../environments/environment.development';
-import { FoodItem } from './food.model';
+import { FoodItem } from '../food.model';
 @Injectable({
   providedIn: 'root',
 })
-export class FoodServiceState {
+export class FoodServiceStateful {
   http = inject(HttpClient);
 
   constructor() {

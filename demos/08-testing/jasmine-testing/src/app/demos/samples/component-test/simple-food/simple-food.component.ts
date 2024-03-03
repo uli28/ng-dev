@@ -1,7 +1,6 @@
 import { Component, OnInit, inject } from '@angular/core';
-import { FoodItem } from '../../component-integration/food.model';
-import { FoodServiceState } from '../../component-integration/food.service-bs';
 import { MatCardModule } from '@angular/material/card';
+import { FoodItem } from '../../food.model';
 import { FoodService } from './food.service';
 
 @Component({

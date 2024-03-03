@@ -1,8 +1,8 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { FoodRowComponent } from '../food-row/food-row.component';
-import { FoodItem } from '../food.model';
-import { FoodServiceState } from '../food.service-bs';
+import { FoodItem } from '../../food.model';
+import { FoodServiceStateful } from '../food-stateful.service';
 import { AsyncPipe } from '@angular/common';
 
 @Component({
@@ -17,7 +17,7 @@ import { AsyncPipe } from '@angular/common';
   ],
 })
 export class FoodListComponent implements OnInit {
-  fs = inject(FoodServiceState)
+  fs = inject(FoodServiceStateful)
   food = this.fs.getFood();
 
   ngOnInit() {

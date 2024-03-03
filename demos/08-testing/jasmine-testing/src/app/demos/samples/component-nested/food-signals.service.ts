@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, computed, inject, signal } from '@angular/core';
-import { FoodItem } from './food.model';
+import { FoodItem } from '../food.model';
 import { environment } from 'src/environments/environment.development';
 
 @Injectable({

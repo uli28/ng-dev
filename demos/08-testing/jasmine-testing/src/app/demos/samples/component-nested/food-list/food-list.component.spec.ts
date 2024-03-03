@@ -6,7 +6,7 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MarkdownModule } from 'ngx-markdown';
 import { of } from 'rxjs';
 import { FoodRowComponent } from '../food-row/food-row.component';
-import { FoodServiceState } from '../food.service-bs';
+import { FoodServiceStateful } from '../food-stateful.service';
 import { FoodListComponent } from './food-list.component';
 
 const foodData = of([
@@ -37,7 +37,7 @@ describe('Component - Integration Test', () => {
     fixture = TestBed.configureTestingModule({
       providers: [
         provideHttpClient(),
-        { provide: FoodServiceState, useValue: service }
+        { provide: FoodServiceStateful, useValue: service }
       ],
     }).createComponent(FoodListComponent);
 

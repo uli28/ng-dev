@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FoodItem } from '../component-integration/food.model';
+import { FoodItem } from '../food.model';
 import { MatButtonModule } from '@angular/material/button';
 
 import { MatCardModule } from '@angular/material/card';
@@ -29,7 +29,7 @@ import { MarkdownRendererComponent } from '../../../shared/markdown-renderer/mar
     MarkdownRendererComponent,
     MatCardModule,
     MatButtonModule
-],
+  ],
 })
 export class ComponentClassComponent implements OnInit {
   title = 'Food App';

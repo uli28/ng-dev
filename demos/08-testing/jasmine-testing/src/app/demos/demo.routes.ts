@@ -11,8 +11,8 @@ import { SpyHostComponent } from './samples/component-mocking/spy-host/spy-host.
 import { TestPipeComponent } from './samples/pipe/test-pipe.component';
 import { SimpleServiceComponent } from './samples/simple-service/simple-service.component';
 import { UnitTestingComponent } from './samples/basic-tests/unit-testing.component';
-import { IntegrationTestComponent } from './samples/component-integration/integration-test.component';
 import { MaterialComponent } from './samples/component-harness/material.component';
+import { ComponentNestedComponent } from './samples/component-nested/component-nested.component';
 
 export const DEMO_ROUTES: Routes = [
   {
@@ -26,7 +26,7 @@ export const DEMO_ROUTES: Routes = [
       { path: 'directive', component: DirectiveHostComponent },
       { path: 'simple-service', component: SimpleServiceComponent },
       { path: 'component-test', component: ComponentTestComponent },
-      { path: 'integration-tests', component: IntegrationTestComponent },
+      { path: 'component-nested', component: ComponentNestedComponent },
       { path: 'component-mock', component: MockHostComponent },
       { path: 'material-async', component: MaterialAsyncComponent },
       { path: 'material-harness', component: MaterialComponent },
