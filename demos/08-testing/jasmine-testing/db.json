@@ -2,91 +2,102 @@
   "demos": [
     {
       "url": "basic-tests",
-      "title": "Introduction"
+      "title": "Introduction",
+      "id": "2f43"
     },
     {
       "url": "test-pipe",
-      "title": "Pipes"
+      "title": "Pipes",
+      "id": "db8f"
     },
     {
       "url": "directive",
-      "title": "Directives"
+      "title": "Directives",
+      "id": "4631"
     },
     {
       "url": "simple-service",
-      "title": "Services"
+      "title": "Services",
+      "id": "ea0f"
     },
     {
       "url": "component-class",
-      "title": "Comp Test Class"
+      "title": "Comp Test Class",
+      "id": "9f22"
     },
     {
       "url": "component-mock",
-      "title": "Comp Inject Mock"
+      "title": "Comp Inject Mock",
+      "id": "0447"
     },
     {
       "url": "component-spy",
-      "title": "Comp Inject Spy"
+      "title": "Comp Inject Spy",
+      "id": "d087"
     },
     {
       "url": "component-test",
-      "title": "Comp Spy returnValue"
+      "title": "Comp Spy returnValue",
+      "id": "e08b"
     },
     {
       "url": "component-write",
-      "title": "Comp Read / Write"
+      "title": "Comp Read / Write",
+      "id": "e90d"
     },
     {
       "url": "component-events",
-      "title": "Comp DOM Events"
+      "title": "Comp DOM Events",
+      "id": "0a7d"
     },
     {
       "url": "material-harness",
-      "title": "Comp Material Harness"
+      "title": "Comp Material Harness",
+      "id": "1836"
     },
     {
       "url": "material-async",
-      "title": "Comp Material Async"
+      "title": "Comp Material Async",
+      "id": "45da"
     },
     {
       "url": "integration-tests",
-      "title": "Comp Nested Signals"
+      "title": "Comp Nested",
+      "id": "af11"
     }
   ],
   "top-links": [
     {
       "label": "Home",
-      "url": ""
+      "url": "",
+      "id": "058f"
     },
     {
       "label": "Demos",
-      "url": "main/demos"
+      "url": "main/demos",
+      "id": "194b"
     },
     {
       "label": "Skills",
-      "url": "main/skills"
+      "url": "main/skills",
+      "id": "f8d5"
     }
   ],
   "food": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Pad Thai",
       "rating": 1
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Butter Chicken",
       "rating": 2
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Cannelloni",
       "rating": 2
-    },
-    {
-      "id": 4,
-      "name": "Cordon Bleu",
-      "rating": 4
     }
   ],
   "skills": [
