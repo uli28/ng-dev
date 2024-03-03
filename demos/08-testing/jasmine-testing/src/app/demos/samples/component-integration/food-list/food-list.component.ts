@@ -3,6 +3,7 @@ import { MatCardModule } from '@angular/material/card';
 import { FoodRowComponent } from '../food-row/food-row.component';
 import { FoodItem } from '../food.model';
 import { FoodServiceState } from '../food.service-bs';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'app-food-list',
@@ -11,21 +12,23 @@ import { FoodServiceState } from '../food.service-bs';
   standalone: true,
   imports: [
     MatCardModule,
-    FoodRowComponent
+    FoodRowComponent,
+    AsyncPipe
   ],
 })
 export class FoodListComponent implements OnInit {
   fs = inject(FoodServiceState)
-  food: FoodItem[] = [];
+  food = this.fs.getFood();
 
   ngOnInit() {
-    this.fs.getFood().subscribe((data) => {
-      this.food = data;
-    });
+    // this.fs.getFood().subscribe((data) => {
+    //   this.food = data;
+    // });
   }
 
   deleteFood(food: FoodItem) {
-    this.food = this.food.filter((i) => i != food);
     this.fs.deleteFood(food);
+    // this.food = this.food.filter((i) => i != food);
+    // this.fs.deleteFood(food);
   }
 }

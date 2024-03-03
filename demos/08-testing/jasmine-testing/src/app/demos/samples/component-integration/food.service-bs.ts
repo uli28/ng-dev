@@ -1,9 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
-import { BehaviorSubject, of } from 'rxjs';
-import { FoodItem } from './food.model';
+import { BehaviorSubject } from 'rxjs';
 import { environment } from '../../../../environments/environment.development';
-
+import { FoodItem } from './food.model';
 @Injectable({
   providedIn: 'root',
 })
@@ -25,15 +24,15 @@ export class FoodServiceState {
   }
 
   deleteFood(item: FoodItem) {
-    // let filtered = this.food.value.filter((f: FoodItem) => _.isEqual(f, item) == false);
-    // this.food.next(filtered);
-    return of(true);
+    let filtered = this.food.value.filter((f: FoodItem) => f.id !== item.id);
+    this.food.next(filtered);
+    // return of(true);
   }
 
   addFood(item: FoodItem) {
     let arr = this.food.value;
     arr.push(item);
     this.food.next(arr);
-    return of(true);
+    // return of(true);
   }
 }
