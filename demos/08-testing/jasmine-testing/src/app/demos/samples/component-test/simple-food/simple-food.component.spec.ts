@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { of } from 'rxjs';
-import { FoodServiceState } from '../../component-integration/food.service-bs';
+import { FoodService } from './food.service';
 import { foodData, serviceResult } from './simple-food-component.data';
 import { SimpleFoodComponent } from './simple-food.component';
 
@@ -13,11 +13,12 @@ describe('Component - Spy - FoodComponent:', () => {
     spy = jasmine.createSpyObj(['getFood', 'deleteFood']);
     spy.getFood.and.returnValue(of(foodData));
 
-    TestBed.configureTestingModule({
-      providers: [{ provide: FoodServiceState, useValue: spy }],
-    });
+    fixture = TestBed.configureTestingModule({
+      providers: [
+        { provide: FoodService, useValue: spy }
+      ],
+    }).createComponent(SimpleFoodComponent);
 
-    fixture = TestBed.createComponent(SimpleFoodComponent);
     component = fixture.componentInstance;
     component.ngOnInit();
     fixture.detectChanges();

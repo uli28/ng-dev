@@ -2,6 +2,7 @@ import { Component, OnInit, inject } from '@angular/core';
 import { FoodItem } from '../../component-integration/food.model';
 import { FoodServiceState } from '../../component-integration/food.service-bs';
 import { MatCardModule } from '@angular/material/card';
+import { FoodService } from './food.service';
 
 @Component({
   selector: 'app-simple-food',
@@ -11,7 +12,7 @@ import { MatCardModule } from '@angular/material/card';
   imports: [MatCardModule],
 })
 export class SimpleFoodComponent implements OnInit {
-  fs = inject(FoodServiceState);
+  fs = inject(FoodService);
   food: FoodItem[] = [];
 
   ngOnInit() {
@@ -21,8 +22,8 @@ export class SimpleFoodComponent implements OnInit {
   }
 
   deleteFood(food: FoodItem) {
-    this.fs.deleteFood(food).subscribe(() => {
-      this.food = this.food.filter((f) => f != food);
+    this.fs.deleteFood(food.id).subscribe((data) => {
+      this.food = this.food.filter((i) => i != food);
     });
   }
 }
