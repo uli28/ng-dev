@@ -24,6 +24,9 @@ export class ServicesComponent {
   service = inject(SkillsService);
   http = inject(HttpClient);
   skills: Skill[] = [];
+  //observable skill array, verwendung async pipe - async utility code, der subscribe eingepackt hat
+  // reactivity nicht unterbrochen, deklarativ
+  //skills$ = this.service.getSkills()
   skills$ = this.service.getSkills().pipe(
     tap((data) => {
       // using tap to log data to console
@@ -31,6 +34,15 @@ export class ServicesComponent {
     })
   );
   showDeclarative = this.skills$.pipe(map((data) => data.length > 0));
+
+  // lifecycle hook, wenn component gerendert / erzeugt wird
+  ngOnInit() {
+    this.service.getSkills().subscribe((data) => {
+      // aus observable wird value ausgepackt - ist dadurch kein obs. mehr. z.B. highest skill updaten, wann passiert das?
+      this.skills = data;
+    });
+
+  }
 
   usingFetch() {
     fetch(`${environment.api}skills`)
@@ -44,6 +56,7 @@ export class ServicesComponent {
   }
 
   usingFetchAwait() {
+    // async await immer genau testen ob es sich auch so verhält
     async function getSkills() {
       const response = await fetch(`${environment.api}skills`);
       const skills = await response.json();
@@ -91,6 +104,10 @@ export class ServicesComponent {
     axios.post(`${environment.api}skills`, sk);
   }
 
+  // anti pattern - datenoperationen gehören in service - SkillService
+
+  // observable ist data stream, promise kommt nur ein wert zurück
+  // vorteil: chunken der daten
   useClientInComponent() {
     //untyped
     this.http

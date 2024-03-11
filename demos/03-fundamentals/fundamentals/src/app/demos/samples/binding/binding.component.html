@@ -8,11 +8,13 @@
     <label>Interpolation - One Way Binding:</label>
     <div>{{ selectedPerson.name }}</div>
     <label>One Way Attribute Binding</label>
+    <!-- nicht immer [value], bei checkbox [checked]-->
     <input type="text" [value]="selectedPerson.name" />
     <label for="lblOneWayModel">One Way (Model) Binding</label>
     <input type="text" [ngModel]="selectedPerson.name" />
     <label for="lblTwoWay">Two Way (Model) Binding</label>
     <!-- banana in a box -->
+    <!-- ngModel ist nur two way binding wenn () dabei, sonst nur attribute binding-->
     <input type="text" [(ngModel)]="selectedPerson.name" />
   </mat-card-content>
 </mat-card>
@@ -24,6 +26,7 @@
     </mat-card-title>
   </mat-card-header>
   <mat-card-content>
+    <!-- kurzform not null -->
     @if (latePerson) {
     <div>
       <pre>{{ latePerson | json }}</pre>

@@ -4,6 +4,8 @@
     <mat-card-title>{{ title }}</mat-card-title>
   </mat-card-header>
   <mat-card-content>
+      <!-- kann man nicht so gut unit testen so wie unten addNumbers -->
+      <!-- one way binding, änderungen kommen nicht zurück-->
     <div>Calculation: 1 + 3 + {{ nbr }} = {{ 1 + 3 + nbr }}</div>
     <div>
       Conditional: {{ nbr > 0 ? 'Positive' : 'Negative' }}
@@ -12,8 +14,10 @@
       Function Call: {{ addNumbers(10, myObj.b) }}
     </div>
     <div>
+      <!-- attributed binding [hidden] - binding an dom attribut -->
       <div [hidden]="!showDiv()">The original Div</div>
       <div [hidden]="showDiv()">The alternative Div</div>
+      <!-- alle dom events mit () auffindbar -->
       <button
         mat-raised-button
         (click)="showOriginalDiv = !showOriginalDiv"

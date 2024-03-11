@@ -117,6 +117,7 @@ export class ClassesComponent {
       }
     }
 
+    // class inheritance eher vermeiden, außer wenn notwendig bei Formularen etc.
     class Sighthound extends Dog {
       constructor(name: string) {
         super(name);
@@ -172,6 +173,7 @@ export class ClassesComponent {
     class Grid {
       constructor(public scale: number) { }
 
+      // für alle instanzen gleich
       static origin: ICoordinate = { x: 0, y: 0, z: 0 } as ICoordinate;
 
       calculateDistanceFromOrigin(point: { x: number; y: number }) {

@@ -16,6 +16,10 @@ export class SkillsService {
   getSkills(): Observable<Skill[]> {
     return this.http
       .get<Skill[]>(`${environment.api}skills`)
+      // rxjs bilbiothek - definiert observable, manipulieren von datastream: filter, debounce verzögern (textinput hugo)
+      // RXJS kann man sich mit murmeln vorstellen
+      // tap side effect operator, manipuliert stream nicht, gibt nicht unten an stream weiter - tap ist side effect
+      // pipe array an operatoren
       .pipe(tap((data) => console.log('Received skills:', data)));
   }
 

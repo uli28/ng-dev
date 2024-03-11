@@ -10,10 +10,6 @@ import { MatCardModule } from '@angular/material/card';
   imports: [MatCardModule, MatButtonModule],
 })
 export class UtilsComponent {
-  constructor() { }
-
-  ngOnInit(): void { }
-
   stringFunctions() {
     const productID = 100;
     const category = 'music';

@@ -12,16 +12,24 @@ import { MarkdownRendererComponent } from '../../../shared/markdown-renderer/mar
     imports: [MarkdownRendererComponent, MatCard, MatCardHeader, MatCardTitle, MatCardContent, MatButton, BorderDirective, CenteredDirective]
 })
 export class SignalsBasicsComponent {
+  // signal leichtgewichtiger und einfacher zu arbeiten
+  // verwendet wie observables ebenso subscriptions mit {{v}} async
+  // change detection rerendering
   injector = inject(Injector)
 
   netAmount = signal<number>(0);
+  // short form getter aufrufen myString() im template
   myString = signal('Hello World')
   topic = signal<Topic>({ name: 'Angular Signals', likes: 0 });
 
+  // kein writeable signal, nur lesbar
   tax = signal(0.2).asReadonly();
+  // computed: signal dass sich aus anderen signals zusammensetzt
   grossAmount = computed(() => this.netAmount() * (1 + this.tax()));
 
   constructor() {
+    // function die getriggert wird, wenn sich value ändert
+    // im template automatisch
     effect(() => {
       console.log('totalAmount changed', this.netAmount());
       console.log('grossAmount changed', this.grossAmount());

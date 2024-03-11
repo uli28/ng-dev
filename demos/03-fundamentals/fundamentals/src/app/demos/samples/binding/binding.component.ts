@@ -24,10 +24,14 @@ import { PersonService } from '../persons/person.service';
 export class BindingComponent implements OnInit {
   ps = inject(PersonService);
   persons: Person[] = [];
+  // könnte auch person oder null initialisiert werdne, so spart man sich die null checks
   selectedPerson: Person = new Person();
   hide = false;
   latePerson: Person | null = null;
   isActive: boolean = false;
+
+  // toSignal auch möglich
+  pers = toSignal(this.ps.getPersons());
 
   ngOnInit() {
     this.ps.getPersons()
@@ -57,3 +61,7 @@ export class BindingComponent implements OnInit {
     console.log('value received from event binding', p);
   }
 }
+function toSignal(arg0: any) {
+  throw new Error('Function not implemented.');
+}
+

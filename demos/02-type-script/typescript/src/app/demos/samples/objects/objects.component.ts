@@ -101,7 +101,7 @@ export class ObjectsComponent {
   objAssign() {
     const obj = { name: 'Soi' };
     const clone = Object.assign(
-      {},
+      {}, // wenn weggestrichen, ist es kein neues Objekt
       obj,
       { birth: format(new Date(), 'MMM d yy'), }
     );
@@ -122,7 +122,7 @@ export class ObjectsComponent {
       job: 'dev dude',
     };
     const shallowClone = { ...dataPerson };
-    const combinedPerson = { ...simplePerson, ...dataPerson };
+    const combinedPerson = { ...simplePerson, ...dataPerson }; // gleich wie zeile 103
     console.log(shallowClone, combinedPerson);
   }
 }

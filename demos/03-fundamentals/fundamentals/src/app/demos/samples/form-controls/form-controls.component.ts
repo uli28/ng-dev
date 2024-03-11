@@ -16,6 +16,7 @@ import { MarkdownRendererComponent } from '../../../shared/markdown-renderer/mar
 })
 export class FormControlsComponent {
   destroy = inject(DestroyRef);
+  // können mehr als neue Inputs
   searchTerm = new FormControl<string | null>('', [Validators.required, Validators.minLength(3)]);
   chkSave = new FormControl<boolean>(true);
 
@@ -31,6 +32,7 @@ export class FormControlsComponent {
         console.log('Currently your searching debounced for:', val);
       });
 
+      // geht auf validation
     this.searchTerm.statusChanges
       .pipe(takeUntilDestroyed(this.destroy))
       .subscribe((status) => {
