@@ -29,6 +29,7 @@ registerLocaleData(localeDe);
     SkillsModule,
     SharedModule,
   ],
+  // hier wurde früher localization hinzgefügt  mit modules
   providers: [{ provide: LOCALE_ID, useValue: 'de' }],
   bootstrap: [AppComponent],
 })

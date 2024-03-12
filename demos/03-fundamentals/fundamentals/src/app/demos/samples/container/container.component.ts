@@ -30,6 +30,7 @@ export class ContainerComponent implements OnInit {
 
   onPersonSelected(p: Person) {
     // this.current = p;
+    // hier einen clone machen - ohne save click wird es sonst direkt übernommen oben.
     this.current = { ...p };
     // this.current = Object.assign({},p)
   }

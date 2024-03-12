@@ -25,6 +25,7 @@ export class BindingComponent implements OnInit {
   ps = inject(PersonService);
   persons = signal<Person[]>([]);
   selectedId = signal<number>(0);
+  // nicht als signal implementiert da nicht benötigt
   selectedPerson: Person = new Person();
 
   hide = false;

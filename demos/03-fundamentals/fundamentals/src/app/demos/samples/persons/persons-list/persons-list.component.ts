@@ -27,6 +27,7 @@ export class PersonsListComponent {
   }
 
   selectPerson(p: Person) {
+    // emit des events nach oben, kommt mit $event rein
     this.personSelected.emit(p);
   }
 }

@@ -29,11 +29,13 @@ import { MatCardModule } from '@angular/material/card';
         MatButtonModule,
     ],
 })
+// wenn neues event über input kommt, in ngOnChanges darauf reagieren
 export class PersonEditComponent implements OnChanges {
   @Input() person: Person = new Person();
   @Input() editMode: boolean = false;
   @Output() savePerson: EventEmitter<Person> = new EventEmitter<Person>();
 
+  // geht auch mit signals
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['person']) {
       console.log('receiving updated person:', changes['person'].currentValue);
