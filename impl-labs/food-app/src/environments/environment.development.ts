@@ -1,4 +1,3 @@
 export const environment = {
-    apiUrl: 'assets/menu-items.json',
-    foodApiUrl: 'assets/food.json',
-  };  
+  apiUrl: 'http://localhost:3000/',
+};  

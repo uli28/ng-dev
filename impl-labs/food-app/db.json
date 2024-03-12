@@ -1,0 +1,39 @@
+{
+  "food": [
+    {
+      "id": "1",
+      "name": "Butter Chicken",
+      "price": 9,
+      "calories": 1200
+    },
+    {
+      "id": "2",
+      "name": "Wiener Schnitzel vom Schwein",
+      "price": 12.7,
+      "calories": 730
+    },
+    {
+      "id": "3",
+      "name": "Boeuf Stroganoff",
+      "price": 18.3,
+      "calories": 600
+    }
+  ],
+  "menu-items": [
+    {
+      "title": "Home",
+      "url": "/",
+      "id": "3e8f"
+    },
+    {
+      "title": "Food",
+      "url": "/food",
+      "id": "ec4b"
+    },
+    {
+      "title": "About",
+      "url": "/about",
+      "id": "f3e2"
+    }
+  ]
+}

@@ -10,6 +10,6 @@ export class NavbarService {
   http = inject(HttpClient);
 
   getItems() {
-    return this.http.get<NavItem[]>(environment.apiUrl);
+    return this.http.get<NavItem[]>(environment.apiUrl + "menu-items");
   }
 }

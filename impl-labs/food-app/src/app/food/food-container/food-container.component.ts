@@ -27,6 +27,11 @@ export class FoodContainerComponent {
 
   deleteFood(food: FoodItem) {
     console.log('deleting food: ', food);
+    // cold observable - httpclient macht nichts ohne subscribe
+    this.fs.deleteFood(food.id).subscribe((data) => {
+      console.log(data);
+      this.food = this.food.filter((f) => f.id !== food.id);
+    });  
   }
 
   foodSaved(item: FoodItem) {
@@ -34,8 +39,14 @@ export class FoodContainerComponent {
     let idx = clone.findIndex((c) => c.id == item.id);
     if (idx > -1) {
       clone[idx] = item;
+      this.fs.updateFood(item).subscribe((data) => {
+        console.log(data)
+      });
     } else {
       clone.push(item);
+      this.fs.addFood(item).subscribe((data) => {
+        console.log(data)
+      });
     }
     this.food = clone;
     this.selectedFood = null;

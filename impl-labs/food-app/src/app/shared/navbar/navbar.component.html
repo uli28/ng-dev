@@ -1,5 +1,11 @@
 <div class="menu">
     @for (item of navItems; track item) {
-        <div class="menuItem">{{item.title}}</div>
+    <div
+      class="menuItem"
+      routerLink="{{ '/' + item.url }}"
+      routerLinkActive="navLinkActive"
+      [routerLinkActiveOptions]="{ exact: true }">
+      {{ item.title }}
+    </div>
     }
 </div>
