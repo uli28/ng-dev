@@ -1,0 +1,22 @@
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Calories</th>
+      <th>&nbsp;</th>
+      <th>&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (f of food; track f) {
+      <tr>
+        <td>{{ f.name }}</td>
+        <td>{{ f.price }}</td>
+        <td>{{ f.calories }}</td>
+        <td><a (click)="deleteFood(f)">Delete</a></td>
+        <td><a (click)="selectFood(f)">Select</a></td>
+      </tr>
+    }
+  </tbody>
+</table>

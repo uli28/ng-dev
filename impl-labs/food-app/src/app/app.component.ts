@@ -3,6 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { SidemenuComponent } from './shared/sidemenu/sidemenu.component';
+import { FoodContainerComponent } from './food/food-container/food-container.component';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +12,8 @@ import { SidemenuComponent } from './shared/sidemenu/sidemenu.component';
     RouterOutlet,
     HomeComponent,
     NavbarComponent,
-    SidemenuComponent
+    SidemenuComponent,
+    FoodContainerComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
