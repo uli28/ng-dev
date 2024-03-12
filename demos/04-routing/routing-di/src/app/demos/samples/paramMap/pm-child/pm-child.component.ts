@@ -20,9 +20,12 @@ export class PmChildComponent implements OnInit {
   id: number = 0;
   readonly: boolean = false;
 
+    // wird hier gebunden, wenn im viewport das erste mal initialisiert wird
+    // Sub Route wird nicht dauernd neu gerendert
   ngOnInit() {
-    this.useSnapShot();
-    // this.useParamMap();
+    //this.useSnapShot();
+    // subscribale observable
+    this.useParamMap();
   }
 
   useSnapShot() {
@@ -31,6 +34,7 @@ export class PmChildComponent implements OnInit {
   }
 
   useParamMap() {
+    // nur in console.log ersichtlich
     this.route.paramMap.subscribe((params) => {
       console.log('paramMap:', params);
     });

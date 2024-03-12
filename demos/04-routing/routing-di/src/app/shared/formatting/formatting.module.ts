@@ -18,4 +18,5 @@ const components = [
   imports: [components],
   exports: [components]
 })
+// bei verwendung als barrell auch interessant
 export class FormattingModule { }

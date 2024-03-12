@@ -14,5 +14,6 @@ import { map } from 'rxjs';
 })
 export class PreloadComponent {
   route = inject(ActivatedRoute);
+  // desmos key aus demo.routes.js
   demos = this.route.data.pipe(map((data) => data['demos']));
 }

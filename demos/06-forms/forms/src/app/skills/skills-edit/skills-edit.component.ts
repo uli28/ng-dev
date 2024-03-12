@@ -25,6 +25,8 @@ import { SkillsEntityService } from '../state/skills-entity.service';
   ],
 })
 export class SkillsEditComponent {
+  // nicht nested, aber mit @input - withComponentInputBinding() - holt sich die id von url runter
+  // muss ebenso id heißen wie in routen konfiguration, edit/:id
   @Input({ required: true }) id = 0;
   router = inject(Router);
   sns = inject(SnackbarService);
@@ -47,7 +49,8 @@ export class SkillsEditComponent {
       else {
         this.es.getByKey(id).subscribe((skill) => {
           if (skill) {
-            this.skillForm.patchValue(skill);
+            // nur wenn alle properties vorhanden, id, name, ocompleted - auch setValue möglich, Model = Form
+            this.skillForm.setValue(skill);
           }
         });
       }
