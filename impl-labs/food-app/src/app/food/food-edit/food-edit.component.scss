@@ -1,24 +1,16 @@
-.form{
-    width: 100%;
-}
-
-.row{
+.mat-mdc-card-title {
+    display: block;
+    margin: 0;
+    color: gainsboro;
+    margin-bottom: 1rem;
+  }
+  
+  mat-card-content {
     display: flex;
-    flex-direction: row nowrap;
-    justify-content: space-between;
-    margin: 0.5rem;
-}
-
-label{
-    margin-right: 2rem;
-    width: 150px;
-}
-
-input{
-    min-width: 400px;
-    flex-grow: 1;
-}
-
-button{
-    min-width: 200px
-}
+    flex-direction: column;
+  }
+  
+  mat-form-field {
+    margin-bottom: 1rem;
+    width: 100%;
+  }

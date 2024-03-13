@@ -1,11 +1,15 @@
 import { Component, EventEmitter, Input, Output, SimpleChanges } from '@angular/core';
 import { FoodItem } from '../food.model';
 import { FormsModule } from '@angular/forms';
+import { MatCardModule } from '@angular/material/card';
+import { MatFormField } from '@angular/material/form-field';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
 
 @Component({
   selector: 'app-food-edit',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, MatCardModule, MatFormField, MatButtonModule, MatInputModule],
   templateUrl: './food-edit.component.html',
   styleUrl: './food-edit.component.scss'
 })

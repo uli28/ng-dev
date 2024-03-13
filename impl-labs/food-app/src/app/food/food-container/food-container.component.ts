@@ -31,7 +31,7 @@ export class FoodContainerComponent {
     this.fs.deleteFood(food.id).subscribe((data) => {
       console.log(data);
       this.food = this.food.filter((f) => f.id !== food.id);
-    });  
+    });
   }
 
   foodSaved(item: FoodItem) {
@@ -50,5 +50,20 @@ export class FoodContainerComponent {
     }
     this.food = clone;
     this.selectedFood = null;
+  }
+
+  addFood() {
+    const id = this.food.reduce((accumulator: number, currFood: FoodItem) => {
+      return (accumulator =
+        accumulator > currFood?.id ? accumulator : currFood?.id);
+    }, 0) + 1;
+    const foodItem = new FoodItem();
+    const maxId: number = this.food.reduce((accumulator: number, currFood: FoodItem) => {
+      return (accumulator =
+        accumulator > currFood?.id ? accumulator : currFood?.id);
+    }, 0);
+    const add : number = 1;
+    foodItem.id = maxId + add;
+    this.selectedFood = foodItem;
   }
 }

@@ -1,13 +1,11 @@
-<div>
-  <div class="navbar">
+<div class="rootGrid">
+  <div class="gd-navbar">
     <app-navbar></app-navbar>
   </div>
-  <div class="mainrow">
-    <div class="sidebar">
-      <app-sidemenu></app-sidemenu>
-    </div>
-    <div class="main">
-      <router-outlet></router-outlet>
-    </div>
+  <div class="gd-sidemenu">
+    <app-sidemenu></app-sidemenu>
+  </div>
+  <div class="gd-maincontent">
+    <router-outlet></router-outlet>
   </div>
 </div>

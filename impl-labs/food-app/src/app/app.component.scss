@@ -1,22 +1,34 @@
-.navbar{
-    background-color: lavender;
-    height: 150px
-  }
+.rootGrid {
+  display: grid;
+  height: 100vh;
+  width: 100%;
+  gap: 0.5rem;
+  grid-template-rows: 80px auto;
+  grid-template-columns: 180px auto;
+  grid-template-areas:
+    "navbar navbar"
+    "sidemenu maincontent";
 
-  .sidebar{
-    background-color: yellow;
-    min-width: 200px;
-    padding: 1rem;
-  }
+    @media only screen and (max-width: 960px) {
+      grid-template-columns: auto;
+      grid-template-areas:
+        "navbar"
+        "maincontent"
+    }    
+}
 
-  .main{
-    background-color: whitesmoke;
-    width: calc(100vw - 200px);
-    padding: 1rem;
-  }
+.gd-navbar {
+  grid-area: navbar;
+}
 
-  .mainrow{
-    display: flex;
-    flex-direction: row;
-    height: calc(100vh - 150px);
+.gd-sidemenu {
+  grid-area: sidemenu;
+  background: lightgrey;
+  @media only screen and (max-width: 960px) {
+    display: none;
   }
+}
+
+.gd-maincontent {
+  grid-area: maincontent;
+}

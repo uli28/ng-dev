@@ -14,9 +14,21 @@
     },
     {
       "id": "3",
-      "name": "Boeuf Stroganoff",
-      "price": 18.3,
-      "calories": 600
+      "name": "atest",
+      "price": 12,
+      "calories": 4
+    },
+    {
+      "id": 0,
+      "name": "asf",
+      "price": 2,
+      "calories": 12
+    },
+    {
+      "id": "31",
+      "name": "tests",
+      "price": 12,
+      "calories": 2
     }
   ],
   "menu-items": [
