@@ -38,6 +38,7 @@ export class ReactiveFormsComponent implements OnInit {
   wealthOpts = wealthOptsValues;
 
   //declarative approach to form creation -> produces typed from
+  // viel zu schreiben, kann aber vereinfacht werden - form builder
   personForm = new FormGroup({
     name: new FormControl(this.person.name, Validators.required),
     age: new FormControl(this.person.age),

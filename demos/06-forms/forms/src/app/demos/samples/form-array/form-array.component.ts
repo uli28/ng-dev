@@ -26,12 +26,14 @@ export class FormArrayComponent {
   fb: FormBuilder = inject(FormBuilder);
   skillForm = this.fb.group({
     name: 'Giro',
+    // auch fb.group möglich, z.B. für nested forms
     skillsGrp: this.fb.array([
       this.fb.group({ skillname: 'Hunting', years: 9 }),
     ]),
   });
 
   addSkill() {
+    // migratino setzt auf untyped, type ist aber ok
     const skillsGrp = this.skillForm.controls['skillsGrp'] as UntypedFormArray;
     skillsGrp.push(
       this.fb.group({

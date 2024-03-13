@@ -4,10 +4,12 @@
     <mat-card-title> Template Driven </mat-card-title>
   </mat-card-header>
   <mat-card-content>
+    <!-- personForm wird an submit weitergebgen-->
     <form #personForm="ngForm" (ngSubmit)="savePerson(personForm)"
       novalidate column
       >
       <mat-form-field>
+        <!-- ngModel kommt aus form model import-->
         <input
           matInput
           type="text"

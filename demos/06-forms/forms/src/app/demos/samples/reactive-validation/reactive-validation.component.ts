@@ -41,6 +41,7 @@ export class ReactiveValidationComponent implements OnInit {
   personForm = this.fb.group({
     name: [
       this.person.name,
+      // custom synchroner validator
       [Validators.required, Validators.minLength(4), this.validateName],
     ],
     age: [this.person.age, [Validators.min(18), Validators.max(99)]],
@@ -57,6 +58,7 @@ export class ReactiveValidationComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
+    // gibt auch non nullable formbuilder, wo alles ausgefüllt werdne muss  
     private mailExistsValidator: asyncMailExistsValidator
   ) { }
 
@@ -84,6 +86,7 @@ export class ReactiveValidationComponent implements OnInit {
   //Sample for custom sync validator
   validateName(control: FormControl): { [s: string]: boolean } | null {
     if (control.value === 'Hugo') {
+      // custom name error werfen, frei definiert
       return { nameError: true };
     }
     return null;

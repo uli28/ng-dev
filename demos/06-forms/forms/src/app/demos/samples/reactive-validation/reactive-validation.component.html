@@ -54,6 +54,7 @@
           placeholder="Email"
           formControlName="email"
           />
+          <!-- auch mit touched, dirty - könnte in eine Funktion ausgelagert werden -->
           @if (
             personForm.controls['email'].errors != undefined &&
             personForm.controls['email'].errors['mailexists']

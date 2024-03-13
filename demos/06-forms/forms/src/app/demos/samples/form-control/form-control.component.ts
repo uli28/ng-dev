@@ -45,6 +45,7 @@ export class FormControlComponent implements OnInit {
   }
 
   resetName() {
+    // resetted die 6 status (touched, untouched etc.)
     this.name.reset('Giro');
   }
 
