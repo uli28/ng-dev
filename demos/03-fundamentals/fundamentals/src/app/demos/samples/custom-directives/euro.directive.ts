@@ -1,16 +1,16 @@
-import { Directive, ElementRef, HostListener } from '@angular/core';
+import { Directive, ElementRef, HostListener, inject } from '@angular/core';
 
 @Directive({
   // toEuro selector
-    selector: '[toEuro]',
-    standalone: true,
+  selector: '[toEuro]',
+  standalone: true,
 })
 // solte eher in shared directive liegen, wird meistens öfters wiederverwendets
 export class EuroDirective {
-  elementRef = inject(ElementRef);
+  elementRef = inject(ElementRef)
   private el: HTMLInputElement;
 
-  constructor(private elementRef: ElementRef) {
+  constructor() {
     this.el = this.elementRef.nativeElement;
   }
 
