@@ -1,5 +1,5 @@
 import { JsonPipe } from '@angular/common';
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, OnInit, effect, inject, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
@@ -23,12 +23,20 @@ import { PersonService } from '../persons/person.service';
 })
 export class BindingComponent implements OnInit {
   ps = inject(PersonService);
-  persons: Person[] = [];
+  persons = signal<Person[]>([]);
+  selectedId = signal<number>(0);
   // könnte auch person oder null initialisiert werdne, so spart man sich die null checks
   selectedPerson: Person = new Person();
+
   hide = false;
   latePerson: Person | null = null;
   isActive: boolean = false;
+
+  constructor() {
+    effect(() => {
+      this.selectedPerson = this.persons().find(p => p.id === this.selectedId()) || new Person();
+    });
+  }
 
   // toSignal auch möglich
   pers = toSignal(this.ps.getPersons());
@@ -37,8 +45,8 @@ export class BindingComponent implements OnInit {
     this.ps.getPersons()
       .subscribe((data) => {
         if (data?.length > 0) {
-          this.persons = data;
-          this.selectedPerson = this.persons[0];
+          this.persons.set(data);
+          this.selectedId.set(data[0].id);
         }
       });
 
@@ -52,6 +60,10 @@ export class BindingComponent implements OnInit {
         this.latePerson = data;
       });
   }
+
+  // logVal(val: any) {
+  //   console.log('value received from event binding', val);
+  // }
 
   toggleDisplay() {
     this.hide = !this.hide;
