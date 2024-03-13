@@ -1,5 +1,6 @@
 .gdSidenavContent {
   min-width: 450px;
+  // hier 100%, da schon zuvor 
   height: 100%;
   display: grid;
   gap: var(--gap-small);
@@ -10,6 +11,7 @@
     "workbench sidebar"
     "mdeditor sidebar";
 
+  // sidebar geht weg
   @media only screen and (max-width: var(--breakpoint-mobile)) {
     grid-template-columns: auto;
     grid-template-areas:
