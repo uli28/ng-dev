@@ -121,6 +121,7 @@ export class OperatorsComponent {
     this.vs
       .getVouchers()
       .pipe(take(3))
+      // 1 marble wird emitted, rest call hat nur marbles
       .subscribe((data) => this.log('useTake', data));
   }
 

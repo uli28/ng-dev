@@ -13,11 +13,13 @@ export class CreatingObservableComponent {
   onComplete = () => console.log('complete');
 
   useOf() {
+    // anzahl marvels gleich anzahl an marbles die emitted werden - hier 1
     of([2, 5, 9, 12, 22]).subscribe((data) => console.log('of(): ', data));
   }
 
   useFrom() {
     const arr = [2, 5, 9, 12, 22];
+    // auf spreaden des arrays hier mit from, 5 marbles
     from(arr).subscribe((data: number) => console.log('from(): ', data));
   }
 
@@ -26,6 +28,7 @@ export class CreatingObservableComponent {
       .pipe(
         tap((n) => console.log('before filter: ', n)),
         map((n) => n * 2),
+        // tap auch für logging framework verwendbar
         tap((n) => console.log('after filter: ', n)),
       )
       .subscribe((data: number) => console.log('final: ', data));

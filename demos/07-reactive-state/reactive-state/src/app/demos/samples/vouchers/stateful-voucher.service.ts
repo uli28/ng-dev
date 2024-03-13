@@ -11,6 +11,7 @@ import { Voucher } from './vouchers.model';
 })
 export class StatefulVoucherService {
   http = inject(HttpClient);
+  // javascript anotation für private variable. damit sonst niemad das next triggern kann außerhalb dieses service
   #vouchers: BehaviorSubject<Voucher[]> = new BehaviorSubject<Voucher[]>([]);
 
   constructor() {
@@ -21,12 +22,13 @@ export class StatefulVoucherService {
     setTimeout(() => {
       var arr = this.#vouchers.getValue();
       arr.push(lateVoucher as Voucher);
-      this.#vouchers.next(arr);
+      // next informiert alle subscribieren, emmite ein neue marbel
+      this.#vouchers.next(arr); 
     }, 6000);
   }
 
   getAllVouchers() {
-    return this.#vouchers;
+    return this.#vouchers.asObservable();
   }
 
   getVoucherById(id: number) {

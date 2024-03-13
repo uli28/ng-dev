@@ -8,6 +8,8 @@ import { Subscription, fromEvent, map, tap } from 'rxjs';
   styleUrls: ['./sign-pad.component.scss'],
 })
 export class SignPadComponent {
+  // local Reference, welche vom Canvas angesprochen wird
+  // wird umgebaut: signal-queries
   @ViewChild('signPad', { static: true }) canvas: ElementRef | null = null;
   destroy = inject(DestroyRef);
   subMouseEvents: Subscription | null = null;
@@ -15,6 +17,7 @@ export class SignPadComponent {
 
   subscribeMouseEvts() {
     if (this.canvas) {
+      // callback function, dom events mousemove - in observable umgewandelt / alles kann obersvable sein
       const evtMouse = fromEvent(this.canvas.nativeElement, 'mousemove').pipe(
         takeUntilDestroyed(this.destroy),
         tap((data: any) => console.log('original data', data)),

@@ -14,6 +14,7 @@ import { StatefulVoucherService } from '../vouchers/stateful-voucher.service';
 export class SumComponent {
   vs = inject(StatefulVoucherService);
 
+  // immer aufsummieren bei jedem next
   sum = this.vs
     .getAllVouchers()
     .pipe(map((vs) => vs.reduce((runningSum, v) => runningSum + v.Amount, 0)));
