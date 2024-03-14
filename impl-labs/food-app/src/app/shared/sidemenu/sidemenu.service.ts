@@ -9,7 +9,7 @@ import { environment } from '../../../environments/environment.development';
 @Injectable({
   providedIn: 'root'
 })
-export class SidemenuService {
+export class SideMenuService {
   http = inject(HttpClient);
   breakpointObserver = inject(BreakpointObserver);
   visible = signal(true);

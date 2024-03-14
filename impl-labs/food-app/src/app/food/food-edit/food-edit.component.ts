@@ -1,10 +1,10 @@
-import { Component, EventEmitter, Input, Output, SimpleChanges, inject } from '@angular/core';
-import { FoodItem } from '../food.model';
-import { FormBuilder, FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Component, EventEmitter, Output, effect, inject, input } from '@angular/core';
+import { FormGroup, NonNullableFormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormField } from '@angular/material/form-field';
-import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
+import { FoodItem } from '../food.model';
 
 @Component({
   selector: 'app-food-edit',
@@ -14,36 +14,30 @@ import { MatInputModule } from '@angular/material/input';
   styleUrl: './food-edit.component.scss'
 })
 export class FoodEditComponent {
-  @Input({ required: true }) food: FoodItem = new FoodItem();
+  food = input.required<FoodItem>();
   @Output() onFoodSave: EventEmitter<FoodItem> = new EventEmitter<FoodItem>();
-  formsBuilder = inject(FormBuilder)
-  foodForm = this.formsBuilder.group({
-    id: [this.food.id],
-    name: [this.food.name,
-    {
-      required: true,
-      validators: [Validators.required, Validators.minLength(3)]
-    }
-    ],
-    price: [this.food.price, { validators: [Validators.required, this.validatePrice] }],
-    calories: [this.food.calories]
+  @Output() onCancelEdit: EventEmitter<void> = new EventEmitter<void>();
+  fb = inject(NonNullableFormBuilder);
+
+  form: FormGroup = this.fb.group({
+    id: 0,
+    name: ["", [Validators.required, Validators.minLength(3)]],
+    price: [0, [Validators.required, Validators.min(1)]],
+    items: [0, Validators.min(0)]
   });
 
-  ngOnChanges(changes: SimpleChanges): void {
-    this.foodForm.patchValue(changes["food"].currentValue);
-    console.log("receiving data on input:", changes["food"]);
+  constructor() {
+    effect(() => {
+      console.log('Receiving data on input signal:', this.food());
+      this.form.patchValue(this.food());
+    });
   }
 
-  saveFood(foodForm: any) {
-    if (this.food) {
-      this.onFoodSave.emit(foodForm.value as FoodItem);
-    }
+  saveFood(form: FormGroup) {
+    if (this.food()) this.onFoodSave.emit(form.value);
   }
 
-  validatePrice(control: FormControl): { [s: string]: boolean } | null {
-    if (control.value < 0) {
-      return { priceError: true };
-    }
-    return null;
+  cancelEdit() {
+    this.onCancelEdit.emit();
   }
 }
