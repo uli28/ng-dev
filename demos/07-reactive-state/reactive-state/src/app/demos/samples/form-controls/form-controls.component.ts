@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
-import { debounceTime } from 'rxjs';
+import { debounceTime, tap } from 'rxjs';
 import { AsyncPipe } from '@angular/common';
 import { BorderDirective } from '../../../shared/formatting/formatting-directives';
 import { MatInputModule } from '@angular/material/input';
@@ -14,8 +14,16 @@ import { MarkdownRendererComponent } from '../../../shared/markdown-renderer/mar
   styleUrls: ['./form-controls.component.scss'],
   standalone: true,
   imports: [MarkdownRendererComponent, MatCardModule, MatFormFieldModule, MatInputModule, ReactiveFormsModule, BorderDirective, AsyncPipe]
+  selector: 'app-form-controls',
+  templateUrl: './form-controls.component.html',
+  styleUrls: ['./form-controls.component.scss'],
+  standalone: true,
+  imports: [MarkdownRendererComponent, MatCardModule, MatFormFieldModule, MatInputModule, ReactiveFormsModule, BorderDirective, AsyncPipe]
 })
 export class FormControlsComponent {
-  searchTerm = new FormControl<string>('');
-  output = this.searchTerm.valueChanges.pipe(debounceTime(750))
+  searchterm = new FormControl<string>('');
+  output = this.searchterm.valueChanges.pipe(
+    tap((val) => console.log('searching...' + val)),
+    debounceTime(750)
+  )
 }
