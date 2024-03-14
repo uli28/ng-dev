@@ -9,7 +9,13 @@ import { FoodItem } from '../food.model';
 @Component({
   selector: 'app-food-edit',
   standalone: true,
-  imports: [ReactiveFormsModule, MatCardModule, MatFormField, MatButtonModule, MatInputModule],
+  imports: [
+    ReactiveFormsModule,
+    MatCardModule,
+    MatFormField,
+    MatButtonModule,
+    MatInputModule
+  ],
   templateUrl: './food-edit.component.html',
   styleUrl: './food-edit.component.scss'
 })
@@ -17,9 +23,9 @@ export class FoodEditComponent {
   food = input.required<FoodItem>();
   @Output() onFoodSave: EventEmitter<FoodItem> = new EventEmitter<FoodItem>();
   @Output() onCancelEdit: EventEmitter<void> = new EventEmitter<void>();
-  fb = inject(NonNullableFormBuilder);
+  formBuilder = inject(NonNullableFormBuilder);
 
-  form: FormGroup = this.fb.group({
+  form: FormGroup = this.formBuilder.group({
     id: 0,
     name: ["", [Validators.required, Validators.minLength(3)]],
     price: [0, [Validators.required, Validators.min(1)]],
