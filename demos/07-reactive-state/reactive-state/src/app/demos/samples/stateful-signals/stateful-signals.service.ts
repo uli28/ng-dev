@@ -13,6 +13,7 @@ export class StatefulSignalsService {
 
   // can not use toSignal here, because the result  is not writable
   // Signal<Voucher[] | undefined>
+  // statt BehaviorSubject voucher - # kennzeichnet private field
   #vouchers: WritableSignal<Voucher[]> = signal<Voucher[]>([]);
 
   constructor() {
@@ -23,6 +24,7 @@ export class StatefulSignalsService {
   }
 
   getAllVouchers() {
+    // read only signal
     return computed(() => this.#vouchers());
   }
 
@@ -51,6 +53,7 @@ export class StatefulSignalsService {
     //   this.#vouchers.update((arr: Voucher[]) => arr.filter((v) => v.ID != id));
     // });
 
+    // crud und stateful service trennen besser testbar
     this.vs.deleteVoucher(id).subscribe(() => {
       this.#vouchers.update((arr: Voucher[]) => arr.filter((v) => v.ID != id));
     });

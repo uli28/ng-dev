@@ -71,6 +71,7 @@ export class DemoContainerComponent {
   workbenchMargin = {}
 
   constructor() {
+    // hier historisch im constructor, da früher effect nur im constructor ging.
     effect(() => {
       this.showMdEditor = this.currentCMD() === SidePanelActions.HIDE_MARKDOWN ? false : true;
     });

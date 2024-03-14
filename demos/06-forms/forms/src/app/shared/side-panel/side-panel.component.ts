@@ -34,6 +34,7 @@ export class SidePanelComponent {
     this.icon = this.editorDisplayed ? "close" : "create";
   }
 
+  // könnte auch in ein redux pattern ausgelagert werden, um den state zu verwalten
   toogleSideNav() {
     this.nav.toggleMenuVisibility();
   }

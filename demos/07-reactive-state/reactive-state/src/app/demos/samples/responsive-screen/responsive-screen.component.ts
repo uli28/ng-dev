@@ -19,6 +19,7 @@ import { MarkdownRendererComponent } from '../../../shared/markdown-renderer/mar
 })
 export class ResponsiveScreenComponent {
   breakpointObserver = inject(BreakpointObserver);
+  // könnte auch in ein toSignal konvertiert werden
   class = this.breakpointObserver
     .observe(['(min-width: 960px)'])
     .pipe(
