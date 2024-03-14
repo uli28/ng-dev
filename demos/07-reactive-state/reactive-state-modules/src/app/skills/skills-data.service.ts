@@ -13,6 +13,9 @@ export class SkillsDataService extends DefaultDataService<Skill> {
     super('Skill', http, httpUrlGenerator);
   }
 
+  // holt sich hier automatisch von Rest Endpoint alle CRUD Operations automatisch raus
+  // ngrx-data
+  
   // override getAll() {
   //   return this.http.get<Skill[]>(`${environment.api}skills`).pipe(
   //     map((data: Skill[]) => {
