@@ -26,7 +26,7 @@ export class StatefulVoucherService {
   }
 
   getAllVouchers() {
-    return this.#vouchers;
+    return this.#vouchers.asObservable();
   }
 
   getVoucherById(id: number) {
@@ -41,7 +41,13 @@ export class StatefulVoucherService {
     });
   }
 
-  updateVoucher(v: Voucher) { }
+  updateVoucher(v: Voucher) {
+    this.http.put(environment.api, v).subscribe(() => {
+      var arr = this.#vouchers.getValue();
+      arr = arr.map((item) => (item.ID === v.ID ? v : item));
+      this.#vouchers.next(arr);
+    });
+  }
 
   deleteVoucher(id: number) {
     var arr = this.#vouchers.getValue();

@@ -35,6 +35,7 @@ export class CreatingObservableComponent {
       .pipe(
         tap((n) => console.log('before filter: ', n)),
         map((n) => n * 2),
+        tap((n) => n * 2),
         tap((n) => console.log('after filter: ', n)),
       )
       .subscribe((data: number) => console.log('final: ', data));
